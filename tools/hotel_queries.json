@@ -1,19 +1,8 @@
 {
-"h-fleurdelys":["Hotel Fleur de Lys San José","Barrio Amón San José casa victoriana","Barrio Amón"],
-"h-atlantida":["Atlantida Lodge Cahuita","Cahuita lodge garden","Cahuita village"],
-"h-lapaverde":["Lapa Verde Lodge Tortuguero","Tortuguero lodge","Tortuguero hotel"],
-"h-catarata":["Catarata Ecolodge","Arenal lodge cabins","La Fortuna Arenal hotel garden"],
-"h-faro":["Faro Arenal La Fortuna","La Fortuna San Carlos hotel","La Fortuna de San Carlos"],
-"h-ecoarenal":["Eco Arenal","Arenal volcano hotel view","Arenal Observatory Lodge"],
-"h-canon":["Cañon de la Vieja Lodge","Rincón de la Vieja lodge","Hacienda Guachipelín"],
-"h-rinconcito":["Rinconcito Lodge","San Jorge Rincón de la Vieja","Curubandé"],
-"h-cipreses":["Hotel Los Cipreses Monteverde","Santa Elena Monteverde hotel","Monteverde hotel"],
-"h-clarodeluna":["Claro de Luna Monteverde","Monteverde Gulf of Nicoya view","Monteverde lodge"],
-"h-suenos":["Sueños del Bosque San Gerardo","San Gerardo de Dota cabins","Savegre lodge"],
-"h-riotico":["Rio Tico Safari Lodge","safari tent lodge Costa Rica","glamping tent rainforest"],
-"h-riomar":["Villas Rio Mar Dominical","Dominical Barú river","Dominical Costa Rica"],
-"h-vistaballena":["Hotel Vista Ballena Uvita","Uvita Costa Ballena view","Costa Ballena"],
-"h-palmeras":["Cabinas Las Palmeras Corcovado","Drake Bay cabins","Osa peninsula beach lodge"],
-"h-bejuco":["Hotel Playa Bejuco","Playa Bejuco","Esterillos hotel"],
-"h-costapacifica":["Hotel Costa Pacifica Esterillos","Esterillos Este","Parrita Puntarenas beach"]
+"h2-tent":["Tented camp Costa Rica","Safari tent platform","Glamping tent jungle"],
+"h2-drakecabin":["Drake Bay lodge","Cabina Bahía Drake","Corcovado lodge"],
+"h2-cahuita":["Cahuita hotel","Cahuita house","Puerto Viejo de Talamanca house"],
+"h2-arenalcabin":["Arenal cabins","La Fortuna cabinas","Arenal lodge garden"],
+"h2-rincon":["Rincón de la Vieja lodge","Guanacaste lodge","Liberia Guanacaste hotel"],
+"h2-uvitatent":["Uvita lodge","Ojochal Costa Rica","Rio Barú"]
 }
