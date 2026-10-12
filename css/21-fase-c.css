@@ -1,0 +1,133 @@
+/* =====================================================================
+   v6.1 · Fase C: Activiteiten, Wildlife, Hotels, detailblad — alleen ds-tokens
+   ===================================================================== */
+.ds-page{padding:var(--ds-s4) 0 calc(110px + env(safe-area-inset-bottom,0px))}
+.ds-pagehead{margin:4px 2px var(--ds-s4)}
+.ds-pagehead .ds-title{font-size:28px}
+.ds-pagehead .ds-meta{margin:6px 0 0}
+.ds-note{font-size:12.5px;color:var(--ds-muted);margin:10px 4px 0;line-height:1.45}
+.ds-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ds-chips span{font-size:11.5px;font-weight:700;border-radius:8px;padding:4px 8px;background:var(--ds-mist);color:var(--ds-ink-2)}
+.ds-chips span.sky{background:var(--ds-sky-soft);color:var(--ds-sky-ink)}
+.ds-chips span.leaf{background:var(--ds-leaf-soft);color:var(--ds-leaf-ink)}
+.ds-chips span.c4{background:var(--ds-leaf);color:#fff}.ds-chips span.c3{background:var(--ds-leaf-soft);color:var(--ds-leaf-ink)}
+.ds-chips span.c2{background:var(--ds-ember-soft);color:var(--ds-ember-ink)}.ds-chips span.c1{background:var(--ds-mist);color:var(--ds-muted)}
+.ds-pill svg{width:12px;height:12px}
+
+/* ---------- Activiteiten ---------- */
+.ds-sec{border-radius:22px;padding:14px 12px 6px;margin-bottom:var(--ds-s3)}
+.ds-sec h3{display:flex;align-items:center;gap:8px;margin:0 4px 10px;font-size:16.5px;font-weight:800;letter-spacing:-.01em}
+.ds-sec h3 em{margin-left:auto;font-style:normal;font-size:12px;font-weight:800;border-radius:999px;padding:2px 9px;background:rgba(255,255,255,.7)}
+.ds-sec.saw{background:#E7F4E9}.ds-sec.saw h3{color:var(--ds-leaf-ink)}
+.ds-sec.own{background:#FCEFE2}.ds-sec.own h3{color:var(--ds-ember-ink)}
+.ds-sec.opt{background:#E6EEFA}.ds-sec.opt h3{color:var(--ds-sky-ink)}
+.ds-sec.excl{background:var(--ds-mist)}.ds-sec.excl h3{color:var(--ds-muted)}
+.ds-act{display:flex;align-items:center;gap:12px;width:100%;margin:0 0 8px;padding:9px 10px 9px 9px;border:0;border-radius:16px;background:var(--ds-card);box-shadow:var(--ds-shadow);text-align:left;color:var(--ds-ink);cursor:pointer}
+.ds-act.excl{opacity:.62}
+.ds-act>svg{flex:none;color:var(--ds-muted)}
+.ds-act-img{width:96px;align-self:stretch;min-height:84px;border-radius:12px;overflow:hidden;flex:none;background:var(--ds-mist)}
+.ds-act-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ds-act-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.ds-act-body b{font-size:14.5px;font-weight:800;line-height:1.3}
+.ds-act-note{font-size:12.5px;color:var(--ds-muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ds-act-meta{display:flex;flex-wrap:wrap;gap:3px 10px}
+.ds-act-meta span{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;font-weight:600;color:var(--ds-ink-2)}
+.ds-act-meta svg{width:14px;height:14px;color:var(--ds-leaf-ink);flex:none}
+.ds-act-pill{margin-top:2px}
+
+/* detailblad (bestaand scherm, nieuwe vorm) */
+.detail-overlay{background:rgba(8,20,14,.55)!important;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.detail-sheet{background:var(--ds-ivory)!important;border-radius:26px 26px 0 0!important;max-width:560px;margin-inline:auto;padding:18px var(--ds-gutter) calc(28px + env(safe-area-inset-bottom,0px))!important;font-family:var(--ds-font);color:var(--ds-ink)}
+.detail-sheet h2{font-size:24px!important;font-weight:800!important;letter-spacing:-.02em;color:var(--ds-ink)!important}
+.detail-sheet h3{font-size:15px!important;font-weight:800!important;color:var(--ds-ink)!important;margin:16px 0 6px!important}
+.detail-sheet p,.detail-sheet li{font-size:14px;line-height:1.55;color:var(--ds-ink-2)}
+.details-close{min-height:var(--ds-hit);border-radius:14px!important;background:var(--ds-card)!important;color:var(--ds-jungle)!important;box-shadow:inset 0 0 0 1.5px #C9D8CD!important;font-weight:700!important;padding:0 16px!important;border:0!important}
+.v48-detail img{border-radius:18px!important}
+.v48-detail-grid div{background:var(--ds-card)!important;border-radius:14px!important;box-shadow:var(--ds-shadow)}
+.detail-sheet select{width:100%;min-height:var(--ds-hit);border-radius:12px;border:1px solid var(--ds-line);background:var(--ds-card);padding:0 12px;font-size:15px}
+
+/* ---------- Wildlife ---------- */
+.ds-wild-head{position:relative}
+.ds-wild-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.ds-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:12px 0 2px}
+.ds-stats div{background:var(--ds-mist);border-radius:12px;padding:9px 2px;text-align:center}
+.ds-stats b{display:block;font-size:19px;font-weight:800;color:var(--ds-jungle);line-height:1.1}
+.ds-stats small{font-size:10.5px;font-weight:600;color:var(--ds-muted)}
+.ds-search{display:flex;align-items:center;gap:8px;min-height:var(--ds-hit);margin:12px 0 0;padding:0 14px;border-radius:14px;background:var(--ds-mist);color:var(--ds-muted)}
+.ds-search input{flex:1;min-width:0;border:0;background:transparent;font-size:16px;color:var(--ds-ink);outline:none;padding:12px 0}
+.ds-filter{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:10px -16px 0;padding:2px 16px}
+.ds-filter::-webkit-scrollbar{display:none}
+.ds-filter button{flex:none;min-height:38px;padding:0 13px;border-radius:999px;border:1.5px solid #D3E0D6;background:var(--ds-card);color:var(--ds-ink-2);font-size:13px;font-weight:700;cursor:pointer}
+.ds-filter button.on{background:var(--ds-jungle);border-color:var(--ds-jungle);color:#fff}
+.ds-filter.sub button{min-height:34px;font-size:12px;background:var(--ds-mist);border-color:transparent}
+.ds-filter.sub button.on{background:var(--ds-leaf);color:#fff}
+.ds-wild-sec{margin-top:var(--ds-s3);padding:12px 12px 6px}
+.ds-wild-sech{display:flex;flex-direction:column;gap:2px;margin:2px 4px 8px}
+.ds-wild-sech small{font-size:12.5px;color:var(--ds-muted);font-weight:600}
+.v47-focus{background:linear-gradient(180deg,#EAF6EC,var(--ds-card) 140px)}
+.ds-cat-h{display:flex;align-items:center;gap:8px;margin:14px 4px 4px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ds-muted)}
+.ds-cat-h em{font-style:normal;font-size:11px;background:var(--ds-mist);border-radius:999px;padding:1px 8px;letter-spacing:0}
+.ds-sp{border-bottom:1px solid var(--ds-line)}
+.ds-sp:last-child{border-bottom:0}
+.ds-sp-row{display:flex;align-items:center;gap:8px}
+.ds-sp-main{flex:1;min-width:0;display:flex;align-items:center;gap:12px;padding:9px 4px;border:0;background:none;text-align:left;color:var(--ds-ink);cursor:pointer}
+.ds-sp-img{position:relative;width:50px;height:50px;border-radius:50%;flex:none;overflow:visible}
+.ds-sp-img img{width:50px;height:50px;border-radius:50%;object-fit:cover;display:block}
+.ds-sp-ico{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--ds-leaf-soft);color:var(--ds-leaf-ink)}
+.ds-sp[data-v47-cat="Zoogdieren"] .ds-sp-ico{background:#F4EADC;color:#8A5520}
+.ds-sp[data-v47-cat="Reptielen"] .ds-sp-ico{background:#ECF1D9;color:#5C7314}
+.ds-sp[data-v47-cat="Amfibieën"] .ds-sp-ico{background:#FCE6E2;color:#B83A28}
+.ds-sp[data-v47-cat="Zeeleven"] .ds-sp-ico{background:var(--ds-sky-soft);color:var(--ds-sky-ink)}
+.ds-sp-seen{position:absolute;right:-2px;bottom:-2px;width:20px;height:20px;border-radius:50%;background:var(--ds-leaf);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 2px #fff}
+.ds-sp-txt{min-width:0;display:flex;flex-direction:column;gap:1px}
+.ds-sp-txt b{font-size:14.5px;font-weight:800;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ds-sp-txt em{font-style:normal;font-size:11.5px;color:var(--ds-muted);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ds-chance{display:flex;align-items:center;gap:3px;margin-top:4px}
+.ds-chance i{width:15px;height:5px;border-radius:3px;background:#DCE5DD}
+.ds-chance.c4 i.f{background:var(--ds-leaf)}.ds-chance.c3 i.f{background:#55A86F}.ds-chance.c2 i.f{background:var(--ds-ember)}.ds-chance.c1 i.f{background:#9AA59E}
+.ds-chance small{margin-left:5px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#7B4FC0}
+.ds-chance small.sz{color:var(--ds-sky-ink)}
+.ds-sp-reg{display:flex;gap:6px;flex:none}
+.ds-sp-reg button{width:44px;height:44px;border-radius:13px;border:1.5px solid #D3E0D6;background:var(--ds-card);color:var(--ds-jungle);display:grid;place-items:center;cursor:pointer}
+.ds-sp-reg button.on{background:var(--ds-leaf);border-color:var(--ds-leaf);color:#fff}
+.ds-sp-body{padding:2px 4px 12px 66px}
+.ds-sp-body p{font-size:13px;line-height:1.5;color:var(--ds-ink-2);margin:8px 0 0}
+.ds-ptip{display:flex;gap:8px;margin-top:8px;padding:9px 11px;border-radius:12px;background:var(--ds-sky-soft);font-size:12.5px;line-height:1.45;color:#203E66}
+.ds-ptip svg{flex:none;width:16px;height:16px;margin-top:1px}
+.ds-sp .v44-log{margin-top:8px;border-radius:12px!important;border:1px solid var(--ds-line)!important;background:var(--ds-card)!important}
+.ds-sp.open{background:#FAFCF8;border-radius:14px}
+.ds-addrow{display:flex;gap:8px}
+.ds-addrow input{flex:1;min-width:0;min-height:var(--ds-hit);border:1px solid var(--ds-line);border-radius:12px;padding:0 12px;font-size:16px;background:#FBFCF9}
+.ds-gres{padding:10px 2px;border-bottom:1px solid var(--ds-line)}
+.ds-gres b{font-size:14.5px}.ds-gres em{display:block;font-size:11.5px;color:var(--ds-muted);font-style:normal;margin-bottom:6px}
+.ds-wday{display:flex;align-items:center;gap:12px;width:100%;margin-bottom:8px;padding:9px 12px 9px 9px;border:0;border-radius:16px;background:var(--ds-card);box-shadow:var(--ds-shadow);text-align:left;color:var(--ds-ink);cursor:pointer}
+.ds-wday img{width:60px;height:60px;border-radius:12px;object-fit:cover;flex:none}
+.ds-wday>span{flex:1;min-width:0}
+.ds-wday b{display:block;font-size:14px;line-height:1.3}
+.ds-wday small{display:block;font-size:12px;color:var(--ds-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ds-wday>svg{flex:none;color:var(--ds-muted)}
+.ds-log{padding:10px 0;border-bottom:1px solid var(--ds-line)}.ds-log:last-child{border-bottom:0}
+.ds-log small{display:block;font-size:11.5px;color:var(--ds-muted)}.ds-log p{margin:4px 0 0;font-size:13.5px}
+
+/* ---------- Hotels ---------- */
+.ds-hotel{background:var(--ds-card);border-radius:22px;overflow:hidden;box-shadow:var(--ds-shadow);margin-bottom:var(--ds-s3)}
+.ds-hotel-img{position:relative;aspect-ratio:16/10;background:var(--ds-mist) center/cover no-repeat;max-width:100%}
+.ds-hotel-tag{position:absolute;left:12px;top:12px;font-size:11px;font-weight:800;color:#fff;background:rgba(10,24,18,.55);border-radius:8px;padding:4px 8px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ds-hotel-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px}
+.ds-hotel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.ds-hotel-top h3{margin:0;font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.2}
+.ds-hotel-body p{margin:0;font-size:14px;line-height:1.5;color:var(--ds-ink-2)}
+.ds-hotel-body p.ds-hotel-photo{font-size:11.5px;color:var(--ds-muted)}
+.ds-hotel-warn{display:flex;gap:8px;padding:9px 11px;border-radius:12px;background:var(--ds-warn-soft);color:var(--ds-warn);font-size:13px;font-weight:600}
+.ds-hotel-warn svg{flex:none;margin-top:1px}
+.ds-hotel-link{align-self:flex-start;text-decoration:none;margin-top:2px}
+.ds-hrow{margin-bottom:var(--ds-s4)}
+.ds-hrow>.ds-label{display:block;margin:0 4px 6px}
+
+/* oude soortkaart-stijlen neutraliseren binnen ds-rijen */
+.ds-sp.v47-sp.v43-species{padding:0!important;margin:0!important;border:0!important;border-bottom:1px solid var(--ds-line)!important;border-radius:0!important;background:none!important;box-shadow:none!important}
+.ds-sp.v47-sp.v43-species:last-child{border-bottom:0!important}
+.ds-sp.v47-sp.v43-species.open{background:#FAFCF8!important;border-radius:14px!important}
+.ds-sp .ds-sp-main{border:0!important;background:none!important;padding:9px 4px!important;border-radius:0!important;box-shadow:none!important;flex:1!important;font-weight:inherit!important}
+.ds-sp .ds-sp-reg button{width:44px!important;height:44px!important;padding:0!important;flex:none!important;border-radius:13px!important;border:1.5px solid #D3E0D6!important;background:var(--ds-card)!important;color:var(--ds-jungle)!important}
+.ds-sp .ds-sp-reg button.on{background:var(--ds-leaf)!important;border-color:var(--ds-leaf)!important;color:#fff!important}
