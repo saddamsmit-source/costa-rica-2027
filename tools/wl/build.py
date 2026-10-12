@@ -50,6 +50,7 @@ curated={}
 for r,l in json.load(open(T('tools/wl/existing_full.json')))['places'].items():
     for n,c in l:curated.setdefault(n,{})[r]=c
 remap=cfg.get('remap',{})
+override=json.load(open(f'{SRC}/stage3/photo_override.json')) if os.path.exists(f'{SRC}/stage3/photo_override.json') else {}
 recs={}  # sleutel in de app -> stage2-record
 byid={}
 for k,v in st2.items():byid.setdefault(v['id'],[]).append(k)
@@ -63,6 +64,8 @@ for s in sel:
     else:
         if k not in st2:print('ontbreekt',k);continue
         recs[k]=st2[k]
+for nk,src in cfg.get('clone',{}).items():
+    if src in st2:recs[nk]=st2[src]
 # nieuwe soorten die al als bestaande sleutel bestaan (zelfde taxon) weglaten
 used={v['id'] for k,v in recs.items() if not k.isdigit()}
 for k in [k for k in recs if k.isdigit()]:
@@ -79,17 +82,27 @@ for k,r in recs.items():
     pick=cfg.get('photo',{}).get(k,0)
     rec={'s':r['sci'],'nl':(ex['nl'] if ex else (t.get('nl') or r.get('nl') or r.get('en') or r['sci'])),'c':cat,'f':r.get('family'),'o':r.get('order'),'i':r['id'],
          'm':(ex['moment'] if ex else t.get('m','d')),'w':r.get('wiki'),'h':t.get('h',''),'l':t.get('l',''),'v':t.get('v',''),'mo':md,'se':season(mv)}
-    rr=dict(curated.get(k,{}))
-    for reg,tv in reg_t.get(r['id'],{}).items():rr.setdefault(reg,tv)
+    rr=dict(curated.get(k,{}));r1=[]
+    for reg,tv in reg_t.get(r['id'],{}).items():
+        if reg in rr:continue
+        if tv>=2:rr[reg]=tv
+        else:r1.append(reg)
     rec['r']=rr
+    if r1:rec['r1']=r1
     # foto
     ph=None
-    if pick!='none' and r.get('photos'):
-        idx=pick if isinstance(pick,int) else 0
-        if idx<len(r['photos']):
-            p=r['photos'][idx];base=f"{SRC}/stage{'3' if idx>0 else '2'}/img/{r['id']}_{idx}"
-            src=base+'_l.jpg' if os.path.exists(base+'_l.jpg') else base+'_m.jpg'
-            if os.path.exists(src):ph=(p,src)
+    photos=r.get('photos') or []
+    if k in override and override[k]:
+        photos=override[k];pick=pick if isinstance(pick,int) and pick>=10 else 10
+    if pick!='none' and photos:
+        idx=pick if isinstance(pick,int) else 0;li=idx-10 if idx>=10 else idx
+        if li<len(photos):
+            p=photos[li];src=None
+            for stg in ('3','2'):
+                base=f"{SRC}/stage{stg}/img/{r['id']}_{idx}"
+                for suf in ('_l.jpg','_m.jpg'):
+                    if not src and os.path.exists(base+suf):src=base+suf
+            if src:ph=(p,src)
     if ph:
         p,src=ph;pid=str(p['id']);im=Image.open(src).convert('RGB')
         hd=im.copy();hd.thumbnail((1280,1280));b=io.BytesIO();hd.save(b,'JPEG',quality=80,optimize=True,progressive=True);open(T(f'photos/wl/hd/{pid}.jpg'),'wb').write(b.getvalue());hd_bytes+=len(b.getvalue())

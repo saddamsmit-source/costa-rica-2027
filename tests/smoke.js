@@ -6,7 +6,7 @@ const {chromium}=require('playwright');const path=require('path');
   const p=await b.newPage({viewport:{width:390,height:844}});
   const errs=[];p.on('pageerror',e=>errs.push('JS: '+e.message));
   p.on('console',m=>{if(m.type()==='error'&&!/net::|ERR_|Failed to load resource|CORS|woff2/.test(m.text()))errs.push('console: '+m.text())});
-  p.on('requestfailed',r=>{if(r.url().startsWith('file:')&&!r.url().endsWith('.woff2'))errs.push('ontbreekt: '+r.url())});
+  p.on('requestfailed',r=>{if(r.url().startsWith('file:')&&!r.url().endsWith('.woff2')&&!/ABORTED/.test(r.failure()?.errorText||''))errs.push('ontbreekt: '+r.url())});
   await p.route(/^https?:/,r=>r.abort());
   const fixture={notes:{'7':'Testnotitie dag 7'},bookings:{'7-0':'geboekt','17-0':'geboekt'},costs:{},hotelSelected:{},checks:{},v43Observations:{'resplendent quetzal':{name:'Resplendent quetzal',places:{'San Gerardo de Dota':{seen:true,photo:true}}}},v43Extras:{'Monteverde':['Testuil']},v43Migrated:true,v44Log:{},v48Init:true,v48Pack:{'0-0':true},v49Open:{},gpsTracks:[],v51Rates:{eurusd:1.1176,usdcrc:455.47,date:'12 okt 2026'}};
   await p.addInitScript(f=>{try{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify(f))}catch(e){}},fixture);
@@ -26,7 +26,12 @@ const {chromium}=require('playwright');const path=require('path');
   await p.evaluate(()=>{daySection='wildlife';render()});await must('.ds-sp','soortrij');await must('#v50q','zoekveld');
   await p.evaluate(()=>document.querySelector('[data-v43-kind="photo"]').click());
   if(!(await p.evaluate(()=>Object.values(state.v43Observations).some(o=>Object.values(o.places).some(x=>x.photo&&x.seen)))))errs.push('registreren foto werkt niet');
-  await p.evaluate(()=>document.querySelector('[data-ds-sp-toggle]').click());if(await p.evaluate(()=>document.querySelector('.ds-sp-body').hidden))errs.push('soort uitklappen werkt niet');
+  await p.evaluate(()=>document.querySelector('[data-ds-sp-toggle]').click());if(!(await p.$('#wl2Sheet .wl2-body h2')))errs.push('soortvenster opent niet');
+  const was=await p.evaluate(()=>document.querySelector('#wl2Sheet [data-wl2-reg="seen"]').classList.contains('on'));await p.evaluate(()=>document.querySelector('#wl2Sheet [data-wl2-reg="seen"]').click());
+  if(was===(await p.evaluate(()=>document.querySelector('#wl2Sheet [data-wl2-reg="seen"]').classList.contains('on'))))errs.push('registreren in soortvenster');
+  if(was)await p.evaluate(()=>document.querySelector('#wl2Sheet [data-wl2-reg="seen"]').click());if(!(await p.$('#wl2Sheet .wl2-obs')))errs.push('waarneming in soortvenster');
+  if(await p.$('#wl2Sheet [data-wl2-zoom]')){await p.click('#wl2Sheet [data-wl2-zoom]');await must('.wl2-zoom img','zoomweergave');await p.click('.wl2-zx')}
+  await p.evaluate(()=>wl2Close());
   for(const f of ['Vogels','Zeldzaam','Seizoen','Nog niet gezien','Alle']){await p.evaluate(f=>document.querySelector(`[data-v47-filter="${f}"]`)?.click(),f)}
   await p.evaluate(()=>{const q=document.getElementById('v50q');q.value='zzzz';q.dispatchEvent(new Event('input'))});if(await p.evaluate(()=>[...document.querySelectorAll('.ds-sp')].some(c=>c.style.display!=='none')))errs.push('zoeken filtert niet');
   await p.evaluate(()=>{const q=document.getElementById('v50q');q.value='';q.dispatchEvent(new Event('input'))});

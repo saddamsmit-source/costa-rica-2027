@@ -12,7 +12,8 @@
   "Gray-tailed mountain-gem": 5831,
   "Blue-crowned manakin": 1446071,
   "Black-throated trogon": 1507428,
-  "Crested bobwhite": 700998
+  "Crested bobwhite": 700998,
+  "Common basilisk": 33121
  },
  "drop": [
   "105924",
@@ -30,7 +31,20 @@
   "66016": 2,
   "41970": 2,
   "30181": 1,
-  "883882": 2
+  "883882": 2,
+  "Brown-billed scythebill": 12,
+  "Highland tinamou": 11,
+  "Marbled wood-quail": 11,
+  "21323": 11,
+  "23697": 11,
+  "26609": 11,
+  "28709": 10,
+  "66602": 10,
+  "65304": 13,
+  "27059": 10
  },
- "names": {}
+ "names": {},
+ "clone": {
+  "Brown basilisk": "Common basilisk"
+ }
 }
