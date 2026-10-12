@@ -8,7 +8,7 @@ const {chromium}=require('playwright');const path=require('path');
   p.on('console',m=>{if(m.type()==='error'&&!/net::|ERR_|Failed to load resource|CORS|woff2/.test(m.text()))errs.push('console: '+m.text())});
   p.on('requestfailed',r=>{if(r.url().startsWith('file:')&&!r.url().endsWith('.woff2')&&!/ABORTED/.test(r.failure()?.errorText||''))errs.push('ontbreekt: '+r.url())});
   await p.route(/^https?:/,r=>r.abort());
-  const fixture={notes:{'7':'Testnotitie dag 7'},bookings:{'7-0':'geboekt','17-0':'geboekt'},costs:{},hotelSelected:{},checks:{},v43Observations:{'resplendent quetzal':{name:'Resplendent quetzal',places:{'San Gerardo de Dota':{seen:true,photo:true}}}},v43Extras:{'Monteverde':['Testuil']},v43Migrated:true,v44Log:{},v48Init:true,v48Pack:{'0-0':true},v49Open:{},gpsTracks:[],v51Rates:{eurusd:1.1176,usdcrc:455.47,date:'12 okt 2026'}};
+  const fixture={notes:{'7':'Testnotitie dag 7'},bookings:{'7-0':'geboekt','17-0':'geboekt'},costs:{},hotelSelected:{},checks:{},v43Observations:{'resplendent quetzal':{name:'Resplendent quetzal',places:{'San Gerardo de Dota':{seen:true,photo:true}}},'whimbrel':{name:'Whimbrel',places:{'Tárcoles':{seen:true}}},'blue-crowned manakin':{name:'Blue-crowned manakin',places:{'Corcovado':{seen:true,n:2}}},"cherrie's tanager":{name:"Cherrie's tanager",places:{'Uvita':{seen:true}}},"passerini's tanager":{name:"Passerini's tanager",places:{'Cahuita':{seen:true}}},'glass frog':{name:'Glass frog',places:{'Monteverde':{seen:true}}},'gray fox':{name:'Gray fox',places:{'San José':{seen:true}}}},v43Extras:{'Monteverde':['Testuil']},v43Migrated:true,v44Log:{},v48Init:true,v48Pack:{'0-0':true},v49Open:{},gpsTracks:[],v51Rates:{eurusd:1.1176,usdcrc:455.47,date:'12 okt 2026'}};
   await p.addInitScript(f=>{try{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify(f))}catch(e){}},fixture);
   await p.goto('file://'+path.resolve(__dirname,'..','index.html'));await p.waitForTimeout(400);
   const comp=await p.evaluate(()=>({note:state.notes['7'],q:!!state.v43Observations['resplendent quetzal']?.places?.['San Gerardo de Dota']?.photo,pack:state.v48Pack['0-0'],book:state.bookings['17-0'],extra:(state.v43Extras.Monteverde||[]).includes('Testuil')}));
@@ -79,6 +79,27 @@ const {chromium}=require('playwright');const path=require('path');
   await p.evaluate(()=>{dsMore='';render()});await must('[data-ds-more="share"]','deelrij in Meer');
   if(!(await p.evaluate(()=>wxUrl({lat:1,lon:1}).includes('relative_humidity_2m_mean')&&WX_CLIM.points[wxLoc(S[9]).key]['02'].mean>0)))errs.push('luchtvochtigheid bron/klimaat');
   await p.evaluate(()=>{tab='days';currentDay=10;daySection='overview';render()});await must('#dsWx .ds-wx-day.clim','klimaatindicatie');
+  /* v7.2: Wildlife 2.1 */
+  const fs=require('fs');
+  const w=await p.evaluate(()=>({meta:WL2_META,keys:Object.keys(WL2),recs:WL2}));
+  if(w.meta.v!=='2.1')errs.push('WL2-versie '+w.meta.v);
+  const oldKeys=JSON.parse(fs.readFileSync(path.resolve(__dirname,'wl20-keys.json'),'utf8'));const lost=oldKeys.filter(k=>!w.keys.includes(k));if(lost.length)errs.push('sleutels verdwenen: '+lost.join(', '));
+  for(const [k,r] of Object.entries(w.recs)){if(r.p)for(const f of [`photos/wl/${r.p}.jpg`,`photos/wl/t/${r.p}.jpg`,`photos/wl/hd/${r.p}.jpg`])if(!fs.existsSync(path.resolve(__dirname,'..',f)))errs.push('foto ontbreekt: '+k+' '+f);
+    if(!r.li&&r.p||r.p&&!r.cr)errs.push('licentie/maker ontbreekt: '+k)}
+  const SNAKE=['Viperidae','Elapidae','Colubridae','Dipsadidae','Boidae'];const MIM='Kan op een gevaarlijke koraalslang lijken. Raak onbekende slangen niet aan en probeer ze niet op te pakken.';
+  for(const [k,r] of Object.entries(w.recs))if(SNAKE.includes(r.f)){if(!r.sf)errs.push('veiligheidstekst ontbreekt: '+k);if(/ongevaarlijk|licht giftig|niet gevaarlijk/i.test((r.h||'')+(r.l||'')+(r.tp||'')))errs.push('misleidende slangtekst: '+k)}
+  for(const k of ['Red coffee snake','Forest flame snake','Double-banded coral snake mimic'])if(w.recs[k]?.sf!==MIM)errs.push('koraalslangtekst: '+k);
+  for(const [k,r] of Object.entries(w.recs)){const all={...(r.r||{})};if(r.c!=='Vogels'&&(all['San José']||0)>1)errs.push('San José te hoog: '+k);if(r.f==='Felidae'&&Object.values(all).some(t=>t>1))errs.push('katachtige te hoog: '+k)}
+  const rk=await p.evaluate(()=>({o:Object.keys(state.v43Observations),life:wl2Life(),lab:DS_CHANCE_TXT[1],f15:V47_FOCUS[15].list,f18:V47_FOCUS[18].list,sj:v47Chance('San José','Gray fox'),wh:v47Chance('Tárcoles','Whimbrel')}));
+  for(const k of ['whimbrel','blue-crowned manakin',"cherrie's tanager","passerini's tanager",'glass frog','gray fox'])if(!rk.o.includes(k))errs.push('waarneming verloren: '+k);
+  const lc=await p.evaluate(()=>{const names=new Set(wl2Entries().map(e=>e.name));const m=wl2Life().match(/<b class="ds-num">(\d+)<\/b>/);return {seen:names.size,life:m?+m[1]:-1,t:names.has("Cherrie's tanager")&&names.has("Passerini's tanager"),g:names.has('Glass frog')}});
+  if(!lc.t||!lc.g||lc.life!==lc.seen-2)errs.push('soortenlijst telt vormen/niet-op-soort: '+JSON.stringify(lc));
+  if(rk.lab!=='Zeldzaam')errs.push('kanslabel');if(!rk.f15.includes('Cocos booby')||rk.f15.includes('Brown booby'))errs.push('dagfocus 15');if(rk.f18[0]!=='Panamic sergeant major')errs.push('dagfocus 18');
+  if(rk.sj!==1)errs.push('eigen waarneming niet in regiolijst');if(rk.wh<3)errs.push('kans regenwulp Tárcoles');
+  const opened=await p.evaluate(()=>{let bad=[];for(const k of Object.keys(WL2)){try{wl2Open(k,'Corcovado');if(!document.querySelector('#wl2Sheet .wl2-body h2'))bad.push(k);wl2Close()}catch(e){bad.push(k+': '+e.message)}}return bad});if(opened.length)errs.push('soortvenster: '+opened.slice(0,5).join(', '));
+  await p.evaluate(()=>{wl2Open('Red coffee snake','Cahuita')});if(!(await p.evaluate(()=>document.querySelector('#wl2Sheet .wl21-safe')?.textContent.includes('koraalslang'))))errs.push('veiligheidsblok niet zichtbaar');await p.evaluate(()=>wl2Close());
+  await p.evaluate(()=>{tab='wildlife';render();const g=document.getElementById('v50gq');g.value='Three-striped';g.dispatchEvent(new Event('input'))});if(!(await p.evaluate(()=>document.getElementById('v50gres').innerText.length>0&&!!document.querySelector('#v50gres [data-wl2="Three-striped%20warbler"]'))))errs.push('zoeken op oude naam');
+  await p.evaluate(()=>{const g=document.getElementById('v50gq');g.value='Kalkoengier';g.dispatchEvent(new Event('input'))});if(!(await p.evaluate(()=>!!document.querySelector('#v50gres [data-wl2="Turkey%20vulture"]'))))errs.push('zoeken op oude Nederlandse naam');
   const n=await p.evaluate(()=>Object.keys(V47_SP).length);if(n<250)errs.push('te weinig soorten: '+n);
   await b.close();
   if(errs.length){console.error('MISLUKT:\n'+errs.join('\n'));process.exit(1)}console.log('OK: alle schermen, 23 dagen x 5 tabs, '+n+' soorten');

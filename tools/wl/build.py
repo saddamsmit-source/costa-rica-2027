@@ -70,6 +70,15 @@ for nk,src in cfg.get('clone',{}).items():
 used={v['id'] for k,v in recs.items() if not k.isdigit()}
 for k in [k for k in recs if k.isdigit()]:
     if recs[k]['id'] in used:del recs[k]
+def save_photo(p,src):
+    """Schrijft hd (1280), standaard (640) en miniatuur (160) en geeft de bronvelden terug."""
+    pid=str(p['id']);im=Image.open(src).convert('RGB')
+    hd=im.copy();hd.thumbnail((1280,1280));b=io.BytesIO();hd.save(b,'JPEG',quality=80,optimize=True,progressive=True);open(T(f'photos/wl/hd/{pid}.jpg'),'wb').write(b.getvalue())
+    mid=im.copy();mid.thumbnail((640,640));mid.save(T(f'photos/wl/{pid}.jpg'),'JPEG',quality=78,optimize=True,progressive=True)
+    w,h=im.size;sq=min(w,h);top=int((h-sq)*.4) if h>w else 0;th=im.crop(((w-sq)//2,top,(w-sq)//2+sq,top+sq)).resize((160,160),Image.LANCZOS)
+    th.save(T(f'photos/wl/t/{pid}.jpg'),'JPEG',quality=78,optimize=True,progressive=True)
+    attr=p.get('attr') or '';m=re.match(r'\(c\)\s*(.*?),\s*(some|no) rights',attr);cr=m.group(1) if m else re.sub(r'^\(c\)\s*','',attr)
+    return {'p':pid,'hd':1,'cr':cr or 'onbekend','li':LIC.get(p['lic'],p['lic']),'u':f'https://www.inaturalist.org/photos/{pid}'},len(b.getvalue())
 out={};os.makedirs(T('photos/wl/t'),exist_ok=True);os.makedirs(T('photos/wl/hd'),exist_ok=True)
 hd_bytes=0;missing_photo=[]
 for k,r in recs.items():
@@ -104,16 +113,16 @@ for k,r in recs.items():
                     if not src and os.path.exists(base+suf):src=base+suf
             if src:ph=(p,src)
     if ph:
-        p,src=ph;pid=str(p['id']);im=Image.open(src).convert('RGB')
-        hd=im.copy();hd.thumbnail((1280,1280));b=io.BytesIO();hd.save(b,'JPEG',quality=80,optimize=True,progressive=True);open(T(f'photos/wl/hd/{pid}.jpg'),'wb').write(b.getvalue());hd_bytes+=len(b.getvalue())
-        mid=im.copy();mid.thumbnail((640,640));mid.save(T(f'photos/wl/{pid}.jpg'),'JPEG',quality=78,optimize=True,progressive=True)
-        w,h=im.size;sq=min(w,h);top=int((h-sq)*.4) if h>w else 0;th=im.crop(((w-sq)//2,top,(w-sq)//2+sq,top+sq)).resize((160,160),Image.LANCZOS)
-        th.save(T(f'photos/wl/t/{pid}.jpg'),'JPEG',quality=78,optimize=True,progressive=True)
-        attr=p.get('attr') or '';m=re.match(r'\(c\)\s*(.*?),\s*(some|no) rights',attr);cr=m.group(1) if m else re.sub(r'^\(c\)\s*','',attr)
-        rec.update({'p':pid,'hd':1,'cr':cr or 'onbekend','li':LIC.get(p['lic'],p['lic']),'u':f'https://www.inaturalist.org/photos/{pid}'})
+        f,nb=save_photo(*ph);rec.update(f);hd_bytes+=nb
     else:missing_photo.append(key)
     out[key]=rec
-meta={'n':len(out),'hdMB':round(hd_bytes/1048576),'source':'iNaturalist (waarnemingen jan–apr, research grade) en Wikipedia','built':'okt 2026'}
+# Wildlife 2.1: inhoudelijke correcties en nieuwe soorten (tools/wl/w21)
+if os.path.exists(T('tools/wl/w21/apply21.py')):
+    import importlib.util
+    _sp=importlib.util.spec_from_file_location('apply21',T('tools/wl/w21/apply21.py'));_m=importlib.util.module_from_spec(_sp);_sp.loader.exec_module(_m)
+    out,hd_bytes,missing_photo,meta21=_m.apply(out,{'SRC':SRC,'T':T,'save_photo':save_photo,'hd_bytes':hd_bytes,'missing':missing_photo,'reg_t':reg_t})
+else:meta21={}
+meta={'n':len(out),'hdMB':round(hd_bytes/1048576),'source':'iNaturalist (waarnemingen jan–apr, research grade) en Wikipedia','built':'okt 2026',**meta21}
 js='/* Wildlife 2.0 – gegenereerd door tools/wl/build.py; niet met de hand aanpassen */\nconst WL2_META='+json.dumps(meta,ensure_ascii=False)+';\nconst WL2='+json.dumps(out,ensure_ascii=False,separators=(',',':'))+';\n'
 open(T('js/30-wildlife-data.js'),'w').write(js)
 from collections import Counter

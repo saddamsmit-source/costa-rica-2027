@@ -1,0 +1,8263 @@
+{
+"Resplendent quetzal": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {
+"Monteverde": "Beste kans tijdens de Curi-Cancha-birdwalk met gids",
+"San Gerardo de Dota": "Tijdens de quetzaltour met gids"
+}
+},
+"Keel-billed toucan": {
+"r": {
+"Cahuita": 4,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 4,
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"Tárcoles"
+],
+"rn": {}
+},
+"Yellow-throated toucan": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Collared aracari": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Fiery-billed aracari": {
+"r": {
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Northern emerald-toucanet": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Scarlet macaw": {
+"r": {
+"Tortuguero": 2,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Turquoise-browed motmot": {
+"r": {
+"Rincón de la Vieja": 3,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Lesson's motmot": {
+"r": {
+"San José": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"San Gerardo de Dota",
+"Esterillos"
+],
+"rn": {}
+},
+"Three-wattled bellbird": {
+"r": {
+"Monteverde": 3
+},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Long-tailed manakin": {
+"r": {
+"Rincón de la Vieja": 4,
+"Monteverde": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Orange-bellied trogon": {
+"r": {
+"Monteverde": 3
+},
+"r1": [],
+"rn": {}
+},
+"Baird's trogon": {
+"r": {
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black guan": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Great curassow": {
+"r": {
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Uvita": 2,
+"Corcovado": 4
+},
+"r1": [
+"Cahuita",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Crested guan": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 4,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-cheeked ant-tanager": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {}
+},
+"Montezuma oropendola": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 3,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Passerini's tanager": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Blue-gray tanager": {
+"r": {
+"San José": 4,
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"San Gerardo de Dota": 4,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"Great kiskadee": {
+"r": {
+"San José": 4,
+"Cahuita": 4,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 4,
+"Monteverde": 3,
+"San Gerardo de Dota": 2,
+"Uvita": 4,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"Clay-colored thrush": {
+"r": {
+"San José": 4,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 4,
+"San Gerardo de Dota": 4,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"White-throated magpie-jay": {
+"r": {
+"La Fortuna": 2,
+"Rincón de la Vieja": 4,
+"Monteverde": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Crested caracara": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Laughing falcon": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"King vulture": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Roadside hawk": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Osprey": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Common black hawk": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Roseate spoonbill": {
+"r": {
+"La Fortuna": 4,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Tortuguero",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Jabiru": {
+"r": {
+"La Fortuna": 4
+},
+"r1": [
+"Tortuguero"
+],
+"rn": {}
+},
+"Wood stork": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Anhinga": {
+"r": {
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Northern jacana": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Boat-billed heron": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Agami heron": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 3
+},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Bare-throated tiger heron": {
+"r": {
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Green ibis": {
+"r": {
+"Tortuguero": 4,
+"La Fortuna": 4
+},
+"r1": [
+"San José",
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Great egret": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 3,
+"Tárcoles": 4
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Yellow-crowned night heron": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Sungrebe": {
+"r": {
+"Tortuguero": 3,
+"La Fortuna": 4
+},
+"r1": [],
+"rn": {}
+},
+"Ringed kingfisher": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Green kingfisher": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Amazon kingfisher": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"American pygmy kingfisher": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Nicaraguan grackle": {
+"r": {
+"La Fortuna": 4
+},
+"r1": [],
+"rn": {}
+},
+"Mangrove hummingbird": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Fiery-throated hummingbird": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Talamanca hummingbird": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Volcano hummingbird": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {}
+},
+"Violet sabrewing": {
+"r": {
+"Monteverde": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Coppery-headed emerald": {
+"r": {
+"Monteverde": 4
+},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Purple-throated mountain-gem": {
+"r": {
+"Monteverde": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Green hermit": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Rufous-tailed hummingbird": {
+"r": {
+"San José": 4,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"San Gerardo de Dota": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Long-tailed silky-flycatcher": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Flame-colored tanager": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Acorn woodpecker": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Brown pelican": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Magnificent frigatebird": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Brown booby": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero"
+],
+"rn": {}
+},
+"Royal tern": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Whimbrel": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 3,
+"Tárcoles": 4
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Brown-throated three-toed sloth": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Hoffmann's two-toed sloth": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Manuel Antonio": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Mantled howler monkey": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"White-faced capuchin": {
+"r": {
+"Cahuita": 4,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 4,
+"Monteverde": 3,
+"Uvita": 3,
+"Corcovado": 4,
+"Manuel Antonio": 4,
+"Tárcoles": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Central American spider monkey": {
+"r": {
+"Tortuguero": 4,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Corcovado": 3
+},
+"r1": [
+"Cahuita",
+"Monteverde",
+"Uvita",
+"Tárcoles"
+],
+"rn": {}
+},
+"Central American squirrel monkey": {
+"r": {
+"Corcovado": 3,
+"Manuel Antonio": 2
+},
+"r1": [
+"San José",
+"Tárcoles"
+],
+"rn": {}
+},
+"White-nosed coati": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 4,
+"Uvita": 2,
+"Corcovado": 4,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Central American agouti": {
+"r": {
+"Cahuita": 4,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Northern tamandua": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Corcovado": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Monteverde",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Kinkajou": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Baird's tapir": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita"
+],
+"rn": {
+"Corcovado": "Vooral rond Sirena met gids; bij San Pedrillo kleiner"
+}
+},
+"White-lipped peccary": {
+"r": {},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Corcovado"
+],
+"rn": {}
+},
+"Collared peccary": {
+"r": {
+"Corcovado": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Northern raccoon": {
+"r": {
+"Cahuita": 4,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita"
+],
+"rn": {}
+},
+"Variegated squirrel": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"San Gerardo de Dota",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Proboscis bat": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Corcovado": 4,
+"Tárcoles": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Tent-making bat": {
+"r": {
+"Uvita": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Humpback whale": {
+"r": {
+"Uvita": 3,
+"Corcovado": 2
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {
+"Uvita": "Februari valt in het seizoen van de noordelijke populatie (ca. december–maart)"
+}
+},
+"Pantropical spotted dolphin": {
+"r": {
+"Uvita": 3,
+"Corcovado": 3
+},
+"r1": [],
+"rn": {}
+},
+"Common bottlenose dolphin": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Spectacled caiman": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"American crocodile": {
+"r": {
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Green iguana": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 3,
+"Corcovado": 4,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Black spiny-tailed iguana": {
+"r": {
+"Rincón de la Vieja": 4,
+"Uvita": 3,
+"Corcovado": 2,
+"Manuel Antonio": 4,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Common basilisk": {
+"r": {
+"Uvita": 3,
+"Corcovado": 4,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Green basilisk": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Eyelash viper": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {
+"Cahuita": "Gidsen in Cahuita NP kennen vaak vaste plekken"
+}
+},
+"Side-striped palm-pitviper": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Green sea turtle": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero"
+],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño",
+"Tortuguero": "Het nestseizoen valt buiten februari"
+}
+},
+"Hawksbill sea turtle": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Cahuita"
+],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Olive ridley sea turtle": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {
+"Uvita": "Soms aan het oppervlak tijdens de walvistocht"
+}
+},
+"Red-eyed tree frog": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {
+"Tortuguero": "Vooral tijdens de nachtwandeling",
+"Monteverde": "Komt vooral lager dan Monteverde voor"
+}
+},
+"Strawberry poison dart frog": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 3
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Green-and-black poison dart frog": {
+"r": {
+"Cahuita": 4,
+"La Fortuna": 2,
+"Uvita": 3,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Tortuguero",
+"Monteverde"
+],
+"rn": {}
+},
+"Glass frog": {
+"r": {},
+"r1": [
+"Monteverde"
+],
+"rn": {
+"Monteverde": "Weinig gegevens: kans niet goed te schatten"
+}
+},
+"Whitetip reef shark": {
+"r": {
+"Corcovado": 2
+},
+"r1": [],
+"rn": {
+"Corcovado": "Vooral bij duiken; bij snorkelen soms vanaf het oppervlak"
+}
+},
+"Spotted eagle ray": {
+"r": {
+"Corcovado": 2
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Black vulture": {
+"r": {
+"San José": 3,
+"Cahuita": 4,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 4,
+"Uvita": 4,
+"Corcovado": 4,
+"Esterillos": 4,
+"Manuel Antonio": 4,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"Turkey vulture": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 4,
+"Monteverde": 3,
+"San Gerardo de Dota": 4,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"Tropical kingbird": {
+"r": {
+"San José": 4,
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 3,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"Great-tailed grackle": {
+"r": {
+"San José": 4,
+"Cahuita": 4,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 4,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Brown jay": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 4,
+"Uvita": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"San Gerardo de Dota",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Gray-headed chachalaca": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"La Fortuna": 4,
+"Monteverde": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Manuel Antonio": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Esterillos",
+"Tárcoles"
+],
+"rn": {}
+},
+"Cattle egret": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Palm tanager": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Monteverde": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Golden-hooded tanager": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Uvita": 3,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Red-legged honeycreeper": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Tortuguero",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Cherrie's tanager": {
+"r": {
+"Uvita": 4,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Yellow-headed caracara": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"La Fortuna": 3,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Swallow-tailed kite": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Baltimore oriole": {
+"r": {
+"San José": 4,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"San Gerardo de Dota": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Tennessee warbler": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Chestnut-sided warbler": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"San Gerardo de Dota",
+"Esterillos"
+],
+"rn": {}
+},
+"Summer tanager": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Yellow warbler": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Wilson's warbler": {
+"r": {
+"San José": 2,
+"La Fortuna": 2,
+"Monteverde": 4,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Spotted sandpiper": {
+"r": {
+"Cahuita": 4,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Broad-winged hawk": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Rufous-naped wren": {
+"r": {
+"San José": 4,
+"Rincón de la Vieja": 3,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Monteverde",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Hoffmann's woodpecker": {
+"r": {
+"San José": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Tortuguero",
+"Uvita"
+],
+"rn": {}
+},
+"Black-headed trogon": {
+"r": {
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"Monteverde"
+],
+"rn": {}
+},
+"Orange-fronted parakeet": {
+"r": {
+"Rincón de la Vieja": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White-fronted parrot": {
+"r": {
+"San José": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Elegant trogon": {
+"r": {
+"Rincón de la Vieja": 2
+},
+"r1": [],
+"rn": {}
+},
+"Golden-browed chlorophonia": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Black-faced solitaire": {
+"r": {
+"La Fortuna": 2,
+"Monteverde": 4,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Sooty thrush": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {}
+},
+"Collared redstart": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {}
+},
+"Black-and-yellow silky-flycatcher": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Spangle-cheeked tanager": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 3
+},
+"r1": [],
+"rn": {}
+},
+"Snail kite": {
+"r": {
+"La Fortuna": 2
+},
+"r1": [
+"Tortuguero"
+],
+"rn": {}
+},
+"Purple gallinule": {
+"r": {
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Neotropic cormorant": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Limpkin": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 4
+},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Rufescent tiger heron": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna"
+],
+"rn": {}
+},
+"Great green macaw": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {
+"Cahuita": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat",
+"Tortuguero": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat",
+"La Fortuna": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat"
+}
+},
+"Sunbittern": {
+"r": {
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Turquoise cotinga": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Uvita",
+"Tárcoles"
+],
+"rn": {}
+},
+"Yellow-billed cotinga": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Uvita",
+"Tárcoles"
+],
+"rn": {}
+},
+"Red-capped manakin": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Spectacled owl": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Ornate hawk-eagle": {
+"r": {
+"La Fortuna": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Black-hooded antshrike": {
+"r": {
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [],
+"rn": {}
+},
+"Mangrove swallow": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 4,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Red-tailed squirrel": {
+"r": {
+"Cahuita": 2,
+"San Gerardo de Dota": 4,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Nine-banded armadillo": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Ocelot": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Tayra": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Neotropical river otter": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Boa constrictor": {
+"r": {
+"Tortuguero": 2,
+"Rincón de la Vieja": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Fer-de-lance": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Tárcoles"
+],
+"rn": {}
+},
+"Black river turtle": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Green parrot snake": {
+"r": {
+"Manuel Antonio": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Chestnut-headed oropendola": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita"
+],
+"rn": {}
+},
+"Black-cheeked woodpecker": {
+"r": {
+"Cahuita": 4,
+"Tortuguero": 3,
+"La Fortuna": 4
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Crimson-collared tanager": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Red-lored parrot": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Mealy parrot": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Olive-throated parakeet": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4
+},
+"r1": [
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"White-collared manakin": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 3
+},
+"r1": [
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Bananaquit": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Monteverde": 3,
+"Uvita": 3,
+"Corcovado": 4,
+"Manuel Antonio": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Esterillos",
+"Tárcoles"
+],
+"rn": {}
+},
+"Buff-throated saltator": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Long-billed hermit": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Crowned woodnymph": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Black-cowled oriole": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Snowy cotinga": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2
+},
+"r1": [
+"Tortuguero"
+],
+"rn": {}
+},
+"Little blue heron": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 4,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Snowy egret": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Tricolored heron": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Green heron": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Gray-cowled wood-rail": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Slaty-tailed trogon": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Rufous-tailed jacamar": {
+"r": {
+"La Fortuna": 3,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White-necked puffbird": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Great potoo": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2
+},
+"r1": [],
+"rn": {}
+},
+"Pale-billed woodpecker": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Uvita",
+"Esterillos"
+],
+"rn": {}
+},
+"Lineated woodpecker": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Monteverde",
+"Esterillos"
+],
+"rn": {}
+},
+"Gray hawk": {
+"r": {
+"San José": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Esterillos": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Bat falcon": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White hawk": {
+"r": {
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Black-bellied whistling-duck": {
+"r": {
+"San José": 2,
+"La Fortuna": 4,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Muscovy duck": {
+"r": {
+"San José": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Blue-winged teal": {
+"r": {
+"La Fortuna": 4,
+"Uvita": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Least grebe": {
+"r": {},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"White ibis": {
+"r": {
+"La Fortuna": 4,
+"Uvita": 3,
+"Corcovado": 4,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Tortuguero"
+],
+"rn": {}
+},
+"Pinnated bittern": {
+"r": {},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Nicaraguan seed-finch": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero"
+],
+"rn": {}
+},
+"Green-breasted mango": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-crowned tityra": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Esterillos"
+],
+"rn": {}
+},
+"Emerald tanager": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Silver-throated tanager": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Bay-headed tanager": {
+"r": {
+"La Fortuna": 3,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Speckled tanager": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Snowcap": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Black-crested coquette": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Bare-necked umbrellabird": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Keel-billed motmot": {
+"r": {
+"La Fortuna": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Broad-billed motmot": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Rufous motmot": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Inca dove": {
+"r": {
+"San José": 3,
+"Rincón de la Vieja": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 3,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"White-winged dove": {
+"r": {
+"San José": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Esterillos": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"Tortuguero",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Groove-billed ani": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Esterillos": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Streak-backed oriole": {
+"r": {
+"Rincón de la Vieja": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Banded wren": {
+"r": {
+"Rincón de la Vieja": 3,
+"Tárcoles": 2
+},
+"r1": [],
+"rn": {}
+},
+"Stripe-headed sparrow": {
+"r": {
+"Rincón de la Vieja": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Monteverde",
+"Esterillos"
+],
+"rn": {}
+},
+"Blue-black grassquit": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Pacific screech-owl": {
+"r": {
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Ferruginous pygmy-owl": {
+"r": {
+"San José": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita"
+],
+"rn": {}
+},
+"Lesser ground-cuckoo": {
+"r": {
+"Rincón de la Vieja": 3
+},
+"r1": [
+"San José",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Thicket tinamou": {
+"r": {
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Yellow-naped parrot": {
+"r": {},
+"r1": [
+"Rincón de la Vieja",
+"Tárcoles"
+],
+"rn": {
+"Rincón de la Vieja": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat",
+"Tárcoles": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat"
+}
+},
+"Crested bobwhite": {
+"r": {},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Prong-billed barbet": {
+"r": {
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"La Fortuna"
+],
+"rn": {}
+},
+"Slate-throated redstart": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Common chlorospingus": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Ruddy treerunner": {
+"r": {
+"Monteverde": 2,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Spotted barbtail": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"La Fortuna"
+],
+"rn": {}
+},
+"Gray-breasted wood-wren": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Three-striped warbler": {
+"r": {
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Stripe-tailed hummingbird": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Green-crowned brilliant": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Magenta-throated woodstar": {
+"r": {
+"Monteverde": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Lesser violetear": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna"
+],
+"rn": {}
+},
+"Collared trogon": {
+"r": {
+"La Fortuna": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Azure-hooded jay": {
+"r": {
+"Monteverde": 3
+},
+"r1": [],
+"rn": {}
+},
+"Brown-billed scythebill": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"La Fortuna",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Black-breasted wood-quail": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Highland tinamou": {
+"r": {},
+"r1": [
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Mottled owl": {
+"r": {
+"San José": 2,
+"Monteverde": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Bare-shanked screech-owl": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Flame-throated warbler": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Yellow-thighed brushfinch": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Large-footed finch": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {}
+},
+"Black-capped flycatcher": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [],
+"rn": {}
+},
+"Ruddy-capped nightingale-thrush": {
+"r": {
+"Monteverde": 2,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Black-billed nightingale-thrush": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {}
+},
+"Mountain thrush": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Torrent tyrannulet": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"American dipper": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Gray-tailed mountain-gem": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [],
+"rn": {}
+},
+"Scintillant hummingbird": {
+"r": {
+"Monteverde": 2,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Ochraceous pewee": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [],
+"rn": {}
+},
+"Spotted wood-quail": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Buffy-crowned wood-partridge": {
+"r": {},
+"r1": [
+"San José",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Band-tailed pigeon": {
+"r": {
+"Monteverde": 2,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita"
+],
+"rn": {}
+},
+"Elegant euphonia": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Yellow-bellied siskin": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Red-tailed hawk": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Dusky nightjar": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Orange-collared manakin": {
+"r": {
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Blue-crowned manakin": {
+"r": {
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Riverside wren": {
+"r": {
+"Uvita": 3,
+"Corcovado": 4,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Bright-rumped attila": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Charming hummingbird": {
+"r": {
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Golden-naped woodpecker": {
+"r": {
+"Uvita": 3,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Masked tityra": {
+"r": {
+"San José": 2,
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San Gerardo de Dota",
+"Esterillos"
+],
+"rn": {}
+},
+"Smooth-billed ani": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Esterillos",
+"Tárcoles"
+],
+"rn": {}
+},
+"White-crowned parrot": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Orange-chinned parakeet": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Brown-hooded parrot": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-throated trogon": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 4,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"White-crested coquette": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Tárcoles"
+],
+"rn": {}
+},
+"Long-billed starthroat": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Purple-crowned fairy": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Bicolored antbird": {
+"r": {
+"La Fortuna": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Rufous piha": {
+"r": {
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Marbled wood-quail": {
+"r": {},
+"r1": [
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Great tinamou": {
+"r": {
+"Corcovado": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Crane hawk": {
+"r": {
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Laughing gull": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Sanderling": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"La Fortuna",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Semipalmated plover": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Willet": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 3,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Wilson's plover": {
+"r": {
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Uvita"
+],
+"rn": {}
+},
+"Black-necked stilt": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Collared plover": {
+"r": {
+"Cahuita": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Esterillos"
+],
+"rn": {}
+},
+"Double-striped thick-knee": {
+"r": {
+"La Fortuna": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"Esterillos"
+],
+"rn": {}
+},
+"Panama flycatcher": {
+"r": {
+"Tárcoles": 3
+},
+"r1": [
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Mangrove vireo": {
+"r": {
+"Tárcoles": 2
+},
+"r1": [],
+"rn": {}
+},
+"Painted bunting": {
+"r": {
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Rufous-collared sparrow": {
+"r": {
+"San José": 4,
+"La Fortuna": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Giant toad": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Emerald swift": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Border anole": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota",
+"Tárcoles"
+],
+"rn": {}
+},
+"Middle American ameiva": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Social flycatcher": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 4,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Masked tree frog": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Tortuguero",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Variable seedeater": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Savage's thin-toed frog": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Yellow-throated euphonia": {
+"r": {
+"San José": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Esterillos"
+],
+"rn": {}
+},
+"Yellow-headed gecko": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"Uvita": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Many-scaled anole": {
+"r": {
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2
+},
+"r1": [
+"Tárcoles"
+],
+"rn": {}
+},
+"Red-billed pigeon": {
+"r": {
+"San José": 4,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Helmeted iguana": {
+"r": {
+"Cahuita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 3
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Green honeycreeper": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Southern house wren": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 4,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Great blue heron": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Crimson-fronted parakeet": {
+"r": {
+"San José": 4,
+"Cahuita": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Russet-naped wood-rail": {
+"r": {
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Cahuita",
+"Monteverde"
+],
+"rn": {}
+},
+"Southern lapwing": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Delicate ameiva": {
+"r": {
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita"
+],
+"rn": {}
+},
+"Brilliant forest frog": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Yellowish flycatcher": {
+"r": {
+"Monteverde": 4,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Chestnut-backed antbird": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 4,
+"Manuel Antonio": 3,
+"Tárcoles": 4
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos"
+],
+"rn": {}
+},
+"Common squirrel-cuckoo": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Tropical mockingbird": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Rosenberg's gladiator frog": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"San José",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Common tody-flycatcher": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White-eared ground-sparrow": {
+"r": {
+"San José": 3,
+"Monteverde": 4
+},
+"r1": [],
+"rn": {}
+},
+"White-tailed deer": {
+"r": {
+"Manuel Antonio": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Yellow-faced grassquit": {
+"r": {
+"San José": 2,
+"La Fortuna": 3,
+"Monteverde": 4,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Four-lined whiptail": {
+"r": {
+"Cahuita": 3,
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Harlequin treefrog": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"Monteverde",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Common pauraque": {
+"r": {
+"San José": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Slaty flowerpiercer": {
+"r": {
+"Monteverde": 2,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Fitzinger's robber frog": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Monteverde"
+],
+"rn": {}
+},
+"Ruddy ground dove": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Common blunt-headed tree snake": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Corcovado": 2
+},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"White-whiskered puffbird": {
+"r": {
+"Cahuita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Pale-vented pigeon": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2
+},
+"r1": [
+"Esterillos",
+"Tárcoles"
+],
+"rn": {}
+},
+"Gray-capped flycatcher": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Sooty-capped chlorospingus": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Melodious blackbird": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Cinnamon-bellied saltator": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Monteverde": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Neotropical green anole": {
+"r": {
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Pygmy rain frog": {
+"r": {
+"La Fortuna": 2,
+"Monteverde": 3,
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Tufted flycatcher": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna"
+],
+"rn": {}
+},
+"Olive-backed euphonia": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 3
+},
+"r1": [
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Common potoo": {
+"r": {
+"La Fortuna": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Tárcoles"
+],
+"rn": {}
+},
+"Copper anole": {
+"r": {
+"Rincón de la Vieja": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde",
+"Uvita"
+],
+"rn": {}
+},
+"White-tipped dove": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Cocos booby": {
+"r": {
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2
+},
+"r1": [
+"Esterillos",
+"Tárcoles"
+],
+"rn": {}
+},
+"Ornate cat-eyed snake": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Boat-billed flycatcher": {
+"r": {
+"San José": 3,
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [],
+"rn": {}
+},
+"Olive snouted tree frog": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Tárcoles": 2
+},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Gartered violaceous trogon": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-and-white owl": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Drab tree frog": {
+"r": {
+"La Fortuna": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Scaly-breasted hummingbird": {
+"r": {
+"La Fortuna": 3,
+"Uvita": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Morelet's seedeater": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Streaked flycatcher": {
+"r": {
+"Uvita": 3,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Köhler’s vine snake": {
+"r": {
+"Cahuita": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Slaty-backed nightingale-thrush": {
+"r": {
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"La Fortuna",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Black-striped sparrow": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Dusky-capped flycatcher": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"San Gerardo de Dota",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Mexican hairy dwarf porcupine": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Barred antshrike": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Violet-headed hummingbird": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Humble anole": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Streak-headed woodcreeper": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Crested anole": {
+"r": {
+"Cahuita": 3
+},
+"r1": [
+"Tortuguero",
+"Monteverde"
+],
+"rn": {}
+},
+"Leaf litter toad": {
+"r": {
+"La Fortuna": 2
+},
+"r1": [
+"Tortuguero",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Wedge-billed woodcreeper": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 3,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Chestnut-capped warbler": {
+"r": {
+"San José": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Stream anole": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Philadelphia vireo": {
+"r": {
+"San José": 3,
+"Cahuita": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"San Gerardo de Dota": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"Esterillos"
+],
+"rn": {}
+},
+"Blue-and-white swallow": {
+"r": {
+"San José": 3,
+"La Fortuna": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Uvita"
+],
+"rn": {}
+},
+"Mountain elaenia": {
+"r": {
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Nicaraguan slider": {
+"r": {
+"La Fortuna": 3,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Puffing snake": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Scarlet-thighed dacnis": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Rincón de la Vieja",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Red-winged blackbird": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black phoebe": {
+"r": {
+"San José": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"Tortuguero",
+"Monteverde",
+"Uvita"
+],
+"rn": {}
+},
+"Least sandpiper": {
+"r": {
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Cloudy snail-eating snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Northern turniptail gecko": {
+"r": {
+"Cahuita": 2,
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Rose-breasted grosbeak": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 3
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Volcano junco": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [],
+"rn": {}
+},
+"Gray-breasted martin": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Pug-nosed anole": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Wood thrush": {
+"r": {
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"San Gerardo de Dota",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-crowned antshrike": {
+"r": {
+"Cahuita": 4,
+"Tortuguero": 3
+},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Northern barred-woodcreeper": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Prothonotary warbler": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos"
+],
+"rn": {}
+},
+"Tink frog": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Orange-billed sparrow": {
+"r": {
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"White-necked jacobin": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Piratic flycatcher": {
+"r": {
+"San José": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Uvita": 3,
+"Corcovado": 2,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"San Gerardo de Dota",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Blue-vented hummingbird": {
+"r": {
+"San José": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"Tárcoles": 3
+},
+"r1": [
+"La Fortuna",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Emerald glass frog": {
+"r": {
+"Monteverde": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Uvita"
+],
+"rn": {}
+},
+"Double-toothed kite": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Black-throated green warbler": {
+"r": {
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Uvita"
+],
+"rn": {}
+},
+"White-throated thrush": {
+"r": {
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Gray-headed tanager": {
+"r": {
+"La Fortuna": 2,
+"Rincón de la Vieja": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Swainson's thrush": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Long-tailed tyrant": {
+"r": {
+"Cahuita": 3,
+"La Fortuna": 3
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Northern ghost bat": {
+"r": {
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Mahogany tree frog": {
+"r": {
+"La Fortuna": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Cocoa woodcreeper": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Buff-rumped warbler": {
+"r": {
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Monteverde",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Stejneger's robber frog": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Yellow-crowned euphonia": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Granular poison frog": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-and-white warbler": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Yellow-bellied elaenia": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Monteverde": 2,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Rincón de la Vieja",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Northern plain-xenops": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Hepatic tanager": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Corcovado"
+],
+"rn": {}
+},
+"Ghost anole": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Blue-throated goldentail": {
+"r": {
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Monteverde",
+"Esterillos"
+],
+"rn": {}
+},
+"Rufous-eyed brook frog": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"La Fortuna",
+"Uvita",
+"Tárcoles"
+],
+"rn": {}
+},
+"Red-crowned woodpecker": {
+"r": {
+"Uvita": 3,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Yellow treefrog": {
+"r": {
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-collared hawk": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 4
+},
+"r1": [],
+"rn": {}
+},
+"Cabanis's wren": {
+"r": {
+"San José": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Mountain lion": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {
+"Corcovado": "Af en toe gemeld rond Sirena"
+}
+},
+"Stripe-throated hermit": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Monteverde",
+"Esterillos"
+],
+"rn": {}
+},
+"Red-webbed tree frog": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2
+},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Mistletoe tyrannulet": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Monteverde": 3,
+"San Gerardo de Dota": 3,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Short-tailed hawk": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Tortuguero",
+"San Gerardo de Dota",
+"Uvita",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Northern waterthrush": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 4,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 4
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Golden-olive woodpecker": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Vaillant's frog": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"Monteverde"
+],
+"rn": {}
+},
+"Yellow-winged vireo": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Thick-billed seed-finch": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Uvita",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Crested owl": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Golden-crowned warbler": {
+"r": {
+"La Fortuna": 3,
+"Rincón de la Vieja": 2,
+"Monteverde": 3
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Lesser greenlet": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Esterillos"
+],
+"rn": {}
+},
+"Chicken snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"White-throated shrike-tanager": {
+"r": {
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"Tárcoles"
+],
+"rn": {}
+},
+"Rainforest hognose viper": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Black-cheeked warbler": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Southern opossum": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Red-throated ant-tanager": {
+"r": {
+"Cahuita": 3,
+"La Fortuna": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Spotted antbird": {
+"r": {
+"La Fortuna": 3,
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Monteverde"
+],
+"rn": {}
+},
+"Golden-winged warbler": {
+"r": {
+"La Fortuna": 2,
+"Monteverde": 3,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Milk frog": {
+"r": {
+"Manuel Antonio": 2
+},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Bronzed cowbird": {
+"r": {
+"San José": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Monteverde": 2,
+"San Gerardo de Dota": 2,
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Sulphur-winged parakeet": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Sulphur-bellied flycatcher": {
+"r": {
+"San José": 2,
+"La Fortuna": 2,
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"San Gerardo de Dota",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Bronze-tailed plumeleteer": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 3
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Rose-throated becard": {
+"r": {
+"Rincón de la Vieja": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White-shouldered tanager": {
+"r": {
+"Cahuita": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Yellow-throated vireo": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 3
+},
+"r1": [
+"San Gerardo de Dota",
+"Esterillos"
+],
+"rn": {}
+},
+"Sandwich tern": {
+"r": {
+"Tortuguero": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Tawny-capped euphonia": {
+"r": {
+"La Fortuna": 3,
+"Monteverde": 2
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Black-crowned night heron": {
+"r": {
+"La Fortuna": 4,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-headed saltator": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"Monteverde"
+],
+"rn": {}
+},
+"Rainforest rocket frog": {
+"r": {
+"Cahuita": 2,
+"Corcovado": 2
+},
+"r1": [],
+"rn": {}
+},
+"Dormilona": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Golfo dulce poison dart frog": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {}
+},
+"Costa Rican coralsnake": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Mexican red brocket": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Tortuguero",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Rainforest toad": {
+"r": {
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"La Fortuna",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Rainbow ameiva": {
+"r": {
+"Rincón de la Vieja": 2
+},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Mesoamerican slider": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Corcovado": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Golden-groined robber frog": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"La Fortuna",
+"Corcovado"
+],
+"rn": {}
+},
+"Spotted coffee snake": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"White-throated mud turtle": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Green vine snake": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Red coffee snake": {
+"r": {},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Decorated anole": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Yellow-flecked glassfrog": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Reticulated glass frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Greater sac-winged bat": {
+"r": {
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Brown forest skink": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Central American coralsnake": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Forrer's grass frog": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Tárcoles"
+],
+"rn": {}
+},
+"Atlantic broad-headed litter frog": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Dwarf glass frog": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Northern olingo": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Salmon-bellied racer": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Derby's woolly opossum": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Longtail stingray": {
+"r": {
+"Corcovado": 2
+},
+"r1": [
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Granular glass frog": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Sylvia's tree frog": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Monteverde"
+],
+"rn": {}
+},
+"Jaguar": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Corcovado"
+],
+"rn": {
+"Tortuguero": "Zeer zelden gezien",
+"Corcovado": "Zeer zelden gezien, ook bij Sirena"
+}
+},
+"Blue-sided tree frog": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna"
+],
+"rn": {}
+},
+"Gliding leaf frog": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White-lipped mud turtle": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Túngara frog": {
+"r": {},
+"r1": [
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Chiriquí glass frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"White-headed snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Cope's vine snake": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Boulenger's snouted tree frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Striped rocket frog": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Peralta frog": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Mosquito coast tree frog": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Allen's coralsnake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Great fruit-eating bat": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Monteverde",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Green climbing toad": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Yellow blunt-headed tree snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Wet forest toad": {
+"r": {
+"La Fortuna": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Tárcoles"
+],
+"rn": {}
+},
+"Barred forest racer": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Swift anole": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Striped poison dart frog": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero"
+],
+"rn": {}
+},
+"Cope's parrot snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Stejneger's snail sucker": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Green rat snake": {
+"r": {},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Ringed snail sucker": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Leopard round stingray": {
+"r": {},
+"r1": [
+"Corcovado",
+"Esterillos"
+],
+"rn": {}
+},
+"Montane alligator lizard": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Northern silky anteater": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Central American dwarf squirrel": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Yellow-spotted gecko": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Yellow-spotted night lizard": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Adorned graceful brown snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Central American jumping pit viper": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Rhombic cat-eyed snake": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Slim-fingered rain frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Forest flame snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Common mussurana": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Tropical flat snake": {
+"r": {},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Rugose robber frog": {
+"r": {},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Gray fox": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Fleischmann's glass frog": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"La Fortuna",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Ringed tree boa": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Speckled racer": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Werner's sipo": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Bransford's litter frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Red-legged mushroomtongue salamander": {
+"r": {},
+"r1": [
+"San Gerardo de Dota"
+],
+"rn": {
+"San Gerardo de Dota": "Weinig gegevens: kans niet goed te schatten"
+}
+},
+"Clay-colored rain frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Ghost glass frog": {
+"r": {},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Margay": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Central American banded gecko": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Green sipo": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Almirante robber frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna"
+],
+"rn": {}
+},
+"South American snapping turtle": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Thomas's shaggy bat": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Corcovado"
+],
+"rn": {}
+},
+"Blue-eyed anole": {
+"r": {},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Spix's disk-winged bat": {
+"r": {},
+"r1": [
+"Monteverde",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Charles myers anole": {
+"r": {},
+"r1": [
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Pacific dwarf gecko": {
+"r": {},
+"r1": [
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White anole": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Double-banded coral snake mimic": {
+"r": {},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Gaige's rain frog": {
+"r": {
+"Cahuita": 2
+},
+"r1": [],
+"rn": {}
+},
+"False fer-de-lance": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Tárcoles"
+],
+"rn": {}
+},
+"Berthold's monkey lizard": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Brown spotbelly snake": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Camaron mushroomtongue salamander": {
+"r": {
+"Corcovado": 2
+},
+"r1": [],
+"rn": {}
+},
+"Chestnut sac-winged bat": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Corcovado"
+],
+"rn": {}
+},
+"Sumichrast's vesper rat": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Yellow toad": {
+"r": {},
+"r1": [
+"Tárcoles"
+],
+"rn": {}
+},
+"Spotted paca": {
+"r": {},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Red-eyed masked litter frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Dry forest toad": {
+"r": {},
+"r1": [
+"San José",
+"Tortuguero",
+"La Fortuna",
+"Tárcoles"
+],
+"rn": {}
+},
+"Western red bat": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Central American tapeti": {
+"r": {},
+"r1": [
+"San José",
+"La Fortuna",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Cerro utyum robber frog": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Caribbean whiptail stingray": {
+"r": {},
+"r1": [
+"Cahuita"
+],
+"rn": {
+"Cahuita": "Alleen bij snorkelen op het rif (niet gepland)"
+}
+},
+"Sabinal frog": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Lesser sac-winged bat": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Deppe's squirrel": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Mexican white-lipped frog": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Jamaican fruit-eating bat": {
+"r": {},
+"r1": [
+"San José",
+"Tortuguero",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Striped hog-nosed skunk": {
+"r": {},
+"r1": [
+"Cahuita",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Tome's spiny rat": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Corcovado"
+],
+"rn": {}
+},
+"Meadow tree frog": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Spotted foam-nest frog": {
+"r": {},
+"r1": [
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Dark four-eyed opossum": {
+"r": {},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Cacomistle": {
+"r": {},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Mexican mouse opossum": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Common vampire bat": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Southern stingray": {
+"r": {},
+"r1": [
+"Cahuita"
+],
+"rn": {
+"Cahuita": "Alleen bij snorkelen op het rif (niet gepland)"
+}
+},
+"Honduran white bat": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde"
+],
+"rn": {}
+},
+"Pacific chupare whipray": {
+"r": {},
+"r1": [
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Nurse shark": {
+"r": {},
+"r1": [
+"Cahuita"
+],
+"rn": {
+"Cahuita": "Alleen bij snorkelen op het rif (niet gepland)"
+}
+},
+"Peter's disk-winged bat": {
+"r": {},
+"r1": [
+"Tortuguero",
+"Corcovado"
+],
+"rn": {}
+},
+"Long-tailed weasel": {
+"r": {},
+"r1": [
+"Monteverde",
+"San Gerardo de Dota"
+],
+"rn": {}
+},
+"Brown basilisk": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 2
+},
+"r1": [],
+"rn": {}
+},
+"Jaguarundi": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Greater bulldog bat": {
+"r": {},
+"r1": [
+"Tortuguero",
+"Corcovado"
+],
+"rn": {}
+},
+"Coyote": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Crab-eating raccoon": {
+"r": {},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"Virginia opossum": {
+"r": {},
+"r1": [
+"La Fortuna"
+],
+"rn": {}
+},
+"Greater grison": {
+"r": {},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Giant manta ray": {
+"r": {},
+"r1": [
+"Corcovado"
+],
+"rn": {
+"Corcovado": "Uitzonderlijk, vaker voor duikers"
+}
+},
+"Moorish idol": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Guineafowl puffer": {
+"r": {
+"Corcovado": 2
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"King angelfish": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Yellowtail surgeonfish": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Panamic sergeant major": {
+"r": {
+"Corcovado": 4
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Rough-toothed dolphin": {
+"r": {},
+"r1": [
+"Uvita",
+"Corcovado"
+],
+"rn": {
+"Corcovado": "Soms op de oversteek tussen Drake Bay en Isla del Caño"
+}
+},
+"Cortez rainbow wrasse": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Barberfish": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Whale shark": {
+"r": {},
+"r1": [
+"Corcovado"
+],
+"rn": {
+"Corcovado": "Uitzonderlijk"
+}
+},
+"Pacific nurse shark": {
+"r": {},
+"r1": [
+"Corcovado"
+],
+"rn": {
+"Corcovado": "Vooral voor duikers"
+}
+},
+"Central American rattlesnake": {
+"r": {},
+"r1": [
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Central American bushmaster": {
+"r": {},
+"r1": [
+"Cahuita"
+],
+"rn": {}
+},
+"Common house gecko": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Painted wood turtle": {
+"r": {},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Mexican tree frog": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Tárcoles"
+],
+"rn": {}
+},
+"Belted kingfisher": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde",
+"San Gerardo de Dota",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Green-and-rufous kingfisher": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 3
+},
+"r1": [],
+"rn": {}
+},
+"Tropical screech-owl": {
+"r": {
+"San José": 2
+},
+"r1": [
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Tárcoles"
+],
+"rn": {}
+},
+"Bay wren": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 3
+},
+"r1": [
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Black hawk-eagle": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Great black hawk": {
+"r": {
+"La Fortuna": 2,
+"Monteverde": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Semiplumbeous hawk": {
+"r": {
+"Tortuguero": 2
+},
+"r1": [
+"Cahuita",
+"La Fortuna"
+],
+"rn": {}
+},
+"Gray-lined hawk": {
+"r": {},
+"r1": [
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Plumbeous kite": {
+"r": {
+"Cahuita": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado",
+"Esterillos"
+],
+"rn": {}
+},
+"Peregrine falcon": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Monteverde",
+"San Gerardo de Dota",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Collared forest-falcon": {
+"r": {
+"Uvita": 2,
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Lesser yellow-headed vulture": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Uvita"
+],
+"rn": {}
+},
+"Vermiculated screech-owl": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Costa Rican pygmy-owl": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Chestnut-colored woodpecker": {
+"r": {
+"Tortuguero": 3,
+"La Fortuna": 2
+},
+"r1": [
+"Cahuita"
+],
+"rn": {}
+},
+"Cinnamon woodpecker": {
+"r": {
+"Tortuguero": 2,
+"La Fortuna": 2
+},
+"r1": [
+"Cahuita"
+],
+"rn": {}
+},
+"Hairy woodpecker": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Blue-headed parrot": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Purple-throated fruitcrow": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 3
+},
+"r1": [],
+"rn": {}
+},
+"White-ruffed manakin": {
+"r": {
+"La Fortuna": 2,
+"Rincón de la Vieja": 2
+},
+"r1": [
+"Cahuita",
+"Monteverde",
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Shining honeycreeper": {
+"r": {
+"Cahuita": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 2
+},
+"r1": [
+"Tortuguero",
+"Rincón de la Vieja",
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Orange-billed nightingale-thrush": {
+"r": {
+"Monteverde": 2
+},
+"r1": [
+"San José",
+"San Gerardo de Dota",
+"Uvita"
+],
+"rn": {}
+},
+"Wrenthrush": {
+"r": {
+"San Gerardo de Dota": 2
+},
+"r1": [
+"Monteverde"
+],
+"rn": {}
+},
+"Rufous-and-white wren": {
+"r": {
+"Rincón de la Vieja": 2,
+"Monteverde": 2,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Townsend's warbler": {
+"r": {
+"Monteverde": 2,
+"San Gerardo de Dota": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Dark pewee": {
+"r": {
+"San Gerardo de Dota": 3
+},
+"r1": [
+"San José",
+"Monteverde"
+],
+"rn": {}
+},
+"Plain-brown woodcreeper": {
+"r": {
+"Cahuita": 2
+},
+"r1": [
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja"
+],
+"rn": {}
+},
+"Black-faced antthrush": {
+"r": {
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Streak-chested antpitta": {
+"r": {
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Uvita",
+"Corcovado"
+],
+"rn": {}
+},
+"Southern rough-winged swallow": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Uvita": 2,
+"Corcovado": 3,
+"Tárcoles": 2
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"White-fronted nunbird": {
+"r": {},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Short-billed pigeon": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 3,
+"La Fortuna": 2,
+"Uvita": 3,
+"Corcovado": 3,
+"Tárcoles": 3
+},
+"r1": [
+"San José",
+"Rincón de la Vieja",
+"Monteverde",
+"Esterillos",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Black-bellied plover": {
+"r": {
+"Cahuita": 2,
+"Tortuguero": 2,
+"Esterillos": 2,
+"Tárcoles": 2
+},
+"r1": [
+"La Fortuna",
+"Uvita",
+"Corcovado",
+"Manuel Antonio"
+],
+"rn": {}
+},
+"Ruddy turnstone": {
+"r": {
+"Cahuita": 2,
+"Uvita": 2,
+"Corcovado": 3,
+"Esterillos": 2,
+"Tárcoles": 3
+},
+"r1": [
+"Tortuguero",
+"La Fortuna"
+],
+"rn": {}
+},
+"Lesser yellowlegs": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Corcovado",
+"Esterillos",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Western sandpiper": {
+"r": {
+"La Fortuna": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Cahuita",
+"Tortuguero",
+"Uvita",
+"Corcovado",
+"Esterillos"
+],
+"rn": {}
+},
+"Mangrove warbler": {
+"r": {
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [],
+"rn": {
+"Tárcoles": "In de mangroven langs de rivier",
+"Corcovado": "In de mangroven bij Sierpe"
+}
+},
+"Glossy ibis": {
+"r": {
+"La Fortuna": 3
+},
+"r1": [
+"Corcovado"
+],
+"rn": {}
+},
+"White-collared swift": {
+"r": {
+"San José": 2,
+"Cahuita": 2,
+"Tortuguero": 2,
+"La Fortuna": 3,
+"Rincón de la Vieja": 3,
+"Monteverde": 2,
+"San Gerardo de Dota": 3,
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Esterillos"
+],
+"rn": {}
+},
+"Scarlet-rumped cacique": {
+"r": {
+"Cahuita": 3,
+"Tortuguero": 2,
+"La Fortuna": 2,
+"Uvita": 2,
+"Corcovado": 3
+},
+"r1": [
+"Monteverde",
+"Manuel Antonio",
+"Tárcoles"
+],
+"rn": {}
+},
+"Spot-crowned woodcreeper": {
+"r": {
+"San Gerardo de Dota": 4
+},
+"r1": [
+"San José"
+],
+"rn": {}
+},
+"Redlip parrotfish": {
+"r": {
+"Corcovado": 3
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+},
+"Bluefin trevally": {
+"r": {
+"Corcovado": 2
+},
+"r1": [],
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+}
+}
+}

@@ -1,0 +1,822 @@
+{
+"Northern plain-xenops": {
+"id": 63510632,
+"lic": "cc-by",
+"attr": "(c) Rob Foster, some rights reserved (CC BY), uploaded by Rob Foster",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Kort opgewipt wigsnaveltje, zilverwitte wangstreep en kaneelkleurige vleugel zichtbaar",
+"lvl": "ok"
+},
+"Black-capped flycatcher": {
+"id": 486443007,
+"lic": "cc-by-nc",
+"attr": "(c) moodejo, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 270482569,
+"place": "San José Province, Copey District, Costa Rica",
+"why": "Zwartachtig kapje, witte oogring die achter het oog breder is, olijfbruine borst",
+"lvl": "ok"
+},
+"Highland tinamou": {
+"id": 465257915,
+"lic": "cc-by-nc",
+"attr": "(c) pkondrashov, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 259211146,
+"place": "Puntarenas Province, Monteverde, Costa Rica",
+"why": "Grijze kop, roestbruine keel en hals, fijn gebandeerde bruine rug met lichte stippels",
+"lvl": "ok"
+},
+"Rosenberg's gladiator frog": {
+"id": 474146458,
+"lic": "cc-by-nc",
+"attr": "(c) Roman Willi, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 263885728,
+"place": "Puerto Jiménez",
+"why": "Geelbruine boomkikker met donkere ruglijn, grote ogen; niet gehanteerd",
+"lvl": "ok"
+},
+"Ornate hawk-eagle": {
+"id": 46577018,
+"lic": "cc-by-nc",
+"attr": "(c) Arman Moreno, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 29831500,
+"place": "Alajuela, CR",
+"why": "Adult: roestbruine kop- en halszijden, zwarte kuif, witte keel met zwarte baardstreep, gebandeerde flanken",
+"lvl": "ok"
+},
+"Golden-crowned warbler": {
+"id": 661686219,
+"lic": "cc-by-nc",
+"attr": "(c) Manuel Raab, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 362539585,
+"place": "Costa Rica",
+"why": "Costa Ricaanse vorm: olijfgroene rug, gele onderkant en donkere zijkruinstrepen (research-grade waarneming uit Costa Rica)",
+"lvl": "ok"
+},
+"Northern jacana": {
+"id": 519246052,
+"lic": "cc-by-nc",
+"attr": "(c) Jenny Donald, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 288720131,
+"place": "Alajuela Province, San Carlos, Costa Rica",
+"why": "Adult: kastanjebruin met zwarte kop en hals, geel voorhoofdschild en gele snavel",
+"lvl": "ok"
+},
+"Dwarf glass frog": {
+"id": 111515956,
+"lic": "cc-by-nc",
+"attr": "(c) Tom Kirschey, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 68812333,
+"place": "Alajuela Province, San Ramón, Costa Rica",
+"why": "Bovenaanzicht van een egaal groene, kleine glaskikker; vervangt de buikfoto (soort op foto niet sluitend te bevestigen)",
+"lvl": "plaus"
+},
+"Pug-nosed anole": {
+"id": 181389352,
+"lic": "cc-by-nc",
+"attr": "(c) Cheryl Rosenfeld, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 107806105,
+"place": "Drake Bay Hiking Trail, Costa Rica",
+"why": "Bruine anolis met korte stompe snuit op een stam; niet gehanteerd",
+"lvl": "ok"
+},
+"Stejneger's robber frog": {
+"id": 470048515,
+"lic": "cc-by-nc",
+"attr": "(c) Jazz (aka turtlehelper), some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 261619046,
+"place": "Provincia de Puntarenas, Puerto Jiménez, Costa Rica",
+"why": "Klein bruin strooiselkikkertje van boven, niet gehanteerd (soort op foto niet sluitend te bevestigen)",
+"lvl": "plaus"
+},
+"Blue-crowned manakin": {
+"id": 183977086,
+"lic": "cc-by-nc",
+"attr": "(c) Croftylock, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 109186388,
+"place": "Puntarenas Province, Puerto Jiménez, Costa Rica",
+"why": "Mannetje: fluweelzwart met helderblauwe kruin goed zichtbaar",
+"lvl": "ok"
+},
+"Green climbing toad": {
+"id": 483110344,
+"lic": "cc-by-nc",
+"attr": "(c) Isaac Chellman, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 268747387,
+"place": "San José Province, Pérez Zeledón, Costa Rica",
+"why": "Groen-bruin gemarmerde pad klimmend op een tak, kenmerkend voor de soort",
+"lvl": "ok"
+},
+"Ochraceous pewee": {
+"id": 392376011,
+"lic": "cc-by-nc",
+"attr": "(c) John L. Richards, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 221561550,
+"place": "San José Province, Copey District, Costa Rica",
+"why": "Olijfkleurig met puntkuif, okerkleurige borst, gelige buik en twee lichte vleugelstrepen; research-grade uit Costa Rica",
+"lvl": "ok"
+},
+"Montane alligator lizard": {
+"id": 336089675,
+"lic": "cc-by-nc",
+"attr": "(c) Marco Reyes Guerra, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 191562448,
+"place": "H69X+57J, Provincia de Cartago, Paraíso, Costa Rica",
+"why": "Gedrongen bodemhagedis, donker met fijne groene spikkels, op de grond in het hooggebergte",
+"lvl": "ok"
+},
+"Mangrove vireo": {
+"id": 344193456,
+"lic": "cc-by-nc",
+"attr": "(c) Alex Castelein, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 195619677,
+"place": "Garabito, Puntarenas, CR",
+"why": "Grijsolijf met gelige onderkant, lichte teugel en twee vleugelstrepen; waarneming uit Garabito (Tárcoles)",
+"lvl": "ok"
+},
+"Brown-billed scythebill": {
+"id": 305884980,
+"lic": "cc-by",
+"attr": "(c) Rajan Rao, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 175975494,
+"place": "Puntarenas Province, Monteverde, Costa Rica",
+"why": "Lange, sterk gebogen sikkelsnavel en gestreepte kop/borst duidelijk zichtbaar",
+"lvl": "ok"
+},
+"Cherrie's tanager": {
+"id": 527382855,
+"lic": "cc-by-nc",
+"attr": "(c) Timothy E Myer, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 293028944,
+"place": "Puntarenas Province, Quepos, Costa Rica",
+"why": "Vrouwtje van de Pacifische vorm (costaricensis) met oranje borst, uit Quepos; onderscheidt zich van de Caribische vorm",
+"lvl": "ok"
+},
+"Mangrove warbler": {
+"id": 57909668,
+"lic": "cc-by-nc",
+"attr": "(c) subhashc, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 36620269,
+"place": "River Tarcoles, Costa Rica",
+"why": "Mannetje met kastanjebruine kop en gele onderkant, gefotografeerd langs de Río Tárcoles",
+"lvl": "ok"
+},
+"Jaguarundi": {
+"id": 310267736,
+"lic": "cc-by",
+"attr": "(c) Ben Jobson, some rights reserved (CC BY), uploaded by Ben Jobson",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Egaal donkergrijze kat met lange staart, kleine kop en korte poten",
+"lvl": "ok"
+},
+"Greater bulldog bat": {
+"id": 243289868,
+"lic": "cc-by-nc",
+"attr": "(c) Islas Secas Resort, some rights reserved (CC BY-NC), uploaded by Islas Secas Resort",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Grote oranjebruine vleermuis met hangende 'bulldog'-lippen en lange poten met klauwen",
+"lvl": "ok"
+},
+"Coyote": {
+"id": 239957703,
+"lic": "cc-by",
+"attr": "(c) Sam Eberhard, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 140202843,
+"place": "Calle Estación Biológica Monteverde, Puntarenas, CR",
+"why": "Grijsbruine hondachtige met puntige oren en ruige staart, wilde waarneming bij Monteverde",
+"lvl": "ok"
+},
+"Crab-eating raccoon": {
+"id": 140948925,
+"lic": "cc-by",
+"attr": "(c) João Vitor Oliveira de Souza, some rights reserved (CC BY), uploaded by João Vitor Oliveira de Souza",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Wasbeer met zwart masker, kortharige nek en geringde staart; geen cameraval",
+"lvl": "ok"
+},
+"Virginia opossum": {
+"id": 12945651,
+"lic": "cc-by-nc",
+"attr": "(c) Greg Hanisek, some rights reserved (CC BY-NC), uploaded by Greg Hanisek",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Lichte, witte kop met donkere oren en ruwe grijze vacht",
+"lvl": "ok"
+},
+"Greater grison": {
+"id": 594142,
+"lic": "cc-by",
+"attr": "(c) Daniel Pineda Vera, some rights reserved (CC BY), uploaded by Daniel Pineda Vera",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zilvergrijze rug, zwarte voorkant en witte band over het voorhoofd",
+"lvl": "ok"
+},
+"Giant manta ray": {
+"id": 33852153,
+"lic": "cc-by-nc",
+"attr": "(c) Programa Marino del Golfo de California, some rights reserved (CC BY-NC), uploaded by Programa Marino del Golfo de California",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zwarte bovenkant met witte T-vormige schoudervlekken, kopvinnen zichtbaar",
+"lvl": "ok"
+},
+"Moorish idol": {
+"id": 3080425,
+"lic": "cc-by-nc",
+"attr": "(c) David R, some rights reserved (CC BY-NC)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zwart-wit-gele banden, lange witte rugvinwimpel en oranje snuitvlek",
+"lvl": "ok"
+},
+"Guineafowl puffer": {
+"id": 361169039,
+"lic": "cc-by-nc",
+"attr": "(c) campbell_david, some rights reserved (CC BY-NC), uploaded by campbell_david",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Donkere kogelvis met fijne witte stippen (meest voorkomende kleurvorm)",
+"lvl": "ok"
+},
+"King angelfish": {
+"id": 174040511,
+"lic": "cc-by-nc",
+"attr": "(c) Sylvain Le Bris, some rights reserved (CC BY-NC), uploaded by Sylvain Le Bris",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Donkerblauw lichaam met één witte verticale streep en gele staart",
+"lvl": "ok"
+},
+"Yellowtail surgeonfish": {
+"id": 161753286,
+"lic": "cc-by",
+"attr": "(c) jeyre, some rights reserved (CC BY)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Grijs lichaam met donkere vlekjes op de staartwortel en felgele staart",
+"lvl": "ok"
+},
+"Panamic sergeant major": {
+"id": 4460945,
+"lic": "cc-by",
+"attr": "(c) Ryan McMinds, some rights reserved (CC BY)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Vijf zwarte dwarsbanden op blauwgroen-geel lichaam",
+"lvl": "ok"
+},
+"Rough-toothed dolphin": {
+"id": 59845920,
+"lic": "cc-by-nc",
+"attr": "(c) Rafael de la Parra, some rights reserved (CC BY-NC), uploaded by Rafael de la Parra",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Lange snavel die zonder knik in het voorhoofd overloopt, lichte vlekken",
+"lvl": "ok"
+},
+"Cortez rainbow wrasse": {
+"id": 58070760,
+"lic": "cc-by-nc-sa",
+"attr": "(c) Programa Marino del Golfo de California, some rights reserved (CC BY-NC-SA), uploaded by Programa Marino del Golfo de California",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Eindfase-mannetje: blauwe kop, gele zadelband en paarsroze lichaam",
+"lvl": "ok"
+},
+"Barberfish": {
+"id": 47659,
+"lic": "cc-by",
+"attr": "(c) LASZLO ILYES, some rights reserved (CC BY)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Gele vlindervis met zwarte oogband, zwarte snuitpunt en zwarte rugband",
+"lvl": "ok"
+},
+"Whale shark": {
+"id": 11193947,
+"lic": "cc-by-nc",
+"attr": "(c) Erik Schlögl, some rights reserved (CC BY-NC), uploaded by Erik Schlögl",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Hele haai zichtbaar: brede platte kop, witte stippen en strepen op donkere huid",
+"lvl": "ok"
+},
+"Pacific nurse shark": {
+"id": 138046100,
+"lic": "cc-by-nc",
+"attr": "(c) Sebastián Mena, some rights reserved (CC BY-NC), uploaded by Sebastián Mena",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Bruingrijze bodemhaai met twee rugvinnen ver naar achteren en baarddraden",
+"lvl": "ok"
+},
+"Central American rattlesnake": {
+"id": 709674217,
+"lic": "cc-by-nc",
+"attr": "(c) antonioleala, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 382651261,
+"place": "Bagaces, Guanacaste, CR",
+"why": "Ruitpatroon met lichte randen en donkere nekstrepen; wilde waarneming in Guanacaste",
+"lvl": "ok"
+},
+"Central American bushmaster": {
+"id": 180008071,
+"lic": "cc-by-nc",
+"attr": "(c) Marc Domènech, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 107072308,
+"place": "Limón, Costa Rica",
+"why": "Grote opgerolde groefkopadder met donkere ruiten op lichtbruin; wild in Limón",
+"lvl": "ok"
+},
+"Common house gecko": {
+"id": 629090513,
+"lic": "cc-by",
+"attr": "(c) Corey Farwell, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 345212601,
+"place": "75W8+C8J, Puntarenas Province, Monteverde, Costa Rica",
+"why": "Lichtroze-grijze gekko op een muur met brede teenkussens; Costa Rica",
+"lvl": "ok"
+},
+"Painted wood turtle": {
+"id": 13712710,
+"lic": "cc-by-nc",
+"attr": "(c) Hayden Sloan, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 9979034,
+"place": "Guanacaste, CR",
+"why": "Gewelfd schild met gele en rode ringen, rood-oranje kopstrepen",
+"lvl": "ok"
+},
+"Mexican tree frog": {
+"id": 18759141,
+"lic": "cc0",
+"attr": "no rights reserved",
+"src": "obs",
+"obs": 12914410,
+"place": "Palo Verde National Park, Bagaces, Guanacaste, CR",
+"why": "Gevlekte groenbruine boomkikker met donkere vlek achter het oog, wild in Palo Verde",
+"lvl": "ok"
+},
+"Belted kingfisher": {
+"id": 167344246,
+"lic": "cc-by-nc",
+"attr": "(c) elizabetta11, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 100277274,
+"place": "San Carlos, Alajuela, CR",
+"why": "Vrouwtje: blauwgrijs met witte halsband, blauwe en roestbruine borstband",
+"lvl": "ok"
+},
+"Green-and-rufous kingfisher": {
+"id": 257787558,
+"lic": "cc-by-nc",
+"attr": "(c) David Cohen, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 149587224,
+"place": "Río Frío, Heredia, Sarapiquí, Costa Rica",
+"why": "Mannetje: donkergroene bovenkant, volledig roestbruine onderkant zonder borstband",
+"lvl": "ok"
+},
+"Tropical screech-owl": {
+"id": 152942567,
+"lic": "cc-by",
+"attr": "(c) Jan Ebr &amp; Ivana Ebrová, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 92375863,
+"place": "Puntarenas Province, Costa Rica",
+"why": "Grijsbruine oorvederuil met donkere rand om de gezichtsschijf en gele ogen",
+"lvl": "ok"
+},
+"Bay wren": {
+"id": 408572091,
+"lic": "cc-by-nc",
+"attr": "(c) Carlo, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 230125503,
+"place": "Limón, Talamanca, Costa Rica",
+"why": "Zwarte kop met witte wangvlekken en kastanjebruin lichaam",
+"lvl": "ok"
+},
+"Black hawk-eagle": {
+"id": 32282100,
+"lic": "cc-by-nc",
+"attr": "(c) Dave Wendelken, some rights reserved (CC BY-NC), uploaded by Dave Wendelken",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Adult: zwart met kuif, wit-zwart gebandeerde dijen en staart",
+"lvl": "ok"
+},
+"Great black hawk": {
+"id": 166883109,
+"lic": "cc-by",
+"attr": "(c) Loren Cassin Sackett, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 100026497,
+"place": "Puntarenas Province, Costa Rica",
+"why": "Adult: geheel zwart met gele snavelbasis en lange gele poten",
+"lvl": "ok"
+},
+"Semiplumbeous hawk": {
+"id": 196415415,
+"lic": "cc-by",
+"attr": "(c) Andres Hernandez, some rights reserved (CC BY), uploaded by Andres Hernandez",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Leigrijze bovenkant, witte onderkant, oranje snavelbasis en poten",
+"lvl": "ok"
+},
+"Gray-lined hawk": {
+"id": 15932302,
+"lic": "cc-by-nc",
+"attr": "(c) Clodoaldo Costa Junior, some rights reserved (CC BY-NC), uploaded by Clodoaldo Costa Junior",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Lichtgrijze buizerd met fijne grijze dwarsbandering op de onderkant",
+"lvl": "ok"
+},
+"Plumbeous kite": {
+"id": 603366621,
+"lic": "cc-by-nc",
+"attr": "(c) Ana Laura Campioto, some rights reserved (CC BY-NC), uploaded by Ana Laura Campioto",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Leigrijze wouw met roodbruine handpennen en rode ogen",
+"lvl": "ok"
+},
+"Peregrine falcon": {
+"id": 330133179,
+"lic": "cc-by-nc",
+"attr": "(c) Grigory Heaton, some rights reserved (CC BY-NC), uploaded by Grigory Heaton",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Adult: blauwgrijze rug, zwarte 'snor' en gestreepte onderkant",
+"lvl": "ok"
+},
+"Collared forest-falcon": {
+"id": 394112373,
+"lic": "cc-by-nc",
+"attr": "(c) Alvaro Monter Pozos, some rights reserved (CC BY-NC), uploaded by Alvaro Monter Pozos",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Lichte vorm: witte kraag en onderkant, zwarte kap en lange gebandeerde staart",
+"lvl": "ok"
+},
+"Lesser yellow-headed vulture": {
+"id": 260941303,
+"lic": "cc-by",
+"attr": "(c) Anthony Batista, some rights reserved (CC BY), uploaded by Anthony Batista",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zwarte gier met geel-oranje kop en blauwachtige kruin",
+"lvl": "ok"
+},
+"Vermiculated screech-owl": {
+"id": 176571280,
+"lic": "cc-by",
+"attr": "(c) Trevor Van Loon, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 105260023,
+"place": "Heredia Province, Sarapiqui, Costa Rica",
+"why": "Roodbruine vorm van de Midden-Amerikaanse schreeuwuil, fijn gevlekt; Costa Rica",
+"lvl": "ok"
+},
+"Costa Rican pygmy-owl": {
+"id": 207302178,
+"lic": "cc-by-nc",
+"attr": "(c) emskakoon, some rights reserved (CC BY-NC), uploaded by emskakoon",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Klein bruin uiltje met witte stippen op kop en rug, gele ogen",
+"lvl": "ok"
+},
+"Chestnut-colored woodpecker": {
+"id": 617363490,
+"lic": "cc-by-nc",
+"attr": "(c) Frederik gustavsson, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 339377031,
+"place": "Sarapiquí, CR-HE, CR",
+"why": "Kastanjebruin met lichte kuif en rode wangvlek (mannetje); Costa Rica",
+"lvl": "ok"
+},
+"Cinnamon woodpecker": {
+"id": 178630427,
+"lic": "cc-by-nc",
+"attr": "(c) Ad Konings, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 106346080,
+"place": "Heredia Province, Sarapiqui, Costa Rica",
+"why": "Kaneelbruin met zwarte schubvlekken en korte kuif; Costa Rica",
+"lvl": "ok"
+},
+"Hairy woodpecker": {
+"id": 613344362,
+"lic": "cc-by-nc",
+"attr": "(c) Ad Konings, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 337400827,
+"place": "San José Province, Copey District, Costa Rica",
+"why": "Costa Ricaanse vorm met bruinige onderkant, rode nekvlek (mannetje)",
+"lvl": "ok"
+},
+"Blue-headed parrot": {
+"id": 316275747,
+"lic": "cc-by-nc",
+"attr": "(c) Andrey Vasquez, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 181493154,
+"place": "Costa Rica",
+"why": "Blauwe kop en hals, groen lichaam en roze-rode borstvlek",
+"lvl": "ok"
+},
+"Purple-throated fruitcrow": {
+"id": 85528979,
+"lic": "cc-by-nc",
+"attr": "(c) Sébastien SANT, some rights reserved (CC BY-NC), uploaded by Sébastien SANT",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Mannetje: zwart met paarsrode keelvlek",
+"lvl": "ok"
+},
+"White-ruffed manakin": {
+"id": 566589579,
+"lic": "cc-by-nc",
+"attr": "(c) Jim Greulich, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 313735289,
+"place": "Provincia de Alajuela, Upala, Costa Rica",
+"why": "Mannetje: blauwzwart met witte keelkraag; Costa Rica",
+"lvl": "ok"
+},
+"Shining honeycreeper": {
+"id": 343619767,
+"lic": "cc-by",
+"attr": "(c) Laurel Meredyk, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 195338912,
+"place": "San José Province, Santa María, Costa Rica",
+"why": "Mannetje: helderblauw, zwarte keel en felgele poten; Costa Rica",
+"lvl": "ok"
+},
+"Orange-billed nightingale-thrush": {
+"id": 471858680,
+"lic": "cc-by-nc",
+"attr": "(c) Carroll Perkins, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 262736022,
+"place": "San José Province, Rivas, Costa Rica",
+"why": "Grijze kop, oranje snavel en oogring, bruine rug; Costa Rica",
+"lvl": "ok"
+},
+"Wrenthrush": {
+"id": 7661038,
+"lic": "cc-by-nc",
+"attr": "(c) Steven Easley, some rights reserved (CC BY-NC), uploaded by Steven Easley",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Leigrijs vogeltje met oranje kruin en olijfgroene vleugels",
+"lvl": "ok"
+},
+"Rufous-and-white wren": {
+"id": 39065705,
+"lic": "cc-by",
+"attr": "(c) Aitor, some rights reserved (CC BY), uploaded by Aitor",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Roestbruine bovenkant, witte onderkant en zwart-witte gestreepte wang",
+"lvl": "ok"
+},
+"Townsend's warbler": {
+"id": 627894034,
+"lic": "cc-by-nc",
+"attr": "(c) Braxton L., some rights reserved (CC BY-NC), uploaded by Braxton L.",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zwart-geel gezichtsmasker, gele borst met zwarte flankstrepen",
+"lvl": "ok"
+},
+"Dark pewee": {
+"id": 254127897,
+"lic": "cc-by-nc",
+"attr": "(c) sjgetty, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 147661596,
+"place": "Sarapiqui, Heredia, CR",
+"why": "Donkergrijze tiran met kuifje en oranje ondersnavel; Costa Rica",
+"lvl": "ok"
+},
+"Plain-brown woodcreeper": {
+"id": 145720698,
+"lic": "cc0",
+"attr": "no rights reserved",
+"src": "obs",
+"obs": 88328509,
+"place": "Cartago Province, Turrialba, Costa Rica",
+"why": "Egaal bruine muisspecht met roestkleurige staart en grijze wangvlek",
+"lvl": "ok"
+},
+"Black-faced antthrush": {
+"id": 623893874,
+"lic": "cc-by-nc",
+"attr": "(c) sweiss243, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 342583184,
+"place": "Q9JV+FJ4 Parque Nacional Carara, Provincia de Puntarenas, Tarcoles, Costa Rica",
+"why": "Zwarte keel, kastanje kop- en halszijden, opgestoken staartje; Costa Rica",
+"lvl": "ok"
+},
+"Streak-chested antpitta": {
+"id": 416282953,
+"lic": "cc0",
+"attr": "no rights reserved",
+"src": "obs",
+"obs": 234187776,
+"place": "Puntarenas Province, Osa, Costa Rica",
+"why": "Rond vogeltje met lichte oogring en zwart gestreepte borst; Osa",
+"lvl": "ok"
+},
+"Southern rough-winged swallow": {
+"id": 663372181,
+"lic": "cc-by",
+"attr": "(c) Donald Davesne, some rights reserved (CC BY), uploaded by Donald Davesne",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Bruine zwaluw met kaneelkleurige keel en lichte stuit",
+"lvl": "ok"
+},
+"White-fronted nunbird": {
+"id": 391492890,
+"lic": "cc-by-nc",
+"attr": "(c) Ria Brodell, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 221082898,
+"place": "Heredia Province, Puerto Viejo de Sarapiqui, Costa Rica",
+"why": "Leigrijs met wit voorhoofd en rode snavel; Costa Rica",
+"lvl": "ok"
+},
+"Short-billed pigeon": {
+"id": 634709851,
+"lic": "cc-by",
+"attr": "(c) er-birds, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 348058722,
+"place": "Heredia Province, Sarapiqui, Costa Rica",
+"why": "Wijnrode duif met korte zwarte snavel, op een pad in Costa Rica",
+"lvl": "ok"
+},
+"Black-bellied plover": {
+"id": 172713152,
+"lic": "cc-by-nc",
+"attr": "(c) Kirstyn Eckhardt, some rights reserved (CC BY-NC), uploaded by Kirstyn Eckhardt",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Winterkleed: grijs gevlekt met witte buik, zoals in februari",
+"lvl": "ok"
+},
+"Ruddy turnstone": {
+"id": 179638917,
+"lic": "cc-by-nc",
+"attr": "(c) Etienne Gaillard, some rights reserved (CC BY-NC), uploaded by Etienne Gaillard",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Winterkleed: bruin-wit borstpatroon en oranje poten",
+"lvl": "ok"
+},
+"Lesser yellowlegs": {
+"id": 260887463,
+"lic": "cc-by-nc",
+"attr": "(c) Jonathan Irons, some rights reserved (CC BY-NC), uploaded by Jonathan Irons",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Slanke grijsbruine steltloper met dunne snavel en gele poten",
+"lvl": "ok"
+},
+"Western sandpiper": {
+"id": 20342182,
+"lic": "cc-by-nc",
+"attr": "(c) José Antonio Linage Espinosa, some rights reserved (CC BY-NC), uploaded by José Antonio Linage Espinosa",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Winterkleed: grijs met witte onderkant, lange iets gebogen snavel",
+"lvl": "ok"
+},
+"Glossy ibis": {
+"id": 29367762,
+"lic": "cc-by-nc",
+"attr": "(c) bwood708, some rights reserved (CC BY-NC), uploaded by bwood708",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Donkere ibis met gebogen snavel en glanzend verenkleed",
+"lvl": "ok"
+},
+"White-collared swift": {
+"id": 12179299,
+"lic": "cc-by-nc",
+"attr": "(c) Arnold Wijker, some rights reserved (CC BY-NC), uploaded by Arnold Wijker",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Grote zwarte gierzwaluw met witte halsband zichtbaar",
+"lvl": "ok"
+},
+"Scarlet-rumped cacique": {
+"id": 65468261,
+"lic": "cc-by-nc",
+"attr": "(c) Michael Klotz, some rights reserved (CC BY-NC)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zwart met lichtblauw oog en scharlakenrode stuit zichtbaar",
+"lvl": "ok"
+},
+"Spot-crowned woodcreeper": {
+"id": 147963945,
+"lic": "cc-by-nc",
+"attr": "(c) Rich Kostecke, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 89595787,
+"place": "San José Province, Costa Rica",
+"why": "Gebogen lichte snavel, gestippelde kruin, roestbruine rug; Costa Rica",
+"lvl": "ok"
+},
+"Redlip parrotfish": {
+"id": 278922284,
+"lic": "cc-by-nc",
+"attr": "(c) Rino, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 161368470,
+"place": "Isla del Cano, Costa Rica",
+"why": "Blauwgroene eindfase; waarneming bij Isla del Caño",
+"lvl": "ok"
+},
+"Bluefin trevally": {
+"id": 608164205,
+"lic": "cc-by",
+"attr": "(c) Rickard Zerpe, some rights reserved (CC BY)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Zilver met felblauwe vinnen en donkere stippen",
+"lvl": "ok"
+}
+}

@@ -1,0 +1,412 @@
+{
+"Humpback whale": {
+"marine": 1,
+"set": {
+"Uvita": 3,
+"Corcovado": 2,
+"Manuel Antonio": 1
+},
+"rn": {
+"Uvita": "Februari valt in het seizoen van de noordelijke populatie (ca. december–maart)"
+},
+"why": "zeezoogdier; walvistocht Uvita, oversteek naar Isla del Caño"
+},
+"Pantropical spotted dolphin": {
+"marine": 1,
+"set": {
+"Uvita": 3,
+"Corcovado": 3
+},
+"why": "zeezoogdier; regelmatig tijdens boottochten"
+},
+"Common bottlenose dolphin": {
+"marine": 1,
+"set": {
+"Uvita": 2,
+"Corcovado": 2,
+"Manuel Antonio": 1,
+"Esterillos": 1
+},
+"why": "zeezoogdier"
+},
+"Rough-toothed dolphin": {
+"marine": 1,
+"set": {
+"Corcovado": 1,
+"Uvita": 1
+},
+"rn": {
+"Corcovado": "Soms op de oversteek tussen Drake Bay en Isla del Caño"
+},
+"why": "zeezoogdier, weinig waarnemingen"
+},
+"Green sea turtle": {
+"marine": 1,
+"set": {
+"Corcovado": 2,
+"Tortuguero": 1,
+"Cahuita": 1
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño",
+"Tortuguero": "Het nestseizoen valt buiten februari"
+},
+"why": "zeeschildpad; snorkelen Isla del Caño"
+},
+"Hawksbill sea turtle": {
+"marine": 1,
+"set": {
+"Corcovado": 2,
+"Cahuita": 1
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "zeeschildpad"
+},
+"Olive ridley sea turtle": {
+"marine": 1,
+"set": {
+"Uvita": 2,
+"Corcovado": 2,
+"Esterillos": 1,
+"Manuel Antonio": 1
+},
+"rn": {
+"Uvita": "Soms aan het oppervlak tijdens de walvistocht"
+},
+"why": "zeeschildpad"
+},
+"Whitetip reef shark": {
+"marine": 1,
+"set": {
+"Corcovado": 2
+},
+"rn": {
+"Corcovado": "Vooral bij duiken; bij snorkelen soms vanaf het oppervlak"
+},
+"why": "rifhaai Isla del Caño"
+},
+"Spotted eagle ray": {
+"marine": 1,
+"set": {
+"Corcovado": 2
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "rog Isla del Caño"
+},
+"Longtail stingray": {
+"marine": 1,
+"set": {
+"Corcovado": 2,
+"Esterillos": 1,
+"Manuel Antonio": 1
+},
+"why": "rog; zand- en modderbodems"
+},
+"Leopard round stingray": {
+"marine": 1,
+"set": {
+"Corcovado": 1,
+"Esterillos": 1
+},
+"why": "rog; zandbodems"
+},
+"Caribbean whiptail stingray": {
+"marine": 1,
+"set": {
+"Cahuita": 1
+},
+"rn": {
+"Cahuita": "Alleen bij snorkelen op het rif (niet gepland)"
+},
+"why": "geen snorkelexcursie in Cahuita gepland"
+},
+"Southern stingray": {
+"marine": 1,
+"set": {
+"Cahuita": 1
+},
+"rn": {
+"Cahuita": "Alleen bij snorkelen op het rif (niet gepland)"
+},
+"why": "geen snorkelexcursie in Cahuita gepland"
+},
+"Nurse shark": {
+"marine": 1,
+"set": {
+"Cahuita": 1
+},
+"rn": {
+"Cahuita": "Alleen bij snorkelen op het rif (niet gepland)"
+},
+"why": "geen snorkelexcursie in Cahuita gepland"
+},
+"Pacific chupare whipray": {
+"marine": 1,
+"set": {
+"Tárcoles": 1,
+"Corcovado": 1
+},
+"why": "rog; modderbodems"
+},
+"Giant manta ray": {
+"marine": 1,
+"set": {
+"Corcovado": 1
+},
+"rn": {
+"Corcovado": "Uitzonderlijk, vaker voor duikers"
+},
+"why": "oceanische soort"
+},
+"Whale shark": {
+"marine": 1,
+"set": {
+"Corcovado": 1
+},
+"rn": {
+"Corcovado": "Uitzonderlijk"
+},
+"why": "oceanische soort"
+},
+"Pacific nurse shark": {
+"marine": 1,
+"set": {
+"Corcovado": 1
+},
+"rn": {
+"Corcovado": "Vooral voor duikers"
+},
+"why": "rust onder rotsrichels"
+},
+"Panamic sergeant major": {
+"marine": 1,
+"set": {
+"Corcovado": 4
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "zeer algemene rifvis"
+},
+"Moorish idol": {
+"marine": 1,
+"set": {
+"Corcovado": 3
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "algemene rifvis Isla del Caño"
+},
+"King angelfish": {
+"marine": 1,
+"set": {
+"Corcovado": 3
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "algemene rifvis"
+},
+"Yellowtail surgeonfish": {
+"marine": 1,
+"set": {
+"Corcovado": 3
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "algemene rifvis, in groepen"
+},
+"Cortez rainbow wrasse": {
+"marine": 1,
+"set": {
+"Corcovado": 3
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "algemene rifvis"
+},
+"Barberfish": {
+"marine": 1,
+"set": {
+"Corcovado": 3
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "algemene rifvis"
+},
+"Guineafowl puffer": {
+"marine": 1,
+"set": {
+"Corcovado": 2
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "verborgen onder rotsen"
+},
+"Redlip parrotfish": {
+"marine": 1,
+"set": {
+"Corcovado": 3
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "algemene rifvis"
+},
+"Bluefin trevally": {
+"marine": 1,
+"set": {
+"Corcovado": 2
+},
+"rn": {
+"Corcovado": "Bij het snorkelen bij Isla del Caño"
+},
+"why": "patrouilleert langs de rifrand"
+},
+"Baird's tapir": {
+"set": {
+"Corcovado": 2,
+"San José": 0
+},
+"max": {
+"Tortuguero": 1,
+"Rincón de la Vieja": 1,
+"San Gerardo de Dota": 1,
+"La Fortuna": 1,
+"Uvita": 1
+},
+"rn": {
+"Corcovado": "Vooral rond Sirena met gids; bij San Pedrillo kleiner"
+},
+"why": "Sirena is de bekende plek; elders schaars, San José-waarnemingen komen uit opvang"
+},
+"Resplendent quetzal": {
+"max": {
+"Monteverde": 3
+},
+"rn": {
+"Monteverde": "Beste kans tijdens de Curi-Cancha-birdwalk met gids",
+"San Gerardo de Dota": "Tijdens de quetzaltour met gids"
+},
+"why": "San Gerardo is de betrouwbaarste plek; Monteverde iets lastiger"
+},
+"Jaguar": {
+"rn": {
+"Tortuguero": "Zeer zelden gezien",
+"Corcovado": "Zeer zelden gezien, ook bij Sirena"
+},
+"why": ""
+},
+"Mountain lion": {
+"rn": {
+"Corcovado": "Af en toe gemeld rond Sirena"
+},
+"why": ""
+},
+"Red-eyed tree frog": {
+"rn": {
+"Tortuguero": "Vooral tijdens de nachtwandeling",
+"Monteverde": "Komt vooral lager dan Monteverde voor"
+},
+"why": ""
+},
+"Eyelash viper": {
+"set": {
+"Cahuita": 3
+},
+"rn": {
+"Cahuita": "Gidsen in Cahuita NP kennen vaak vaste plekken"
+},
+"why": "in Cahuita NP vaak aangewezen door gidsen"
+},
+"Great green macaw": {
+"set": {
+"Cahuita": 1,
+"Tortuguero": 1,
+"La Fortuna": 1
+},
+"rn": {
+"Cahuita": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat",
+"Tortuguero": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat",
+"La Fortuna": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat"
+},
+"why": "gevoelige soort zonder openbare eBird-gegevens"
+},
+"Yellow-naped parrot": {
+"set": {
+"Rincón de la Vieja": 1,
+"Tárcoles": 1
+},
+"rn": {
+"Rincón de la Vieja": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat",
+"Tárcoles": "Gevoelige soort: eBird deelt geen locaties; voorzichtig geschat"
+},
+"why": "gevoelige soort zonder openbare eBird-gegevens"
+},
+"Whimbrel": {
+"alt": [
+"Numenius phaeopus"
+]
+},
+"Yellow warbler": {
+"alt": [
+"Setophaga petechia"
+],
+"why": "eBird-gegevens nog van vóór de splitsing (2025); omvat ook mangrovezangers"
+},
+"Mangrove warbler": {
+"set": {
+"Tárcoles": 2,
+"Corcovado": 2
+},
+"rn": {
+"Tárcoles": "In de mangroven langs de rivier",
+"Corcovado": "In de mangroven bij Sierpe"
+},
+"why": "eBird-gegevens nog samengevoegd met de noordelijke gele zanger; geschat op leefgebied",
+"only": [
+"Tárcoles",
+"Corcovado"
+]
+},
+"Orange-bellied trogon": {
+"only": [
+"Monteverde"
+],
+"why": "oranjebuikvorm komt op de route vooral rond Monteverde voor; gegevens gedeeld met de gekraagde trogon"
+},
+"Collared trogon": {
+"max": {
+"Monteverde": 2
+},
+"why": "in Monteverde vooral de oranjebuikvorm"
+},
+"Passerini's tanager": {
+"only": [
+"Cahuita",
+"Tortuguero",
+"La Fortuna",
+"San José"
+],
+"why": "Caribische vorm"
+},
+"Cherrie's tanager": {
+"only": [
+"Uvita",
+"Corcovado",
+"Manuel Antonio",
+"Esterillos",
+"Tárcoles"
+],
+"why": "Pacifische vorm"
+}
+}

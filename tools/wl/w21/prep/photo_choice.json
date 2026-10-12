@@ -1,0 +1,333 @@
+{
+"Northern plain-xenops": {
+"j": 1,
+"why": "Kort opgewipt wigsnaveltje, zilverwitte wangstreep en kaneelkleurige vleugel zichtbaar"
+},
+"Black-capped flycatcher": {
+"j": 7,
+"why": "Zwartachtig kapje, witte oogring die achter het oog breder is, olijfbruine borst"
+},
+"Highland tinamou": {
+"j": 2,
+"why": "Grijze kop, roestbruine keel en hals, fijn gebandeerde bruine rug met lichte stippels"
+},
+"Rosenberg's gladiator frog": {
+"j": 5,
+"why": "Geelbruine boomkikker met donkere ruglijn, grote ogen; niet gehanteerd"
+},
+"Ornate hawk-eagle": {
+"j": 8,
+"why": "Adult: roestbruine kop- en halszijden, zwarte kuif, witte keel met zwarte baardstreep, gebandeerde flanken"
+},
+"Golden-crowned warbler": {
+"j": 7,
+"why": "Costa Ricaanse vorm: olijfgroene rug, gele onderkant en donkere zijkruinstrepen (research-grade waarneming uit Costa Rica)"
+},
+"Northern jacana": {
+"j": 8,
+"why": "Adult: kastanjebruin met zwarte kop en hals, geel voorhoofdschild en gele snavel"
+},
+"Dwarf glass frog": {
+"j": 3,
+"why": "Bovenaanzicht van een egaal groene, kleine glaskikker; vervangt de buikfoto (soort op foto niet sluitend te bevestigen)",
+"lvl": "plaus"
+},
+"Pug-nosed anole": {
+"j": 6,
+"why": "Bruine anolis met korte stompe snuit op een stam; niet gehanteerd"
+},
+"Stejneger's robber frog": {
+"j": 2,
+"why": "Klein bruin strooiselkikkertje van boven, niet gehanteerd (soort op foto niet sluitend te bevestigen)",
+"lvl": "plaus"
+},
+"Blue-crowned manakin": {
+"j": 2,
+"why": "Mannetje: fluweelzwart met helderblauwe kruin goed zichtbaar"
+},
+"Green climbing toad": {
+"j": 5,
+"why": "Groen-bruin gemarmerde pad klimmend op een tak, kenmerkend voor de soort"
+},
+"Ochraceous pewee": {
+"j": 6,
+"why": "Olijfkleurig met puntkuif, okerkleurige borst, gelige buik en twee lichte vleugelstrepen; research-grade uit Costa Rica"
+},
+"Montane alligator lizard": {
+"j": 8,
+"why": "Gedrongen bodemhagedis, donker met fijne groene spikkels, op de grond in het hooggebergte"
+},
+"Mangrove vireo": {
+"j": 5,
+"why": "Grijsolijf met gelige onderkant, lichte teugel en twee vleugelstrepen; waarneming uit Garabito (Tárcoles)"
+},
+"Brown-billed scythebill": {
+"j": 4,
+"why": "Lange, sterk gebogen sikkelsnavel en gestreepte kop/borst duidelijk zichtbaar"
+},
+"Cherrie's tanager": {
+"j": 6,
+"why": "Vrouwtje van de Pacifische vorm (costaricensis) met oranje borst, uit Quepos; onderscheidt zich van de Caribische vorm"
+},
+"Mangrove warbler": {
+"j": 6,
+"why": "Mannetje met kastanjebruine kop en gele onderkant, gefotografeerd langs de Río Tárcoles",
+"new": 1
+},
+"Jaguarundi": {
+"j": 0,
+"why": "Egaal donkergrijze kat met lange staart, kleine kop en korte poten"
+},
+"Greater bulldog bat": {
+"j": 4,
+"why": "Grote oranjebruine vleermuis met hangende 'bulldog'-lippen en lange poten met klauwen"
+},
+"Coyote": {
+"j": 8,
+"why": "Grijsbruine hondachtige met puntige oren en ruige staart, wilde waarneming bij Monteverde"
+},
+"Crab-eating raccoon": {
+"j": 3,
+"why": "Wasbeer met zwart masker, kortharige nek en geringde staart; geen cameraval"
+},
+"Virginia opossum": {
+"j": 1,
+"why": "Lichte, witte kop met donkere oren en ruwe grijze vacht"
+},
+"Greater grison": {
+"j": 2,
+"why": "Zilvergrijze rug, zwarte voorkant en witte band over het voorhoofd"
+},
+"Giant manta ray": {
+"j": 0,
+"why": "Zwarte bovenkant met witte T-vormige schoudervlekken, kopvinnen zichtbaar"
+},
+"Moorish idol": {
+"j": 0,
+"why": "Zwart-wit-gele banden, lange witte rugvinwimpel en oranje snuitvlek"
+},
+"Guineafowl puffer": {
+"j": 1,
+"why": "Donkere kogelvis met fijne witte stippen (meest voorkomende kleurvorm)"
+},
+"King angelfish": {
+"j": 0,
+"why": "Donkerblauw lichaam met één witte verticale streep en gele staart"
+},
+"Yellowtail surgeonfish": {
+"j": 3,
+"why": "Grijs lichaam met donkere vlekjes op de staartwortel en felgele staart"
+},
+"Panamic sergeant major": {
+"j": 0,
+"why": "Vijf zwarte dwarsbanden op blauwgroen-geel lichaam"
+},
+"Rough-toothed dolphin": {
+"j": 2,
+"why": "Lange snavel die zonder knik in het voorhoofd overloopt, lichte vlekken"
+},
+"Cortez rainbow wrasse": {
+"j": 0,
+"why": "Eindfase-mannetje: blauwe kop, gele zadelband en paarsroze lichaam"
+},
+"Barberfish": {
+"j": 0,
+"why": "Gele vlindervis met zwarte oogband, zwarte snuitpunt en zwarte rugband"
+},
+"Whale shark": {
+"j": 2,
+"why": "Hele haai zichtbaar: brede platte kop, witte stippen en strepen op donkere huid"
+},
+"Pacific nurse shark": {
+"j": 0,
+"why": "Bruingrijze bodemhaai met twee rugvinnen ver naar achteren en baarddraden"
+},
+"Central American rattlesnake": {
+"j": 3,
+"why": "Ruitpatroon met lichte randen en donkere nekstrepen; wilde waarneming in Guanacaste"
+},
+"Central American bushmaster": {
+"j": 4,
+"why": "Grote opgerolde groefkopadder met donkere ruiten op lichtbruin; wild in Limón"
+},
+"Common house gecko": {
+"j": 5,
+"why": "Lichtroze-grijze gekko op een muur met brede teenkussens; Costa Rica"
+},
+"Painted wood turtle": {
+"j": 2,
+"why": "Gewelfd schild met gele en rode ringen, rood-oranje kopstrepen"
+},
+"Mexican tree frog": {
+"j": 4,
+"why": "Gevlekte groenbruine boomkikker met donkere vlek achter het oog, wild in Palo Verde"
+},
+"Belted kingfisher": {
+"j": 8,
+"why": "Vrouwtje: blauwgrijs met witte halsband, blauwe en roestbruine borstband"
+},
+"Green-and-rufous kingfisher": {
+"j": 6,
+"why": "Mannetje: donkergroene bovenkant, volledig roestbruine onderkant zonder borstband"
+},
+"Tropical screech-owl": {
+"j": 7,
+"why": "Grijsbruine oorvederuil met donkere rand om de gezichtsschijf en gele ogen"
+},
+"Bay wren": {
+"j": 8,
+"why": "Zwarte kop met witte wangvlekken en kastanjebruin lichaam"
+},
+"Black hawk-eagle": {
+"j": 0,
+"why": "Adult: zwart met kuif, wit-zwart gebandeerde dijen en staart"
+},
+"Great black hawk": {
+"j": 5,
+"why": "Adult: geheel zwart met gele snavelbasis en lange gele poten"
+},
+"Semiplumbeous hawk": {
+"j": 3,
+"why": "Leigrijze bovenkant, witte onderkant, oranje snavelbasis en poten"
+},
+"Gray-lined hawk": {
+"j": 0,
+"why": "Lichtgrijze buizerd met fijne grijze dwarsbandering op de onderkant"
+},
+"Plumbeous kite": {
+"j": 0,
+"why": "Leigrijze wouw met roodbruine handpennen en rode ogen"
+},
+"Peregrine falcon": {
+"j": 2,
+"why": "Adult: blauwgrijze rug, zwarte 'snor' en gestreepte onderkant"
+},
+"Collared forest-falcon": {
+"j": 0,
+"why": "Lichte vorm: witte kraag en onderkant, zwarte kap en lange gebandeerde staart"
+},
+"Lesser yellow-headed vulture": {
+"j": 0,
+"why": "Zwarte gier met geel-oranje kop en blauwachtige kruin"
+},
+"Vermiculated screech-owl": {
+"j": 3,
+"why": "Roodbruine vorm van de Midden-Amerikaanse schreeuwuil, fijn gevlekt; Costa Rica"
+},
+"Costa Rican pygmy-owl": {
+"j": 0,
+"why": "Klein bruin uiltje met witte stippen op kop en rug, gele ogen"
+},
+"Chestnut-colored woodpecker": {
+"j": 8,
+"why": "Kastanjebruin met lichte kuif en rode wangvlek (mannetje); Costa Rica"
+},
+"Cinnamon woodpecker": {
+"j": 3,
+"why": "Kaneelbruin met zwarte schubvlekken en korte kuif; Costa Rica"
+},
+"Hairy woodpecker": {
+"j": 6,
+"why": "Costa Ricaanse vorm met bruinige onderkant, rode nekvlek (mannetje)"
+},
+"Blue-headed parrot": {
+"j": 8,
+"why": "Blauwe kop en hals, groen lichaam en roze-rode borstvlek"
+},
+"Purple-throated fruitcrow": {
+"j": 0,
+"why": "Mannetje: zwart met paarsrode keelvlek"
+},
+"White-ruffed manakin": {
+"j": 6,
+"why": "Mannetje: blauwzwart met witte keelkraag; Costa Rica"
+},
+"Shining honeycreeper": {
+"j": 5,
+"why": "Mannetje: helderblauw, zwarte keel en felgele poten; Costa Rica"
+},
+"Orange-billed nightingale-thrush": {
+"j": 5,
+"why": "Grijze kop, oranje snavel en oogring, bruine rug; Costa Rica"
+},
+"Wrenthrush": {
+"j": 0,
+"why": "Leigrijs vogeltje met oranje kruin en olijfgroene vleugels"
+},
+"Rufous-and-white wren": {
+"j": 0,
+"why": "Roestbruine bovenkant, witte onderkant en zwart-witte gestreepte wang"
+},
+"Townsend's warbler": {
+"j": 0,
+"why": "Zwart-geel gezichtsmasker, gele borst met zwarte flankstrepen"
+},
+"Dark pewee": {
+"j": 8,
+"why": "Donkergrijze tiran met kuifje en oranje ondersnavel; Costa Rica"
+},
+"Plain-brown woodcreeper": {
+"j": 4,
+"why": "Egaal bruine muisspecht met roestkleurige staart en grijze wangvlek"
+},
+"Black-faced antthrush": {
+"j": 5,
+"why": "Zwarte keel, kastanje kop- en halszijden, opgestoken staartje; Costa Rica"
+},
+"Streak-chested antpitta": {
+"j": 3,
+"why": "Rond vogeltje met lichte oogring en zwart gestreepte borst; Osa"
+},
+"Southern rough-winged swallow": {
+"j": 0,
+"why": "Bruine zwaluw met kaneelkleurige keel en lichte stuit"
+},
+"White-fronted nunbird": {
+"j": 3,
+"why": "Leigrijs met wit voorhoofd en rode snavel; Costa Rica"
+},
+"Short-billed pigeon": {
+"j": 4,
+"why": "Wijnrode duif met korte zwarte snavel, op een pad in Costa Rica"
+},
+"Black-bellied plover": {
+"j": 0,
+"why": "Winterkleed: grijs gevlekt met witte buik, zoals in februari"
+},
+"Ruddy turnstone": {
+"j": 0,
+"why": "Winterkleed: bruin-wit borstpatroon en oranje poten"
+},
+"Lesser yellowlegs": {
+"j": 0,
+"why": "Slanke grijsbruine steltloper met dunne snavel en gele poten"
+},
+"Western sandpiper": {
+"j": 1,
+"why": "Winterkleed: grijs met witte onderkant, lange iets gebogen snavel"
+},
+"Glossy ibis": {
+"j": 2,
+"why": "Donkere ibis met gebogen snavel en glanzend verenkleed"
+},
+"White-collared swift": {
+"j": 0,
+"why": "Grote zwarte gierzwaluw met witte halsband zichtbaar"
+},
+"Scarlet-rumped cacique": {
+"j": 1,
+"why": "Zwart met lichtblauw oog en scharlakenrode stuit zichtbaar"
+},
+"Spot-crowned woodcreeper": {
+"j": 3,
+"why": "Gebogen lichte snavel, gestippelde kruin, roestbruine rug; Costa Rica"
+},
+"Redlip parrotfish": {
+"j": 4,
+"why": "Blauwgroene eindfase; waarneming bij Isla del Caño"
+},
+"Bluefin trevally": {
+"j": 1,
+"why": "Zilver met felblauwe vinnen en donkere stippen"
+}
+}
