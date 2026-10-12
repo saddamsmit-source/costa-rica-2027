@@ -1,13 +1,13 @@
-Costa Rica 2027 — Premium PWA v3.0
+COSTA RICA 2027 · PREMIUM VISUAL V4.0
 
-UPLOAD NAAR GITHUB
-1. Maak eerst een JSON-back-up in de huidige app (Back-up & info).
-2. Pak deze ZIP uit. Upload alle bestanden naar dezelfde GitHub repository, direct in de root.
-3. Bij dubbele bestandsnamen moet je de oude versies vervangen/overschrijven; verwijder geen persoonlijke gegevens op je telefoon.
-4. Wacht op GitHub Pages-publicatie. Sluit en heropen de app op je Samsung met internet. Indien nodig tweemaal heropenen.
-5. Controleer notities en boekingen. De bestaande opslag CR27_V2 blijft behouden.
-6. Test offline pas na een online opening.
+Nieuwe interface geïnspireerd op de aangeleverde mockup: Home, dagpagina’s, swipe, activiteiten, wildlife, hotel, kaart, notities, boekingen en budget. Alle 23 dagen en LOCKS zijn ongewijzigd uit v3.0 overgenomen.
 
-LET OP: De route is niet veranderd. Swipe op de grote dagkaart, of gebruik pijlen en dagkiezer.
-App-icoon kan door Android gecachet worden; bij blijvend oud icoon eventueel opnieuw installeren NA BACK-UP.
-GitHub Pages is openbaar: geen gevoelige gegevens in bronbestanden.
+INSTALLATIE / UPDATE
+1. Maak in de bestaande app een JSON-back-up via Meer/Back-up & info.
+2. Pak de ZIP uit en upload ALLE bestanden naar de ROOT van je bestaande GitHub repository costa-rica-2027. Bestaande bestanden moeten worden VERVANGEN, niet naast elkaar hernoemd.
+3. Controleer GitHub Actions Pages deployment groen en test de website eerst in incognito.
+4. Open je bestaande geïnstalleerde app online, sluit en open eventueel opnieuw. Niet verwijderen zonder back-up.
+5. De lokale opslag blijft CR27_V2; persoonlijke notities, boekingen, budget en hotelkeuzes blijven normaal bewaard op dezelfde origin/browser. Maak altijd eerst een back-up.
+6. Kaartembed en Google Maps-links vragen internet; dagplanning en gebundelde fotografie werken offline na een online bezoek.
+
+NB: de meegeleverde natuurfoto’s zijn bijgesneden uit het door de gebruiker aangeleverde visuele referentiebeeld. Niet alle detailfuncties van het conceptbeeld (live weer, routeberekeningen) zijn aanwezig: die vereisen aparte live integraties.

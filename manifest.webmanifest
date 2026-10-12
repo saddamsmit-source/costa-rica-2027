@@ -1,12 +1,12 @@
 {
-  "name": "Costa Rica 2027 · Wildlife Travel Companion",
+  "name": "Costa Rica 2027 · Reisplanner",
   "short_name": "Costa Rica 2027",
   "description": "Persoonlijke Sawadee- en wildlife-reisplanner voor Costa Rica 2027",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f5f0",
-  "theme_color": "#092d27",
+  "background_color": "#faf9f3",
+  "theme_color": "#073b25",
   "lang": "nl",
   "icons": [
     {
