@@ -2,7 +2,7 @@ name: wildlife-data
 on:
   workflow_dispatch:
   push:
-    branches: [redesign]
+    branches: [redesign, wildlife-21]
     paths: ['tools/wl/trigger.json']
 permissions:
   contents: write
