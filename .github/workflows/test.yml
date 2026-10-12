@@ -13,3 +13,10 @@ jobs:
         with: {node-version: '20'}
       - run: npm i --no-save playwright@1.47.2 && npx playwright install --with-deps chromium
       - run: node tests/smoke.js
+  weer-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Controleer Open-Meteo-antwoord
+        run: |
+          curl -sf "https://api.open-meteo.com/v1/forecast?latitude=10.468&longitude=-84.643&current=temperature_2m,apparent_temperature,relative_humidity_2m,precipitation,weather_code,wind_speed_10m,is_day&hourly=temperature_2m,precipitation_probability,weather_code,is_day&forecast_hours=12&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum&forecast_days=16&timezone=America%2FCosta_Rica" -o w.json
+          python3 -c "import json;d=json.load(open('w.json'));c=d['current'];h=d['hourly'];y=d['daily'];assert all(k in c for k in ['temperature_2m','apparent_temperature','relative_humidity_2m','precipitation','weather_code','wind_speed_10m','is_day']);assert len(h['time'])>=7 and len(h['precipitation_probability'])==len(h['time']);assert len(y['time'])==16;print('OK',c['temperature_2m'],h['time'][0],y['time'][0])"

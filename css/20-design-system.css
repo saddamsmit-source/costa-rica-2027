@@ -213,3 +213,33 @@ body[data-tab="home"] .footer,body[data-tab="days"] .footer{display:none}
 
 /* rustige beweging */
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Home: ruimte boven de vaste navigatie */
+.ds-home{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))!important}
+.ds-next-body .ds-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ---------- Weer ---------- */
+.ds-wx{margin-top:var(--ds-s3)}
+.ds-wx-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ds-wx-refresh{width:var(--ds-hit);height:var(--ds-hit);margin:-8px -8px -8px 0;border:0;background:none;color:var(--ds-muted);border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.ds-wx-refresh.spin svg{animation:dsSpin .8s linear infinite}
+@keyframes dsSpin{to{transform:rotate(360deg)}}
+.ds-wx-now{display:flex;align-items:center;gap:14px;margin-top:8px}
+.ds-wx-big{display:flex;align-items:center;gap:6px;color:var(--ds-jungle)}
+.ds-wx-big span{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.ds-wx-big svg{color:var(--ds-ember)}
+.ds-wx-meta{min-width:0;display:flex;flex-direction:column;gap:2px}
+.ds-wx-meta b{font-size:15px}
+.ds-wx-meta span{font-size:12.5px;color:var(--ds-muted);font-weight:600}
+.ds-wx-hours{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.ds-wx-h{display:flex;flex-direction:column;align-items:center;gap:3px;background:var(--ds-mist);border-radius:12px;padding:8px 2px;color:var(--ds-jungle)}
+.ds-wx-h small{font-size:11px;font-weight:700;color:var(--ds-muted)}
+.ds-wx-h b{font-size:14px;color:var(--ds-ink)}
+.ds-wx-h em{font-style:normal;font-size:10.5px;font-weight:700;color:var(--ds-muted)}
+.ds-wx-h em.wet{color:var(--ds-sky-ink)}
+.ds-wx-day{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--ds-sky-soft);color:var(--ds-sky-ink);font-size:13px;line-height:1.4}
+.ds-wx-day b{display:block;color:var(--ds-ink)}
+.ds-wx-day.muted{background:var(--ds-mist);color:var(--ds-muted)}
+.ds-wx-day svg{flex:none;margin-top:1px}
+.ds-wx-foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--ds-muted)}
+.ds-wx-foot a{color:var(--ds-leaf-ink);font-weight:700;text-decoration:none}

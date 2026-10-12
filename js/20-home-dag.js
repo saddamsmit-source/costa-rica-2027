@@ -56,7 +56,7 @@ renderHome=function(){
   <div class="ds-tiles">${tiles.map(([i,t,s,g])=>`<button class="ds-tile" data-goto="${g}"><i>${dsI(i,22)}</i><b>${t}</b><small>${s}</small></button>`).join('')}</div>
   <div class="ds-home-body">
     <div class="ds-section-title">${td?'Vandaag':'Volgende dag'}</div>
-    <button class="ds-next" data-dsday="${d.id}"><img src="${locationPhoto(d)}" alt=""><span class="ds-next-body"><span class="ds-label">Dag ${d.id} · ${fmt(d.date)}</span><b>${esc(d.place.split('/')[0].trim())}</b><span>${esc(d.id===22?'Afscheid van Costa Rica':d.id===23?'Terug naar huis':(V50_TAG[v47Region(d)]||d.base))}</span><span class="ds-next-chips">${saw?`<em class="saw">Sawadee</em>`:''}${extra?`<em>+${extra} ${extra===1?'optie':'opties'}</em>`:''}</span></span>${dsI('chevR',20)}</button>
+    <button class="ds-next" data-dsday="${d.id}"><img src="${locationPhoto(d)}" alt=""><span class="ds-next-body"><span class="ds-label">Dag ${d.id} · ${new Date(d.date+'T12:00:00').toLocaleDateString('nl-NL',{weekday:'short',day:'numeric',month:'short'})}</span><b>${esc(d.place.split('/')[0].trim())}</b><span>${esc(d.id===22?'Afscheid van Costa Rica':d.id===23?'Terug naar huis':(V50_TAG[v47Region(d)]||d.base))}</span><span class="ds-next-chips">${saw?`<em class="saw">Sawadee</em>`:''}${extra?`<em>+${extra} ${extra===1?'optie':'opties'}</em>`:''}</span></span>${dsI('chevR',20)}</button>
     ${needBackup?`<button class="ds-home-note" data-goto="settings">${dsI('alert',16)}${a===null?'Nog geen back-up van je gegevens':'Back-up is '+a+' dagen oud'} · maak er een</button>`:''}
   </div></div>`};
 
