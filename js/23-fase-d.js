@@ -38,9 +38,9 @@ let dsMapWide=false;
 function dsdBox(fd){
   const M=V51_MAP,P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]),cur=v51Day2Stop(fd),last=V51_STOPS.length-1;
   const names=[V51_STOPS[cur][0]];V51_STOPS[cur][1].forEach(d=>(V51_EXC[d]||[]).forEach(n=>names.push(n)));
-  const pts=names.map(P),xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);
+  const pts=names.map(P);if(typeof DSE_POI!=='undefined')DSE_POI.forEach(p=>{if(p.acts.some(a=>V51_STOPS[cur][1].includes(a[0])))pts.push(v51XY(p.ll[0],p.ll[1]))});const xs=pts.map(p=>p[0]),ys=pts.map(p=>p[1]);
   let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
-  const AR=1.2;let w=Math.max(x1-x0,170)*1.5,h=Math.max(y1-y0,120)*1.5;
+  const AR=1.2;let w=Math.max(x1-x0,100)*1.5,h=Math.max(y1-y0,72)*1.5;
   if(w/h<AR)w=h*AR;else h=w/AR;w=Math.min(w,M.W);h=Math.min(h,M.H);
   let cx=(x0+x1)/2,cy=(y0+y1)/2,x=Math.max(0,Math.min(M.W-w,cx-w/2)),y=Math.max(0,Math.min(M.H-h,cy-h/2));
   return [x,y,w,h]}
@@ -63,14 +63,16 @@ function dsMapSvg(fd,zoom){
   const last=V51_STOPS.length-1,on0=cur===last?0:cur,inb=(x,y)=>x>box[0]&&x<box[0]+box[2]&&y>box[1]&&y<box[1]+box[3];
   const curDays=cur>=0?V51_STOPS[cur][1]:[];
   const excs=Object.entries(V51_EXC).flatMap(([d,list])=>list.map(n=>({n,on:curDays.includes(+d)})));
-  const exc=excs.map(({n,on})=>{const[x,y]=P(n);return `<g class="dsm-exc ${on?'on':''}"><circle cx="${f(x)}" cy="${f(y)}" r="${f((on?7:5)*s)}"/></g>`}).join('');
+  const X=typeof dseLayer==='function'?dseLayer(fd,zoom,box,s,cur):{svg:'',pins:[],hideExc:false};
+  const exc=X.hideExc?'':excs.map(({n,on})=>{const[x,y]=P(n);return `<g class="dsm-exc ${on?'on':''}"><circle cx="${f(x)}" cy="${f(y)}" r="${f((on?7:5)*s)}"/></g>`}).join('');
   const stopList=V51_STOPS.slice(0,-1).map(([r,days],i)=>({r,days,i,on:i===on0,xy:P(r)}));
   const stops=stopList.map(({r,days,i,on,xy:[x,y]})=>{const R=(on?14:10.5)*s;
     return `<g class="dsm-stop v51-stop ${on?'on':''}" data-v51-day="${days[0]}" role="button" aria-label="${esc(V51_PT[r][2])}, ${dsdDays(days)}"><circle cx="${f(x)}" cy="${f(y)}" r="${f(R)}"/><text x="${f(x)}" y="${f(y+R*.36)}" style="font-size:${f((on?12.5:10.5)*s)}px">${i+1}</text></g>`}).join('');
   let labels='';
-  if(zoom){const pl=dsdPlacer(box,s);stopList.forEach(({on,xy:[x,y]})=>pl.pin(x,y,(on?15:11.5)*s));excs.forEach(({n,on})=>{if(on){const[x,y]=P(n);pl.pin(x,y,8*s)}});
+  if(zoom){const pl=dsdPlacer(box,s);stopList.forEach(({on,xy:[x,y]})=>pl.pin(x,y,(on?15:11.5)*s));if(!X.hideExc)excs.forEach(({n,on})=>{if(on){const[x,y]=P(n);pl.pin(x,y,8*s)}});X.pins.forEach(o=>pl.pin(o.x,o.y,o.r));
     const cs=stopList.find(o=>o.on);if(cs)labels+=pl.label(cs.xy[0],cs.xy[1],V51_PT[cs.r][2],'on',true);
-    excs.filter(o=>o.on).forEach(({n})=>{const[x,y]=P(n);labels+=pl.label(x,y,V51_PT[n][2],'exc',true)});
+    if(!X.hideExc)excs.filter(o=>o.on).forEach(({n})=>{const[x,y]=P(n);labels+=pl.label(x,y,V51_PT[n][2],'exc',true)});
+    X.pins.filter(o=>o.label&&inb(o.x,o.y)).sort((a,b)=>(b.must?1:0)-(a.must?1:0)).forEach(o=>{labels+=pl.label(o.x,o.y,o.label,o.cls,false)});
     stopList.filter(o=>!o.on&&inb(...o.xy)).forEach(o=>{labels+=pl.label(o.xy[0],o.xy[1],V51_PT[o.r][2],'',false)})}
   else labels=stopList.map(({r,on,xy:[x,y]})=>{const left=['Cahuita','Tortuguero','Esterillos','Corcovado'].includes(r);
     return `<text class="dsm-name ${on?'on':''}" x="${f(x+(left?-17:17))}" y="${f(y+6)}" text-anchor="${left?'end':'start'}">${esc(V51_PT[r][2])}</text>`}).join('');
@@ -80,7 +82,7 @@ function dsMapSvg(fd,zoom){
   return `<svg class="v51-svg dsm ${zoom?'zoom':'full'}" viewBox="${box.map(f).join(' ')}" role="img" aria-label="${zoom?'Kaart rond '+esc(V51_PT[V51_STOPS[cur][0]][2]):'Routekaart Costa Rica'}" preserveAspectRatio="xMidYMid slice">
     <rect x="-50" y="-50" width="${M.W+100}" height="${M.H+100}" class="dsm-sea"/>
     <path d="${M.NIC}" class="dsm-nb" vector-effect="non-scaling-stroke"/><path d="${M.PAN}" class="dsm-nb" vector-effect="non-scaling-stroke"/><path d="${M.CRI}" class="dsm-land" vector-effect="non-scaling-stroke"/>
-    ${deco}${tracks}${legs}<path class="dsm-air" vector-effect="non-scaling-stroke" d="M${f(sjo[0]-a)},${f(sjo[1])}h${f(2*a)}M${f(sjo[0])},${f(sjo[1]-a)}v${f(2*a)}"/>${exc}${stops}${labels}${me}
+    ${deco}${tracks}${legs}<path class="dsm-air" vector-effect="non-scaling-stroke" d="M${f(sjo[0]-a)},${f(sjo[1])}h${f(2*a)}M${f(sjo[0])},${f(sjo[1]-a)}v${f(2*a)}"/>${exc}${X.svg}${stops}${labels}${X.top||''}${me}
   </svg>`}
 /* GPS-updates en bestaande aanroepen tekenen voortaan deze kaart */
 v51Svg=function(fd){return dsMapSvg(fd,tab==='days'&&!dsMapWide)};

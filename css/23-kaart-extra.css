@@ -1,0 +1,90 @@
+/* =====================================================================
+   v6.3 · kaartlagen, noodkaart, dagverslag, zonlichtstand, tijd
+   ===================================================================== */
+:root{--dse-obs:#7A4BB8;--dse-obs-soft:#EFE7FA;--dse-park:#2F7A4A;--dse-sos:#C62828;--dse-sos-soft:#FDE4E2}
+/* laagknoppen */
+.dse-chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.dse-chip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 11px;border:0;border-radius:var(--ds-r-pill);background:var(--ds-mist);color:var(--ds-ink-2);font-size:12.5px;font-weight:700;cursor:pointer}
+.dse-chip i{width:10px;height:10px;border-radius:50%;background:#B9C6BD}
+.dse-chip.act i{border-radius:50%}.dse-chip.park i{border-radius:3px}
+.dse-chip em{font-style:normal;font-size:11px;background:rgba(255,255,255,.6);border-radius:8px;padding:0 6px}
+.dse-chip.on{background:var(--ds-jungle);color:#fff}
+.dse-chip.act.on i{background:var(--ds-ember)}
+.dse-chip.park.on i{background:#7FD19B}
+.dse-chip.obs.on i{background:#C9A7F2}
+.dse-chip.on em{background:rgba(255,255,255,.2)}
+/* pins */
+.dse-poi{cursor:pointer}
+.dse-poi.park rect{fill:var(--dse-park);stroke:#fff;stroke-width:2px;vector-effect:non-scaling-stroke}
+.dse-poi.park path{fill:#fff;stroke:#fff;stroke-width:1.4px;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.dse-poi.act circle{fill:var(--ds-ember);stroke:#fff;stroke-width:2.2px;vector-effect:non-scaling-stroke}
+.dse-poi.act.saw circle{fill:var(--ds-leaf)}.dse-poi.act.opt circle{fill:var(--ds-sky)}
+.dse-poi.obs circle{fill:var(--dse-obs);stroke:#fff;stroke-width:2px;vector-effect:non-scaling-stroke}
+.dse-poi circle.dot{fill:#fff;stroke:none}
+.dsm-lbl.park text{fill:var(--dse-park)}
+.dsm-lbl.act text{fill:var(--ds-ember-ink)}
+/* pin-venster */
+.ds-mapbox .dse-pop{position:absolute;left:10px;right:10px;bottom:10px;background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(10,24,18,.25);padding:12px 14px;max-height:72%;overflow:auto;z-index:2}
+.dse-pop[hidden]{display:none}
+.dse-pop-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.dse-k{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:3px 7px}
+.dse-k.park,.dse-k.reserve{background:var(--ds-leaf-soft);color:var(--dse-park)}
+.dse-k.act{background:var(--ds-ember-soft);color:var(--ds-ember-ink)}
+.dse-k.obs{background:var(--dse-obs-soft);color:var(--dse-obs)}
+.dse-x{width:34px;height:34px;border:0;border-radius:50%;background:var(--ds-mist);color:var(--ds-ink-2);display:grid;place-items:center;cursor:pointer}
+.dse-x svg{transform:rotate(45deg)}
+.dse-pop b{display:block;font-size:16px;font-weight:800;color:var(--ds-ink)}
+.dse-pop p{margin:4px 0 6px;font-size:13px;line-height:1.45;color:var(--ds-ink-2)}
+.dse-act{width:100%;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:42px;margin-top:6px;padding:0 10px;border:0;border-radius:12px;background:var(--ds-mist);color:var(--ds-jungle);font-size:13.5px;font-weight:700;text-align:left;cursor:pointer}
+.dse-maps{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:13px;font-weight:700;color:var(--ds-jungle)}
+.dse-list{margin:6px 0 0;padding:0;list-style:none}
+.dse-list li{padding:6px 0;border-top:1px solid var(--ds-line);font-size:13.5px;font-weight:600}
+.dse-list small{color:var(--ds-muted);font-weight:500}
+/* Home: tijd + noodkaart */
+.dse-homebar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 4px}
+.dse-clock{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:13px;color:var(--ds-ink-2)}
+.dse-clock>span{display:inline-flex;align-items:center;gap:5px}
+.dse-clock b{font-weight:600;color:var(--ds-muted)}
+.dse-clock .ds-num{font-weight:800;color:var(--ds-ink)}
+.dse-sosbtn{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:0;border-radius:var(--ds-r-pill);background:var(--dse-sos-soft);color:var(--dse-sos);font-size:13.5px;font-weight:800;cursor:pointer}
+.ds-menurow>i.sos{background:var(--dse-sos-soft);color:var(--dse-sos)}
+/* noodkaart */
+.dse-overlay{position:fixed;inset:0;z-index:1000;background:rgba(6,20,14,.55);display:flex;align-items:flex-end;justify-content:center}
+.dse-sheet{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:var(--ds-ivory);border-radius:24px 24px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.dse-sheet-h{display:flex;align-items:center;justify-content:space-between;margin:0 2px 12px}
+.dse-sheet-h b{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.dse-er{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 14px;margin-bottom:8px;border-radius:16px;background:#fff;box-shadow:var(--ds-shadow);text-decoration:none;color:var(--ds-ink)}
+.dse-er>i{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--ds-mist);color:var(--ds-jungle)}
+.dse-er b{display:block;font-size:15px;font-weight:800}
+.dse-er small{display:block;font-size:12.5px;color:var(--ds-muted);margin-top:1px}
+.dse-er.sos{background:var(--dse-sos);color:#fff}
+.dse-er.sos>i{background:rgba(255,255,255,.18);color:#fff}
+.dse-er.sos small{color:#FFE1DE}
+.dse-er.sos b{font-size:18px}
+.dse-editbtn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border:0;border-radius:var(--ds-r-pill);background:#fff;box-shadow:inset 0 0 0 1.5px #C9D8CD;color:var(--ds-jungle);font-size:13.5px;font-weight:700;cursor:pointer}
+.dse-edit{display:grid;gap:10px;background:#fff;border-radius:16px;padding:14px;box-shadow:var(--ds-shadow)}
+.dse-edit label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;color:var(--ds-muted)}
+.dse-edit input{min-height:44px;border:0;border-radius:12px;background:var(--ds-mist);padding:0 12px;font-size:15px;color:var(--ds-ink)}
+.dse-edit input:focus{background:#fff;box-shadow:inset 0 0 0 2px var(--ds-leaf);outline:0}
+.dse-foot{margin:14px 2px 0;font-size:12px;color:var(--ds-muted);line-height:1.4}
+/* dagverslag */
+.dse-report{width:100%;display:flex;align-items:center;gap:12px;margin-top:var(--ds-s3);padding:14px;border:0;border-radius:20px;background:var(--ds-card);box-shadow:var(--ds-shadow);text-align:left;color:var(--ds-ink);cursor:pointer}
+.dse-report>i{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--ds-sky-soft);color:var(--ds-sky-ink)}
+.dse-report span{flex:1;min-width:0}
+.dse-report b{display:block;font-size:15px;font-weight:700}
+.dse-report small{display:block;font-size:12.5px;color:var(--ds-muted);margin-top:1px}
+.dse-report>svg{flex:none;color:var(--ds-muted)}
+/* schakelaars in Meer */
+.dse-switch{cursor:pointer}
+.dse-switch input{position:absolute;opacity:0;width:1px;height:1px}
+.dse-switch em{flex:none;width:46px;height:28px;border-radius:14px;background:#C9D3C6;position:relative;transition:background .15s}
+.dse-switch em:after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .15s}
+.dse-switch input:checked+em{background:var(--ds-leaf)}
+.dse-switch input:checked+em:after{transform:translateX(18px)}
+.dse-switch input:focus-visible+em{outline:3px solid #8FD3A6;outline-offset:2px}
+/* zonlichtstand: meer contrast, dikkere randen, donkerdere secundaire tekst */
+body.ds-sunmode{--ds-ivory:#FFFFFF;--ds-muted:#2E3F35;--ds-ink-2:#101A14;--ds-ink:#000;--ds-line:#B9C6BD;--ds-mist:#E4ECE1}
+body.ds-sunmode .ds-card,body.ds-sunmode .ds-menurow,body.ds-sunmode .ds-leg,body.ds-sunmode .ds-tl{font-weight:600}
+body.ds-sunmode .ds-card,body.ds-sunmode .dse-er,body.ds-sunmode .dse-report,body.ds-sunmode .ds-tile,body.ds-sunmode .ds-next{box-shadow:0 0 0 1.5px #7E9486}
+body.ds-sunmode .ds-meta,body.ds-sunmode small{color:#26362C}
+body.ds-sunmode .ds-pill,body.ds-sunmode .ds-badge{font-weight:800}

@@ -51,6 +51,13 @@ const {chromium}=require('playwright');const path=require('path');
   await p.evaluate(()=>{v49Seg='boekingen';render();const s=document.querySelector('[data-book]');window._bk=s.dataset.book;s.value='aangevraagd';s.dispatchEvent(new Event('change'))});if(!(await p.evaluate(()=>state.bookings[window._bk]==='aangevraagd')))errs.push('boekingsstatus opslaan werkt niet');
   await p.evaluate(()=>{v49Seg='regelen';render()});await must('.ds-clrow','te-regelen rij');
   await p.evaluate(()=>{tab='budget';render();const i=document.querySelector('[data-cost]');i.value='25';i.dispatchEvent(new Event('change'))});if(!(await p.evaluate(()=>document.querySelector('.ds-bsum-top b').textContent.includes('25'))))errs.push('budget telt niet op');
+  /* v6.3: kaartlagen, noodkaart, dagverslag, zonlicht */
+  await p.evaluate(()=>{tab='days';currentDay=7;daySection='map';render()});await must('.dse-chips','kaartlagen');await must('[data-dse-poi="fortuna-waterfall"]','activiteitpin');
+  await p.evaluate(()=>document.querySelector('[data-dse-poi="fortuna-waterfall"]').dispatchEvent(new MouseEvent('click',{bubbles:true})));if(await p.evaluate(()=>document.getElementById('dsePop').hidden))errs.push('pin-venster opent niet');
+  await p.evaluate(()=>document.querySelector('[data-dse-layer="act"]').click());if(await p.$('[data-dse-poi="fortuna-waterfall"]'))errs.push('laag uitzetten werkt niet');await p.evaluate(()=>document.querySelector('[data-dse-layer="act"]').click());
+  await p.evaluate(()=>{tab='home';render()});await must('#dseClock','tijd CR/NL');await p.click('.dse-sosbtn');await must('a[href="tel:911"]','noodkaart 911');await p.click('#dseEmClose');
+  await p.evaluate(()=>{tab='days';currentDay=7;daySection='overview';render()});await must('#dseReport','dagverslag');if(!(await p.evaluate(()=>dseReport(S[6]).startsWith('Dag 7'))))errs.push('dagverslag tekst');
+  await p.evaluate(()=>{tab='settings';dsMore='';render()});await must('#dseSun','zonlichtstand');
   const n=await p.evaluate(()=>Object.keys(V47_SP).length);if(n<250)errs.push('te weinig soorten: '+n);
   await b.close();
   if(errs.length){console.error('MISLUKT:\n'+errs.join('\n'));process.exit(1)}console.log('OK: alle schermen, 23 dagen x 5 tabs, '+n+' soorten');
