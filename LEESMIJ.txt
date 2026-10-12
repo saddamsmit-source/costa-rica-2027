@@ -1,5 +1,1 @@
-Costa Rica Premium Tropical v4.4
-Activiteitillustraties zijn unieke, lokaal opgeslagen illustraties (geen echte foto’s).
-Wildlife-statistieken en logboeknotities per soort en locatie.
-LOCKED route en activiteiten ongewijzigd.
-Maak eerst een JSON-back-up.
+Costa Rica Premium Tropical v4.5 — visuele update. Behoud JSON-back-up. Upload alle bestanden naar GitHub Pages. Externe thematische foto-thumbnails vereisen internet; lokale SVG-fallback blijft beschikbaar. Reisinformatie toont geen onbevestigde cijfers. LOCKED planning ongewijzigd.
