@@ -84,9 +84,10 @@ function wgBind(){const g=document.getElementById('wgGuide');if(!g)return;
   g.querySelectorAll('[data-wg-status]').forEach(b=>b.onclick=()=>{wg.status=b.dataset.wgStatus;wgRefresh()});
   const s=g.querySelector('#wgRegion');if(s)s.onchange=()=>{wg.region=s.value;wgRefresh()};
   const m=g.querySelector('[data-wg-all]');if(m)m.onclick=()=>{wg.all=true;wgRefresh()};
-  wl2BindOpeners(g)}
+  wl2BindOpeners(g);wgChipScroll()}
 const wgPrevBind=bindExtras;
-bindExtras=function(){wgPrevBind();wgBind();
+function wgChipScroll(){document.querySelectorAll('.wg-chips button.on').forEach(b=>{const r=b.parentElement;if(b.offsetLeft+b.offsetWidth>r.clientWidth)r.scrollLeft=b.offsetLeft-16})}
+bindExtras=function(){wgPrevBind();wgBind();wgChipScroll();
   document.querySelectorAll('[data-wg-dst]').forEach(b=>b.onclick=()=>{wgDayStatus=b.dataset.wgDst;document.querySelectorAll('[data-wg-dst]').forEach(x=>x.classList.toggle('on',x===b));v50ApplyFilter()});
   document.querySelectorAll('[data-v47-filter]').forEach(b=>{const f=b.onclick;b.onclick=()=>{wgDayStatus='Alle';f&&f()}})};
 render();
