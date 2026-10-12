@@ -1,0 +1,34 @@
+{
+ "titles": {
+  "dest-sanjose": "File:Teatro Nacional CRI 07 2019 8963.jpg",
+  "dest-cahuita": "File:Cahuita national park, Costa Rica.jpg",
+  "dest-tortuguero": "File:Tortuguero boat trip.JPG",
+  "dest-fortuna": "File:Arenal volcano (70785p) (cropped).jpg",
+  "dest-rincon": "File:Rincón de la Vieja Volcano Costa Rica Mud Bubbles bursting 7863.jpg",
+  "dest-monteverde": "File:Monteverde bosque.jpg",
+  "dest-sangerardo": "File:San Gerardo de Dota 1.jpg",
+  "dest-uvita": "File:Trombolo3 - Marino Ballena - CR.JPG",
+  "dest-corcovado": "File:Parque Nacional Corcovado.JPG",
+  "dest-esterillos": "File:Playa Esterillos, Costa Rica..jpg",
+  "dest-manuel": "File:Parque Nacional Manuel Antonio 1.JPG",
+  "dest-tarcoles": "File:Crocodylus acutus in Tárcoles River 02.jpg",
+  "dest-amsterdam": "File:Schiphol KLM aircraft.JPG",
+  "act-toucan": "File:Yellow-throated toucan (02923).jpg",
+  "act-skywalk": "File:2006-08-08 Hanging Bridges in Monteverde.jpg",
+  "act-quetzal": "File:Resplendent Quetzal, Mirador de Quetzales, Costa Rica.jpg",
+  "act-whale": "File:073 Humpback whale tail in Ballena Marine National Park Photo by Giles Laurent.jpg",
+  "act-canonegro": "File:Caño Negro Wildlife Refuge 03.jpg",
+  "act-tapir": "File:Baird's tapir (92135).jpg",
+  "act-macaw": "File:Scarlet Macaws at Uvita Beach, Costa Rica 01.jpg"
+ },
+ "queries": {
+  "hero-keelbilled": [
+   "Ramphastos sulfuratus Costa Rica",
+   "Keel-billed toucan Costa Rica"
+  ],
+  "hero-arenal": [
+   "Arenal Volcano Costa Rica panorama",
+   "Volcán Arenal"
+  ]
+ }
+}
