@@ -1,0 +1,21 @@
+name: fetch-photo-candidates
+on:
+  push:
+    branches: [main]
+    paths: ['tools/photo_queries.json','tools/fetch_photos.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/fetch_photos.py
+      - run: |
+          git config user.name "photo-bot"; git config user.email "photo-bot@users.noreply.github.com"
+          git checkout --orphan photo-candidates
+          git rm -rq --cached .
+          git add cand
+          git commit -qm "photo candidates"
+          git push -f origin photo-candidates
