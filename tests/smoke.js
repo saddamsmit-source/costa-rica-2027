@@ -5,15 +5,21 @@ const {chromium}=require('playwright');const path=require('path');
   const b=await chromium.launch(exe?{executablePath:exe,args:['--headless=new']}:{});
   const p=await b.newPage({viewport:{width:390,height:844}});
   const errs=[];p.on('pageerror',e=>errs.push('JS: '+e.message));
-  p.on('console',m=>{if(m.type()==='error'&&!/net::|ERR_|Failed to load resource/.test(m.text()))errs.push('console: '+m.text())});
-  p.on('requestfailed',r=>{if(r.url().startsWith('file:'))errs.push('ontbreekt: '+r.url())});
+  p.on('console',m=>{if(m.type()==='error'&&!/net::|ERR_|Failed to load resource|CORS|woff2/.test(m.text()))errs.push('console: '+m.text())});
+  p.on('requestfailed',r=>{if(r.url().startsWith('file:')&&!r.url().endsWith('.woff2'))errs.push('ontbreekt: '+r.url())});
   await p.route(/^https?:/,r=>r.abort());
+  const fixture={notes:{'7':'Testnotitie dag 7'},bookings:{'7-0':'geboekt','17-0':'geboekt'},costs:{},hotelSelected:{},checks:{},v43Observations:{'resplendent quetzal':{name:'Resplendent quetzal',places:{'San Gerardo de Dota':{seen:true,photo:true}}}},v43Extras:{'Monteverde':['Testuil']},v43Migrated:true,v44Log:{},v48Init:true,v48Pack:{'0-0':true},v49Open:{},gpsTracks:[],v51Rates:{eurusd:1.1176,usdcrc:455.47,date:'12 okt 2026'}};
+  await p.addInitScript(f=>{try{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify(f))}catch(e){}},fixture);
   await p.goto('file://'+path.resolve(__dirname,'..','index.html'));await p.waitForTimeout(400);
+  const comp=await p.evaluate(()=>({note:state.notes['7'],q:!!state.v43Observations['resplendent quetzal']?.places?.['San Gerardo de Dota']?.photo,pack:state.v48Pack['0-0'],book:state.bookings['17-0'],extra:(state.v43Extras.Monteverde||[]).includes('Testuil')}));
+  if(comp.note!=='Testnotitie dag 7'||!comp.q||!comp.pack||comp.book!=='geboekt'||!comp.extra)errs.push('back-upcompatibiliteit: '+JSON.stringify(comp));
+  await p.evaluate(()=>{tab='days';currentDay=7;daySection='overview';render()});
+  if(!(await p.evaluate(()=>document.querySelector('textarea[data-note="7"]')?.value==='Testnotitie dag 7')))errs.push('notitie dag 7 niet zichtbaar na laden');
   const must=async(sel,what)=>{if(!(await p.$(sel)))errs.push('mist '+what+' ('+sel+')')};
   for(const t of ['home','days','map','bookings','hotels','wildlife','budget','settings']){await p.evaluate(t=>{tab=t;render()},t)}
   for(let d=1;d<=23;d++)for(const s of ['overview','activities','wildlife','stay','map']){await p.evaluate(([d,s])=>{tab='days';currentDay=d;daySection=s;render()},[d,s])}
-  await p.evaluate(()=>{tab='home';render()});await must('.home-tiles','home-tegels');
-  await p.evaluate(()=>{tab='days';currentDay=7;daySection='overview';render()});await must('.v50-hero','dagkop');await must('.v50-timeline','tijdlijn');await must('#v52open','snelle waarneming');
+  await p.evaluate(()=>{tab='home';render()});await must('.ds-tiles','home-tegels');await must('.ds-next','volgende dag');
+  await p.evaluate(()=>{tab='days';currentDay=7;daySection='overview';render()});await must('.ds-dayhero','dagkop');await must('.ds-timeline','tijdlijn');await must('.ds-tabs','dagtabs');await must('#v52open','snelle waarneming');
   await p.click('#v52open');await must('#v52quick','waarneming-venster');await p.click('#v52close');
   await p.evaluate(()=>{daySection='activities';render()});await must('.v50-act','activiteitkaart');
   await p.evaluate(()=>{document.querySelector('.v50-act').click()});await must('#detailOverlay','detailscherm');await p.evaluate(()=>document.getElementById('detailOverlay').remove());
