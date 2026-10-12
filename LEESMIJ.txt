@@ -1,13 +1,11 @@
-COSTA RICA 2027 · PREMIUM VISUAL V4.0
+Costa Rica 2027 Premium Tropical v4.1
 
-Nieuwe interface geïnspireerd op de aangeleverde mockup: Home, dagpagina’s, swipe, activiteiten, wildlife, hotel, kaart, notities, boekingen en budget. Alle 23 dagen en LOCKS zijn ongewijzigd uit v3.0 overgenomen.
+Nieuwe functies: activiteitdetailvensters, wildlife checklist (gezien/foto/eigen soorten), GPS-testopname voorgrond + GPX-export.
 
-INSTALLATIE / UPDATE
-1. Maak in de bestaande app een JSON-back-up via Meer/Back-up & info.
-2. Pak de ZIP uit en upload ALLE bestanden naar de ROOT van je bestaande GitHub repository costa-rica-2027. Bestaande bestanden moeten worden VERVANGEN, niet naast elkaar hernoemd.
-3. Controleer GitHub Actions Pages deployment groen en test de website eerst in incognito.
-4. Open je bestaande geïnstalleerde app online, sluit en open eventueel opnieuw. Niet verwijderen zonder back-up.
-5. De lokale opslag blijft CR27_V2; persoonlijke notities, boekingen, budget en hotelkeuzes blijven normaal bewaard op dezelfde origin/browser. Maak altijd eerst een back-up.
-6. Kaartembed en Google Maps-links vragen internet; dagplanning en gebundelde fotografie werken offline na een online bezoek.
+LOCKED planning ongewijzigd. Zelfde CR27_V2 opslag. Maak vooraf JSON-back-up.
 
-NB: de meegeleverde natuurfoto’s zijn bijgesneden uit het door de gebruiker aangeleverde visuele referentiebeeld. Niet alle detailfuncties van het conceptbeeld (live weer, routeberekeningen) zijn aanwezig: die vereisen aparte live integraties.
+Foto’s: bestaande lokale beelden per regiotype; nog niet alle 23 dagen hebben unieke authentieke bestemmingsfoto’s. Hiervoor zijn later geverifieerde beelden per locatie nodig.
+
+GPS: opname alleen betrouwbaar zolang de app op de voorgrond blijft; geen achtergrondregistratie bij vergrendeld scherm.
+
+Upload bestanden naar dezelfde GitHub Pages repository. Controleer nieuwe deployment en herstart app.
