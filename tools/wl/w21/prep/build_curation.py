@@ -65,3 +65,10 @@ C2=json.load(open('/tmp/repo/tools/wl/w21/curation.json'))
 for k,v in {'Humpback whale':'boot','Pantropical spotted dolphin':'boot','Common bottlenose dolphin':'boot','Green sea turtle':'snorkel','Hawksbill sea turtle':'snorkel','Olive ridley sea turtle':'boot','Whitetip reef shark':'duik','Spotted eagle ray':'snorkel','Longtail stingray':'strand','Leopard round stingray':'strand','Caribbean whiptail stingray':'snorkel','Southern stingray':'snorkel','Nurse shark':'snorkel','Pacific chupare whipray':'strand'}.items():
     assert k in wl,k;C2.setdefault(k,{})['vw']=v
 json.dump(C2,open('/tmp/repo/tools/wl/w21/curation.json','w'),ensure_ascii=False,indent=0);print('vw toegevoegd')
+C3=json.load(open('/tmp/repo/tools/wl/w21/curation.json'))
+AUF={'Tinamidae','Formicariidae','Grallariidae','Odontophoridae','Troglodytidae','Strigidae','Nyctibiidae','Caprimulgidae'}
+n=0
+for k,r in wl.items():
+    if r.get('f') in AUF or k in ('Three-wattled bellbird','Mantled howler monkey','Collared forest-falcon','Laughing falcon'):
+        C3.setdefault(k,{})['au']=1;n+=1
+json.dump(C3,open('/tmp/repo/tools/wl/w21/curation.json','w'),ensure_ascii=False,indent=0);print('au',n)

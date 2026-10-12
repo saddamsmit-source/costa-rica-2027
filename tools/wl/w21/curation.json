@@ -51,7 +51,8 @@
 "Kuifkwartel"
 ],
 "v": "",
-"nl": "Vlekbuikbobwhite"
+"nl": "Vlekbuikbobwhite",
+"au": 1
 },
 "Three-striped warbler": {
 "en": "Costa Rican warbler",
@@ -76,7 +77,8 @@
 "ak": [
 "Rufous-naped wren"
 ],
-"nl": "Roodrugwinterkoning"
+"nl": "Roodrugwinterkoning",
+"au": 1
 },
 "Sulphur-bellied flycatcher": {
 "l": "Bosranden en open bos; broedvogel die van ca. eind februari tot september in Costa Rica is en daarna naar Zuid-Amerika trekt.",
@@ -401,7 +403,8 @@
 "ak": [
 "Lelklokvogel"
 ],
-"tp": "Eerst horen, dan zoeken: de luide 'BONK' draagt honderden meters ver."
+"tp": "Eerst horen, dan zoeken: de luide 'BONK' draagt honderden meters ver.",
+"au": 1
 },
 "Black guan": {
 "nl": "Zwarte goean",
@@ -635,7 +638,8 @@
 "nl": "Vale reuzennachtzwaluw",
 "ak": [
 "Grote potoe"
-]
+],
+"au": 1
 },
 "Pale-billed woodpecker": {
 "nl": "Koningsspecht",
@@ -707,7 +711,8 @@
 },
 "Banded wren": {
 "nl": "Acaciawinterkoning",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Stripe-headed sparrow": {
 "nl": "Roeststaartgors",
@@ -719,13 +724,15 @@
 },
 "Pacific screech-owl": {
 "nl": "Mangroveschreeuwuil",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Ferruginous pygmy-owl": {
 "nl": "Braziliaanse dwerguil",
 "ak": [
 "Roestbruine dwerguil"
-]
+],
+"au": 1
 },
 "Lesser ground-cuckoo": {
 "nl": "Lijsterkoekoek",
@@ -734,7 +741,8 @@
 },
 "Thicket tinamou": {
 "nl": "Struiktinamoe",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Prong-billed barbet": {
 "nl": "Tandsnavelbaardvogel",
@@ -758,7 +766,8 @@
 },
 "Gray-breasted wood-wren": {
 "nl": "Grijze boswinterkoning",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Stripe-tailed hummingbird": {
 "nl": "Streepstaartkolibrie",
@@ -779,21 +788,25 @@
 },
 "Black-breasted wood-quail": {
 "nl": "Zwartborsttandkwartel",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Highland tinamou": {
 "nl": "Bergtinamoe",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Mottled owl": {
 "nl": "Bonte bosuil",
 "ak": [
 "Gevlekte bosuil"
-]
+],
+"au": 1
 },
 "Bare-shanked screech-owl": {
 "nl": "Kaalpootschreeuwuil",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Flame-throated warbler": {
 "nl": "Vuurkeelzanger",
@@ -845,11 +858,13 @@
 },
 "Spotted wood-quail": {
 "nl": "Gevlekte tandkwartel",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Buffy-crowned wood-partridge": {
 "nl": "Witkeelbospatrijs",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Elegant euphonia": {
 "nl": "Blauwkaporganist",
@@ -861,11 +876,13 @@
 },
 "Dusky nightjar": {
 "nl": "Zwarte nachtzwaluw",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Riverside wren": {
 "nl": "Oeverwinterkoning",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Bright-rumped attila": {
 "nl": "Goudstuitattila",
@@ -927,7 +944,8 @@
 },
 "Marbled wood-quail": {
 "nl": "Gemarmerde tandkwartel",
-"ak": []
+"ak": [],
+"au": 1
 },
 "Crane hawk": {
 "nl": "Langpootkiekendief",
@@ -1035,7 +1053,8 @@
 "nl": "Grijze reuzennachtzwaluw",
 "ak": [
 "Grijze Reuzennachtzwaluw"
-]
+],
+"au": 1
 },
 "White-tipped dove": {
 "nl": "Verreauxs duif",
@@ -1047,7 +1066,8 @@
 "nl": "Zwart-witte bosuil",
 "ak": [
 "Zwart-witte Bosuil"
-]
+],
+"au": 1
 },
 "Morelet's seedeater": {
 "nl": "Morelets dikbekje",
@@ -1150,7 +1170,8 @@
 "nl": "Vale winterkoning",
 "ak": [
 "Vale Winterkoning"
-]
+],
+"au": 1
 },
 "Northern waterthrush": {
 "nl": "Noordse waterlijster",
@@ -1227,5 +1248,26 @@
 },
 "Nurse shark": {
 "vw": "snorkel"
+},
+"Laughing falcon": {
+"au": 1
+},
+"Mantled howler monkey": {
+"au": 1
+},
+"Spectacled owl": {
+"au": 1
+},
+"Great tinamou": {
+"au": 1
+},
+"Southern house wren": {
+"au": 1
+},
+"Common pauraque": {
+"au": 1
+},
+"Crested owl": {
+"au": 1
 }
 }
