@@ -1,6 +1,7 @@
-Costa Rica 2027 — Premium Tropical v4.2
+Costa Rica Premium Tropical v4.3
 
-Visuele update op basis van v4.1. Geen wijziging van reisroute, activiteiten, GPS of gegevensopslag.
-Bestemmingsfoto’s laden vanaf externe websites en vereisen internet; bij offline gebruik zijn de oorspronkelijke afbeeldingen beschikbaar. Voor langdurig offline gebruik zijn eigen of correct gelicentieerde lokale foto’s aan te raden.
+Dagplanning: activiteiten en hotels op dezelfde pagina. Wildlife blijft een apart tabblad met uitgebreidere doelsoorten, locatie-registratie, automatische herkenning van eerder geziene soorten en unieke reisteller.
 
-Maak eerst een JSON-back-up. Upload alle bestanden naar de root van dezelfde GitHub-repository. Controleer Actions en test op Samsung.
+BELANGRIJK: maak een JSON-back-up voor installatie. Bestaande lokale CR27_V2-opslag wordt niet verwijderd. Legacy wildlife wordt eenmalig gekopieerd naar v4.3, ook bestaande eigen soorten.
+
+Vervang alle bestanden in de GitHub Pages-repository. Controleer deployment en test daarna op Samsung. GPS blijft een testfunctie; LOCKED reisroute ongewijzigd.
