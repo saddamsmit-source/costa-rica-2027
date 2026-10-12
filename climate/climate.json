@@ -1,0 +1,239 @@
+{
+ "source": "Open-Meteo Historical Weather API (ERA5/ERA5-Land), CC BY 4.0",
+ "period": "2015-2024",
+ "method": "daggemiddelde = gemiddelde van 24 uurwaarden (lokale tijd); maandwaarde = gemiddelde van alle dagen van die maand over 10 jaar",
+ "points": {
+  "9.93,-84.08": {
+   "name": "San José",
+   "grid": [
+    9.947276,
+    -84.09448
+   ],
+   "elev": 1155.0,
+   "02": {
+    "mean": 68,
+    "min": 46,
+    "max": 84,
+    "n": 283
+   },
+   "03": {
+    "mean": 68,
+    "min": 43,
+    "max": 85,
+    "n": 310
+   }
+  },
+  "9.74,-82.84": {
+   "name": "Cahuita",
+   "grid": [
+    9.73638,
+    -82.853424
+   ],
+   "elev": 3.0,
+   "02": {
+    "mean": 88,
+    "min": 73,
+    "max": 98,
+    "n": 283
+   },
+   "03": {
+    "mean": 88,
+    "min": 72,
+    "max": 98,
+    "n": 310
+   }
+  },
+  "10.54,-83.50": {
+   "name": "Tortuguero",
+   "grid": [
+    10.509666,
+    -83.4978
+   ],
+   "elev": 0.0,
+   "02": {
+    "mean": 87,
+    "min": 72,
+    "max": 99,
+    "n": 283
+   },
+   "03": {
+    "mean": 86,
+    "min": 71,
+    "max": 98,
+    "n": 310
+   }
+  },
+  "10.47,-84.64": {
+   "name": "La Fortuna",
+   "grid": [
+    10.439367,
+    -84.61267
+   ],
+   "elev": 251.0,
+   "02": {
+    "mean": 86,
+    "min": 70,
+    "max": 97,
+    "n": 283
+   },
+   "03": {
+    "mean": 84,
+    "min": 66,
+    "max": 97,
+    "n": 310
+   }
+  },
+  "10.77,-85.35": {
+   "name": "Rincón de la Vieja",
+   "grid": [
+    10.790861,
+    -85.38461
+   ],
+   "elev": 716.0,
+   "02": {
+    "mean": 79,
+    "min": 61,
+    "max": 93,
+    "n": 283
+   },
+   "03": {
+    "mean": 76,
+    "min": 55,
+    "max": 92,
+    "n": 310
+   }
+  },
+  "10.31,-84.83": {
+   "name": "Monteverde",
+   "grid": [
+    10.29877,
+    -84.780304
+   ],
+   "elev": 1311.0,
+   "02": {
+    "mean": 84,
+    "min": 68,
+    "max": 95,
+    "n": 283
+   },
+   "03": {
+    "mean": 82,
+    "min": 64,
+    "max": 95,
+    "n": 310
+   }
+  },
+  "9.55,-83.81": {
+   "name": "San Gerardo",
+   "grid": [
+    9.525483,
+    -83.81201
+   ],
+   "elev": 2192.0,
+   "02": {
+    "mean": 79,
+    "min": 61,
+    "max": 94,
+    "n": 283
+   },
+   "03": {
+    "mean": 81,
+    "min": 64,
+    "max": 96,
+    "n": 310
+   }
+  },
+  "9.03,-83.60": {
+   "name": "Vergel de Punta Mala",
+   "grid": [
+    9.033392,
+    -83.615906
+   ],
+   "elev": 4.0,
+   "02": {
+    "mean": 85,
+    "min": 71,
+    "max": 96,
+    "n": 283
+   },
+   "03": {
+    "mean": 85,
+    "min": 70,
+    "max": 96,
+    "n": 310
+   }
+  },
+  "8.69,-83.66": {
+   "name": "Corcovado-lodge",
+   "grid": [
+    8.681898,
+    -83.6434
+   ],
+   "elev": 29.0,
+   "02": {
+    "mean": 83,
+    "min": 68,
+    "max": 95,
+    "n": 283
+   },
+   "03": {
+    "mean": 84,
+    "min": 67,
+    "max": 95,
+    "n": 310
+   }
+  },
+  "9.52,-84.48": {
+   "name": "Esterillos",
+   "grid": [
+    9.525483,
+    -84.43863
+   ],
+   "elev": 0.0,
+   "02": {
+    "mean": 77,
+    "min": 62,
+    "max": 92,
+    "n": 283
+   },
+   "03": {
+    "mean": 76,
+    "min": 61,
+    "max": 91,
+    "n": 310
+   }
+  }
+ },
+ "forecast_check": {
+  "daily_units": {
+   "time": "iso8601",
+   "relative_humidity_2m_mean": "%",
+   "relative_humidity_2m_min": "%",
+   "relative_humidity_2m_max": "%"
+  },
+  "daily_sample": {
+   "time": [
+    "2026-10-12",
+    "2026-10-13",
+    "2026-10-14"
+   ],
+   "relative_humidity_2m_mean": [
+    86,
+    83,
+    87
+   ],
+   "relative_humidity_2m_min": [
+    63,
+    50,
+    63
+   ],
+   "relative_humidity_2m_max": [
+    95,
+    96,
+    98
+   ]
+  },
+  "hourly_len": 384,
+  "error": null
+ }
+}
