@@ -18,9 +18,12 @@ jobs:
           git config user.name "wildlife-bot"; git config user.email "wildlife-bot@users.noreply.github.com"
           STAGE=$(python3 -c "import json;print(json.load(open('tools/wl/trigger.json'))['stage'])")
           mv wl_out /tmp/wl_out
-          git fetch origin wildlife-data || true
-          if git rev-parse --verify origin/wildlife-data >/dev/null 2>&1; then git checkout -q -B wildlife-data origin/wildlife-data; else git checkout -q --orphan wildlife-data; git rm -rq --cached . ; git clean -fdq -e /tmp; fi
-          rm -rf $STAGE; mkdir -p $STAGE; cp -r /tmp/wl_out/. $STAGE/
-          git add $STAGE
-          git commit -qm "wildlife $STAGE"
-          git push -f origin wildlife-data
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin wildlife-data || true
+            if git rev-parse --verify origin/wildlife-data >/dev/null 2>&1; then git checkout -q -f -B wildlife-data origin/wildlife-data; else git checkout -q --orphan wildlife-data; git rm -rq --cached . ; git clean -fdq -e /tmp; fi
+            rm -rf $STAGE; mkdir -p $STAGE; cp -r /tmp/wl_out/. $STAGE/
+            git add -A $STAGE
+            git commit -qm "wildlife $STAGE" || true
+            if git push origin wildlife-data; then break; fi
+            sleep $((i*15))
+          done
