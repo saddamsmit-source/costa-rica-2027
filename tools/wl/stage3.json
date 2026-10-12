@@ -1,0 +1,77 @@
+{
+"alt": {
+"White-winged dove": {
+"id": 3460,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/8173539/square.jpg"
+},
+"Lesser ground-cuckoo": {
+"id": 1705,
+"idx": 1,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/7694865/square.jpg"
+},
+"116453": {
+"id": 116453,
+"idx": 1,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/44483872/square.jpeg"
+},
+"19627": {
+"id": 19627,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/209035/square.jpg"
+},
+"65962": {
+"id": 65962,
+"idx": 1,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/1153724/square.jpg"
+},
+"116396": {
+"id": 116396,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/230595/square.jpg"
+},
+"116430": {
+"id": 116430,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/33937769/square.jpg"
+},
+"66016": {
+"id": 66016,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/5055257/square.jpg"
+},
+"41970": {
+"id": 41970,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/200127875/square.jpg"
+},
+"30181": {
+"id": 30181,
+"idx": 1,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/12489911/square.jpg"
+},
+"883882": {
+"id": 883882,
+"idx": 2,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/2817514/square.jpg"
+}
+},
+"obsphoto": {
+"Brown-billed scythebill": 11190,
+"Highland tinamou": 20701,
+"Marbled wood-quail": 1375,
+"21323": 21323,
+"23697": 23697,
+"26609": 26609,
+"28709": 28709,
+"66602": 66602,
+"65304": 65304,
+"27059": 27059
+},
+"fetch": [
+{
+"id": 700998,
+"key": "Crested bobwhite"
+}
+]
+}

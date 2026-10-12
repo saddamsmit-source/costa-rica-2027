@@ -1,0 +1,36 @@
+{
+ "remap": {
+  "White-faced capuchin": 1369296,
+  "Passerini's tanager": 793475,
+  "Cherrie's tanager": 793475,
+  "Spotted eagle ray": 1303461,
+  "Nine-banded armadillo": 1647420,
+  "Neotropical river otter": 1596108,
+  "Boa constrictor": 539399,
+  "Three-striped warbler": 518302,
+  "Mountain thrush": 12712,
+  "Gray-tailed mountain-gem": 5831,
+  "Blue-crowned manakin": 1446071,
+  "Black-throated trogon": 1507428,
+  "Crested bobwhite": 700998
+ },
+ "drop": [
+  "105924",
+  "51940",
+  "104226"
+ ],
+ "photo": {
+  "White-winged dove": 2,
+  "Lesser ground-cuckoo": 1,
+  "116453": 1,
+  "19627": 2,
+  "65962": 1,
+  "116396": 2,
+  "116430": 2,
+  "66016": 2,
+  "41970": 2,
+  "30181": 1,
+  "883882": 2
+ },
+ "names": {}
+}

@@ -12,7 +12,7 @@ def fetch(q,raw=False):
 def get(url,params):return fetch(url+'?'+urllib.parse.urlencode(params))
 API='https://api.inaturalist.org/v1/'
 OK={'cc0','cc-by','cc-by-sa','cc-by-nc','cc-by-nc-sa'}
-sel=json.load(open('tools/wl/select.json'))
+sel=json.load(open(os.environ.get('WL_SEL','tools/wl/select.json')))
 os.makedirs('wl_out/img',exist_ok=True)
 out={}
 ids=sorted(set(s['id'] for s in sel))
