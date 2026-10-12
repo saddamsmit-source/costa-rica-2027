@@ -1,17 +1,23 @@
-import json, os, urllib.request, urllib.parse, re
+import json, os, urllib.request, urllib.parse, re, time
 UA={'User-Agent':'CostaRica2027TripPlanner/1.0 (personal travel app; github.com/saddamsmit-source/costa-rica-2027)'}
 API='https://commons.wikimedia.org/w/api.php'
 q=json.load(open('tools/photo_queries.json'))
 os.makedirs('cand',exist_ok=True)
 out={}
 def get(url):
-    return urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=60).read()
+    for i in range(6):
+        try:
+            time.sleep(1.2)
+            return urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=60).read()
+        except Exception as e:
+            print('retry',i,e); time.sleep(8*(i+1))
+    raise Exception('failed '+url)
 def strip(s): return re.sub(r'<[^>]+>','',s or '').strip()
 for key,queries in q.items():
     seen=set();cands=[]
     for qs in queries:
         p={'action':'query','generator':'search','gsrnamespace':6,'gsrsearch':qs+' filetype:bitmap','gsrlimit':12,
-           'prop':'imageinfo','iiprop':'url|size|mime|extmetadata','iiurlwidth':900,
+           'prop':'imageinfo','iiprop':'url|size|mime|extmetadata','iiurlwidth':800,
            'iiextmetadatafilter':'Artist|LicenseShortName|ImageDescription','format':'json'}
         try: d=json.loads(get(API+'?'+urllib.parse.urlencode(p)))
         except Exception as e: print(key,qs,e); continue
@@ -23,8 +29,8 @@ for key,queries in q.items():
             cands.append({'title':pg['title'],'thumb':ii.get('thumburl'),'page':ii.get('descriptionurl'),
               'artist':strip(em.get('Artist',{}).get('value')),'license':strip(em.get('LicenseShortName',{}).get('value')),
               'desc':strip(em.get('ImageDescription',{}).get('value'))[:200]})
-            if len(cands)>=6: break
-        if len(cands)>=6: break
+            if len(cands)>=5: break
+        if len(cands)>=5: break
     for i,c in enumerate(cands):
         fn=f'cand/{key}_{i}.jpg'
         try: open(fn,'wb').write(get(c['thumb'])); c['file']=fn
