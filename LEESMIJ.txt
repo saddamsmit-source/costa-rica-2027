@@ -1,0 +1,10 @@
+Costa Rica 2027 — installeerbare PWA
+
+1. Pak dit ZIP-bestand uit.
+2. Upload alle vijf bestanden (index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png) naar de hoofdmap van een openbare GitHub-repository.
+3. Repository → Settings → Pages → Deploy from a branch → main / (root) → Save.
+4. Open de https://<gebruikersnaam>.github.io/<repository>/ URL op Samsung in Chrome.
+5. Chrome menu (⋮) → App installeren of Toevoegen aan startscherm.
+6. Open de app minstens eenmaal online, zodat offline cache kan worden gevuld. Test daarna vliegtuigstand.
+
+Let op: GitHub Pages is openbaar. Bewaar geen privégegevens in bronbestanden. Notities en boekingsstatus staan alleen in browseropslag op het apparaat. Maak JSON-back-ups.
