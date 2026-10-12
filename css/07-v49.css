@@ -1,0 +1,19 @@
+.v49-segbar{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:5px;margin:10px 0 12px;background:#fff;border:1px solid #e3ebe1;border-radius:16px;box-shadow:0 6px 18px #10392314}
+.v49-segbar button{border:0;border-radius:12px;background:transparent;padding:9px 4px;font-size:13px;font-weight:800;color:#4d6457;display:flex;flex-direction:column;align-items:center;gap:2px}
+.v49-segbar button small{font-size:10.5px;font-weight:700;color:#7b8c80}
+.v49-segbar button.on{background:#0d613e;color:#fff}.v49-segbar button.on small{color:#bfe9cc}
+.v49-acc{border:1px solid #e3ebe1;border-radius:13px;margin:8px 0;background:#fbfdf9;overflow:hidden}
+.v49-acc summary{list-style:none;display:flex;align-items:center;justify-content:space-between;padding:12px 13px;font-weight:800;font-size:14px;cursor:pointer;color:#163a2a}
+.v49-acc summary::-webkit-details-marker{display:none}
+.v49-acc summary:after{content:'›';font-size:20px;color:#7c9584;transform:rotate(90deg);transition:transform .15s;margin-left:8px}
+.v49-acc[open] summary:after{transform:rotate(-90deg)}
+.v49-acc summary span{flex:1}
+.v49-acc summary em{font-style:normal;font-size:11px;font-weight:800;background:#eef1ed;color:#4d6457;border-radius:20px;padding:3px 9px}
+.v49-acc summary em.full{background:#0a7a3d;color:#fff}
+.v49-acc .v48-pack{padding:9px 13px;border-top:1px solid #edf1eb;border-bottom:0}
+.v49-progress{height:7px;background:#e8efe6;border-radius:10px;overflow:hidden;margin:2px 0 8px}
+.v49-progress i{display:block;height:100%;background:#0a7a3d;border-radius:10px}
+.v49-season,.v49-rare{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;border-radius:20px;padding:4px 9px}
+.v49-season{background:#e6effc;color:#1d5a99}
+.v49-rare{background:#f3e8fb;color:#6a3fb0}
+.v49-hfig{position:relative;margin:0;flex:none;align-self:flex-start;height:84px}.v49-hfig img{width:84px;height:84px;object-fit:cover;border-radius:11px;display:block}.v49-hfig figcaption{position:absolute;left:4px;bottom:4px;font-size:9px;font-weight:800;background:rgba(0,0,0,.55);color:#fff;border-radius:6px;padding:2px 5px}.v49-hnote{display:block;font-size:10.5px;color:#8a9a90;margin-top:6px}

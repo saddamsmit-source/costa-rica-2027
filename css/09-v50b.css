@@ -1,0 +1,8 @@
+.v50-meta span.v50-bk.b-ok{color:#fff}.v50-meta span.v50-bk.b-site{color:#1d5a99}.v50-meta span.v50-bk.b-warn{color:#b04a06}.v50-meta span.v50-bk.b-self{color:#a5520c}
+.v50-search{display:flex;align-items:center;gap:8px;background:#f3f6f1;border:1px solid #dfe8dd;border-radius:13px;padding:0 12px;margin:12px 0 2px;color:#6b7e71}
+.v50-search input{flex:1;border:0;background:transparent;padding:11px 0;font-size:14.5px;outline:none;color:#16261d;min-width:0}
+.v50-groups{margin-top:6px}
+.v50-groups button{font-size:11.5px;padding:6px 10px;background:#f6faf4}
+.v50-gres{padding:10px 0;border-bottom:1px solid #edf1eb}
+.v50-gres b{font-size:14.5px;color:#16261d}.v50-gres em{display:block;font-size:11.5px;color:#71857a}.v50-gres small{display:block;font-size:11px;color:#8a9a90;margin:2px 0 6px}
+.v50-gres div{display:flex;flex-wrap:wrap;gap:5px}

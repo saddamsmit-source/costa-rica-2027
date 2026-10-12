@@ -1,0 +1,19 @@
+/* v4.4 · compact, editorial, thumb-specific visual design */
+.day-hero{min-height:265px!important;max-height:340px!important;border-radius:23px 23px 0 0!important}
+.day-hero h2{font-size:clamp(32px,7vw,48px)!important;letter-spacing:-.045em}
+.day-subnav{box-shadow:0 8px 22px #0b291716!important}
+.activity-card{border:1px solid #e2e9df!important;background:#fff!important;border-radius:18px!important;box-shadow:0 5px 18px #193d2210!important;padding:11px!important;transition:transform .15s,box-shadow .15s}
+.activity-card:active{transform:scale(.985)}
+.activity-card .act-thumb{width:104px!important;height:90px!important;border-radius:13px!important;background:#184d39;object-fit:cover}
+.activity-card .actname{font-size:14px!important;font-weight:820!important;line-height:1.4}
+.v44-art-label{font-size:10px;color:#708278;display:block;margin-top:5px}
+.v44-statgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}
+.v44-stat{padding:15px;background:#f0f6ed;border-radius:15px;border:1px solid #e0eadc;font-size:12px;color:#597164}
+.v44-stat b{font-size:25px;display:block;color:#124d35}
+.v44-log{border:1px solid #dce8dc;border-radius:12px;padding:10px;margin-top:9px;background:#fff}
+.v44-log summary{font-size:12px;color:#126a48;font-weight:800;cursor:pointer}
+.v44-log textarea{width:100%;box-sizing:border-box;border:1px solid #d8e4d8;border-radius:10px;padding:10px;min-height:65px;margin:9px 0;font:inherit}
+.v44-log button{background:#0c6c44;border:0;border-radius:9px;color:#fff;padding:9px 12px;font-weight:750}
+.v44-logentry{border-bottom:1px solid #e6ebe2;padding:12px 0;font-size:13px}
+.v44-logentry small{display:block;color:#6a8072;margin-top:4px}
+@media(max-width:390px){.activity-card .act-thumb{width:85px!important;height:82px!important}}

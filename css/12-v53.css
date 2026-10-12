@@ -1,0 +1,7 @@
+.v53-tl-img{width:52px;height:52px;border-radius:13px;overflow:hidden;flex:none;position:relative;z-index:1;display:grid;place-items:center;box-shadow:0 0 0 2.5px #fff,0 0 0 4.5px var(--k,#cfe6d3)}
+.v53-tl-img.k-saw{--k:#7cc98f;background:#e3f4e4}.v53-tl-img.k-own{--k:#f2b072;background:#fdeedd}.v53-tl-img.k-opt{--k:#8db3e6;background:#e3edfb}
+.v53-tl-img img{width:100%;height:100%;object-fit:cover;display:block}
+.v50-tl.v53-tl:not(:last-child):after{left:25px;top:60px}
+.v53-hrow{margin:0 0 14px}
+.v53-hdays{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#5f7568;margin:0 4px 6px}
+.v53-hlist .v48-hotel{margin:0}

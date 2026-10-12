@@ -1,0 +1,35 @@
+.v46-act{display:flex;align-items:center;gap:12px;padding:11px;border-radius:14px;background:#fff;border:1px solid #e7eee7;box-shadow:0 3px 11px #1039230b;margin:8px 0;cursor:pointer;transition:box-shadow .15s}
+.v46-act:hover{box-shadow:0 8px 20px #10392318}
+.v46-act.excluded{opacity:.55}
+.v46-ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex:none}
+.v46-ico svg{width:28px;height:28px}
+.v46-act.saw .v46-ico{background:#e3f4e4;color:#0a7a3d}
+.v46-act.extra .v46-ico{background:#fff0e0;color:#c45a0c}
+.v46-act.option .v46-ico{background:#e6effc;color:#1d5a99}
+.v46-copy{flex:1;min-width:0}
+.v46-copy .actname{font-size:14px;font-weight:780;line-height:1.35}
+.v46-copy .acttags{margin:6px 0 0;display:flex;gap:5px;flex-wrap:wrap}
+.v46-copy .tag{font-size:10px}
+.v46-copy .note{font-size:12px;color:#5f7166;margin-top:5px;line-height:1.45}
+.v46-chev{font-size:22px;color:#7c9584;flex:none}
+.v46-group{margin:4px 0 14px}
+.v46-group h4{display:flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;margin:14px 0 4px;color:#3b5546}
+.v46-group h4 i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.v46-group.saw h4 i{background:#0a873c}.v46-group.extra h4 i{background:#e07a1c}.v46-group.option h4 i{background:#3a7bd5}
+.v46-base{display:flex;gap:11px;align-items:flex-start;background:#f3f8f1;border:1px solid #e0ebdd;border-radius:14px;padding:12px;font-size:13px;line-height:1.5;color:#2f4a3b}
+.v46-base svg{flex:none;color:#0a7a3d;margin-top:1px}
+.v46-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:12px 0 2px}
+.v46-stat{background:#fff;border:1px solid #e5ece3;border-radius:12px;padding:10px 4px;text-align:center}
+.v46-stat b{display:block;font-size:19px;color:#0b673b;line-height:1.1}
+.v46-stat span{font-size:10px;color:#6b7e71}
+.v46-h{display:flex;align-items:center;gap:9px;font-size:17px;font-weight:850;margin:2px 0 10px;color:#163a2a}
+.v46-h svg{color:#0a7a3d}
+.v46-hotel{display:flex;align-items:center;gap:11px;padding:11px;border:1px solid #e3ebe1;border-radius:13px;margin:7px 0;background:#fbfdf9}
+.v46-hotel .v46-ico{width:42px;height:42px;border-radius:11px;background:#eef3ec;color:#3f5a4a}
+.v46-hotel .v46-ico svg{width:22px;height:22px}
+.v46-hotel strong{font-size:14px}
+.v46-hotel small{display:block;font-size:11px;color:#6b7e71}
+.v46-tip{display:flex;gap:11px;align-items:flex-start;font-size:13px;line-height:1.5;color:#34463a}
+.v46-tip svg{flex:none;color:#0a7a3d}
+.v46-link{width:100%;margin-top:10px;border:1px solid #cfe0d3;background:#fff;color:#14553f;border-radius:12px;padding:11px;font-weight:800;font-size:13px}
+@media(max-width:700px){.day-subnav{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
