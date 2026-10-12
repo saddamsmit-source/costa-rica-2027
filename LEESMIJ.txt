@@ -1,7 +1,5 @@
-Costa Rica Premium Tropical v4.3
-
-Dagplanning: activiteiten en hotels op dezelfde pagina. Wildlife blijft een apart tabblad met uitgebreidere doelsoorten, locatie-registratie, automatische herkenning van eerder geziene soorten en unieke reisteller.
-
-BELANGRIJK: maak een JSON-back-up voor installatie. Bestaande lokale CR27_V2-opslag wordt niet verwijderd. Legacy wildlife wordt eenmalig gekopieerd naar v4.3, ook bestaande eigen soorten.
-
-Vervang alle bestanden in de GitHub Pages-repository. Controleer deployment en test daarna op Samsung. GPS blijft een testfunctie; LOCKED reisroute ongewijzigd.
+Costa Rica Premium Tropical v4.4
+Activiteitillustraties zijn unieke, lokaal opgeslagen illustraties (geen echte foto’s).
+Wildlife-statistieken en logboeknotities per soort en locatie.
+LOCKED route en activiteiten ongewijzigd.
+Maak eerst een JSON-back-up.
