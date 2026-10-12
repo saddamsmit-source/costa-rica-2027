@@ -91,14 +91,18 @@ v51StartGps=function(){if(!navigator.geolocation){alert('GPS niet beschikbaar op
     e=>{alert('Geen GPS-positie: '+e.message);navigator.geolocation.clearWatch(v51Watch);v51Watch=null;render()},{enableHighAccuracy:true,maximumAge:10000,timeout:30000});render()};
 
 /* ---------------- waarneming krijgt tijd en locatie ---------------- */
-function dseTag(name,place){const r=state.v43Observations[v43name(name)]?.places?.[place];if(!r||!r.seen)return;
+function dseTag(name,place){const r=state.v43Observations[v43name(name)]?.places?.[place];if(!r)return;
+  if(!r.seen){if(r.loc||r.t){delete r.loc;delete r.t;save()}return}
   if(!r.t)r.t=new Date().toISOString();
-  if(!r.loc){if(v51Pos)r.loc={lat:+v51Pos.lat.toFixed(5),lon:+v51Pos.lon.toFixed(5),acc:Math.round(v51Pos.acc)};
-    else if(state.dsObsGeo&&navigator.geolocation)navigator.geolocation.getCurrentPosition(p=>{if(r.seen&&!r.loc){r.loc={lat:+p.coords.latitude.toFixed(5),lon:+p.coords.longitude.toFixed(5),acc:Math.round(p.coords.accuracy)};save()}},()=>{},{enableHighAccuracy:true,maximumAge:300000,timeout:20000})}
+  if(!r.loc&&state.dsObsGeo){if(v51Pos)r.loc={lat:+v51Pos.lat.toFixed(5),lon:+v51Pos.lon.toFixed(5),acc:Math.round(v51Pos.acc)};
+    else if(navigator.geolocation)navigator.geolocation.getCurrentPosition(p=>{if(r.seen&&!r.loc){r.loc={lat:+p.coords.latitude.toFixed(5),lon:+p.coords.longitude.toFixed(5),acc:Math.round(p.coords.accuracy)};save()}},()=>{},{enableHighAccuracy:true,maximumAge:60000,timeout:20000})}
   save()}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-v43-species],[data-v52]');if(!b)return;
   if(b.dataset.v43Species)dseTag(decodeURIComponent(b.dataset.v43Species),decodeURIComponent(b.dataset.v43Place));
   else{const[,enc]=b.dataset.v52.split('|');dseTag(decodeURIComponent(enc),v47RegionNames(S[currentDay-1]).region)}});
+
+/* nieuwe soort via 'Niet gevonden? Voeg toe' krijgt ook tijd en locatie */
+document.addEventListener('click',e=>{if(!e.target.closest('#v52add'))return;const q=document.getElementById('v52q'),name=q&&q.value.trim();if(!name)return;const region=v47RegionNames(S[currentDay-1]).region;setTimeout(()=>dseTag(name,region),0)},true);
 
 /* ---------------- tijd Costa Rica / Nederland ---------------- */
 function dseClock(){const o={hour:'2-digit',minute:'2-digit'},n=new Date();
