@@ -1,0 +1,604 @@
+{
+ "gbif_sample": {
+  "offset": 0,
+  "limit": 2,
+  "endOfRecords": false,
+  "count": 654620,
+  "results": [
+   {
+    "key": 5295564051,
+    "datasetKey": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
+    "publishingOrgKey": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
+    "datasetCategory": [
+     "CitizenScience"
+    ],
+    "installationKey": "7182d304-b0a2-404b-baba-2086a325c221",
+    "hostingOrganizationKey": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
+    "publishingCountry": "CR",
+    "protocol": "DWC_ARCHIVE",
+    "lastCrawled": "2025-10-29T11:02:38.172+00:00",
+    "lastParsed": "2026-09-02T06:31:59.867+00:00",
+    "crawlId": 24,
+    "extensions": {},
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "individualCount": 1,
+    "occurrenceStatus": "PRESENT",
+    "classifications": {
+     "7ddf754f-d193-4cc9-b351-99906754a03b": {
+      "usage": {
+       "key": "5XTV3",
+       "name": "Chiroxiphia linearis (Bonaparte, 1838)",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "(Bonaparte, 1838)",
+       "genericName": "Chiroxiphia",
+       "specificEpithet": "linearis",
+       "formattedName": "<i>Chiroxiphia</i> <i>linearis</i> (Bonaparte, 1838)"
+      },
+      "acceptedUsage": {
+       "key": "5XTV3",
+       "name": "Chiroxiphia linearis (Bonaparte, 1838)",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "(Bonaparte, 1838)",
+       "genericName": "Chiroxiphia",
+       "specificEpithet": "linearis",
+       "formattedName": "<i>Chiroxiphia</i> <i>linearis</i> (Bonaparte, 1838)"
+      },
+      "taxonomicStatus": "ACCEPTED",
+      "classification": [
+       {
+        "key": "CS5HF",
+        "name": "Eukaryota",
+        "rank": "DOMAIN"
+       },
+       {
+        "key": "N",
+        "name": "Animalia",
+        "rank": "KINGDOM"
+       },
+       {
+        "key": "CH2",
+        "name": "Chordata",
+        "rank": "PHYLUM"
+       },
+       {
+        "key": "8V4V3",
+        "name": "Vertebrata",
+        "rank": "SUBPHYLUM"
+       },
+       {
+        "key": "8V4V5",
+        "name": "Gnathostomata",
+        "rank": "INFRAPHYLUM"
+       },
+       {
+        "key": "8VVWB",
+        "name": "Osteichthyes",
+        "rank": "PARVPHYLUM"
+       },
+       {
+        "key": "9CK8W",
+        "name": "Tetrapoda",
+        "rank": "MEGACLASS"
+       },
+       {
+        "key": "V2",
+        "name": "Aves",
+        "rank": "CLASS"
+       },
+       {
+        "key": "3RL",
+        "name": "Passeriformes",
+        "rank": "ORDER"
+       },
+       {
+        "key": "625NN",
+        "name": "Pipridae",
+        "rank": "FAMILY"
+       },
+       {
+        "key": "3NDC",
+        "name": "Chiroxiphia",
+        "rank": "GENUS"
+       },
+       {
+        "key": "5XTV3",
+        "name": "Chiroxiphia linearis",
+        "rank": "SPECIES"
+       }
+      ],
+      "iucnRedListCategoryCode": "LC",
+      "issues": [
+       "TAXON_CONCEPT_ID_NOT_FOUND"
+      ]
+     },
+     "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+      "usage": {
+       "key": "2487772",
+       "name": "Chiroxiphia linearis (Bonaparte, 1838)",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "(Bonaparte, 1838)",
+       "genericName": "Chiroxiphia",
+       "specificEpithet": "linearis",
+       "formattedName": "<i>Chiroxiphia</i> <i>linearis</i> (Bonaparte, 1838)"
+      },
+      "acceptedUsage": {
+       "key": "2487772",
+       "name": "Chiroxiphia linearis (Bonaparte, 1838)",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "(Bonaparte, 1838)",
+       "genericName": "Chiroxiphia",
+       "specificEpithet": "linearis",
+       "formattedName": "<i>Chiroxiphia</i> <i>linearis</i> (Bonaparte, 1838)"
+      },
+      "taxonomicStatus": "ACCEPTED",
+      "classification": [
+       {
+        "key": "1",
+        "name": "Animalia",
+        "rank": "KINGDOM"
+       },
+       {
+        "key": "44",
+        "name": "Chordata",
+        "rank": "PHYLUM"
+       },
+       {
+        "key": "212",
+        "name": "Aves",
+        "rank": "CLASS"
+       },
+       {
+        "key": "729",
+        "name": "Passeriformes",
+        "rank": "ORDER"
+       },
+       {
+        "key": "5270",
+        "name": "Pipridae",
+        "rank": "FAMILY"
+       },
+       {
+        "key": "2487764",
+        "name": "Chiroxiphia",
+        "rank": "GENUS"
+       },
+       {
+        "key": "2487772",
+        "name": "Chiroxiphia linearis",
+        "rank": "SPECIES"
+       }
+      ],
+      "iucnRedListCategoryCode": "LC",
+      "issues": [
+       "TAXON_CONCEPT_ID_NOT_FOUND"
+      ]
+     }
+    },
+    "taxonKey": 2487772,
+    "kingdomKey": 1,
+    "phylumKey": 44,
+    "classKey": 212,
+    "orderKey": 729,
+    "familyKey": 5270,
+    "genusKey": 2487764,
+    "speciesKey": 2487772,
+    "acceptedTaxonKey": 2487772,
+    "scientificName": "Chiroxiphia linearis (Bonaparte, 1838)",
+    "scientificNameAuthorship": "(Bonaparte, 1838)",
+    "acceptedScientificName": "Chiroxiphia linearis (Bonaparte, 1838)",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "order": "Passeriformes",
+    "family": "Pipridae",
+    "genus": "Chiroxiphia",
+    "species": "Chiroxiphia linearis",
+    "genericName": "Chiroxiphia",
+    "specificEpithet": "linearis",
+    "taxonRank": "SPECIES",
+    "taxonomicStatus": "ACCEPTED",
+    "iucnRedListCategory": "LC",
+    "decimalLatitude": 10.30702,
+    "decimalLongitude": -84.80974,
+    "continent": "NORTH_AMERICA",
+    "stateProvince": "Puntarenas",
+    "gadm": {
+     "level0": {
+      "gid": "CRI",
+      "name": "Costa Rica"
+     },
+     "level1": {
+      "gid": "CRI.6_1",
+      "name": "Puntarenas"
+     },
+     "level2": {
+      "gid": "CRI.6.11_1",
+      "name": "Puntarenas"
+     },
+     "level3": {
+      "gid": "CRI.6.11.13_1",
+      "name": "Monte Verde"
+     }
+    },
+    "year": 2024,
+    "month": 1,
+    "day": 3,
+    "eventDate": "2024-01-03",
+    "startDayOfYear": 3,
+    "endDayOfYear": 3,
+    "issues": [
+     "CONTINENT_DERIVED_FROM_COORDINATES",
+     "TAXON_CONCEPT_ID_NOT_FOUND"
+    ],
+    "lastInterpreted": "2026-09-02T06:31:59.867+00:00",
+    "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+    "isSequenced": false,
+    "identifiers": [
+     {
+      "identifier": "OBS1915220554"
+     }
+    ],
+    "media": [],
+    "facts": [],
+    "relations": [],
+    "isInCluster": false,
+    "recordedBy": "obsr1730641",
+    "dnaSequenceID": [],
+    "nucleotideSequence": [],
+    "geodeticDatum": "WGS84",
+    "class": "Aves",
+    "countryCode": "CR",
+    "recordedByIDs": [],
+    "identifiedByIDs": [],
+    "gbifRegion": "LATIN_AMERICA",
+    "country": "Costa Rica",
+    "publishedByGbifRegion": "LATIN_AMERICA",
+    "identifier": "OBS1915220554",
+    "catalogNumber": "OBS1915220554",
+    "http://unknown.org/omitFromScheduledCrawl": "true",
+    "vernacularName": "Long-tailed Manakin",
+    "http://unknown.org/crawl_attempt": "24",
+    "institutionCode": "CLO",
+    "taxonConceptID": "avibase-avibase-F4A5EA23",
+    "locality": "Monteverde",
+    "http://unknown.org/status": "not_reviewed",
+    "collectionCode": "EBIRD",
+    "gbifID": "5295564051",
+    "occurrenceID": "URN:catalog:CLO:EBIRD:OBS1915220554"
+   },
+   {
+    "key": 5295592615,
+    "datasetKey": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
+    "publishingOrgKey": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
+    "datasetCategory": [
+     "CitizenScience"
+    ],
+    "installationKey": "7182d304-b0a2-404b-baba-2086a325c221",
+    "hostingOrganizationKey": "e2e717bf-551a-4917-bdc9-4fa0f342c530",
+    "publishingCountry": "CR",
+    "protocol": "DWC_ARCHIVE",
+    "lastCrawled": "2025-10-29T11:02:38.172+00:00",
+    "lastParsed": "2026-09-02T06:29:20.141+00:00",
+    "crawlId": 24,
+    "extensions": {},
+    "basisOfRecord": "HUMAN_OBSERVATION",
+    "individualCount": 3,
+    "occurrenceStatus": "PRESENT",
+    "classifications": {
+     "7ddf754f-d193-4cc9-b351-99906754a03b": {
+      "usage": {
+       "key": "4FVH2",
+       "name": "Pharomachrus mocinno La Llave, 1832",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "La Llave, 1832",
+       "genericName": "Pharomachrus",
+       "specificEpithet": "mocinno",
+       "formattedName": "<i>Pharomachrus</i> <i>mocinno</i> La Llave, 1832"
+      },
+      "acceptedUsage": {
+       "key": "4FVH2",
+       "name": "Pharomachrus mocinno La Llave, 1832",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "La Llave, 1832",
+       "genericName": "Pharomachrus",
+       "specificEpithet": "mocinno",
+       "formattedName": "<i>Pharomachrus</i> <i>mocinno</i> La Llave, 1832"
+      },
+      "taxonomicStatus": "ACCEPTED",
+      "classification": [
+       {
+        "key": "CS5HF",
+        "name": "Eukaryota",
+        "rank": "DOMAIN"
+       },
+       {
+        "key": "N",
+        "name": "Animalia",
+        "rank": "KINGDOM"
+       },
+       {
+        "key": "CH2",
+        "name": "Chordata",
+        "rank": "PHYLUM"
+       },
+       {
+        "key": "8V4V3",
+        "name": "Vertebrata",
+        "rank": "SUBPHYLUM"
+       },
+       {
+        "key": "8V4V5",
+        "name": "Gnathostomata",
+        "rank": "INFRAPHYLUM"
+       },
+       {
+        "key": "8VVWB",
+        "name": "Osteichthyes",
+        "rank": "PARVPHYLUM"
+       },
+       {
+        "key": "9CK8W",
+        "name": "Tetrapoda",
+        "rank": "MEGACLASS"
+       },
+       {
+        "key": "V2",
+        "name": "Aves",
+        "rank": "CLASS"
+       },
+       {
+        "key": "49P",
+        "name": "Trogoniformes",
+        "rank": "ORDER"
+       },
+       {
+        "key": "HJJ",
+        "name": "Trogonidae",
+        "rank": "FAMILY"
+       },
+       {
+        "key": "6MWJ",
+        "name": "Pharomachrus",
+        "rank": "GENUS"
+       },
+       {
+        "key": "4FVH2",
+        "name": "Pharomachrus mocinno",
+        "rank": "SPECIES"
+       }
+      ],
+      "iucnRedListCategoryCode": "NT",
+      "issues": [
+       "TAXON_CONCEPT_ID_NOT_FOUND"
+      ]
+     },
+     "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+      "usage": {
+       "key": "2496723",
+       "name": "Pharomachrus mocinno La Llave, 1832",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "La Llave, 1832",
+       "genericName": "Pharomachrus",
+       "specificEpithet": "mocinno",
+       "formattedName": "<i>Pharomachrus</i> <i>mocinno</i> La Llave, 1832"
+      },
+      "acceptedUsage": {
+       "key": "2496723",
+       "name": "Pharomachrus mocinno La Llave, 1832",
+       "rank": "SPECIES",
+       "code": "ZOOLOGICAL",
+       "authorship": "La Llave, 1832",
+       "genericName": "Pharomachrus",
+       "specificEpithet": "mocinno",
+       "formattedName": "<i>Pharomachrus</i> <i>mocinno</i> La Llave, 1832"
+      },
+      "taxonomicStatus": "ACCEPTED",
+      "classification": [
+       {
+        "key": "1",
+        "name": "Animalia",
+        "rank": "KINGDOM"
+       },
+       {
+        "key": "44",
+        "name": "Chordata",
+        "rank": "PHYLUM"
+       },
+       {
+        "key": "212",
+        "name": "Aves",
+        "rank": "CLASS"
+       },
+       {
+        "key": "1449",
+        "name": "Trogoniformes",
+        "rank": "ORDER"
+       },
+       {
+        "key": "9356",
+        "name": "Trogonidae",
+        "rank": "FAMILY"
+       },
+       {
+        "key": "2496714",
+        "name": "Pharomachrus",
+        "rank": "GENUS"
+       },
+       {
+        "key": "2496723",
+        "name": "Pharomachrus mocinno",
+        "rank": "SPECIES"
+       }
+      ],
+      "iucnRedListCategoryCode": "NT",
+      "issues": [
+       "TAXON_CONCEPT_ID_NOT_FOUND"
+      ]
+     }
+    },
+    "taxonKey": 2496723,
+    "kingdomKey": 1,
+    "phylumKey": 44,
+    "classKey": 212,
+    "orderKey": 1449,
+    "familyKey": 9356,
+    "genusKey": 2496714,
+    "speciesKey": 2496723,
+    "acceptedTaxonKey": 2496723,
+    "scientificName": "Pharomachrus mocinno La Llave, 1832",
+    "scientificNameAuthorship": "La Llave, 1832",
+    "acceptedScientificName": "Pharomachrus mocinno La Llave, 1832",
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "order": "Trogoniformes",
+    "family": "Trogonidae",
+    "genus": "Pharomachrus",
+    "species": "Pharomachrus mocinno",
+    "genericName": "Pharomachrus",
+    "specificEpithet": "mocinno",
+    "taxonRank": "SPECIES",
+    "taxonomicStatus": "ACCEPTED",
+    "iucnRedListCategory": "NT",
+    "decimalLatitude": 10.30264,
+    "decimalLongitude": -84.79569,
+    "continent": "NORTH_AMERICA",
+    "stateProvince": "Puntarenas",
+    "gadm": {
+     "level0": {
+      "gid": "CRI",
+      "name": "Costa Rica"
+     },
+     "level1": {
+      "gid": "CRI.6_1",
+      "name": "Puntarenas"
+     },
+     "level2": {
+      "gid": "CRI.6.11_1",
+      "name": "Puntarenas"
+     },
+     "level3": {
+      "gid": "CRI.6.11.13_1",
+      "name": "Monte Verde"
+     }
+    },
+    "year": 2024,
+    "month": 1,
+    "day": 23,
+    "eventDate": "2024-01-23",
+    "startDayOfYear": 23,
+    "endDayOfYear": 23,
+    "issues": [
+     "CONTINENT_DERIVED_FROM_COORDINATES",
+     "TAXON_CONCEPT_ID_NOT_FOUND"
+    ],
+    "lastInterpreted": "2026-09-02T06:29:20.141+00:00",
+    "license": "http://creativecommons.org/licenses/by/4.0/legalcode",
+    "isSequenced": false,
+    "identifiers": [
+     {
+      "identifier": "OBS1932229642"
+     }
+    ],
+    "media": [],
+    "facts": [],
+    "relations": [],
+    "isInCluster": false,
+    "recordedBy": "obsr247959",
+    "dnaSequenceID": [],
+    "nucleotideSequence": [],
+    "geodeticDatum": "WGS84",
+    "class": "Aves",
+    "countryCode": "CR",
+    "recordedByIDs": [],
+    "identifiedByIDs": [],
+    "gbifRegion": "LATIN_AMERICA",
+    "country": "Costa Rica",
+    "publishedByGbifRegion": "LATIN_AMERICA",
+    "identifier": "OBS1932229642",
+    "catalogNumber": "OBS1932229642",
+    "http://unknown.org/omitFromScheduledCrawl": "true",
+    "vernacularName": "Resplendent Quetzal",
+    "http://unknown.org/crawl_attempt": "24",
+    "institutionCode": "CLO",
+    "taxonConceptID": "avibase-avibase-1F414281",
+    "locality": "Reserva Biológica Bosque Nuboso Monteverde",
+    "http://unknown.org/status": "not_reviewed",
+    "collectionCode": "EBIRD",
+    "gbifID": "5295592615",
+    "occurrenceID": "URN:catalog:CLO:EBIRD:OBS1932229642"
+   }
+  ],
+  "facets": []
+ },
+ "gbif_facet_event": {
+  "offset": 0,
+  "limit": 0,
+  "endOfRecords": false,
+  "count": 654620,
+  "results": [],
+  "facets": [
+   {
+    "field": "EVENT_ID",
+    "counts": []
+   }
+  ]
+ },
+ "gbif_species_n": 537,
+ "gbif_total": 654620,
+ "gbif_event_n": 0,
+ "ebird_tax": "[{'sciName': 'Colinus leucopogon hypoleucus/incanus', 'comName': 'Spot-bellied Bobwhite (White-breasted)', 'speciesCode': 'spbbob1', 'category': 'issf', 'taxonOrder': 1058.0, 'bandingCodes': [], 'comNameCodes': ['SBBO'], 'sciNameCodes': ['COLE'], 'order': 'Galliformes', 'familyCode': 'odonto1', 'familyComName': 'New World Quail', 'familySciName': 'Odontophoridae', 'reportAs': 'crebob2'}, {'sciName': 'Sula brewsteri', 'comName': 'Cocos Booby', 'speciesCode': 'cocboo1', 'category': 'species', 'taxonOrder': 7345.0, 'bandingCodes': ['COBO'], 'comNameCodes': ['BRBO'], 'sciNameCodes': ['SUBR'], 'order': 'Suliformes', 'familyCode': 'sulida1', 'familyComName': 'Boobies and Gannets', 'familySciName': 'Sulidae'}, {'sciName': 'Megaceryle alcyon', 'comName': 'Belted Kingfisher', 'speciesCode': 'belkin1', 'category': 'species', 'taxonOrder': 10306.0, 'bandingCodes': ['BEKI'], 'comNameCodes': [], 'sciNameCodes': ['MEAL'], 'order': 'Coraciiformes', 'familyCode': 'alcedi1', 'familyComName': 'Kingfishers', 'familySciName': 'Alcedinidae'}]",
+ "ioc_ster-list-2/": "<!DOCTYPE html>\n<html lang=\"en-US\">\n<head>\n<meta charset=\"UTF-8\" />\n<meta name='viewport' content='width=device-width, initial-scale=1.0' />\n<meta http-equiv='X-UA-Compatible' content='IE=edge' />\n<li",
+ "ioc_links_ster-list-2/": [
+  "http://worldbirdnames.org/Multiling%20IOC%2010.2_b.xlsx",
+  "http://www.worldbirdnames.org/Archives/IOC_9.1_vs_other_lists.xlsx",
+  "http://www.worldbirdnames.org/Archives/IOC_Names_File_Plus-9.1.xlsx",
+  "http://www.worldbirdnames.org/Archives/IOC_Names_File_Plus-9.1_full_ssp.xlsx",
+  "http://www.worldbirdnames.org/Archives/IOC_Names_File_Plus-9.2.xlsx",
+  "http://www.worldbirdnames.org/Archives/IOC_Names_File_Plus-9.2_full_ssp.xlsx",
+  "http://www.worldbirdnames.org/Archives/Multiling%20IOC%209.1b.xlsx",
+  "http://www.worldbirdnames.org/Archives/Multiling%20IOC%209.2.xlsx",
+  "http://www.worldbirdnames.org/Archives/master_ioc_list_v9.1.xlsx",
+  "http://www.worldbirdnames.org/Archives/master_ioc_list_v9.2.xlsx",
+  "http://www.worldbirdnames.org/IOC%20v9-1%20v%20Clements%202018.xlsx",
+  "http://www.worldbirdnames.org/IOC_10.1_vs_other_lists.xlsx",
+  "http://www.worldbirdnames.org/IOC_10.2_vs_other_lists.xlsx",
+  "http://www.worldbirdnames.org/IOC_Names_File_Plus-10.1.xlsx",
+  "http://www.worldbirdnames.org/IOC_Names_File_Plus-10.1_full_ssp.xlsx",
+  "http://www.worldbirdnames.org/IOC_Names_File_Plus-10.2 red.xlsx",
+  "http://www.worldbirdnames.org/IOC_Names_File_Plus-10.2.xlsx",
+  "http://www.worldbirdnames.org/IOC_Names_File_Plus-10.2_full_ssp.xlsx",
+  "http://www.worldbirdnames.org/Multiling%20IOC%2010.1_b.xlsx",
+  "http://www.worldbirdnames.org/master_ioc-names_xml.14.1.xml",
+  "http://www.worldbirdnames.org/master_ioc-names_xml.14.2.xml",
+  "http://www.worldbirdnames.org/master_ioc-names_xml.15.1.xml",
+  "http://www.worldbirdnames.org/master_ioc-names_xml.xml",
+  "http://www.worldbirdnames.org/master_ioc_list_v10.2.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2011.1.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2011.2_c.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2012.1c.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2012.2_b.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2013.1_c.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2013.2_c.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2014.1_b.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2014.2_c.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2015.1_d.xlsx",
+  "https://worldbirdnames.org/Multiling%20IOC%2015.2.xlsx",
+  "https://worldbirdnames.org/master_ioc_list_v11.1.xlsx",
+  "https://worldbirdnames.org/master_ioc_list_v11.2.xlsx",
+  "https://worldbirdnames.org/master_ioc_list_v12.1.xlsx",
+  "https://worldbirdnames.org/master_ioc_list_v12.2.xlsx",
+  "https://worldbirdnames.org/master_ioc_list_v13.1.xlsx",
+  "https://worldbirdnames.org/master_ioc_list_v13.2.xlsx"
+ ],
+ "ioc_mes.org/new/": "<!DOCTYPE html>\n<html lang=\"en-US\">\n<head>\n<meta charset=\"UTF-8\" />\n<meta name='viewport' content='width=device-width, initial-scale=1.0' />\n<meta http-equiv='X-UA-Compatible' content='IE=edge' />\n<li",
+ "ioc_links_mes.org/new/": [],
+ "inat_{\"taxon_id\": 24259, \"lat\": 10.305, \"lng\": -84.81, \"radius\": 8, \"month\": \"1,2,3,4\", \"captive\": \"true\"}": 0,
+ "inat_{\"taxon_id\": 24259, \"lat\": 10.305, \"lng\": -84.81, \"radius\": 8, \"month\": \"1,2,3,4\", \"quality_grade\": \"research\"}": 0,
+ "inat_{\"taxon_id\": 24259, \"lat\": 10.305, \"lng\": -84.81, \"radius\": 8, \"month\": \"1,2,3,4\", \"captive\": \"false\"}": 0
+}
