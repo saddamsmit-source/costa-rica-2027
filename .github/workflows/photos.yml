@@ -1,8 +1,5 @@
 name: fetch-photo-candidates
 on:
-  push:
-    branches: [main]
-    paths: ['tools/photo_queries.json','tools/fetch_photos.py']
   workflow_dispatch:
 permissions:
   contents: write
