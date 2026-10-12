@@ -1,10 +1,13 @@
-Costa Rica 2027 — installeerbare PWA
+Costa Rica 2027 — Premium PWA v3.0
 
-1. Pak dit ZIP-bestand uit.
-2. Upload alle vijf bestanden (index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png) naar de hoofdmap van een openbare GitHub-repository.
-3. Repository → Settings → Pages → Deploy from a branch → main / (root) → Save.
-4. Open de https://<gebruikersnaam>.github.io/<repository>/ URL op Samsung in Chrome.
-5. Chrome menu (⋮) → App installeren of Toevoegen aan startscherm.
-6. Open de app minstens eenmaal online, zodat offline cache kan worden gevuld. Test daarna vliegtuigstand.
+UPLOAD NAAR GITHUB
+1. Maak eerst een JSON-back-up in de huidige app (Back-up & info).
+2. Pak deze ZIP uit. Upload alle bestanden naar dezelfde GitHub repository, direct in de root.
+3. Bij dubbele bestandsnamen moet je de oude versies vervangen/overschrijven; verwijder geen persoonlijke gegevens op je telefoon.
+4. Wacht op GitHub Pages-publicatie. Sluit en heropen de app op je Samsung met internet. Indien nodig tweemaal heropenen.
+5. Controleer notities en boekingen. De bestaande opslag CR27_V2 blijft behouden.
+6. Test offline pas na een online opening.
 
-Let op: GitHub Pages is openbaar. Bewaar geen privégegevens in bronbestanden. Notities en boekingsstatus staan alleen in browseropslag op het apparaat. Maak JSON-back-ups.
+LET OP: De route is niet veranderd. Swipe op de grote dagkaart, of gebruik pijlen en dagkiezer.
+App-icoon kan door Android gecachet worden; bij blijvend oud icoon eventueel opnieuw installeren NA BACK-UP.
+GitHub Pages is openbaar: geen gevoelige gegevens in bronbestanden.
