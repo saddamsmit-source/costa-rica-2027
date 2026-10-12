@@ -1,6 +1,9 @@
 name: fetch-photo-candidates
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tools/hotel_queries.json']
 permissions:
   contents: write
 jobs:
@@ -8,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 tools/fetch_photos.py
+      - run: QFILE=tools/hotel_queries.json python3 tools/fetch_photos.py
       - run: |
           git config user.name "photo-bot"; git config user.email "photo-bot@users.noreply.github.com"
           git checkout --orphan photo-candidates

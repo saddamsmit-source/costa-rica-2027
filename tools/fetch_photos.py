@@ -1,7 +1,7 @@
 import json, os, urllib.request, urllib.parse, re, time
 UA={'User-Agent':'CostaRica2027TripPlanner/1.0 (personal travel app; github.com/saddamsmit-source/costa-rica-2027)'}
 API='https://commons.wikimedia.org/w/api.php'
-q=json.load(open('tools/photo_queries.json'))
+q=json.load(open(os.environ.get('QFILE','tools/photo_queries.json')))
 os.makedirs('cand',exist_ok=True)
 out={}
 def get(url):
