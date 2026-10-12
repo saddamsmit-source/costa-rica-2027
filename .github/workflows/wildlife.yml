@@ -1,0 +1,26 @@
+name: wildlife-data
+on:
+  workflow_dispatch:
+  push:
+    branches: [redesign]
+    paths: ['tools/wl/trigger.json']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow
+      - run: python3 tools/wl/$(python3 -c "import json;print(json.load(open('tools/wl/trigger.json'))['stage'])").py
+      - run: |
+          git config user.name "wildlife-bot"; git config user.email "wildlife-bot@users.noreply.github.com"
+          STAGE=$(python3 -c "import json;print(json.load(open('tools/wl/trigger.json'))['stage'])")
+          mv wl_out /tmp/wl_out
+          git fetch origin wildlife-data || true
+          if git rev-parse --verify origin/wildlife-data >/dev/null 2>&1; then git checkout -q -B wildlife-data origin/wildlife-data; else git checkout -q --orphan wildlife-data; git rm -rq --cached . ; git clean -fdq -e /tmp; fi
+          rm -rf $STAGE; mkdir -p $STAGE; cp -r /tmp/wl_out/. $STAGE/
+          git add $STAGE
+          git commit -qm "wildlife $STAGE"
+          git push -f origin wildlife-data
