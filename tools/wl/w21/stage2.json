@@ -1,0 +1,412 @@
+{
+"verbatim": [
+"Amazona auropalliata",
+"Anarhynchus collaris",
+"Anarhynchus wilsonia",
+"Ara ambiguus",
+"Aramides cajaneus",
+"Ardea ibis",
+"Automolus cervinigularis",
+"Automolus exsertus",
+"Automolus ochrolaemus",
+"Basileuterus delattrii",
+"Basileuterus rufifrons",
+"Buteo nitidus",
+"Buteo plagiatus",
+"Cacicus uropygialis",
+"Ceratopipra mentalis",
+"Chlorophonia elegantissima",
+"Chrysuronia boucardi",
+"Cyanocorax formosus",
+"Cyanocorax morio",
+"Daptrius chimachima",
+"Driophlox atrimaxillaris",
+"Driophlox fuscicauda",
+"Eupsittula canicularis",
+"Eupsittula nana",
+"Gymnopithys bicolor",
+"Gymnopithys leucaspis",
+"Hesperoburhinus bistriatus",
+"Lepidocolaptes affinis",
+"Lepidothrix coronata",
+"Lepidothrix velutina",
+"Leuconotopicus villosus",
+"Megascops guatemalae",
+"Nannopterum brasilianum",
+"Numenius hudsonicus",
+"Numenius phaeopus",
+"Pachysylvia decurtata",
+"Philodice bryantae",
+"Plegadis falcinellus",
+"Poliocrania exsul",
+"Pseudastur albicollis",
+"Psittacara finschi",
+"Ptiliogonys caudatus",
+"Pygochelidon cyanoleuca",
+"Pyrilia haematotis",
+"Ramphocelus passerinii",
+"Setophaga aestiva",
+"Setophaga petechia",
+"Streptoprocne zonaris",
+"Sula brewsteri",
+"Sula leucogaster",
+"Trogon rufus",
+"Trogon tenellus",
+"Xenops mexicanus",
+"Xenops minutus",
+"Zimmerius parvus",
+"Zimmerius vilissimus"
+],
+"large": [
+{
+"id": 63510632,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/63510632/square.jpeg"
+},
+{
+"id": 486443007,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/486443007/square.jpeg"
+},
+{
+"id": 465257915,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/465257915/square.jpg"
+},
+{
+"id": 474146458,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/474146458/square.jpeg"
+},
+{
+"id": 46577018,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/46577018/square.jpeg"
+},
+{
+"id": 661686219,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/661686219/square.jpg"
+},
+{
+"id": 519246052,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/519246052/square.jpg"
+},
+{
+"id": 111515956,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/111515956/square.jpeg"
+},
+{
+"id": 181389352,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/181389352/square.jpeg"
+},
+{
+"id": 470048515,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/470048515/square.jpeg"
+},
+{
+"id": 183977086,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/183977086/square.jpeg"
+},
+{
+"id": 483110344,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/483110344/square.jpg"
+},
+{
+"id": 392376011,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/392376011/square.jpg"
+},
+{
+"id": 336089675,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/336089675/square.jpeg"
+},
+{
+"id": 344193456,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/344193456/square.jpg"
+},
+{
+"id": 305884980,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/305884980/square.jpg"
+},
+{
+"id": 527382855,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/527382855/square.jpg"
+},
+{
+"id": 57909668,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/57909668/square.jpeg"
+},
+{
+"id": 310267736,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/310267736/square.jpeg"
+},
+{
+"id": 243289868,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/243289868/square.jpg"
+},
+{
+"id": 239957703,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/239957703/square.jpg"
+},
+{
+"id": 140948925,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/140948925/square.jpg"
+},
+{
+"id": 99431207,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/99431207/square.jpeg"
+},
+{
+"id": 12945651,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/12945651/square.jpeg"
+},
+{
+"id": 594142,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/594142/square.jpg"
+},
+{
+"id": 2659757,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/2659757/square.jpg"
+},
+{
+"id": 33852153,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/33852153/square.jpg"
+},
+{
+"id": 3080425,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/3080425/square.jpg"
+},
+{
+"id": 361169039,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/361169039/square.jpg"
+},
+{
+"id": 174040511,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/174040511/square.jpeg"
+},
+{
+"id": 161753286,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/161753286/square.jpg"
+},
+{
+"id": 4460945,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/4460945/square.jpg"
+},
+{
+"id": 59845920,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/59845920/square.jpg"
+},
+{
+"id": 58070760,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/58070760/square.jpg"
+},
+{
+"id": 47659,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/47659/square.jpg"
+},
+{
+"id": 11193947,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/11193947/square.jpg"
+},
+{
+"id": 138046100,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/138046100/square.jpeg"
+},
+{
+"id": 709674217,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709674217/square.jpg"
+},
+{
+"id": 180008071,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/180008071/square.jpg"
+},
+{
+"id": 629090513,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/629090513/square.jpg"
+},
+{
+"id": 13712710,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/13712710/square.jpg"
+},
+{
+"id": 18759141,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/18759141/square.jpg"
+},
+{
+"id": 354573442,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/354573442/square.jpeg"
+},
+{
+"id": 167344246,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/167344246/square.jpg"
+},
+{
+"id": 257787558,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/257787558/square.jpeg"
+},
+{
+"id": 152942567,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/152942567/square.jpeg"
+},
+{
+"id": 408572091,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/408572091/square.jpg"
+},
+{
+"id": 32282100,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/32282100/square.jpg"
+},
+{
+"id": 166883109,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/166883109/square.jpeg"
+},
+{
+"id": 196415415,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/196415415/square.jpeg"
+},
+{
+"id": 15932302,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/15932302/square.jpeg"
+},
+{
+"id": 603366621,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/603366621/square.jpg"
+},
+{
+"id": 330133179,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/330133179/square.jpg"
+},
+{
+"id": 394112373,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/394112373/square.jpg"
+},
+{
+"id": 260941303,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/260941303/square.jpg"
+},
+{
+"id": 176571280,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/176571280/square.jpg"
+},
+{
+"id": 207302178,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/207302178/square.jpeg"
+},
+{
+"id": 617363490,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/617363490/square.jpg"
+},
+{
+"id": 178630427,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/178630427/square.jpg"
+},
+{
+"id": 613344362,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/613344362/square.jpg"
+},
+{
+"id": 316275747,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/316275747/square.jpg"
+},
+{
+"id": 85528979,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/85528979/square.jpeg"
+},
+{
+"id": 566589579,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/566589579/square.jpg"
+},
+{
+"id": 343619767,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/343619767/square.jpeg"
+},
+{
+"id": 471858680,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/471858680/square.jpeg"
+},
+{
+"id": 7661038,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/7661038/square.jpg"
+},
+{
+"id": 39065705,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/39065705/square.jpg"
+},
+{
+"id": 627894034,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/627894034/square.jpg"
+},
+{
+"id": 254127897,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/254127897/square.jpg"
+},
+{
+"id": 145720698,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/145720698/square.jpg"
+},
+{
+"id": 623893874,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/623893874/square.jpg"
+},
+{
+"id": 416282953,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/416282953/square.jpg"
+},
+{
+"id": 663372181,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/663372181/square.jpg"
+},
+{
+"id": 391492890,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/391492890/square.jpg"
+},
+{
+"id": 634709851,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/634709851/square.jpg"
+},
+{
+"id": 172713152,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/172713152/square.jpeg"
+},
+{
+"id": 179638917,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/179638917/square.jpg"
+},
+{
+"id": 260887463,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/260887463/square.jpg"
+},
+{
+"id": 20342182,
+"url": "https://inaturalist-open-data.s3.amazonaws.com/photos/20342182/square.jpg"
+}
+],
+"targets": [
+[
+"Fawn-throated foliage-gleaner",
+"Automolus cervinigularis"
+],
+[
+"Chiriqui foliage-gleaner",
+"Automolus exsertus"
+],
+[
+"Glossy ibis",
+"Plegadis falcinellus"
+],
+[
+"White-collared swift",
+"Streptoprocne zonaris"
+],
+[
+"Scarlet-rumped cacique",
+"Cacicus uropygialis"
+],
+[
+"Spot-crowned woodcreeper",
+"Lepidocolaptes affinis"
+],
+[
+"Redlip parrotfish",
+"Scarus rubroviolaceus"
+],
+[
+"Bluefin trevally",
+"Caranx melampygus"
+]
+]
+}
