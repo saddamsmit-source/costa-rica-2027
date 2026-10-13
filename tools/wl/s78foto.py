@@ -26,7 +26,7 @@ def dl(meta,dest):
         if not u or m.get('missing'):continue
         fn=re.sub(r'[^A-Za-z0-9]+','_',t[5:])[:80]+'.jpg';b=fetch(u,raw=True,pace=1.0,tries=2)
         if b:open(f'{dest}/{fn}','wb').write(b);m['file']=fn
-T=list(dict.fromkeys(IN['titles'].values()));M=info(T);dl(M,O+'/img');print('app-fotos',len(M),flush=True)
+T=list(dict.fromkeys(IN['titles'].values()));M=info(T);print('app-fotos',len(M),flush=True)
 json.dump({'map':IN['titles'],'meta':M},open(O+'/app.json','w'),ensure_ascii=False,indent=0)
 # iNaturalist-originelen
 inat={}
@@ -34,9 +34,6 @@ for pid in IN['inat']:
     j=fetch(f'https://api.inaturalist.org/v1/photos/{pid}',pace=1.0)
     r=((j or {}).get('results') or [{}])[0];u=(r.get('url') or '').replace('square','original')
     inat[pid]={'url':u,'dims':r.get('original_dimensions'),'lic':r.get('license_code'),'attr':r.get('attribution')}
-    if u:
-        b=fetch(u,raw=True,pace=1.0,tries=2)
-        if b:open(f'{O}/inat/{pid}.jpg','wb').write(b);inat[pid]['file']=f'{pid}.jpg'
 print('inat',len(inat),flush=True);json.dump(inat,open(O+'/inat.json','w'),indent=0)
 # zoeken naar echte locaties
 Z={'h_fleurdelys':['Hotel Fleur de Lys San José','Fleur de Lys Costa Rica'],'h_atlantida':['Atlantida Lodge Cahuita'],'h_lapaverde':['Lapa Verde Tortuguero','Caribbean Paradise Tortuguero'],
@@ -54,5 +51,5 @@ for k,qs in Z.items():
         for x in ((r or {}).get('query') or {}).get('search',[]):
             if x['title'] not in seen:seen.add(x['title']);res.append(x['title'])
     Zout[k]=res[:8]
-alltz=list(dict.fromkeys(t for v in Zout.values() for t in v));ZM=info(alltz);dl(ZM,O+'/zoek')
+alltz=list(dict.fromkeys(t for v in Zout.values() for t in v));ZM=info(alltz)
 json.dump({'hits':Zout,'meta':ZM},open(O+'/zoek.json','w'),ensure_ascii=False,indent=0);print('klaar',flush=True)
