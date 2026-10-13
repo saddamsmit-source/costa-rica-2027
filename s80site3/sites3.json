@@ -1,0 +1,506 @@
+{
+"log": [
+[
+"Fleur",
+"https",
+1,
+200,
+null
+],
+[
+"Fleur",
+"https",
+2,
+200,
+null
+],
+[
+"Fleur",
+"https",
+3,
+200,
+null
+],
+[
+"Fleur",
+"https",
+4,
+200,
+null
+],
+[
+"Fleur",
+"https",
+5,
+200,
+null
+],
+[
+"Fleur",
+"https",
+6,
+200,
+null
+],
+[
+"Fleur",
+"https",
+7,
+200,
+null
+],
+[
+"Fleur",
+"https",
+8,
+200,
+null
+],
+[
+"Fleur",
+"https",
+9,
+200,
+null
+],
+[
+"Fleur",
+"https",
+10,
+200,
+null
+],
+[
+"Fleur",
+"https",
+11,
+200,
+null
+],
+[
+"Fleur",
+"https",
+12,
+200,
+null
+],
+[
+"Fleur",
+"https",
+13,
+200,
+null
+],
+[
+"Fleur",
+"https",
+14,
+200,
+null
+],
+[
+"Fleur",
+"https",
+15,
+200,
+null
+],
+[
+"Fleur",
+"https",
+16,
+200,
+null
+],
+[
+"Fleur",
+"https",
+17,
+200,
+null
+],
+[
+"Fleur",
+"https",
+18,
+200,
+null
+],
+[
+"Fleur",
+"https",
+19,
+200,
+null
+],
+[
+"Fleur",
+"https",
+20,
+200,
+null
+],
+[
+"Fleur",
+"https",
+21,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+21,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+22,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+22,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+23,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+23,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+24,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+24,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+25,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+25,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+26,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+26,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+27,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+27,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+28,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+28,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+29,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+29,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"https",
+30,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Fleur",
+"http",
+30,
+404,
+"HTTP Error 404: Not Found"
+],
+[
+"Catarata",
+"https://catarataecolodge.com/",
+200,
+null
+],
+[
+"Catarata found",
+"https://catarataecolodge.com/",
+2
+],
+[
+"Catarata",
+"https://en.cataratalodge.com/",
+0,
+"<urlopen error [Errno -2] Name or service not known>"
+],
+[
+"Catarata",
+"https://www.cataratalodge.com/",
+0,
+"<urlopen error timed out>"
+],
+[
+"Catarata",
+"https://cataratalodge.com/",
+0,
+"<urlopen error timed out>"
+]
+],
+"Fleur de Lys": [
+{
+"url": "https://www.hotelfleurdelys.com/images/f1.jpg",
+"w": 400,
+"h": 300,
+"kb": 28,
+"page": "https://www.hotelfleurdelys.com/g1.htm",
+"th": "FleurdeLys_0.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f2.jpg",
+"w": 400,
+"h": 300,
+"kb": 40,
+"page": "https://www.hotelfleurdelys.com/g2.htm",
+"th": "FleurdeLys_1.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f3.jpg",
+"w": 400,
+"h": 300,
+"kb": 30,
+"page": "https://www.hotelfleurdelys.com/g3.htm",
+"th": "FleurdeLys_2.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f4.jpg",
+"w": 400,
+"h": 300,
+"kb": 27,
+"page": "https://www.hotelfleurdelys.com/g4.htm",
+"th": "FleurdeLys_3.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f5.jpg",
+"w": 400,
+"h": 300,
+"kb": 39,
+"page": "https://www.hotelfleurdelys.com/g5.htm",
+"th": "FleurdeLys_4.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f6.jpg",
+"w": 400,
+"h": 300,
+"kb": 25,
+"page": "https://www.hotelfleurdelys.com/g6.htm",
+"th": "FleurdeLys_5.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f7.jpg",
+"w": 400,
+"h": 300,
+"kb": 28,
+"page": "https://www.hotelfleurdelys.com/g7.htm",
+"th": "FleurdeLys_6.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f8.jpg",
+"w": 400,
+"h": 300,
+"kb": 25,
+"page": "https://www.hotelfleurdelys.com/g8.htm",
+"th": "FleurdeLys_7.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f9.jpg",
+"w": 400,
+"h": 300,
+"kb": 29,
+"page": "https://www.hotelfleurdelys.com/g9.htm",
+"th": "FleurdeLys_8.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f10.jpg",
+"w": 400,
+"h": 300,
+"kb": 41,
+"page": "https://www.hotelfleurdelys.com/g10.htm",
+"th": "FleurdeLys_9.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f11.jpg",
+"w": 400,
+"h": 300,
+"kb": 23,
+"page": "https://www.hotelfleurdelys.com/g11.htm",
+"th": "FleurdeLys_10.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f12.jpg",
+"w": 400,
+"h": 300,
+"kb": 18,
+"page": "https://www.hotelfleurdelys.com/g12.htm",
+"th": "FleurdeLys_11.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f13.jpg",
+"w": 400,
+"h": 300,
+"kb": 26,
+"page": "https://www.hotelfleurdelys.com/g13.htm",
+"th": "FleurdeLys_12.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f14.jpg",
+"w": 400,
+"h": 300,
+"kb": 36,
+"page": "https://www.hotelfleurdelys.com/g14.htm",
+"th": "FleurdeLys_13.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f15.jpg",
+"w": 400,
+"h": 300,
+"kb": 31,
+"page": "https://www.hotelfleurdelys.com/g15.htm",
+"th": "FleurdeLys_14.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f16.jpg",
+"w": 400,
+"h": 300,
+"kb": 31,
+"page": "https://www.hotelfleurdelys.com/g16.htm",
+"th": "FleurdeLys_15.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f17.jpg",
+"w": 400,
+"h": 300,
+"kb": 21,
+"page": "https://www.hotelfleurdelys.com/g17.htm",
+"th": "FleurdeLys_16.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f18.jpg",
+"w": 400,
+"h": 300,
+"kb": 24,
+"page": "https://www.hotelfleurdelys.com/g18.htm",
+"th": "FleurdeLys_17.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f19.jpg",
+"w": 350,
+"h": 467,
+"kb": 50,
+"page": "https://www.hotelfleurdelys.com/g19.htm",
+"th": "FleurdeLys_18.jpg",
+"cors": null
+},
+{
+"url": "https://www.hotelfleurdelys.com/images/f20.jpg",
+"w": 350,
+"h": 467,
+"kb": 43,
+"page": "https://www.hotelfleurdelys.com/g20.htm",
+"th": "FleurdeLys_19.jpg",
+"cors": null
+}
+],
+"Catarata Ecolodge": [
+{
+"url": "https://storage.googleapis.com/gpt-engineer-file-uploads/jBp0XFE1OfR5B6ohu0vL40OqeUK2/social-images/social-1771833610107-aerialcel.webp",
+"w": 1200,
+"h": 630,
+"kb": 93,
+"page": "https://catarataecolodge.com/",
+"th": "CatarataEcolodge_0.jpg",
+"cors": null
+}
+]
+}
