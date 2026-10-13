@@ -1,0 +1,156 @@
+{
+"Orange-bellied trogon": [
+{
+"obs": 147667949,
+"pid": 254140367,
+"dims": {
+"width": 2048,
+"height": 1367
+},
+"lic": "cc-by-nc",
+"attr": "(c) Cameron McIsaac, some rights reserved (CC BY-NC)",
+"place": "Monteverde Cloud Forest Reserve, Puntarenas, CR",
+"ids": 1,
+"taxon": "Trogon collaris",
+"user": "Cameron McIsaac",
+"file": "254140367.jpg",
+"size": [
+2048,
+1367
+]
+},
+{
+"obs": 6272624,
+"pid": 7891551,
+"dims": {
+"width": 1570,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) Steven Easley, some rights reserved (CC BY-NC)",
+"place": "Provincia de Cartago, Verbena Nte, Costa Rica",
+"ids": 1,
+"taxon": "Trogon collaris",
+"user": "Steven Easley",
+"file": "7891551.jpg",
+"size": [
+1570,
+2048
+]
+},
+{
+"obs": 38582553,
+"pid": 61338530,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) Dr. Ryne D. Rutherford, some rights reserved (CC BY-NC)",
+"place": "San Jos\u00e9 Province, Rivas, Costa Rica",
+"ids": 1,
+"taxon": "Trogon collaris",
+"user": "Dr. Ryne D. Rutherford",
+"file": "61338530.jpg",
+"size": [
+2048,
+1536
+]
+},
+{
+"obs": 146216607,
+"pid": 251333177,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) D.J. McNeil, some rights reserved (CC BY-NC)",
+"place": "Puntarenas Province, Monteverde, Costa Rica",
+"ids": 2,
+"taxon": "Trogon collaris",
+"user": "D.J. McNeil",
+"file": "251333177.jpg",
+"size": [
+2048,
+1536
+]
+},
+{
+"obs": 195134894,
+"pid": 343208637,
+"dims": {
+"width": 2048,
+"height": 1367
+},
+"lic": "cc-by-nc",
+"attr": "(c) Alex Castelein, some rights reserved (CC BY-NC)",
+"place": "Calle Curi Cancha, Puntarenas, CR",
+"ids": 1,
+"taxon": "Trogon collaris",
+"user": "Alex Castelein",
+"file": "343208637.jpg",
+"size": [
+2048,
+1367
+]
+},
+{
+"obs": 194811096,
+"pid": 342540333,
+"dims": {
+"width": 2000,
+"height": 1333
+},
+"lic": "cc-by",
+"attr": "(c) Richard Littauer, some rights reserved (CC BY)",
+"place": "7R4J+M2Q Puente Virgen del Socorro, Provincia de Alajuela, Alajuela, Costa Rica",
+"ids": 1,
+"taxon": "Trogon collaris",
+"user": "Richard Littauer",
+"file": "342540333.jpg",
+"size": [
+2000,
+1333
+]
+},
+{
+"obs": 212343720,
+"pid": 375257981,
+"dims": {
+"width": 1536,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) Mats Douma, some rights reserved (CC BY-NC)",
+"place": "Monteverde Cloud Forest Reserve, San Ram\u00f3n, Alajuela, CR",
+"ids": 2,
+"taxon": "Trogon collaris",
+"user": "Mats Douma",
+"file": "375257981.jpg",
+"size": [
+1536,
+2048
+]
+},
+{
+"obs": 398412478,
+"pid": 730856994,
+"dims": {
+"width": 2048,
+"height": 1366
+},
+"lic": "cc-by-nc",
+"attr": "(c) Manuel Raab, some rights reserved (CC BY-NC)",
+"place": "Provincia de Cartago, Jim\u00e9nez, Costa Rica",
+"ids": 2,
+"taxon": "Trogon collaris",
+"user": "Manuel Raab",
+"file": "730856994.jpg",
+"size": [
+2048,
+1366
+]
+}
+]
+}
