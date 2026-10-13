@@ -1,8 +1,8 @@
 # Wildlife 2.1 – trefkansmethode
 
 De kans per soort per regio is een kwalitatieve inschatting voor **jullie excursie in februari**, geen garantie.
-Schaal: **4 Zeer kansrijk** (meestal gezien), **3 Kansrijk** (vaak), **2 Mogelijk** (met wat geluk of een goede gids),
-**1 Zeldzaam / uitzonderlijk** (alleen met veel geluk). Kans 1 staat alleen in het soortvenster, niet in de regiolijst.
+Schaal (labels in de app sinds v8.0): **4 Zeer makkelijk** (zie je bijna altijd), **3 Makkelijk** (zie je vaak),
+**2 Meer kans met gids** (lukt vooral met een gids of wat geluk), **1 Zeldzaam** (alleen met veel geluk).
 
 ## Bronnen
 | Groep | Bron | Maat |
@@ -40,6 +40,9 @@ eBird-naam gezocht (`verbatimScientificName`, stap `s21img`). eBird publiceert g
   leefgebied.
 - **Handmatig**: alleen met reden in `chance_overrides.json` (o.a. tapir Corcovado 2 met nadruk op Sirena, quetzal Monteverde
   max 3, zeeleven per excursie).
+- **v8.0, gericht gezochte soorten**: agamireiger en Nicaraguaanse zaadkraker (Caño Negro), kuifkoketje (La Fortuna), kleine
+  grondkoekoek (Rincón de la Vieja) en griel (Tárcoles) max 2: de eBird-cijfers komen van vogelaars die er gericht naar zoeken
+  (toegepast in `js/43-v80-kans.js`).
 - Soorten zonder bruikbare gegevens houden hun vorige regio's als kans 1 met de toelichting "Weinig gegevens".
 
 De onderbouwing per soort en regio staat in `chance_basis.json` (bron, aantallen, toegepaste correcties).

@@ -21,9 +21,11 @@ def get(u,ref=None,head=False):
     try:
         with urllib.request.urlopen(req,timeout=40) as r:return r.status,dict(r.headers),(b'' if head else r.read()),r.geturl()
     except Exception as e:return getattr(e,'code',0) or 0,{},b'',u
-def base(u):return '.'.join(urllib.parse.urlparse(u).hostname.split('.')[-2:])
+def base(u):
+    try:return '.'.join((urllib.parse.urlparse(u).hostname or '').split('.')[-2:])
+    except Exception:return ''
 res={}
-for h,starts in SITES.items():
+def one(h,starts):
     pages=list(starts);seen=set();imgs={};dom={base(u) for u in starts}
     i=0
     while i<len(pages) and len(seen)<10:
@@ -51,7 +53,7 @@ for h,starts in SITES.items():
         if re.search(r'logo|icon|favicon|sprite|flag|tripadvisor|booking|badge|award|payment|whatsapp|placeholder',u,re.I):continue
         st,hd,b,fin=get(u,ref='https://saddamsmit-source.github.io/');time.sleep(0.3)
         if st!=200 or len(b)<15000:continue
-        try:im=Image.open(io.BytesIO(b));w,hh=im.size
+        try:im=Image.open(io.BytesIO(b));w,hh=im.size;im.load()
         except Exception:continue
         if min(w,hh)<700:continue
         rec={'url':u,'final':fin,'w':w,'h':hh,'kb':len(b)//1024,'cors':hd.get('Access-Control-Allow-Origin') or hd.get('access-control-allow-origin'),'ctype':hd.get('Content-Type'),'pages':sorted(src)[:3],'host':urllib.parse.urlparse(fin).hostname}
@@ -60,4 +62,8 @@ for h,starts in SITES.items():
         out.append(rec)
         if len(out)>=40:break
     res[h]={'pages':sorted(seen),'domains':sorted(dom),'imgs':out};print(h,len(seen),'pagina',len(imgs),'kandidaten',len(out),'bruikbaar',flush=True)
+import traceback
+for h,starts in SITES.items():
+    try:one(h,starts)
+    except Exception:res[h]={'err':traceback.format_exc()[-800:]};print(h,'FOUT',flush=True)
 json.dump(res,open(O+'/sites.json','w'),ensure_ascii=False,indent=0);print('klaar')
