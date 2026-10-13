@@ -1,0 +1,2794 @@
+{
+"Fleur de Lys": {
+"pages": [
+"http://www.hotelfleurdelys.com/",
+"http://www.hotelfleurdelys.com/facilities.html",
+"http://www.hotelfleurdelys.com/faqs.html",
+"http://www.hotelfleurdelys.com/gallery.html",
+"http://www.hotelfleurdelys.com/index.html",
+"http://www.hotelfleurdelys.com/location.html",
+"http://www.hotelfleurdelys.com/rates.html",
+"http://www.hotelfleurdelys.com/reservations.html",
+"http://www.hotelfleurdelys.com/rooms.html",
+"http://www.hotelfleurdelys.com/tours.html"
+],
+"domains": [
+"hotelfleurdelys.com"
+],
+"imgs": []
+},
+"Atlantida Lodge": {
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall",
+"https://web.atlantidalodge.com/amenities/gym",
+"https://web.atlantidalodge.com/amenities/pool",
+"https://web.atlantidalodge.com/amenities/restaurant",
+"https://web.atlantidalodge.com/home",
+"https://web.atlantidalodge.com/reservations",
+"https://web.atlantidalodge.com/rooms",
+"https://www.atlantidalodge.com/"
+],
+"domains": [
+"atlantidalodge.com"
+],
+"imgs": [
+{
+"url": "https://web.atlantidalodge.com/images/salon-atlantida.webp",
+"final": "https://web.atlantidalodge.com/images/salon-atlantida.webp",
+"w": 1920,
+"h": 1280,
+"kb": 859,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_0.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/sobreatlantida.webp",
+"final": "https://web.atlantidalodge.com/images/sobreatlantida.webp",
+"w": 1920,
+"h": 1280,
+"kb": 832,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_1.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/exp-atlantida.webp",
+"final": "https://web.atlantidalodge.com/images/exp-atlantida.webp",
+"w": 1920,
+"h": 1278,
+"kb": 969,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_2.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/atlantidanegro.png",
+"final": "https://web.atlantidalodge.com/images/atlantidanegro.png",
+"w": 1177,
+"h": 732,
+"kb": 180,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_3.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida5.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida5.webp",
+"w": 1920,
+"h": 1280,
+"kb": 1781,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_4.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/atlantidablanco.png",
+"final": "https://web.atlantidalodge.com/images/atlantidablanco.png",
+"w": 1176,
+"h": 723,
+"kb": 270,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_5.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida6.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida6.webp",
+"w": 1920,
+"h": 1278,
+"kb": 1711,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_6.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida4.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida4.webp",
+"w": 1920,
+"h": 1280,
+"kb": 1488,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_7.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida7.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida7.webp",
+"w": 1920,
+"h": 1278,
+"kb": 1095,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/reservations"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_8.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida2.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida2.webp",
+"w": 1920,
+"h": 1280,
+"kb": 1498,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_9.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida1.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida1.webp",
+"w": 1920,
+"h": 1080,
+"kb": 1372,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_10.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/experiencia-atlantida.webp",
+"final": "https://web.atlantidalodge.com/images/experiencia-atlantida.webp",
+"w": 1920,
+"h": 1278,
+"kb": 850,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_11.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida3.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida3.webp",
+"w": 1920,
+"h": 1080,
+"kb": 1771,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_12.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/slideatlantida8.webp",
+"final": "https://web.atlantidalodge.com/images/slideatlantida8.webp",
+"w": 1920,
+"h": 1278,
+"kb": 1230,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_13.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/piscina-atlantida.webp",
+"final": "https://web.atlantidalodge.com/images/piscina-atlantida.webp",
+"w": 1920,
+"h": 1280,
+"kb": 1189,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_14.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/uploads/landing/amenidades/landing_1782363529_cPXc1p5eYA.webp",
+"final": "https://web.atlantidalodge.com/uploads/landing/amenidades/landing_1782363529_cPXc1p5eYA.webp",
+"w": 1920,
+"h": 1278,
+"kb": 1347,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_15.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/restauranteatlantida.webp",
+"final": "https://web.atlantidalodge.com/images/restauranteatlantida.webp",
+"w": 1920,
+"h": 1278,
+"kb": 1347,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_16.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/deluxeatlantida.webp",
+"final": "https://web.atlantidalodge.com/images/deluxeatlantida.webp",
+"w": 1920,
+"h": 1278,
+"kb": 1183,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_17.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/gym-atlantida.webp",
+"final": "https://web.atlantidalodge.com/images/gym-atlantida.webp",
+"w": 1920,
+"h": 1280,
+"kb": 891,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com",
+"https://web.atlantidalodge.com/",
+"https://web.atlantidalodge.com/amenities/event-hall"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_18.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/estandar.webp",
+"final": "https://web.atlantidalodge.com/images/estandar.webp",
+"w": 1920,
+"h": 1278,
+"kb": 593,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com/reservations",
+"https://web.atlantidalodge.com/rooms"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_19.jpg"
+},
+{
+"url": "https://web.atlantidalodge.com/images/juniorsuite.webp",
+"final": "https://web.atlantidalodge.com/images/juniorsuite.webp",
+"w": 1920,
+"h": 1278,
+"kb": 575,
+"cors": null,
+"ctype": "image/webp",
+"pages": [
+"https://web.atlantidalodge.com/reservations",
+"https://web.atlantidalodge.com/rooms"
+],
+"host": "web.atlantidalodge.com",
+"noref": 200,
+"th": "AtlantidaLodge_20.jpg"
+}
+]
+},
+"Lapa Verde Lodge": {
+"pages": [
+"http://tortugueroecolodge.com/",
+"http://tortugueroecolodge.com/tortuguero-lodge.html"
+],
+"domains": [
+"tortugueroecolodge.com"
+],
+"imgs": []
+},
+"Catarata Ecolodge": {
+"pages": [
+"https://catarataecolodge.com/",
+"https://en.cataratalodge.com/",
+"https://en.cataratalodge.com/habitaciones"
+],
+"domains": [
+"catarataecolodge.com",
+"cataratalodge.com"
+],
+"imgs": []
+},
+"Cañon de la Vieja Lodge": {
+"pages": [
+"https://www.thecanyonlodge.com/",
+"https://www.thecanyonlodge.com/about-us/",
+"https://www.thecanyonlodge.com/activities/",
+"https://www.thecanyonlodge.com/packages/",
+"https://www.thecanyonlodge.com/rooms/",
+"https://www.thecanyonlodge.com/services/",
+"https://www.thecanyonlodge.com/sustainability/"
+],
+"domains": [
+"thecanyonlodge.com"
+],
+"imgs": [
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/18.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/18.png",
+"w": 1200,
+"h": 799,
+"kb": 1346,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/",
+"https://www.thecanyonlodge.com/services/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_0.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/32.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/32.png",
+"w": 1200,
+"h": 799,
+"kb": 1901,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_1.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/29.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/29.png",
+"w": 1200,
+"h": 799,
+"kb": 1868,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/",
+"https://www.thecanyonlodge.com/services/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_2.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/2.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/2.png",
+"w": 1200,
+"h": 799,
+"kb": 842,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_3.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/7.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/7.png",
+"w": 1200,
+"h": 799,
+"kb": 1574,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_4.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/1.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/1.png",
+"w": 1200,
+"h": 799,
+"kb": 1559,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/activities/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_5.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/6.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/6.png",
+"w": 1200,
+"h": 799,
+"kb": 1433,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/activities/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_6.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/8.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/8.png",
+"w": 1200,
+"h": 799,
+"kb": 1417,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/activities/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_7.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/9.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/9.png",
+"w": 1200,
+"h": 799,
+"kb": 1460,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/activities/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_8.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/5.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/5.png",
+"w": 1200,
+"h": 799,
+"kb": 2058,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/activities/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_9.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/11.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/11.png",
+"w": 1200,
+"h": 799,
+"kb": 1463,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/services/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_10.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/19.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/19.png",
+"w": 1200,
+"h": 799,
+"kb": 1232,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/services/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_11.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/28.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/28.png",
+"w": 1200,
+"h": 799,
+"kb": 1626,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/services/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_12.jpg"
+},
+{
+"url": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/20.png",
+"final": "https://www.thecanyonlodge.com/wp-content/uploads/2023/11/20.png",
+"w": 1200,
+"h": 799,
+"kb": 1263,
+"cors": null,
+"ctype": "image/png",
+"pages": [
+"https://www.thecanyonlodge.com/services/"
+],
+"host": "www.thecanyonlodge.com",
+"noref": 200,
+"th": "CaondelaViejaLodge_13.jpg"
+}
+]
+},
+"Hotel Los Cipreses": {
+"pages": [
+"https://cipresescr.com/",
+"https://cipresescr.com/about-us",
+"https://cipresescr.com/about-us/",
+"https://cipresescr.com/gallery/",
+"https://cipresescr.com/hotel_room/family-room/?check_in=08/10/2026&",
+"https://cipresescr.com/hotel_room/standard-deluxe-double/?check_in=08/10/2026&",
+"https://cipresescr.com/hotel_room/standard-deluxe/?check_in=08/10/2026&",
+"https://cipresescr.com/hotel_room/standard-superior/?check_in=08/10/2026&",
+"https://cipresescr.com/rooms",
+"https://cipresescr.com/rooms/"
+],
+"domains": [
+"cipresescr.com"
+],
+"imgs": [
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/familiy-room-3-2048x2048.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/familiy-room-3-2048x2048.jpg",
+"w": 2048,
+"h": 2048,
+"kb": 395,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_0.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/deluxe-room-6-2048x2048.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/deluxe-room-6-2048x2048.jpg",
+"w": 2048,
+"h": 2048,
+"kb": 547,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_1.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/superior-cipreses-2-1536x1536.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/superior-cipreses-2-1536x1536.jpg",
+"w": 1536,
+"h": 1536,
+"kb": 266,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_2.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/familiy-room-3-1024x1024.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/familiy-room-3-1024x1024.jpg",
+"w": 1024,
+"h": 1024,
+"kb": 134,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_3.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/superior-cipreses-2-1024x1024.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/superior-cipreses-2-1024x1024.jpg",
+"w": 1024,
+"h": 1024,
+"kb": 140,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_4.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/deluxe-room-6-1024x1024.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/deluxe-room-6-1024x1024.jpg",
+"w": 1024,
+"h": 1024,
+"kb": 180,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_5.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/deluxe-room-6-1536x1536.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/deluxe-room-6-1536x1536.jpg",
+"w": 1536,
+"h": 1536,
+"kb": 345,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_6.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/slider-home-cipreses.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/slider-home-cipreses.jpg",
+"w": 1920,
+"h": 1080,
+"kb": 479,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/",
+"https://cipresescr.com/about-us/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_7.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/superior-cipreses-2-2048x2048.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/superior-cipreses-2-2048x2048.jpg",
+"w": 2048,
+"h": 2048,
+"kb": 416,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_8.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2014/12/familiy-room-3-1536x1536.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2014/12/familiy-room-3-1536x1536.jpg",
+"w": 1536,
+"h": 1536,
+"kb": 253,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_9.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-11.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-11.jpg",
+"w": 1280,
+"h": 720,
+"kb": 134,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_10.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-39.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-39.jpg",
+"w": 1280,
+"h": 720,
+"kb": 124,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_11.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-13.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-13.jpg",
+"w": 1280,
+"h": 720,
+"kb": 107,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_12.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-20.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-20.jpg",
+"w": 1280,
+"h": 720,
+"kb": 152,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_13.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-38.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-38.jpg",
+"w": 1280,
+"h": 720,
+"kb": 201,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_14.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-19.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-19.jpg",
+"w": 1280,
+"h": 720,
+"kb": 187,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_15.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-34.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-34.jpg",
+"w": 1280,
+"h": 720,
+"kb": 160,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_16.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-14.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-14.jpg",
+"w": 1280,
+"h": 720,
+"kb": 70,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_17.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-32.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-32.jpg",
+"w": 1280,
+"h": 720,
+"kb": 108,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_18.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-4.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-4.jpg",
+"w": 1280,
+"h": 720,
+"kb": 115,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_19.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-6.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-6.jpg",
+"w": 1280,
+"h": 720,
+"kb": 101,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_20.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-2.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-2.jpg",
+"w": 720,
+"h": 1280,
+"kb": 98,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_21.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-15.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-15.jpg",
+"w": 1280,
+"h": 720,
+"kb": 150,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_22.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-5.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-5.jpg",
+"w": 1280,
+"h": 720,
+"kb": 110,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_23.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-30.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-30.jpg",
+"w": 1280,
+"h": 720,
+"kb": 142,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_24.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-23.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-23.jpg",
+"w": 1280,
+"h": 720,
+"kb": 179,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_25.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-33.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-33.jpg",
+"w": 1280,
+"h": 720,
+"kb": 130,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_26.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-35.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-35.jpg",
+"w": 1280,
+"h": 720,
+"kb": 129,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_27.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-16.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-16.jpg",
+"w": 1280,
+"h": 720,
+"kb": 207,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_28.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-12.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-12.jpg",
+"w": 1280,
+"h": 720,
+"kb": 99,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_29.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-10.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-10.jpg",
+"w": 1280,
+"h": 720,
+"kb": 115,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_30.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-18.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-18.jpg",
+"w": 1280,
+"h": 720,
+"kb": 193,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_31.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-22.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-22.jpg",
+"w": 1280,
+"h": 720,
+"kb": 157,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_32.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-17.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-17.jpg",
+"w": 1280,
+"h": 720,
+"kb": 216,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_33.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-29.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-29.jpg",
+"w": 1280,
+"h": 720,
+"kb": 239,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_34.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-21.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-21.jpg",
+"w": 1280,
+"h": 720,
+"kb": 102,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_35.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-24.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-24.jpg",
+"w": 1280,
+"h": 720,
+"kb": 92,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_36.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-9.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-9.jpg",
+"w": 1280,
+"h": 720,
+"kb": 118,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_37.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-36.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-36.jpg",
+"w": 1280,
+"h": 720,
+"kb": 117,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_38.jpg"
+},
+{
+"url": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-3.jpg",
+"final": "https://cipresescr.com/wp-content/uploads/2020/04/hotel-cipreses-picture-3.jpg",
+"w": 1280,
+"h": 720,
+"kb": 127,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://cipresescr.com/gallery/"
+],
+"host": "cipresescr.com",
+"noref": 200,
+"th": "HotelLosCipreses_39.jpg"
+}
+]
+},
+"Sueños del Bosque": {
+"pages": [
+"https://www.bosquesangerardo.com/en/",
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html",
+"https://www.bosquesangerardo.com/en/gallery.html",
+"https://www.bosquesangerardo.com/en/rooms-list.html",
+"https://www.bosquesangerardo.com/rooms-list.html"
+],
+"domains": [
+"bosquesangerardo.com"
+],
+"imgs": [
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-Vista-Frontal-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-Vista-Frontal-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 368,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/",
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_0.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbCamino-10.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbCamino-10.jpg",
+"w": 1152,
+"h": 768,
+"kb": 379,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_1.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbSenderos-05.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbSenderos-05.jpg",
+"w": 1152,
+"h": 768,
+"kb": 417,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_2.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sblago-06.jpg",
+"final": "https://www.bosquesangerardo.com/images/sblago-06.jpg",
+"w": 1152,
+"h": 768,
+"kb": 341,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_3.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbRestaurante-Platillo-03.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbRestaurante-Platillo-03.jpg",
+"w": 1152,
+"h": 768,
+"kb": 150,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_4.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Third-Room-02.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Third-Room-02.jpg",
+"w": 1152,
+"h": 768,
+"kb": 247,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html",
+"https://www.bosquesangerardo.com/en/rooms-list.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_5.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-07.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-07.jpg",
+"w": 1152,
+"h": 768,
+"kb": 275,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_6.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-03.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-03.jpg",
+"w": 1152,
+"h": 768,
+"kb": 210,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/gallery.html",
+"https://www.bosquesangerardo.com/en/rooms-list.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_7.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbAvistamiento-Aves-02.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbAvistamiento-Aves-02.jpg",
+"w": 1152,
+"h": 768,
+"kb": 284,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_8.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-04.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-04.jpg",
+"w": 1152,
+"h": 768,
+"kb": 271,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_9.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 232,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_10.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbSenderos-11.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbSenderos-11.jpg",
+"w": 1152,
+"h": 768,
+"kb": 193,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_11.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Balcony-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Balcony-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 330,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_12.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbVista-desde-lago-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbVista-desde-lago-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 326,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_13.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbPuente-Colgante-08.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbPuente-Colgante-08.jpg",
+"w": 1152,
+"h": 768,
+"kb": 360,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_14.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-14.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-14.jpg",
+"w": 1152,
+"h": 768,
+"kb": 238,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_15.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-09.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-09.jpg",
+"w": 1152,
+"h": 768,
+"kb": 222,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_16.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Vista-Frontal-02.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Vista-Frontal-02.jpg",
+"w": 1152,
+"h": 768,
+"kb": 374,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_17.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Bathroom-04.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Bathroom-04.jpg",
+"w": 1152,
+"h": 768,
+"kb": 135,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_18.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbRestaurante-05.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbRestaurante-05.jpg",
+"w": 1152,
+"h": 768,
+"kb": 271,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_19.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-BathRoom-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-BathRoom-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 232,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_20.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbRestaurante-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbRestaurante-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 245,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_21.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbRestaurante-Vista-Frontal-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbRestaurante-Vista-Frontal-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 298,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_22.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbAvistamiento-Aves-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbAvistamiento-Aves-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 284,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_23.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbCamino-03.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbCamino-03.jpg",
+"w": 1152,
+"h": 768,
+"kb": 455,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_24.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-BathRoom-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-BathRoom-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 170,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_25.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbPuente-Colgante-04.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbPuente-Colgante-04.jpg",
+"w": 1152,
+"h": 768,
+"kb": 438,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_26.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbAvistamiento-Aves-03.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbAvistamiento-Aves-03.jpg",
+"w": 1152,
+"h": 768,
+"kb": 346,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_27.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sblago-02.jpg",
+"final": "https://www.bosquesangerardo.com/images/sblago-02.jpg",
+"w": 1152,
+"h": 768,
+"kb": 241,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_28.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 230,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_29.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Third-Room-04.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Third-Room-04.jpg",
+"w": 1152,
+"h": 768,
+"kb": 269,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_30.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-FrontView-02.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-FrontView-02.jpg",
+"w": 1152,
+"h": 768,
+"kb": 318,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html",
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_31.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Vista-Frontal-03.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Vista-Frontal-03.jpg",
+"w": 1152,
+"h": 768,
+"kb": 354,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/gallery.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_32.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-Vista-Frontal-02.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-con-chimenea-Vista-Frontal-02.jpg",
+"w": 1152,
+"h": 768,
+"kb": 243,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Chimenea.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html",
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_33.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Third-Room-05.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Third-Room-05.jpg",
+"w": 1152,
+"h": 768,
+"kb": 238,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_34.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Second-Room-05.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Second-Room-05.jpg",
+"w": 1152,
+"h": 768,
+"kb": 236,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_35.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-05.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Familia-Vista-al-Lago-Living-Room-05.jpg",
+"w": 1152,
+"h": 768,
+"kb": 250,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Familiar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_36.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Bathroom-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Bathroom-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 166,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_37.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Bathroom-08.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Bathroom-08.jpg",
+"w": 1152,
+"h": 768,
+"kb": 91,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_38.jpg"
+},
+{
+"url": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Vista-Frontal-01.jpg",
+"final": "https://www.bosquesangerardo.com/images/sbBungalow-Standard-Vista-Frontal-01.jpg",
+"w": 1152,
+"h": 768,
+"kb": 297,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.bosquesangerardo.com/en/Bungalow_Estandar.html"
+],
+"host": "www.bosquesangerardo.com",
+"noref": 200,
+"th": "SueosdelBosque_39.jpg"
+}
+]
+},
+"Rio Tico Safari Lodge": {
+"pages": [
+"https://riotico.com/en/home/"
+],
+"domains": [
+"riotico.com"
+],
+"imgs": [
+{
+"url": "https://riotico.com/wp-content/uploads/2018/09/header-butterfly.jpg",
+"final": "https://riotico.com/wp-content/uploads/2018/09/header-butterfly.jpg",
+"w": 2000,
+"h": 800,
+"kb": 281,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://riotico.com/en/home/"
+],
+"host": "riotico.com",
+"noref": 200,
+"th": "RioTicoSafariLodge_0.jpg"
+},
+{
+"url": "https://riotico.com/wp-content/uploads/2018/09/waterfall-header.jpg",
+"final": "https://riotico.com/wp-content/uploads/2018/09/waterfall-header.jpg",
+"w": 2000,
+"h": 800,
+"kb": 370,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://riotico.com/en/home/"
+],
+"host": "riotico.com",
+"noref": 200,
+"th": "RioTicoSafariLodge_1.jpg"
+},
+{
+"url": "https://riotico.com/wp-content/uploads/2021/07/sloth-bkg-1.jpg",
+"final": "https://riotico.com/wp-content/uploads/2021/07/sloth-bkg-1.jpg",
+"w": 1900,
+"h": 728,
+"kb": 334,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://riotico.com/en/home/"
+],
+"host": "riotico.com",
+"noref": 200,
+"th": "RioTicoSafariLodge_2.jpg"
+},
+{
+"url": "https://riotico.com/wp-content/uploads/2018/09/header-tent-interior.jpg",
+"final": "https://riotico.com/wp-content/uploads/2018/09/header-tent-interior.jpg",
+"w": 2000,
+"h": 800,
+"kb": 327,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://riotico.com/en/home/"
+],
+"host": "riotico.com",
+"noref": 200,
+"th": "RioTicoSafariLodge_3.jpg"
+}
+]
+},
+"Cabinas Las Palmeras": {
+"pages": [
+"https://www.poormansparadisecr.com/",
+"https://www.poormansparadisecr.com/about-us.html",
+"https://www.poormansparadisecr.com/es/about-us.html",
+"https://www.poormansparadisecr.com/es/rooms.html",
+"https://www.poormansparadisecr.com/gallery.html",
+"https://www.poormansparadisecr.com/rooms.html"
+],
+"domains": [
+"poormansparadisecr.com"
+],
+"imgs": [
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/7afc8be5-6acf-437f-8a0b-d1bc67fb59ee.jpg?auto=format,compress&fit=crop&crop=entropy&w=1200&h=700",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/7afc8be5-6acf-437f-8a0b-d1bc67fb59ee.jpg?auto=format,compress&fit=crop&crop=entropy&w=1200&h=700",
+"w": 1200,
+"h": 700,
+"kb": 163,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_0.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/47750071-44b2-45c7-abcd-da89a872deef.jpeg?auto=format,compress&fit=crop&crop=entropy&w=1200&h=700",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/47750071-44b2-45c7-abcd-da89a872deef.jpeg?auto=format,compress&fit=crop&crop=entropy&w=1200&h=700",
+"w": 1200,
+"h": 700,
+"kb": 144,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_1.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/df3cd108-9726-42e0-8057-0dc4dd275d19.jpg?auto=format,compress&fit=crop&crop=entropy&w=1200&h=700",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/df3cd108-9726-42e0-8057-0dc4dd275d19.jpg?auto=format,compress&fit=crop&crop=entropy&w=1200&h=700",
+"w": 1200,
+"h": 700,
+"kb": 68,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_2.jpg"
+},
+{
+"url": "http://webbox.imgix.net/images/uvsiukahjteqyhcr/2f9865ce-ed8a-449c-b14e-cca01bde7801.jpg",
+"final": "http://webbox.imgix.net/images/uvsiukahjteqyhcr/2f9865ce-ed8a-449c-b14e-cca01bde7801.jpg",
+"w": 1333,
+"h": 2000,
+"kb": 312,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/es/rooms.html",
+"https://www.poormansparadisecr.com/rooms.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_3.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/3bb7b321-bd31-4be5-8039-de4a674f106f.jpeg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/3bb7b321-bd31-4be5-8039-de4a674f106f.jpeg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 742,
+"kb": 125,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_4.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/1e454d3f-299f-4e13-8d0b-43566723f7f4.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/1e454d3f-299f-4e13-8d0b-43566723f7f4.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 1488,
+"kb": 163,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_5.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/9c7b3fdc-5ac8-4c38-bc71-58f20b0f88ae.jpeg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/9c7b3fdc-5ac8-4c38-bc71-58f20b0f88ae.jpeg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 1353,
+"kb": 263,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_6.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/2f9865ce-ed8a-449c-b14e-cca01bde7801.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/2f9865ce-ed8a-449c-b14e-cca01bde7801.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 1488,
+"kb": 206,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_7.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/74f45606-e951-4059-8d89-0afde11a1fcb.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/74f45606-e951-4059-8d89-0afde11a1fcb.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 744,
+"kb": 168,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_8.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/39fb88c6-7ada-47e1-8138-0a1a198fe967.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/39fb88c6-7ada-47e1-8138-0a1a198fe967.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 1488,
+"kb": 196,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_9.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/d129d4ca-337c-4b3e-8eb6-0ce4f4ac8e99.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/d129d4ca-337c-4b3e-8eb6-0ce4f4ac8e99.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 744,
+"kb": 153,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_10.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/6553d393-6e2d-4727-a943-80cf193a029c.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/6553d393-6e2d-4727-a943-80cf193a029c.jpg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 1488,
+"kb": 169,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_11.jpg"
+},
+{
+"url": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/99ebfe6d-3839-4422-a631-2542af8b186a.jpeg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"final": "https://webbox.imgix.net/images/uvsiukahjteqyhcr/99ebfe6d-3839-4422-a631-2542af8b186a.jpeg?auto=format,compress&fit=crop&crop=entropy&w=992",
+"w": 992,
+"h": 742,
+"kb": 49,
+"cors": "*",
+"ctype": "image/jpeg",
+"pages": [
+"https://www.poormansparadisecr.com/gallery.html"
+],
+"host": "webbox.imgix.net",
+"noref": 200,
+"th": "CabinasLasPalmeras_12.jpg"
+}
+]
+},
+"Hotel Playa Bejuco": {
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/concept/",
+"https://www.hotelplayabejuco.com/contact/",
+"https://www.hotelplayabejuco.com/es/",
+"https://www.hotelplayabejuco.com/gallery/",
+"https://www.hotelplayabejuco.com/promotions/",
+"https://www.hotelplayabejuco.com/rooms/",
+"https://www.hotelplayabejuco.com/services/"
+],
+"domains": [
+"hotelplayabejuco.com"
+],
+"imgs": [
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/lobby-hotel-playa-bejuco-1170x798.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/lobby-hotel-playa-bejuco-1170x798.jpg",
+"w": 1170,
+"h": 798,
+"kb": 180,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_0.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Piscina-principal-2-1170x780.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Piscina-principal-2-1170x780.jpg",
+"w": 1170,
+"h": 780,
+"kb": 248,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_1.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Piscina-vista-3.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Piscina-vista-3.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 2541,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_2.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Superior-triple-4.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Superior-triple-4.jpg",
+"w": 3000,
+"h": 2001,
+"kb": 3923,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_3.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/desayunos-hotel-playa-bejuco.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/desayunos-hotel-playa-bejuco.jpg",
+"w": 1280,
+"h": 853,
+"kb": 102,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_4.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/desayunos-hotel-playa-bejuco-1170x780.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/desayunos-hotel-playa-bejuco-1170x780.jpg",
+"w": 1170,
+"h": 780,
+"kb": 118,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_5.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/lobby-hotel-playa-bejuco.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/11/lobby-hotel-playa-bejuco.jpg",
+"w": 1280,
+"h": 873,
+"kb": 157,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_6.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Superior-familiar-2.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Superior-familiar-2.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 1800,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_7.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Superior-doble-4.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Superior-doble-4.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 1740,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_8.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2018/03/Slider_13.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2018/03/Slider_13.jpg",
+"w": 1366,
+"h": 768,
+"kb": 457,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_9.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Piscina-vista-2-1.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/09/Piscina-vista-2-1.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 3476,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/concept/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_10.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Piscina-principal-2.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Piscina-principal-2.jpg",
+"w": 3000,
+"h": 1999,
+"kb": 1211,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/",
+"https://www.hotelplayabejuco.com/es/",
+"https://www.hotelplayabejuco.com/promotions/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_11.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-triple-2.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-triple-2.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 686,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_12.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-1170x780.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-1170x780.jpg",
+"w": 1170,
+"h": 780,
+"kb": 133,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_13.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-triple-3.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-triple-3.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 693,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_14.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-2-1.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-2-1.jpg",
+"w": 3000,
+"h": 1999,
+"kb": 638,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_15.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-4-1.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-4-1.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 621,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_16.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-triple.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-triple.jpg",
+"w": 3000,
+"h": 2001,
+"kb": 752,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_17.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 506,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_18.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-3-1170x780.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-3-1170x780.jpg",
+"w": 1170,
+"h": 780,
+"kb": 169,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_19.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-1.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-1.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 506,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_20.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-vista.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-vista.jpg",
+"w": 2000,
+"h": 1333,
+"kb": 678,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_21.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-4-1170x780.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-4-1170x780.jpg",
+"w": 1170,
+"h": 780,
+"kb": 156,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_22.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-2.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-2.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 641,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_23.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-3.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-3.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 464,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_24.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 641,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_25.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-1170x780.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-1170x780.jpg",
+"w": 1170,
+"h": 780,
+"kb": 159,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_26.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-4.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-4.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 621,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_27.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-2.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-doble-2.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 427,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_28.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-3-1.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-3-1.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 657,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_29.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-5.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-5.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 594,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_30.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-3.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Superior-familiar-3.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 657,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/rooms/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_31.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil100-copy.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil100-copy.jpg",
+"w": 1280,
+"h": 853,
+"kb": 1157,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_32.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil85-copy.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil85-copy.jpg",
+"w": 1280,
+"h": 853,
+"kb": 1969,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_33.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil101-copy.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil101-copy.jpg",
+"w": 1280,
+"h": 853,
+"kb": 1192,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_34.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil97-copy-2.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil97-copy-2.jpg",
+"w": 1280,
+"h": 853,
+"kb": 1241,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_35.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil87-copy.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/Jalil87-copy.jpg",
+"w": 1280,
+"h": 853,
+"kb": 1636,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/es/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_36.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Piscina-vista-2-1.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2024/10/Piscina-vista-2-1.jpg",
+"w": 3000,
+"h": 2000,
+"kb": 1329,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/concept/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_37.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2018/03/Playa-Herradura-Costa-Rica-Real-Estate.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2018/03/Playa-Herradura-Costa-Rica-Real-Estate.jpg",
+"w": 1812,
+"h": 1205,
+"kb": 2099,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/concept/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_38.jpg"
+},
+{
+"url": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/20120123-Hellrote-Ara-Scarlet-Macaw-Ara-macao-9904.jpg",
+"final": "https://www.hotelplayabejuco.com/wp-content/uploads/2019/07/20120123-Hellrote-Ara-Scarlet-Macaw-Ara-macao-9904.jpg",
+"w": 2048,
+"h": 1366,
+"kb": 1013,
+"cors": null,
+"ctype": "image/jpeg",
+"pages": [
+"https://www.hotelplayabejuco.com/concept/"
+],
+"host": "www.hotelplayabejuco.com",
+"noref": 200,
+"th": "HotelPlayaBejuco_39.jpg"
+}
+]
+}
+}
