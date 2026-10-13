@@ -1,0 +1,1733 @@
+{
+ "Fleur de Lys": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982523396,
+    "lat": "9.9317646",
+    "lon": "-84.0727167",
+    "display_name": "Fleur De Lys Hotel, Calle 13, González Lahmann, Catedral, San José, Área Metropolitana de San José, San José, 10104, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "phone": "506 2223 1206",
+     "note_1": "calle 13 btwn Aves 2 & 6",
+     "website": "www.hotelfleurdelys.com"
+    },
+    "address": {
+     "tourism": "Fleur De Lys Hotel",
+     "road": "Calle 13",
+     "neighbourhood": "González Lahmann",
+     "town": "Catedral",
+     "city_district": "San José",
+     "city": "Área Metropolitana de San José",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "10104",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Fleur De Lys Hotel"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "node",
+    "id": 3982523396,
+    "lat": 9.9317646,
+    "lon": -84.0727167,
+    "tags": {
+     "addr:city": "San Jose",
+     "name": "Fleur De Lys Hotel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "calle 13 btwn Aves 2 & 6",
+     "phone": "506 2223 1206",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.hotelfleurdelys.com"
+    }
+   }
+  ]
+ },
+ "Atlantida Lodge": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982520244,
+    "lat": "9.7402473",
+    "lon": "-82.8493771",
+    "display_name": "Atlantida Cahuita Logde, Calle Limonal, Playa Negra, Cahuita, Talamanca, Limón, 70403, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "email": "info@atlantida.cr",
+     "phone": "506 2755 0115",
+     "website": "www.atlantida.cr"
+    },
+    "address": {
+     "tourism": "Atlantida Cahuita Logde",
+     "road": "Calle Limonal",
+     "neighbourhood": "Playa Negra",
+     "village": "Cahuita",
+     "county": "Talamanca",
+     "state": "Limón",
+     "ISO3166-2-lvl4": "CR-L",
+     "postcode": "70403",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Atlantida Cahuita Logde"
+    }
+   }
+  ],
+  "overpass": []
+ },
+ "Lapa Verde Lodge": {
+  "nominatim": [
+   {
+    "osm_type": "relation",
+    "osm_id": 11808346,
+    "lat": "10.4669816",
+    "lon": "-84.0617285",
+    "display_name": "Refugio de Vida Silvestre Lapa Verde, Puerto Viejo, Sarapiquí, Heredia, 41001, Costa Rica",
+    "category": "boundary",
+    "type": "protected_area",
+    "extratags": {
+     "operator": "Área de Conservación Arenal Huetar Norte (ACAHN)",
+     "start_date": "2013",
+     "ref:CR:SINAC": "V81",
+     "protect_class": "1b"
+    },
+    "address": {
+     "protected_area": "Refugio de Vida Silvestre Lapa Verde",
+     "town": "Puerto Viejo",
+     "county": "Sarapiquí",
+     "state": "Heredia",
+     "ISO3166-2-lvl4": "CR-H",
+     "postcode": "41001",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Refugio de Vida Silvestre Lapa Verde"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 33335462,
+    "lat": "9.6170704",
+    "lon": "-84.6246407",
+    "display_name": "Calle Lapa Verde, El Invu, Jacó, Garabito, Puntarenas, 61101, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": {
+     "surface": "asphalt"
+    },
+    "address": {
+     "road": "Calle Lapa Verde",
+     "neighbourhood": "El Invu",
+     "town": "Jacó",
+     "county": "Garabito",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "61101",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle Lapa Verde"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 391436193,
+    "lat": "9.9732674",
+    "lon": "-84.0890294",
+    "display_name": "Lapa Verde Centro Cultural, Calle Real, Pedro León, Santa Rosa, Santo Domingo, Heredia, 40306, Costa Rica",
+    "category": "office",
+    "type": "educational_institution",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "office": "Lapa Verde Centro Cultural",
+     "road": "Calle Real",
+     "neighbourhood": "Pedro León",
+     "village": "Santa Rosa",
+     "county": "Santo Domingo",
+     "state": "Heredia",
+     "ISO3166-2-lvl4": "CR-H",
+     "postcode": "40306",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Lapa Verde Centro Cultural"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 1331861696,
+    "lat": "10.4335362",
+    "lon": "-83.9957061",
+    "display_name": "Restaurante Lapa Verde, Corredor Noratlántico, Flaminia, Tigre, Las Horquetas, Sarapiquí, Heredia, 41003, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": null,
+    "address": {
+     "amenity": "Restaurante Lapa Verde",
+     "road": "Corredor Noratlántico",
+     "neighbourhood": "Flaminia",
+     "hamlet": "Tigre",
+     "village": "Las Horquetas",
+     "county": "Sarapiquí",
+     "state": "Heredia",
+     "ISO3166-2-lvl4": "CR-H",
+     "postcode": "41003",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Restaurante Lapa Verde"
+    }
+   }
+  ],
+  "overpass": []
+ },
+ "Catarata Ecolodge": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982522815,
+    "lat": "10.4584744",
+    "lon": "-84.6607865",
+    "display_name": "Cerro Chato Eco Lodge, Calle 506, Zeta 13, La Catarata, La Fortuna, San Carlos, Alajuela, 21007, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "wikidata": "Q111126533"
+    },
+    "address": {
+     "tourism": "Cerro Chato Eco Lodge",
+     "road": "Calle 506",
+     "neighbourhood": "Zeta 13",
+     "hamlet": "La Catarata",
+     "village": "La Fortuna",
+     "county": "San Carlos",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "21007",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Cerro Chato Eco Lodge"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 2123735354,
+    "lat": "10.4609895",
+    "lon": "-84.6605911",
+    "display_name": "Arenal Oasis Eco Lodge, Calle 506, Zeta 13, La Catarata, La Fortuna, San Carlos, Alajuela, 21007, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "check_date": "2026-03-12"
+    },
+    "address": {
+     "tourism": "Arenal Oasis Eco Lodge",
+     "road": "Calle 506",
+     "neighbourhood": "Zeta 13",
+     "hamlet": "La Catarata",
+     "village": "La Fortuna",
+     "county": "San Carlos",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "21007",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Arenal Oasis Eco Lodge"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3982522805,
+    "lat": "10.4541918",
+    "lon": "-84.6616480",
+    "display_name": "Catarata Ecolodge, Diagonal 301, La Catarata, La Fortuna, San Carlos, Alajuela, 21007, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": null,
+    "address": {
+     "tourism": "Catarata Ecolodge",
+     "road": "Diagonal 301",
+     "hamlet": "La Catarata",
+     "village": "La Fortuna",
+     "county": "San Carlos",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "21007",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Catarata Ecolodge"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 9855929828,
+    "lat": "10.4565670",
+    "lon": "-84.6605563",
+    "display_name": "La Catarata, La Fortuna, San Carlos, Alajuela, 21007, Costa Rica",
+    "category": "place",
+    "type": "hamlet",
+    "extratags": null,
+    "address": {
+     "hamlet": "La Catarata",
+     "village": "La Fortuna",
+     "county": "San Carlos",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "21007",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "La Catarata"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 6281419993,
+    "lat": "10.2252724",
+    "lon": "-84.3778171",
+    "display_name": "La Catarata, Brisas, Zarcero, Alajuela, 21107, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "La Catarata",
+     "city": "Brisas",
+     "region": "Zarcero",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "21107",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "La Catarata"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 4818731629,
+    "lat": "9.6565235",
+    "lon": "-83.9519086",
+    "display_name": "La Catarata, Vía 315, Las Nubes, Jardín, Dota, San José, 11701, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": {
+     "phone": "+506 541 1312",
+     "internet_access": "wlan"
+    },
+    "address": {
+     "amenity": "La Catarata",
+     "road": "Vía 315",
+     "neighbourhood": "Las Nubes",
+     "village": "Jardín",
+     "county": "Dota",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "11701",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "La Catarata",
+     "name:en": "La Catarata",
+     "name:es": "La Catarata"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "node",
+    "id": 3982520169,
+    "lat": 10.4554257,
+    "lon": -84.6608305,
+    "tags": {
+     "addr:city": "San Ramon",
+     "email": "info@cataratalodge.com",
+     "name": "Albergue Ecoturistico La Catarata",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "2479-9522",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522805,
+    "lat": 10.4541918,
+    "lon": -84.661648,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Catarata Ecolodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9855929828,
+    "lat": 10.456567,
+    "lon": -84.6605563,
+    "tags": {
+     "name": "La Catarata",
+     "place": "hamlet"
+    }
+   }
+  ]
+ },
+ "Faro Arenal": {
+  "nominatim": [],
+  "overpass": []
+ },
+ "Eco Arenal": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982523836,
+    "lat": "10.5573902",
+    "lon": "-84.9205248",
+    "display_name": "Hotel Eco Lodge, Calle Las Flores 1, Urbanización Las Flores, Arenal, Tilarán, Guanacaste, 50807, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": null,
+    "address": {
+     "tourism": "Hotel Eco Lodge",
+     "road": "Calle Las Flores 1",
+     "residential": "Urbanización Las Flores",
+     "village": "Arenal",
+     "county": "Tilarán",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50807",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Hotel Eco Lodge"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "way",
+    "id": 398212310,
+    "lat": 10.4836589,
+    "lon": -84.632937,
+    "tags": {
+     "building": "yes",
+     "name": "Villas Eco Arenal",
+     "name:es": "PVillas Eco Arenal",
+     "tourism": "hotel"
+    }
+   }
+  ]
+ },
+ "Cañon de la Vieja Lodge": {
+  "nominatim": [
+   {
+    "osm_type": "way",
+    "osm_id": 295246289,
+    "lat": "10.6779562",
+    "lon": "-85.4563011",
+    "display_name": "Cañón de la Vieja Lodge, Calle Rincón de la Vieja, Barrio El Porvenir, Curubandé, Liberia, Guanacaste, 50105, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "phone": "506 2665 3161",
+     "landuse": "commercial",
+     "website": "https://www.thecanyonlodge.com/",
+     "wikidata": "Q111151350"
+    },
+    "address": {
+     "tourism": "Cañón de la Vieja Lodge",
+     "road": "Calle Rincón de la Vieja",
+     "neighbourhood": "Barrio El Porvenir",
+     "village": "Curubandé",
+     "county": "Liberia",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50105",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Cañón de la Vieja Lodge"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 9530496617,
+    "lat": "10.6726317",
+    "lon": "-85.4660397",
+    "display_name": "Pozas del Cañón, Calle Rincón de la Vieja, Curubandé, Liberia, Guanacaste, 50105, Costa Rica",
+    "category": "tourism",
+    "type": "attraction",
+    "extratags": null,
+    "address": {
+     "tourism": "Pozas del Cañón",
+     "road": "Calle Rincón de la Vieja",
+     "village": "Curubandé",
+     "county": "Liberia",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50105",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Pozas del Cañón"
+    }
+   }
+  ],
+  "overpass": []
+ },
+ "Rinconcito Lodge": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 367989605,
+    "lat": "10.7328634",
+    "lon": "-85.3010278",
+    "display_name": "Rinconcito Lodge, Calle del Arreo, San Jorge, Mogote, Bagaces, Guanacaste, 50403, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "stars": "3"
+    },
+    "address": {
+     "tourism": "Rinconcito Lodge",
+     "road": "Calle del Arreo",
+     "hamlet": "San Jorge",
+     "city": "Mogote",
+     "county": "Bagaces",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50403",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Rinconcito Lodge"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 505485461,
+    "lat": "9.9272911",
+    "lon": "-84.2416726",
+    "display_name": "Calle El Rinconcito, Carreras, Colón, Mora, San José, 10701, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": null,
+    "address": {
+     "road": "Calle El Rinconcito",
+     "neighbourhood": "Carreras",
+     "town": "Colón",
+     "county": "Mora",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "10701",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle El Rinconcito"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 390143204,
+    "lat": "8.7680886",
+    "lon": "-82.9548158",
+    "display_name": "Calle Rinconcito, San Francisco, Aguabuena, Coto Brus, Puntarenas, 60803, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": null,
+    "address": {
+     "road": "Calle Rinconcito",
+     "neighbourhood": "San Francisco",
+     "village": "Aguabuena",
+     "county": "Coto Brus",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60803",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle Rinconcito"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 107734529,
+    "lat": "10.0013394",
+    "lon": "-83.1641985",
+    "display_name": "Calle Rinconcito, Búfalo, Río Blanco, Limón, 70103, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": null,
+    "address": {
+     "road": "Calle Rinconcito",
+     "hamlet": "Búfalo",
+     "city": "Río Blanco",
+     "county": "Limón",
+     "state": "Limón",
+     "ISO3166-2-lvl4": "CR-L",
+     "postcode": "70103",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle Rinconcito"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 1449434448,
+    "lat": "9.9247535",
+    "lon": "-83.0395214",
+    "display_name": "Calle El Rinconcito, Los Ángeles, Beverly, La Bomba, Matama, Limón, 70104, Costa Rica",
+    "category": "highway",
+    "type": "unclassified",
+    "extratags": null,
+    "address": {
+     "road": "Calle El Rinconcito",
+     "neighbourhood": "Los Ángeles",
+     "hamlet": "Beverly",
+     "village": "La Bomba",
+     "city": "Matama",
+     "county": "Limón",
+     "state": "Limón",
+     "ISO3166-2-lvl4": "CR-L",
+     "postcode": "70104",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle El Rinconcito"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 1509849684,
+    "lat": "9.9320155",
+    "lon": "-84.0947206",
+    "display_name": "Rinconcito Nicaragüense, 0058, Avenida 10 San Martín, Silos, Hospital, San José, Área Metropolitana de San José, San José, 10103, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "amenity": "Rinconcito Nicaragüense",
+     "house_number": "0058",
+     "road": "Avenida 10 San Martín",
+     "neighbourhood": "Silos",
+     "village": "Hospital",
+     "city_district": "San José",
+     "city": "Área Metropolitana de San José",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "10103",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Rinconcito Nicaragüense"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 1087740469,
+    "lat": "9.9539870",
+    "lon": "-84.0084464",
+    "display_name": "El Rinconcito de Doña Olga, Vía 205, Lourdes, Mata de Plátano, Goicoechea, Área Metropolitana de San José, San José, 10804, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "amenity": "El Rinconcito de Doña Olga",
+     "road": "Vía 205",
+     "neighbourhood": "Lourdes",
+     "village": "Mata de Plátano",
+     "city_district": "Goicoechea",
+     "city": "Área Metropolitana de San José",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "10804",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "El Rinconcito de Doña Olga"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 341053138,
+    "lat": "9.9072075",
+    "lon": "-84.0676356",
+    "display_name": "Bar Rinconcito, Avenida 60, Maalot, San Francisco de Dos Ríos, San José, Área Metropolitana de San José, San José, 10106, Costa Rica",
+    "category": "amenity",
+    "type": "bar",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "amenity": "Bar Rinconcito",
+     "road": "Avenida 60",
+     "neighbourhood": "Maalot",
+     "village": "San Francisco de Dos Ríos",
+     "city_district": "San José",
+     "city": "Área Metropolitana de San José",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "10106",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Bar Rinconcito"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 8726338517,
+    "lat": "9.9985807",
+    "lon": "-84.1135263",
+    "display_name": "Antojos El Rinconcito, Avenida Central Paseo de la Cultura, Corazón de Jesús, Heredia, 40101, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": null,
+    "address": {
+     "amenity": "Antojos El Rinconcito",
+     "road": "Avenida Central Paseo de la Cultura",
+     "neighbourhood": "Corazón de Jesús",
+     "city": "Heredia",
+     "county": "Heredia",
+     "state": "Heredia",
+     "ISO3166-2-lvl4": "CR-H",
+     "postcode": "40101",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Antojos El Rinconcito"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "node",
+    "id": 367989605,
+    "lat": 10.7328634,
+    "lon": -85.3010278,
+    "tags": {
+     "name": "Rinconcito Lodge",
+     "stars": "3",
+     "tourism": "hotel"
+    }
+   }
+  ]
+ },
+ "Hotel Los Cipreses": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 8861582863,
+    "lat": "9.8254280",
+    "lon": "-83.5844814",
+    "display_name": "Los Cipreses, Tuis, Turrialba, Cartago, 30507, Costa Rica",
+    "category": "place",
+    "type": "hamlet",
+    "extratags": null,
+    "address": {
+     "hamlet": "Los Cipreses",
+     "village": "Tuis",
+     "county": "Turrialba",
+     "province": "Cartago",
+     "ISO3166-2-lvl4": "CR-C",
+     "postcode": "30507",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Los Cipreses"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3830218623,
+    "lat": "10.0776787",
+    "lon": "-84.4330070",
+    "display_name": "Los Cipreses, Buenos Aires, Palmares, Alajuela, 20703, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "Los Cipreses",
+     "village": "Buenos Aires",
+     "county": "Palmares",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "20703",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Los Cipreses"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3327397163,
+    "lat": "10.1053815",
+    "lon": "-84.4879720",
+    "display_name": "Los Cipreses, Piedades Norte, San Ramón, Alajuela, 20204, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "Los Cipreses",
+     "village": "Piedades Norte",
+     "county": "San Ramón",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "20204",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Los Cipreses"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 282765910,
+    "lat": "9.7399938",
+    "lon": "-84.2568453",
+    "display_name": "Los Cipreses, Vía 301, Soledad, Sabanillas, Acosta, San José, 11205, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": null,
+    "address": {
+     "amenity": "Los Cipreses",
+     "road": "Vía 301",
+     "hamlet": "Soledad",
+     "village": "Sabanillas",
+     "county": "Acosta",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "11205",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Los Cipreses"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "way",
+    "id": 131975057,
+    "lat": 10.3218946,
+    "lon": -84.8239531,
+    "tags": {
+     "highway": "residential",
+     "name": "Calle Los Cipreses"
+    }
+   }
+  ]
+ },
+ "Claro de Luna": {
+  "nominatim": [
+   {
+    "osm_type": "way",
+    "osm_id": 1036440082,
+    "lat": "10.3163559",
+    "lon": "-84.8271517",
+    "display_name": "Hotel Claro de Luna, Calle Cementerio, Cementerio, Santa Elena, Monteverde, Puntarenas, 61201, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "tourism": "Hotel Claro de Luna",
+     "road": "Calle Cementerio",
+     "neighbourhood": "Cementerio",
+     "town": "Santa Elena",
+     "city": "Monteverde",
+     "county": "Monteverde",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "61201",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Hotel Claro de Luna"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 13348877075,
+    "lat": "9.4419062",
+    "lon": "-84.1484693",
+    "display_name": "Claro de Luna Wood-Fired Pizza & Pasta, Vía 235, Paraíso, La Laguna, El Cerro, Quepos, Puntarenas, 60601, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": {
+     "cuisine": "pizza"
+    },
+    "address": {
+     "amenity": "Claro de Luna Wood-Fired Pizza & Pasta",
+     "road": "Vía 235",
+     "neighbourhood": "Paraíso",
+     "quarter": "La Laguna",
+     "hamlet": "El Cerro",
+     "town": "Quepos",
+     "county": "Quepos",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60601",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Claro de Luna Wood-Fired Pizza & Pasta"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "way",
+    "id": 1036440082,
+    "lat": 10.3163612,
+    "lon": -84.8271505,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Claro de Luna",
+     "tourism": "hotel"
+    }
+   }
+  ]
+ },
+ "Sueños del Bosque": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982527489,
+    "lat": "9.5483619",
+    "lon": "-83.8090901",
+    "display_name": "Sueños del Bosque Lodge, Calle San Gerardo, San Gerardo, Copey, Dota, San José, 11703, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "phone": "506 2740 1023",
+     "wikidata": "Q111151177"
+    },
+    "address": {
+     "tourism": "Sueños del Bosque Lodge",
+     "road": "Calle San Gerardo",
+     "hamlet": "San Gerardo",
+     "village": "Copey",
+     "county": "Dota",
+     "state": "San José",
+     "ISO3166-2-lvl4": "CR-SJ",
+     "postcode": "11703",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Sueños del Bosque Lodge"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "node",
+    "id": 3982527489,
+    "lat": 9.5483619,
+    "lon": -83.8090901,
+    "tags": {
+     "addr:city": "Copey",
+     "addr:street": "Calle San Gerardo",
+     "name": "Sueños del Bosque Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2740 1023",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wikidata": "Q111151177"
+    }
+   }
+  ]
+ },
+ "Rio Tico Safari Lodge": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982526827,
+    "lat": "9.0814920",
+    "lon": "-83.6197079",
+    "display_name": "Rio Tico Safari Lodge, Calle Vergel, Punta Mala Arriba, Puerto Cortés, Osa, Puntarenas, 60501, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": null,
+    "address": {
+     "tourism": "Rio Tico Safari Lodge",
+     "road": "Calle Vergel",
+     "hamlet": "Punta Mala Arriba",
+     "city": "Puerto Cortés",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60501",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Rio Tico Safari Lodge"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 6225499345,
+    "lat": "10.7596629",
+    "lon": "-84.3464446",
+    "display_name": "Río Tico, Cutris, San Carlos, Alajuela, 21011, Costa Rica",
+    "category": "place",
+    "type": "hamlet",
+    "extratags": null,
+    "address": {
+     "hamlet": "Río Tico",
+     "city": "Cutris",
+     "county": "San Carlos",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "21011",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Río Tico"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "node",
+    "id": 3982526827,
+    "lat": 9.081492,
+    "lon": -83.6197079,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Rio Tico Safari Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 394165968,
+    "lat": 9.3300858,
+    "lon": -83.6684993,
+    "tags": {
+     "building": "yes",
+     "craft": "window_construction",
+     "name": "Vidrio Tico"
+    }
+   }
+  ]
+ },
+ "Villas Rio Mar": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 1452088363,
+    "lat": "9.2634594",
+    "lon": "-83.8602750",
+    "display_name": "Villas Rio Mar, Calle Barú, Dominical, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "wikidata": "Q111151253",
+     "internet_access": "wlan",
+     "internet_access:fee": "no"
+    },
+    "address": {
+     "tourism": "Villas Rio Mar",
+     "road": "Calle Barú",
+     "hamlet": "Dominical",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Villas Rio Mar"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 496137526,
+    "lat": "9.9592348",
+    "lon": "-85.6728434",
+    "display_name": "Villas Río Mar, Nosara, Nicoya, Guanacaste, 50206, Costa Rica",
+    "category": "landuse",
+    "type": "residential",
+    "extratags": null,
+    "address": {
+     "residential": "Villas Río Mar",
+     "city": "Nosara",
+     "county": "Nicoya",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50206",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Villas Río Mar"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "node",
+    "id": 1452088363,
+    "lat": 9.2634594,
+    "lon": -83.860275,
+    "tags": {
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Villas Rio Mar",
+     "tourism": "hotel",
+     "wikidata": "Q111151253"
+    }
+   }
+  ]
+ },
+ "Hotel Vista Ballena": {
+  "nominatim": [
+   {
+    "osm_type": "way",
+    "osm_id": 708299134,
+    "lat": "9.1489782",
+    "lon": "-83.7193209",
+    "display_name": "Calle Linda Vista, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": {
+     "surface": "gravel"
+    },
+    "address": {
+     "road": "Calle Linda Vista",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle Linda Vista"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 1462707082,
+    "lat": "9.1082802",
+    "lon": "-83.6543694",
+    "display_name": "Calle Vista Verde, Caracara Ridge, Bahía Ballena, Osa, Puntarenas, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": {
+     "incline": "7%",
+     "surface": "gravel",
+     "operator:type": "association"
+    },
+    "address": {
+     "road": "Calle Vista Verde",
+     "neighbourhood": "Caracara Ridge",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle Vista Verde"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 300682415,
+    "lat": "9.2443160",
+    "lon": "-83.8509095",
+    "display_name": "Calle Vista Pacífica, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": {
+     "surface": "gravel"
+    },
+    "address": {
+     "road": "Calle Vista Pacífica",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Calle Vista Pacífica"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 777359375,
+    "lat": "9.1478825",
+    "lon": "-83.7262306",
+    "display_name": "Casa Linda Vista, Carretera Pacífica Fernández Oreamuno, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "tourism": "Casa Linda Vista",
+     "road": "Carretera Pacífica Fernández Oreamuno",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Casa Linda Vista"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3982520784,
+    "lat": "9.2315605",
+    "lon": "-83.8269397",
+    "display_name": "Bella Vista Ranch Lodge, Calle Escaleras, Poza Azul, Escaleras, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "email": "Bert.BellaVistaCR@Gmail.com\\",
+     "phone": "8669-1286",
+     "website": "www.bellavistalodge.com"
+    },
+    "address": {
+     "tourism": "Bella Vista Ranch Lodge",
+     "road": "Calle Escaleras",
+     "neighbourhood": "Poza Azul",
+     "hamlet": "Escaleras",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Bella Vista Ranch Lodge"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 5322292422,
+    "lat": "9.1881092",
+    "lon": "-83.7374979",
+    "display_name": "Vista verde vacasa, Calle de La Rosa, Uvita, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "apartment",
+    "extratags": null,
+    "address": {
+     "tourism": "Vista verde vacasa",
+     "road": "Calle de La Rosa",
+     "village": "Uvita",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Vista verde vacasa"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3982524527,
+    "lat": "9.2631232",
+    "lon": "-83.8612687",
+    "display_name": "Hotel Vista Del Cerro, Calle Barú, Dominical, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": null,
+    "address": {
+     "tourism": "Hotel Vista Del Cerro",
+     "road": "Calle Barú",
+     "hamlet": "Dominical",
+     "city": "Bahía Ballena",
+     "county": "Osa",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60504",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Hotel Vista Del Cerro"
+    }
+   }
+  ],
+  "overpass": []
+ },
+ "Cabinas Las Palmeras": {
+  "nominatim": [
+   {
+    "osm_type": "way",
+    "osm_id": 1030590045,
+    "lat": "10.5461567",
+    "lon": "-84.8923302",
+    "display_name": "Cabinas Catalina, Vía 142, Las Palmeras, Arenal, Tilarán, Guanacaste, 50807, Costa Rica",
+    "category": "tourism",
+    "type": "hostel",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "tourism": "Cabinas Catalina",
+     "road": "Vía 142",
+     "neighbourhood": "Las Palmeras",
+     "village": "Arenal",
+     "county": "Tilarán",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50807",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Cabinas Catalina"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 1567997842,
+    "lat": "10.5447343",
+    "lon": "-84.8926203",
+    "display_name": "Cabinas Canfinera, Vía 142, Las Palmeras, Arenal, Tilarán, Guanacaste, 50807, Costa Rica",
+    "category": "tourism",
+    "type": "motel",
+    "extratags": null,
+    "address": {
+     "tourism": "Cabinas Canfinera",
+     "road": "Vía 142",
+     "neighbourhood": "Las Palmeras",
+     "village": "Arenal",
+     "county": "Tilarán",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50807",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Cabinas Canfinera"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3607864093,
+    "lat": "9.9870527",
+    "lon": "-83.0457574",
+    "display_name": "Las Palmeras, Limón, 70101, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "Las Palmeras",
+     "city": "Limón",
+     "county": "Limón",
+     "state": "Limón",
+     "ISO3166-2-lvl4": "CR-L",
+     "postcode": "70101",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Las Palmeras"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 4255372793,
+    "lat": "10.3791471",
+    "lon": "-85.5000465",
+    "display_name": "Las Palmeras, Filadelfia, Carrillo, Guanacaste, 50501, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "Las Palmeras",
+     "town": "Filadelfia",
+     "county": "Carrillo",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50501",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Las Palmeras"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 4779381561,
+    "lat": "10.5391211",
+    "lon": "-84.8945832",
+    "display_name": "Las Palmeras, Arenal, Tilarán, Guanacaste, 50807, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "Las Palmeras",
+     "village": "Arenal",
+     "county": "Tilarán",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50807",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Las Palmeras"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 5172134331,
+    "lat": "9.9185406",
+    "lon": "-83.0111567",
+    "display_name": "Las Palmeras, Río Banano, Matama, Limón, 70104, Costa Rica",
+    "category": "place",
+    "type": "neighbourhood",
+    "extratags": null,
+    "address": {
+     "neighbourhood": "Las Palmeras",
+     "hamlet": "Río Banano",
+     "city": "Matama",
+     "county": "Limón",
+     "state": "Limón",
+     "ISO3166-2-lvl4": "CR-L",
+     "postcode": "70104",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Las Palmeras"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 379666618,
+    "lat": "10.3022678",
+    "lon": "-85.8402412",
+    "display_name": "Las Palmeras, Calle Central, Tamarindo, Santa Cruz, Guanacaste, 50309, Costa Rica",
+    "category": "shop",
+    "type": "convenience",
+    "extratags": {
+     "shop_1": "alcohol",
+     "building": "yes"
+    },
+    "address": {
+     "shop": "Las Palmeras",
+     "road": "Calle Central",
+     "neighbourhood": "Tamarindo",
+     "county": "Santa Cruz",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50309",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Las Palmeras"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 5821364410,
+    "lat": "10.1350407",
+    "lon": "-84.5146352",
+    "display_name": "Las Palmeras, Calle San Miguel, San Miguel, Piedades Norte, San Ramón, Alajuela, 20205, Costa Rica",
+    "category": "shop",
+    "type": "convenience",
+    "extratags": {
+     "operator": "Noel mesen",
+     "payment:cash": "yes",
+     "opening_hours": "Mo-Su 09:00-21:00",
+     "payment:coins": "yes"
+    },
+    "address": {
+     "shop": "Las Palmeras",
+     "road": "Calle San Miguel",
+     "neighbourhood": "San Miguel",
+     "village": "Piedades Norte",
+     "county": "San Ramón",
+     "state": "Alajuela",
+     "ISO3166-2-lvl4": "CR-A",
+     "postcode": "20205",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Las Palmeras"
+    }
+   }
+  ],
+  "overpass": []
+ },
+ "Hotel Playa Bejuco": {
+  "nominatim": [
+   {
+    "osm_type": "way",
+    "osm_id": 430493153,
+    "lat": "9.8306056",
+    "lon": "-85.3426785",
+    "display_name": "Playa Bejuco, Bejuco, Nandayure, Guanacaste, 50906, Costa Rica",
+    "category": "natural",
+    "type": "beach",
+    "extratags": {
+     "surface": "sand",
+     "wikidata": "Q23746707"
+    },
+    "address": {
+     "beach": "Playa Bejuco",
+     "hamlet": "Bejuco",
+     "county": "Nandayure",
+     "state": "Guanacaste",
+     "ISO3166-2-lvl4": "CR-G",
+     "postcode": "50906",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Playa Bejuco",
+     "name:es": "Playa Bejuco",
+     "name:it": "Spiaggia Bejuco"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 320578997,
+    "lat": "9.5168466",
+    "lon": "-84.4325906",
+    "display_name": "Playa Bejuco, Bejuco, Parrita, Puntarenas, 60901, Costa Rica",
+    "category": "natural",
+    "type": "beach",
+    "extratags": null,
+    "address": {
+     "beach": "Playa Bejuco",
+     "hamlet": "Bejuco",
+     "town": "Parrita",
+     "county": "Parrita",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60901",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Playa Bejuco",
+     "name:es": "Playa Bejuco",
+     "name:it": "Spiaggia Bejuco"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 725309570,
+    "lat": "9.5194924",
+    "lon": "-84.4348607",
+    "display_name": "Hotel Playa Bejuco, Calle Estero Bejuco, Bejuco, Parrita, Puntarenas, 60901, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    },
+    "address": {
+     "tourism": "Hotel Playa Bejuco",
+     "road": "Calle Estero Bejuco",
+     "hamlet": "Bejuco",
+     "town": "Parrita",
+     "county": "Parrita",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60901",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Hotel Playa Bejuco"
+    }
+   }
+  ],
+  "overpass": [
+   {
+    "type": "way",
+    "id": 250803935,
+    "lat": 9.5203624,
+    "lon": -84.4365323,
+    "tags": {
+     "highway": "residential",
+     "name": "Calle Playa Bejuco Norte",
+     "source": "Bing Sat"
+    }
+   },
+   {
+    "type": "way",
+    "id": 250803946,
+    "lat": 9.5196321,
+    "lon": -84.4366707,
+    "tags": {
+     "highway": "residential",
+     "name": "Calle Playa Bejuco Sur",
+     "source": "Bing Sat"
+    }
+   },
+   {
+    "type": "way",
+    "id": 320578997,
+    "lat": 9.5171179,
+    "lon": -84.43058,
+    "tags": {
+     "name": "Playa Bejuco",
+     "name:it": "Spiaggia Bejuco",
+     "natural": "beach"
+    }
+   },
+   {
+    "type": "way",
+    "id": 725309570,
+    "lat": 9.5194966,
+    "lon": -84.4349948,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Playa Bejuco",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 725309571,
+    "lat": 9.5194882,
+    "lon": -84.4353502,
+    "tags": {
+     "amenity": "restaurant",
+     "building": "yes",
+     "name": "Restaurante del Hotel Playa Bejuco"
+    }
+   },
+   {
+    "type": "way",
+    "id": 725423593,
+    "lat": 9.5165157,
+    "lon": -84.4302295,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Delfin Playa Bejuco",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1370979922,
+    "lat": 9.5201835,
+    "lon": -84.4370651,
+    "tags": {
+     "highway": "residential",
+     "name": "Calle Playa Bejuco Oeste",
+     "source": "Bing Sat"
+    }
+   }
+  ]
+ },
+ "Hotel Costa Pacifica": {
+  "nominatim": [
+   {
+    "osm_type": "node",
+    "osm_id": 3883896000,
+    "lat": "9.5314764",
+    "lon": "-84.4982390",
+    "display_name": "Costa Pacífica Hotel, Calle Estero Aserradero, Esterillos Oeste, Parrita, Puntarenas, 60901, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "wikidata": "Q111885143"
+    },
+    "address": {
+     "tourism": "Costa Pacífica Hotel",
+     "road": "Calle Estero Aserradero",
+     "hamlet": "Esterillos Oeste",
+     "town": "Parrita",
+     "county": "Parrita",
+     "state": "Puntarenas",
+     "ISO3166-2-lvl4": "CR-P",
+     "postcode": "60901",
+     "country": "Costa Rica",
+     "country_code": "cr"
+    },
+    "namedetails": {
+     "name": "Costa Pacífica Hotel"
+    }
+   }
+  ],
+  "overpass": []
+ }
+}
