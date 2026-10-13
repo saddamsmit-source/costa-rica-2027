@@ -24,7 +24,16 @@
     /* snelle reeksen (geen gebruikersactie) vervangen de stap in plaats van er veel te stapelen */
     if(now-lastPush<250&&history.state&&history.state.cr&&!history.state.ov&&!st.ov)history.replaceState(st,'');else history.pushState(st,'');
     lastPush=now};
+  /* v7.4: na verversen (naar beneden vegen) blijft de app op hetzelfde scherm en dezelfde scrollpositie.
+     history.state overleeft een herlaadactie in hetzelfde tabblad; een nieuwe start van de app begint op Home. */
+  const saved=history.state&&history.state.cr&&history.state.nav?history.state:null;
+  const reloaded=(performance.getEntriesByType&&performance.getEntriesByType('navigation')[0]||{}).type==='reload';
+  if(saved&&reloaded){const n=saved.nav;
+    try{tab=n.tab;currentDay=n.day;daySection=n.sec;if(typeof dsMore!=='undefined')dsMore=n.more||'';render();
+      const y=+sessionStorage.getItem('cr27-scroll-'+key(n))||0;if(y)requestAnimationFrame(()=>scrollTo({top:y,behavior:'instant'}))}catch(e){}}
   history.replaceState({cr:1,nav:nav()},'');
+  addEventListener('pagehide',()=>{try{sessionStorage.setItem('cr27-scroll-'+key(nav()),String(Math.round(scrollY)))}catch(e){}});
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')try{sessionStorage.setItem('cr27-scroll-'+key(nav()),String(Math.round(scrollY)))}catch(e){}});
 
   /* schermwissel → stap */
   const prevRender=render;

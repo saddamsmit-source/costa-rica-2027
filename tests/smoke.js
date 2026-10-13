@@ -114,6 +114,11 @@ const {chromium}=require('playwright');const path=require('path');
   bk=await p.evaluate(()=>({tab,url:location.href}));if(bk.tab!=='home')errs.push('terug gaat niet naar vorig scherm: '+JSON.stringify(bk));
   await p.waitForTimeout(300);await p.evaluate(()=>{tab='days';currentDay=3;daySection='overview';render();wl2Open('Jabiru','La Fortuna')});await p.waitForTimeout(100);await p.evaluate(()=>wl2Close());await p.waitForTimeout(250);
   await p.goBack({waitUntil:'commit'}).catch(()=>{});await p.waitForTimeout(250);if(await p.evaluate(()=>tab==='days'&&currentDay===3))errs.push('sluiten met × laat een lege terugstap achter');
+  /* v7.4: verversen houdt het scherm vast */
+  await p.waitForTimeout(300);await p.evaluate(()=>{tab='days';currentDay=12;daySection='wildlife';render()});await p.waitForTimeout(300);
+  await p.evaluate(()=>scrollTo(0,900));await p.reload();await p.waitForTimeout(500);
+  const rl=await p.evaluate(()=>({tab,day:currentDay,sec:daySection,y:Math.round(scrollY)}));if(rl.tab!=='days'||rl.day!==12||rl.sec!=='wildlife')errs.push('verversen gaat terug naar Home: '+JSON.stringify(rl));
+  if(rl.y<500)errs.push('scrollpositie niet hersteld na verversen: '+rl.y);
   const n=await p.evaluate(()=>Object.keys(V47_SP).length);if(n<250)errs.push('te weinig soorten: '+n);
   await b.close();
   if(errs.length){console.error('MISLUKT:\n'+errs.join('\n'));process.exit(1)}console.log('OK: alle schermen, 23 dagen x 5 tabs, '+n+' soorten');
