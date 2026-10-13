@@ -13,14 +13,19 @@ def save(b,path):
 meta={};titles=list(IN['titles'].items())
 for i in range(0,len(titles),40):
     ch=titles[i:i+40];r=fetch(API,{'action':'query','format':'json','titles':'|'.join(t for _,t in ch),'prop':'imageinfo','iiprop':'url|size|extmetadata'},pace=1.0)
+    r2={}
     pages={p['title']:p for p in ((r or {}).get('query') or {}).get('pages',{}).values()}
     norm={n['from']:n['to'] for n in ((r or {}).get('query') or {}).get('normalized',[])}
     for k,t in ch:
         p=pages.get(norm.get(t,t),{});ii=(p.get('imageinfo') or [{}])[0];em=ii.get('extmetadata',{});g=lambda x:re.sub('<[^>]+>','',(em.get(x) or {}).get('value','')).strip()
         meta[k]={'title':t,'url':ii.get('url'),'w':ii.get('width'),'h':ii.get('height'),'page':ii.get('descriptionurl'),'lic':g('LicenseShortName'),'artist':' '.join(g('Artist').split())[:120]}
+def thumb(u,w):
+    import urllib.parse
+    a,b=u.split('/wikipedia/commons/');n=b.split('/')[-1];return a+'/wikipedia/commons/thumb/'+b+'/'+str(w)+'px-'+n
 for k,m in meta.items():
     if not m['url']:continue
-    b=fetch(m['url'],raw=True,pace=1.5,tries=3)
+    W=m.get('w') or 0;tw=1920 if W>1920 else (1280 if W>1280 else 960)
+    m['tw']=tw;b=fetch(thumb(m['url'],tw),raw=True,pace=1.0,tries=2)
     if b:
         try:m['size']=save(b,f'{O}/hr/{k}.jpg');m['file']=k+'.jpg'
         except Exception as e:m['err']=str(e)
