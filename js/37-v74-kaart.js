@@ -45,7 +45,7 @@ function v74TimeLabels(zoom,s,hotelPts){const P=n=>v51XY(V51_PT[n][0],V51_PT[n][
   const obs=[];V51_STOPS.slice(0,-1).forEach(([r],i)=>{const[x,y]=P(r),R=13*s;obs.push([x-R,y-R,2*R,2*R]);
     if(!zoom){const left=['Cahuita','Tortuguero','Esterillos','Corcovado'].includes(r),fs=18,w=V51_PT[r][2].length*fs*.53;obs.push([left?x-17-w:x+17,y+6-fs*.85,w,fs*1.1])}});
   hotelPts.forEach(([x,y,r])=>obs.push([x-r,y-r,2*r,2*r]));
-  return V74_TIME.map((o,i)=>{const fs=(zoom?10.5:11)*s,w=o.t.length*fs*.56+fs*1.6,h=fs*1.55;let pick=null,tot=0;
+  return V74_TIME.map((o,i)=>{if(!zoom){const P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]),[ax,ay]=P(V51_LEGS[o.legs[0]][0]),[bx,by]=P(V51_LEGS[o.legs[o.legs.length-1]][1]);if(Math.hypot(bx-ax,by-ay)<60)return null}const fs=(zoom?10.5:11)*s,w=o.t.length*fs*.56+fs*1.6,h=fs*1.55;let pick=null,tot=0;
     const[ax,ay]=v74TimePos(o,.45),[bx,by]=v74TimePos(o,.55),dl=Math.hypot(bx-ax,by-ay)||1,nx=-(by-ay)/dl,ny=(bx-ax)/dl,off=h*.5+Math.abs(nx)*w*.5+2*s;
     out:for(const d of [0,1,-1])for(const fr of [.5,.4,.6,.3,.7,.22,.78,.15,.85]){const[x0,y0,t]=v74TimePos(o,fr),x=x0+nx*off*d,y=y0+ny*off*d,r=[x-w/2,y-h/2,w,h];tot=t;if(!obs.some(q=>hit(r,q))){pick=[x,y];break out}}
     if(!pick){if(!zoom)return null;const[x,y]=v74TimePos(o,.5);pick=[x,y]}

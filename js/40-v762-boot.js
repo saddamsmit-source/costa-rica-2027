@@ -1,21 +1,26 @@
 /* =====================================================================
-   v7.6.2 · Bootroute Sierpe ↔ Corcovado-lodge
-   Sawadee: per boot vanaf Sierpe naar de lodge. De gestippelde lijn volgt nu de
-   Río Sierpe naar zee en daarna de kust langs Drake naar Playa Rincón.
-   Rivier: OpenStreetMap (Río Sierpe, way 136924994 + 622457177, vereenvoudigd);
-   zeedeel: punten 0,3–1,5 km uit de kust (OSM-kustlijn), gecontroleerd tegen de kaartomtrek.
-   De stop Corcovado-lodge staat nu op de lodge zelf (Cabinas Las Palmeras, zie v7.4).
+   v7.6.2/v7.6.3 · Routes langs echte rivier, kust en weg
+   - Boot Sierpe ↔ Corcovado-lodge: Río Sierpe (OSM way 136924994 + 622457177) naar zee,
+     dan 0,3–1,5 km uit de kust (OSM-kustlijn) langs Drake naar Playa Rincón.
+     De rivier zelf wordt als water getekend, zodat de stippellijn zichtbaar over water loopt.
+   - Bus Uvita → Sierpe en Sierpe → Esterillos: over de echte weg (OSM Ruta 2/223 en de
+     Costanera, Ruta 34), vereenvoudigd en gecontroleerd tegen de kaartomtrek (niet over zee).
+   - De stop Corcovado-lodge staat op de lodge zelf (Cabinas Las Palmeras, zie v7.4).
    ===================================================================== */
 V51_PT['Corcovado']=[8.65726,-83.71165,'Corcovado-lodge'];
-const V762_BOAT=[[8.861, -83.471], [8.85781, -83.47432], [8.8676, -83.47429], [8.87071, -83.477], [8.87144, -83.4834], [8.86449, -83.49126], [8.86162, -83.4865], [8.85723, -83.48598], [8.85784, -83.48967], [8.85522, -83.49358], [8.85809, -83.49824], [8.85778, -83.50772], [8.84884, -83.51263], [8.84874, -83.51916], [8.84121, -83.53206], [8.82773, -83.53273], [8.82468, -83.53662], [8.81782, -83.535], [8.81451, -83.53694], [8.81155, -83.56303], [8.80134, -83.55725], [8.79625, -83.55772], [8.79384, -83.56115], [8.7933, -83.56672], [8.80083, -83.56901], [8.80546, -83.57407], [8.79837, -83.58027], [8.79742, -83.58489], [8.80081, -83.61141], [8.79971, -83.61591], [8.78829, -83.61857], [8.78033, -83.62531], [8.77714, -83.63702], [8.772, -83.652], [8.745, -83.656], [8.715, -83.658], [8.7, -83.668], [8.693, -83.7], [8.69, -83.718], [8.676, -83.727], [8.662, -83.724], [8.65726, -83.71165]];
-function v762LegPts(i){const[a,b]=V51_LEGS[i],P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]);
-  const path=V762_BOAT.map(([la,lo])=>v51XY(la,lo));
-  if(a==='Sierpe'&&b==='Corcovado')return path;if(a==='Corcovado'&&b==='Sierpe')return path.slice().reverse();return [P(a),P(b)]}
-/* tekenen: rechte bootlijn vervangen door de route */
-{const prev=dsMapSvg;dsMapSvg=function(fd,zoom){let h=prev(fd,zoom);const f=v=>v.toFixed(1),P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]);
-  const line=(a,b)=>{const[x1,y1]=P(a),[x2,y2]=P(b);return `<line x1="${f(x1)}" y1="${f(y1)}" x2="${f(x2)}" y2="${f(y2)}" class="dsm-boat" vector-effect="non-scaling-stroke"/>`};
-  const poly=`<polyline points="${V762_BOAT.map(([la,lo])=>v51XY(la,lo).map(f).join(',')).join(' ')}" class="dsm-boat v762-boat" fill="none" vector-effect="non-scaling-stroke"/>`;
-  return h.replace(line('Sierpe','Corcovado'),poly).replace(line('Corcovado','Sierpe'),'')}}
+const V763={"river": [[8.861, -83.471], [8.85781, -83.47432], [8.8676, -83.47429], [8.87071, -83.477], [8.87144, -83.4834], [8.86449, -83.49126], [8.86162, -83.4865], [8.85861, -83.48511], [8.85723, -83.48598], [8.85784, -83.48967], [8.85522, -83.49358], [8.85809, -83.49824], [8.85778, -83.50772], [8.85518, -83.51034], [8.84884, -83.51263], [8.84874, -83.51916], [8.84656, -83.52065], [8.84669, -83.52337], [8.84371, -83.52568], [8.84121, -83.53206], [8.83129, -83.53393], [8.82773, -83.53273], [8.82606, -83.53357], [8.82468, -83.53662], [8.81782, -83.535], [8.81451, -83.53694], [8.81205, -83.55579], [8.81328, -83.56068], [8.81155, -83.56303], [8.80565, -83.55884], [8.80134, -83.55725], [8.79625, -83.55772], [8.79384, -83.56115], [8.79214, -83.56504], [8.7933, -83.56672], [8.80083, -83.56901], [8.8048, -83.57165], [8.80546, -83.57407], [8.80361, -83.57742], [8.79837, -83.58027], [8.79742, -83.58489], [8.79975, -83.59201], [8.80081, -83.61141], [8.79971, -83.61591], [8.78829, -83.61857], [8.78033, -83.62531], [8.77714, -83.63702]], "sea": [[8.77714, -83.63702], [8.772, -83.652], [8.745, -83.656], [8.715, -83.658], [8.7, -83.668], [8.693, -83.7], [8.69, -83.718], [8.676, -83.727], [8.662, -83.724], [8.65726, -83.71165]], "boatCoarse": [[8.861, -83.471], [8.87144, -83.4834], [8.85723, -83.48598], [8.85778, -83.50772], [8.84121, -83.53206], [8.81451, -83.53694], [8.81155, -83.56303], [8.79384, -83.56115], [8.80546, -83.57407], [8.80081, -83.61141], [8.77714, -83.63702], [8.772, -83.652], [8.745, -83.656], [8.715, -83.658], [8.7, -83.668], [8.693, -83.7], [8.69, -83.718], [8.676, -83.727], [8.662, -83.724], [8.65726, -83.71165]], "roads": {"Sierpe>Esterillos": [[8.861, -83.471], [8.87993, -83.47159], [8.88544, -83.47988], [8.90141, -83.47197], [8.9144, -83.49134], [8.92946, -83.48159], [8.93358, -83.48764], [8.94282, -83.48158], [8.94106, -83.47471], [8.9554, -83.46461], [8.95674, -83.4603], [8.96497, -83.4612], [8.96726, -83.47737], [8.96383, -83.4836], [8.96235, -83.49671], [8.97449, -83.50803], [8.97787, -83.51644], [8.98757, -83.52091], [8.98172, -83.53256], [9.00525, -83.5748], [9.04609, -83.60815], [9.05174, -83.61715], [9.0536, -83.63449], [9.06973, -83.65414], [9.07673, -83.65721], [9.09591, -83.6768], [9.10257, -83.68838], [9.11345, -83.69239], [9.12271, -83.70026], [9.14257, -83.7251], [9.15165, -83.72541], [9.15839, -83.73465], [9.17154, -83.73876], [9.19107, -83.77606], [9.20021, -83.78496], [9.19985, -83.78651], [9.21221, -83.81208], [9.21392, -83.81442], [9.21477, -83.81679], [9.21734, -83.8263], [9.21918, -83.83479], [9.23566, -83.84183], [9.24139, -83.85069], [9.25923, -83.86433], [9.26518, -83.87691], [9.27111, -83.87919], [9.29201, -83.89766], [9.30449, -83.91273], [9.32181, -83.94762], [9.33646, -83.96071], [9.35288, -83.98319], [9.35299, -83.99272], [9.35926, -84.00161], [9.3635, -84.01634], [9.37107, -84.02269], [9.37139, -84.03675], [9.4293, -84.11428], [9.43174, -84.12358], [9.4416, -84.13679], [9.45235, -84.13824], [9.45148, -84.16751], [9.45609, -84.17728], [9.52317, -84.23959], [9.52768, -84.26242], [9.53513, -84.27873], [9.53044, -84.31123], [9.52091, -84.32161], [9.5202, -84.32905], [9.53469, -84.37904], [9.52901, -84.38618], [9.52902, -84.39233], [9.52533, -84.39789], [9.52764, -84.40797], [9.52255, -84.42334], [9.53008, -84.44586], [9.53394, -84.44966], [9.53318, -84.47782], [9.52791, -84.48019], [9.52824, -84.48147], [9.5281, -84.48345], [9.52783, -84.48268], [9.52846, -84.48413], [9.52845, -84.48233], [9.52777, -84.48025], [9.52848, -84.4819], [9.52803, -84.48108], [9.52823, -84.48352], [9.5283, -84.48192], [9.52769, -84.48004], [9.522, -84.48]], "Uvita>Sierpe": [[9.03, -83.6], [9.03161, -83.59792], [9.00525, -83.5748], [8.99317, -83.55564], [8.98158, -83.53207], [8.98757, -83.52091], [8.97787, -83.51644], [8.97449, -83.50803], [8.9625, -83.49703], [8.96383, -83.4836], [8.96726, -83.47737], [8.96451, -83.46076], [8.95674, -83.4603], [8.9554, -83.46461], [8.94106, -83.47471], [8.94282, -83.48158], [8.93358, -83.48764], [8.92946, -83.48159], [8.9144, -83.49134], [8.90141, -83.47197], [8.88544, -83.47988], [8.87993, -83.47159], [8.861, -83.471]]}};
+const V763_BOAT=[...V763.river,...V763.sea.slice(1)];
+function v763Path(a,b,coarse){
+  if((a==='Sierpe'&&b==='Corcovado')||(a==='Corcovado'&&b==='Sierpe')){const p=coarse?V763.boatCoarse:V763_BOAT;return a==='Sierpe'?p:p.slice().reverse()}
+  const k=a+'>'+b,rk=b+'>'+a;if(V763.roads[k])return V763.roads[k];if(V763.roads[rk])return V763.roads[rk].slice().reverse();return null}
+function v762LegPts(i){const[a,b]=V51_LEGS[i],p=v763Path(a,b,false);return p?p.map(([la,lo])=>v51XY(la,lo)):[a,b].map(n=>v51XY(V51_PT[n][0],V51_PT[n][1]))}
+/* tekenen: rechte lijnen vervangen door de echte route, rivier als water */
+{const prev=dsMapSvg;dsMapSvg=function(fd,zoom){let h=prev(fd,zoom);const f=v=>v.toFixed(1),P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]),seen=new Set();
+  V51_LEGS.forEach(([a,b,m])=>{const p=v763Path(a,b,!zoom);if(!p)return;const cls=m==='boot'?'dsm-boat':'dsm-road',[x1,y1]=P(a),[x2,y2]=P(b);
+    const line=`<line x1="${f(x1)}" y1="${f(y1)}" x2="${f(x2)}" y2="${f(y2)}" class="${cls}" vector-effect="non-scaling-stroke"/>`,key=[a,b].sort().join('|');
+    const poly=seen.has(key)?'':`<polyline points="${p.map(([la,lo])=>v51XY(la,lo).map(f).join(',')).join(' ')}" class="${cls} v763-route" fill="none" vector-effect="non-scaling-stroke"/>`;seen.add(key);h=h.replace(line,poly)});
+  const river=`<polyline points="${V763.river.map(([la,lo])=>v51XY(la,lo).map(f).join(',')).join(' ')}" class="v763-river" fill="none" vector-effect="non-scaling-stroke"/>`;
+  return h.replace(/(<path d="[^"]*" class="dsm-land"[^>]*\/>)/,'$1'+river)}}
 /* reistijdlabel op het midden van de echte route */
 v74TimePos=function(o,fr){const pts=o.legs.flatMap((i,k)=>{const p=v762LegPts(i);return k?p.slice(1):p});
   const len=[];let tot=0;for(let i=1;i<pts.length;i++){const d=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);len.push(d);tot+=d}
@@ -23,9 +28,9 @@ v74TimePos=function(o,fr){const pts=o.legs.flatMap((i,k)=>{const p=v762LegPts(i)
   return [...pts[pts.length-1],tot]};
 /* dagkaart Corcovado (dag 16–18): hele bootroute vanaf Sierpe in beeld */
 {const prev=dsdBox;dsdBox=function(fd){const b=prev(fd);if(V51_STOPS[v51Day2Stop(fd)][0]!=='Corcovado')return b;const M=V51_MAP;
-  const pts=V762_BOAT.map(([la,lo])=>v51XY(la,lo));let x0=b[0],y0=b[1],x1=b[0]+b[2],y1=b[1]+b[3];const m=Math.max(b[2],b[3])*.08;
+  const pts=V763_BOAT.map(([la,lo])=>v51XY(la,lo));let x0=b[0],y0=b[1],x1=b[0]+b[2],y1=b[1]+b[3];const m=Math.max(b[2],b[3])*.08;
   pts.forEach(([x,y])=>{x0=Math.min(x0,x-m);y0=Math.min(y0,y-m);x1=Math.max(x1,x+m);y1=Math.max(y1,y+m)});
   const AR=b[2]/b[3];let w=x1-x0,h=y1-y0;if(w/h<AR)w=h*AR;else h=w/AR;w=Math.min(w,M.W);h=Math.min(h,M.H);
   const cx=(x0+x1)/2,cy=(y0+y1)/2;return [Math.max(0,Math.min(M.W-w,cx-w/2)),Math.max(0,Math.min(M.H-h,cy-h/2)),w,h]}}
-/* eerste scherm opnieuw opbouwen nu alle lagen (v7.4–v7.6.2) geladen zijn */
+/* eerste scherm opnieuw opbouwen nu alle lagen (v7.4–v7.6.3) geladen zijn */
 render();

@@ -150,10 +150,13 @@ const {chromium}=require('playwright');const path=require('path');
     tab='wildlife';const t=performance.now();render();const dt=performance.now()-t;state.v43Observations=JSON.parse(keep);return dt});
   if(ms>250)errs.push('Wildlife-pagina traag met 634 waarnemingen: '+Math.round(ms)+' ms');
   /* v7.6.2: bootroute Sierpe → Corcovado-lodge langs rivier en kust */
-  const bt=await p.evaluate(()=>{tab='days';currentDay=16;daySection='map';render();const pl=document.querySelector('.v762-boat');const P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]).map(v=>v.toFixed(1)).join(',');
+  const bt=await p.evaluate(()=>{tab='days';currentDay=16;daySection='map';render();const pl=document.querySelector('polyline.dsm-boat');const P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]).map(v=>v.toFixed(1)).join(',');
     const straight=[...document.querySelectorAll('line.dsm-boat')].some(l=>{const a=l.getAttribute('x1')+','+l.getAttribute('y1'),b=l.getAttribute('x2')+','+l.getAttribute('y2');return [a,b].includes(P('Corcovado'))});
     return {pts:pl?pl.getAttribute('points').split(' ').length:0,straight,lodge:v51Dist(V51_PT.Corcovado,[8.65726,-83.71165])}});
   if(bt.pts<20||bt.straight||bt.lodge>0.1)errs.push('bootroute Corcovado: '+JSON.stringify(bt));
+  const rd=await p.evaluate(()=>{tab='map';render();const P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]).map(v=>v.toFixed(1)).join(',');const ends=[...document.querySelectorAll('line.dsm-road,line.dsm-boat')].map(l=>[l.getAttribute('x1')+','+l.getAttribute('y1'),l.getAttribute('x2')+','+l.getAttribute('y2')]);
+    const has=(a,b)=>ends.some(e=>e.includes(P(a))&&e.includes(P(b)));return {routes:document.querySelectorAll('.v763-route').length,river:!!document.querySelector('.v763-river'),straightSE:has('Sierpe','Esterillos'),straightUS:has('Uvita','Sierpe')}});
+  if(rd.routes<3||!rd.river||rd.straightSE||rd.straightUS)errs.push('routes langs weg/rivier: '+JSON.stringify(rd));
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
   const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();
@@ -164,7 +167,7 @@ const {chromium}=require('playwright');const path=require('path');
   if(ux.length)errs.push('leesbaarheid/tikdoelen: '+[...new Set(ux)].slice(0,8).join('; '));
   const mf=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','manifest.webmanifest'),'utf8'));if(!mf.icons.some(i=>i.purpose==='maskable'))errs.push('geen maskable icoon');
   /* v7.5: veilige import van een oude back-up en terugzetten */
-  const ip=await b.newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
+  const ip=await (await b.newContext({acceptDownloads:true})).newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});
   await ip.goto('file://'+path.resolve(__dirname,'..','index.html'));await ip.waitForTimeout(300);
   /* v7.6.1: downloaden en controleren werken de back-upstatus bij */
@@ -178,7 +181,7 @@ const {chromium}=require('playwright');const path=require('path');
   if(await ip.evaluate(()=>{tab='settings';dsMore='backup';render();document.querySelector('[data-mobile="settings"]').click();return dsMore})!=='')errs.push('Meer-knop gaat niet terug naar Meer');
   await ip.evaluate(()=>{tab='settings';dsMore='backup';render()});
   const bak=require('os').tmpdir()+'/cr27-oud.json';require('fs').writeFileSync(bak,JSON.stringify({format:'CR27_V2',exportedAt:'2026-05-01T10:00:00Z',state:{notes:{'3':'oud'},bookings:{},costs:{},hotelSelected:{},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:false,photo:false}}}}}}));
-  await ip.setInputFiles('#import',bak);await ip.waitForFunction(()=>document.readyState==='complete'&&typeof state!=='undefined'&&state.notes&&state.notes['3']==='oud'&&!!localStorage.getItem('CR27_V2_voor_import'),null,{timeout:10000}).catch(()=>{});await ip.waitForTimeout(300);
+  await Promise.all([ip.waitForEvent('load',{timeout:15000}),ip.setInputFiles('#import',bak)]);await ip.waitForFunction(()=>document.readyState==='complete'&&typeof state!=='undefined'&&state.notes&&state.notes['3']==='oud'&&!!localStorage.getItem('CR27_V2_voor_import'),null,{timeout:10000}).catch(()=>{});await ip.waitForTimeout(300);
   const im=await ip.evaluate(()=>{let ok=true;try{tab='wildlife';render();tab='days';currentDay=7;daySection='wildlife';render()}catch(e){ok=e.message}
     return {ok,n1:state.notes['1'],n3:state.notes['3'],jab:state.v43Observations.jabiru?.places?.['La Fortuna'],copy:!!localStorage.getItem('CR27_V2_voor_import')}});
   if(im.ok!==true||im.n1!=='nieuw'||im.n3!=='oud'||!im.jab?.seen||!im.jab?.photo||!im.copy)errs.push('veilige import: '+JSON.stringify(im));

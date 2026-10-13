@@ -27,3 +27,7 @@ body:has(.dse-pop:not([hidden])) .ds-fab{opacity:0;pointer-events:none;transform
 .ds-wx-day small{font-size:12px!important}
 .ds-notes summary em{font-size:12px!important}
 .ds-credits small,.ds-credits a{font-size:12px!important}
+/* v7.6.3 · rivier als water, routes als lijn langs weg/kust */
+.v763-river{stroke:#8EC3DB;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round}
+.v763-route{stroke-linejoin:round}
+polyline.dsm-boat{stroke-dasharray:1 7}

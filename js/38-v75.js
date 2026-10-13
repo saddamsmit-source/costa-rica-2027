@@ -40,10 +40,10 @@ async function v75Import(file){let v;
   try{localStorage.setItem(V75_COPY,JSON.stringify({at:new Date().toISOString(),state}))}
   catch(e){if(!confirm('De veiligheidskopie past niet meer in de opslag. Toch importeren?'))return}
   const before=v75Seen(state);state=v75MergeState(state,v.state);save();v75Persist();
-  alert(`Back-up geïmporteerd. Soorten gezien: ${v75Seen(state)} (was ${before}). De app wordt opnieuw geladen.`);location.reload()}
+  alert(`Back-up geïmporteerd. Soorten gezien: ${v75Seen(state)} (was ${before}). De app wordt opnieuw geladen.`);setTimeout(()=>location.reload(),300)}
 function v75Restore(){let c;try{c=JSON.parse(localStorage.getItem(V75_COPY))}catch(e){}if(!c||!v75Obj(c.state))return;
   if(!confirm(`Terugzetten naar de toestand van ${v75When(c.at)}, vlak vóór de laatste import? Wat je daarna hebt aangepast gaat verloren.`))return;
-  try{localStorage.setItem('CR27_V2',JSON.stringify(c.state));localStorage.removeItem(V75_COPY)}catch(e){alert('Terugzetten is niet gelukt: '+e.message);return}location.reload()}
+  try{localStorage.setItem('CR27_V2',JSON.stringify(c.state));localStorage.removeItem(V75_COPY)}catch(e){alert("Terugzetten is niet gelukt: "+e.message);return}setTimeout(()=>location.reload(),300)}
 
 /* ---------- 2. persistente opslag ---------- */
 let v75Persisted=null;
