@@ -222,6 +222,15 @@ const {chromium}=require('playwright');const path=require('path');
     tab='hotels';render();if(/oorlopig/.test(document.getElementById('app').innerHTML))bad.push('hotelscherm noemt voorlopig');
     return {bad,all:v80HAll()}});
    v.bad.forEach(x=>errs.push(x));v.all.forEach(u=>{if(!sw.includes('"'+u+'"'))errs.push('hotelfoto niet in service worker: '+u)})}
+  /* v8.1: paklijst: nieuwe groepen, oude vinkjes blijven, volgorde */
+  {const v=await p.evaluate(()=>{const bad=[];tab='bookings';v49Seg='paklijst';render();const app=document.getElementById('app');
+    const names=[...app.querySelectorAll('.ds-acc summary span')].map(e=>e.textContent);
+    ['Documenten en geld','Basis','Elektra','Badkamer en verzorging','Medicijnen en EHBO','Schoeisel','Kleding','Handig onderweg'].forEach((n,i)=>{if(names[i]!==n)bad.push('volgorde paklijst: '+names.slice(0,8).join(', '))});
+    if(names.length!==V48_PACK.length)bad.push('niet alle groepen zichtbaar');
+    if(V48_PACK[0][1][0]!=='Paspoort + kopie (ook als foto op telefoon)')bad.push('bestaande sleutels verschoven');
+    const total=V48_PACK.reduce((s,[,i])=>s+i.length,0);if(app.querySelectorAll('[data-v48-pack]').length!==total)bad.push('aantal items');
+    const all=V48_PACK.flatMap(g=>g[1]),dup=all.filter((x,i)=>all.indexOf(x)!==i);if(dup.length)bad.push('dubbel: '+dup.join(', '));
+    return [...new Set(bad)]});v.forEach(x=>errs.push(x))}
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
   const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();
