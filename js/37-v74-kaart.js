@@ -48,18 +48,21 @@ function v74TimeLabels(zoom,s,hotelPts){const P=n=>v51XY(V51_PT[n][0],V51_PT[n][
   return V74_TIME.map((o,i)=>{const fs=(zoom?10.5:11)*s,w=o.t.length*fs*.56+fs*1.6,h=fs*1.55;let pick=null,tot=0;
     const[ax,ay]=v74TimePos(o,.45),[bx,by]=v74TimePos(o,.55),dl=Math.hypot(bx-ax,by-ay)||1,nx=-(by-ay)/dl,ny=(bx-ax)/dl,off=h*.5+Math.abs(nx)*w*.5+2*s;
     out:for(const d of [0,1,-1])for(const fr of [.5,.4,.6,.3,.7,.22,.78,.15,.85]){const[x0,y0,t]=v74TimePos(o,fr),x=x0+nx*off*d,y=y0+ny*off*d,r=[x-w/2,y-h/2,w,h];tot=t;if(!obs.some(q=>hit(r,q))){pick=[x,y];break out}}
-    if(!pick){if(!zoom&&tot<60)return null;const[x,y]=v74TimePos(o,.5);pick=[x,y]}
+    if(!pick){if(!zoom)return null;const[x,y]=v74TimePos(o,.5);pick=[x,y]}
     obs.push([pick[0]-w/2,pick[1]-h/2,w,h]);return {i,o,x:pick[0],y:pick[1],w,h,fs}}).filter(Boolean)}
 
 /* laag: hotels + reistijden bovenop de bestaande lagen */
 const v74PrevLayer=dseLayer;
 dseLayer=function(fd,zoom,box,s,cur){const X=v74PrevLayer(fd,zoom,box,s,cur),L=state.dsLayers[dseMode()],f=v=>v.toFixed(1);
   const curDays=cur>=0?V51_STOPS[cur][1]:[];let svg='',top='';
-  const hs=L.hotel?v74Hotels().filter(o=>o.x.ll).map(o=>{const[x,y]=v51XY(o.x.ll[0],o.x.ll[1]);return {...o,x,y,on:o.days.some(d=>curDays.includes(d))}}):[],hr=(zoom?8.5:6.5)*s;
-  if(L.time)v74TimeLabels(zoom,s,hs.map(o=>[o.x,o.y,hr])).forEach(({i,o,x,y,w,h,fs})=>{
+  const hs=L.hotel?v74Hotels().filter(o=>o.x.ll).map(o=>{let[x,y]=v51XY(o.x.ll[0],o.x.ll[1]);const on=o.days.some(d=>curDays.includes(d)),st=V51_PT[V51_STOPS[v51Day2Stop(o.days[0])][0]];let r=0;
+    /* hotel valt samen met de stop (bijv. Corcovado-lodge): pin als badge rechtsboven op de stop */
+    if(v51Dist(o.x.ll,st)<0.3){const R=(on?14:10.5)*s;x+=R*.55;y-=R*1.05;r=(zoom?7:5.5)*s}
+    return {...o,x,y,on,r}}):[],hr=(zoom?8.5:6.5)*s;
+  if(L.time)v74TimeLabels(zoom,s,hs.map(o=>[o.x,o.y,o.r||hr])).forEach(({i,o,x,y,w,h,fs})=>{
     svg+=`<g class="v74-time${o.boat?' boat':''}" data-dse-poi="time:${i}" role="button" aria-label="Reistijd ${esc(o.t)}"><rect x="${f(x-w/2)}" y="${f(y-h/2)}" width="${f(w)}" height="${f(h)}" rx="${f(h/2)}"/><text x="${f(x)}" y="${f(y+fs*.36)}" text-anchor="middle" style="font-size:${f(fs)}px">${esc(o.t)}</text></g>`;
     X.pins.push({x,y,r:w/2})});
-  hs.forEach(({h,x,y,on})=>{const r=hr,k=r*1.15/12;
+  hs.forEach(({h,x,y,on,r:rb})=>{const r=rb||hr,k=r*1.15/12;
     top+=`<g class="dse-poi v74-hotel${on?' on':''}" data-dse-poi="hotel:${esc(h)}" role="button" aria-label="Hotel ${esc(h)}"><circle cx="${f(x)}" cy="${f(y)}" r="${f(r)}"/><g transform="translate(${f(x-12*k)} ${f(y-12*k)}) scale(${k.toFixed(3)})"><path class="bed" d="M3 19V7M3 14h18v5M21 14v-2.5A2.5 2.5 0 0 0 18.5 9H10v5M6.5 11.5a1.6 1.6 0 1 0 0-.01"/></g></g>`;
     X.pins.push({x,y,r:r+3*s,label:zoom&&on?h:'',cls:'hotel',must:on})});
   X.svg+=svg;X.top=(X.top||'')+top;return X};

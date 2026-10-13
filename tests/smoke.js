@@ -149,6 +149,11 @@ const {chromium}=require('playwright');const path=require('path');
   const ms=await p.evaluate(()=>{const keep=JSON.stringify(state.v43Observations);Object.keys(V47_SP).forEach((k,i)=>{const o=state.v43Observations[v43name(k)]??={name:k,places:{}};o.places['Cahuita']??={seen:true,photo:false,t:new Date(Date.now()-i*6e4).toISOString()}});
     tab='wildlife';const t=performance.now();render();const dt=performance.now()-t;state.v43Observations=JSON.parse(keep);return dt});
   if(ms>250)errs.push('Wildlife-pagina traag met 634 waarnemingen: '+Math.round(ms)+' ms');
+  /* v7.6.2: bootroute Sierpe → Corcovado-lodge langs rivier en kust */
+  const bt=await p.evaluate(()=>{tab='days';currentDay=16;daySection='map';render();const pl=document.querySelector('.v762-boat');const P=n=>v51XY(V51_PT[n][0],V51_PT[n][1]).map(v=>v.toFixed(1)).join(',');
+    const straight=[...document.querySelectorAll('line.dsm-boat')].some(l=>{const a=l.getAttribute('x1')+','+l.getAttribute('y1'),b=l.getAttribute('x2')+','+l.getAttribute('y2');return [a,b].includes(P('Corcovado'))});
+    return {pts:pl?pl.getAttribute('points').split(' ').length:0,straight,lodge:v51Dist(V51_PT.Corcovado,[8.65726,-83.71165])}});
+  if(bt.pts<20||bt.straight||bt.lodge>0.1)errs.push('bootroute Corcovado: '+JSON.stringify(bt));
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
   const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();
