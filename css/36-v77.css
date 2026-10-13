@@ -1,0 +1,14 @@
+/* v7.7 · diashow bovenaan dag en Home */
+.v77 .v77-slides{position:absolute!important;inset:0;z-index:0;overflow:hidden}
+.v77 .v77-slides i{position:absolute;inset:0;background:#0E3B2A center/cover no-repeat;opacity:0;transition:opacity 1.2s ease;will-change:opacity}
+.v77 .v77-slides i.on{opacity:1}
+.v77:before{z-index:1}
+.v77>*:not(.v77-slides){z-index:2}
+.v77 .v77-dots{position:absolute!important;left:0;right:0;bottom:34px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.ds-hero.v77 .v77-dots{bottom:12px}
+.v77 .v77-dots b{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .3s,width .3s}
+.v77 .v77-dots b.on{background:#fff;width:16px;border-radius:3px}
+.v77 .v77-lab{position:absolute!important;right:14px;top:72px;padding:4px 10px;border-radius:999px;background:rgba(6,24,17,.55);color:#fff;font-size:12px;font-weight:700;opacity:0;transition:opacity .6s;pointer-events:none}
+.v77 .v77-lab.on{opacity:1}
+.ds-hero.v77 .v77-lab{top:auto;bottom:22px;right:16px}
+@media (prefers-reduced-motion: reduce){.v77 .v77-slides i{transition:none}}

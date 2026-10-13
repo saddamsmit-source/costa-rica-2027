@@ -22,7 +22,7 @@ for reg,qs in Q.items():
     seen=set();cands=[]
     for q in qs:
         r=fetch(API,{'action':'query','format':'json','generator':'search','gsrsearch':q+' filetype:bitmap','gsrnamespace':6,'gsrlimit':12,
-            'prop':'imageinfo|coordinates','iiprop':'url|size|extmetadata|mime','iiurlwidth':1400},pace=1.0)
+            'prop':'imageinfo|coordinates','iiprop':'url|size|extmetadata|mime','iiurlwidth':1280},pace=1.0)
         for p in sorted(((r or {}).get('query') or {}).get('pages',{}).values(),key=lambda p:p.get('index',99)):
             t=p['title']
             if t in seen:continue
@@ -35,9 +35,9 @@ for reg,qs in Q.items():
               'lic':lic,'artist':re.sub('<[^>]+>','',(em.get('Artist') or {}).get('value',''))[:120],
               'desc':re.sub('<[^>]+>','',(em.get('ImageDescription') or {}).get('value',''))[:300],
               'lat':c.get('lat'),'lon':c.get('lon')})
-    cands=cands[:14]
+    cands=cands[:8]
     for i,c in enumerate(cands):
-        b=fetch(c['thumb'],raw=True,pace=0.5)
+        b=fetch(c['thumb'],raw=True,pace=1.0,tries=2)
         if b:open(f"{O}/dia/{reg}-{i:02d}.jpg",'wb').write(b);c['file']=f"{reg}-{i:02d}.jpg"
     meta[reg]=cands;print(reg,len(cands),flush=True)
 json.dump(meta,open(O+'/dia.json','w'),ensure_ascii=False,indent=1);print('klaar')
