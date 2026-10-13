@@ -162,6 +162,15 @@ const {chromium}=require('playwright');const path=require('path');
   const ip=await b.newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});
   await ip.goto('file://'+path.resolve(__dirname,'..','index.html'));await ip.waitForTimeout(300);
+  /* v7.6.1: downloaden en controleren werken de back-upstatus bij */
+  await ip.evaluate(()=>{delete state.v51LastBackup;delete state.v52Verified;save();tab='settings';dsMore='backup';render()});
+  const [dl]=await Promise.all([ip.waitForEvent('download'),ip.click('#export')]);const dlPath=require('os').tmpdir()+'/cr27-dl.json';await dl.saveAs(dlPath);await ip.waitForTimeout(450);
+  const st1=await ip.evaluate(()=>({t:!!state.v51LastBackup,txt:document.querySelector('.v51-backup b')?.textContent,warn:document.querySelector('.v51-backup')?.classList.contains('warn')}));
+  if(!st1.t||st1.warn||!/vandaag/.test(st1.txt||''))errs.push('download registreert back-up niet: '+JSON.stringify(st1));
+  await ip.evaluate(()=>{delete state.v51LastBackup;save();render()});await ip.setInputFiles('#v52verify',dlPath);await ip.waitForTimeout(400);
+  const st2=await ip.evaluate(()=>({txt:document.querySelector('.v51-backup b')?.textContent,warn:document.querySelector('.v51-backup')?.classList.contains('warn'),res:document.getElementById('v52vres')?.innerText||'',meer:dsdBackupState().warn}));
+  if(st2.warn||st2.meer||!/vandaag/.test(st2.txt||'')||!/compleet/.test(st2.res))errs.push('controle werkt status niet bij: '+JSON.stringify(st2).slice(0,160));
+  if(await ip.evaluate(()=>{tab='settings';dsMore='backup';render();document.querySelector('[data-mobile="settings"]').click();return dsMore})!=='')errs.push('Meer-knop gaat niet terug naar Meer');
   await ip.evaluate(()=>{tab='settings';dsMore='backup';render()});
   const bak=require('os').tmpdir()+'/cr27-oud.json';require('fs').writeFileSync(bak,JSON.stringify({format:'CR27_V2',exportedAt:'2026-05-01T10:00:00Z',state:{notes:{'3':'oud'},bookings:{},costs:{},hotelSelected:{},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:false,photo:false}}}}}}));
   await Promise.all([ip.waitForEvent('load'),ip.setInputFiles('#import',bak)]);await ip.waitForTimeout(400);
