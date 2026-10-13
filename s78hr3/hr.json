@@ -1,0 +1,137 @@
+{
+"dia-uvita3": {
+"title": "File:Uvita strand.jpg",
+"url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Uvita_strand.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 3238,
+"h": 2373,
+"page": "https://commons.wikimedia.org/wiki/File:Uvita_strand.jpg",
+"lic": "CC BY-SA 3.0",
+"artist": "Haakon S. Krohn",
+"tw": 1920,
+"size": [
+1920,
+1407
+],
+"file": "dia-uvita3.jpg"
+},
+"dia-manuel": {
+"title": "File:Manuel Antonio National Park.jpg",
+"url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Manuel_Antonio_National_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 3072,
+"h": 2304,
+"page": "https://commons.wikimedia.org/wiki/File:Manuel_Antonio_National_Park.jpg",
+"lic": "Public domain",
+"artist": "RAMDOM X",
+"tw": 1920,
+"size": [
+1920,
+1440
+],
+"file": "dia-manuel.jpg"
+},
+"alt-manuel": {
+"title": "File:Main Beach Manuel Antonio National Park Costa Rica.JPG",
+"url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Main_Beach_Manuel_Antonio_National_Park_Costa_Rica.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 4000,
+"h": 3000,
+"page": "https://commons.wikimedia.org/wiki/File:Main_Beach_Manuel_Antonio_National_Park_Costa_Rica.JPG",
+"lic": "CC BY-SA 3.0",
+"artist": "Eric T Gunther",
+"tw": 1920,
+"size": [
+1920,
+1440
+],
+"file": "alt-manuel.jpg"
+},
+"alt-uvita": {
+"title": "File:Costa Rica Nationalpark Marino Ballena.JPG",
+"url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Costa_Rica_Nationalpark_Marino_Ballena.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 3072,
+"h": 2304,
+"page": "https://commons.wikimedia.org/wiki/File:Costa_Rica_Nationalpark_Marino_Ballena.JPG",
+"lic": "CC BY-SA 4.0",
+"artist": "Norbert Utz",
+"tw": 1920,
+"size": [
+1920,
+1440
+],
+"file": "alt-uvita.jpg"
+},
+"hotel-clarodeluna": {
+"title": "File:Monteverde sunset over the Gulf of Nicoya.jpg",
+"url": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Monteverde_sunset_over_the_Gulf_of_Nicoya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 4080,
+"h": 1884,
+"page": "https://commons.wikimedia.org/wiki/File:Monteverde_sunset_over_the_Gulf_of_Nicoya.jpg",
+"lic": "CC BY 4.0",
+"artist": "Steve Knight",
+"tw": 1920,
+"size": [
+1920,
+887
+],
+"file": "hotel-clarodeluna.jpg"
+},
+"hotel-hotelloscipreses": {
+"title": "File:Monteverdeskyline01.jpg",
+"url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Monteverdeskyline01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 2048,
+"h": 1365,
+"page": "https://commons.wikimedia.org/wiki/File:Monteverdeskyline01.jpg",
+"lic": "CC BY 2.0",
+"artist": "Fran Devinney",
+"tw": 1920,
+"size": [
+1920,
+1280
+],
+"file": "hotel-hotelloscipreses.jpg"
+},
+"hotel-hotelplayabejuco": {
+"title": "File:Playa Bejuco Puntarenas Costa Rica 4806.JPG",
+"url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Playa_Bejuco_Puntarenas_Costa_Rica_4806.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 4000,
+"h": 3000,
+"page": "https://commons.wikimedia.org/wiki/File:Playa_Bejuco_Puntarenas_Costa_Rica_4806.JPG",
+"lic": "CC BY-SA 4.0",
+"artist": "Jorge Antonio Leoni de León",
+"tw": 1920,
+"size": [
+1920,
+1440
+],
+"file": "hotel-hotelplayabejuco.jpg"
+},
+"hotel-hotelcostapacifica": {
+"title": "File:Atardecer en playa Esterillos, Costa Rica.jpg",
+"url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Atardecer_en_playa_Esterillos%2C_Costa_Rica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 4000,
+"h": 2672,
+"page": "https://commons.wikimedia.org/wiki/File:Atardecer_en_playa_Esterillos,_Costa_Rica.jpg",
+"lic": "CC BY-SA 2.0",
+"artist": "MariaAngela Picado",
+"tw": 1920,
+"size": [
+1920,
+1283
+],
+"file": "hotel-hotelcostapacifica.jpg"
+},
+"hotel-villasriomar": {
+"title": "File:Atardecer En Dominical (147159179).jpeg",
+"url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Atardecer_En_Dominical_%28147159179%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+"w": 2048,
+"h": 1366,
+"page": "https://commons.wikimedia.org/wiki/File:Atardecer_En_Dominical_(147159179).jpeg",
+"lic": "CC BY 3.0",
+"artist": "Esteban Saborío H",
+"tw": 1920,
+"size": [
+1920,
+1281
+],
+"file": "hotel-villasriomar.jpg"
+}
+}
