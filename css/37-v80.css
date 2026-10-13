@@ -1,0 +1,19 @@
+/* v8.0 kansschaal + hoteldiashow */
+.ds-chance .v80-ch{margin-left:6px;font-size:12px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--ds-ink,#17251c)}
+.ds-chance.c1 .v80-ch{color:#5E6B60}
+.v80-here{font-weight:700}
+.v80-here.c4,.v80-here.c3{background:#E3F1E7!important;color:#14532D!important}.v80-here.c2{background:#FCEBDD!important;color:#8A3B0C!important}.v80-here.c1{background:#ECEFEC!important;color:#3F4A42!important}
+.v80-legend{margin-top:12px;padding:12px;border-radius:14px;background:#F3F5F1;display:grid;gap:8px}
+.v80-legend>b{font-size:13px}
+.v80-legend>div{display:grid;grid-template-columns:76px 1fr;align-items:center;gap:8px}
+.v80-legend .ds-chance{margin:0}
+.v80-legend span>b{display:block;font-size:13px}.v80-legend span>small{display:block;font-size:12px;color:#5E6B60}
+.ds-sp-txt .ds-chance{flex-wrap:wrap;row-gap:2px}
+.ds-sp-txt .ds-chance b.v80-ch{overflow:visible;text-overflow:clip;white-space:nowrap;font-size:12px;font-weight:700;line-height:1.2}
+.ds-sp-txt .ds-chance{column-gap:8px}
+.ds-sp-txt .ds-chance b.v80-ch{margin-left:0}
+.v80-dots{display:inline-flex;gap:3px}
+.ds-hotel-img.v77{position:relative;overflow:hidden}
+.ds-hotel-img.v77 .v77-dots{bottom:10px}
+.ds-hotel-img.v77 .v77-lab{top:10px;left:10px;right:auto}
+.ds-hotel-img.v77 .ds-hotel-tag{position:absolute;z-index:3}

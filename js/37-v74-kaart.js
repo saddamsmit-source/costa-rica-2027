@@ -97,7 +97,7 @@ dsePop=function(id){if(!id.startsWith('hotel:')&&!id.startsWith('time:'))return 
       <button class="dse-act" data-v74-day="${o.d}|overview"><span>Dag ${o.d} · ${esc(d.base)}</span>${dsI('chevR',16)}</button>`}
   else{const name=id.slice(6),info=V74_HOTEL[name]||{},days=S.filter(d=>d.hotel.includes(name)).map(d=>d.id),txt=(V48_HOTEL[name]||{}).d||'';if(!info.ll)return;
     const alts=Object.entries(V74_HOTEL).filter(([n,o])=>o.r===info.r&&n!==name).map(([n])=>n),ll=info.ll.join(',');
-    h=`<div class="dse-pop-h"><span class="dse-k v74h">Hotel · ${V53_DEFINITIEF?'definitief':'voorlopig'}</span>${x}</div><b>${esc(name)}</b>
+    h=`<div class="dse-pop-h"><span class="dse-k v74h">Hotel</span>${x}</div><b>${esc(name)}</b>
       <p class="v74-hn">${esc(dsNights(name))}</p>${txt?`<p>${esc(txt)}</p>`:''}<p class="v74-where">${dsI('pin',14)}<span>${esc(info.w)}</span></p>
       ${V53_DEFINITIEF?'':`<p class="v74-st">Eerste hotel van de Sawadee-lijst; definitief volgt vlak voor vertrek.${alts.length?' Andere opties: '+alts.map(esc).join(', ')+'.':''}</p>`}
       ${days.length?`<button class="dse-act" data-v74-day="${days[0]}|stay"><span>Dag ${days[0]} · hotelinformatie</span>${dsI('chevR',16)}</button>`:''}

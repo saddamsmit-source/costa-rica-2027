@@ -45,7 +45,7 @@ function dsHotelCard(h,d,nightsLabel){const x=V48_HOTEL[h]||{},m=V49_HOTEL_PHOTO
   return `<article class="ds-hotel">
     <div class="ds-hotel-img" style="background-image:url('${src}')">${m?'<span class="ds-hotel-tag">Sfeerbeeld</span>':''}</div>
     <div class="ds-hotel-body">
-      <div class="ds-hotel-top"><h3>${esc(h)}</h3>${V53_DEFINITIEF?'<span class="ds-pill ok">Definitief</span>':'<span class="ds-pill neutral">Voorlopig</span>'}</div>
+      <div class="ds-hotel-top"><h3>${esc(h)}</h3></div>
       ${nightsLabel?`<div class="ds-meta">${nightsLabel}</div>`:''}
       ${x.d?`<p>${esc(x.d)}</p>`:''}
       ${x.f?`<div class="ds-chips">${x.f.map(f=>`<span>${esc(f)}</span>`).join('')}</div>`:''}
@@ -55,10 +55,10 @@ function dsHotelCard(h,d,nightsLabel){const x=V48_HOTEL[h]||{},m=V49_HOTEL_PHOTO
     </div></article>`}
 function dsNights(h){const days=S.filter(d=>d.hotel.includes(h)).map(d=>d.id);if(!days.length)return '';const run=days.every((x,i)=>!i||x===days[i-1]+1);return `Dag ${run&&days.length>1?days[0]+'–'+days[days.length-1]:days.join(' en ')} · ${days.length} ${days.length===1?'nacht':'nachten'}`}
 function dsStay(d){if(!d.hotel.length)return '<div class="ds-card"><p class="ds-meta">Geen overnachting op deze dag.</p></div>';
-  return d.hotel.map(h=>dsHotelCard(h,d,dsNights(h))).join('')+`<p class="ds-note">${V53_DEFINITIEF?'Definitief volgens Sawadee.':'Voorlopig: eerste hotel van de Sawadee-lijst. Definitief volgt vlak voor vertrek.'}</p>`}
+  return d.hotel.map(h=>dsHotelCard(h,d,dsNights(h))).join('')}
 renderHotels=function(){
   const rows=H.map(([region,list])=>{const h=list[0];if(!h)return '';const d0=S.find(d=>d.hotel.includes(h))||S[0];return `<div class="ds-hrow"><div class="ds-label">${esc(region)}</div>${dsHotelCard(h,d0,dsNights(h))}</div>`}).join('');
-  return `<div class="ds-page"><div class="ds-pagehead"><h1 class="ds-title">Accommodaties</h1><p class="ds-meta">${V53_DEFINITIEF?'Definitief volgens Sawadee.':'Voorlopig: eerste hotel van de Sawadee-lijst · definitief volgt vlak voor vertrek.'} Foto's zijn sfeerbeelden.</p></div>${rows}</div>`};
+  return `<div class="ds-page"><div class="ds-pagehead"><h1 class="ds-title">Accommodaties</h1><p class="ds-meta">Accommodaties volgens Sawadee. Foto's zijn sfeerbeelden.</p></div>${rows}</div>`};
 
 /* ---------- Wildlife: soortrijen ---------- */
 const DS_SP_PHOTO={ /* naam → fotobestand (alleen prioriteitssoorten) */

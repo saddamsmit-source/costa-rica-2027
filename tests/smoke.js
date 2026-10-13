@@ -186,6 +186,42 @@ const {chromium}=require('playwright');const path=require('path');
     for(const u of srcs){const im=new Image();im.src=u;try{await im.decode()}catch(e){bad.push('laadt niet: '+u);continue}if(Math.min(im.naturalWidth,im.naturalHeight)<990)bad.push('diashow lage resolutie: '+u+' '+im.naturalWidth+'x'+im.naturalHeight)}
     return bad});
    v.forEach(x=>errs.push(x))}
+  /* v8.0: één kansschaal; per dier per plek overal hetzelfde label en gelijk aan de brondata */
+  {const basis=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','tools/wl/w21/chance_basis.json'),'utf8'));
+   const v=await p.evaluate(basis=>{const bad=[],L={4:'Zeer makkelijk',3:'Makkelijk',2:'Meer kans met gids',1:'Zeldzaam'},OLD=/Zeer kansrijk|Kansrijk|Mogelijk:|Grote kans|Redelijke kans|Kleine kans|Zeer grote kans|uitzonderlijk|Zeldzaam, maar mogelijk|Kansrijkste/;
+    const down={'Agami heron|La Fortuna':2,'Nicaraguan seed-finch|La Fortuna':2,'Black-crested coquette|La Fortuna':2,'Lesser ground-cuckoo|Rincón de la Vieja':2,'Double-striped thick-knee|Tárcoles':2};
+    for(const [n,regs] of Object.entries(basis))for(const [r,x] of Object.entries(regs)){const want=Math.min(x.t,down[n+'|'+r]||9);if(want>=1&&v47Chance(r,n)!==want)bad.push('kans wijkt af van bron: '+n+' '+r+' '+v47Chance(r,n)+'≠'+want)}
+    let cards=0;for(let d=1;d<=21;d++){tab='days';currentDay=d;daySection='wildlife';render();const app=document.getElementById('app');if(OLD.test(app.innerHTML))bad.push('dag '+d+': oude kanswoorden');
+      app.querySelectorAll('.ds-sp').forEach(c=>{const b=c.querySelector('[data-v43-kind="seen"]');if(!b)return;const n=decodeURIComponent(b.dataset.v43Species),reg=decodeURIComponent(b.dataset.v43Place),ch=v47Chance(reg,n),dc=c.querySelector('.ds-chance');cards++;
+        const lab=c.querySelector('.v80-ch')?.textContent||'',dots=dc?dc.querySelectorAll('i.f').length:0;
+        if(ch&&(lab!==L[ch]||dots!==ch))bad.push('dag '+d+' '+n+': kaart '+lab+'/'+dots+' ≠ '+L[ch]);if(!ch&&(lab||dots))bad.push('dag '+d+' '+n+': label zonder gegevens');
+        const sh=document.createElement('div');sh.innerHTML=wl2SheetHtml(n,reg);if(OLD.test(sh.innerHTML))bad.push('soortvenster '+n+': oude kanswoorden');
+        const here=sh.querySelector('.wl2-where .here small')?.textContent||'',chip=sh.querySelector('.v80-here')?.textContent||'';
+        if(ch&&(!here.startsWith(L[ch])||chip!==reg+': '+L[ch]))bad.push('soortvenster '+n+' '+reg+': '+here+' / '+chip+' ≠ '+L[ch]);
+        if((c.querySelectorAll('.ds-sp-body .ds-chips span')[0]?.textContent||'')in{'Zeer makkelijk':1,'Makkelijk':1,'Meer kans met gids':1,'Zeldzaam':1}&&c.querySelector('.ds-sp-body .ds-chips span').textContent!==L[ch])bad.push('chip '+n)})}
+    if(cards<1500)bad.push('te weinig soortkaarten gecontroleerd: '+cards);
+    const W=/\b(zeldzaam|schaars|uitzonderlijk|algemeen|talrijk|moeilijk te zien)\b/i;Object.entries(V47_SP).forEach(([n,x])=>{if(W.test(x[3]||'')&&!/^Zeer zeldzaam; zie je hem/.test(x[3]))bad.push('tip noemt zeldzaamheid: '+n)});
+    Object.entries(WL2).forEach(([n,r])=>{if(W.test(r.l||'')||W.test(r.h||''))bad.push('tekst noemt zeldzaamheid: '+n)});
+    tab='days';currentDay=9;daySection='wildlife';render();if(document.querySelector('[data-v47-filter="Zeldzaam"]'))bad.push('filter Zeldzaam zonder zeldzame soorten');
+    tab='days';currentDay=11;daySection='wildlife';render();const fz=document.querySelector('[data-v47-filter="Zeldzaam"]');if(!fz)bad.push('filter Zeldzaam ontbreekt op dag 11 (glaskikker)');fz?.click();const vis=[...document.querySelectorAll('.ds-sp')].filter(c=>c.style.display!=='none');
+    if(!vis.length)bad.push('filter Zeldzaam leeg');vis.forEach(c=>{const b=c.querySelector('[data-v43-kind="seen"]');if(b&&v47Chance(decodeURIComponent(b.dataset.v43Place),decodeURIComponent(b.dataset.v43Species))!==1)bad.push('filter Zeldzaam toont niet-zeldzaam')});
+    return {bad:bad.slice(0,15),n:bad.length,cards}},basis);
+   if(v.n)errs.push('kansschaal ('+v.n+'): '+v.bad.join('; '));else console.log('kansschaal: '+v.cards+' soortkaarten gecontroleerd')}
+  /* v8.0: hoteldiashow: alleen eigen website of gecontroleerde omgeving, 3 foto's, offline terugval */
+  {const sw=require('fs').readFileSync(path.resolve(__dirname,'..','sw.js'),'utf8');
+   const v=await p.evaluate(async()=>{const bad=[],CDN={'Cabinas Las Palmeras':'webbox.imgix.net','Catarata Ecolodge':'storage.googleapis.com'};
+    const hotels=[...new Set(S.flatMap(d=>d.hotel))];
+    for(const [h,l] of Object.entries(V80_HPICS)){const dom=new URL(V80_HSRC[h].page).hostname.replace(/^www\./,'');
+      l.forEach(x=>{const u=new URL(x.u);if(u.protocol!=='https:')bad.push('geen https: '+x.u);if(!(u.hostname.endsWith(dom)||u.hostname===CDN[h]))bad.push('foto niet van eigen site: '+h+' '+u.hostname)})}
+    for(const h of hotels){if(!V80_HFILL[h])bad.push('geen diashow: '+h);
+      const d=S.find(x=>x.hotel.includes(h));tab='days';currentDay=d.id;daySection='stay';render();await new Promise(r=>setTimeout(r,60));await v80HLoad(h);await new Promise(r=>setTimeout(r,30));
+      const el=document.querySelector(`.ds-hotel-img[data-v80h="${CSS.escape(h)}"]`);const st=el&&el.v77;
+      if(!st){bad.push('diashow niet gestart: '+h);continue}if(st.n!==3)bad.push(h+': '+st.n+' foto\'s');
+      st.slides.forEach(x=>{const m=x.src.match(/photos\/(.+)\.jpg$/);if(!(m&&V48_PHOTO[m[1]])&&!v80HAll().includes(x.src))bad.push(h+': niet-geverifieerde foto '+x.src);if(!/^(Hotel|Omgeving) · /.test(x.label||''))bad.push(h+': label ontbreekt')});
+      if(/Sfeerbeeld|vergelijkbare|oorlopig/i.test(el.closest('.ds-hotel').innerHTML))bad.push(h+': oude tekst')}
+    tab='hotels';render();if(/oorlopig/.test(document.getElementById('app').innerHTML))bad.push('hotelscherm noemt voorlopig');
+    return {bad,all:v80HAll()}});
+   v.bad.forEach(x=>errs.push(x));v.all.forEach(u=>{if(!sw.includes('"'+u+'"'))errs.push('hotelfoto niet in service worker: '+u)})}
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
   const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();
@@ -197,7 +233,7 @@ const {chromium}=require('playwright');const path=require('path');
   const mf=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','manifest.webmanifest'),'utf8'));if(!mf.icons.some(i=>i.purpose==='maskable'))errs.push('geen maskable icoon');
   /* v7.8: alles wat in beeld kwam moet een geverifieerde foto zijn */
   {const seen=[...imgs,...(await p.evaluate(()=>[...window.__imgs||[]]))],ok=await p.evaluate(()=>Object.keys(V48_PHOTO));const bad=new Set();
-    seen.forEach(u=>{if(/^data:|\.svg(\?|$)|icon-/.test(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
+    const hp=await p.evaluate(()=>v80HAll());seen.forEach(u=>{if(/^data:|\.svg(\?|$)|icon-/.test(u)||hp.includes(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
       if(/^wl\//.test(k))return;if(!ok.includes(k))bad.add(k)});
     if(bad.size)errs.push('niet-geverifieerde afbeelding getoond: '+[...bad].join(', '))}
   /* v7.5: veilige import van een oude back-up en terugzetten */

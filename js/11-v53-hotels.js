@@ -12,13 +12,13 @@ const V53_HOTELS={
  'Corcovado':'Cabinas Las Palmeras',
  'Esterillos':'Hotel Playa Bejuco'
 };
-const V53_DEFINITIEF=false; /* op true zetten zodra de definitieve lijst is verwerkt */
+const V53_DEFINITIEF=true; /* v8.0: hotels gelden als vast; wijzigt Sawadee iets, dan passen we de lijst aan */
 (function(){
   H.forEach(e=>{const pick=V53_HOTELS[e[0]];if(pick)e[1]=[pick]});
   S.forEach(d=>{if(!d.hotel.length)return;const k=V53_REGION_OF(d);if(V53_HOTELS[k])d.hotel=[V53_HOTELS[k]]});
 })();
 function V53_REGION_OF(d){const p=d.place.toLowerCase();if(p.includes('vergel')||p.includes('uvita'))return 'Vergel de Punta Mala / Uvita';if(p.includes('corcovado'))return 'Corcovado';if(p.includes('manuel'))return 'Esterillos';for(const k of Object.keys(V53_HOTELS))if(p.includes(k.toLowerCase()))return k;return v43place(d.place)}
-const V53_STATUS=()=>V53_DEFINITIEF?'Definitief volgens Sawadee':'Voorlopig: eerste hotel van de Sawadee-lijst · definitief volgt vlak voor vertrek';
+const V53_STATUS=()=>V53_DEFINITIEF?'Accommodatie volgens Sawadee':'Voorlopig: eerste hotel van de Sawadee-lijst · definitief volgt vlak voor vertrek';
 
 /* hotelkaart: label */
 const v53PrevHotelCard=v48HotelCard;

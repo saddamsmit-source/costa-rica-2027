@@ -129,7 +129,7 @@ function dseEmergencyHtml(edit){const e=state.dsEmergency,td=v48TripDay(),d=S[(t
     ${row(dsI('pin',20),'Nederlandse ambassade, 24/7','+31 247 247 247','tel:+31247247247')}
     ${row(dsI('leaf',20),'Sawadee WhatsApp, 24/7','020-627 51 29 · antwoord tijdens kantooruren','https://wa.me/31206275129')}
     ${row(dsI('leaf',20),'Sawadee kantoor','020-420 22 20 · 10:00–17:30 Nederlandse tijd','tel:+31204202220')}
-    ${hotel?row(dsI('bed',20),'Hotel '+(td?'vandaag':'dag '+d.id)+': '+esc(hotel),esc(V53_DEFINITIEF?'Definitief':'Voorlopig')+' · adres opzoeken (internet)','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(hotel+', '+v47Region(d)+', Costa Rica')):''}
+    ${hotel?row(dsI('bed',20),'Hotel '+(td?'vandaag':'dag '+d.id)+': '+esc(hotel),'Adres opzoeken (internet)','https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(hotel+', '+v47Region(d)+', Costa Rica')):''}
     <div class="ds-label" style="margin:14px 2px 6px">Eigen gegevens</div>${own}
     <p class="dse-foot">Werkt zonder internet. Bellen gaat via je telefoon; buitenlandse nummers met +31.</p>`}
 function dseEmergency(edit){let ov=document.getElementById('dseEm');if(!ov){ov=document.createElement('div');ov.id='dseEm';ov.className='dse-overlay';document.body.append(ov);ov.onclick=e=>{if(e.target===ov)ov.remove()}}

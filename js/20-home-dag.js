@@ -102,7 +102,7 @@ function dsOverview(d){
   const know=dsKnow(d);
   return `<div class="ds-card ds-overview"><h3 class="ds-title">Dagoverzicht</h3><p class="ds-lede">${esc(V50_TEXT[d.id]||d.base)}</p>${brief}<div class="ds-sun ds-num">${dsI('sunrise',15)}Zon op ${sun.rise}<span aria-hidden="true">·</span>${dsI('sunset',15)}onder ${sun.set}</div>
     <div class="ds-timeline">${slots||'<p class="ds-meta" style="margin-top:12px">Geen activiteiten op deze dag.</p>'}</div></div>
-  ${hotel?`<button class="ds-stay" data-section="stay"><img src="${V49_HOTEL_PHOTO[hotel]?'./photos/'+V49_HOTEL_PHOTO[hotel].key+'.jpg':locationPhoto(d)}" alt=""><span><span class="ds-label">Overnachting</span><b>${esc(hotel)}</b><small>${V53_DEFINITIEF?'Definitief volgens Sawadee':'Voorlopig · Sawadee-lijst'}</small></span>${dsI('chevR',20)}</button>`:''}
+  ${hotel?`<button class="ds-stay" data-section="stay"><img src="${V49_HOTEL_PHOTO[hotel]?'./photos/'+V49_HOTEL_PHOTO[hotel].key+'.jpg':locationPhoto(d)}" alt=""><span><span class="ds-label">Overnachting</span><b>${esc(hotel)}</b><small>${esc(d.place)}</small></span>${dsI('chevR',20)}</button>`:''}
   ${know}
   <details class="ds-notes" ${state.notes[d.id]?'open':''}><summary>${dsI('note',18)}Mijn notities${state.notes[d.id]?'<em>opgeslagen</em>':''}</summary><textarea data-note="${d.id}" placeholder="Waarnemingen, tijden, fotomomenten…" aria-label="Notities dag ${d.id}">${esc(state.notes[d.id]||'')}</textarea></details>`}
 function dsKnow(d){
