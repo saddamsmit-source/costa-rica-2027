@@ -1,6 +1,6 @@
 /* v7.7 · diashow bovenaan dag en Home */
 .v77 .v77-slides{position:absolute!important;inset:0;z-index:0;overflow:hidden}
-.v77 .v77-slides i{position:absolute;inset:0;background:#0E3B2A center/cover no-repeat;opacity:0;transition:opacity 1.2s ease;will-change:opacity}
+.v77 .v77-slides i{position:absolute;inset:0;background:transparent center/cover no-repeat;opacity:0;transition:opacity 1.2s ease;will-change:opacity}
 .v77 .v77-slides i.on{opacity:1}
 .v77:before{z-index:1}
 .v77>*:not(.v77-slides){z-index:2}
