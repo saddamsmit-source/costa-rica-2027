@@ -149,6 +149,15 @@ const {chromium}=require('playwright');const path=require('path');
   const ms=await p.evaluate(()=>{const keep=JSON.stringify(state.v43Observations);Object.keys(V47_SP).forEach((k,i)=>{const o=state.v43Observations[v43name(k)]??={name:k,places:{}};o.places['Cahuita']??={seen:true,photo:false,t:new Date(Date.now()-i*6e4).toISOString()}});
     tab='wildlife';const t=performance.now();render();const dt=performance.now()-t;state.v43Observations=JSON.parse(keep);return dt});
   if(ms>250)errs.push('Wildlife-pagina traag met 634 waarnemingen: '+Math.round(ms)+' ms');
+  /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
+  const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
+  const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();
+    document.querySelectorAll('button,a,select,[role=button]').forEach(el=>{const r=el.getBoundingClientRect();if(r.height>2&&r.height<44&&r.width>0&&!el.closest('svg')&&!el.closest('.ds-credits'))bad.push(t+'/'+(d||'')+' '+(el.className.baseVal??el.className)+' '+Math.round(r.height))});
+    document.querySelectorAll('#app *').forEach(el=>{if([...el.childNodes].some(n=>n.nodeType===3&&n.textContent.trim())&&el.offsetParent&&!el.closest('svg')&&parseFloat(getComputedStyle(el).fontSize)<12)bad.push(t+'/'+(d||'')+' tekst '+el.tagName+'.'+el.className+' in '+el.parentElement.className+' '+getComputedStyle(el).fontSize)})}
+    tab='days';currentDay=16;daySection='map';render();document.querySelector('.v74-hotel.on').dispatchEvent(new MouseEvent('click',{bubbles:true}));if(getComputedStyle(document.querySelector('.ds-fab')).pointerEvents!=='none')bad.push('knop Waarneming over kaartvenster');
+    return bad});
+  if(ux.length)errs.push('leesbaarheid/tikdoelen: '+[...new Set(ux)].slice(0,8).join('; '));
+  const mf=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','manifest.webmanifest'),'utf8'));if(!mf.icons.some(i=>i.purpose==='maskable'))errs.push('geen maskable icoon');
   /* v7.5: veilige import van een oude back-up en terugzetten */
   const ip=await b.newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});

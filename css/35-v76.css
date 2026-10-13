@@ -1,0 +1,29 @@
+/* v7.6 · leesbaarheid, tikdoelen, contrast, kaartvenster vrij */
+/* contrast: wit op groen/oranje minimaal 4,5:1 */
+:root{--ds-leaf:#1A7A43}
+.v50-badge.k-saw,.ds-next-chips em.saw{background:#1A7A43}
+.ds-badge.own,.v50-badge.k-own{background:#B85A0C}
+.ds-pill.warn{color:#9C4A0A}
+/* tikdoelen minimaal 44 px */
+.ds-filter button,.wg-status button,.dse-chip,.ds-chipbtn,.v51-quick button,.ds-back,.dse-sosbtn,.ds-daypick select{min-height:44px}
+.ds-iconbtn{width:44px;height:44px}
+.ds-mapexp{width:44px;height:44px}
+/* tekst minimaal 12 px */
+.mobile-bottom button{font-size:12px!important}
+.ds-tabs button{font-size:12px}
+.ds-label,.ds-wild-sech .ds-label,.v47-cat-h,.v47-cat-h em{font-size:12px}
+.ds-chips span,.ds-sp-txt em,.wl2-target small,.ds-pracrow small,.ds-hotel-photo,.ds-act-meta span,.ds-gps span{font-size:12.5px}
+.ds-pill,.ds-hotel-tag,.ds-leg-img em,.ds-tile small,.v51-fxrow label,.ds-act-pill span,small.ds-num,.footer,.ds-brow small,.ds-wday span span,.ds-irow small,.ds-bsum-top span,.ds-slot-h span,.wg-head span,.wl2-life-h span{font-size:12px}
+.ds-stats small,.ds-brief small{font-size:12px}
+.ds-chance small{font-size:11.5px}
+/* knop Waarneming wijkt zolang een kaartvenster open is */
+body:has(.dse-pop:not([hidden])) .ds-fab{opacity:0;pointer-events:none;transform:translateY(12px)}
+.ds-fab{transition:opacity .15s,transform .15s}
+/* soorten zonder gangbare Nederlandse naam */
+.wl2-names .v76-nonl{display:block;font-style:normal;font-size:12.5px;color:var(--ds-muted);margin-bottom:2px}
+.ds-filter button,.v51-quick button,.wg-sel select{min-height:44px!important}
+.ds-hotel-photo,.ds-next-chips em,.ds-chance small,.v47-cat-h small{font-size:12px!important}
+.v51-fxrow label,button small.ds-num,small.ds-num,summary small,.ds-sp-txt small{font-size:12px!important}
+.ds-wx-day small{font-size:12px!important}
+.ds-notes summary em{font-size:12px!important}
+.ds-credits small,.ds-credits a{font-size:12px!important}
