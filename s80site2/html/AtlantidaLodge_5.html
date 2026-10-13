@@ -1,0 +1,1601 @@
+https://web.atlantidalodge.com/reservations
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Atlantida Lodge Cahuita | Caribbean Hotel in Cahuita, Costa Rica</title>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="theme-color" content="#071827">
+
+<link rel="shortcut icon" href="https://web.atlantidalodge.com/images/logo.png">
+
+<meta name="author" content="Atlantida Lodge Cahuita">
+
+<meta name="keywords" content="
+Atlantida Lodge Cahuita,
+hotel in Cahuita Costa Rica,
+Caribbean hotel Costa Rica,
+Playa Negra Cahuita,
+Costa Rica tropical hotel,
+boutique lodge Cahuita,
+rooms in Cahuita,
+Costa Rica rainforest hotel,
+hotel near Playa Negra,
+Caribbean escape Costa Rica,
+luxury lodge Cahuita,
+Costa Rica beach hotel
+">
+
+<meta name="description" content="
+Atlantida Lodge Cahuita is a tropical Caribbean escape located in Cahuita, Costa Rica. Experience elegant rooms, nature, pool, restaurant, warm hospitality and unforgettable stays near Playa Negra.
+">
+
+<meta property="og:title" content="Atlantida Lodge Cahuita | Caribbean Hotel in Costa Rica">
+
+<meta property="og:description" content="
+Book your getaway to paradise in Cahuita, Costa Rica. Tropical comfort, elegant rooms, Caribbean nature and unforgettable hospitality at Atlantida Lodge Cahuita.
+">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="https://web.atlantidalodge.com/images/slideatlantida1.webp">
+
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Atlantida Lodge Cahuita">
+
+<meta name="twitter:description" content="
+Elegant tropical stays in Cahuita, Costa Rica. Discover Atlantida Lodge and experience the Caribbean like never before.
+">
+
+<meta name="twitter:image" content="https://web.atlantidalodge.com/images/slideatlantida1.webp">
+
+		<meta name="csrf-token" content="qpW4KhW5fhyAc4BBwYHQhopwsasHvBYeXq4cwY2N">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+		<link rel="stylesheet" href="https://web.atlantidalodge.com/css/animate.css" />
+		<link rel="stylesheet" href="https://web.atlantidalodge.com/css/blueimp-gallery.css" />
+
+		<link rel="stylesheet" href="https://web.atlantidalodge.com/css/bootstrap-theme-zephyr.css" />
+	<link rel="stylesheet" href="https://web.atlantidalodge.com/css/dropzone.min.css" />
+		<link rel="stylesheet" href="https://web.atlantidalodge.com/css/custom-style.css" />
+
+		<script type="text/javascript" src="https://web.atlantidalodge.com/js/jquery-3.3.1.min.js"></script>
+
+		<style>
+:root{
+    --atl-negro:#060708;
+    --atl-blanco:#ffffff;
+    --atl-marfil:#f5f1e8;
+    --atl-arena:#d8c7aa;
+    --atl-azul:#071827;
+    --atl-azul-profundo:#020b14;
+    --atl-azul-suave:#16324c;
+    --atl-dorado:#c7a46b;
+    --atl-texto:#20231f;
+    --atl-serif:"Cormorant Garamond","Georgia",serif;
+    --atl-sans:"Montserrat","Inter","Arial",sans-serif;
+    --atl-transicion:all .45s cubic-bezier(.22,.61,.36,1);
+}
+
+.navbar-brand,
+.topbar,
+.navbar,
+.footer{
+    display:none!important;
+}
+
+body{
+    margin:0;
+    background:var(--atl-negro);
+}
+
+.atl-booking-page{
+    width:100%;
+    min-height:100vh;
+    background:var(--atl-negro);
+    font-family:var(--atl-sans);
+    color:var(--atl-blanco);
+    overflow-x:hidden;
+}
+
+.atl-booking-hero{
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+    background:var(--atl-negro);
+}
+
+.atl-booking-bg,
+.atl-booking-overlay{
+    position:absolute;
+    inset:0;
+}
+
+.atl-booking-bg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.72) contrast(1.05) saturate(1.04);
+    transform:scale(1.05);
+}
+
+.atl-booking-overlay{
+    background:
+        linear-gradient(to bottom,rgba(0,0,0,.72),rgba(0,0,0,.42),rgba(0,0,0,.86)),
+        radial-gradient(circle at center,rgba(255,255,255,.08),rgba(0,0,0,.58) 72%);
+}
+
+.atl-booking-header{
+    position:relative;
+    z-index:5;
+    height:104px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 34px;
+}
+
+.atl-booking-logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:270px;
+    height:100%;
+}
+
+.atl-booking-logo img{
+    width:auto;
+    max-width:270px;
+    max-height:105px;
+    object-fit:contain;
+}
+
+.atl-booking-back{
+    position:absolute;
+    left:34px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#fff;
+    text-decoration:none;
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 18px;
+    border:1px solid rgba(255,255,255,.38);
+    border-radius:999px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:11px;
+    font-weight:900;
+}
+
+.atl-booking-secure{
+    position:absolute;
+    right:34px;
+    top:50%;
+    transform:translateY(-50%);
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:11px;
+    font-weight:900;
+    color:rgba(255,255,255,.82);
+    border-bottom:1px solid rgba(255,255,255,.7);
+    padding-bottom:5px;
+}
+
+.atl-booking-shell{
+    position:relative;
+    z-index:4;
+    max-width:1500px;
+    margin:0 auto;
+    padding:52px 42px 90px;
+}
+
+.atl-booking-copy{
+    max-width:980px;
+    margin:0 auto 46px;
+    text-align:center;
+}
+
+.atl-booking-copy span{
+    display:inline-block;
+    text-transform:uppercase;
+    letter-spacing:.24em;
+    font-size:11px;
+    font-weight:900;
+    color:rgba(255,255,255,.78);
+    margin-bottom:24px;
+}
+
+.atl-booking-copy h1{
+    font-family:var(--atl-serif);
+    font-size:clamp(20px,5vw,50px);
+    line-height:.88;
+    font-weight:200;
+    letter-spacing:-.015em;
+    margin:0 auto 30px;
+}
+
+.atl-booking-copy p{
+    max-width:760px;
+    color:rgba(255,255,255,.82);
+    font-size:17px;
+    line-height:1.9;
+    margin:0 auto;
+}
+
+.atl-booking-card{
+    background:rgba(255,255,255,.96);
+    color:var(--atl-texto);
+    border-radius:34px;
+    padding:34px;
+    box-shadow:0 34px 100px rgba(0,0,0,.34);
+    backdrop-filter:blur(18px);
+    max-width:1280px;
+    margin:0 auto;
+}
+
+.atl-booking-card-head{
+    margin-bottom:24px;
+    text-align:center;
+}
+
+.atl-booking-card-head span{
+    display:block;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:10px;
+    font-weight:900;
+    color:var(--atl-dorado);
+    margin-bottom:8px;
+}
+
+.atl-booking-card-head h2{
+    font-family:var(--atl-serif);
+    font-size:42px;
+    line-height:.96;
+    font-weight:500;
+    letter-spacing:-.045em;
+    color:var(--atl-texto);
+    margin:0 0 10px;
+}
+
+.atl-booking-card-head p{
+    margin:0;
+    color:#6b7280;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.atl-booking-form-grid{
+    display:grid;
+    grid-template-columns:1.35fr repeat(5,1fr);
+    gap:14px;
+    align-items:end;
+}
+
+.atl-booking-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.atl-booking-field{
+    margin-bottom:16px;
+}
+
+.atl-booking-form-grid .atl-booking-field{
+    margin-bottom:0;
+}
+
+.atl-booking-field label{
+    display:block;
+    text-transform:uppercase;
+    letter-spacing:.13em;
+    font-size:10px;
+    font-weight:900;
+    color:var(--atl-azul);
+    margin-bottom:8px;
+}
+
+.atl-booking-field input,
+.atl-booking-field select,
+.atl-booking-field textarea{
+    width:100%;
+    border:1px solid rgba(7,24,39,.12);
+    background:#fff;
+    color:var(--atl-texto);
+    border-radius:16px;
+    padding:14px 16px;
+    outline:none;
+    font-size:14px;
+    transition:var(--atl-transicion);
+}
+
+.atl-booking-field input,
+.atl-booking-field select{
+    min-height:52px;
+}
+
+.atl-booking-field textarea{
+    resize:vertical;
+    line-height:1.7;
+}
+
+.atl-booking-field input:focus,
+.atl-booking-field select:focus,
+.atl-booking-field textarea:focus{
+    border-color:var(--atl-dorado);
+    box-shadow:0 0 0 4px rgba(199,164,107,.12);
+}
+
+.atl-booking-primary,
+.atl-booking-paypal{
+    width:100%;
+    min-height:52px;
+    border:0;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform:uppercase;
+    letter-spacing:.13em;
+    font-size:10px;
+    font-weight:900;
+    cursor:pointer;
+    transition:var(--atl-transicion);
+    white-space:nowrap;
+}
+
+.atl-booking-primary{
+    background:var(--atl-azul);
+    color:#fff;
+}
+
+.atl-booking-primary:hover{
+    background:var(--atl-dorado);
+    color:var(--atl-azul);
+}
+
+.atl-booking-paypal{
+    min-height:56px;
+    background:#ffc439;
+    color:#111827;
+}
+
+.atl-booking-paypal:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 44px rgba(0,0,0,.16);
+}
+
+.atl-booking-message{
+    display:none;
+    margin-top:18px;
+    padding:13px 15px;
+    border-radius:16px;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.atl-booking-message.ok{
+    display:block;
+    background:#ecfdf5;
+    color:#065f46;
+    border:1px solid #a7f3d0;
+}
+
+.atl-booking-message.error{
+    display:block;
+    background:#fef2f2;
+    color:#991b1b;
+    border:1px solid #fecaca;
+}
+
+.atl-booking-bottom{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(380px,.8fr);
+    gap:24px;
+    align-items:start;
+    margin-top:22px;
+}
+
+.atl-booking-summary{
+    margin-top:0;
+}
+
+.atl-summary-empty{
+    min-height:220px;
+    border-radius:22px;
+    background:#f5f1e8;
+    border:1px dashed rgba(7,24,39,.18);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    color:#6b7280;
+    text-align:center;
+    padding:20px;
+}
+
+.atl-summary-empty i{
+    font-size:28px;
+    color:var(--atl-azul);
+}
+
+.atl-summary-box{
+    border-radius:22px;
+    background:#f5f1e8;
+    border:1px solid rgba(7,24,39,.08);
+    padding:20px;
+}
+
+.atl-summary-row{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    padding:10px 0;
+    border-bottom:1px solid rgba(7,24,39,.08);
+    color:#374151;
+    font-size:14px;
+}
+
+.atl-summary-row:last-child{
+    border-bottom:0;
+}
+
+.atl-summary-row strong{
+    color:#071827;
+    text-align:right;
+}
+
+.atl-summary-total{
+    margin-top:14px;
+    padding-top:18px;
+    border-top:2px solid rgba(7,24,39,.12);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+}
+
+.atl-summary-total span{
+    text-transform:uppercase;
+    letter-spacing:.13em;
+    font-size:11px;
+    font-weight:900;
+    color:#071827;
+}
+
+.atl-summary-total strong{
+    font-family:var(--atl-serif);
+    font-size:36px;
+    line-height:1;
+    font-weight:500;
+    color:#071827;
+}
+
+.atl-guest-form{
+    display:none;
+    background:#fff;
+    border:1px solid rgba(7,24,39,.08);
+    border-radius:24px;
+    padding:24px;
+}
+
+.atl-guest-form.activo{
+    display:block;
+}
+
+.atl-booking-card-head-small{
+    text-align:left;
+    margin-bottom:20px;
+}
+
+.atl-booking-card-head-small h2{
+    font-size:36px;
+}
+
+.atl-booking-dates-grid{
+    grid-template-columns:repeat(2,1fr);
+    margin-bottom:8px;
+}
+
+.atl-booking-rooms-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:18px;
+    margin:8px 0 14px;
+}
+
+.atl-booking-rooms-head strong{
+    display:block;
+    color:#071827;
+    font-size:14px;
+}
+
+.atl-booking-rooms-head span{
+    display:block;
+    color:#6b7280;
+    font-size:12px;
+    margin-top:3px;
+}
+
+.atl-booking-add-room{
+    border:1px solid rgba(7,24,39,.14);
+    background:#fff;
+    color:#071827;
+    border-radius:12px;
+    min-height:38px;
+    padding:8px 13px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    white-space:nowrap;
+}
+
+.atl-booking-rooms{
+    display:grid;
+    gap:10px;
+}
+
+.atl-booking-room-row{
+    display:grid;
+    grid-template-columns:34px minmax(220px,1fr) 110px 110px 38px;
+    gap:10px;
+    align-items:end;
+    background:rgba(245,241,232,.72);
+    border:1px solid rgba(7,24,39,.08);
+    border-radius:18px;
+    padding:12px;
+}
+
+.atl-booking-room-row .atl-booking-field{
+    margin-bottom:0!important;
+}
+
+.atl-booking-room-number{
+    align-self:center;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#071827;
+    color:#fff;
+    font-size:11px;
+    font-weight:900;
+}
+
+.atl-booking-remove-room{
+    width:38px;
+    height:46px;
+    border:0;
+    border-radius:12px;
+    background:rgba(153,27,27,.08);
+    color:#991b1b;
+}
+
+.atl-booking-remove-room:disabled{
+    opacity:.25;
+    cursor:not-allowed;
+}
+
+.atl-booking-check-all{
+    width:100%;
+    margin-top:14px;
+}
+
+.atl-booking-commercial-codes{
+    margin-top:14px;
+    padding:16px;
+    border:1px solid rgba(7,24,39,.10);
+    border-radius:18px;
+    background:#fff;
+}
+
+.atl-booking-commercial-codes > div:first-child{
+    margin-bottom:12px;
+}
+
+.atl-booking-commercial-codes strong,
+.atl-booking-commercial-codes span{
+    display:block;
+}
+
+.atl-booking-commercial-codes strong{
+    color:#071827;
+    font-size:14px;
+}
+
+.atl-booking-commercial-codes span{
+    color:#6b7280;
+    font-size:12px;
+    line-height:1.5;
+    margin-top:3px;
+}
+
+.atl-booking-commercial-codes .atl-booking-form-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.atl-booking-commercial-breakfast{
+    grid-column:1 / -1;
+}
+
+.atl-booking-commercial-codes .atl-booking-field{
+    margin-bottom:0;
+}
+
+.atl-summary-room{
+    background:#fff;
+    border:1px solid rgba(7,24,39,.08);
+    border-radius:14px;
+    padding:12px;
+    margin-bottom:10px;
+}
+
+.atl-summary-room-title{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:7px;
+    color:#071827;
+}
+
+.atl-summary-room-title span{
+    color:#c7a46b;
+    font-size:10px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+@media(max-width:1199px){
+    .atl-booking-form-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .atl-booking-field-room{
+        grid-column:span 3;
+    }
+
+    .atl-booking-bottom{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:767px){
+    .atl-booking-header{
+        height:86px;
+        padding:0 18px;
+    }
+
+    .atl-booking-logo img{
+        max-width:160px;
+        max-height:72px;
+    }
+
+    .atl-booking-back{
+        left:18px;
+        width:48px;
+        height:48px;
+        min-height:48px;
+        padding:0;
+        justify-content:center;
+        font-size:0;
+    }
+
+    .atl-booking-back i{
+        font-size:13px;
+    }
+
+    .atl-booking-secure{
+        display:none;
+    }
+
+    .atl-booking-shell{
+        padding:30px 18px 70px;
+    }
+
+    .atl-booking-copy{
+        text-align:left;
+    }
+
+    .atl-booking-copy h1{
+        font-size:56px;
+    }
+
+    .atl-booking-copy p{
+        margin-left:0;
+        font-size:15px;
+    }
+
+    .atl-booking-card{
+        padding:24px;
+        border-radius:28px;
+    }
+
+    .atl-booking-card-head{
+        text-align:left;
+    }
+
+    .atl-booking-form-grid,
+    .atl-booking-grid{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .atl-booking-field-room{
+        grid-column:auto;
+    }
+
+    .atl-booking-field{
+        margin-bottom:16px!important;
+    }
+
+    .atl-guest-form{
+        padding:20px;
+    }
+
+    .atl-booking-dates-grid{
+        grid-template-columns:1fr;
+    }
+
+    .atl-booking-commercial-codes .atl-booking-form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .atl-booking-commercial-codes .atl-booking-field + .atl-booking-field{
+        margin-top:12px;
+    }
+
+    .atl-booking-rooms-head{
+        align-items:stretch;
+        flex-direction:column;
+    }
+
+    .atl-booking-room-row{
+        grid-template-columns:34px 1fr 38px;
+    }
+
+    .atl-booking-room-row .atl-booking-field-room{
+        grid-column:2;
+    }
+
+    .atl-booking-room-row .atl-booking-field:not(.atl-booking-field-room){
+        grid-column:2 / span 2;
+    }
+
+    .atl-booking-remove-room{
+        grid-column:3;
+        grid-row:1;
+    }
+}
+</style>
+				<script>
+			var siteAddr = "https://web.atlantidalodge.com/";
+			var defaultPageLimit = 20;
+			var csrfToken = "qpW4KhW5fhyAc4BBwYHQhopwsasHvBYeXq4cwY2N";
+			var requestErrorMessage = "Unable to complete request";
+			$.ajaxSetup({
+				headers: {
+					'X-CSRF-TOKEN': csrfToken
+				}
+			});
+		</script>
+	</head>
+		<body id="index" class="with-login reservations-index">
+
+		<div id="page-wrapper">
+			<!-- Show progress bar when ajax upload-->
+			<div id="ajax-progress-bar" class="progress"  style="display:none">
+				<div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0"></div>
+			</div>
+			<div id="topbar" class="navbar navbar-expand-md fixed-top atl-topbar">
+    <div class="container-fluid atl-topbar-inner">
+        <a class="navbar-brand atl-admin-brand" href="/home">
+            <img src="https://web.atlantidalodge.com/images/atlantidanegro.png" alt="Atlantida Lodge" />
+        </a>
+    </div>
+</div>
+			<div id="main-content">
+				<!-- Page Main Content Start -->
+					<div id="page-content">
+						
+<div class="atl-booking-page">
+
+    <section class="atl-booking-hero">
+
+        <div class="atl-booking-bg">
+            <img src="https://web.atlantidalodge.com/images/slideatlantida7.webp" alt="Atlantida Lodge">
+        </div>
+
+        <div class="atl-booking-overlay"></div>
+
+        <header class="atl-booking-header">
+            <a href="https://web.atlantidalodge.com" class="atl-booking-back">
+                <i class="fa fa-arrow-left"></i>
+                Back to Home
+            </a>
+
+            <a href="https://web.atlantidalodge.com" class="atl-booking-logo">
+                <img src="https://web.atlantidalodge.com/images/atlantidablanco.png" alt="Atlantida Lodge">
+            </a>
+
+            <span class="atl-booking-secure">Secure booking</span>
+        </header>
+
+        <div class="atl-booking-shell">
+
+            <div class="atl-booking-copy">
+                <span>Atlantida Lodge Cahuita</span>
+
+                <h1>Reserve your Caribbean escape.</h1>
+
+                <p>
+                    Select your room, travel dates and guests to check availability and calculate your stay before completing payment securely with PayPal.
+                </p>
+            </div>
+
+            <div class="atl-booking-card">
+
+                <div class="atl-booking-card-head">
+                    <span>Step 1</span>
+                    <h2>Plan your stay</h2>
+                    <p>Check availability and see your estimated total.</p>
+                </div>
+
+                <form id="atlBookingForm">
+                    <input type="hidden" name="_token" value="qpW4KhW5fhyAc4BBwYHQhopwsasHvBYeXq4cwY2N" autocomplete="off">
+                    <div class="atl-booking-form-grid atl-booking-dates-grid">
+                        <div class="atl-booking-field">
+                            <label>Arrival</label>
+                            <input type="date" name="fecha_llegada" id="fecha_llegada" required>
+                        </div>
+
+                        <div class="atl-booking-field">
+                            <label>Departure</label>
+                            <input type="date" name="fecha_salida" id="fecha_salida" required>
+                        </div>
+                    </div>
+
+                    <div class="atl-booking-rooms-head">
+                        <div>
+                            <strong>Rooms in your stay</strong>
+                            <span>Add every room you need before checking availability.</span>
+                        </div>
+                        <button type="button" class="atl-booking-add-room" id="atlAgregarHabitacion">
+                            <i class="fa fa-plus"></i> Add another room
+                        </button>
+                    </div>
+
+                    <div class="atl-booking-rooms" id="atlBookingRooms">
+                        <div class="atl-booking-room-row">
+                            <div class="atl-booking-room-number">1</div>
+                            <div class="atl-booking-field atl-booking-field-room">
+                                <label>Room type</label>
+                                <select class="atl-room-select" required>
+                                                                            <option
+                                            value="1"
+                                            data-image="https://web.atlantidalodge.com/images/slideatlantida7.webp"
+                                            data-capacity="3"
+                                            selected>
+                                            Deluxe Room
+                                        </option>
+                                                                            <option
+                                            value="2"
+                                            data-image="https://web.atlantidalodge.com/images/estandar.webp"
+                                            data-capacity="3"
+                                            >
+                                            Standard Room
+                                        </option>
+                                                                            <option
+                                            value="3"
+                                            data-image="https://web.atlantidalodge.com/images/juniorsuite.webp"
+                                            data-capacity="3"
+                                            >
+                                            Junior Suite
+                                        </option>
+                                                                    </select>
+                            </div>
+                            <div class="atl-booking-field">
+                                <label>Adults</label>
+                                <input type="number" class="atl-room-adults" value="2" min="1" required>
+                            </div>
+                            <div class="atl-booking-field">
+                                <label>Children</label>
+                                <input type="number" class="atl-room-children" value="0" min="0">
+                            </div>
+                            <button type="button" class="atl-booking-remove-room" aria-label="Remove room">
+                                <i class="fa fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="atl-booking-commercial-codes">
+                        <div>
+                            <strong>Commercial rates</strong>
+                            <span>Enter the codes supplied by the hotel. A promotion can be combined with a wholesale rate.</span>
+                        </div>
+                        <div class="atl-booking-form-grid">
+                            <div class="atl-booking-field">
+                                <label>Agency or wholesale code</label>
+                                <input type="text" name="codigo_mayorista" id="codigo_mayorista" maxlength="80" autocomplete="off">
+                            </div>
+                            <div class="atl-booking-field">
+                                <label>Promotion code</label>
+                                <input type="text" name="codigo_promocion" id="codigo_promocion" maxlength="80" autocomplete="off">
+                            </div>
+                            <div class="atl-booking-field atl-booking-commercial-breakfast">
+                                <label>Wholesale breakfast plan</label>
+                                <select name="incluye_desayuno" id="incluye_desayuno">
+                                    <option value="0">Without breakfast</option>
+                                    <option value="1">Breakfast included</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="atl-booking-primary atl-booking-check-all" id="atlCalcularReserva">
+                        Check availability
+                    </button>
+                </form>
+
+                <div class="atl-booking-message" id="atlBookingMessage"></div>
+
+                <div class="atl-booking-bottom">
+                    <div class="atl-booking-summary" id="atlBookingSummary">
+                        <div class="atl-summary-empty">
+                            <i class="fa fa-calendar-check"></i>
+                            <span>Your stay summary will appear here.</span>
+                        </div>
+                    </div>
+
+                    <form id="atlGuestForm" class="atl-guest-form">
+                        <input type="hidden" name="_token" value="qpW4KhW5fhyAc4BBwYHQhopwsasHvBYeXq4cwY2N" autocomplete="off">
+                        <input type="hidden" name="habitaciones" id="res_habitaciones">
+                        <input type="hidden" name="fecha_llegada" id="res_fecha_llegada">
+                        <input type="hidden" name="fecha_salida" id="res_fecha_salida">
+                        <input type="hidden" name="codigo_mayorista" id="res_codigo_mayorista">
+                        <input type="hidden" name="codigo_promocion" id="res_codigo_promocion">
+                        <input type="hidden" name="incluye_desayuno" id="res_incluye_desayuno">
+
+                        <div class="atl-booking-card-head atl-booking-card-head-small">
+                            <span>Step 2</span>
+                            <h2>Guest information</h2>
+                            <p>No account needed. Complete your details to continue to PayPal.</p>
+                        </div>
+
+                        <div class="atl-booking-grid">
+                            <div class="atl-booking-field">
+                                <label>First name</label>
+                                <input type="text" name="nombres" required>
+                            </div>
+
+                            <div class="atl-booking-field">
+                                <label>Last name</label>
+                                <input type="text" name="apellidos">
+                            </div>
+                        </div>
+
+                        <div class="atl-booking-field">
+                            <label>Email</label>
+                            <input type="email" name="email" required>
+                        </div>
+
+                        <div class="atl-booking-grid">
+                            <div class="atl-booking-field">
+                                <label>Phone</label>
+                                <input type="text" name="telefono">
+                            </div>
+
+                            <div class="atl-booking-field">
+                                <label>Country</label>
+                                <input type="text" name="pais">
+                            </div>
+                        </div>
+
+                        <div class="atl-booking-field">
+                            <label>Special requests</label>
+                            <textarea name="notas_cliente" rows="3"></textarea>
+                        </div>
+
+                        <button type="button" class="atl-booking-paypal" id="atlCrearReserva">
+                            Continue to PayPal
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+					</div>
+				<!-- Page Main Content [End] -->
+				<!-- Page Footer Start -->
+				<footer class="footer atl-admin-footer">
+    <div class="container-fluid">
+        <div class="atl-admin-footer-copy">
+            © 2026 Atlantida Lodge · Panel Administrativo
+        </div>
+    </div>
+</footer>
+
+<style>
+.footer.atl-admin-footer{
+    background:#f5f1e8!important;
+    border-top:1px solid rgba(7,24,39,.08)!important;
+    padding:18px 24px!important;
+    margin:0!important;
+}
+
+.atl-admin-footer-copy{
+    text-align:center;
+    color:#6b7280;
+    font-size:12px;
+    letter-spacing:.08em;
+}
+</style>				<!-- Page Footer Ends -->
+				<!-- Modal page for displaying ajax page -->
+				<div id="main-page-modal" class="modal right fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-body reset-grids inline-page">
+
+							</div>
+							<div style="top: 15px; right:5px; z-index: 999;" class="position-absolute">
+								<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Right SideDrawer for displaying ajax page -->
+				<div class="offcanvas offcanvas-end" tabindex="-1" id="sidedrawer-page-modal">
+					<div class="position-absolute" style="top: 20px; right:15px; z-index: 999;">
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+					</div>
+					<div class="offcanvas-body reset-grids inline-page">
+
+					</div>
+				</div>
+				<!-- Modal page for displaying record delete prompt -->
+				<div class="modal fade" id="delete-record-modal-confirm" tabindex="-1" role="dialog" aria-labelledby="delete-record-modal-confirm" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Eliminar el registro</h5>
+
+								<button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+							</div>
+							<div id="delete-record-modal-msg" class="modal-body"></div>
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+								<a href="" id="delete-record-modal-btn" class="btn btn-primary">Borrar</a>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Image Preview Dialog -->
+				<div id="preview-img-modal" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-dialog-centered mx-auto modal-lg">
+						<div class="modal-content mx-auto" style="width:auto;">
+							<div class="modal-body p-0 d-flex position-relative">
+								<img style="width:auto; max-width:100%; max-height:90vh;" class="mx-auto img" />
+								<button style="top: 10px; right:10px; z-index: 999;" type="button" class="btn-close btn-close-white m-2 position-absolute" data-bs-dismiss="modal"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<template id="saving-indicator">
+					<div class="p-2 text-center m-2 text-muted">
+						<div class="lds-dual-ring"></div>
+						<h4 class="p-3 mt-2 font-weight-light">Guardando registro</h4>
+					</div>
+				</template>
+
+				<template id="loading-indicator">
+					<div class="p-2 text-center d-flex justify-content-center align-items-center">
+						<span class="loader mr-3"></span>
+						<span class="px-2 text-muted font-weight-light">Cargando...</span>
+					</div>
+				</template>
+			</div>
+
+			<div class="toast-container fixed-alert top-0 start-50 translate-middle-x pt-3" style="z-index: 3000;">
+
+				<div id="app-toast-success" data-bs-autohide="true" data-bs-delay="5000" class="animated bounceIn toast text-bg-success position-relative" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="toast-message">
+						<div class="toast-header">
+							<strong class="me-auto">Reservations - Atlantida Lodge</strong>
+							<small>
+								<span class="badge rounded-pill bg-success">
+									Success								</span>
+							</small>
+							<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+						</div>
+						<div class="toast-body">
+							
+						</div>
+					</div>
+				</div>
+
+				<div id="app-toast-danger" data-bs-autohide="true" data-bs-delay="5000" class="animated bounceIn toast text-bg-danger position-relative" role="alert" aria-live="assertive" aria-atomic="true">
+					<div class="toast-message">
+						<div class="toast-header">
+							<strong class="me-auto">Reservations - Atlantida Lodge</strong>
+							<small>
+								<span class="badge rounded-pill bg-danger">
+									Error								</span>
+							</small>
+							<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+						</div>
+						<div class="toast-body">
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+<div id="google_translate_element" style="position:absolute; left:-9999px; top:-9999px;"></div>
+
+<script>
+function googleTranslateElementInit(){
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr',
+        autoDisplay: false
+    }, 'google_translate_element');
+
+    setTimeout(function(){
+        const idiomaPendiente = localStorage.getItem('atl_idioma_pendiente');
+
+        if(idiomaPendiente){
+            atlAplicarIdiomaGoogle(idiomaPendiente);
+            localStorage.removeItem('atl_idioma_pendiente');
+        }
+    }, 1000);
+}
+
+function atlDominiosCookie(){
+    const host = window.location.hostname;
+    const partes = host.split('.');
+    const dominios = [host, '.' + host];
+
+    if(partes.length >= 2){
+        dominios.push('.' + partes.slice(-2).join('.'));
+    }
+
+    return [...new Set(dominios)];
+}
+
+function atlBorrarGoogtrans(){
+    const dominios = atlDominiosCookie();
+
+    document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
+
+    dominios.forEach(function(dominio){
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + dominio + ';';
+    });
+}
+
+function atlGuardarGoogtrans(lang){
+    atlBorrarGoogtrans();
+
+    if(lang !== 'en'){
+        const valor = '/en/' + lang;
+        const dominios = atlDominiosCookie();
+
+        document.cookie = 'googtrans=' + valor + '; path=/;';
+
+        dominios.forEach(function(dominio){
+            document.cookie = 'googtrans=' + valor + '; path=/; domain=' + dominio + ';';
+        });
+    }
+}
+
+function atlAplicarIdiomaGoogle(lang){
+    const select = document.querySelector('.goog-te-combo');
+
+    if(select){
+        select.value = lang;
+        select.dispatchEvent(new Event('change'));
+    }
+}
+
+function atlCambiarIdioma(lang){
+    const etiqueta = lang.toUpperCase();
+
+    localStorage.setItem('atl_idioma', etiqueta);
+    localStorage.setItem('atl_idioma_pendiente', lang);
+
+    const boton = document.getElementById('atlIdiomaActual');
+
+    if(boton){
+        boton.innerText = etiqueta;
+    }
+
+    atlGuardarGoogtrans(lang);
+
+    window.location.href = window.location.pathname + window.location.search + window.location.hash;
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    const idioma = localStorage.getItem('atl_idioma') || 'EN';
+    const boton = document.getElementById('atlIdiomaActual');
+
+    if(boton){
+        boton.innerText = idioma;
+    }
+});
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style>
+.goog-te-banner-frame,
+.goog-te-gadget,
+.goog-logo-link,
+.goog-te-balloon-frame,
+#goog-gt-tt{
+    display:none!important;
+}
+
+body{
+    top:0!important;
+}
+
+.skiptranslate{
+    display:none!important;
+}
+</style>
+		<script type="text/javascript" src="https://web.atlantidalodge.com/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="https://web.atlantidalodge.com/js/plugins/app-plugins.js"></script>
+	<script type="text/javascript" src="https://web.atlantidalodge.com/js/plugins/dropzone.min.js"></script>
+		
+		<script type="text/javascript" src="https://web.atlantidalodge.com/js/page-scripts.js"></script>
+		<script type="text/javascript" src="https://web.atlantidalodge.com/js/form-page-scripts.js"></script>
+		<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const bookingForm = document.getElementById('atlBookingForm');
+    const guestForm = document.getElementById('atlGuestForm');
+    const roomsContainer = document.getElementById('atlBookingRooms');
+    const agregarHabitacionBtn = document.getElementById('atlAgregarHabitacion');
+    const calcularBtn = document.getElementById('atlCalcularReserva');
+    const crearBtn = document.getElementById('atlCrearReserva');
+    const messageBox = document.getElementById('atlBookingMessage');
+    const summaryBox = document.getElementById('atlBookingSummary');
+    const llegadaInput = document.getElementById('fecha_llegada');
+    const salidaInput = document.getElementById('fecha_salida');
+    const codigoMayoristaInput = document.getElementById('codigo_mayorista');
+    const codigoPromocionInput = document.getElementById('codigo_promocion');
+    const desayunoMayoristaInput = document.getElementById('incluye_desayuno');
+    const bookingBg = document.querySelector('.atl-booking-bg img');
+
+    const hoy = new Date();
+    const manana = new Date();
+    const pasadoManana = new Date();
+    manana.setDate(hoy.getDate() + 1);
+    pasadoManana.setDate(hoy.getDate() + 2);
+
+    function formatoFechaInput(fecha){
+        return fecha.toISOString().split('T')[0];
+    }
+
+    llegadaInput.min = formatoFechaInput(hoy);
+    llegadaInput.value = llegadaInput.value || formatoFechaInput(manana);
+    salidaInput.min = formatoFechaInput(manana);
+    salidaInput.value = salidaInput.value || formatoFechaInput(pasadoManana);
+
+    function csrfToken(){
+        const token = document.querySelector('input[name="_token"]');
+        return token ? token.value : '';
+    }
+
+    function mostrarMensaje(tipo, texto){
+        messageBox.className = 'atl-booking-message ' + tipo;
+        messageBox.textContent = texto;
+    }
+
+    function limpiarMensaje(){
+        messageBox.className = 'atl-booking-message';
+        messageBox.textContent = '';
+    }
+
+    function limpiarResumen(){
+        summaryBox.innerHTML = `
+            <div class="atl-summary-empty">
+                <i class="fa fa-calendar-check"></i>
+                <span>Your stay summary will appear here.</span>
+            </div>
+        `;
+    }
+
+    function invalidarCalculo(){
+        guestForm.classList.remove('activo');
+        document.getElementById('res_habitaciones').value = '';
+        limpiarResumen();
+        limpiarMensaje();
+    }
+
+    function actualizarFilas(){
+        const filas = Array.from(roomsContainer.querySelectorAll('.atl-booking-room-row'));
+        filas.forEach(function(fila, indice){
+            fila.querySelector('.atl-booking-room-number').textContent = indice + 1;
+            const eliminar = fila.querySelector('.atl-booking-remove-room');
+            eliminar.disabled = filas.length === 1;
+        });
+    }
+
+    function enlazarFila(fila){
+        fila.querySelectorAll('select, input').forEach(function(campo){
+            campo.addEventListener('change', invalidarCalculo);
+        });
+
+        fila.querySelector('.atl-room-select').addEventListener('change', function(){
+            if (roomsContainer.firstElementChild === fila) {
+                const opcion = this.options[this.selectedIndex];
+                if (opcion && opcion.dataset.image && bookingBg) {
+                    bookingBg.src = opcion.dataset.image;
+                }
+            }
+        });
+
+        fila.querySelector('.atl-booking-remove-room').addEventListener('click', function(){
+            if (roomsContainer.children.length <= 1) {
+                return;
+            }
+            fila.remove();
+            actualizarFilas();
+            invalidarCalculo();
+        });
+    }
+
+    function obtenerHabitaciones(){
+        return Array.from(roomsContainer.querySelectorAll('.atl-booking-room-row')).map(function(fila, indice){
+            const select = fila.querySelector('.atl-room-select');
+            const adultos = parseInt(fila.querySelector('.atl-room-adults').value || '0', 10);
+            const ninos = parseInt(fila.querySelector('.atl-room-children').value || '0', 10);
+            const capacidad = parseInt(select.options[select.selectedIndex].dataset.capacity || '0', 10);
+
+            if (!select.value || adultos < 1 || ninos < 0) {
+                throw new Error('Please complete valid room and guest information for room ' + (indice + 1) + '.');
+            }
+
+            if ((adultos + ninos) > capacidad) {
+                throw new Error('The number of guests exceeds the capacity of room ' + (indice + 1) + '.');
+            }
+
+            return {
+                habitacion_id: Number(select.value),
+                adultos: adultos,
+                ninos: ninos,
+                incluye_desayuno: Number(desayunoMayoristaInput.value)
+            };
+        });
+    }
+
+    function datosCalculo(habitaciones){
+        const data = new FormData();
+        data.append('_token', csrfToken());
+        data.append('fecha_llegada', llegadaInput.value);
+        data.append('fecha_salida', salidaInput.value);
+        data.append('habitaciones', JSON.stringify(habitaciones));
+        data.append('codigo_mayorista', codigoMayoristaInput.value.trim());
+        data.append('codigo_promocion', codigoPromocionInput.value.trim());
+        return data;
+    }
+
+    function escaparHtml(valor){
+        return String(valor ?? '')
+            .replaceAll('&', '&amp;')
+            .replaceAll('<', '&lt;')
+            .replaceAll('>', '&gt;')
+            .replaceAll('"', '&quot;')
+            .replaceAll("'", '&#039;');
+    }
+
+    function pintarResumen(data){
+        const habitacionesHtml = (data.habitaciones || []).map(function(detalle, indice){
+            const desayunoHtml = data.mayorista
+                ? `<div class="atl-summary-row"><span>Breakfast</span><strong>${detalle.incluye_desayuno ? 'Included' : 'Not included'}</strong></div>`
+                : '';
+            return `
+                <div class="atl-summary-room">
+                    <div class="atl-summary-room-title">
+                        <strong>${escaparHtml(detalle.habitacion.nombre)}</strong>
+                        <span>Room ${indice + 1}</span>
+                    </div>
+                    <div class="atl-summary-row">
+                        <span>Guests</span>
+                        <strong>${detalle.adultos} adult(s), ${detalle.ninos} child(ren)</strong>
+                    </div>
+                    ${desayunoHtml}
+                    <div class="atl-summary-row">
+                        <span>Room total</span>
+                        <strong>${detalle.moneda} ${Number(detalle.total).toFixed(2)}</strong>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        const mayoristaHtml = data.mayorista ? `
+            <div class="atl-summary-row">
+                <span>Wholesale rate · ${escaparHtml(data.mayorista.nombre)}</span>
+                <strong>Applied</strong>
+            </div>
+        ` : '';
+
+        const promocionHtml = data.promocion ? `
+            <div class="atl-summary-row">
+                <span>Promotion · ${escaparHtml(data.promocion.nombre)}</span>
+                <strong>- ${data.moneda} ${Number(data.descuento_promocion).toFixed(2)}</strong>
+            </div>
+        ` : '';
+
+        summaryBox.innerHTML = `
+            <div class="atl-summary-box">
+                ${habitacionesHtml}
+                <div class="atl-summary-row"><span>Rooms</span><strong>${data.cantidad_habitaciones}</strong></div>
+                <div class="atl-summary-row"><span>Nights</span><strong>${data.noches}</strong></div>
+                <div class="atl-summary-row"><span>Subtotal</span><strong>${data.moneda} ${Number(data.subtotal).toFixed(2)}</strong></div>
+                <div class="atl-summary-row"><span>Taxes</span><strong>${data.moneda} ${Number(data.impuestos).toFixed(2)}</strong></div>
+                <div class="atl-summary-row"><span>Fees</span><strong>${data.moneda} ${Number(data.cargos).toFixed(2)}</strong></div>
+                ${mayoristaHtml}
+                ${promocionHtml}
+                <div class="atl-summary-row"><span>Discounts</span><strong>${data.moneda} ${Number(data.descuentos).toFixed(2)}</strong></div>
+                <div class="atl-summary-total"><span>Total</span><strong>${data.total_formateado}</strong></div>
+            </div>
+        `;
+    }
+
+    roomsContainer.querySelectorAll('.atl-booking-room-row').forEach(enlazarFila);
+    actualizarFilas();
+
+    agregarHabitacionBtn.addEventListener('click', function(){
+        const nuevaFila = roomsContainer.firstElementChild.cloneNode(true);
+        nuevaFila.querySelector('.atl-room-select').selectedIndex = 0;
+        nuevaFila.querySelector('.atl-room-adults').value = 2;
+        nuevaFila.querySelector('.atl-room-children').value = 0;
+        roomsContainer.appendChild(nuevaFila);
+        enlazarFila(nuevaFila);
+        actualizarFilas();
+        invalidarCalculo();
+    });
+
+    llegadaInput.addEventListener('change', function(){
+        const llegada = new Date(this.value + 'T00:00:00');
+        const minimoSalida = new Date(llegada);
+        minimoSalida.setDate(llegada.getDate() + 1);
+        salidaInput.min = formatoFechaInput(minimoSalida);
+
+        if (!salidaInput.value || new Date(salidaInput.value + 'T00:00:00') <= llegada) {
+            salidaInput.value = formatoFechaInput(minimoSalida);
+        }
+        invalidarCalculo();
+    });
+
+    salidaInput.addEventListener('change', invalidarCalculo);
+    codigoMayoristaInput.addEventListener('input', invalidarCalculo);
+    codigoPromocionInput.addEventListener('input', invalidarCalculo);
+    desayunoMayoristaInput.addEventListener('change', invalidarCalculo);
+
+    calcularBtn.addEventListener('click', async function(){
+        limpiarMensaje();
+        guestForm.classList.remove('activo');
+        calcularBtn.disabled = true;
+        calcularBtn.textContent = 'Checking availability...';
+
+        try {
+            const habitaciones = obtenerHabitaciones();
+            const response = await fetch('https://web.atlantidalodge.com/reservations/calculate', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken(),
+                    'Accept': 'application/json'
+                },
+                body: datosCalculo(habitaciones)
+            });
+            const data = await response.json().catch(function(){ return {}; });
+
+            if (!response.ok || !data.ok) {
+                throw new Error(data.message || 'The selected rooms are not available.');
+            }
+
+            pintarResumen(data);
+            document.getElementById('res_habitaciones').value = JSON.stringify(habitaciones);
+            document.getElementById('res_fecha_llegada').value = llegadaInput.value;
+            document.getElementById('res_fecha_salida').value = salidaInput.value;
+            document.getElementById('res_codigo_mayorista').value = codigoMayoristaInput.value.trim();
+            document.getElementById('res_codigo_promocion').value = codigoPromocionInput.value.trim();
+            document.getElementById('res_incluye_desayuno').value = desayunoMayoristaInput.value;
+            guestForm.classList.add('activo');
+            mostrarMensaje('ok', 'Great news! All selected rooms are available.');
+        } catch (error) {
+            limpiarResumen();
+            mostrarMensaje('error', error.message || 'We could not check availability. Please try again.');
+        } finally {
+            calcularBtn.disabled = false;
+            calcularBtn.textContent = 'Check availability';
+        }
+    });
+
+    crearBtn.addEventListener('click', async function(){
+        limpiarMensaje();
+
+        if (!document.getElementById('res_habitaciones').value) {
+            mostrarMensaje('error', 'Please check availability again before continuing.');
+            return;
+        }
+
+        crearBtn.disabled = true;
+        crearBtn.textContent = 'Creating reservation...';
+
+        try {
+            const response = await fetch('https://web.atlantidalodge.com/reservations/store', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken(),
+                    'Accept': 'application/json'
+                },
+                body: new FormData(guestForm)
+            });
+            const data = await response.json().catch(function(){ return {}; });
+
+            if (!response.ok || !data.ok) {
+                throw new Error(data.message || 'The reservation could not be created.');
+            }
+
+            if (!data.paypal_approve_url) {
+                throw new Error('PayPal approval link was not received. Please contact the hotel.');
+            }
+
+            window.location.href = data.paypal_approve_url;
+        } catch (error) {
+            mostrarMensaje('error', error.message || 'We could not create your reservation. Please try again.');
+            crearBtn.disabled = false;
+            crearBtn.textContent = 'Continue to PayPal';
+        }
+    });
+});
+</script>
+		<script>
+	$('#sidebarCollapse').on('click', function () {
+		$('#sidebar, #main-content').toggleClass('active');
+	});
+	var navTopHeight = $('#topbar').outerHeight() + 'px';
+	document.body.style.paddingTop = navTopHeight;
+	$('#sidebar').css('top', navTopHeight);
+	$('#sidebar').css('height', 'calc(100vh - ' +  navTopHeight + ')');
+</script>
+		<script>
+			window.onload = (event) => {
+				
+							}
+		</script>
+	</body>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl508167'},{'dcenter':'p3'},{'cp_id':'10920617'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='https://img1.wsimg.com/traffic-assets/js/tccl.min.js'></script></html>
