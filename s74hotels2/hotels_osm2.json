@@ -1,0 +1,8060 @@
+{
+ "areas": {
+  "Tortuguero": [
+   {
+    "type": "node",
+    "id": 278908607,
+    "lat": 10.5624805,
+    "lon": -83.5162983,
+    "tags": {
+     "email": "info@manatuscostarica.com",
+     "name": "Hotel Manatus",
+     "phone": "+506 2239-7364",
+     "tourism": "hotel",
+     "website": "https://manatuscostarica.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 440639690,
+    "lat": 10.5424029,
+    "lon": -83.5036586,
+    "tags": {
+     "name": "Casa Marbella",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 440649601,
+    "lat": 10.5386594,
+    "lon": -83.5038845,
+    "tags": {
+     "name": "Cabinas La Ranita Roja",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 693740724,
+    "lat": 10.5512771,
+    "lon": -83.5074723,
+    "tags": {
+     "air_conditioning": "no",
+     "internet_access": "no",
+     "internet_access:fee": "no",
+     "name": "Mawamba Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1449093106,
+    "lat": 10.5488726,
+    "lon": -83.5100679,
+    "tags": {
+     "check_date": "2024-07-16",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Pachira Lodge",
+     "toilets:wheelchair": "yes",
+     "tourism": "hotel",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1827064245,
+    "lat": 10.5628727,
+    "lon": -83.5134375,
+    "tags": {
+     "name": "Laguna Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2099134556,
+    "lat": 10.5651173,
+    "lon": -83.5146068,
+    "tags": {
+     "addr:postcode": "70403",
+     "addr:street": "Detras del Aeropuerto",
+     "addr:village": "Tortuguero",
+     "alt_name": "All Rankin’s Eco-Lodge",
+     "email": "allrankinstours@hotmail.com",
+     "internet_access": "wlan",
+     "name": "All Rankins Eco Lodge",
+     "phone": "+506 8815 5175",
+     "reservation": "yes",
+     "tourism": "hotel",
+     "website": "https://www.allrankinslodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2273044750,
+    "lat": 10.5394295,
+    "lon": -83.5009948,
+    "tags": {
+     "description": "Customers can use the pool of the Los Amigos Jungle Hotel (100 m away) for free",
+     "name": "Hotel El Icaco",
+     "phone": "+506 2709 8044",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2910147293,
+    "lat": 10.5431396,
+    "lon": -83.5027049,
+    "tags": {
+     "name": "Cabinas Paisajes del Tortuguero",
+     "tourism": "motel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3372192275,
+    "lat": 10.5429306,
+    "lon": -83.5128896,
+    "tags": {
+     "addr:city": "Pococi",
+     "email": "ventas.ranaroja@gmail.com",
+     "name": "Rana Roja Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "709-8211",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.tortugueroranaroja.com",
+     "wikidata": "Q111120736"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3380568448,
+    "lat": 10.5952849,
+    "lon": -83.5260674,
+    "tags": {
+     "name": "Vista al Mar",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3380572341,
+    "lat": 10.6051585,
+    "lon": -83.529588,
+    "tags": {
+     "name": "Turtle Beach Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3380572355,
+    "lat": 10.5389344,
+    "lon": -83.5006663,
+    "tags": {
+     "name": "Balcon del Mar",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3380572780,
+    "lat": 10.5439979,
+    "lon": -83.503925,
+    "tags": {
+     "name": "Sunset Rooms",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3380574865,
+    "lat": 10.5421062,
+    "lon": -83.5029491,
+    "tags": {
+     "name": "Hotel Casablanca Tortuguero",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3940613252,
+    "lat": 10.5401447,
+    "lon": -83.5020319,
+    "tags": {
+     "name": "Tortuguero Natual B&B",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520191,
+    "lat": 10.5508607,
+    "lon": -83.5112572,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Anhinga Hotel & Spa",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523379,
+    "lat": 10.550896,
+    "lon": -83.516196,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Evergreen Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.evergreentortuguero.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523380,
+    "lat": 10.5497461,
+    "lon": -83.5156326,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Evergreen/aerial/tram/rana Roja Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524276,
+    "lat": 10.5446935,
+    "lon": -83.5038154,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Hotel Miss Junie's",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524864,
+    "lat": 10.5520755,
+    "lon": -83.5118542,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Jungle Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524886,
+    "lat": 10.5492598,
+    "lon": -83.5109028,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "La Baula Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wikidata": "Q111151280"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524904,
+    "lat": 10.5414635,
+    "lon": -83.5026236,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "La Casona",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525355,
+    "lat": 10.5415455,
+    "lon": -83.502555,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Miss Miriam's #1",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526849,
+    "lat": 10.557014,
+    "lon": -83.5187455,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Samoa Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527553,
+    "lat": 10.571756,
+    "lon": -83.5194806,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Tortuguero Lodge & Gardens",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527870,
+    "lat": 10.6149602,
+    "lon": -83.5402436,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Turtle Beach Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527939,
+    "lat": 10.6084586,
+    "lon": -83.5359634,
+    "tags": {
+     "addr:city": "Pococi",
+     "name": "Vista Al Mar Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4218355265,
+    "lat": 10.5627211,
+    "lon": -83.5197726,
+    "tags": {
+     "name": "Caribbean Paradise Eco-Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4339002792,
+    "lat": 10.5390474,
+    "lon": -83.5007208,
+    "tags": {
+     "name": "balcon de mar",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4838851421,
+    "lat": 10.5429759,
+    "lon": -83.5031665,
+    "tags": {
+     "check_date": "2024-09-23",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Tortuguero 7 BackPacker",
+     "phone": "+50627098356",
+     "rooms": "4",
+     "smoking": "outside",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4978390221,
+    "lat": 10.5398864,
+    "lon": -83.5038634,
+    "tags": {
+     "name": "Hostel and Backpackers",
+     "name:es": "Hostel and Backpackers",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4981331138,
+    "lat": 10.5404095,
+    "lon": -83.5015813,
+    "tags": {
+     "name:en": "Miss Mirian #2",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4981633227,
+    "lat": 10.5434028,
+    "lon": -83.503689,
+    "tags": {
+     "name": "Cabinas Beyetty",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4981682623,
+    "lat": 10.5425492,
+    "lon": -83.5036384,
+    "tags": {
+     "name": "Hotel Riverview",
+     "tourism": "hotel",
+     "wikidata": "Q112020800"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5689186426,
+    "lat": 10.5795624,
+    "lon": -83.5249131,
+    "tags": {
+     "addr:city": "Tortuguero",
+     "addr:housenumber": "1",
+     "addr:postcode": "70206",
+     "addr:street": "Barrio San Francisco",
+     "email": "caribeantour1@gmail.com",
+     "name": "Cabinas Caribbean Tour",
+     "phone": "86258044",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5780512253,
+    "lat": 10.5398683,
+    "lon": -83.5023842,
+    "tags": {
+     "internet_access": "wlan",
+     "name": "Cabinas Meriscar",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5824412853,
+    "lat": 10.5389752,
+    "lon": -83.5012368,
+    "tags": {
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5984164890,
+    "lat": 10.5382313,
+    "lon": -83.5016312,
+    "tags": {
+     "check_date": "2026-03-08",
+     "description": "Pool can be used by customers of El Icaco for free",
+     "internet_access": "wlan",
+     "name": "Los Amigos Jungle Hotel",
+     "self_service": "no",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6199859996,
+    "lat": 10.5406791,
+    "lon": -83.5024757,
+    "tags": {
+     "name": "Aracari Garden Hostel",
+     "tourism": "hostel",
+     "wikidata": "Q111120734"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6953016885,
+    "lat": 10.5520795,
+    "lon": -83.5118202,
+    "tags": {
+     "name:en": "Aninga Hotel & Spa",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 8388874587,
+    "lat": 10.577648,
+    "lon": -83.5221548,
+    "tags": {
+     "description": "Servicios de hospedaje y tour.\nExcelente vista.\nTenemos Laguna y Bocana.",
+     "name": "Chinitas Lodge",
+     "phone": "+506 8838 2759",
+     "tourism": "guest_house",
+     "website": "https://www.facebook.com/ChinitasLodgeTortuguero/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9358242626,
+    "lat": 10.5458459,
+    "lon": -83.5040499,
+    "tags": {
+     "name": "Caribbean View",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11079396405,
+    "lat": 10.5518519,
+    "lon": -83.511336,
+    "tags": {
+     "name": "La Baula Lodge",
+     "tourism": "hotel",
+     "website": "http://www. LaBaulaLodge.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11100951106,
+    "lat": 10.5789344,
+    "lon": -83.5244062,
+    "tags": {
+     "name": "cabañas daneysha",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11529313070,
+    "lat": 10.5710556,
+    "lon": -83.5196011,
+    "tags": {
+     "name:nl": "2e stoo",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11826524579,
+    "lat": 10.5427424,
+    "lon": -83.5032955,
+    "tags": {
+     "name:en": "Hotel Pelican",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12824118402,
+    "lat": 10.5387571,
+    "lon": -83.504275,
+    "tags": {
+     "name": "Tuanis Guesthouse",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13628966001,
+    "lat": 10.538569,
+    "lon": -83.5017425,
+    "tags": {
+     "check_date": "2026-03-08",
+     "internet_access": "wlan",
+     "name": "Carey Lodging",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 530741471,
+    "lat": 10.5394558,
+    "lon": -83.5037971,
+    "tags": {
+     "addr:city": "Pococi",
+     "building": "yes",
+     "email": "tortuguero@yahoo.com",
+     "name": "Cabinas Tortuguero",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "2709-8110",
+     "source": "KG Ground Survey 2015",
+     "tourism": "guest_house",
+     "website": "www.tortuguerovillage.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 530741495,
+    "lat": 10.5430112,
+    "lon": -83.5034766,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Birireca",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 552724547,
+    "lat": 10.5627282,
+    "lon": -83.519765,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 553076646,
+    "lat": 10.5390591,
+    "lon": -83.5016773,
+    "tags": {
+     "building": "yes",
+     "name": "Hostal Don Quichotte",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 10098545,
+    "lat": 10.5422653,
+    "lon": -83.5026804,
+    "tags": {
+     "addr:city": "Colorado",
+     "building": "yes",
+     "name": "Hotel Tortuguero Beach",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   }
+  ],
+  "Monteverde": [
+   {
+    "type": "node",
+    "id": 355965229,
+    "lat": 10.3289916,
+    "lon": -84.8176131,
+    "tags": {
+     "addr:city": "Santa Elena",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Hidden Canopy Treehouse Lodge",
+     "tourism": "guest_house",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1363224157,
+    "lat": 10.3152404,
+    "lon": -84.8233827,
+    "tags": {
+     "check_date": "2026-09-08",
+     "name": "Hotel Poco a Poco",
+     "phone": "+506-4600-9423",
+     "tourism": "hotel",
+     "website": "https://www.hotelpocoapoco.com/",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1363228152,
+    "lat": 10.3138127,
+    "lon": -84.8345189,
+    "tags": {
+     "name": "Cabañas La Pradera",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1363228442,
+    "lat": 10.306296,
+    "lon": -84.8304432,
+    "tags": {
+     "name": "Cabinas Los Laureles Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1392854165,
+    "lat": 10.3136392,
+    "lon": -84.8158887,
+    "tags": {
+     "addr:city": "Monte Verde",
+     "name": "El Establo",
+     "phone": "877 55378 2256",
+     "rooms": "100",
+     "source": "Adobe Rent a  Car",
+     "tourism": "hotel",
+     "website": "https://www.elestablo.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2584569969,
+    "lat": 10.3117857,
+    "lon": -84.8177097,
+    "tags": {
+     "name": "Cala Lodge",
+     "tourism": "hotel",
+     "wikidata": "Q111151225"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2741461258,
+    "lat": 10.302472,
+    "lon": -84.7953615,
+    "tags": {
+     "addr:city": "Monte Verde",
+     "name": "Reserva Biológica Bosque Nuboso Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2989547651,
+    "lat": 10.312694,
+    "lon": -84.8165825,
+    "tags": {
+     "name": "Manakin Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520840,
+    "lat": 10.315795,
+    "lon": -84.8263301,
+    "tags": {
+     "addr:city": "Monteverde",
+     "check_date": "2026-08-23",
+     "name": "Cabina Vista Al Golfo",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2645 6321",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://cabinasvistaalgolfo.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522837,
+    "lat": 10.3242351,
+    "lon": -84.8159506,
+    "tags": {
+     "addr:city": "Puntarenas;Santa Elena",
+     "name": "Cloud Forest Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2645 5058",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://cloudforestlodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524264,
+    "lat": 10.3010676,
+    "lon": -84.8056982,
+    "tags": {
+     "addr:city": "Puntarenas",
+     "name": "Hotel Mariposa",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525843,
+    "lat": 10.3081045,
+    "lon": -84.8122411,
+    "tags": {
+     "addr:city": "Puntarenas",
+     "check_date": "2024-05-03",
+     "name": "Paseo La Estrella",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525848,
+    "lat": 10.3168498,
+    "lon": -84.8231497,
+    "tags": {
+     "addr:city": "Monteverde",
+     "name": "Pension El Tucán",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527907,
+    "lat": 10.3004773,
+    "lon": -84.8045609,
+    "tags": {
+     "addr:city": "Puntarenas",
+     "name": "Villa Verde",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4728281516,
+    "lat": 10.3090233,
+    "lon": -84.8117377,
+    "tags": {
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "name": "Casa Alquimia Artes Bed & Breakfast",
+     "operator": "tarsicio.castillo@gmail.com",
+     "smoking": "no",
+     "tourism": "guest_house",
+     "website": "http://www.casaalquimiaartes.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6000325585,
+    "lat": 10.3053404,
+    "lon": -84.8349654,
+    "tags": {
+     "name": "Cabañas La Montaña",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 8920132976,
+    "lat": 10.2990255,
+    "lon": -84.809472,
+    "tags": {
+     "addr:city": "Monte Verde",
+     "addr:street": "Calle Los Amigos",
+     "name": "Monteverde Maple Home",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 8920720735,
+    "lat": 10.3012486,
+    "lon": -84.8347087,
+    "tags": {
+     "addr:city": "Monte Verde",
+     "name": "Sunset Vista Monteverde",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 8920720736,
+    "lat": 10.2996662,
+    "lon": -84.834551,
+    "tags": {
+     "addr:city": "Monte Verde",
+     "name": "Sunset Hill Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10562970371,
+    "lat": 10.3166532,
+    "lon": -84.82616,
+    "tags": {
+     "name": "Hummingbird house BnB",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10564547236,
+    "lat": 10.3177707,
+    "lon": -84.8250158,
+    "tags": {
+     "name": "Camp MoVeMNT",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10962897905,
+    "lat": 10.3151034,
+    "lon": -84.8275616,
+    "tags": {
+     "addr:street": "Calle Las Orquideas",
+     "internet_access": "wlan",
+     "name": "Cowboy Hotel",
+     "opening_hours": "Su-Sa 07:00-22:00",
+     "phone": "50683105158",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11101167105,
+    "lat": 10.3222641,
+    "lon": -84.8220352,
+    "tags": {
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11198931617,
+    "lat": 10.3276032,
+    "lon": -84.819716,
+    "tags": {
+     "name": "GreenHill Monteverde",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11422693369,
+    "lat": 10.3225998,
+    "lon": -84.8237194,
+    "tags": {
+     "addr:street": "Calle 6",
+     "internet_access": "wlan",
+     "name:en": "Sibu Lodge",
+     "tourism": "hotel",
+     "website": "https://www.sibulodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11532135569,
+    "lat": 10.3153119,
+    "lon": -84.8262556,
+    "tags": {
+     "name:fr": "Mora's Place B&B",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11670199291,
+    "lat": 10.3189279,
+    "lon": -84.816805,
+    "tags": {
+     "name": "Koora Hotel",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11833933369,
+    "lat": 10.3196487,
+    "lon": -84.8195695,
+    "tags": {
+     "addr:street": "Calle Sapo Dorado",
+     "contact:facebook": "flordebromeliahotel",
+     "contact:instagram": "flordebromeliahotel",
+     "internet_access": "wlan",
+     "name": "Hotel Flor de Bromelia",
+     "phone": "+506 2101-9400",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11875285169,
+    "lat": 10.3126637,
+    "lon": -84.8108317,
+    "tags": {
+     "name:en": "Hotel Belmar",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11902890692,
+    "lat": 10.3258248,
+    "lon": -84.8240792,
+    "tags": {
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12533042801,
+    "lat": 10.3147422,
+    "lon": -84.8279199,
+    "tags": {
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12796242201,
+    "lat": 10.3163995,
+    "lon": -84.8190478,
+    "tags": {
+     "addr:street": "Calle El Sapo",
+     "name": "Casa Santa Lucia",
+     "tourism": "guest_house",
+     "website": "https://www.airbnb.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13414695201,
+    "lat": 10.3350109,
+    "lon": -84.8434258,
+    "tags": {
+     "name:en": "Higuerón - Rooftop Tent Campground",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13461170301,
+    "lat": 10.3032198,
+    "lon": -84.8087733,
+    "tags": {
+     "addr:postcode": "00001",
+     "addr:street": "Vía 620",
+     "name": "Forest Garden Lodge",
+     "phone": "+50686702626",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13991536001,
+    "lat": 10.3064503,
+    "lon": -84.831778,
+    "tags": {
+     "addr:street": "Calle Los Llanos",
+     "name": "Nafre House B&B",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 14116757353,
+    "lat": 10.3391179,
+    "lon": -84.8180108,
+    "tags": {
+     "name": "Casa Mia Suite",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 14130017673,
+    "lat": 10.3171227,
+    "lon": -84.8262534,
+    "tags": {
+     "check_date": "2026-08-23",
+     "name": "Hotel Con Corazon",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 14130017677,
+    "lat": 10.3145196,
+    "lon": -84.8065295,
+    "tags": {
+     "check_date": "2026-08-27",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "tourism": "guest_house",
+     "wheelchair": "limited"
+    }
+   },
+   {
+    "type": "way",
+    "id": 224137237,
+    "lat": 10.298861,
+    "lon": -84.8056835,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389613226,
+    "lat": 10.3061749,
+    "lon": -84.8317019,
+    "tags": {
+     "addr:street": "606",
+     "building": "yes",
+     "fixme": "yes",
+     "levels": "2",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389613227,
+    "lat": 10.3070571,
+    "lon": -84.8306345,
+    "tags": {
+     "addr:city": "Monteverde",
+     "addr:housenumber": "606",
+     "addr:postcode": "60109",
+     "addr:street": "Los Llanos",
+     "building": "yes",
+     "name": "Casa Batsu BnB",
+     "note": "Great quality accommodation, small, clean and warm hospitality. From $85 includes delicious breakfast .   ",
+     "operator": "Casa Batsu",
+     "phone": "(303) 800-8826;+506 2645 7004",
+     "smoking": "outside",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.casabatsu.org/",
+     "wheelchair": "yes",
+     "wikidata": "Q111151233"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389623892,
+    "lat": 10.3132459,
+    "lon": -84.8273342,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Las Orquídeas",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389623896,
+    "lat": 10.3097573,
+    "lon": -84.8288812,
+    "tags": {
+     "building": "yes",
+     "name": "Rainbow Valley Lodge",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wikidata": "Q111151232"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389623899,
+    "lat": 10.3160816,
+    "lon": -84.8257654,
+    "tags": {
+     "building": "yes",
+     "building:levels": "2",
+     "name": "Casa Tranquilo",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389623901,
+    "lat": 10.3171441,
+    "lon": -84.8254009,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Monteverde Backpackers",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel",
+     "wikidata": "Q111116232"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389740180,
+    "lat": 10.3171238,
+    "lon": -84.8238906,
+    "tags": {
+     "addr:housenumber": "2645-5021",
+     "addr:street": "606 Ruta",
+     "building": "yes",
+     "name": "Hotel El Sueño B&B",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389740182,
+    "lat": 10.3170032,
+    "lon": -84.8237505,
+    "tags": {
+     "Celular": "506 8896 3200",
+     "addr:city": "Santa Elena Monteverde",
+     "addr:street": "Vía 606",
+     "building": "hotel",
+     "building:levels": "2",
+     "email": "reservations@monteverdeslothbackpackers.com",
+     "name": "Sloth Backpackers",
+     "phone": "+506 2645 5793",
+     "source": "KG Ground Survey 2015;gps",
+     "tourism": "hostel",
+     "website": "https://www.monteverdeslothbackpackers.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389740190,
+    "lat": 10.315808,
+    "lon": -84.8208206,
+    "tags": {
+     "building": "yes",
+     "name": "Ficus",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389740194,
+    "lat": 10.3153676,
+    "lon": -84.8185496,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Rainy Day",
+     "source": "KG Ground Survey 2015",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389767825,
+    "lat": 10.3155731,
+    "lon": -84.8258816,
+    "tags": {
+     "building": "yes",
+     "name": "Savegre Inn",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810853,
+    "lat": 10.3112803,
+    "lon": -84.8137643,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Bell Bird",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wikidata": "Q112020730"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810858,
+    "lat": 10.3145354,
+    "lon": -84.8278627,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje El Amanacer",
+     "source": "KG Ground Survey 2015",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810860,
+    "lat": 10.3145889,
+    "lon": -84.8289721,
+    "tags": {
+     "building": "yes",
+     "name": "Villa Lodge Cabanas",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810862,
+    "lat": 10.3132075,
+    "lon": -84.8328984,
+    "tags": {
+     "building": "yes",
+     "name": "Cabañas Valle Campanas",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810865,
+    "lat": 10.3153489,
+    "lon": -84.8266981,
+    "tags": {
+     "building": "yes",
+     "name": "Camino Verde",
+     "phone": "+506-26456849",
+     "source": "KG Ground Survey 2015",
+     "tourism": "guest_house",
+     "tourism_1": "guest_house",
+     "website": "https://www.hotelcaminoverde.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810867,
+    "lat": 10.3155782,
+    "lon": -84.8265052,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Vista al Golfo",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810868,
+    "lat": 10.3160269,
+    "lon": -84.8262065,
+    "tags": {
+     "building": "yes",
+     "name": "Nuestra Kasa",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389810869,
+    "lat": 10.3170274,
+    "lon": -84.8257145,
+    "tags": {
+     "building": "yes",
+     "internet_access": "wlan",
+     "name": "Mi Casa Tica",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel",
+     "wikidata": "Q112020741"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389948966,
+    "lat": 10.3177665,
+    "lon": -84.8243806,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Camino Verde",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389948979,
+    "lat": 10.3176959,
+    "lon": -84.8235173,
+    "tags": {
+     "building": "yes",
+     "name": "Pensión Santa Elena",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel",
+     "wikidata": "Q111116240"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389948982,
+    "lat": 10.3178798,
+    "lon": -84.8241546,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Backpackers Pura Vida",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389985959,
+    "lat": 10.3225189,
+    "lon": -84.8236213,
+    "tags": {
+     "building": "yes",
+     "designation": "Mountain Lodge",
+     "name": "Rustic Lodge",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 389985961,
+    "lat": 10.3222027,
+    "lon": -84.8237328,
+    "tags": {
+     "building": "yes",
+     "name": "Cipreses",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 391302565,
+    "lat": 10.3128277,
+    "lon": -84.8194007,
+    "tags": {
+     "building": "yes",
+     "name": "Monteverde Country Lodge",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.monteverdecountrylodge.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 405705952,
+    "lat": 10.3182036,
+    "lon": -84.8228005,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Arco Iris",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 405705954,
+    "lat": 10.3176695,
+    "lon": -84.8229503,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel El Quetzal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 405705955,
+    "lat": 10.3175853,
+    "lon": -84.8233719,
+    "tags": {
+     "building": "yes",
+     "name": "Pensión Colibrí",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 405706282,
+    "lat": 10.3188958,
+    "lon": -84.8235881,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Casa de Hamacas",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 502124309,
+    "lat": 10.3170532,
+    "lon": -84.8191536,
+    "tags": {
+     "building": "hotel",
+     "name": "Monteverde Ecolodge",
+     "phone": "2645 7262",
+     "source": "local_knowledge",
+     "tourism": "hotel",
+     "website": "https://www.monteverdeecolodge.com/",
+     "wikidata": "Q112020735"
+    }
+   },
+   {
+    "type": "way",
+    "id": 502124314,
+    "lat": 10.3168428,
+    "lon": -84.8182724,
+    "tags": {
+     "addr:city": "Monteverde",
+     "building": "hotel",
+     "building:levels": "2",
+     "name": "Hotel El Viandante",
+     "phone": "506 2645 6475",
+     "source": "local_knowledge",
+     "tourism": "hotel",
+     "website": "www.hotelelviandante.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 563459709,
+    "lat": 10.3177728,
+    "lon": -84.8228907,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Santa Elena",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 570501516,
+    "lat": 10.3185802,
+    "lon": -84.8081476,
+    "tags": {
+     "building": "yes",
+     "email": "info@estacionbiologica.com",
+     "name": "Estación Biológica de Monteverde",
+     "phone": "+506 8380 0061",
+     "tourism": "hostel",
+     "website": "https://www.estacionbiologica.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 682901195,
+    "lat": 10.3112902,
+    "lon": -84.819451,
+    "tags": {
+     "building": "yes",
+     "internet_access": "wlan",
+     "name": "Casa de la Montana",
+     "opening_hours": "Mo-Su 05:30-19:30",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440073,
+    "lat": 10.3154296,
+    "lon": -84.8181874,
+    "tags": {
+     "building": "yes",
+     "name": "HotelMonteverde Cloudforest",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440074,
+    "lat": 10.3159051,
+    "lon": -84.8202553,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Marie",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440077,
+    "lat": 10.3170966,
+    "lon": -84.8256413,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas El Pueblo",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440078,
+    "lat": 10.3152877,
+    "lon": -84.8262084,
+    "tags": {
+     "building": "yes",
+     "name": "Donde Nina",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440079,
+    "lat": 10.3153705,
+    "lon": -84.8261727,
+    "tags": {
+     "building": "yes",
+     "name": "Donde Mora",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440080,
+    "lat": 10.3150367,
+    "lon": -84.8268675,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Monteverde",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440082,
+    "lat": 10.3163612,
+    "lon": -84.8271505,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Claro de Luna",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440085,
+    "lat": 10.3162085,
+    "lon": -84.8274756,
+    "tags": {
+     "building": "yes",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440086,
+    "lat": 10.3153743,
+    "lon": -84.8275433,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Sol y Luna",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440087,
+    "lat": 10.3156214,
+    "lon": -84.8277067,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Linda Vista",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440088,
+    "lat": 10.315539,
+    "lon": -84.827326,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje La Pradera",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440089,
+    "lat": 10.3143569,
+    "lon": -84.8283688,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Cattleya",
+     "tourism": "hostel",
+     "wikidata": "Q111116236"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440090,
+    "lat": 10.3144062,
+    "lon": -84.8286361,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel La Suerte",
+     "tourism": "hostel",
+     "wikidata": "Q111116247"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440092,
+    "lat": 10.3169846,
+    "lon": -84.8338112,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Monte Fresco",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440093,
+    "lat": 10.3157659,
+    "lon": -84.8330988,
+    "tags": {
+     "building": "yes",
+     "name": "Chillout House",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440095,
+    "lat": 10.3142132,
+    "lon": -84.8317127,
+    "tags": {
+     "building": "yes",
+     "name": "Hakuna Matata",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440097,
+    "lat": 10.3188122,
+    "lon": -84.8352989,
+    "tags": {
+     "building": "yes",
+     "name": "The Green Tree Lodge",
+     "tourism": "guest_house",
+     "website": "https://thegreentreelodge.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440102,
+    "lat": 10.3221322,
+    "lon": -84.822861,
+    "tags": {
+     "building": "yes",
+     "name": "Freddy's Place",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440109,
+    "lat": 10.3248876,
+    "lon": -84.8246438,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Roca Verde",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440110,
+    "lat": 10.3268885,
+    "lon": -84.8233128,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel El Atardecer",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440112,
+    "lat": 10.3273754,
+    "lon": -84.8222392,
+    "tags": {
+     "building": "yes",
+     "name": "La Casa de la Naturaleza",
+     "phone": "8895 3502",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440114,
+    "lat": 10.3258944,
+    "lon": -84.8199906,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Capulín",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036440116,
+    "lat": 10.3181288,
+    "lon": -84.8241324,
+    "tags": {
+     "building": "yes",
+     "name": "Outbox Inn",
+     "tourism": "hotel",
+     "wikidata": "Q111116235"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036442336,
+    "lat": 10.326046,
+    "lon": -84.8265437,
+    "tags": {
+     "addr:postcode": "61201",
+     "building": "yes",
+     "name": "Hotel Holístico Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036442338,
+    "lat": 10.3268888,
+    "lon": -84.8266825,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Campo Verde",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036442339,
+    "lat": 10.3272346,
+    "lon": -84.8262031,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Rayo de Luna",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036442340,
+    "lat": 10.320874,
+    "lon": -84.8231217,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Don Taco",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036442341,
+    "lat": 10.3205944,
+    "lon": -84.8232154,
+    "tags": {
+     "building": "yes",
+     "name": "Mar Inn",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036442342,
+    "lat": 10.3207563,
+    "lon": -84.8228634,
+    "tags": {
+     "building": "yes",
+     "name": "Forest Dreams Cottage",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703465,
+    "lat": 10.3175619,
+    "lon": -84.8235966,
+    "tags": {
+     "addr:street": "Avenida 1",
+     "air_conditioning": "no",
+     "bar": "no",
+     "building": "yes",
+     "building:levels": "1",
+     "check_date": "2026-01-29",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "Pension Santa Elena",
+     "payment:cards": "yes",
+     "payment:credit_cards": "yes",
+     "payment:debit_cards": "yes",
+     "phone": "+13053564069",
+     "smoking": "no",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703471,
+    "lat": 10.3153626,
+    "lon": -84.8273789,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Papaya Verde",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703473,
+    "lat": 10.313287,
+    "lon": -84.823521,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703474,
+    "lat": 10.3132775,
+    "lon": -84.8192497,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Campestre Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703475,
+    "lat": 10.3133379,
+    "lon": -84.8171462,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Globi",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703478,
+    "lat": 10.3144108,
+    "lon": -84.8172866,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Historias",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703483,
+    "lat": 10.3146725,
+    "lon": -84.8141737,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Heliconia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703485,
+    "lat": 10.3158323,
+    "lon": -84.8192061,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Santa Fe",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703490,
+    "lat": 10.3143363,
+    "lon": -84.8191743,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Jardines de Monteverde",
+     "tourism": "hotel",
+     "wikidata": "Q111151224"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703494,
+    "lat": 10.3180185,
+    "lon": -84.8243427,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Monteverde",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703498,
+    "lat": 10.3170906,
+    "lon": -84.8176993,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Sapo Dorado",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703499,
+    "lat": 10.3163117,
+    "lon": -84.8221378,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Jaguarundi",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703507,
+    "lat": 10.3174349,
+    "lon": -84.8249926,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas El Pueblo",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703508,
+    "lat": 10.3175132,
+    "lon": -84.8249333,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Tinas Casitas",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703513,
+    "lat": 10.3179944,
+    "lon": -84.8237994,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje El Banco",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703515,
+    "lat": 10.316135,
+    "lon": -84.8265072,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Vista al Golfo",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703516,
+    "lat": 10.3158088,
+    "lon": -84.827061,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel El Atardecer",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703979,
+    "lat": 10.3170175,
+    "lon": -84.8236129,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Coati",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1036703980,
+    "lat": 10.3158952,
+    "lon": -84.8251426,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Casa Madonna",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1037030459,
+    "lat": 10.3164681,
+    "lon": -84.8257674,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Eddy",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038143402,
+    "lat": 10.3108855,
+    "lon": -84.8127557,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Buena Vista",
+     "tourism": "chalet"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038143403,
+    "lat": 10.3094507,
+    "lon": -84.8113941,
+    "tags": {
+     "building": "yes",
+     "name": "Casa en la Cima del Árbol",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038143407,
+    "lat": 10.3069565,
+    "lon": -84.8116115,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Bromelias",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038147546,
+    "lat": 10.3029754,
+    "lon": -84.8094829,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel La Colina",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038396971,
+    "lat": 10.325164,
+    "lon": -84.8304394,
+    "tags": {
+     "building": "yes",
+     "name": "Casa SinwaTours",
+     "phone": "2645 5700",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038396973,
+    "lat": 10.3238094,
+    "lon": -84.8323783,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Copalchi",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038396975,
+    "lat": 10.3259825,
+    "lon": -84.8327024,
+    "tags": {
+     "building": "yes",
+     "name": "Apartamento Gamai",
+     "phone": "8377 0978",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038396985,
+    "lat": 10.3293607,
+    "lon": -84.8415246,
+    "tags": {
+     "building": "yes",
+     "name": "Casa de Evan",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038396999,
+    "lat": 10.3248852,
+    "lon": -84.8430644,
+    "tags": {
+     "building": "yes",
+     "name": "Albergue Sofi",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038397002,
+    "lat": 10.3299375,
+    "lon": -84.8448428,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Belcruz",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1038397004,
+    "lat": 10.334788,
+    "lon": -84.8403378,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Bosque Verde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1040091014,
+    "lat": 10.309299,
+    "lon": -84.8187536,
+    "tags": {
+     "building": "yes",
+     "name": "Monteverde Inn",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1040091017,
+    "lat": 10.3130717,
+    "lon": -84.8114444,
+    "tags": {
+     "building": "yes",
+     "check_date": "2026-08-27",
+     "name": "Hotel Belmar",
+     "tourism": "hotel",
+     "wikidata": "Q111151221"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1040094294,
+    "lat": 10.3267577,
+    "lon": -84.8273066,
+    "tags": {
+     "building": "yes",
+     "name": "Hospedaje Casa Maya",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1040094295,
+    "lat": 10.3249098,
+    "lon": -84.8291474,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Paris Comfort",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1079073183,
+    "lat": 10.2997421,
+    "lon": -84.8061138,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Fonda Vela",
+     "tourism": "hotel",
+     "wikidata": "Q111151218"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1079151266,
+    "lat": 10.3009694,
+    "lon": -84.8016894,
+    "tags": {
+     "addr:city": "Monteverde",
+     "building": "yes",
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "name": "Trapp Family Lodge",
+     "tourism": "hotel",
+     "website": "http://www.trappfam.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1089401317,
+    "lat": 10.314092,
+    "lon": -84.815007,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Heliconia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1089401318,
+    "lat": 10.3141138,
+    "lon": -84.8148621,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Heliconia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1089401319,
+    "lat": 10.3142189,
+    "lon": -84.814711,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Heliconia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1089401320,
+    "lat": 10.314171,
+    "lon": -84.8154058,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Heliconia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1193172341,
+    "lat": 10.3116557,
+    "lon": -84.816217,
+    "tags": {
+     "area": "yes",
+     "name": "Hotel Montaña Monteverde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1208816526,
+    "lat": 10.3173144,
+    "lon": -84.8129679,
+    "tags": {
+     "name": "El Establo Mountain Hotel",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1208816527,
+    "lat": 10.3119019,
+    "lon": -84.8147759,
+    "tags": {
+     "building": "yes",
+     "name": "Los Pinos - Cabañas & Jardines",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1551507885,
+    "lat": 10.339975,
+    "lon": -84.8184757,
+    "tags": {
+     "building": "yes",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Olingo Studio Apartment",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1551507886,
+    "lat": 10.3398274,
+    "lon": -84.8180466,
+    "tags": {
+     "building": "yes",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Olingo Two Bedroom Apartment",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13905941,
+    "lat": 10.3286338,
+    "lon": -84.842713,
+    "tags": {
+     "building": "yes",
+     "name": "Casitas Jeruti",
+     "tourism": "guest_house",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13922112,
+    "lat": 10.3063339,
+    "lon": -84.8133179,
+    "tags": {
+     "check_date": "2026-08-16",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "Elida Lodge",
+     "old_name": "Hotel El Bosque",
+     "payment:cash": "yes",
+     "payment:mastercard": "yes",
+     "payment:visa": "yes",
+     "tourism": "hotel",
+     "type": "multipolygon",
+     "website": "https://www.elidacr.com"
+    }
+   }
+  ],
+  "La Fortuna": [
+   {
+    "type": "node",
+    "id": 431001121,
+    "lat": 10.4274099,
+    "lon": -84.7462487,
+    "tags": {
+     "name": "Linda Vista del Norte",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 431001715,
+    "lat": 10.4211323,
+    "lon": -84.7543482,
+    "tags": {
+     "check_date": "2024-04-04",
+     "name": "Essence Arenal Travellers & Backpackers Resort",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 459837501,
+    "lat": 10.5022962,
+    "lon": -84.6831049,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "name": "Arenal Springs Resort & Spa",
+     "source": "http://www.arenalspringshotel.com/index.php?ln=2",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 697068186,
+    "lat": 10.4947081,
+    "lon": -84.716067,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Lumbres Arenal",
+     "phone": "+506 2479-1911",
+     "tourism": "hostel",
+     "website": "https://www.lumbresarenal.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 777348524,
+    "lat": 10.4780097,
+    "lon": -84.6445833,
+    "tags": {
+     "name": "Arenal Montechiari",
+     "phone": "+506-24790079",
+     "source": "survey",
+     "tourism": "hotel",
+     "website": "https://www.hotelarenalmontechiari.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1449102035,
+    "lat": 10.5015242,
+    "lon": -84.7058114,
+    "tags": {
+     "air_conditioning": "yes",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Lavas Tacotal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2047432018,
+    "lat": 10.4844674,
+    "lon": -84.7554566,
+    "tags": {
+     "name": "Lost Iguana",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2123735354,
+    "lat": 10.4609895,
+    "lon": -84.6605911,
+    "tags": {
+     "check_date": "2026-03-12",
+     "name": "Arenal Oasis Eco Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2266566869,
+    "lat": 10.4956766,
+    "lon": -84.6874933,
+    "tags": {
+     "name": "Los Lagos - Hotel, Spa & Resort",
+     "phone": "2479-1000",
+     "source": "http://www.hotelloslagos.com/espanol/ubicacion-los-lagos.html",
+     "tourism": "hotel",
+     "website": "https://www.hotelloslagos.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2315837340,
+    "lat": 10.4681537,
+    "lon": -84.6628824,
+    "tags": {
+     "name": "Arenal Rossi",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2379099557,
+    "lat": 10.4560923,
+    "lon": -84.6559885,
+    "tags": {
+     "name": "Casa Luna",
+     "phone": "+507-24797368",
+     "tourism": "hotel",
+     "website": "https://www.casalunahotel.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3452189320,
+    "lat": 10.4574128,
+    "lon": -84.651268,
+    "tags": {
+     "name": "Arenal Green",
+     "phone": "+506-24798383",
+     "source": "http://www.arenalgreen.com/",
+     "tourism": "hotel",
+     "website": "http://www.arenalgreen.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3531776380,
+    "lat": 10.5321523,
+    "lon": -84.6631427,
+    "tags": {
+     "name": "Casa Cielo Volcano View Retreat",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3531778139,
+    "lat": 10.5190961,
+    "lon": -84.6882617,
+    "tags": {
+     "name": "The Springs Resort and Spa",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3531778320,
+    "lat": 10.5319835,
+    "lon": -84.6615871,
+    "tags": {
+     "addr:street": "Calle Alto Monterrey",
+     "name": "Leaves and Lizards Arenal Volcano Retreat",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520169,
+    "lat": 10.4554257,
+    "lon": -84.6608305,
+    "tags": {
+     "addr:city": "San Ramon",
+     "email": "info@cataratalodge.com",
+     "name": "Albergue Ecoturistico La Catarata",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "2479-9522",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520219,
+    "lat": 10.509417,
+    "lon": -84.640274,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Arenal Bromelias",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520221,
+    "lat": 10.514818,
+    "lon": -84.647141,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Arenal Country Inn",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520225,
+    "lat": 10.4939616,
+    "lon": -84.7671775,
+    "tags": {
+     "addr:city": "San Carlos",
+     "email": "info@arenallodge.com",
+     "fax": "506 2290 5125",
+     "name": "Arenal Lodge",
+     "phone": "+506 2479 1881",
+     "phone:US": "+1 800 716 2698",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.arenallodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520228,
+    "lat": 10.5031933,
+    "lon": -84.6874109,
+    "tags": {
+     "addr:city": "San Carlos",
+     "email": "info@arenalnayara.com",
+     "name": "Arenal Nayara Hotel And Gardens",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2479 1600",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.arenalnayara.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520230,
+    "lat": 10.4378203,
+    "lon": -84.7101599,
+    "tags": {
+     "addr:city": "San Ramon",
+     "email": "info@arenaobservatorylodge.com",
+     "name": "Arenal Observatory Lodge",
+     "note": "Hotel data current in 2016. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2290 7011",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.arenalobservatorylodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520237,
+    "lat": 10.4362999,
+    "lon": -84.783278,
+    "tags": {
+     "addr:city": "Tilaran",
+     "email": "arenalvi@racsa.co.cr",
+     "fax": "506 2479 1800",
+     "name": "Arenal Vista Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2479 1802",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.arenalvistalodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520239,
+    "lat": 10.49555,
+    "lon": -84.68777,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Arenal Volcano Inn",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://arenalvolcanoinn.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520769,
+    "lat": 10.4752742,
+    "lon": -84.6769524,
+    "tags": {
+     "addr:city": "San Carlos",
+     "email": "info@arenalecoglide.com",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Ecoglide Arenal Park",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 24797472",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.arenalecoglide.com/",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520826,
+    "lat": 10.4220472,
+    "lon": -84.7526147,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Butterfly Bungalows",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "http://www.butterfly-bungalows.com/Butterfly_Bungalows/Welcome.html"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982521440,
+    "lat": 10.498304,
+    "lon": -84.7110466,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Cabinas Los Guayabos",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522796,
+    "lat": 10.487747,
+    "lon": -84.731792,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Cascajo's del Arenal",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522802,
+    "lat": 10.4636943,
+    "lon": -84.5949127,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Casona Rio Fortuna",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522805,
+    "lat": 10.4541918,
+    "lon": -84.661648,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Catarata Ecolodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522815,
+    "lat": 10.4584744,
+    "lon": -84.6607865,
+    "tags": {
+     "addr:city": "LA FORTUNA Z-13",
+     "name": "Cerro Chato Eco Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wikidata": "Q111126533"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523367,
+    "lat": 10.4956068,
+    "lon": -84.7121215,
+    "tags": {
+     "addr:city": "San Carlos",
+     "email": "info@erupcionesinn.com",
+     "fax": "2479-1400",
+     "name": "Erupciones Inn Bed and Breakfast",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "8833-0038",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.erupcionesinn.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523376,
+    "lat": 10.414755,
+    "lon": -84.756614,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Essence Arenal Boutique Hotel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.essencearenal.com/index.html"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523444,
+    "lat": 10.5026454,
+    "lon": -84.7063473,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Hotel fuego Arenal",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523450,
+    "lat": 10.4207925,
+    "lon": -84.7496286,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Hacienda Encantada",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523633,
+    "lat": 10.4566098,
+    "lon": -84.6572418,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Arenal Green",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523645,
+    "lat": 10.4683858,
+    "lon": -84.6627923,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Bijagua",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "Next to Cristian 4 Supermarket",
+     "phone": "+506 2479 9541",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://hotelbijagua.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523763,
+    "lat": 10.5011265,
+    "lon": -84.7062474,
+    "tags": {
+     "addr:city": "San Carlos",
+     "email": "info@hotelcampoverde.com",
+     "fax": "2479-1081",
+     "name": "Hotel Campo Verde",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "2479-1080",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.hotelcampoverde.com/",
+     "wikidata": "Q111151247"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523792,
+    "lat": 10.4572634,
+    "lon": -84.6486465,
+    "tags": {
+     "addr:city": "San Ramon",
+     "check_date": "2024-11-15",
+     "name": "Rancho Cerro Azul",
+     "phone": "+506 2479 7360",
+     "tourism": "chalet",
+     "website": "https://ranchocerroazul.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523831,
+    "lat": 10.50115,
+    "lon": -84.7090515,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Hotel La Palma del Arenal",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524045,
+    "lat": 10.488746,
+    "lon": -84.6859577,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Hotel Los Lagos",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524861,
+    "lat": 10.4153441,
+    "lon": -84.6073827,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Josipek Villas",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wikidata": "Q112020714"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524889,
+    "lat": 10.491094,
+    "lon": -84.7263007,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "La Cangreja Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525274,
+    "lat": 10.4889333,
+    "lon": -84.6776111,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Las Laureles Hot Springs Hotel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525302,
+    "lat": 10.4922,
+    "lon": -84.686251,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Los Lagos",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525307,
+    "lat": 10.4852014,
+    "lon": -84.7559873,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Calle Sangregado",
+     "email": "maritzalostiguana@mac.com",
+     "fax": "2479-1558",
+     "name": "Hotel Lost Iguana Resort & Spa",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "1.5 km North of Arenal dam, La Fortuna de San Carlos, Arenal Volcano National Park A2004, Costa Rica",
+     "phone": "2479-1557",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.lostiguanaresort.com",
+     "wikidata": "Q111151251"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525763,
+    "lat": 10.5043523,
+    "lon": -84.7043396,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Montaña de Fuego Resort & Spa",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525781,
+    "lat": 10.5030244,
+    "lon": -84.6911157,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Hotel Kokoro",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525797,
+    "lat": 10.4193624,
+    "lon": -84.7448623,
+    "tags": {
+     "addr:city": "San Ramon",
+     "name": "Nepenthe Bed and Breakfast",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.nepenthe-costarica.com/",
+     "wikidata": "Q111151228"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525831,
+    "lat": 10.4443633,
+    "lon": -84.6696559,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Calle Catarata",
+     "name": "Hotel Paradise Mountain Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526808,
+    "lat": 10.4136632,
+    "lon": -84.7655944,
+    "tags": {
+     "addr:city": "San Ramon",
+     "email": "info@ranchomargot.org",
+     "fax": "506 2479 7260",
+     "name": "Rancho Margot",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 8302 7318",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.ranchomargot.org"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526815,
+    "lat": 10.468727,
+    "lon": -84.664016,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Rey Arenal",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526833,
+    "lat": 10.4696149,
+    "lon": -84.6657617,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Roca Negra Inn",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527872,
+    "lat": 10.4684804,
+    "lon": -84.6648588,
+    "tags": {
+     "addr:city": "San Carlos",
+     "name": "Vagabondo Hotel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527938,
+    "lat": 10.468791,
+    "lon": -84.66481,
+    "tags": {
+     "addr:city": "San Carlos",
+     "addr:postcode": "21007",
+     "addr:street": "Vía 142",
+     "contact:facebook": "100083608110760",
+     "contact:instagram": "hotelvillasvilma",
+     "internet_access": "wlan",
+     "name": "Vilma Villas",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "+506 2479 9215",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.villasvilmahotel.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4430890890,
+    "lat": 10.5019599,
+    "lon": -84.7080035,
+    "tags": {
+     "name": "Hotel Arenal Place",
+     "name:fr": "arenal palace",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4433456849,
+    "lat": 10.4299905,
+    "lon": -84.7612579,
+    "tags": {
+     "addr:city": "Peñas Blancas",
+     "name": "Arenal VIsta Lodge",
+     "rooms": "25",
+     "tourism": "hotel",
+     "website": "https://www.arenalvistalodgecr.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4460449810,
+    "lat": 10.4763453,
+    "lon": -84.6321589,
+    "tags": {
+     "name": "Departamento Doña Eliza",
+     "name:es": "Departamento Doña Eliza",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4738400721,
+    "lat": 10.4805551,
+    "lon": -84.5746704,
+    "tags": {
+     "internet_access": "wlan",
+     "name": "Tino's",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5669667721,
+    "lat": 10.4651619,
+    "lon": -84.6413077,
+    "tags": {
+     "name": "Casa Bambú",
+     "name:en": "Bamboo House",
+     "name:es": "Casa Bambú",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6865386285,
+    "lat": 10.4312469,
+    "lon": -84.7574098,
+    "tags": {
+     "name:en": "Wildcamping",
+     "name:nl": "Wildkamperen",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6867504085,
+    "lat": 10.454434,
+    "lon": -84.6582181,
+    "tags": {
+     "name:en": "Arenal river tubing and hiking",
+     "name:nl": "Arenal river tubing and hiking",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6983781519,
+    "lat": 10.4412676,
+    "lon": -84.6153481,
+    "tags": {
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Lavas del Arenal",
+     "tourism": "hotel",
+     "wheelchair": "limited",
+     "wikidata": "Q111151182"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9300173182,
+    "lat": 10.4289479,
+    "lon": -84.7631976,
+    "tags": {
+     "name": "Sunset camping y glamping",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9346530700,
+    "lat": 10.4797229,
+    "lon": -84.6813566,
+    "tags": {
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Loma Real Hotel & Hot Springs",
+     "stars": "2",
+     "tourism": "hotel",
+     "website": "https://loma-real-and-hot-springs.hotelsinalajuela.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9379273524,
+    "lat": 10.479083,
+    "lon": -84.6361516,
+    "tags": {
+     "name": "Arenal Glamping",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9382395066,
+    "lat": 10.4673884,
+    "lon": -84.6606621,
+    "tags": {
+     "name": "Cabinas Kolibri",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9802440737,
+    "lat": 10.487761,
+    "lon": -84.7548729,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:postcode": "40007",
+     "addr:street": "Calle Sangregado",
+     "air_conditioning": "yes",
+     "check_date": "2026-02-23",
+     "email": "info@sangregadolodge.com",
+     "internet_access": "yes",
+     "internet_access:fee": "yes",
+     "name": "Sangregado Lodge",
+     "phone": "+506-4600-0102",
+     "rooms": "11",
+     "tourism": "hotel",
+     "website": "https://www.sangregadolodge.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9851651721,
+    "lat": 10.5167522,
+    "lon": -84.7035399,
+    "tags": {
+     "addr:city": "Monterrey",
+     "addr:street": "Calle La Palma",
+     "name": "Cabinas La Hacienda",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9856258928,
+    "lat": 10.5058084,
+    "lon": -84.6865191,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "name": "Mountain Paradise Wellness & Spa",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9856533101,
+    "lat": 10.4600263,
+    "lon": -84.674192,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "name": "Hotel Lomas del Volcán",
+     "tourism": "hotel",
+     "wikidata": "Q111151219"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9883863017,
+    "lat": 10.4708784,
+    "lon": -84.6443197,
+    "tags": {
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10599172607,
+    "lat": 10.4550126,
+    "lon": -84.6549493,
+    "tags": {
+     "check_date": "2023-02-01",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "San Carlos",
+     "reservation": "yes",
+     "smoking": "outside",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10698516498,
+    "lat": 10.4701136,
+    "lon": -84.6663655,
+    "tags": {
+     "name": "La Pradera",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10726831864,
+    "lat": 10.4556907,
+    "lon": -84.6406029,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:housenumber": "24790318",
+     "addr:postcode": "21007",
+     "addr:street": "Carretera Dr. Juan Guillermo Ortiz Guier",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Arenal Descanso",
+     "phone": "8357 1808",
+     "rooms": "2",
+     "smoking": "yes",
+     "tourism": "hotel",
+     "website": "https://arenaldescanso.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10831804805,
+    "lat": 10.5279051,
+    "lon": -84.6957596,
+    "tags": {
+     "name": "Casa Torre Eco-Lodge",
+     "opening_hours": "Su-Sa 07:00-21:00",
+     "phone": "+506 2201 9461",
+     "tourism": "hotel",
+     "website": "https://linktr.ee/casatorrelodge"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10983334905,
+    "lat": 10.4720982,
+    "lon": -84.6487259,
+    "tags": {
+     "addr:postcode": "21007",
+     "email": "alphaarenal1@gmail.com",
+     "internet_access": "wlan",
+     "opening_hours": "Mo-Su 08:00-08:00",
+     "phone": "+50687705858",
+     "tourism": "hotel",
+     "website": "https://alphaarenal.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11067801305,
+    "lat": 10.4550951,
+    "lon": -84.6439184,
+    "tags": {
+     "contact:facebook": "https://www.facebook.com/lasorquideasboutiquehotel",
+     "email": "reservations@hotelasorquideas.com",
+     "name": "Hotel Las Orquideas",
+     "phone": "+506 2479-8090",
+     "swimming_pool": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11101149406,
+    "lat": 10.4513492,
+    "lon": -84.6401627,
+    "tags": {
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11234744437,
+    "lat": 10.5011511,
+    "lon": -84.708365,
+    "tags": {
+     "internet_access": "wlan",
+     "name:en": "Arenal Roca Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11670154753,
+    "lat": 10.4595527,
+    "lon": -84.639501,
+    "tags": {
+     "name": "Hotel Boutique Casa del Rio",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11762653469,
+    "lat": 10.4504111,
+    "lon": -84.630135,
+    "tags": {
+     "name:fr": "Cabanas del lago",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11872648952,
+    "lat": 10.4681499,
+    "lon": -84.644522,
+    "tags": {
+     "name": "Argdivan",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12298199427,
+    "lat": 10.4802034,
+    "lon": -84.6363064,
+    "tags": {
+     "name": "Noah's Forest by Tifakara",
+     "phone": "+50624798422",
+     "swimming_pool": "outdoor",
+     "tourism": "hotel",
+     "website": "https://tifakara.com/noahsforest/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12395283805,
+    "lat": 10.4660939,
+    "lon": -84.6406771,
+    "tags": {
+     "check_date": "2024-12-03",
+     "name": "Arenal Cozy Apartments/Arsenal Dreams",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12596617612,
+    "lat": 10.4685109,
+    "lon": -84.6438374,
+    "tags": {
+     "guest_house": "habitaciones_para_dormir",
+     "name": "Cabinas Lupita",
+     "operator": "Lupita",
+     "phone": "506-8394-5834",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12706122741,
+    "lat": 10.4351815,
+    "lon": -84.6357657,
+    "tags": {
+     "air_conditioning": "yes",
+     "bar": "yes",
+     "brand": "Junglo",
+     "email": "resv@jungloresort.com",
+     "image": "https://qci.qr-code.click/uploads/business/5JNbfQSjXaf1awAc1X6LCgW5ADIuH6S5BqTxzVps.jpg",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "Junglo Resort and Spa",
+     "phone": "50686326102",
+     "rooms": "13",
+     "tourism": "hotel",
+     "website": "https://www.jungloresort.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12737999001,
+    "lat": 10.448344,
+    "lon": -84.6108221,
+    "tags": {
+     "addr:street": "Calle 075",
+     "internet_access": "wlan",
+     "name": "Posada en el campo",
+     "phone": "8944-9555",
+     "tourism": "guest_house",
+     "website": "https://www.todosbiz.com/CR/posada-en-el-campo-8944-9555"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12800490194,
+    "lat": 10.4754445,
+    "lon": -84.6376479,
+    "tags": {
+     "name": "Camping la fortuna, San Carlos",
+     "phone": "+50662480679",
+     "tourism": "camp_site",
+     "website": "instagram.com/camping.lafortuna?igsh=c3hjbjE3bXBtdjUy"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13049143501,
+    "lat": 10.4670574,
+    "lon": -84.6441437,
+    "tags": {
+     "name": "El Chante",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13181047474,
+    "lat": 10.4650029,
+    "lon": -84.6590498,
+    "tags": {
+     "addr:city": "la fortuna",
+     "addr:postcode": "21007",
+     "name": "Mansion arenal La Fortuna",
+     "operator": "Eduardo Peñaranda",
+     "phone": "+506 85050950",
+     "tourism": "apartment",
+     "website": "https://www.mansionarenalfortuna.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13461160001,
+    "lat": 10.483591,
+    "lon": -84.6605109,
+    "tags": {
+     "addr:postcode": "21007",
+     "addr:street": "Calle 508",
+     "name": "Casa Vista de Luna",
+     "phone": "+50688287092",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 230621156,
+    "lat": 10.4850185,
+    "lon": -84.6805664,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel El Royal Corin",
+     "tourism": "hotel",
+     "website": "https://www.royalcorin.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 267921111,
+    "lat": 10.4442,
+    "lon": -84.6698845,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "300 meters north La Fortuna Waterfall",
+     "building": "hotel",
+     "name": "Arenal Waterfall Lodge Green Lagoon Wellbeing Resort",
+     "name:en": "Arenal Waterfall Lodge Green Lagoon Lodge",
+     "phone": "+506 2479-7700",
+     "source": "http://www.greenlagoon.net/",
+     "tourism": "hotel",
+     "website": "http://www.greenlagoon.net"
+    }
+   },
+   {
+    "type": "way",
+    "id": 295244601,
+    "lat": 10.4940296,
+    "lon": -84.7674365,
+    "tags": {
+     "name": "Arenal Volcano Lodge",
+     "tourism": "hotel",
+     "website": "https://www.arenallodge.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 307992863,
+    "lat": 10.4707872,
+    "lon": -84.6433574,
+    "tags": {
+     "building": "yes",
+     "building:levels": "5",
+     "name": "Hotel La Fortuna",
+     "phone": "+506-2479-9197",
+     "smoking": "no",
+     "tourism": "hotel",
+     "website": "https://www.lafortunahotel.com/",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "way",
+    "id": 378232979,
+    "lat": 10.4707978,
+    "lon": -84.6467599,
+    "tags": {
+     "building": "hotel",
+     "name": "La Amistad",
+     "phone": "+506-4799364;+506-4799390",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 378233022,
+    "lat": 10.4707962,
+    "lon": -84.6468636,
+    "tags": {
+     "building": "yes",
+     "name": "Torre Arenal",
+     "name:en": "Arenal Tower Hotel",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 398212310,
+    "lat": 10.4836589,
+    "lon": -84.632937,
+    "tags": {
+     "building": "yes",
+     "name": "Villas Eco Arenal",
+     "name:es": "PVillas Eco Arenal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 399291883,
+    "lat": 10.4688441,
+    "lon": -84.6627984,
+    "tags": {
+     "building": "yes",
+     "name": "Vista del Cerro",
+     "tourism": "hotel",
+     "wikidata": "Q111151216"
+    }
+   },
+   {
+    "type": "way",
+    "id": 399292484,
+    "lat": 10.4708356,
+    "lon": -84.6452253,
+    "tags": {
+     "building": "yes",
+     "name": "Magestic Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 400055733,
+    "lat": 10.4253875,
+    "lon": -84.7357128,
+    "tags": {
+     "check_date:internet_access": "2026-05-01",
+     "email": "info@arenaltropicalgarden.com",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Arenal Tropical Garden",
+     "phone": "+506 2479 1160",
+     "smoking": "no",
+     "tourism": "hotel",
+     "website": "http://www.arenaltropicalgarden.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 458968736,
+    "lat": 10.4599073,
+    "lon": -84.6737911,
+    "tags": {
+     "addr:city": "San Carlos",
+     "email": "info@lomasdelvolcan.com",
+     "fax": "506 2479 9836",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2479 9000",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.lomasdelvolcan.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 459337549,
+    "lat": 10.4683288,
+    "lon": -84.6657813,
+    "tags": {
+     "addr:city": "San Carlos",
+     "building": "hotel",
+     "email": "info@hotelmagicmountain.com",
+     "fax": "506 2479 7248",
+     "name": "Hotel Magic Mountain",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2479 7246",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.hotelmagicmountain.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 463371486,
+    "lat": 10.4552521,
+    "lon": -84.6679099,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Brisas Arenal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 501547127,
+    "lat": 10.4719642,
+    "lon": -84.6480891,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "building:levels": "2",
+     "name": "La Fortuna Suites",
+     "source": "local_knowledge",
+     "tourism": "hotel",
+     "website": "https://www.lafortunasuites.com/",
+     "wikidata": "Q111151213"
+    }
+   },
+   {
+    "type": "way",
+    "id": 501547129,
+    "lat": 10.4724047,
+    "lon": -84.6481911,
+    "tags": {
+     "building": "yes",
+     "name": "Los Cactus",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 514958638,
+    "lat": 10.519132,
+    "lon": -84.6882329,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 544630809,
+    "lat": 10.4553638,
+    "lon": -84.6672231,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:housenumber": "Dentro de Hotel Brisas Arenal",
+     "addr:postcode": "21007",
+     "addr:street": "calle 506",
+     "building": "yes",
+     "building:levels": "1",
+     "description": "Hospedaje, hotel de montaña ",
+     "email": "admin@brisasarenal.com",
+     "name": "Yellow Tree Hotel",
+     "operator": "Brisas Arenal Hotel",
+     "phone": "+50624799225",
+     "start_date": "15 de Julio 2017",
+     "tourism": "hotel",
+     "website": "https://www.yellowtreehotel.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 670115175,
+    "lat": 10.4683619,
+    "lon": -84.6648843,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 670115177,
+    "lat": 10.4681489,
+    "lon": -84.6647324,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 749848556,
+    "lat": 10.542008,
+    "lon": -84.7155516,
+    "tags": {
+     "addr:city": "Monterrey",
+     "addr:street": "Linda vista- La Fortuna",
+     "building": "yes",
+     "guest_house": "bed_and_breakfast",
+     "internet_access": "yes",
+     "name": "Casa Robles",
+     "rooms": "2",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 804639632,
+    "lat": 10.4687107,
+    "lon": -84.6509453,
+    "tags": {
+     "building": "yes",
+     "name": "Palacios Arenal",
+     "tourism": "hostel",
+     "wikidata": "Q111126521"
+    }
+   },
+   {
+    "type": "way",
+    "id": 804639643,
+    "lat": 10.4689999,
+    "lon": -84.6504789,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "building": "yes",
+     "name": "Pura Vida",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 804715016,
+    "lat": 10.5030826,
+    "lon": -84.6869523,
+    "tags": {
+     "building": "yes",
+     "name": "Arrival lobby reception",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 804721031,
+    "lat": 10.5005621,
+    "lon": -84.680526,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "building": "hotel",
+     "fax": "+506 2479 1112",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Arenal Manoa",
+     "phone": "+506 2479 1111",
+     "stars": "4",
+     "tourism": "hotel",
+     "website": "https://www.arenalmanoa.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 937863035,
+    "lat": 10.4693594,
+    "lon": -84.6540853,
+    "tags": {
+     "name": "Villas Vista Arenal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 939407924,
+    "lat": 10.4703503,
+    "lon": -84.6435518,
+    "tags": {
+     "building": "yes",
+     "name": "Viajero La Fortuna",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 989003584,
+    "lat": 10.4711936,
+    "lon": -84.6424262,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas La Guacamaya",
+     "name:en": "La Guacamaya Cabins",
+     "name:es": "Cabinas La Guacamaya",
+     "name:it": "Cabine La Guacamaya",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 989020790,
+    "lat": 10.4710546,
+    "lon": -84.6456136,
+    "tags": {
+     "building": "yes",
+     "name": "La Fortuna Downtown Hotel",
+     "name:en": "La Fortuna Downtown Hotel",
+     "name:es": "Hotel La Fortuna",
+     "name:it": "Albergo La Fortuna",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918673,
+    "lat": 10.4687199,
+    "lon": -84.6434933,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Doña Alicia",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918674,
+    "lat": 10.4681659,
+    "lon": -84.6434699,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Ralopz",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918679,
+    "lat": 10.4708077,
+    "lon": -84.6469537,
+    "tags": {
+     "building": "yes",
+     "name": "Backpackers La Fortuna",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918682,
+    "lat": 10.4705359,
+    "lon": -84.6483482,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Regina",
+     "tourism": "hotel",
+     "wikidata": "Q111151208"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918684,
+    "lat": 10.4695642,
+    "lon": -84.6472677,
+    "tags": {
+     "building": "yes",
+     "name": "Gringo Pete 2",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918685,
+    "lat": 10.469994,
+    "lon": -84.6465473,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Las Palmas",
+     "tourism": "guest_house",
+     "wikidata": "Q111126523"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918689,
+    "lat": 10.4707636,
+    "lon": -84.6458937,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Arenal",
+     "name:en": "Arenal Hostel Resort",
+     "name:it": "Ostello Arenal",
+     "tourism": "hostel",
+     "wikidata": "Q111126522"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918698,
+    "lat": 10.4716077,
+    "lon": -84.6412819,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Macua",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918702,
+    "lat": 10.4710554,
+    "lon": -84.641166,
+    "tags": {
+     "building": "yes",
+     "name": "Apartamentos Pocho",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918703,
+    "lat": 10.4713407,
+    "lon": -84.6411942,
+    "tags": {
+     "building": "yes",
+     "name": "Gringo Pete 1",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1026918704,
+    "lat": 10.4713882,
+    "lon": -84.6401479,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Las Orquídeas",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231372,
+    "lat": 10.4710201,
+    "lon": -84.6352969,
+    "tags": {
+     "building": "yes",
+     "name": "Villa Fortuna",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231373,
+    "lat": 10.4707637,
+    "lon": -84.6346856,
+    "tags": {
+     "building": "yes",
+     "name": "Aparthotel Arenal",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231417,
+    "lat": 10.4760983,
+    "lon": -84.6161029,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Jardines del Arenal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231423,
+    "lat": 10.4701786,
+    "lon": -84.650178,
+    "tags": {
+     "building": "yes",
+     "name": "Mochileros Arenal",
+     "name:en": "Arenal Backpackers",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231439,
+    "lat": 10.473068,
+    "lon": -84.6445175,
+    "tags": {
+     "building": "yes",
+     "name": "Las Tinajas",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231440,
+    "lat": 10.4730361,
+    "lon": -84.6442593,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel San Bosco",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231443,
+    "lat": 10.4737004,
+    "lon": -84.6452317,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Rabfer",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027231444,
+    "lat": 10.4739971,
+    "lon": -84.6455738,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel El Buen Lugar",
+     "name:en": "Good Place Hostel",
+     "name:es": "Hostel El Buen Lugar",
+     "name:he": "הוסטל נייס פלייס",
+     "name:it": "Ostello Il Buon Luogo",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027235903,
+    "lat": 10.4721573,
+    "lon": -84.6462307,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Indio Durmiente",
+     "name:en": "Sleeping Indian Hostel",
+     "name:es": "Hostel Indio Durmiente",
+     "name:it": "Ostello Indiano Dormente",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027235907,
+    "lat": 10.4727828,
+    "lon": -84.646462,
+    "tags": {
+     "building": "yes",
+     "name": "Eco Hostel",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027242804,
+    "lat": 10.4709596,
+    "lon": -84.6442373,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Las Colinas",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027242807,
+    "lat": 10.4709368,
+    "lon": -84.6436793,
+    "tags": {
+     "building": "yes",
+     "name": "Hostel Santa Fe",
+     "name:es": "Hostel Santa Fe",
+     "name:it": "Ostello Santa Fe",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027242814,
+    "lat": 10.4708645,
+    "lon": -84.646589,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Arenal Jireh",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027242819,
+    "lat": 10.4715237,
+    "lon": -84.6423315,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel La Posada",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027242820,
+    "lat": 10.4718262,
+    "lon": -84.6406,
+    "tags": {
+     "building": "yes",
+     "name": "Cuartos La Fortuna",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027581691,
+    "lat": 10.4717512,
+    "lon": -84.6484601,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel La Choza",
+     "phone": "2479 9361",
+     "tourism": "hostel",
+     "website": "www.lachozainnhostal.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027581692,
+    "lat": 10.4722982,
+    "lon": -84.6491999,
+    "tags": {
+     "building": "yes",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027581699,
+    "lat": 10.4769736,
+    "lon": -84.6438693,
+    "tags": {
+     "building": "yes",
+     "name": "Apartamentos Rogelio",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027581700,
+    "lat": 10.4776505,
+    "lon": -84.6439285,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Río Danta",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027581703,
+    "lat": 10.4740748,
+    "lon": -84.6439123,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Secreto de La Fortuna",
+     "tourism": "hotel",
+     "wikidata": "Q111151212"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1027581704,
+    "lat": 10.474089,
+    "lon": -84.6437634,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Holística Arenal",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1028449981,
+    "lat": 10.4704704,
+    "lon": -84.6426195,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Monte Real",
+     "tourism": "hotel",
+     "wikidata": "Q111151203"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1029470769,
+    "lat": 10.4664519,
+    "lon": -84.6426931,
+    "tags": {
+     "building": "yes",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1029470770,
+    "lat": 10.465381,
+    "lon": -84.6428998,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Arenal Carmela",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1029470776,
+    "lat": 10.4632996,
+    "lon": -84.6422486,
+    "tags": {
+     "name": "Cabañas Rústicas La Fortuna",
+     "tourism": "chalet"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1029470778,
+    "lat": 10.4598796,
+    "lon": -84.6407354,
+    "tags": {
+     "building": "yes",
+     "name": "Apartamentos Lisa's Loft",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1029473677,
+    "lat": 10.4727336,
+    "lon": -84.636187,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Colores del Arenal",
+     "tourism": "hotel",
+     "wikidata": "Q111885148"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1029473689,
+    "lat": 10.4698602,
+    "lon": -84.6313774,
+    "tags": {
+     "building": "yes",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030572512,
+    "lat": 10.4825587,
+    "lon": -84.682034,
+    "tags": {
+     "name": "Hotel y Aguas Termales Baldí",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030572524,
+    "lat": 10.4778446,
+    "lon": -84.6738503,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel y Termales Palmera Real",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030572525,
+    "lat": 10.4884774,
+    "lon": -84.6777919,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Los Laureles",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030572606,
+    "lat": 10.48571,
+    "lon": -84.6808261,
+    "tags": {
+     "name": "Hotel El Silencio del Campo",
+     "tourism": "hotel",
+     "wikidata": "Q111151237"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030576420,
+    "lat": 10.5023619,
+    "lon": -84.6923328,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "name": "Miradas del Arenal",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030590062,
+    "lat": 10.4068174,
+    "lon": -84.5986057,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas La Carreta",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1030590066,
+    "lat": 10.4059434,
+    "lon": -84.597172,
+    "tags": {
+     "building": "yes",
+     "name": "Sueños del Volcán",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1031896798,
+    "lat": 10.4531006,
+    "lon": -84.6394981,
+    "tags": {
+     "building": "yes",
+     "name": "La Casa de Iván",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1041313899,
+    "lat": 10.545963,
+    "lon": -84.7183414,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Calle Linda Vista",
+     "building": "house",
+     "email": "sanjosie@hotmail.com",
+     "guest_house": "guest_house",
+     "image": "https://www.instagram.com/p/COwRQF_rItf/",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Casa Boho",
+     "operator": "Familia Robles Roy",
+     "payment:credit_cards": "yes",
+     "payment:visa": "yes",
+     "reservation": "required",
+     "rooms": "3",
+     "smoking": "no",
+     "tourism": "guest_house",
+     "website": "https://www.instagram.com/casa_boho_lafortuna/",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1054137958,
+    "lat": 10.4271002,
+    "lon": -84.7505715,
+    "tags": {
+     "building": "yes",
+     "name": "Hummingbird Nest",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1054137962,
+    "lat": 10.4249465,
+    "lon": -84.7517476,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Los Tucanes",
+     "tourism": "hostel",
+     "wikidata": "Q111885152"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1063099983,
+    "lat": 10.471058,
+    "lon": -84.6482381,
+    "tags": {
+     "building": "yes",
+     "name": "Arenal Backpackers Resort",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1082742964,
+    "lat": 10.4878345,
+    "lon": -84.7224316,
+    "tags": {
+     "building": "yes",
+     "name": "Tabacón Grand Spa Thermal Resort",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1365402969,
+    "lat": 10.4987016,
+    "lon": -84.6870548,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "check_date": "2025-02-28",
+     "email": "info@volcanolodge.com",
+     "fax": "506 2479 1716",
+     "name": "Volcano Lodge",
+     "phone": "506 2479 1717",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.volcanolodge.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1385641443,
+    "lat": 10.4709425,
+    "lon": -84.6417228,
+    "tags": {
+     "building": "yes",
+     "name": "Arenal Paradise Lodge",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 3281324,
+    "lat": 10.4912738,
+    "lon": -84.7107521,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Kioro Arenal",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13753815,
+    "lat": 10.4704823,
+    "lon": -84.6497539,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Sierra Arenal",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13757941,
+    "lat": 10.4752327,
+    "lon": -84.6444246,
+    "tags": {
+     "building": "yes",
+     "name": "Cuartos del Arenal",
+     "tourism": "hostel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13777364,
+    "lat": 10.4640934,
+    "lon": -84.6413422,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Arenal Country",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13777380,
+    "lat": 10.4688615,
+    "lon": -84.633071,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Tangara",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13794735,
+    "lat": 10.4858614,
+    "lon": -84.6818129,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Sueño Dorado",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13794741,
+    "lat": 10.5028342,
+    "lon": -84.6956457,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "contact:facebook": "https://www.facebook.com/HotelArenalParaisoResortSpa/",
+     "name": "Hotel Arenal Paraíso",
+     "name:it": "Albergo Arenal Paraíso",
+     "phone": "+506 2479 1100",
+     "tourism": "hotel",
+     "type": "multipolygon",
+     "website": "https://arenalparaisoresort.com/"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 13794742,
+    "lat": 10.5031939,
+    "lon": -84.6923689,
+    "tags": {
+     "building": "yes",
+     "name": "Miradas del Arenal",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 14068348,
+    "lat": 10.4911725,
+    "lon": -84.721964,
+    "tags": {
+     "addr:city": "La Fortuna",
+     "addr:street": "Vía 142",
+     "building": "yes",
+     "layer": "1",
+     "name": "Hotel Tabacón",
+     "name:it": "Albergo Tabacón",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 14068350,
+    "lat": 10.426859,
+    "lon": -84.7512496,
+    "tags": {
+     "building": "yes",
+     "name": "Cabañitas El Castillo Dorado",
+     "tourism": "hostel",
+     "type": "multipolygon"
+    }
+   }
+  ],
+  "Uvita": [
+   {
+    "type": "node",
+    "id": 2518621724,
+    "lat": 9.1620709,
+    "lon": -83.7454494,
+    "tags": {
+     "name": "Canto de Ballena",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2612652805,
+    "lat": 9.1580198,
+    "lon": -83.7414237,
+    "tags": {
+     "name": "Bahia Azul",
+     "tourism": "hotel",
+     "wikidata": "Q112020796"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2612671030,
+    "lat": 9.1243297,
+    "lon": -83.6975047,
+    "tags": {
+     "addr:city": "Bahía Ballena",
+     "contact:email": "info@cristal-ballena.com",
+     "contact:facebook": "http://www.facebook.com/CristalBallena",
+     "contact:fax": "+506 2786 5355",
+     "contact:phone": "+506 2786 5354",
+     "contact:skype": "cristal-ballena",
+     "contact:website": "http://www.cristal-ballena.com",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Cristal Ballena",
+     "rooms": "18",
+     "stars": "4",
+     "tourism": "hotel",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2746772928,
+    "lat": 9.1530811,
+    "lon": -83.7360361,
+    "tags": {
+     "name": "Hotel Bambu Beach",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2746772939,
+    "lat": 9.151636,
+    "lon": -83.7347007,
+    "tags": {
+     "name": "Cabinas Esmo",
+     "source": "site visit 20130120",
+     "tourism": "motel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2832329445,
+    "lat": 9.0698518,
+    "lon": -83.6527255,
+    "tags": {
+     "addr:city": "Ojochal",
+     "name": "El Castillo",
+     "tourism": "hotel",
+     "website": "https://www.elcastillocr.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3045771533,
+    "lat": 9.1632424,
+    "lon": -83.7223595,
+    "tags": {
+     "name": "Eden Tica Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520757,
+    "lat": 9.1779083,
+    "lon": -83.7424193,
+    "tags": {
+     "addr:city": "Uvita",
+     "email": "bandjcabins@yahoo.com",
+     "name": "B&j Cabinas",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "8639-5733",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.bandjcabins.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520770,
+    "lat": 9.1521961,
+    "lon": -83.7362441,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Bambu Beach Hostel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "Camino a Playa Chamn, Ivita, Costa Rica",
+     "phone": "506 2743 8143",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.bambubeachhostel.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982521391,
+    "lat": 9.1537903,
+    "lon": -83.7314781,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Cabinas El Chaman",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982521409,
+    "lat": 9.1559655,
+    "lon": -83.7378511,
+    "tags": {
+     "addr:city": "Uvita",
+     "email": "reservaciones@cabinasfelix.com",
+     "name": "Cabinas Felix",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "8348-3636",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.cabinasfelix.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982521441,
+    "lat": 9.1735631,
+    "lon": -83.7361769,
+    "tags": {
+     "addr:city": "Uvita",
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "email": "info@cabinasloslaureles.com",
+     "internet_access": "wlan",
+     "name": "Cabinas Los Laureles",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "payment:lightning": "yes",
+     "payment:lightning_contactless": "no",
+     "payment:onchain": "no",
+     "phone": "2743-8235",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.cabinasloslaureles.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522191,
+    "lat": 9.1744776,
+    "lon": -83.7389873,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Cabinas Sulakaska",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523384,
+    "lat": 9.1360253,
+    "lon": -83.7069007,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Finca Bavaria",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523448,
+    "lat": 9.1483907,
+    "lon": -83.7264777,
+    "tags": {
+     "addr:city": "Uvita",
+     "email": "hacienda@coopeagri.co.cr",
+     "fax": "506 2743 8400",
+     "name": "Hacienda CoopeAgri",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "Costa Ballena 100 metros sur de la ferretera El Colono, Uvita de Osa, Puntarenas, Costa Rica",
+     "phone": "506 2743 8081",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.haciendacoopeagri.cr"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524011,
+    "lat": 9.1593901,
+    "lon": -83.7425555,
+    "tags": {
+     "addr:city": "Uvita",
+     "email": "reservations@marinolodgecr.com",
+     "fax": "506 2743 8378",
+     "name": "Marino Lodge",
+     "note": "Updated after visiting in 2017",
+     "phone": "+506 2743 8289",
+     "source": "KG Ground Survey 2015;local_knowledge",
+     "tourism": "hotel",
+     "website": "https://www.marinolodgecr.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524294,
+    "lat": 9.1501902,
+    "lon": -83.7258268,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Hotel Pacific Dyean",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524882,
+    "lat": 9.1973497,
+    "lon": -83.7435615,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Kura Design Villas",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524888,
+    "lat": 9.1725485,
+    "lon": -83.7203088,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "La Cacatua Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524917,
+    "lat": 9.253936,
+    "lon": -83.727722,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "La Cusinga Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524922,
+    "lat": 9.158736,
+    "lon": -83.7403174,
+    "tags": {
+     "addr:city": "Uvita",
+     "email": "info@lafioredebahia.com",
+     "name": "La Fiore de Bahia",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "50 metros este de las Oficinas de Acueducto en Baha Ballena, Osa, Puntarenas, Costa Rica",
+     "phone": "+506 2743 8171",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.bahiauvitahotel.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525291,
+    "lat": 9.1514314,
+    "lon": -83.725948,
+    "tags": {
+     "addr:city": "Uvita",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526759,
+    "lat": 9.154528,
+    "lon": -83.730637,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Playa Luna Hotel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527546,
+    "lat": 9.2030832,
+    "lon": -83.7825989,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Tiki Villas Rainforest Lodge",
+     "tourism": "hotel",
+     "website": "https://www.tikivillas.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527917,
+    "lat": 9.0751648,
+    "lon": -83.6562729,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Villas El Bosque",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982528159,
+    "lat": 9.1846787,
+    "lon": -83.7461633,
+    "tags": {
+     "addr:city": "Uvita",
+     "name": "Whales & Dolphins Ecolodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4020158529,
+    "lat": 9.1832005,
+    "lon": -83.7310941,
+    "tags": {
+     "name": "Terrazas de Ballena",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4703878796,
+    "lat": 9.2811973,
+    "lon": -83.7993783,
+    "tags": {
+     "name:en": "Roman-Mendieta",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4816873023,
+    "lat": 9.0750025,
+    "lon": -83.6541234,
+    "tags": {
+     "internet_access": "wlan",
+     "name:en": "Boutique Hotel Tangara Azul",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5322292422,
+    "lat": 9.1881092,
+    "lon": -83.7374979,
+    "tags": {
+     "name": "Vista verde vacasa",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5407177823,
+    "lat": 9.1761745,
+    "lon": -83.7296279,
+    "tags": {
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "name": "Osa de Rio",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "8862 5255",
+     "tourism": "hostel",
+     "website": "http://www.osaderio.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5529915421,
+    "lat": 9.1502731,
+    "lon": -83.7339286,
+    "tags": {
+     "email": "campingelchaman@gmail.com",
+     "internet_access": "wlan",
+     "name": "Camping el Chaman",
+     "phone": "27438161",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5669854868,
+    "lat": 9.1644338,
+    "lon": -83.739998,
+    "tags": {
+     "name": "Palmer Guest",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5669855925,
+    "lat": 9.1637632,
+    "lon": -83.7403641,
+    "tags": {
+     "name": "Bodhi Surf Yoga",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5796456353,
+    "lat": 9.1442718,
+    "lon": -83.7236466,
+    "tags": {
+     "name": "Ballena Paraíso Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5849509825,
+    "lat": 9.1745956,
+    "lon": -83.7218013,
+    "tags": {
+     "name": "Manoas",
+     "phone": "+506 8432 9032",
+     "tourism": "hotel",
+     "website": "http://www.manoas.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5876151688,
+    "lat": 9.1788478,
+    "lon": -83.7314805,
+    "tags": {
+     "name": "Hostel Cascada Verde",
+     "tourism": "hostel",
+     "wikidata": "Q111114247"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6281679287,
+    "lat": 9.1505384,
+    "lon": -83.7352311,
+    "tags": {
+     "name": "Cola Ballena",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6281679304,
+    "lat": 9.1560517,
+    "lon": -83.7395213,
+    "tags": {
+     "name": "Karandi",
+     "tourism": "hotel",
+     "wikidata": "Q111114248"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6281684082,
+    "lat": 9.1573545,
+    "lon": -83.7456944,
+    "tags": {
+     "check_date": "2024-05-09",
+     "name": "Casalta",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6538756787,
+    "lat": 9.1824399,
+    "lon": -83.7259611,
+    "tags": {
+     "name": "Rancho Pacifico",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6685689485,
+    "lat": 9.2964549,
+    "lon": -83.7884332,
+    "tags": {
+     "name": "Lauren’s House",
+     "name:en": "Lauren’s House",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6985429486,
+    "lat": 9.1540238,
+    "lon": -83.7338707,
+    "tags": {
+     "name:en": "Alegria Tropical House",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 7110504886,
+    "lat": 9.1595321,
+    "lon": -83.7434277,
+    "tags": {
+     "name:en": "Yubarta Lodge",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9405078321,
+    "lat": 9.0753717,
+    "lon": -83.6537969,
+    "tags": {
+     "name": "Casa Blanca Villas",
+     "tourism": "hotel",
+     "website": "https://www.casablancavillasojochal.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9423660858,
+    "lat": 9.1599707,
+    "lon": -83.7477654,
+    "tags": {
+     "name": "Ballena Paradise",
+     "phone": "+506-21011959",
+     "tourism": "hotel",
+     "website": "https://www.ballenaparadise.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9423660859,
+    "lat": 9.1576721,
+    "lon": -83.7415855,
+    "tags": {
+     "name": "Dolce Uvita",
+     "tourism": "guest_house",
+     "wikidata": "Q112020798"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9425806468,
+    "lat": 9.1721173,
+    "lon": -83.7394887,
+    "tags": {
+     "name": "Paso de Ballenas",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9425811039,
+    "lat": 9.175233,
+    "lon": -83.7437122,
+    "tags": {
+     "building": "yes",
+     "name": "Ukinca",
+     "phone": "+506-2743-8061",
+     "tourism": "hostel",
+     "website": "https://www.ukinca.com/",
+     "wikidata": "Q111114250"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9512378617,
+    "lat": 9.1554666,
+    "lon": -83.7268061,
+    "tags": {
+     "cash_withdrawal": "Cash;Credit Card",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Forest Lodge",
+     "name:en": "Forest Lodge",
+     "smoking": "no",
+     "tourism": "hotel",
+     "wheelchair": "limited",
+     "wikidata": "Q112020813"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10109858970,
+    "lat": 9.1918095,
+    "lon": -83.7279734,
+    "tags": {
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "name": "Oxygen Jungle Villas",
+     "payment:lightning": "yes",
+     "payment:lightning_contactless": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50683224773",
+     "survey:date": "2022-09-22",
+     "tourism": "hotel",
+     "website": "https://oxygenjunglevillas.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10264976722,
+    "lat": 9.1587465,
+    "lon": -83.7476062,
+    "tags": {
+     "name": "Yuli Uvita",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10542810071,
+    "lat": 9.1537403,
+    "lon": -83.7376192,
+    "tags": {
+     "addr:city": "Bahía Ballena",
+     "addr:street": "Calle La Curinga",
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "email": "tropicalbeach.uvita@gmail.com",
+     "name": "Tropical Beach Hotel",
+     "payment:lightning": "yes",
+     "payment:lightning_contactless": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50 687016446",
+     "survey:date": "2023-01-17",
+     "tourism": "hotel",
+     "website": "https://hotelcostarica.org/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10587286205,
+    "lat": 9.1642561,
+    "lon": -83.7362201,
+    "tags": {
+     "addr:postcode": "60504",
+     "addr:street": "Carretera Pacífica Fernández Oreamuno",
+     "check_date": "2023-06-19",
+     "check_date:currency:XBT": "2025-04-21",
+     "contact:whatsapp": "+1 971 645 0227",
+     "currency:XBT": "yes",
+     "email": "shipwreckedcr@gmail.com",
+     "guest_house": "hostel",
+     "internet_access": "wlan",
+     "name": "Shipwrecked Hostel",
+     "opening_hours": "Mo-Su 07:00-22:00",
+     "payment:cash": "yes",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "+506 8890-0468",
+     "tourism": "hostel",
+     "website": "https://www.shipwreckedcr.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10902770287,
+    "lat": 9.2772846,
+    "lon": -83.7999156,
+    "tags": {
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11520441510,
+    "lat": 9.1729492,
+    "lon": -83.734131,
+    "tags": {
+     "air_conditioning": "yes",
+     "guest_house": "guest_house",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "Madre Terra",
+     "phone": "+506 8802 6940",
+     "rooms": "3",
+     "smoking": "no",
+     "tourism": "guest_house",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11891643704,
+    "lat": 9.1551199,
+    "lon": -83.7376548,
+    "tags": {
+     "check_date": "2024-05-09",
+     "name": "Birds Of Paradise",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11891643708,
+    "lat": 9.15763,
+    "lon": -83.7410542,
+    "tags": {
+     "check_date": "2024-05-09",
+     "name": "Casa Ara Macao",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11891643712,
+    "lat": 9.1556438,
+    "lon": -83.7474331,
+    "tags": {
+     "check_date": "2024-05-09",
+     "name": "Cabinas Chirincoca",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11891643713,
+    "lat": 9.1555121,
+    "lon": -83.7475565,
+    "tags": {
+     "check_date": "2024-05-09",
+     "name": "Cabinas Semilla",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12158836519,
+    "lat": 9.1590407,
+    "lon": -83.7439682,
+    "tags": {
+     "name": "Ballena Oasis Home",
+     "payment:cash": "only",
+     "reservation": "required",
+     "tourism": "apartment"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12407644402,
+    "lat": 9.1650371,
+    "lon": -83.7445217,
+    "tags": {
+     "addr:street": "Calle Uvita",
+     "name": "Luminosa Uvita Hostel",
+     "outdoor_seating": "no",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12441164419,
+    "lat": 9.288314,
+    "lon": -83.7746299,
+    "tags": {
+     "check_date:currency:XBT": "2024-12-21",
+     "currency:XBT": "yes",
+     "name": "Eco Maste",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50689678012",
+     "tourism": "guest_house",
+     "website": "https://www.ecomaste.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12441164430,
+    "lat": 9.1924767,
+    "lon": -83.77129,
+    "tags": {
+     "check_date:currency:XBT": "2024-12-21",
+     "currency:XBT": "yes",
+     "name": "Casa Ker Lumar",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50687363385",
+     "tourism": "guest_house",
+     "website": "https://casakerlumar.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12442590150,
+    "lat": 9.2544823,
+    "lon": -83.7354666,
+    "tags": {
+     "check_date": "2025-03-16",
+     "check_date:currency:XBT": "2025-03-16",
+     "contact:instagram": "metamorfinca",
+     "currency:XBT": "yes",
+     "email": "contact@metamorfinca.com",
+     "name": "Metamorfinca",
+     "payment:lightning": "yes",
+     "payment:lightning_contactless": "no",
+     "payment:onchain": "yes",
+     "tourism": "chalet",
+     "website": "https://metamorfinca.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12442590165,
+    "lat": 9.1763612,
+    "lon": -83.7308261,
+    "tags": {
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "name": "Flor de Bambú Experience",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50688012306",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12758473155,
+    "lat": 9.1573967,
+    "lon": -83.7421606,
+    "tags": {
+     "addr:door": "4",
+     "air_conditioning": "yes",
+     "building:levels": "2",
+     "check_date": "2025-04-14",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "Aventura Uno Apartments",
+     "tourism": "motel",
+     "wheelchair": "limited"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12824127321,
+    "lat": 9.1839791,
+    "lon": -83.7679112,
+    "tags": {
+     "check_date": "2025-03-03",
+     "currency:XBT": "yes",
+     "internet_access": "yes",
+     "name": "Hermosa Beachfront Apartments",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "tourism": "apartment",
+     "website": "https://airbtc.online/single-user/1051/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13064982501,
+    "lat": 9.1654575,
+    "lon": -83.7405557,
+    "tags": {
+     "addr:postcode": "60504",
+     "addr:street": "Calle Mariposario",
+     "name": "Ballena Rey",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13382056901,
+    "lat": 9.166319,
+    "lon": -83.738788,
+    "tags": {
+     "name": "Hotel Luz de Luna Bahia Ballena",
+     "phone": "+50689470428",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13502972401,
+    "lat": 9.1559158,
+    "lon": -83.7420326,
+    "tags": {
+     "addr:housenumber": "200 Sur",
+     "addr:postcode": "60504",
+     "addr:street": "Calle Costa Linda",
+     "internet_access": "wlan",
+     "level": "1",
+     "name": "Villas Ela",
+     "phone": "+50683126767",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13667853218,
+    "lat": 9.1524525,
+    "lon": -83.7318639,
+    "tags": {
+     "name": "Bahia Selvatica Lodge",
+     "phone": "+50687399561",
+     "tourism": "hotel",
+     "website": "https://bahiaselvaticalodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 14027206930,
+    "lat": 9.0778058,
+    "lon": -83.6593558,
+    "tags": {
+     "name": "Villas Gaía",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 379809889,
+    "lat": 9.1723427,
+    "lon": -83.7393317,
+    "tags": {
+     "building": "yes",
+     "clothes": "children",
+     "name": "El Mago Fuerte",
+     "shop": "clothes",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 379813251,
+    "lat": 9.1579866,
+    "lon": -83.7471551,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Bahia Uvita",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 379816668,
+    "lat": 9.1616818,
+    "lon": -83.7354526,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Gato",
+     "phone": "2743 8587 2484",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 379842204,
+    "lat": 9.1663151,
+    "lon": -83.7404432,
+    "tags": {
+     "addr:city": "Bahía Ballena",
+     "building": "yes",
+     "name": "Cabinas Sueños de María",
+     "source": "KG Ground Survey 2015",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 396071898,
+    "lat": 9.2895206,
+    "lon": -83.7912159,
+    "tags": {
+     "addr:city": "Perez Zeledon",
+     "area": "yes",
+     "name": "La Choza de Alahoe Hotel",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2011",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 670735585,
+    "lat": 9.1528643,
+    "lon": -83.7318481,
+    "tags": {
+     "addr:city": "Uvita",
+     "addr:postcode": "60504",
+     "addr:street": "Camino a Playa Colonia",
+     "building": "yes",
+     "email": "ballenrojauvita@yahoo.com",
+     "internet_access": "wlan",
+     "name": "Ballena Roja",
+     "phone": "+50684226504",
+     "rooms": "4",
+     "tourism": "hostel",
+     "website": "https://www.laballenarojauvita.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 670735587,
+    "lat": 9.152757,
+    "lon": -83.7318324,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 766679950,
+    "lat": 9.1573422,
+    "lon": -83.7474349,
+    "tags": {
+     "barrier": "fence",
+     "email": "info@bballena.com",
+     "fence_type": "concrete",
+     "name": "Villas Bungalows Ballena",
+     "phone": "(506) 2743-8543 / (506) 8309-9631",
+     "tourism": "hotel",
+     "website": "https://bungalowsballena.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 770080568,
+    "lat": 9.1240235,
+    "lon": -83.6979119,
+    "tags": {
+     "building": "yes",
+     "name": "Cristal Ballena",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 770080569,
+    "lat": 9.1239116,
+    "lon": -83.6975386,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 770080571,
+    "lat": 9.1242691,
+    "lon": -83.6983644,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 770086040,
+    "lat": 9.1044681,
+    "lon": -83.6593475,
+    "tags": {
+     "building": "yes",
+     "guest_house": "bed_and_breakfast",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 771975830,
+    "lat": 9.1135114,
+    "lon": -83.6908015,
+    "tags": {
+     "building": "yes",
+     "name": "Ballena Dorada",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 772402766,
+    "lat": 9.0737144,
+    "lon": -83.6512025,
+    "tags": {
+     "access": "customers",
+     "leisure": "swimming_pool",
+     "name": "Casa Tusca del Mar",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 772402774,
+    "lat": 9.0745488,
+    "lon": -83.6550928,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Bavaria",
+     "phone": "+506 2786 5191",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 772402779,
+    "lat": 9.077115,
+    "lon": -83.6530611,
+    "tags": {
+     "building": "yes",
+     "name": "Ô Soluna",
+     "phone": "+506 2786 5163",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 775128659,
+    "lat": 9.0817617,
+    "lon": -83.6607992,
+    "tags": {
+     "building": "yes",
+     "email": "guestcare@hotelcostarica.com",
+     "layer": "1",
+     "name": "The Lookout",
+     "tourism": "hotel",
+     "website": "https://www.hotelcostarica.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 775128700,
+    "lat": 9.0681759,
+    "lon": -83.6529894,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas Terra Mar",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354687,
+    "lat": 9.1152579,
+    "lon": -83.6882648,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Resort & Spa Crista Ballena",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354697,
+    "lat": 9.1193483,
+    "lon": -83.6853571,
+    "tags": {
+     "building": "yes",
+     "name": "Mar Y Selva Ecolodge3",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354700,
+    "lat": 9.1196867,
+    "lon": -83.6855301,
+    "tags": {
+     "building": "yes",
+     "name": "La Joya de Ballena",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354701,
+    "lat": 9.1140611,
+    "lon": -83.6883767,
+    "tags": {
+     "building": "yes",
+     "name": "La Experiencia CR",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354708,
+    "lat": 9.1144951,
+    "lon": -83.6943418,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354709,
+    "lat": 9.1173564,
+    "lon": -83.6952157,
+    "tags": {
+     "building": "yes",
+     "name": "Balcony of the Pacific",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354741,
+    "lat": 9.1252893,
+    "lon": -83.70983,
+    "tags": {
+     "building": "yes",
+     "name": "El Ballenato de Bahia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777354748,
+    "lat": 9.1352252,
+    "lon": -83.7206805,
+    "tags": {
+     "building": "yes",
+     "name": "La Cusinga Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777359375,
+    "lat": 9.1478828,
+    "lon": -83.7262313,
+    "tags": {
+     "building": "yes",
+     "name": "Casa Linda Vista",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777359376,
+    "lat": 9.1470913,
+    "lon": -83.7263593,
+    "tags": {
+     "building": "yes",
+     "name": "Pacific Dream",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 777359393,
+    "lat": 9.1500632,
+    "lon": -83.7238462,
+    "tags": {
+     "building": "yes",
+     "name": "Cabaña Tavo Pacheco",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482218,
+    "lat": 9.1516064,
+    "lon": -83.7258896,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482239,
+    "lat": 9.1534863,
+    "lon": -83.7309567,
+    "tags": {
+     "building": "yes",
+     "name": "Playa Luna",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482249,
+    "lat": 9.1535795,
+    "lon": -83.7315434,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Nido del Halcón",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482251,
+    "lat": 9.153357,
+    "lon": -83.7316724,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Nido del Halcón",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482252,
+    "lat": 9.1531574,
+    "lon": -83.7317894,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482253,
+    "lat": 9.1530048,
+    "lon": -83.7318343,
+    "tags": {
+     "building": "yes",
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "name": "Uvita Pirates Hostel",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50684383823",
+     "tourism": "hostel",
+     "website": "https://stayedhotel.eu/uvita-pirates-hostel-costa-rica"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482260,
+    "lat": 9.1523149,
+    "lon": -83.7326926,
+    "tags": {
+     "building": "yes",
+     "name": "La Casa De La Luz",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482265,
+    "lat": 9.1516421,
+    "lon": -83.7327292,
+    "tags": {
+     "building": "yes",
+     "name": "Villas María Luisa",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482271,
+    "lat": 9.1516615,
+    "lon": -83.7345543,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas ESMO",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482277,
+    "lat": 9.1537509,
+    "lon": -83.7383535,
+    "tags": {
+     "building": "yes",
+     "name": "Flutterby House",
+     "phone": "+506-8341 1730",
+     "tourism": "hostel",
+     "website": "https://www.flutterbyhouse.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482298,
+    "lat": 9.1558968,
+    "lon": -83.7380845,
+    "tags": {
+     "building": "yes",
+     "check_date": "2024-05-09",
+     "name": "Cabinas D'Val",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778482303,
+    "lat": 9.1570241,
+    "lon": -83.7401028,
+    "tags": {
+     "building": "yes",
+     "check_date": "2024-05-09",
+     "contact:whatsapp": "+87198350",
+     "name": "Cabinas Con Fernando",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778921148,
+    "lat": 9.1576217,
+    "lon": -83.7418318,
+    "tags": {
+     "building": "yes",
+     "name": "Mango Mike's cabinas",
+     "tourism": "hotel",
+     "website": "http://mangomikescabinas.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778921176,
+    "lat": 9.1576383,
+    "lon": -83.7443095,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas María Jesus",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 778922436,
+    "lat": 9.1728087,
+    "lon": -83.7439658,
+    "tags": {
+     "building": "yes",
+     "name": "The Buddha by Ballena",
+     "tourism": "hotel",
+     "website": "thebuddhabyballena.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 819301407,
+    "lat": 9.1490182,
+    "lon": -83.7163404,
+    "tags": {
+     "building": "yes",
+     "name": "Altos de Colonia",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 908475567,
+    "lat": 9.1630143,
+    "lon": -83.7449964,
+    "tags": {
+     "building": "yes",
+     "name": "Saltish Hotels & Villas",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 908958891,
+    "lat": 9.1672039,
+    "lon": -83.7338465,
+    "tags": {
+     "building": "yes",
+     "name": "Alma Tropical",
+     "phone": "+50688164045",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 909102197,
+    "lat": 9.163853,
+    "lon": -83.7456892,
+    "tags": {
+     "building": "yes",
+     "name": "Cüasràn Luxury Villas",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 991825169,
+    "lat": 9.1725246,
+    "lon": -83.7381404,
+    "tags": {
+     "building": "hotel",
+     "building:levels": "1",
+     "name": "Hotel Tucán",
+     "nohousenumber": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1031872265,
+    "lat": 9.1242114,
+    "lon": -83.6974131,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1042792461,
+    "lat": 9.152991,
+    "lon": -83.7065827,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1057735759,
+    "lat": 9.1745982,
+    "lon": -83.735084,
+    "tags": {
+     "building": "yes",
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Whale Tail Hotel",
+     "payment:lightning": "yes",
+     "payment:lightning_contactless": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50683349437",
+     "survey:date": "2022-12-13",
+     "tourism": "hotel",
+     "website": "https://whaletailcr.com/",
+     "wikidata": "Q111114249"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1073648805,
+    "lat": 9.0852225,
+    "lon": -83.6628948,
+    "tags": {
+     "building": "yes",
+     "name": "Hotel Tortuga",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1277656934,
+    "lat": 9.1578854,
+    "lon": -83.7446052,
+    "tags": {
+     "building": "yes",
+     "name": "Cabinas La Rana Roja",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1280748655,
+    "lat": 9.1541731,
+    "lon": -83.7325475,
+    "tags": {
+     "contact:whatsapp": "+50683014822",
+     "internet_access": "wlan",
+     "name": "Hotel El Tecal",
+     "phone": "+5062743 8012",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 15772225,
+    "lat": 9.1357924,
+    "lon": -83.7201796,
+    "tags": {
+     "name": "La Cusinga Lodge",
+     "tourism": "hotel",
+     "type": "multipolygon"
+    }
+   }
+  ],
+  "Osa": [
+   {
+    "type": "node",
+    "id": 772650991,
+    "lat": 8.6689411,
+    "lon": -83.6844591,
+    "tags": {
+     "name": "Tesoro Verde",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255079180,
+    "lat": 8.4441006,
+    "lon": -83.438808,
+    "tags": {
+     "name": "Terrapin Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255079989,
+    "lat": 8.4401899,
+    "lon": -83.4507254,
+    "tags": {
+     "name": "Cabinas Carate Jungle",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255082162,
+    "lat": 8.4396918,
+    "lon": -83.4489124,
+    "tags": {
+     "name": "Carate Jungle Camp",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255082561,
+    "lat": 8.4409088,
+    "lon": -83.4518758,
+    "tags": {
+     "name": "Hotel Look Out Inn",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255085584,
+    "lat": 8.4594629,
+    "lon": -83.4615961,
+    "tags": {
+     "name": "Luna Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255107676,
+    "lat": 8.7049074,
+    "lon": -83.4869657,
+    "tags": {
+     "name": "Cabinas Golfo Dulce",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1255109015,
+    "lat": 8.7073769,
+    "lon": -83.4865895,
+    "tags": {
+     "name": "Hotel Villas Corcovado",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 1744960175,
+    "lat": 8.4470684,
+    "lon": -83.4827199,
+    "tags": {
+     "name": "Corcovado Lodge Tent Camp",
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2118817130,
+    "lat": 8.6929955,
+    "lon": -83.6820885,
+    "tags": {
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "name": "Vista al Mar 'El Alemán'",
+     "payment:cash": "yes",
+     "payment:credit_cards": "no",
+     "payment:cryptocurrencies": "no",
+     "payment:debit_cards": "no",
+     "payment:electronic_purses": "no",
+     "rooms": "4",
+     "smoking": "no",
+     "tourism": "guest_house",
+     "website": "https://www.bahia-drake.com/",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2118817200,
+    "lat": 8.6933417,
+    "lon": -83.6894377,
+    "tags": {
+     "name": "Copa de Arbol",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2118817223,
+    "lat": 8.692867,
+    "lon": -83.6924904,
+    "tags": {
+     "name": "Corcovado Adventures",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2118825474,
+    "lat": 8.6894168,
+    "lon": -83.6703384,
+    "tags": {
+     "addr:city": "Drake bay",
+     "addr:street": "Cerca de Drake Bay Cafe",
+     "name": "Drake Bay Getaway",
+     "operator": "Drake Bay Getaway",
+     "phone": "+506 6003 7253",
+     "smoking": "no",
+     "tourism": "hotel",
+     "website": "https://www.drakebaygetaway.com/",
+     "wheelchair": "no"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2118833333,
+    "lat": 8.6975852,
+    "lon": -83.6537662,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "name": "Hotel Pirate Cove",
+     "tourism": "hotel",
+     "wikidata": "Q111151337"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2582764026,
+    "lat": 8.4465565,
+    "lon": -83.4791874,
+    "tags": {
+     "designation": "Lodge",
+     "name": "La Leona Eco-Lodge",
+     "phone": "(506) 2735-5705",
+     "source": "https://www.laleonaecolodge.com/",
+     "tourism": "hotel",
+     "website": "https://www.laleonaecolodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2641192478,
+    "lat": 8.8788037,
+    "lon": -83.4706569,
+    "tags": {
+     "addr:city": "Sierpe",
+     "name": "Veragua River House",
+     "source": "http://www.hotelveragua.com/",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2715989833,
+    "lat": 8.6059257,
+    "lon": -83.4440178,
+    "tags": {
+     "name": "Finca Köbö",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2782683618,
+    "lat": 8.4412973,
+    "lon": -83.4544561,
+    "tags": {
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "name": "Finca Exotica Eco Lodge",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "source": "http://www.fincaexotica.com",
+     "tourism": "motel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 2974426437,
+    "lat": 8.6214885,
+    "lon": -83.4771653,
+    "tags": {
+     "name": "Danta Corcovado Lodge",
+     "source": "www.dantalodge.com",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3094863187,
+    "lat": 8.6951878,
+    "lon": -83.6736824,
+    "tags": {
+     "name": "Drake Bay Wilderness Resort",
+     "phone": "+506 27 75 17 15",
+     "tourism": "hotel",
+     "website": "https://www.drakebay.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3404126910,
+    "lat": 8.6902703,
+    "lon": -83.6623158,
+    "tags": {
+     "check_date": "2026-02-22",
+     "name": "Miriams Place",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3946802322,
+    "lat": 8.7184103,
+    "lon": -83.6443617,
+    "tags": {
+     "name": "Rio Drake Farm",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982520165,
+    "lat": 8.6940975,
+    "lon": -83.6732019,
+    "tags": {
+     "addr:city": "Osa",
+     "fax": "506 2232 7722",
+     "name": "Águila de Osa",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 8840 2929",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://aguiladeosa.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982521367,
+    "lat": 8.440452,
+    "lon": -83.4478069,
+    "tags": {
+     "addr:city": "Golfito",
+     "name": "Cabinas Carate",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982521411,
+    "lat": 8.6989912,
+    "lon": -83.4845265,
+    "tags": {
+     "addr:city": "Rincon",
+     "name": "Cabinas Golfo Dulce",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522187,
+    "lat": 8.8602521,
+    "lon": -83.471527,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Cabinas Sofia",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522758,
+    "lat": 8.6311942,
+    "lon": -83.7260884,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "email": "corcovdo@racsa.co.cr",
+     "name": "Casa Corcovado Jungle Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "2256-7409",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.casacorcovado.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522759,
+    "lat": 8.7178565,
+    "lon": -83.6468139,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Casa Corcovado Jungle Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.casacorcovado.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982522816,
+    "lat": 8.5853218,
+    "lon": -83.5043801,
+    "tags": {
+     "addr:city": "Golfito",
+     "name": "Cerro De Oro Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523065,
+    "lat": 8.6933775,
+    "lon": -83.6895659,
+    "tags": {
+     "addr:city": "Osa",
+     "email": "info@copadearbol.com",
+     "name": "Copa de Arbol",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 8935 1212",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.copadearbol.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523066,
+    "lat": 8.6777926,
+    "lon": -83.7085767,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Corcovado Adventures Tent Camp",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523067,
+    "lat": 8.4421655,
+    "lon": -83.453725,
+    "tags": {
+     "addr:city": "Golfito",
+     "name": "Corcovado Lodge Tent Camp",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523116,
+    "lat": 8.7131005,
+    "lon": -83.6298104,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Drake Bay Backpackers",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 8486 5649",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://drakebaybackpackers.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523123,
+    "lat": 8.8783307,
+    "lon": -83.4701158,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Eco Manglares",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523378,
+    "lat": 8.8687406,
+    "lon": -83.4701546,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Estero Azul Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523401,
+    "lat": 8.7219923,
+    "lon": -83.4789825,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Forest Reserve Lodge Ave Del Mar",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523438,
+    "lat": 8.6562734,
+    "lon": -83.7122906,
+    "tags": {
+     "addr:city": "Osa",
+     "email": "puravida@guariadeosa.com",
+     "name": "Guaria de Osa EcoLodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "510 235 4313",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.guariadeosa.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982523971,
+    "lat": 8.8605796,
+    "lon": -83.4711259,
+    "tags": {
+     "addr:city": "Sierpe",
+     "addr:street": "Avenida Bonilla",
+     "name": "Hotel Gaviotas",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524289,
+    "lat": 8.698254,
+    "lon": -83.652458,
+    "tags": {
+     "addr:city": "Osa",
+     "email": "hotelojala@gmail.com",
+     "name": "Hotel Ojala",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 8868 7385",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.hotelojala.info"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524290,
+    "lat": 8.8588963,
+    "lon": -83.4727496,
+    "tags": {
+     "atm": "no",
+     "internet_access": "wlan",
+     "name": "Hotel Oleaje Sereno",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524858,
+    "lat": 8.6918499,
+    "lon": -83.6719761,
+    "tags": {
+     "addr:city": "Osa",
+     "email": "reservations@jinetesdeosa.com",
+     "fax": "506 2231 5906",
+     "name": "Jinetes de Osa",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2231 5806",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.jinetesdeosa.com/",
+     "wikidata": "Q111151335"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524928,
+    "lat": 8.4440044,
+    "lon": -83.4619782,
+    "tags": {
+     "addr:city": "Golfito",
+     "name": "La Leona Eco Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524936,
+    "lat": 8.6933743,
+    "lon": -83.682246,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "La Paloma Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982524954,
+    "lat": 8.4386966,
+    "lon": -83.4350261,
+    "tags": {
+     "addr:city": "Golfito",
+     "email": "greg@lagunavistavillas.com",
+     "name": "Laguna Vista Villas",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "Playa Carate, Carate, Corcovado National Park 60702, Costa Rica",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.lagunavistavillas.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525265,
+    "lat": 8.6827386,
+    "lon": -83.7075761,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Las Caletas Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525266,
+    "lat": 8.6934593,
+    "lon": -83.6878911,
+    "tags": {
+     "addr:city": "Osa",
+     "check_date": "2026-03-21",
+     "name": "Las Caletas Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525331,
+    "lat": 8.6669112,
+    "lon": -83.712079,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Marenco Beach & Rainforest Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982525352,
+    "lat": 8.6945778,
+    "lon": -83.6571054,
+    "tags": {
+     "addr:city": "Osa",
+     "email": "info@mirdordrakebay.com",
+     "name": "Mirador Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2775 2727",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.miradordrakebay.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526771,
+    "lat": 8.6461368,
+    "lon": -83.7145807,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Poor Man's Paradise",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982526804,
+    "lat": 8.691312,
+    "lon": -83.6634833,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Rancho Corcovado",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "http://www.ranchocorcovadocr.com/hotel-overview.html"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527493,
+    "lat": 8.7399042,
+    "lon": -83.4113211,
+    "tags": {
+     "addr:city": "Osa",
+     "name": "Suital Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.suital.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527524,
+    "lat": 8.4399961,
+    "lon": -83.44181,
+    "tags": {
+     "addr:city": "Golfito",
+     "name": "Terrapin Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982527533,
+    "lat": 8.4406187,
+    "lon": -83.4465889,
+    "tags": {
+     "addr:city": "Golfito",
+     "email": "reservations@lookout-inn.com",
+     "name": "The Look Out Inn",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 2735 5431",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.lookout-inn.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 3982634945,
+    "lat": 8.8582761,
+    "lon": -83.4733739,
+    "tags": {
+     "addr:city": "Sierpe",
+     "name": "Hotel Oleaje Sereno",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4160324589,
+    "lat": 8.687161,
+    "lon": -83.663595,
+    "tags": {
+     "atm": "no",
+     "internet_access": "wlan",
+     "name": "Cabinas Pura Vida",
+     "tourism": "hotel",
+     "wheelchair": "yes"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4556223091,
+    "lat": 8.6898184,
+    "lon": -83.6702606,
+    "tags": {
+     "guest_house": "hostel",
+     "internet_access": "wlan",
+     "name": "Cabinas Indígenas",
+     "rooms": "5",
+     "tourism": "hostel",
+     "website": "http://www.cabinasindigenasdrake.com"
+    }
+   },
+   {
+    "type": "node",
+    "id": 4753759551,
+    "lat": 8.6913345,
+    "lon": -83.6614013,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "addr:postcode": "11000",
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Sunset Lodge",
+     "operator": "Casa el Tortugo",
+     "tourism": "hotel",
+     "wikidata": "Q112020891"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5159543340,
+    "lat": 8.8176336,
+    "lon": -83.502159,
+    "tags": {
+     "addr:city": "Sierpe",
+     "internet_access": "wlan",
+     "name": "Finca La Puesta del Sol",
+     "name:en": "Fica La Puesta del Sol",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5215522139,
+    "lat": 8.6409151,
+    "lon": -83.731802,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "name": "Hotel Jungla del Jaguar",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5302763222,
+    "lat": 8.8093458,
+    "lon": -83.6270992,
+    "tags": {
+     "addr:postcode": "60503",
+     "addr:street": "isla violin",
+     "email": "islaviolin@gmail.com",
+     "internet_access": "wlan",
+     "name": "Isla Violin Eco-Lodge",
+     "opening_hours": "24/7",
+     "phone": "+50687031862",
+     "tourism": "hotel",
+     "website": "http://www.islaviolinecolodge.com",
+     "wikidata": "Q112020858"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5357204568,
+    "lat": 8.6886955,
+    "lon": -83.6622798,
+    "tags": {
+     "description": "Hotel",
+     "internet_access": "wlan",
+     "name": "Mohágine Hotel y Finca",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5536509222,
+    "lat": 8.6888386,
+    "lon": -83.6649998,
+    "tags": {
+     "name:en": "Hostel Casa Mariposa",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5796456453,
+    "lat": 8.6895111,
+    "lon": -83.666211,
+    "tags": {
+     "name": "Las Cotingas Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6140990685,
+    "lat": 8.5774011,
+    "lon": -83.4857349,
+    "tags": {
+     "name": "Finca La Tarde",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6258886695,
+    "lat": 8.6441988,
+    "lon": -83.4610451,
+    "tags": {
+     "name": "Corcovado Tropical",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6304086385,
+    "lat": 8.678574,
+    "lon": -83.6626339,
+    "tags": {
+     "email": "treehousetentreservations@yahoo.com ",
+     "name": "Treehouse Tent Camp",
+     "name:en": "Treehouse tent camp",
+     "tourism": "camp_site",
+     "website": "https://spark.adobe.com/page/WHpvo8Pjc1QKk/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6379787085,
+    "lat": 8.5279593,
+    "lon": -83.4169893,
+    "tags": {
+     "name": "Bolita",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6514354209,
+    "lat": 8.6897062,
+    "lon": -83.6640289,
+    "tags": {
+     "description": "Economic Room, Tour info, boat reservation to sierpe",
+     "email": "osatucan@gmail.com",
+     "internet_access": "yes",
+     "name": "Osa Tucan",
+     "phone": "+50672702872",
+     "reservation": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 6606962885,
+    "lat": 8.5278662,
+    "lon": -83.4057326,
+    "tags": {
+     "name": "Yejos B&B",
+     "opening_hours": "Mo-Su 07:00-19:00",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 7003995015,
+    "lat": 8.8693606,
+    "lon": -83.4688144,
+    "tags": {
+     "name": "Veragua River House",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 7123725886,
+    "lat": 8.6891522,
+    "lon": -83.6657327,
+    "tags": {
+     "name": "Casa Tucan",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9269989077,
+    "lat": 8.6987318,
+    "lon": -83.6386011,
+    "tags": {
+     "addr:city": "Bahia Drake",
+     "addr:street": "Calle Los Ángeles",
+     "guest_house": "hostel",
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "name": "GreenPoint Drake Bay",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9332983017,
+    "lat": 8.6923508,
+    "lon": -83.6614581,
+    "tags": {
+     "internet_access": "wlan",
+     "name": "Mirador",
+     "name:en": "Lookout Drake Bay",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9349125610,
+    "lat": 8.6787499,
+    "lon": -83.6598561,
+    "tags": {
+     "addr:city": "Bahia Drake",
+     "addr:postcode": "60503",
+     "addr:street": "La Bijagua",
+     "air_conditioning": "yes",
+     "description": "Bed and breakfast Rustic Rooms Beach-Mountaing Hosting",
+     "email": "tesorosir@gmail.com",
+     "guest_house": "bed_and_breakfast",
+     "internet_access": "yes",
+     "internet_access:fee": "no",
+     "name": "El Tesoro de Sir Lodging and Tours",
+     "operator": "Jason Salas",
+     "phone": "+00506 60185697",
+     "reservation": "recommended",
+     "rooms": "9",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9408681517,
+    "lat": 8.6925627,
+    "lon": -83.6936794,
+    "tags": {
+     "name": "Corcovado Jungle Hostel",
+     "tourism": "hostel",
+     "wikidata": "Q111112450"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9413370317,
+    "lat": 8.6628405,
+    "lon": -83.7134797,
+    "tags": {
+     "name": "Life for Life Sea Turtle Hostal",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9820781817,
+    "lat": 8.6440005,
+    "lon": -83.4617939,
+    "tags": {
+     "internet_access": "wlan",
+     "name": "Cabinas Yassy",
+     "phone": "+50627351014",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 9930118618,
+    "lat": 8.671965,
+    "lon": -83.6839133,
+    "tags": {
+     "email": "paradisehidden0@gmail.com",
+     "internet_access": "wlan",
+     "name:en": "Hidden Paradise Lodge",
+     "opening_hours": "Mo-Su 05:00-09:00",
+     "phone": "27759079",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10132388517,
+    "lat": 8.6928912,
+    "lon": -83.6608525,
+    "tags": {
+     "name": "El Mirador",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10603037505,
+    "lat": 8.8666133,
+    "lon": -83.470701,
+    "tags": {
+     "name": "Hotel Mirador las lapas",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10793966377,
+    "lat": 8.7129455,
+    "lon": -83.6296397,
+    "tags": {
+     "addr:city": "Bahia Drake",
+     "description": "The Corcovado Foundation Biohostel is located in Bahia Drake, about 2 minutes from the Drake Bay Airport,  15 minutes from the center of the town, and immersed in the rural community of el Progreso.   Surrounded by wild forests and farms, the place offers",
+     "email": "info@corcovadobiohostel.com",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Corcovado Foundation Biohostel",
+     "phone": "50688142057",
+     "rooms": "6",
+     "tourism": "hotel",
+     "website": "https://corcovadobiohostel.org/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 10844818402,
+    "lat": 8.6845959,
+    "lon": -83.6638388,
+    "tags": {
+     "name": "Cabañas Tico Gringo",
+     "tourism": "chalet"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11165439058,
+    "lat": 8.6840165,
+    "lon": -83.6715806,
+    "tags": {
+     "addr:city": "Agujitas de Bahá Drake",
+     "email": "reservations@drakebaygreenleaf.com",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Drake Bay Greenleaf Hotel",
+     "phone": "+506 8826 8024",
+     "rooms": "4",
+     "tourism": "hotel",
+     "website": "https://drakebaygreenleaf.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11258947837,
+    "lat": 8.9360882,
+    "lon": -83.4756353,
+    "tags": {
+     "addr:city": "Palmar",
+     "addr:street": "Vía 223",
+     "name": "La Muñequita Lodge",
+     "name:en": "La Muñequita Lodge",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11387809877,
+    "lat": 8.8676782,
+    "lon": -83.4710921,
+    "tags": {
+     "check_date": "2023-11-28",
+     "name": "The Sweet Escape Cabinas",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11387809879,
+    "lat": 8.8684773,
+    "lon": -83.4709755,
+    "tags": {
+     "check_date": "2023-11-29",
+     "name": "Hotel Cocodrilo",
+     "payment:cards": "no",
+     "payment:cash": "yes",
+     "payment:cash:CRC": "yes",
+     "payment:cash:USD": "yes",
+     "payment:credit_cards": "no",
+     "payment:debit_cards": "no",
+     "payment:sinpe_movil": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11416153990,
+    "lat": 8.6489602,
+    "lon": -83.713395,
+    "tags": {
+     "name": "Casa Bromelia",
+     "tourism": "hotel",
+     "website": "http://edencorcovado.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11753799610,
+    "lat": 8.6572592,
+    "lon": -83.7116483,
+    "tags": {
+     "name": "Poor Mans Paradise",
+     "tourism": "hotel",
+     "website": "https://www.poormansparadisecr.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11892592122,
+    "lat": 8.6879248,
+    "lon": -83.6639874,
+    "tags": {
+     "check_date": "2024-05-10",
+     "internet_access": "wlan",
+     "internet_access:fee": "customers",
+     "name": "Ceiba Lodge",
+     "payment:cash": "yes",
+     "payment:mastercard": "yes",
+     "payment:visa": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11897954668,
+    "lat": 8.6578491,
+    "lon": -83.7103339,
+    "tags": {
+     "name": "Katy’s Place",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11902804359,
+    "lat": 8.6893954,
+    "lon": -83.6635575,
+    "tags": {
+     "name": "Hostel Allegra",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11902804365,
+    "lat": 8.689788,
+    "lon": -83.6647627,
+    "tags": {
+     "name": "Cabinas Murillo",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11917618538,
+    "lat": 8.693849,
+    "lon": -83.6734667,
+    "tags": {
+     "name": "Aguila de Osa Inn",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "node",
+    "id": 11917651073,
+    "lat": 8.6959771,
+    "lon": -83.6760494,
+    "tags": {
+     "name": "La Paloma Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12327530039,
+    "lat": 8.6771256,
+    "lon": -83.664026,
+    "tags": {
+     "name": "Río Agujitas Eco-farm and Hostel",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12564013001,
+    "lat": 8.6723998,
+    "lon": -83.6935331,
+    "tags": {
+     "email": "faunalodge@gmail.com",
+     "internet_access": "wlan",
+     "name": "Fauna Lodge",
+     "tourism": "hotel",
+     "website": "https://www.faunalodge.com/"
+    }
+   },
+   {
+    "type": "node",
+    "id": 12844022901,
+    "lat": 8.7227754,
+    "lon": -83.4793291,
+    "tags": {
+     "internet_access": "wlan",
+     "name": "Kunken Lodge Boutique Hotel",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13426387176,
+    "lat": 8.6880286,
+    "lon": -83.6643501,
+    "tags": {
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Hotel Jacamar",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13702249501,
+    "lat": 8.6841741,
+    "lon": -83.6623434,
+    "tags": {
+     "name": "Sukia Hostel",
+     "tourism": "hostel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 13838652136,
+    "lat": 8.6879694,
+    "lon": -83.665381,
+    "tags": {
+     "addr:city": "Drake Bay",
+     "addr:housenumber": "200",
+     "addr:postcode": "54875",
+     "addr:street": "Oeste de Bahia Drake Puntarenas",
+     "name": "Hotel Margarita",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 155512706,
+    "lat": 8.6896042,
+    "lon": -83.6640003,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "building": "yes",
+     "email": "info@jademarcr.com",
+     "name": "Jade Mar",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "phone": "506 8384 6681",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "www.jademarcr.com"
+    }
+   },
+   {
+    "type": "way",
+    "id": 156358215,
+    "lat": 8.6814718,
+    "lon": -83.6719448,
+    "tags": {
+     "internet_access": "wlan",
+     "internet_access:fee": "no",
+     "name": "Finca Maresia",
+     "tourism": "hotel",
+     "website": "https://www.fincamaresia.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 266010652,
+    "lat": 8.6899401,
+    "lon": -83.6644753,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "building": "yes",
+     "check_date": "2024-05-10",
+     "name": "Martina's Place",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 407476272,
+    "lat": 8.6898817,
+    "lon": -83.6671884,
+    "tags": {
+     "addr:city": "Bahía Drake",
+     "building": "yes",
+     "email": "vistadrakelodge@gmail.com",
+     "fax": "506 2775 1214",
+     "name": "Vista Drake Lodge",
+     "note": "Hotel data current in 2011. Contains good contact information. Duplicates and \"no longer there\" are possible.",
+     "note_1": "150m east of Drake School, 50603 Drake Bay",
+     "phone": "506 2775 1216",
+     "source": "KG Ground Survey 2015",
+     "tourism": "hotel",
+     "website": "https://www.vistadrake.com/",
+     "wikidata": "Q111151341"
+    }
+   },
+   {
+    "type": "way",
+    "id": 407523452,
+    "lat": 8.6894467,
+    "lon": -83.6625256,
+    "tags": {
+     "building": "house",
+     "internet_access": "yes",
+     "internet_access:fee": "customers",
+     "name": "Casita & Tours Happy Feet",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 536754088,
+    "lat": 8.5788231,
+    "lon": -83.4077331,
+    "tags": {
+     "addr:city": "Puerto Jiménez",
+     "building": "yes",
+     "guest_house": "guest_house",
+     "name": "Casa Tabacón",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 906113178,
+    "lat": 8.6868149,
+    "lon": -83.7061456,
+    "tags": {
+     "building": "yes",
+     "check_date:currency:XBT": "2024-12-22",
+     "currency:XBT": "yes",
+     "name": "Lodge Punta Marenco",
+     "payment:lightning": "yes",
+     "payment:onchain": "yes",
+     "phone": "+50687058164",
+     "tourism": "hotel",
+     "website": "https://www.lodgepuntamarenco.com/"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1282080317,
+    "lat": 8.6555354,
+    "lon": -83.7113822,
+    "tags": {
+     "contact:instagram": "https://www.instagram.com/kinkajoungalows/",
+     "contact:whatsapp": "+50684545705",
+     "name": "Kinkajoungalows",
+     "tourism": "guest_house"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1547557702,
+    "lat": 8.8685002,
+    "lon": -83.4709705,
+    "tags": {
+     "building": "yes",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "relation",
+    "id": 16417294,
+    "lat": 8.4801273,
+    "lon": -83.5892371,
+    "tags": {
+     "name": "Sirena Biological Station",
+     "name:es": "Estación biológica Sirena",
+     "tourism": "hostel",
+     "type": "multipolygon"
+    }
+   }
+  ],
+  "Parismina": [
+   {
+    "type": "node",
+    "id": 4354560996,
+    "lat": 10.3021922,
+    "lon": -83.3540497,
+    "tags": {
+     "name": "Rio Parismina Lodge",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5074700128,
+    "lat": 10.3097553,
+    "lon": -83.3523506,
+    "tags": {
+     "tourism": "camp_site"
+    }
+   },
+   {
+    "type": "node",
+    "id": 5074706024,
+    "lat": 10.3049033,
+    "lon": -83.3506618,
+    "tags": {
+     "name": "Carefree Ranch",
+     "name:en": "Carefree Ranch",
+     "name:es": "Carefree Ranch",
+     "phone": "+506 8335 1014",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1415935559,
+    "lat": 10.3067489,
+    "lon": -83.3512008,
+    "tags": {
+     "building": "yes",
+     "internet_access": "no",
+     "name": "Parismina Gamefish Lodge",
+     "opening_hours": "24/7",
+     "phone": "+506 2758 0724",
+     "tourism": "hotel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1509968974,
+    "lat": 10.3060875,
+    "lon": -83.3497977,
+    "tags": {
+     "building": "yes",
+     "internet_access": "wlan",
+     "name": "Amaya's Hostel",
+     "phone": "+50686939251",
+     "tourism": "hostel",
+     "website": "https://www.caminodecostaricalodging.com/accommodations/amayas-hostel"
+    }
+   },
+   {
+    "type": "way",
+    "id": 1509986547,
+    "lat": 10.282595,
+    "lon": -83.3307296,
+    "tags": {
+     "air_conditioning": "no",
+     "building": "yes",
+     "internet_access": "wlan",
+     "name": "Green Gold Eco-Lodge",
+     "operator": "Jason",
+     "phone": "+50686972322",
+     "tourism": "hostel",
+     "website": "https://www.caminodecostaricalodging.com/accommodations/green-gold-eco-lodge"
+    }
+   }
+  ]
+ },
+ "nominatim": {
+  "Caribbean Paradise Tortuguero": [
+   {
+    "osm_type": "node",
+    "osm_id": 4218355265,
+    "lat": "10.5627211",
+    "lon": "-83.5197726",
+    "display_name": "Caribbean Paradise Eco-Lodge, Natural Trail, Tortuguero, Colorado, Pococí, Limón, 70206, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": null
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 9979406972,
+    "lat": "10.5615378",
+    "lon": "-83.5203753",
+    "display_name": "Caribbean Paradise Eco-Lodge, Natural Trail, Tortuguero, Colorado, Pococí, Limón, 70206, Costa Rica",
+    "category": "amenity",
+    "type": "restaurant",
+    "extratags": {
+     "cuisine": "regional"
+    }
+   }
+  ],
+  "Lapa Verde Tortuguero": [],
+  "Hotel Cipreses Monteverde": [
+   {
+    "osm_type": "way",
+    "osm_id": 389985961,
+    "lat": "10.3221515",
+    "lon": "-84.8237296",
+    "display_name": "Cipreses, Calle Los Cipreses, Perro Negro, Santa Elena, Monteverde, Puntarenas, 61201, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    }
+   }
+  ],
+  "Cipreses Santa Elena": [
+   {
+    "osm_type": "way",
+    "osm_id": 389985961,
+    "lat": "10.3221515",
+    "lon": "-84.8237296",
+    "display_name": "Cipreses, Calle Los Cipreses, Perro Negro, Santa Elena, Monteverde, Puntarenas, 61201, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    }
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 131975057,
+    "lat": "10.3218960",
+    "lon": "-84.8239626",
+    "display_name": "Calle Los Cipreses, Perro Negro, Santa Elena, Monteverde, Puntarenas, 61201, Costa Rica",
+    "category": "highway",
+    "type": "residential",
+    "extratags": null
+   }
+  ],
+  "Faro Arenal": [],
+  "Hotel Faro Arenal La Fortuna": [],
+  "Eco Arenal Hotel La Fortuna": [
+   {
+    "osm_type": "way",
+    "osm_id": 398212310,
+    "lat": "10.4836589",
+    "lon": "-84.6329370",
+    "display_name": "Villas Eco Arenal, Avenida 351, Pito, Sinaí, La Fortuna, San Carlos, Alajuela, 21007, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 2123735354,
+    "lat": "10.4609895",
+    "lon": "-84.6605911",
+    "display_name": "Arenal Oasis Eco Lodge, Calle 506, Zeta 13, La Catarata, La Fortuna, San Carlos, Alajuela, 21007, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "check_date": "2026-03-12"
+    }
+   }
+  ],
+  "Vista Ballena Uvita": [
+   {
+    "osm_type": "node",
+    "osm_id": 5322292422,
+    "lat": "9.1881092",
+    "lon": "-83.7374979",
+    "display_name": "Vista verde vacasa, Calle de La Rosa, Uvita, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "apartment",
+    "extratags": null
+   }
+  ],
+  "Hotel Vista Ballena": [
+   {
+    "osm_type": "node",
+    "osm_id": 3982524527,
+    "lat": "9.2631232",
+    "lon": "-83.8612687",
+    "display_name": "Hotel Vista Del Cerro, Calle Barú, Dominical, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": null
+   },
+   {
+    "osm_type": "way",
+    "osm_id": 777359375,
+    "lat": "9.1478825",
+    "lon": "-83.7262306",
+    "display_name": "Casa Linda Vista, Carretera Pacífica Fernández Oreamuno, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "building": "yes"
+    }
+   },
+   {
+    "osm_type": "node",
+    "osm_id": 3982520784,
+    "lat": "9.2315605",
+    "lon": "-83.8269397",
+    "display_name": "Bella Vista Ranch Lodge, Calle Escaleras, Poza Azul, Escaleras, Bahía Ballena, Osa, Puntarenas, 60504, Costa Rica",
+    "category": "tourism",
+    "type": "hotel",
+    "extratags": {
+     "email": "Bert.BellaVistaCR@Gmail.com\\",
+     "phone": "8669-1286",
+     "website": "www.bellavistalodge.com"
+    }
+   }
+  ],
+  "Las Palmeras Sierpe": [],
+  "Las Palmeras Osa": []
+ }
+}
