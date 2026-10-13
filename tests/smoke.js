@@ -119,6 +119,24 @@ const {chromium}=require('playwright');const path=require('path');
   await p.evaluate(()=>scrollTo(0,900));await p.reload();await p.waitForTimeout(500);
   const rl=await p.evaluate(()=>({tab,day:currentDay,sec:daySection,y:Math.round(scrollY)}));if(rl.tab!=='days'||rl.day!==12||rl.sec!=='wildlife')errs.push('verversen gaat terug naar Home: '+JSON.stringify(rl));
   if(rl.y<500)errs.push('scrollpositie niet hersteld na verversen: '+rl.y);
+  /* v7.4: kaart met hotels en reistijden */
+  const hk=await p.evaluate(()=>{const bad=[];v74Hotels().forEach(o=>{if(!o.x.ll){bad.push(o.h+': geen coördinaten');return}
+    const st=V51_STOPS[v51Day2Stop(o.days[0])][0],km=v51Dist(o.x.ll,V51_PT[st]);if(km>25)bad.push(o.h+' '+Math.round(km)+' km van '+st)});
+    Object.entries(V74_HOTEL).forEach(([h,o])=>{if(!H.some(([r])=>r===o.r))bad.push(h+': onbekende regio '+o.r)});return bad});
+  if(hk.length)errs.push('hotellocaties: '+hk.join('; '));
+  await p.evaluate(()=>{tab='days';currentDay=16;daySection='map';render()});
+  const hm=await p.evaluate(()=>{const g=document.querySelector('.v74-hotel.on');if(!g)return 'geen hotelpin';g.dispatchEvent(new MouseEvent('click',{bubbles:true}));const t=document.getElementById('dsePop')?.innerText||'';
+    return /Cabinas Las Palmeras/.test(t)&&/Dag 16–18/.test(t)&&!!document.querySelector('#dsePop a[href*="8.65726,-83.71165"]')&&[...document.querySelectorAll('.dsm-lbl.hotel')].some(l=>l.textContent==='Cabinas Las Palmeras')?'':'hotelvenster/label: '+t.slice(0,80)});
+  if(hm)errs.push(hm);
+  await p.evaluate(()=>document.querySelector('#dsePop [data-v74-day]').click());if(!(await p.evaluate(()=>tab==='days'&&currentDay===16&&daySection==='stay')))errs.push('hotelvenster opent dag-tab Hotel niet');
+  await p.evaluate(()=>{tab='map';render()});
+  const tm=await p.evaluate(()=>{const n=document.querySelectorAll('.v74-time').length;document.querySelector('.v74-time').dispatchEvent(new MouseEvent('click',{bubbles:true}));return {n,pop:document.getElementById('dsePop')?.innerText||'',hotels:document.querySelectorAll('.v74-hotel').length}});
+  if(tm.n<9||!/Reistijd/i.test(tm.pop)||!/Dag \d+/.test(tm.pop))errs.push('reistijdlabels: '+JSON.stringify(tm).slice(0,120));
+  if(tm.hotels)errs.push('hotels standaard aan op de grote kaart');
+  await p.evaluate(()=>document.querySelector('[data-dse-layer="hotel"]').click());await p.evaluate(()=>document.querySelector('[data-dse-layer="time"]').click());
+  const tg=await p.evaluate(()=>({h:document.querySelectorAll('.v74-hotel').length,t:document.querySelectorAll('.v74-time').length,st:state.dsLayers.full}));
+  if(tg.h<10||tg.t||!tg.st.hotel||tg.st.time)errs.push('laagschakelaars hotels/reistijd: '+JSON.stringify(tg));
+  await p.evaluate(()=>{state.dsLayers.full.hotel=false;state.dsLayers.full.time=true;save()});
   const n=await p.evaluate(()=>Object.keys(V47_SP).length);if(n<250)errs.push('te weinig soorten: '+n);
   await b.close();
   if(errs.length){console.error('MISLUKT:\n'+errs.join('\n'));process.exit(1)}console.log('OK: alle schermen, 23 dagen x 5 tabs, '+n+' soorten');
