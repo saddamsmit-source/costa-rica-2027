@@ -138,6 +138,33 @@ const {chromium}=require('playwright');const path=require('path');
   if(tg.h<10||tg.t||!tg.st.hotel||tg.st.time)errs.push('laagschakelaars hotels/reistijd: '+JSON.stringify(tg));
   await p.evaluate(()=>{state.dsLayers.full.hotel=false;state.dsLayers.full.time=true;save()});
   const n=await p.evaluate(()=>Object.keys(V47_SP).length);if(n<250)errs.push('te weinig soorten: '+n);
+  /* v7.5: compacte dagtab, dag 14, teller, snelheid */
+  const cp=await p.evaluate(()=>{tab='days';currentDay=3;daySection='wildlife';v47Filter='Alle';v50Query='';render();const sec=v75Sec(),vis=()=>[...sec.querySelectorAll('.v47-sp')].filter(c=>c.offsetParent).length,all=sec.querySelectorAll('.v47-sp').length,v0=vis();
+    const q=document.getElementById('v50q');q.value='zz-geen';q.dispatchEvent(new Event('input'));q.value='';q.dispatchEvent(new Event('input'));const v1=vis();
+    document.querySelector('.v75-all').click();const v2=vis();V75_OPEN.clear();return {all,v0,v1,v2}});
+  if(!(cp.v0>=10&&cp.v0<=45&&cp.v1===cp.v0&&cp.v2===cp.all))errs.push('compacte wildlifetab: '+JSON.stringify(cp));
+  const d14=await p.evaluate(()=>{tab='days';currentDay=14;daySection='wildlife';render();return [...document.querySelectorAll('.v75-morning [data-v43-kind="seen"]')].map(b=>decodeURIComponent(b.dataset.v43Species)+'@'+decodeURIComponent(b.dataset.v43Place))});
+  if(!d14.includes('Resplendent quetzal@San Gerardo de Dota'))errs.push('dag 14 quetzal niet bij San Gerardo: '+d14);
+  if(!(await p.evaluate(()=>{tab='home';render();return document.getElementById('app').innerText.includes(Object.keys(V47_SP).length+' soorten')})))errs.push('soortenteller Home wijkt af');
+  const ms=await p.evaluate(()=>{const keep=JSON.stringify(state.v43Observations);Object.keys(V47_SP).forEach((k,i)=>{const o=state.v43Observations[v43name(k)]??={name:k,places:{}};o.places['Cahuita']??={seen:true,photo:false,t:new Date(Date.now()-i*6e4).toISOString()}});
+    tab='wildlife';const t=performance.now();render();const dt=performance.now()-t;state.v43Observations=JSON.parse(keep);return dt});
+  if(ms>250)errs.push('Wildlife-pagina traag met 634 waarnemingen: '+Math.round(ms)+' ms');
+  /* v7.5: veilige import van een oude back-up en terugzetten */
+  const ip=await b.newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
+  await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});
+  await ip.goto('file://'+path.resolve(__dirname,'..','index.html'));await ip.waitForTimeout(300);
+  await ip.evaluate(()=>{tab='settings';dsMore='backup';render()});
+  const bak=require('os').tmpdir()+'/cr27-oud.json';require('fs').writeFileSync(bak,JSON.stringify({format:'CR27_V2',exportedAt:'2026-05-01T10:00:00Z',state:{notes:{'3':'oud'},bookings:{},costs:{},hotelSelected:{},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:false,photo:false}}}}}}));
+  await Promise.all([ip.waitForEvent('load'),ip.setInputFiles('#import',bak)]);await ip.waitForTimeout(400);
+  const im=await ip.evaluate(()=>{let ok=true;try{tab='wildlife';render();tab='days';currentDay=7;daySection='wildlife';render()}catch(e){ok=e.message}
+    return {ok,n1:state.notes['1'],n3:state.notes['3'],jab:state.v43Observations.jabiru?.places?.['La Fortuna'],copy:!!localStorage.getItem('CR27_V2_voor_import')}});
+  if(im.ok!==true||im.n1!=='nieuw'||im.n3!=='oud'||!im.jab?.seen||!im.jab?.photo||!im.copy)errs.push('veilige import: '+JSON.stringify(im));
+  await ip.evaluate(()=>{tab='settings';dsMore='backup';render()});
+  if(!(await ip.$('#v75restore')))errs.push('knop terugzetten ontbreekt');else{await Promise.all([ip.waitForEvent('load'),ip.click('#v75restore')]);await ip.waitForTimeout(300);
+    const rs=await ip.evaluate(()=>({n3:state.notes['3']??null,n1:state.notes['1'],copy:!!localStorage.getItem('CR27_V2_voor_import')}));if(rs.n3!==null||rs.n1!=='nieuw'||rs.copy)errs.push('terugzetten: '+JSON.stringify(rs))}
+  const bad=require('os').tmpdir()+'/cr27-fout.json';require('fs').writeFileSync(bad,'{"format":"iets anders"}');await ip.evaluate(()=>{tab='settings';dsMore='backup';render()});
+  const before=await ip.evaluate(()=>localStorage.getItem('CR27_V2'));await ip.setInputFiles('#import',bad);await ip.waitForTimeout(300);
+  if(await ip.evaluate(()=>localStorage.getItem('CR27_V2'))!==before)errs.push('ongeldig bestand wijzigt gegevens');
   await b.close();
   if(errs.length){console.error('MISLUKT:\n'+errs.join('\n'));process.exit(1)}console.log('OK: alle schermen, 23 dagen x 5 tabs, '+n+' soorten');
 })();

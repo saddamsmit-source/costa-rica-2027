@@ -1,0 +1,13 @@
+/* v7.5 · compacte wildlifetab, opslag/veiligheidskopie, updatemelding */
+.v75-c .v75-x,.v75-c .v75-xh{display:none!important}
+.v75-all{display:none;width:100%;margin-top:12px;min-height:44px}
+.v75-c .v75-all{display:flex;justify-content:center}
+.v75-morning{border-left:4px solid var(--ds-sky)}
+.v75-store b{display:block;font-size:15px;font-weight:800;color:var(--ds-ink)}
+.v75-store .ds-meta{margin:4px 0 0}
+.v75-copy{display:flex;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--ds-line)}
+.v75-copy span{flex:1}.v75-copy small{display:block;font-size:12.5px;color:var(--ds-muted);margin-top:2px}
+.v75-copy .ds-btn{flex:none;min-height:44px}
+.v75-upd{position:fixed;left:12px;right:12px;top:calc(12px + env(safe-area-inset-top,0px));z-index:2000;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:var(--ds-jungle);color:#fff;font-size:14px;font-weight:600;box-shadow:0 8px 24px rgba(10,24,18,.3);max-width:560px;margin:0 auto}
+.v75-upd span{flex:1}
+.v75-upd button{flex:none;min-height:40px;padding:0 14px;border:0;border-radius:999px;background:#fff;color:var(--ds-jungle);font-weight:800;font-size:14px}
