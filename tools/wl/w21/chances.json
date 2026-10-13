@@ -1046,7 +1046,7 @@
 },
 "Baird's tapir": {
 "r": {
-"Corcovado": 2
+"Corcovado": 3
 },
 "r1": [
 "Tortuguero",
@@ -1056,7 +1056,7 @@
 "Uvita"
 ],
 "rn": {
-"Corcovado": "Vooral rond Sirena met gids; bij San Pedrillo kleiner"
+"Corcovado": "Met gids rond Sirena"
 }
 },
 "White-lipped peccary": {
@@ -8259,5 +8259,55 @@
 "rn": {
 "Corcovado": "Bij het snorkelen bij Isla del Caño"
 }
+},
+"Seba's short-tailed bat": {
+"r": {},
+"r1": [
+"La Fortuna",
+"Rincón de la Vieja",
+"Monteverde",
+"Corcovado"
+],
+"rn": {}
+},
+"Water opossum": {
+"r": {},
+"r1": [],
+"rn": {}
+},
+"Gray four-eyed opossum": {
+"r": {},
+"r1": [
+"Tortuguero",
+"Uvita"
+],
+"rn": {}
+},
+"Lemur leaf frog": {
+"r": {},
+"r1": [],
+"rn": {}
+},
+"Fawn-throated foliage-gleaner": {
+"r": {
+"La Fortuna": 2
+},
+"r1": [
+"Cahuita",
+"Rincón de la Vieja",
+"Monteverde"
+],
+"rn": {}
+},
+"Chiriqui foliage-gleaner": {
+"r": {
+"Corcovado": 2,
+"Tárcoles": 2
+},
+"r1": [
+"Uvita",
+"Manuel Antonio"
+],
+"rn": {}
 }
 }

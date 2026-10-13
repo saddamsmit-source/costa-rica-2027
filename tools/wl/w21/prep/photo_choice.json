@@ -329,5 +329,32 @@
 "Bluefin trevally": {
 "j": 1,
 "why": "Zilver met felblauwe vinnen en donkere stippen"
+},
+"Seba's short-tailed bat": {
+"j": 0,
+"why": "Middelgrote bruine bladneusvleermuis hangend in rust; korte staart",
+"lvl": "plaus"
+},
+"Water opossum": {
+"j": 0,
+"why": "Grijs-zwart gebandeerde vacht, zwemvliezen aan de achterpoten"
+},
+"Gray four-eyed opossum": {
+"j": 2,
+"why": "Grijze opossum met lichte vlekken boven de ogen en lichte onderkant",
+"lvl": "plaus"
+},
+"Lemur leaf frog": {
+"j": 5,
+"why": "Groene makikikker met grote lichte ogen en gele flanken zonder strepen"
+},
+"Fawn-throated foliage-gleaner": {
+"j": 4,
+"why": "Roestbruin met lichte keel en oogstreep; Costa Rica"
+},
+"Chiriqui foliage-gleaner": {
+"j": 6,
+"why": "Roestbruin met lichte buffkleurige keel; Pacifisch Costa Rica",
+"lvl": "plaus"
 }
 }

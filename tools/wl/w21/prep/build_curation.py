@@ -55,6 +55,7 @@ TIPS={'Snowcap':'Zoek bij bloeiende struiken aan bosranden in het Caribische heu
  'Turquoise cotinga':'Scan in de ochtend kale boomtoppen vanaf een open uitzichtpunt in het zuiden.',
  'Three-wattled bellbird':"Eerst horen, dan zoeken: de luide 'BONK' draagt honderden meters ver."}
 for k,t in TIPS.items():put(k,tp=t)
+addak('Chestnut-capped warbler','Rufous-capped warbler')
 for k in ["Passerini's tanager","Cherrie's tanager"]:
     put(k,h=wl[k]['h'].replace('roodstuittangare','roodrugtangare'))
 put("Cherrie's tanager",tp='Pacifische vorm van de roodrugtangare (Scarlet-rumped tanager); vrouwtjes met oranje borst.')

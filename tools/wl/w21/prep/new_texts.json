@@ -688,5 +688,68 @@
 "lk": "Andere horsmakrelen missen de felblauwe vinnen.",
 "tp": "Kijk naar zilveren vissen die snel langs de rand van het rif patrouilleren.",
 "ft": "Snelle sluitertijd; de blauwe vinnen komen het best uit bij zonlicht."
+},
+"Seba's short-tailed bat": {
+"nl": "Brilbladneusvleermuis",
+"m": "n",
+"h": "Middelgrote bruine tot grijze vleermuis met korte driehoekige neusflap en korte staart; zachte, dichte vacht.",
+"l": "Een van de algemeenste vleermuizen van het laagland; eet vruchten en rust overdag in holtes, onder bruggen en in gebouwen.",
+"v": "",
+"lk": "Andere kortstaartbladneusvleermuizen (Carollia) zijn op foto vrijwel niet te onderscheiden.",
+"tp": "Soms overdag te zien in een rustplaats die de gids kent.",
+"ft": "Geen flits in een rustplaats; werk met bestaand licht en hoge ISO."
+},
+"Water opossum": {
+"nl": "Wateropossum",
+"m": "n",
+"h": "Kleine opossum met grijs-zwart gemarmerde vacht, zwarte oogband en zwemvliezen aan de achterpoten; staart zwart met lichte punt.",
+"l": "Langs snelstromende beken en rivieren in bos; zwemt en duikt 's nachts naar vis en kreeftjes.",
+"v": "",
+"lk": "Geen andere opossum heeft deze gebandeerde vacht.",
+"tp": "Zeer zelden gezien; geen recente waarnemingen in de regio's van jullie route.",
+"ft": "Rode lamp en geduld; het dier duikt bij verstoring direct onder."
+},
+"Gray four-eyed opossum": {
+"en": "Northern four-eyed opossum",
+"nl": "Grijze vieroogopossum",
+"m": "n",
+"h": "Opossum ter grootte van een rat tot kleine kat, grijs van boven en geelachtig van onderen, met een lichte vlek boven elk oog ('vier ogen'); staart half zwart, half wit.",
+"l": "Vochtig laaglandbos, vaak bij water; 's nachts actief op de grond en in lage begroeiing.",
+"v": "",
+"lk": "Gewone opossum (groter, lichte wangen, geen vlekken boven de ogen).",
+"tp": "Soms tijdens een nachtwandeling; de lichte vlekken boven de ogen zijn het kenmerk.",
+"ft": "Zachte lamp van opzij, geen flits van voren."
+},
+"Lemur leaf frog": {
+"nl": "Lemurmakikikker",
+"m": "n",
+"h": "Slanke makikikker met grote lichte ogen met donkere tekening, overdag groen, 's nachts bruinig, met oranje-gele flanken zonder strepen.",
+"l": "Vochtig middelgebergtebos van ca. 440 tot 1.600 m; in Costa Rica bekend van slechts enkele plekken buiten jullie route. Ernstig bedreigd door de schimmelziekte chytridiomycose.",
+"v": "",
+"lk": "Roodoogmakikikker (rode ogen, blauwe flanken met strepen).",
+"tp": "Niet op de route verwacht; in kikkertuinen soms in gevangenschap te zien.",
+"ft": "Bij een kikkertuin: zachte lamp van opzij."
+},
+"Fawn-throated foliage-gleaner": {
+"nl": "Bruinkeelbladspeurder",
+"m": "d",
+"au": 1,
+"h": "Roestbruine bosvogel (ca. 19 cm) met lichte buffkleurige keel, lichte oogring en streep achter het oog en roodbruine staart.",
+"l": "Ondergroei en middelste laag van vochtig laaglandbos aan de Caribische kant; zoekt in dode bladeren en vaak in gemengde groepen.",
+"v": "",
+"lk": "Chiriquíbladspeurder (Pacifische kant) en andere bladspeurders.",
+"tp": "Volg gemengde groepen bosvogels; hij doorzoekt dode bladeren.",
+"ft": "Donkere ondergroei: hoge ISO en geduld."
+},
+"Chiriqui foliage-gleaner": {
+"nl": "Chiriquíbladspeurder",
+"m": "d",
+"au": 1,
+"h": "Roestbruine bosvogel met lichte buffkleurige keel en oogring en roodbruine staart; Pacifische tegenhanger van de bruinkeelbladspeurder.",
+"l": "Ondergroei van vochtig laaglandbos aan de zuidelijke Pacifische kant, zoals op Osa en rond Carara.",
+"v": "",
+"lk": "Bruinkeelbladspeurder (Caribische kant).",
+"tp": "Kijk in gemengde groepen bosvogels in de ondergroei.",
+"ft": "Donkere ondergroei: hoge ISO en geduld."
 }
 }

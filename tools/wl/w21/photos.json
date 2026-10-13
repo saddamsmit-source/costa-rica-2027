@@ -818,5 +818,65 @@
 "place": null,
 "why": "Zilver met felblauwe vinnen en donkere stippen",
 "lvl": "ok"
+},
+"Seba's short-tailed bat": {
+"id": 99431207,
+"lic": "cc-by-nc",
+"attr": "(c) Frederico Acaz Sonntag, some rights reserved (CC BY-NC), uploaded by Frederico Acaz Sonntag",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Middelgrote bruine bladneusvleermuis hangend in rust; korte staart",
+"lvl": "plaus"
+},
+"Water opossum": {
+"id": 2659757,
+"lic": "cc-by-nc",
+"attr": "(c) brandyconrad, some rights reserved (CC BY-NC)",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Grijs-zwart gebandeerde vacht, zwemvliezen aan de achterpoten",
+"lvl": "ok"
+},
+"Gray four-eyed opossum": {
+"id": 58257376,
+"lic": "cc-by-nc",
+"attr": "(c) Guillermo SG, some rights reserved (CC BY-NC), uploaded by Guillermo SG",
+"src": "taxon",
+"obs": null,
+"place": null,
+"why": "Grijze opossum met lichte vlekken boven de ogen en lichte onderkant",
+"lvl": "plaus"
+},
+"Lemur leaf frog": {
+"id": 354573442,
+"lic": "cc-by-nc",
+"attr": "(c) Mary, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 200917883,
+"place": "Limón, CR",
+"why": "Groene makikikker met grote lichte ogen en gele flanken zonder strepen",
+"lvl": "ok"
+},
+"Fawn-throated foliage-gleaner": {
+"id": 266117128,
+"lic": "cc-by",
+"attr": "(c) er-birds, some rights reserved (CC BY)",
+"src": "obs",
+"obs": 154038150,
+"place": "1 km este de Tuis de Turrialba entrada a mano izquierda enfrente Jasec, Cartago Province, Tayutic, 30508, Costa Rica",
+"why": "Roestbruin met lichte keel en oogstreep; Costa Rica",
+"lvl": "ok"
+},
+"Chiriqui foliage-gleaner": {
+"id": 201799261,
+"lic": "cc-by-nc",
+"attr": "(c) Jeffry Torres, some rights reserved (CC BY-NC)",
+"src": "obs",
+"obs": 119378963,
+"place": "Provincia de Puntarenas, Costa Rica",
+"why": "Roestbruin met lichte buffkleurige keel; Pacifisch Costa Rica",
+"lvl": "plaus"
 }
 }

@@ -2548,7 +2548,7 @@
 "Baird's tapir": {
 "San José": {
 "t": 0,
-"why": "iNaturalist 5/449 waarnemers (1.1%, San José#0); handmatig 0: Sirena is de bekende plek; elders schaars, San José-waarnemingen komen uit opvang"
+"why": "iNaturalist 5/449 waarnemers (1.1%, San José#0); handmatig 0: Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
 },
 "Tortuguero": {
 "t": 1,
@@ -2560,7 +2560,7 @@
 },
 "Rincón de la Vieja": {
 "t": 1,
-"why": "iNaturalist 9/201 waarnemers (4.5%, Rincón de la Vieja#0); handmatig max 1: Sirena is de bekende plek; elders schaars, San José-waarnemingen komen uit opvang"
+"why": "iNaturalist 9/201 waarnemers (4.5%, Rincón de la Vieja#0); handmatig max 1: Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
 },
 "San Gerardo de Dota": {
 "t": 1,
@@ -2571,8 +2571,8 @@
 "why": "iNaturalist 1/224 waarnemers (0.4%, Uvita#0)"
 },
 "Corcovado": {
-"t": 2,
-"why": "iNaturalist 143/529 waarnemers (27.0%, Corcovado#1); handmatig 2: Sirena is de bekende plek; elders schaars, San José-waarnemingen komen uit opvang"
+"t": 3,
+"why": "iNaturalist 143/529 waarnemers (27.0%, Corcovado#1); handmatig 3: Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
 }
 },
 "White-lipped peccary": {
@@ -18591,6 +18591,72 @@
 "Corcovado": {
 "t": 2,
 "why": "handmatig 2: patrouilleert langs de rifrand"
+}
+},
+"Seba's short-tailed bat": {
+"La Fortuna": {
+"t": 1,
+"why": "iNaturalist 3/1291 waarnemers (0.2%, La Fortuna#0)"
+},
+"Rincón de la Vieja": {
+"t": 1,
+"why": "iNaturalist 1/201 waarnemers (0.5%, Rincón de la Vieja#0)"
+},
+"Monteverde": {
+"t": 1,
+"why": "iNaturalist 3/1226 waarnemers (0.2%, Monteverde#0)"
+},
+"Corcovado": {
+"t": 1,
+"why": "iNaturalist 1/451 waarnemers (0.2%, Corcovado#0)"
+}
+},
+"Water opossum": {},
+"Gray four-eyed opossum": {
+"Tortuguero": {
+"t": 1,
+"why": "iNaturalist 1/456 waarnemers (0.2%, Tortuguero#0)"
+},
+"Uvita": {
+"t": 1,
+"why": "iNaturalist 1/224 waarnemers (0.4%, Uvita#0)"
+}
+},
+"Lemur leaf frog": {},
+"Fawn-throated foliage-gleaner": {
+"Cahuita": {
+"t": 1,
+"why": "eBird 4/559 waarnemers (0.7%, Cahuita#0)"
+},
+"La Fortuna": {
+"t": 2,
+"why": "eBird 668/5229 waarnemers (12.8%, La Fortuna#0)"
+},
+"Rincón de la Vieja": {
+"t": 1,
+"why": "eBird 4/701 waarnemers (0.6%, Rincón de la Vieja#0)"
+},
+"Monteverde": {
+"t": 1,
+"why": "eBird 64/4411 waarnemers (1.5%, Monteverde#0)"
+}
+},
+"Chiriqui foliage-gleaner": {
+"Uvita": {
+"t": 1,
+"why": "eBird 9/1065 waarnemers (0.8%, Uvita#0)"
+},
+"Corcovado": {
+"t": 2,
+"why": "eBird 93/980 waarnemers (9.5%, Corcovado#0)"
+},
+"Manuel Antonio": {
+"t": 1,
+"why": "eBird 5/1804 waarnemers (0.3%, Manuel Antonio#0)"
+},
+"Tárcoles": {
+"t": 2,
+"why": "eBird 787/4688 waarnemers (16.8%, Tárcoles#0)"
 }
 }
 }
