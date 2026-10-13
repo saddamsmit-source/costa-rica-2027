@@ -8,6 +8,10 @@ const {chromium}=require('playwright');const path=require('path');
   p.on('console',m=>{if(m.type()==='error'&&!/net::|ERR_|Failed to load resource|CORS|woff2/.test(m.text()))errs.push('console: '+m.text())});
   p.on('requestfailed',r=>{if(r.url().startsWith('file:')&&!r.url().endsWith('.woff2')&&!/ABORTED/.test(r.failure()?.errorText||''))errs.push('ontbreekt: '+r.url())});
   await p.route(/^https?:/,r=>r.abort());
+  /* v7.8: elke getoonde afbeelding vastleggen (verzoeken + img/achtergrond in het scherm) */
+  const imgs=new Set();p.on('request',r=>{if(r.resourceType()==='image')imgs.add(r.url())});
+  await p.addInitScript(()=>{window.__imgs=new Set();const col=()=>{const a=document.getElementById('app');if(!a)return;a.querySelectorAll('img[src]').forEach(i=>__imgs.add(i.getAttribute('src')));a.querySelectorAll('[style*="url("]').forEach(e=>{for(const m of e.getAttribute('style').matchAll(/url\(['"]?([^'")]+)/g))__imgs.add(m[1])})};
+    new MutationObserver(col).observe(document,{subtree:true,childList:true,attributes:true,attributeFilter:['src','style']})});
   const fixture={notes:{'7':'Testnotitie dag 7'},bookings:{'7-0':'geboekt','17-0':'geboekt'},costs:{},hotelSelected:{},checks:{},v43Observations:{'resplendent quetzal':{name:'Resplendent quetzal',places:{'San Gerardo de Dota':{seen:true,photo:true}}},'whimbrel':{name:'Whimbrel',places:{'Tárcoles':{seen:true}}},'blue-crowned manakin':{name:'Blue-crowned manakin',places:{'Corcovado':{seen:true,n:2}}},"cherrie's tanager":{name:"Cherrie's tanager",places:{'Uvita':{seen:true}}},"passerini's tanager":{name:"Passerini's tanager",places:{'Cahuita':{seen:true}}},'glass frog':{name:'Glass frog',places:{'Monteverde':{seen:true}}},'gray fox':{name:'Gray fox',places:{'San José':{seen:true}}}},v43Extras:{'Monteverde':['Testuil']},v43Migrated:true,v44Log:{},v48Init:true,v48Pack:{'0-0':true},v49Open:{},gpsTracks:[],v51Rates:{eurusd:1.1176,usdcrc:455.47,date:'12 okt 2026'}};
   await p.addInitScript(f=>{try{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify(f))}catch(e){}},fixture);
   await p.goto('file://'+path.resolve(__dirname,'..','index.html'));await p.waitForTimeout(400);
@@ -169,6 +173,19 @@ const {chromium}=require('playwright');const path=require('path');
   {const all=ds.out.flatMap(o=>o.srcs||[]),dup=all.filter((x,i)=>all.indexOf(x)!==i);if(dup.length)errs.push('foto op meerdere dagen: '+[...new Set(dup)].join(', '))}
   {const sw=fsx.readFileSync(path.resolve(__dirname,'..','sw.js'),'utf8'),miss=[...new Set(ds.out.flatMap(o=>o.srcs||[]))].filter(x=>!sw.includes("'"+x+"'"));if(miss.length)errs.push('diashowfoto niet offline: '+miss.join(', '))}
   if(!ds.moved)errs.push('diashow wisselt niet');if(ds.d22)errs.push('diashow op dag 22 (geen bestemming)');
+  /* v7.8: alleen geverifieerde foto's, hotels eerlijk gelabeld, diashow in hoge resolutie */
+  {const v=await p.evaluate(async()=>{const bad=[];
+    const rej=['act-coconut','act-coyotes','act-frog','act-guanacaste','act-horse','act-nightwalk','act-tapir','act-tattoo','act-toucan','hotel-fleurdelys','hotel-atlantidalodge','hotel-lapaverdelodge','hotel-catarataecolodge','hotel-faroarenal','hotel-ecoarenal','hotel-suenosdelbosque','hotel-rioticosafarilodge','hotel-cabinaslaspalmeras','hotel-hotelvistaballena'];
+    rej.forEach(k=>{if(V48_PHOTO[k])bad.push('afgekeurde foto nog aanwezig: '+k)});
+    Object.entries(V48_PHOTO).forEach(([k,x])=>{if(x.sfeer)bad.push('sfeerbeeld: '+k)});
+    S.forEach(d=>d.activities.forEach(a=>{const k=v48ActKey(a,d);if(k!=='geen'&&!V48_PHOTO[k])bad.push('activiteit zonder geverifieerde foto: '+a.title)}));
+    H.flatMap(([r,l])=>l).forEach(h=>{const m=V49_HOTEL_PHOTO[h];if(!m||!V48_PHOTO[m.key])bad.push('hotel zonder geverifieerde omgevingsfoto: '+h);else if(!/^Omgeving/.test(m.what))bad.push('hotellabel: '+h)});
+    tab='hotels';render();if(/Sfeerbeeld|vergelijkbare plek/i.test(document.getElementById('app').innerHTML))bad.push('hotelscherm noemt nog sfeerbeeld');
+    tab='days';currentDay=2;daySection='stay';render();if(!/niet het hotel zelf/.test(document.getElementById('app').innerHTML))bad.push('hotelkaart zonder label omgeving');
+    const srcs=new Set();for(let d=1;d<=21;d++)v77DaySlides(S[d-1]).forEach(x=>srcs.add(x.src));v77HomeSlides().forEach(x=>srcs.add(x.src));
+    for(const u of srcs){const im=new Image();im.src=u;try{await im.decode()}catch(e){bad.push('laadt niet: '+u);continue}if(Math.min(im.naturalWidth,im.naturalHeight)<990)bad.push('diashow lage resolutie: '+u+' '+im.naturalWidth+'x'+im.naturalHeight)}
+    return bad});
+   v.forEach(x=>errs.push(x))}
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
   const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();
@@ -178,6 +195,11 @@ const {chromium}=require('playwright');const path=require('path');
     return bad});
   if(ux.length)errs.push('leesbaarheid/tikdoelen: '+[...new Set(ux)].slice(0,8).join('; '));
   const mf=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','manifest.webmanifest'),'utf8'));if(!mf.icons.some(i=>i.purpose==='maskable'))errs.push('geen maskable icoon');
+  /* v7.8: alles wat in beeld kwam moet een geverifieerde foto zijn */
+  {const seen=[...imgs,...(await p.evaluate(()=>[...window.__imgs||[]]))],ok=await p.evaluate(()=>Object.keys(V48_PHOTO));const bad=new Set();
+    seen.forEach(u=>{if(/^data:|\.svg(\?|$)|icon-/.test(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
+      if(/^wl\//.test(k))return;if(!ok.includes(k))bad.add(k)});
+    if(bad.size)errs.push('niet-geverifieerde afbeelding getoond: '+[...bad].join(', '))}
   /* v7.5: veilige import van een oude back-up en terugzetten */
   const ip=await (await b.newContext({acceptDownloads:true})).newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});

@@ -116,7 +116,7 @@ function v48DayKey(d){if(d.id===22)return V48_REGION_PHOTO['vertrek'];if(d.id===
 function v48ActKey(a,d){return V48_ACT_PHOTO_DAY[d.id+'|'+a.title]||V48_ACT_PHOTO[a.title]||v48DayKey(d)}
 
 /* bestemmingsfoto's lokaal */
-locationPhoto=function(d){return v48Photo(v48DayKey(d))||'hero-jungle.jpg'};
+locationPhoto=function(d){return v48Photo(v48DayKey(d))||'photos/hero-home.jpg'};
 photoBackground=function(d){return `linear-gradient(180deg,rgba(2,26,20,.10) 0%,rgba(3,28,23,.20) 40%,rgba(2,22,19,.90) 100%),url('${locationPhoto(d)}')`};
 
 /* boekingsstatus: vooraf geboekte excursies (Caño Negro, Corcovado) */
