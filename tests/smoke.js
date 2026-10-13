@@ -159,13 +159,15 @@ const {chromium}=require('playwright');const path=require('path');
   if(rd.routes<3||!rd.river||rd.straightSE||rd.straightUS)errs.push('routes langs weg/rivier: '+JSON.stringify(rd));
   /* v7.7: diashow per dag: 2 sfeerfoto's + 1 dier met grote kans, bestanden aanwezig, automatisch wisselen */
   const ds=await p.evaluate(()=>{const out=[];for(let d=1;d<=21;d++){tab='days';currentDay=d;daySection='overview';render();const sec=document.querySelector('.ds-dayhero.v77'),st=sec&&sec.v77;
-    if(!st){out.push({d,err:'geen diashow'});continue}const reg=v47Region(S[d-1]),a=V77_ANIMAL[reg];
-    out.push({d,n:st.n,srcs:st.slides.map(x=>x.src),animal:st.slides.filter(x=>x.name).map(x=>x.name),ch:a?v47Chance(reg,a.n):0})}
+    if(!st){out.push({d,err:'geen diashow'});continue}const reg=v47Region(S[d-1]),an=st.slides.filter(x=>x.name).map(x=>x.name);
+    out.push({d,n:st.n,srcs:st.slides.map(x=>x.src),animal:an,ch:an[0]?v47Chance(reg,an[0]):0})}
     tab='days';currentDay=5;daySection='overview';render();const st=document.querySelector('.v77').v77,i0=st.i;v77Step();const moved=st.i!==i0&&document.querySelectorAll('.v77-slides i.on').length===1;
     tab='days';currentDay=22;daySection='overview';render();return {out,moved,d22:!!document.querySelector('.v77')}});
   const fsx=require('fs');
   ds.out.forEach(o=>{if(o.err)errs.push('dag '+o.d+': '+o.err);else{if(o.n!==3)errs.push('dag '+o.d+': '+o.n+' foto\'s');if(o.animal.length!==1||o.ch<3)errs.push('dag '+o.d+': dier ontbreekt of kans <3');
     o.srcs.forEach(s=>{if(!fsx.existsSync(path.resolve(__dirname,'..',s.replace(/^\.\//,''))))errs.push('dag '+o.d+': ontbreekt '+s)})}});
+  {const all=ds.out.flatMap(o=>o.srcs||[]),dup=all.filter((x,i)=>all.indexOf(x)!==i);if(dup.length)errs.push('foto op meerdere dagen: '+[...new Set(dup)].join(', '))}
+  {const sw=fsx.readFileSync(path.resolve(__dirname,'..','sw.js'),'utf8'),miss=[...new Set(ds.out.flatMap(o=>o.srcs||[]))].filter(x=>!sw.includes("'"+x+"'"));if(miss.length)errs.push('diashowfoto niet offline: '+miss.join(', '))}
   if(!ds.moved)errs.push('diashow wisselt niet');if(ds.d22)errs.push('diashow op dag 22 (geen bestemming)');
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
