@@ -100,6 +100,20 @@ const {chromium}=require('playwright');const path=require('path');
   await p.evaluate(()=>{wl2Open('Red coffee snake','Cahuita')});if(!(await p.evaluate(()=>document.querySelector('#wl2Sheet .wl21-safe')?.textContent.includes('koraalslang'))))errs.push('veiligheidsblok niet zichtbaar');await p.evaluate(()=>wl2Close());
   await p.evaluate(()=>{tab='wildlife';render();const g=document.getElementById('v50gq');g.value='Three-striped';g.dispatchEvent(new Event('input'))});if(!(await p.evaluate(()=>document.getElementById('v50gres').innerText.length>0&&!!document.querySelector('#v50gres [data-wl2="Three-striped%20warbler"]'))))errs.push('zoeken op oude naam');
   await p.evaluate(()=>{const g=document.getElementById('v50gq');g.value='Kalkoengier';g.dispatchEvent(new Event('input'))});if(!(await p.evaluate(()=>!!document.querySelector('#v50gres [data-wl2="Turkey%20vulture"]'))))errs.push('zoeken op oude Nederlandse naam');
+  /* v7.3: namen, tapir, terugknop */
+  const nm=await p.evaluate(()=>Object.keys(WL2).filter(k=>WL2[k].nl&&v47Info(k).nl!==WL2[k].nl));if(nm.length)errs.push('oude NL-naam zichtbaar: '+nm.slice(0,5).join(', '));
+  for(const [q,k] of [['Zwartsnaveltoekan','Yellow-throated%20toucan'],['Geelkeeltoekan','Yellow-throated%20toucan'],['Roodrugtangare',"Passerini's%20tanager"]]){await p.evaluate(q=>{tab='wildlife';render();const g=document.getElementById('v50gq');g.value=q;g.dispatchEvent(new Event('input'))},q);if(!(await p.evaluate(k=>!!document.querySelector(`#v50gres [data-wl2="${k}"]`),k)))errs.push('zoeken op '+q)}
+  if(await p.evaluate(()=>v47Chance('Corcovado',"Baird's tapir"))!==2)errs.push('tapir Corcovado niet Mogelijk');
+  await p.evaluate(()=>{tab='home';render()});await p.waitForTimeout(300);await p.evaluate(()=>{tab='days';currentDay=9;daySection='wildlife';render()});
+  await p.evaluate(()=>wl2Open('Jabiru','La Fortuna'));await p.evaluate(()=>document.querySelector('#wl2Sheet [data-wl2-zoom]')?.click());await p.waitForTimeout(150);
+  await p.goBack({waitUntil:'commit'}).catch(()=>{});await p.waitForTimeout(250);
+  let bk=await p.evaluate(()=>({zoom:!!document.querySelector('.wl2-zoom'),sheet:!!document.getElementById('wl2Sheet')}));if(bk.zoom||!bk.sheet)errs.push('terug sluit niet alleen de fotozoom: '+JSON.stringify(bk));
+  await p.goBack({waitUntil:'commit'}).catch(()=>{});await p.waitForTimeout(250);
+  bk=await p.evaluate(()=>({sheet:!!document.getElementById('wl2Sheet'),tab,day:currentDay,sec:daySection}));if(bk.sheet||bk.tab!=='days'||bk.day!==9||bk.sec!=='wildlife')errs.push('terug sluit soortvenster niet goed: '+JSON.stringify(bk));
+  await p.goBack({waitUntil:'commit'}).catch(()=>{});await p.waitForTimeout(250);
+  bk=await p.evaluate(()=>({tab,url:location.href}));if(bk.tab!=='home')errs.push('terug gaat niet naar vorig scherm: '+JSON.stringify(bk));
+  await p.waitForTimeout(300);await p.evaluate(()=>{tab='days';currentDay=3;daySection='overview';render();wl2Open('Jabiru','La Fortuna')});await p.waitForTimeout(100);await p.evaluate(()=>wl2Close());await p.waitForTimeout(250);
+  await p.goBack({waitUntil:'commit'}).catch(()=>{});await p.waitForTimeout(250);if(await p.evaluate(()=>tab==='days'&&currentDay===3))errs.push('sluiten met × laat een lege terugstap achter');
   const n=await p.evaluate(()=>Object.keys(V47_SP).length);if(n<250)errs.push('te weinig soorten: '+n);
   await b.close();
   if(errs.length){console.error('MISLUKT:\n'+errs.join('\n'));process.exit(1)}console.log('OK: alle schermen, 23 dagen x 5 tabs, '+n+' soorten');

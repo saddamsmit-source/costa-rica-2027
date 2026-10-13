@@ -2548,7 +2548,7 @@
 "Baird's tapir": {
 "San José": {
 "t": 0,
-"why": "iNaturalist 5/449 waarnemers (1.1%, San José#0); handmatig 0: Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
+"why": "iNaturalist 5/449 waarnemers (1.1%, San José#0); handmatig 0: Sirena (beste tapirplek, iNat 27% van de waarnemers) is nog niet bevestigd; bij San Pedrillo kleiner. Elders schaars; San José-waarnemingen komen uit opvang"
 },
 "Tortuguero": {
 "t": 1,
@@ -2560,7 +2560,7 @@
 },
 "Rincón de la Vieja": {
 "t": 1,
-"why": "iNaturalist 9/201 waarnemers (4.5%, Rincón de la Vieja#0); handmatig max 1: Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
+"why": "iNaturalist 9/201 waarnemers (4.5%, Rincón de la Vieja#0); handmatig max 1: Sirena (beste tapirplek, iNat 27% van de waarnemers) is nog niet bevestigd; bij San Pedrillo kleiner. Elders schaars; San José-waarnemingen komen uit opvang"
 },
 "San Gerardo de Dota": {
 "t": 1,
@@ -2571,8 +2571,8 @@
 "why": "iNaturalist 1/224 waarnemers (0.4%, Uvita#0)"
 },
 "Corcovado": {
-"t": 3,
-"why": "iNaturalist 143/529 waarnemers (27.0%, Corcovado#1); handmatig 3: Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
+"t": 2,
+"why": "iNaturalist 143/529 waarnemers (27.0%, Corcovado#1); handmatig 2: Sirena (beste tapirplek, iNat 27% van de waarnemers) is nog niet bevestigd; bij San Pedrillo kleiner. Elders schaars; San José-waarnemingen komen uit opvang"
 }
 },
 "White-lipped peccary": {

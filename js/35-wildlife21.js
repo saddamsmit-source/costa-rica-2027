@@ -33,11 +33,12 @@ const WL21_HIDE=['Blue morpho','Tarantula','Tropical reef fish'];
 /* namen: actuele Engelse naam tonen, sleutel blijft gelijk */
 (function(){if(typeof WL2==='undefined')return;
   for(const [k,r] of Object.entries(WL2)){const s=V47_SP[k];if(!s)continue;
+    if(r.nl&&s[0]!==r.nl){r.ak=[...(r.ak||[]),s[0]];s[0]=r.nl}   /* v7.3: gecorrigeerde Nederlandse naam (IOC 15.2) gaat voor de oude app-naam; oude namen staan in r.ak */
     if(r.tp)s[3]=r.tp;
     if(r.ft&&!V51_PHOTO[k])V51_PHOTO[k]=r.ft}})();
 const wl21PrevInfo=v47Info;
 v47Info=function(name){const i=wl21PrevInfo(name),r=wl2(name);if(r&&r.en)i.en=r.en;return i};
-function wl21Search(name){const r=wl2(name)||{};return [name,r.en||'',(r.ak||[]).join(' '),r.s||'',r.fm||''].join(' ').toLowerCase()}
+function wl21Search(name){const r=wl2(name)||{};return [name,r.nl||'',r.en||'',(r.ak||[]).join(' '),r.s||'',r.fm||''].join(' ').toLowerCase()}
 const wl21PrevCard=v47Card;
 v47Card=function(name,region,focus){let h=wl21PrevCard(name,region,focus);const r=wl2(name);if(!r)return h;
   h=h.replace(/data-search="([^"]*)"/,(m,a)=>`data-search="${a} ${esc(wl21Search(name))}"`);

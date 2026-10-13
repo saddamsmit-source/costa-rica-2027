@@ -274,7 +274,7 @@
 },
 "Baird's tapir": {
 "set": {
-"Corcovado": 3,
+"Corcovado": 2,
 "San José": 0
 },
 "max": {
@@ -285,9 +285,9 @@
 "Uvita": 1
 },
 "rn": {
-"Corcovado": "Met gids rond Sirena"
+"Corcovado": "Vooral rond Sirena met gids; parksector nog niet bevestigd"
 },
-"why": "Sirena geboekt (bevestigd door Kevin): iNat 27% van de waarnemers bij Sirena; elders schaars, San José-waarnemingen komen uit opvang"
+"why": "Sirena (beste tapirplek, iNat 27% van de waarnemers) is nog niet bevestigd; bij San Pedrillo kleiner. Elders schaars; San José-waarnemingen komen uit opvang"
 },
 "Resplendent quetzal": {
 "max": {
