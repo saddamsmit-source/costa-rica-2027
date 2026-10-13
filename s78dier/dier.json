@@ -1,0 +1,618 @@
+{
+"Northern emerald-toucanet": [
+{
+"obs": 256546331,
+"pid": 459987712,
+"dims": {
+"width": 2048,
+"height": 1357
+},
+"lic": "cc-by-nc",
+"attr": "(c) Daniel Correia, some rights reserved (CC BY-NC)",
+"place": "San Jos\u00e9 Province, Copey District, Costa Rica",
+"ids": 1,
+"taxon": "Aulacorhynchus prasinus caeruleogularis",
+"user": "Daniel Correia",
+"file": "459987712.jpg",
+"size": [
+2048,
+1357
+]
+},
+{
+"obs": 131877056,
+"pid": 224490357,
+"dims": {
+"width": 2048,
+"height": 1365
+},
+"lic": "cc-by-nc",
+"attr": "(c) Iggino, some rights reserved (CC BY-NC)",
+"place": "Puntarenas, Monteverde, Costa Rica",
+"ids": 4,
+"taxon": "Aulacorhynchus prasinus",
+"user": "Iggino",
+"file": "224490357.jpg",
+"size": [
+2048,
+1365
+]
+},
+{
+"obs": 281544220,
+"pid": 505766120,
+"dims": {
+"width": 2048,
+"height": 1365
+},
+"lic": "cc-by-nc",
+"attr": "(c) Krzysztof Kasprzyk, some rights reserved (CC BY-NC)",
+"place": "San Jos\u00e9 Province, Copey District, Costa Rica",
+"ids": 3,
+"taxon": "Aulacorhynchus prasinus caeruleogularis",
+"user": "Krzysztof Kasprzyk",
+"file": "505766120.jpg",
+"size": [
+2048,
+1365
+]
+},
+{
+"obs": 256058399,
+"pid": 459001002,
+"dims": {
+"width": 2048,
+"height": 1365
+},
+"lic": "cc-by-nc",
+"attr": "(c) David Rankin, some rights reserved (CC BY-NC)",
+"place": "Cinchona, Provincia de Alajuela, Alajuela, Costa Rica",
+"ids": 2,
+"taxon": "Aulacorhynchus prasinus",
+"user": "David Rankin",
+"file": "459001002.jpg",
+"size": [
+2048,
+1365
+]
+},
+{
+"obs": 127382802,
+"pid": 216253561,
+"dims": {
+"width": 1536,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) Ben G., some rights reserved (CC BY-NC)",
+"place": "Calle La Piedra, Dota, San Jose, CR",
+"ids": 3,
+"taxon": "Aulacorhynchus prasinus",
+"user": "Ben G.",
+"file": "216253561.jpg",
+"size": [
+1536,
+2048
+]
+},
+{
+"obs": 126888091,
+"pid": 215346096,
+"dims": {
+"width": 2048,
+"height": 1365
+},
+"lic": "cc-by-nc",
+"attr": "(c) Ty Sharrow, some rights reserved (CC BY-NC)",
+"place": "San Jos\u00e9 Province, Copey District, Costa Rica",
+"ids": 3,
+"taxon": "Aulacorhynchus prasinus",
+"user": "Ty Sharrow",
+"file": "215346096.jpg",
+"size": [
+2048,
+1365
+]
+},
+{
+"obs": 330484868,
+"pid": 599285455,
+"dims": {
+"width": 2048,
+"height": 1455
+},
+"lic": "cc-by",
+"attr": "(c) Blake Ross, some rights reserved (CC BY)",
+"place": "San Jos\u00e9 Province, Copey District, Costa Rica",
+"ids": 2,
+"taxon": "Aulacorhynchus prasinus",
+"user": "Blake Ross",
+"file": "599285455.jpg",
+"size": [
+2048,
+1455
+]
+},
+{
+"obs": 235255595,
+"pid": 418356640,
+"dims": {
+"width": 1463,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) Bruce Coto R, some rights reserved (CC BY-NC)",
+"place": "San Jos\u00e9, San Gerardo de Dota, Costa Rica",
+"ids": 3,
+"taxon": "Aulacorhynchus prasinus",
+"user": "Bruce Coto R",
+"file": "418356640.jpg",
+"size": [
+1463,
+2048
+]
+}
+],
+"Clay-colored thrush": [
+{
+"obs": 407952645,
+"pid": 749792098,
+"dims": {
+"width": 1482,
+"height": 1482
+},
+"lic": "cc-by-nc",
+"attr": "(c) Johannes Klein, some rights reserved (CC BY-NC)",
+"place": "Lim\u00f3n Province, Guapiles, Costa Rica",
+"ids": 2,
+"taxon": "Turdus grayi",
+"user": "Johannes Klein",
+"file": "749792098.jpg",
+"size": [
+1482,
+1482
+]
+},
+{
+"obs": 136768466,
+"pid": 233472307,
+"dims": {
+"width": 2048,
+"height": 1365
+},
+"lic": "cc-by-nc",
+"attr": "(c) Sydney Gerig, some rights reserved (CC BY-NC)",
+"place": "Caf\u00e9 Cabur\u00e9, Puntarenas Province, Monteverde, Costa Rica",
+"ids": 2,
+"taxon": "Turdus grayi",
+"user": "Sydney Gerig",
+"file": "233472307.jpg",
+"size": [
+2048,
+1365
+]
+},
+{
+"obs": 138411863,
+"pid": 236567450,
+"dims": {
+"width": 1536,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) diegoespinizadaisies, some rights reserved (CC BY-NC)",
+"place": "Nosara, Nicoya, Guanacaste, CR",
+"ids": 3,
+"taxon": "Turdus grayi",
+"user": "diegoespinizadaisies",
+"file": "236567450.jpg",
+"size": [
+1536,
+2048
+]
+},
+{
+"obs": 44445553,
+"pid": 70470144,
+"dims": {
+"width": 2048,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) gabrielpicado12, some rights reserved (CC BY-NC)",
+"place": "Para\u00edso, CR-CA, CR",
+"ids": 3,
+"taxon": "Turdus grayi",
+"user": "gabrielpicado12",
+"file": "70470144.jpg",
+"size": [
+2048,
+2048
+]
+},
+{
+"obs": 203411884,
+"pid": 359370308,
+"dims": {
+"width": 2048,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) cpar, some rights reserved (CC BY-NC)",
+"place": "La Selva",
+"ids": 2,
+"taxon": "Turdus grayi",
+"user": "cpar",
+"file": "359370308.jpg",
+"size": [
+2048,
+2048
+]
+},
+{
+"obs": 9912718,
+"pid": 13596603,
+"dims": {
+"width": 2048,
+"height": 1356
+},
+"lic": "cc-by-nc",
+"attr": "(c) Howard Friedman, some rights reserved (CC BY-NC)",
+"place": "Puntarenas Province, Costa Rica",
+"ids": 4,
+"taxon": "Turdus grayi",
+"user": "Howard Friedman",
+"file": "13596603.jpg",
+"size": [
+2048,
+1356
+]
+},
+{
+"obs": 395962955,
+"pid": 726091161,
+"dims": {
+"width": 2048,
+"height": 1366
+},
+"lic": "cc-by-nc",
+"attr": "(c) Manuel Raab, some rights reserved (CC BY-NC)",
+"place": "Provincia de Cartago, Jim\u00e9nez, Costa Rica",
+"ids": 2,
+"taxon": "Turdus grayi",
+"user": "Manuel Raab",
+"file": "726091161.jpg",
+"size": [
+2048,
+1366
+]
+},
+{
+"obs": 163720843,
+"pid": 283199495,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) joma_12, some rights reserved (CC BY-NC)",
+"place": "XVXV+R24, Heredia Province, San Pablo, Costa Rica",
+"ids": 1,
+"taxon": "Turdus grayi",
+"user": "joma_12",
+"file": "283199495.jpg",
+"size": [
+2048,
+1536
+]
+}
+],
+"White-throated magpie-jay": [
+{
+"obs": 176115645,
+"pid": 306146223,
+"dims": {
+"width": 1536,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) jklsanders, some rights reserved (CC BY-NC)",
+"place": "Calle Coyotera, La Cruz, Guanacaste, CR",
+"ids": 2,
+"taxon": "Cyanocorax formosus",
+"user": "jklsanders",
+"file": "306146223.jpg",
+"size": [
+1536,
+2048
+]
+},
+{
+"obs": 65308522,
+"pid": 105091593,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) eukaria, some rights reserved (CC BY-NC)",
+"place": "Calle Nacascolo, Liberia, Guanacaste, CR",
+"ids": 1,
+"taxon": "Cyanocorax formosus",
+"user": "eukaria",
+"file": "105091593.jpg",
+"size": [
+2048,
+1536
+]
+},
+{
+"obs": 40043632,
+"pid": 63593638,
+"dims": {
+"width": 2048,
+"height": 1365
+},
+"lic": "cc-by-nc",
+"attr": "(c) Pablo Fraire, some rights reserved (CC BY-NC)",
+"place": "Provincia de Guanacaste, Costa Rica",
+"ids": 4,
+"taxon": "Cyanocorax formosus",
+"user": "Pablo Fraire",
+"file": "63593638.jpg",
+"size": [
+2048,
+1365
+]
+},
+{
+"obs": 311044867,
+"pid": 561427596,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) Lana, some rights reserved (CC BY-NC)",
+"place": "Provincia de Puntarenas, Garabito, Costa Rica",
+"ids": 1,
+"taxon": "Cyanocorax formosus",
+"user": "Lana",
+"file": "561427596.jpg",
+"size": [
+2048,
+1536
+]
+},
+{
+"obs": 401001956,
+"pid": 735932544,
+"dims": {
+"width": 2048,
+"height": 1367
+},
+"lic": "cc-by-nc",
+"attr": "(c) erikmartin, some rights reserved (CC BY-NC)",
+"place": "Provincia de Guanacaste, Hojancha, Costa Rica",
+"ids": 2,
+"taxon": "Cyanocorax formosus",
+"user": "erikmartin",
+"file": "735932544.jpg",
+"size": [
+2048,
+1367
+]
+},
+{
+"obs": 138060725,
+"pid": 235901249,
+"dims": {
+"width": 2048,
+"height": 1689
+},
+"lic": "cc-by-nc",
+"attr": "(c) Amy C Nicholas, some rights reserved (CC BY-NC)",
+"place": "Santa Cruz, Guanacaste, CR",
+"ids": 1,
+"taxon": "Cyanocorax formosus",
+"user": "Amy C Nicholas",
+"file": "235901249.jpg",
+"size": [
+2048,
+1689
+]
+},
+{
+"obs": 199195540,
+"pid": 351238744,
+"dims": {
+"width": 2048,
+"height": 1535
+},
+"lic": "cc-by-nc",
+"attr": "(c) Jonas Konicek, some rights reserved (CC BY-NC)",
+"place": "Provincia de Guanacaste, Liberia, Costa Rica",
+"ids": 1,
+"taxon": "Cyanocorax formosus",
+"user": "Jonas Konicek",
+"file": "351238744.jpg",
+"size": [
+2048,
+1535
+]
+},
+{
+"obs": 192604469,
+"pid": 338150645,
+"dims": {
+"width": 2048,
+"height": 1356
+},
+"lic": "cc-by",
+"attr": "(c) Josiah Londer\u00e9e, some rights reserved (CC BY)",
+"place": "Alajuela Province, San Carlos, Costa Rica",
+"ids": 1,
+"taxon": "Cyanocorax formosus",
+"user": "Josiah Londer\u00e9e",
+"file": "338150645.jpg",
+"size": [
+2048,
+1356
+]
+}
+],
+"White-faced capuchin": [
+{
+"obs": 20581487,
+"pid": 31767005,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) Wendy Feltham, some rights reserved (CC BY-NC)",
+"place": "Puntarenas Province, Quepos, Costa Rica",
+"ids": 7,
+"taxon": "Cebus imitator",
+"user": "Wendy Feltham",
+"file": "31767005.jpg",
+"size": [
+2048,
+1536
+]
+},
+{
+"obs": 66396693,
+"pid": 107026930,
+"dims": {
+"width": 2048,
+"height": 1536
+},
+"lic": "cc-by-nc",
+"attr": "(c) Michelle Monge-Velazquez, some rights reserved (CC BY-NC)",
+"place": "Puntarenas Province, Quepos, Costa Rica",
+"ids": 2,
+"taxon": "Cebus imitator",
+"user": "Michelle Monge-Velazquez",
+"file": "107026930.jpg",
+"size": [
+2048,
+1536
+]
+},
+{
+"obs": 287379284,
+"pid": 575222554,
+"dims": {
+"width": 2048,
+"height": 1367
+},
+"lic": "cc-by-nc",
+"attr": "(c) Thomas Shahan, some rights reserved (CC BY-NC)",
+"place": "Golfito, CR-PU, CR",
+"ids": 2,
+"taxon": "Cebus imitator",
+"user": "Thomas Shahan",
+"file": "575222554.jpg",
+"size": [
+2048,
+1367
+]
+},
+{
+"obs": 313716884,
+"pid": 566554916,
+"dims": {
+"width": 1639,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) Matt Rosenthal, some rights reserved (CC BY-NC)",
+"place": "Lim\u00f3n, Siquirres, Costa Rica",
+"ids": 3,
+"taxon": "Cebus imitator",
+"user": "Matt Rosenthal",
+"file": "566554916.jpg",
+"size": [
+1639,
+2048
+]
+},
+{
+"obs": 66150006,
+"pid": 106575074,
+"dims": {
+"width": 1861,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) docprt, some rights reserved (CC BY-NC)",
+"place": "Guanacaste Province, Costa Rica",
+"ids": 6,
+"taxon": "Cebus imitator",
+"user": "docprt",
+"file": "106575074.jpg",
+"size": [
+1861,
+2048
+]
+},
+{
+"obs": 83206172,
+"pid": 136634265,
+"dims": {
+"width": 1375,
+"height": 2048
+},
+"lic": "cc-by",
+"attr": "(c) Matthew Gerke, some rights reserved (CC BY)",
+"place": "Puntarenas Province, Quepos, Costa Rica",
+"ids": 3,
+"taxon": "Cebus imitator",
+"user": "Matthew Gerke",
+"file": "136634265.jpg",
+"size": [
+1375,
+2048
+]
+},
+{
+"obs": 109831627,
+"pid": 185184137,
+"dims": {
+"width": 1536,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) briannafurch, some rights reserved (CC BY-NC)",
+"place": "Osa, CR-PU, CR",
+"ids": 7,
+"taxon": "Cebus imitator",
+"user": "briannafurch",
+"file": "185184137.jpg",
+"size": [
+1536,
+2048
+]
+},
+{
+"obs": 109837303,
+"pid": 185194453,
+"dims": {
+"width": 1536,
+"height": 2048
+},
+"lic": "cc-by-nc",
+"attr": "(c) sebdel222, some rights reserved (CC BY-NC)",
+"place": "Manuel Antonio National Park, Aguirre, Puntarenas, CR",
+"ids": 5,
+"taxon": "Cebus imitator",
+"user": "sebdel222",
+"file": "185194453.jpg",
+"size": [
+1536,
+2048
+]
+}
+]
+}
