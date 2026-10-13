@@ -4,7 +4,7 @@ sys.path.insert(0,os.path.join(os.path.dirname(__file__),'w21'))
 from net import fetch
 O='wl_out';os.makedirs(O+'/dia',exist_ok=True)
 API='https://commons.wikimedia.org/w/api.php'
-Q={'sanjose':['Teatro Nacional de Costa Rica','Catedral Metropolitana San José Costa Rica','Avenida Central San José Costa Rica','Barrio Amón San José'],
+Q_ALL={'sanjose':['Teatro Nacional de Costa Rica','Catedral Metropolitana San José Costa Rica','Avenida Central San José Costa Rica','Barrio Amón San José'],
  'cahuita':['Cahuita National Park beach','Playa Negra Cahuita','Cahuita Costa Rica coast','Punta Cahuita'],
  'tortuguero':['Tortuguero canal','Tortuguero National Park canal','Tortuguero village','Tortuguero beach'],
  'fortuna':['Arenal Volcano','Volcán Arenal','Lake Arenal volcano','La Fortuna waterfall'],
@@ -16,6 +16,7 @@ Q={'sanjose':['Teatro Nacional de Costa Rica','Catedral Metropolitana San José 
  'esterillos':['Playa Esterillos','Esterillos Oeste','Playa Bejuco Parrita','Esterillos Costa Rica'],
  'manuel':['Manuel Antonio National Park beach','Playa Manuel Antonio','Manuel Antonio National Park','Playa Espadilla'],
  'tarcoles':['Tárcoles River','Rio Tarcoles','Carara National Park','Tárcoles crocodiles bridge']}
+Q={'sanjose2':['Templo de la Música Parque Morazán','Catedral Metropolitana de San José','Edificio Metálico San José','Mercado Central San José Costa Rica','Avenida Central San José']} if os.environ.get('DIA2','1')=='1' else Q_ALL
 OK=re.compile(r'^(CC0|CC BY(-SA)? [0-9.]+|CC BY(-SA)?|Public domain|PD.*)$',re.I)
 meta={}
 for reg,qs in Q.items():
@@ -40,4 +41,4 @@ for reg,qs in Q.items():
         b=fetch(c['thumb'],raw=True,pace=1.0,tries=2)
         if b:open(f"{O}/dia/{reg}-{i:02d}.jpg",'wb').write(b);c['file']=f"{reg}-{i:02d}.jpg"
     meta[reg]=cands;print(reg,len(cands),flush=True)
-json.dump(meta,open(O+'/dia.json','w'),ensure_ascii=False,indent=1);print('klaar')
+json.dump(meta,open(O+'/dia2.json','w'),ensure_ascii=False,indent=1);print('klaar')
