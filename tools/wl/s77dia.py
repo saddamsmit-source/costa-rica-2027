@@ -16,7 +16,7 @@ Q_ALL={'sanjose':['Teatro Nacional de Costa Rica','Catedral Metropolitana San Jo
  'esterillos':['Playa Esterillos','Esterillos Oeste','Playa Bejuco Parrita','Esterillos Costa Rica'],
  'manuel':['Manuel Antonio National Park beach','Playa Manuel Antonio','Manuel Antonio National Park','Playa Espadilla'],
  'tarcoles':['Tárcoles River','Rio Tarcoles','Carara National Park','Tárcoles crocodiles bridge']}
-Q={'mv2':['Santa Elena Monteverde Costa Rica','Monteverde Costa Rica landscape view','Curi-Cancha Monteverde','Monteverde Reserve trail','Monteverde Gulf of Nicoya view']} if os.environ.get('DIA2','1')=='1' else Q_ALL
+Q={'cano':['Isla del Caño','Isla del Caño Costa Rica beach','Caño Island Biological Reserve','Drake Bay beach Costa Rica']} if os.environ.get('DIA2','1')=='1' else Q_ALL
 OK=re.compile(r'^(CC0|CC BY(-SA)? [0-9.]+|CC BY(-SA)?|Public domain|PD.*)$',re.I)
 meta={}
 for reg,qs in Q.items():

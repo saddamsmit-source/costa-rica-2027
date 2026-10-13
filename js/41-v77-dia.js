@@ -22,6 +22,24 @@ const V77_ANIMAL={
  'Esterillos':{n:'Brown pelican',p:'74013719'},
  'Manuel Antonio':{n:'Brown-throated three-toed sloth',p:'670559580',pos:'50% 35%'},
  'Tárcoles':{n:'Roseate spoonbill',p:'2069153',pos:'60% 45%'}}; /* eerste Tárcoles-foto toont al een krokodil */
+
+/* v7.7.1 · per dag een eigen set: bij 2–3 dagen op één plek elke dag 2 andere sfeerfoto's + een ander dier (focus van die dag, kans 3–4) */
+const V77_PIC={'Eyelash viper':{p:'409273588'},'Green basilisk':{p:'376322138'},'Bare-throated tiger heron':{p:'256276977'},'White-faced capuchin':{p:'23585984'},
+ 'Coppery-headed emerald':{p:'659544525'},'Three-wattled bellbird':{p:'213939948'},'Fiery-billed aracari':{p:'264894610'},'King angelfish':{p:'174040511'}};
+Object.values(V77_ANIMAL).forEach(a=>{V77_PIC[a.n]??={p:a.p,pos:a.pos}});
+const V77_DAYS={1:[['dest-sanjose','dia-sanjose'],'Clay-colored thrush'],
+ 2:[['dest-cahuita','dia-cahuita'],'Keel-billed toucan'],3:[['dia-cahuita2','dia-cahuita3'],'Eyelash viper'],
+ 4:[['dest-tortuguero','dia-tortuguero'],'Spectacled caiman'],5:[['dia-tortuguero2','dia-tortuguero3'],'Green basilisk'],
+ 6:[['dest-fortuna','dia-fortuna'],'Bare-throated tiger heron'],7:[['dia-fortuna2','dia-fortuna3'],'Jabiru'],
+ 8:[['dest-rincon','dia-rincon'],'White-throated magpie-jay'],9:[['dia-rincon2','dia-rincon3'],'White-faced capuchin'],
+ 10:[['dest-monteverde','dia-monteverde'],'Coppery-headed emerald'],11:[['dia-monteverde2','dia-monteverde3'],'Northern emerald-toucanet'],12:[['dia-monteverde4','dia-monteverde5'],'Three-wattled bellbird'],
+ 13:[['dest-sangerardo','dia-sangerardo'],'Resplendent quetzal'],
+ 14:[['dest-uvita','dia-uvita'],'Fiery-billed aracari'],15:[['dia-uvita2','dia-uvita3'],'Humpback whale'],
+ 16:[['dest-corcovado','dia-corcovado'],'American crocodile'],17:[['dia-corcovado2','dia-corcovado3'],'Scarlet macaw'],18:[['dia-corcovado4','dia-corcovado5'],'King angelfish'],
+ 19:[['dest-esterillos','dia-esterillos'],'Brown pelican'],20:[['dest-manuel','dia-manuel'],'Brown-throated three-toed sloth'],21:[['dest-tarcoles','dia-tarcoles'],'Roseate spoonbill']};
+function v77DaySlides(d){const c=V77_DAYS[d.id];if(!c)return [];const reg=v47Region(d),out=c[0].filter(k=>V48_PHOTO[k]).map(k=>({src:'./photos/'+k+'.jpg',pos:(V77_POS[k]||'')}));
+  const a=V77_PIC[c[1]];if(a&&v47Chance(reg,c[1])>=3)out.push({src:'./photos/wl/hd/'+a.p+'.jpg',pos:a.pos,label:v47Info(c[1]).nl,name:c[1]});return out}
+const V77_POS={};
 const V77_MS=4000;
 function v77Slides(region,first){const out=[{src:first}];const sc=V77_SCENE[region];if(sc)out.push({src:'./photos/'+sc.key+'.jpg',pos:sc.pos});
   const a=V77_ANIMAL[region];if(a&&v47Chance(region,a.n)>=3)out.push({src:'./photos/wl/hd/'+a.p+'.jpg',pos:a.pos,label:v47Info(a.n).nl,name:a.n});return out}
@@ -33,7 +51,7 @@ function v77Mount(sec,key,slides){if(!sec||slides.length<2||sec.dataset.v77)retu
   const i0=(v77Pos[key]||0)%slides.length;
   const wrap=document.createElement('div');wrap.className='v77-slides';wrap.setAttribute('aria-hidden','true');
   wrap.innerHTML=slides.map((s,i)=>`<i class="${i===i0?'on':''}" style="background-image:url('${s.src}');${s.pos?`background-position:${s.pos}`:''}"></i>`).join('');
-  sec.prepend(wrap);
+  sec.prepend(wrap);sec.style.backgroundImage=`url('${slides[i0].src}')`;
   const dots=document.createElement('div');dots.className='v77-dots';dots.setAttribute('aria-hidden','true');dots.innerHTML=slides.map((s,i)=>`<b class="${i===i0?'on':''}"></b>`).join('');sec.append(dots);
   const lab=document.createElement('div');lab.className='v77-lab';sec.append(lab);
   const setLab=i=>{const s=slides[i];lab.textContent=s.label||'';lab.classList.toggle('on',!!s.label)};setLab(i0);
@@ -47,6 +65,6 @@ function v77Step(){if(document.hidden||!v77Visible||v77Reduce())return;
 function v77Start(){if(!v77Timer)v77Timer=setInterval(v77Step,V77_MS)}
 document.addEventListener('visibilitychange',()=>{v77Visible=!document.hidden});
 {const prev=bind;bind=function(){prev();
-  if(tab==='days'){const d=S[currentDay-1],reg=v47Region(d),first=locationPhoto(d);if(d.id<22)v77Mount(document.querySelector('.ds-dayhero'),'d'+reg,v77Slides(reg,first))}
+  if(tab==='days'){const d=S[currentDay-1];if(V77_DAYS[d.id])v77Mount(document.querySelector('.ds-dayhero'),'d'+d.id,v77DaySlides(d))}
   if(tab==='home')v77Mount(document.querySelector('.ds-hero'),'home',v77HomeSlides());
   if(document.querySelector('.v77'))v77Start()}}
