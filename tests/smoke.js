@@ -211,8 +211,9 @@ const {chromium}=require('playwright');const path=require('path');
   {const sw=require('fs').readFileSync(path.resolve(__dirname,'..','sw.js'),'utf8');
    const v=await p.evaluate(async()=>{const bad=[],CDN={'Cabinas Las Palmeras':'webbox.imgix.net','Catarata Ecolodge':'storage.googleapis.com'};
     const hotels=[...new Set(S.flatMap(d=>d.hotel))];
-    for(const [h,l] of Object.entries(V80_HPICS)){const dom=new URL(V80_HSRC[h].page).hostname.replace(/^www\./,'');
-      l.forEach(x=>{const u=new URL(x.u);if(u.protocol!=='https:')bad.push('geen https: '+x.u);if(!(u.hostname.endsWith(dom)||u.hostname===CDN[h]))bad.push('foto niet van eigen site: '+h+' '+u.hostname)})}
+    for(const [h,l] of Object.entries(V80_HPICS)){const dom=V80_HSRC[h]?new URL(V80_HSRC[h].page).hostname.replace(/^www\./,''):'-';
+      if(V80_HBOOK[h]&&!(l.slice(0,3).every(x=>x.src==='booking')&&/^https:\/\/www\.booking\.com\/hotel\/cr\//.test(V80_HBOOK[h])))bad.push('Booking-foto\'s niet vooraan: '+h);
+      l.forEach(x=>{const u=new URL(x.u);if(u.protocol!=='https:')bad.push('geen https: '+x.u);if(!((x.src==='site'&&(u.hostname.endsWith(dom)||u.hostname===CDN[h]))||(x.src==='booking'&&u.hostname==='cf.bstatic.com'&&V80_HBOOK[h])))bad.push('foto niet van hotelsite of Booking: '+h+' '+u.hostname)})}
     for(const h of hotels){if(!V80_HFILL[h])bad.push('geen diashow: '+h);
       const d=S.find(x=>x.hotel.includes(h));tab='days';currentDay=d.id;daySection='stay';render();await new Promise(r=>setTimeout(r,60));await v80HLoad(h);await new Promise(r=>setTimeout(r,30));
       const el=document.querySelector(`.ds-hotel-img[data-v80h="${CSS.escape(h)}"]`);const st=el&&el.v77;
