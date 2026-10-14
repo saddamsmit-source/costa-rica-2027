@@ -1,0 +1,439 @@
+{
+"log": [
+{
+"hotel": "Fleur de Lys",
+"slug": "fleur-de-lys",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/fleur-de-lys.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Atlantida Lodge",
+"slug": "atlantida-lodge-cahuita",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/atlantida-lodge-cahuita.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Atlantida Lodge",
+"slug": "atlantida-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/atlantida-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Lapa Verde Lodge",
+"slug": "caribbean-paradise-eco-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/caribbean-paradise-eco-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Lapa Verde Lodge",
+"slug": "lapa-verde-caribbean-paradise",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/lapa-verde-caribbean-paradise.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Lapa Verde Lodge",
+"slug": "caribbean-paradise",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/caribbean-paradise.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Lapa Verde Lodge",
+"slug": "lapa-verde-lodge-tortuguero",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/lapa-verde-lodge-tortuguero.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Catarata Ecolodge",
+"slug": "albergue-la-catarata",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/albergue-la-catarata.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Cañon de la Vieja Lodge",
+"slug": "canon-de-la-vieja-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/canon-de-la-vieja-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Cañon de la Vieja Lodge",
+"slug": "canon-de-la-vieja",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/canon-de-la-vieja.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Cañon de la Vieja Lodge",
+"slug": "canon-de-la-vieja-adventure-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/canon-de-la-vieja-adventure-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Hotel Los Cipreses",
+"slug": "cipreses",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/cipreses.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Hotel Los Cipreses",
+"slug": "hotel-cipreses",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/hotel-cipreses.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Sueños del Bosque",
+"slug": "suenos-del-bosque",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/suenos-del-bosque.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Sueños del Bosque",
+"slug": "suenos-del-bosque-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/suenos-del-bosque-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Sueños del Bosque",
+"slug": "suenos-del-bosque-posada",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/suenos-del-bosque-posada.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Rio Tico Safari Lodge",
+"slug": "rio-tico-safari-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/rio-tico-safari-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Rio Tico Safari Lodge",
+"slug": "rio-tico",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/rio-tico.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Cabinas Las Palmeras",
+"slug": "poor-man-s-paradise-lodge",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/poor-man-s-paradise-lodge.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Hotel Playa Bejuco",
+"slug": "playa-bejuco",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/playa-bejuco.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+},
+{
+"hotel": "Hotel Playa Bejuco",
+"slug": "hotel-playa-bejuco",
+"st": 202,
+"final": "https://www.booking.com/hotel/cr/hotel-playa-bejuco.en-gb.html",
+"title": "",
+"addr": "",
+"latlng": "",
+"n": 0,
+"imgs": []
+}
+],
+"cities": {
+"tortuguero": {
+"st": 200,
+"len": 889230,
+"links": [
+"alma-del-bosque",
+"angsa-river-view-tortuguero",
+"apartamentocaiman2",
+"babilonia-suite-tortuguero",
+"cabanas-daneysha",
+"cabinas-el-muellecito",
+"cabinas-ensuenos",
+"cabinas-jacana-tortuguero",
+"carey-lodging",
+"casa-chilamates-2-0",
+"casa-marbella-tortuguero",
+"el-icaco-tortuguero",
+"hostal-y-cabinas-tortuguero",
+"hostel-tortuguero-7backpackers",
+"la-casona-eco-lodge-tortuguero",
+"legoon-view",
+"liahs-tortuguero",
+"los-amigos-jungle",
+"manatus",
+"mawamba-lodge",
+"pachira-lodge",
+"serendipity",
+"serendipity-beachfront",
+"sunset-rooms-tortuguero-national-park-limon-costa-rica",
+"tortuguero-beach",
+"tortuguero7-lake-view",
+"tuanis-guest-house-tortuguero-pococi-limon"
+]
+},
+"curubande": {
+"st": 200,
+"len": 747652,
+"links": [
+"amazilia-guest-house",
+"casa-pampa-liberia",
+"casa-rural-aroma-de-campo",
+"casa-todah-b-amp-b",
+"casa-zion-segunda-planta",
+"el-cerro-liberia",
+"hacienda-guachipelin",
+"hampton-by-hilton-guanacaste-airport",
+"hilton-garden-inn-liberia-airport",
+"hostel-pura-vida-liberia",
+"javy",
+"la-guaria-liberia-guanacaste",
+"las-colinas-del-miravalles",
+"liberia-liberia",
+"rinconcito-lodge",
+"tiquisia-lodge",
+"villa-hermosa-liberia",
+"wilson-anexo",
+"wilson-condega"
+]
+},
+"liberia": {
+"st": 202,
+"len": 8410,
+"links": []
+},
+"santa-elena": {
+"st": 202,
+"len": 8410,
+"links": []
+},
+"monteverde-costa-rica": {
+"st": 202,
+"len": 8415,
+"links": []
+},
+"san-gerardo-de-dota": {
+"st": 200,
+"len": 729878,
+"links": [
+"cabinas-san-gerardo",
+"casa-buena-vista-san-gerardo-de-dota",
+"casa-d-pa",
+"chalet-amauleza",
+"dantica-cloud-forest-lodge",
+"de-montaa-a-suria",
+"de-montana-gema-del-bosque",
+"las-cataratas-lodge",
+"lauraceas-lodge",
+"los-lagos-lodge",
+"savegre",
+"trogon-lodge"
+]
+},
+"punta-mala": {
+"st": 200,
+"len": 917757,
+"links": [
+"alma-de-ojochal",
+"boutique-ballena-dorada",
+"boutique-tangara-azul",
+"cabinas-hidalgo",
+"club-fred-osa",
+"club-fred-osa1",
+"cristal-ballena-resort",
+"cuna-del-angel",
+"eden-39-s-nest",
+"el-castillo",
+"el-paraiso-azul",
+"elan-at-ballena-beach",
+"evasion",
+"finca-bavaria-osa",
+"kura-design-villas",
+"oxygen-jungle-villas",
+"thoas-lodge",
+"three-sixty-boutique",
+"tikivillas-rainforest-lodge",
+"vayu-retreat-villas",
+"villas-gaia-ecolodge",
+"vista-villas"
+]
+},
+"uvita": {
+"st": 202,
+"len": 8415,
+"links": []
+},
+"bejuco-cr": {
+"st": 202,
+"len": 8410,
+"links": []
+},
+"bejuco": {
+"st": 200,
+"len": 698084,
+"links": [
+"cabana-corozalito",
+"cabinas-el-colibri",
+"casa-buenavista-b-amp-b",
+"casa-caletas-boutique",
+"el-pequeno-gecko-verde-samara",
+"esperanza",
+"giada",
+"kabuki",
+"la-colina-pura-vista",
+"leyenda",
+"lodge-las-estrellas-de-samara",
+"montelaguna-boutique",
+"nammbu-beach-front-bungalows",
+"palmetto-lodge",
+"salvatierra",
+"samara-inn",
+"sol-samara-samara",
+"the-inner-light-yoga-lodge",
+"tuki-tuki-lodge"
+]
+},
+"la-fortuna": {
+"st": 202,
+"len": 8410,
+"links": []
+},
+"cahuita": {
+"st": 202,
+"len": 8410,
+"links": []
+},
+"drake": {
+"st": 200,
+"len": 884119,
+"links": [
+"cabinas-murillo",
+"cabinas-nasua-drake",
+"cabinas-pura-vida",
+"casa-gitana-hostel",
+"ceiba-lodge-drake",
+"citronela-lodge-corcovado",
+"corcovado-amp-drake-inn",
+"corcovado-jungle-hostel",
+"drake-bay-getaway-resort",
+"drake-bay-greenleaf",
+"drake-bay-paradise-lodge",
+"finca-maresia-peninsula-de-osa1",
+"finca-sueno-de-osa",
+"jacamar",
+"jinetes-de-osa",
+"kunken-lodge",
+"la-guarida",
+"margarita",
+"martina-39-s-place-drake",
+"natural-drake-bay-boutique",
+"oso-de-osa-finca",
+"pez-espada-tours-y-cabinas",
+"pirate-cove",
+"rancho-corcovado",
+"the-sunset-tucano-lodge",
+"the-tranquilo-lodge-bahia-drake",
+"vista-alta-ecolodge"
+]
+},
+"san-jose": {
+"st": 202,
+"len": 8410,
+"links": []
+}
+}
+}
