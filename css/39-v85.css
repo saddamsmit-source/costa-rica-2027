@@ -10,3 +10,8 @@
 .v85-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.v85-btns .ds-btn{flex:1 1 140px;text-decoration:none;justify-content:center}
 .v85-vid{width:100%;aspect-ratio:16/9;border-radius:12px;background:#000}
 @media (prefers-reduced-motion:reduce){.v85-bar i{transition:none}}
+/* v8.7 keuze per dag + sfeerfoto's */
+.v85-daysel{margin-bottom:12px}.v85-daysel summary{display:flex;justify-content:space-between;align-items:baseline;gap:8px;cursor:pointer;list-style:none;min-height:44px;align-items:center}
+.v85-daysel summary::-webkit-details-marker{display:none}.v85-daysel summary b{font-size:15px}.v85-daysel summary span{font-size:13px;color:var(--ds-muted);font-variant-numeric:tabular-nums}
+.v85-daysel ol{margin:6px 0 8px;padding-left:22px;font-size:14px;line-height:1.6}.v85-daysel li small{color:var(--ds-muted);margin-left:4px}
+.v84-mood{margin-bottom:12px}.v84-mood .v84-add{width:100%;cursor:pointer}.v84-mmsg:empty{display:none}

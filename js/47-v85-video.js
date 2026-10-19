@@ -29,8 +29,13 @@ function v85Example(name){const r=wl2(name);let src='',ph=null;
   return {src,credit:ph?['© '+ph.credit,ph.license,/inaturalist/i.test(ph.page||ph.title||'')?'iNaturalist':'Wikimedia Commons'].filter(Boolean).join(' · '):''}}
 
 /* ---------- wat er in de video komt ----------
-   v8.6: per waarneming (soort × dag). De eerste waarneming van een soort komt altijd in beeld (eigen foto/video,
-   anders een voorbeeldfoto); een latere waarneming alleen als er eigen foto's of een eigen video bij zijn ("Opnieuw gezien"). */
+   v8.7: per dag maximaal 15 dieren (elk 1 foto), 3 eigen video's en 5 sfeerfoto's.
+   - Eerst dieren die nog niet eerder in de video stonden; dieren die al eerder getoond zijn alleen als er nog plek is
+     (en alleen met eigen foto of video).
+   - Bij te veel kiest de app de bijzonderste: zeldzaamheid, eerste keer gezien in de reis, eigen foto/video, notitie, ster.
+   - Per dier de foto met ster (door jullie gezet), anders de scherpste; per dag de video's met ster, anders van de hoogst scorende dieren. */
+const V85_SEL={animals:15,clips:3,moods:5};
+const V85_RARE={1:40,2:25,3:10,4:0};
 function v85Plan(){const nameOf={};Object.keys(V47_SP).forEach(k=>{nameOf[v43name(k)]??=k});
   const map={},get=(sp,day,region,name)=>map[sp+'|'+day]??={sp,day,region,name,t:'',ph:[],cl:[]};
   Object.entries(state.v43Observations||{}).forEach(([sp,o])=>{const name=nameOf[sp]||o.name||sp,ds=Object.entries(o.days||{});
@@ -39,48 +44,58 @@ function v85Plan(){const nameOf={};Object.keys(V47_SP).forEach(k=>{nameOf[v43nam
   const dayOf=p=>p.day||v85DayByDate(v85LocalDate(p.taken))||v85FirstDay(p.region);
   V84.list.forEach(p=>get(p.sp,dayOf(p),p.region,nameOf[p.sp]||p.name).ph.push(p));
   (V84.vids||[]).forEach(p=>get(p.sp,dayOf(p),p.region,nameOf[p.sp]||p.name).cl.push(p));
-  const bySp={};Object.values(map).forEach(s=>(bySp[s.sp]??=[]).push(s));
-  const items=[];Object.values(bySp).forEach(list=>{list.sort((a,b)=>a.day-b.day);const notes=new Set();
-    list.forEach((s,k)=>{const own=s.ph.length+s.cl.length>0;if(k>0&&!own)return;
-      s.ph.sort((a,b)=>(b.fav-a.fav)||(a.taken||a.t).localeCompare(b.taken||b.t));
-      const note=notes.has(s.region)?'':v85Note(s.sp,s.region);notes.add(s.region);
-      const it={own,repeat:k>0,name:s.name,sp:s.sp,region:s.region,day:s.day,when:s.ph[0]?.taken||s.t||s.ph[0]?.t||'',note,
-        photos:s.ph.map(p=>V84.url[p.id]),clips:s.cl.map(p=>({url:V84.url[p.id],start:p.orig?(p.start||0):0,dur:Math.min(V84_VLEN,p.dur||V84_VLEN),poster:V84.poster[p.id]||''}))};
-      if(!own){const ex=v85Example(s.name);it.photos=ex.src?[ex.src]:[];it.credit=ex.credit}
-      it.still=it.photos[0]||it.clips[0]?.poster||'';items.push(it)})});
-  items.sort((a,b)=>(a.day-b.day)||(v85Ms(a.when)-v85Ms(b.when))||(b.own-a.own));
-  const days=[];items.forEach(it=>{let d=days[days.length-1];if(!d||d.day!==it.day){d={day:it.day,items:[]};days.push(d)}d.items.push(it)});
+  const byDay={},first={},moodBy={};Object.values(map).forEach(s=>{(byDay[s.day]??=[]).push(s);first[s.sp]=Math.min(first[s.sp]??99,s.day)});
+  (V84.moods||[]).forEach(p=>(moodBy[dayOf(p)]??=[]).push(p));
+  const allDays=[...new Set([...Object.keys(byDay),...Object.keys(moodBy)].map(Number))].filter(d=>S[d-1]).sort((a,b)=>a-b);
+  const shown=new Set(),notes=new Set(),items=[],days=[];
+  allDays.forEach(d=>{
+    const cand=(byDay[d]||[]).map(s=>{const own=s.ph.length+s.cl.length>0,note=notes.has(s.sp+'|'+s.region)?'':v85Note(s.sp,s.region);
+      const score=(V85_RARE[v47Chance(s.region,s.name)]??15)+(first[s.sp]===d?30:0)+(own?20:0)+(note?10:0)+(s.ph.some(p=>p.favUser)?15:0)+(s.cl.some(p=>p.fav)?15:0);
+      return {s,own,note,score,fresh:!shown.has(s.sp)}});
+    const fresh=cand.filter(c=>c.fresh).sort((a,b)=>b.score-a.score),again=cand.filter(c=>!c.fresh&&c.own).sort((a,b)=>b.score-a.score);
+    const pick=fresh.slice(0,V85_SEL.animals);pick.push(...again.slice(0,V85_SEL.animals-pick.length));
+    const clips=new Set(pick.filter(c=>c.s.cl.length).sort((a,b)=>(b.s.cl.some(p=>p.fav)-a.s.cl.some(p=>p.fav))||b.score-a.score).slice(0,V85_SEL.clips));
+    const dayItems=pick.map(c=>{const s=c.s;shown.add(s.sp);if(c.note)notes.add(s.sp+'|'+s.region);
+      const ph=[...s.ph].sort((a,b)=>(!!b.favUser-!!a.favUser)||((b.sharp||0)-(a.sharp||0))||(b.t||'').localeCompare(a.t||''))[0];
+      const cl=clips.has(c)?[...s.cl].sort((a,b)=>b.fav-a.fav)[0]:null;
+      const it={own:c.own,repeat:!c.fresh,score:c.score,name:s.name,sp:s.sp,region:s.region,day:d,when:ph?.taken||s.t||ph?.t||'',note:c.note,photos:[],clips:[]};
+      if(ph)it.photos=[V84.url[ph.id]];else if(s.cl.length&&!cl)it.photos=[V84.poster[s.cl[0].id]||''].filter(Boolean);
+      if(cl)it.clips=[{url:V84.url[cl.id],start:cl.orig?(cl.start||0):0,dur:Math.min(V84_VLEN,cl.dur||V84_VLEN),poster:V84.poster[cl.id]||''}];
+      if(!c.own){const ex=v85Example(s.name);it.photos=ex.src?[ex.src]:[];it.credit=ex.credit}
+      it.still=it.photos[0]||it.clips[0]?.poster||'';return it}).sort((a,b)=>(v85Ms(a.when)-v85Ms(b.when))||(b.score-a.score));
+    const ms=(moodBy[d]||[]).sort((a,b)=>(b.sharp||0)-(a.sharp||0)).slice(0,V85_SEL.moods).sort((a,b)=>(a.taken||a.t).localeCompare(b.taken||b.t));
+    const nClipAll=cand.filter(c=>c.s.cl.length).length;
+    items.push(...dayItems);
+    days.push({day:d,items:dayItems,moods:ms.map(p=>({url:V84.url[p.id],when:p.taken||''})),cut:{animals:fresh.length+again.length-pick.length,clips:Math.max(0,nClipAll-clips.size)}})});
   return {items,days,species:new Set(items.map(i=>i.sp)).size}}
 
 /* ---------- segmenten (dia's) met duur in seconden ---------- */
-function v85Segments(plan,proef){const {items,days}=plan;if(!items.length)return [];
-  const first=items.find(i=>i.own&&i.still)||items.find(i=>i.still),nSp=plan.species??new Set(items.map(i=>i.sp)).size;
-  const regions=[...new Set(items.map(i=>i.region))];let spN=0,kb=0,q=0;
-  const segs=[{k:'intro',dur:5,trans:'black',src:first?.still||'',label:proef?'Proefvideo':'Reisvideo',title:'Costa Rica 2027',
+function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days.some(d=>d.moods.length))return [];
+  const first=items.find(i=>i.own&&i.still)||items.find(i=>i.still),nSp=plan.species??new Set(items.map(i=>i.sp)).size,firstMood=days.find(d=>d.moods.length)?.moods[0]?.url||'';
+  const regions=[...new Set(items.map(i=>i.region).concat(days.filter(d=>d.moods.length).map(d=>v47Region(S[d.day-1]))))];let spN=0,kb=0,q=0;
+  const segs=[{k:'intro',dur:5,trans:'black',src:firstMood||first?.still||'',label:proef?'Proefvideo':'Reisvideo',title:'Costa Rica 2027',
     sub:`${new Date(S[0].date+'T12:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long'})} – ${new Date(V85_LAST+'T12:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'})}`,
     meta:`${nSp} ${nSp===1?'soort':'soorten'} · ${regions.length} ${regions.length===1?'bestemming':'bestemmingen'}`}];
-  days.forEach(d=>{const day=S[d.day-1]||S[0],nOwn=d.items.filter(i=>i.own).length,lead=d.items.find(i=>i.own&&i.still)||d.items.find(i=>i.still);
+  days.forEach(d=>{const day=S[d.day-1]||S[0],nOwn=d.items.filter(i=>i.own).length,lead=d.moods[0]?{still:d.moods[0].url}:(d.items.find(i=>i.own&&i.still)||d.items.find(i=>i.still));
     const regs=[...new Set(d.items.map(i=>i.region))],nNew=d.items.filter(i=>!i.repeat).length,nRep=d.items.length-nNew;
     segs.push({k:'day',dur:3.5,trans:'leak',day:d.day,stop:typeof v51Day2Stop==='function'?v51Day2Stop(d.day):0,src:lead?.still||'',label:`Dag ${d.day} van ${S.length}`,title:regs.join(' · ')||v47Region(day),
       sub:new Date(day.date+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'}),
-      meta:[nNew?`${nNew} ${nNew===1?'nieuwe soort':'nieuwe soorten'}`:'',nRep?`${nRep} opnieuw gezien`:'',nOwn?`${nOwn} met eigen foto of video`:''].filter(Boolean).join(' · ')});
+      meta:[nNew?`${nNew} ${nNew===1?'nieuwe soort':'nieuwe soorten'}`:'',nRep?`${nRep} opnieuw gezien`:'',nOwn?`${nOwn} met eigen foto of video`:''].filter(Boolean).join(' · ')||'Sfeer van de dag'});
+    d.moods.forEach((m,j)=>segs.push({k:'mood',i:kb++,dur:2.5,trans:j===0?'zoom':'fade',src:m.url,hud:`Dag ${d.day} · ${v47Region(day)}`,label:'Sfeer',meta:v85Time(m.when),credit:'Eigen foto'}));
     d.items.forEach((it,j)=>{const i=v47Info(it.name),r=wl2(it.name)||{},c=v85Cat(i.cat),time=v85Time(it.when);if(!it.repeat)spN++;
-      const base={k:'sp',own:it.own,repeat:it.repeat,n:it.repeat?0:spN,of:nSp,hud:`Dag ${it.day} · ${it.region}`,trans:j===0?'zoom':(++q%2?'push':'fade'),label:it.repeat?`${c[0]} · opnieuw gezien`:c[0],title:i.nl,en:i.nl!==i.en?i.en:'',sci:r.s||'',
+      const base={k:'sp',own:it.own,repeat:it.repeat,n:it.repeat?0:spN,of:nSp,hud:`Dag ${it.day} · ${it.region}`,trans:j===0&&!d.moods.length?'zoom':(++q%2?'push':'fade'),label:it.repeat?`${c[0]} · opnieuw gezien`:c[0],title:i.nl,en:i.nl!==i.en?i.en:'',sci:r.s||'',
         meta:[it.region,new Date((S[it.day-1]||day).date+'T12:00').toLocaleDateString('nl-NL',{weekday:'short',day:'numeric',month:'short'}),time].filter(Boolean).join(' · '),
         credit:it.own?'Eigen foto':(it.photos.length?'Voorbeeldfoto · '+it.credit:'Geen foto')};
-      /* volgorde: eerste foto, dan eigen video, dan de overige foto's */
-      const media=[];if(it.photos[0])media.push({src:it.photos[0]});it.clips.forEach(cl=>media.push({clip:cl}));it.photos.slice(1).forEach(src=>media.push({src}));
-      const nPh=it.photos.length;
+      const media=[];if(it.photos[0])media.push({src:it.photos[0]});it.clips.forEach(cl=>media.push({clip:cl}));
       if(!media.length){segs.push({...base,i:kb++,dur:it.note?5:3,src:'',note:it.note});return}
-      media.forEach((m,n)=>{const lead=n===0,ph=m.src?it.photos.indexOf(m.src):-1;
+      media.forEach((m,n)=>{const lead=n===0;
         segs.push({...base,i:kb++,trans:lead?base.trans:'fade',src:m.src||'',clip:m.clip||null,note:lead?it.note:'',
-          dur:m.clip?Math.max(1,m.clip.dur)+(lead&&it.note?1.5:0):lead?(it.own?4:3)+(it.note?2:0):2.5,
-          credit:m.clip?'Eigen video':it.own&&nPh>1?`Eigen foto ${ph+1} van ${nPh}`:base.credit,cap:!it.own})})})});
+          dur:m.clip?Math.max(1,m.clip.dur)+(lead&&it.note?1.5:0):(it.own?3.5:3)+(it.note?2:0),credit:m.clip?'Eigen video':base.credit,cap:!it.own})})})});
   const by={};new Map(items.map(i=>[i.sp,i])).forEach(i=>{const c=v47Info(i.name).cat;by[c]=(by[c]||0)+1});
   const order=['Vogels','Zoogdieren','Reptielen','Amfibieën','Zeeleven'],ord=a=>(order.indexOf(a)+99)%99,cs=Object.entries(by).sort((a,b)=>ord(a[0])-ord(b[0]));
   const cats=cs.map(([c,n])=>`${n} ${v85Cat(c)[n===1?1:2]}`),catN=cs.map(([c,n])=>({n,label:n===1?v85Cat(c)[0]:(c||'Soorten')}));
   const nOwn=new Set(items.filter(i=>i.own).map(i=>i.sp)).size,last=[...items].reverse().find(i=>i.own&&i.still)||first;
-  segs.push({k:'end',dur:7,trans:'leak',cats:catN,src:last?.photos[last.photos.length-1]||last?.still||'',label:proef?'Einde proefvideo':'Einde',title:'Pura vida',sub:cats.join(' · '),
+  segs.push({k:'end',dur:7,trans:'leak',cats:catN,src:last?.photos[0]||last?.still||firstMood,label:proef?'Einde proefvideo':'Einde',title:'Pura vida',sub:cats.join(' · '),
     meta:`${nOwn} met eigen foto of video · ${regions.length} ${regions.length===1?'bestemming':'bestemmingen'} · ${S.length} dagen`,
     small:items.some(i=>!i.own)?'Soorten zonder eigen foto: voorbeeldfoto met fotograaf, licentie en bron in beeld.':''});
   return segs}
@@ -191,6 +206,17 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
     if(seg.meta){y+=44;v85Txt(ctx,seg.meta,tx,y,{size:28,weight:500,color:'rgba(255,255,255,.78)',maxW:W-2*X-2*pad,k:v85At(t,.62,.5)})}
     note.forEach((l,i)=>{y+=42;v85Txt(ctx,l,tx,y,{size:30,weight:500,italic:true,color:'#fff',k:v85At(t,.8+i*.12,.5)})});
     v85Txt(ctx,seg.credit,W-56,H-34,{size:20,weight:500,color:'rgba(255,255,255,.7)',align:'right',maxW:W*.55,k:v85At(t,.6,.5),rise:0});
+    return}
+  if(seg.k==='mood'){const mv=v85Moves(seg.i||0,v85E(p*.9+.1));
+    if(img){if(v85IW(img)/v85IH(img)>=1.3)v85Cover(ctx,img,mv.z,mv.dx,mv.dy);
+      else{if(!res.bgc){const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d',{alpha:false});x.imageSmoothingQuality='high';x.drawImage(res.blur,-80,-50,W+160,H+100);x.fillStyle='rgba(2,10,7,.45)';x.fillRect(0,0,W,H);res.bgc=c}
+        ctx.drawImage(res.bgc,0,0);const r=Math.min(W/v85IW(img),H/v85IH(img))*mv.z,w=v85IW(img)*r,h=v85IH(img)*r,x=(W-w)/2+mv.dx,y=(H-h)/2+mv.dy;
+        ctx.save();ctx.shadowColor='rgba(0,0,0,.6)';ctx.shadowBlur=60;ctx.shadowOffsetY=18;v85Round(ctx,x,y,w,h,18);ctx.fillStyle='#000';ctx.fill();ctx.shadowColor='transparent';ctx.clip();ctx.drawImage(img,x,y,w,h);ctx.restore()}}
+    else v85Bg(ctx,res,t,.2);
+    const tg=ctx.createLinearGradient(0,0,0,220);tg.addColorStop(0,'rgba(0,0,0,.5)');tg.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=tg;ctx.fillRect(0,0,W,220);
+    const bg=ctx.createLinearGradient(0,H-260,0,H);bg.addColorStop(0,'rgba(0,0,0,0)');bg.addColorStop(1,'rgba(0,0,0,.55)');ctx.fillStyle=bg;ctx.fillRect(0,H-260,W,260);
+    v85Hud(ctx,seg,t);const kk=v85At(t,.2,.5);if(kk>0){v85Font(ctx,22,800);v85Sp(ctx,4);const lw=ctx.measureText('SFEER').width;v85Sp(ctx,0);ctx.save();ctx.globalAlpha=v85E(kk);v85Round(ctx,96,H-118,lw+30,38,19);ctx.fillStyle=V85_C.leaf;ctx.fill();ctx.restore();
+      v85Txt(ctx,seg.label,111,H-91,{size:22,weight:800,spacing:4,upper:true,k:kk,rise:0});if(seg.meta)v85Txt(ctx,seg.meta,96+lw+48,H-90,{size:28,weight:600,color:'rgba(255,255,255,.85)',k:kk,rise:0})}
     return}
   if(seg.k==='day'){v85Bg(ctx,res,t,.78);
     const mapH=820,mx=W-mapH*(V51_MAP?.W||600)/(V51_MAP?.H||575)-90,my=(H-mapH)/2+20;v85Map(ctx,mx,my,mapH,t,seg.stop??0,{start:.1});
@@ -311,9 +337,18 @@ async function v85Record(segs,{cv,pctx,frame,total,prog,job}){if(typeof MediaRec
 let v85Job=null,v85Out=null;
 function v85Card(){const plan=v85Plan(),segs=v85Segments(plan,!v85Open()),n=plan.species,nOwn=new Set(plan.items.filter(i=>i.own).map(i=>i.sp)).size,open=v85Open();
   const last=new Date(V85_LAST+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
-  const what=n?`${n} ${n===1?'soort':'soorten'} · ${nOwn} met eigen foto of video${n-nOwn?` · ${n-nOwn} met voorbeeldfoto`:''} · ca. ${v85Dur(v85Seconds(segs))}`:'Nog niets geregistreerd. Markeer soorten als gezien of voeg eigen foto’s toe.';
+  const nm=plan.days.reduce((a,d)=>a+d.moods.length,0);
+  const what=segs.length?[n?`${n} ${n===1?'soort':'soorten'} · ${nOwn} met eigen foto of video${n-nOwn?` · ${n-nOwn} met voorbeeldfoto`:''}`:'',nm?`${nm} sfeerfoto${nm===1?'':"'s"}`:'',`ca. ${v85Dur(v85Seconds(segs))}`].filter(Boolean).join(' · '):'Nog niets geregistreerd. Markeer soorten als gezien of voeg eigen foto’s of sfeerfoto’s toe.';
   return `<div class="ds-card v85-card"><div><b>Reisvideo</b><p class="ds-meta">${open?'Video van de hele reis, dag voor dag, met naam, groep, plek en moment bij elke soort. Wordt op deze telefoon gemaakt, zonder internet.':`Beschikbaar vanaf ${last} (laatste reisdag). Tot die tijd kun je een proefvideo maken.`}</p><p class="ds-meta v85-what">${what}</p></div>
-    ${n?`<button class="ds-btn ${open?'primary':'secondary'}" id="v85go">${'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>'}${open?'Reisvideo maken':'Proefvideo maken'}</button>`:''}</div>`}
+    ${segs.length?`<button class="ds-btn ${open?'primary':'secondary'}" id="v85go">${'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>'}${open?'Reisvideo maken':'Proefvideo maken'}</button>`:''}</div>`}
+/* per dag in het Wildlife-tabblad: wat de app voor de reisvideo kiest */
+function v85DayCard(d){let pd;try{pd=v85Plan().days.find(x=>x.day===d.id)}catch(e){return ''}if(!pd)return '';
+  const nc=pd.items.filter(i=>i.clips.length).length,tag=i=>i.clips.length?'video':i.repeat?'opnieuw':i.own?'eigen foto':'voorbeeldfoto';
+  return `<details class="ds-card v85-daysel"><summary><b>In de reisvideo</b><span>${pd.items.length} ${pd.items.length===1?'dier':'dieren'} · ${nc} video${nc===1?'':"'s"} · ${pd.moods.length} sfeerfoto${pd.moods.length===1?'':"'s"}</span></summary>
+    <ol>${pd.items.map(i=>`<li>${esc(v47Info(i.name).nl)} <small>${tag(i)}</small></li>`).join('')}</ol>
+    ${pd.cut.animals||pd.cut.clips?`<p class="ds-meta">Niet in de video: ${[pd.cut.animals?`${pd.cut.animals} ${pd.cut.animals===1?'dier':'dieren'}`:'',pd.cut.clips?`${pd.cut.clips} video${pd.cut.clips===1?'':"'s"}`:''].filter(Boolean).join(' en ')}.</p>`:''}
+    <p class="ds-meta">Per dag max. ${V85_SEL.animals} dieren (1 foto per dier), ${V85_SEL.clips} video's en ${V85_SEL.moods} sfeerfoto's. Bij meer kiest de app de bijzonderste; met de ster in het soortvenster geef je voorrang.</p></details>`}
+{const prev=dayContent;dayContent=function(d){const h=prev(d);return daySection==='wildlife'?v85DayCard(d)+h:h}}
 {const prev=renderWildlife;renderWildlife=function(){const h=prev();const at='<div class="ds-section-title">Logboek</div>';
   return h.includes(at)?h.replace(at,v85Card()+at):h}}
 function v85Close(){if(v85Job)v85Job.cancel=true;const el=document.getElementById('v85Gen');if(el){el.remove();document.body.classList.remove('wl2-lock')}

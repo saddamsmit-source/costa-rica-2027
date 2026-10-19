@@ -260,22 +260,22 @@ const {chromium}=require('playwright');const path=require('path');
   {const v=await p.evaluate(async()=>{const bad=[];await v84Load();
     const mk=async(c)=>{const cv=document.createElement('canvas');cv.width=2400;cv.height=1600;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,2400,1600);const b=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([b],'foto.jpg',{type:'image/jpeg',lastModified:Date.parse('2027-02-24T08:15:00')})};
     const fs=[await mk('#a33'),await mk('#3a3'),await mk('#33a'),await mk('#aa3')];
-    const r=await v84Add('Scarlet macaw','Corcovado',fs,16);if(r.added!==2||r.skipped!==2)bad.push('maximaal 2 per soort per dag: '+JSON.stringify(r));
-    const own=v84Of('Scarlet macaw');if(own.length!==2)bad.push('aantal eigen foto\'s '+own.length);if(own.filter(x=>x.fav).length!==1)bad.push('precies één favoriet');
+    const r=await v84Add('Scarlet macaw','Corcovado',fs,16);if(r.added!==3||r.skipped!==1)bad.push('maximaal 3 per soort per dag: '+JSON.stringify(r));
+    const own=v84Of('Scarlet macaw');if(own.length!==3)bad.push('aantal eigen foto\'s '+own.length);if(own.filter(x=>x.fav).length!==1)bad.push('precies één favoriet');
     if(Math.max(own[0].w,own[0].h)>1600)bad.push('niet verkleind: '+own[0].w+'x'+own[0].h);
     if(!wl2Rec('Scarlet macaw','Corcovado')?.photo)bad.push('waarneming niet op "op foto" gezet');
     if(!/^blob:/.test(wl2Thumb('Scarlet macaw')))bad.push('eigen foto niet als soortfoto');
     v47Filter='Alle';tab='days';currentDay=17;daySection='wildlife';render();if(!document.querySelector('.ds-sp-img.v84-mine'))bad.push('daglijst toont eigen foto niet');
-    wl2Open('Scarlet macaw','Corcovado');const sh=document.getElementById('wl2Sheet');if(sh.querySelectorAll('.v84-ph').length!==2)bad.push('soortvenster toont geen 2 eigen foto\'s');if(sh.querySelector('[data-v84-add^="16|"]'))bad.push('toevoegknop dag 16 zichtbaar bij 2 foto\'s');if(!sh.querySelector('[data-v84-add^="17|"]')||!sh.querySelector('[data-v84-vadd^="17|"]'))bad.push('dag 17 (huidige dag) mist foto-/videoknop');
+    wl2Open('Scarlet macaw','Corcovado');const sh=document.getElementById('wl2Sheet');if(sh.querySelectorAll('.v84-ph').length!==3)bad.push('soortvenster toont geen 3 eigen foto\'s');if(sh.querySelector('[data-v84-add^="16|"]'))bad.push('toevoegknop dag 16 zichtbaar bij 3 foto\'s');if(!sh.querySelector('[data-v84-add^="17|"]')||!sh.querySelector('[data-v84-vadd^="17|"]'))bad.push('dag 17 (huidige dag) mist foto-/videoknop');
     if(!/Eigen foto/.test(sh.querySelector('.wl2-credit')?.textContent||''))bad.push('bronvermelding niet "Eigen foto"');wl2Close();
     const second=own[1].id;await v84SetFav(second);if(!v84Fav('Scarlet macaw')||v84Fav('Scarlet macaw').id!==second)bad.push('favoriet wisselen');
-    await v84Remove(second);if(v84Of('Scarlet macaw').length!==1||!v84Fav('Scarlet macaw'))bad.push('verwijderen favoriet: nieuwe favoriet ontbreekt');
+    await v84Remove(second);if(v84Of('Scarlet macaw').length!==2||!v84Fav('Scarlet macaw'))bad.push('verwijderen favoriet: nieuwe favoriet ontbreekt');
     const st=v84Story();if(st.map(x=>x.k).join(',')!=='intro,place,sp,end')bad.push('reisverhaal: '+st.map(x=>x.k).join(','));
     tab='wildlife';render();const go=document.getElementById('v84go');if(!go)bad.push('knop Afspelen ontbreekt');else{go.click();const pl=document.getElementById('v84Play');if(!pl)bad.push('reisverhaal opent niet');else{
       v84Show(2);if(!/Geelvleugelara|Scarlet/i.test(pl.textContent))bad.push('soortdia toont naam niet');v84Show(99);if(document.getElementById('v84Play'))bad.push('reisverhaal sluit niet na laatste dia')}}
-    const zip=await v84Export();const files=await v84Unzip(zip);const names=Object.keys(files);if(!names.includes('fotos.json')||names.filter(n=>n.endsWith('.jpg')).length!==1)bad.push('zip-inhoud: '+names.join(','));
+    const zip=await v84Export();const files=await v84Unzip(zip);const names=Object.keys(files);if(!names.includes('fotos.json')||names.filter(n=>n.endsWith('.jpg')).length!==2)bad.push('zip-inhoud: '+names.join(','));
     if(!state.v84LastBackup)bad.push('foto-back-up niet geregistreerd');
-    const ids=V84.list.map(p=>p.id);await v84Write(s=>ids.forEach(id=>s.delete(id)));await v84Load();const n=await v84Import(new File([zip],'b.zip'));if(n!==1||V84.list.length!==1)bad.push('terugzetten: '+n);
+    const ids=V84.list.map(p=>p.id);await v84Write(s=>ids.forEach(id=>s.delete(id)));await v84Load();const n=await v84Import(new File([zip],'b.zip'));if(n!==2||V84.list.length!==2)bad.push('terugzetten: '+n);
     if(await v84Import(new File([zip],'b.zip'))!==0)bad.push('dubbel terugzetten voegt dubbelen toe');
     tab='settings';dsMore='backup';render();if(!document.getElementById('v84exp'))bad.push('foto-back-up ontbreekt in Back-up');
     await v84Write(s=>V84.list.forEach(p=>s.delete(p.id)));await v84Load();tab='home';dsMore='';render();
@@ -289,7 +289,7 @@ const {chromium}=require('playwright');const path=require('path');
     await v84Add('Keel-billed toucan','La Fortuna',[await mk('#c62'),await mk('#2c6')]);
     v52Set('Mantled howler monkey','Cahuita','seen',true);state.v43Observations[v43name('Mantled howler monkey')].places.Cahuita.t='2027-02-09T14:20:00.000Z';
     const plan=v85Plan(),tou=plan.items.find(i=>i.name==='Keel-billed toucan'),how=plan.items.find(i=>i.name==='Mantled howler monkey');
-    if(!tou||!tou.own||tou.photos.length!==2)bad.push('reisvideo: eigen foto\'s ontbreken');
+    if(!tou||!tou.own||tou.photos.length!==1)bad.push('reisvideo: eigen foto\'s ontbreken');
     if(!how||how.own||how.day!==2||!/^\.\/photos\/wl\//.test(how.photos[0]||'')||!/^© .+ · .+/.test(how.credit||''))bad.push('reisvideo: voorbeeldfoto met bron of dag ontbreekt: '+JSON.stringify(how));
     const days=plan.days.map(d=>d.day);if(days.join()!==[...days].sort((a,b)=>a-b).join())bad.push('reisvideo: dagen niet op volgorde');
     const segs=v85Segments(plan,true);if(segs[0].k!=='intro'||segs[1].k!=='day'||segs[segs.length-1].k!=='end')bad.push('reisvideo: opbouw '+segs.map(s=>s.k).join(','));
@@ -348,7 +348,41 @@ const {chromium}=require('playwright');const path=require('path');
     const zip=await v84Export(),fl=Object.keys(await v84Unzip(zip));if(!fl.some(n=>n.endsWith('.mp4'))||!fl.some(n=>n.endsWith('-poster.jpg')))bad.push('zip zonder video: '+fl.join(','));
     const ids=V84.list.concat(V84.vids).map(x=>x.id);await v84Write(st=>ids.forEach(id=>st.delete(id)));await v84Load();
     const n=await v84Import(new File([zip],'b.zip'));if(n!==2||V84.vids.length!==1||!V84.poster[V84.vids[0].id])bad.push('terugzetten met video: '+n);
-    await v84Write(st=>V84.list.concat(V84.vids).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name(N)];save();tab='home';render();
+    await v84Write(st=>V84.list.forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name(N)];save();tab='home';render();
+    return bad});v.forEach(x=>errs.push(x))}
+  /* v8.7: sfeerfoto's per dag, keuze per dag (15 dieren, 3 video's, 5 sfeerfoto's), beste foto per dier */
+  {const v=await p.evaluate(async()=>{const bad=[];
+    const mk=async(c,noise)=>{const cv=document.createElement('canvas');cv.width=1200;cv.height=800;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,1200,800);
+      if(noise)for(let i=0;i<4000;i++){g.fillStyle=i%2?'#000':'#fff';g.fillRect(Math.random()*1200,Math.random()*800,3,3)}const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([bl],'f.jpg',{type:'image/jpeg'})};
+    /* sfeerfoto's in Overzicht, max. 5 */
+    tab='days';currentDay=3;daySection='overview';render();if(!document.querySelector('.v84-mood [data-v84-madd="3"]'))bad.push('sfeerfoto-sectie ontbreekt in Overzicht');
+    const fs=[];for(let i=0;i<6;i++)fs.push(await mk('#'+(i+3)+'a7'));const rm=await v84AddMood(3,fs);if(rm.added!==5||rm.skipped!==1)bad.push('sfeerfoto\'s max. 5: '+JSON.stringify(rm));
+    render();if(document.querySelectorAll('.v84-mood .v84-ph').length!==5||document.querySelector('[data-v84-madd="3"]'))bad.push('sfeerfoto-sectie toont 5 niet of laat nog toevoegen toe');
+    /* 17 dieren op dag 8: 15 in de video, zeldzaamste eerst */
+    const clipRec=V84.vids[0];if(clipRec){await v84Write(st=>st.delete(clipRec.id));await v84Load()}
+    const R=v47Region(S[7]),names=(V47_PLACES[R]||[]).map(x=>x[0]).slice(0,17);tab='days';currentDay=8;daySection='wildlife';
+    names.forEach(n=>v52Set(n,R,'seen',true));
+    /* beste foto: ster wint; zonder ster de scherpste */
+    const A=names[0],B=names[1];await v84Add(A,R,[await mk('#7a8'),await mk('#7a8',true)],8);
+    const pa=V84.list.filter(x=>x.sp===v43name(A));const sharp=pa.reduce((a,b)=>(b.sharp>a.sharp?b:a));if(!(pa[0].sharp>=0)||sharp.sharp<=Math.min(...pa.map(x=>x.sharp)))bad.push('scherpte niet gemeten: '+pa.map(x=>x.sharp));
+    /* 4 video's op dag 8: 3 in de video, ster gaat voor */
+    if(!clipRec)bad.push('testaanname: video uit v8.6-test ontbreekt');
+    let plan=v85Plan(),pd=plan.days.find(x=>x.day===8);
+    if(!pd||pd.items.length!==15||pd.cut.animals!==2)bad.push('dag 8: '+(pd?pd.items.length+' dieren, '+pd.cut.animals+' eruit':'geen dag'));
+    else{const sc=names.map(n=>({n,c:v47Chance(R,n)}));const inV=new Set(pd.items.map(i=>i.sp)),out=sc.filter(x=>!inV.has(v43name(x.n))),inn=sc.filter(x=>inV.has(v43name(x.n)));
+      const rank=c=>({1:40,2:25,3:10,4:0}[c]??15);if(out.some(o=>inn.some(i=>rank(i.c)<rank(o.c)&&i.n!==A)))bad.push('keuze niet op zeldzaamheid: '+JSON.stringify(out))}
+    const itA=pd&&pd.items.find(i=>i.sp===v43name(A));if(!itA||itA.photos[0]!==V84.url[sharp.id])bad.push('scherpste foto niet gekozen: '+JSON.stringify({it:!!itA,sh:pa.map(x=>[x.sharp,x.fav,x.day])}));
+    const fav=pa.find(x=>x.id!==sharp.id);await v84SetFav(fav.id);plan=v85Plan();pd=plan.days.find(x=>x.day===8);{const x=pd.items.find(i=>i.sp===v43name(A));if(x?.photos[0]!==V84.url[fav.id])bad.push('ster-foto niet gekozen: '+JSON.stringify({x:!!x,n:pd.items.length,fu:V84.list.filter(p=>p.sp===v43name(A)).map(p=>[p.id===fav.id,p.fav,p.favUser,p.day])}))}
+    if(pd.items.filter(i=>i.photos.length>1).length)bad.push('meer dan 1 foto per dier per dag');
+    if(clipRec){await v84Write(st=>names.slice(2,6).forEach((n,i)=>st.put({...clipRec,id:'tclip'+i,sp:v43name(n),name:n,region:R,day:8,fav:i===3})));await v84Load();
+      pd=v85Plan().days.find(x=>x.day===8);const cl=pd.items.filter(i=>i.clips.length);if(cl.length!==3||pd.cut.clips!==1)bad.push('video\'s per dag: '+cl.length+', eruit '+pd.cut.clips);
+      if(!cl.some(i=>i.sp===v43name(names[5])))bad.push('video met ster niet gekozen');
+      await v84Write(st=>[0,1,2,3].forEach(i=>st.delete('tclip'+i)));await v84Load()}
+    const sg=v85Segments(v85Plan(),true),i3=sg.findIndex(x=>x.k==='day'&&x.day===3);if(i3<0||sg.slice(i3+1,i3+6).filter(x=>x.k==='mood').length!==5)bad.push('sfeerfoto\'s niet direct na dag 3');
+    render();if(!/In de reisvideo/.test(document.querySelector('.v85-daysel')?.textContent||''))bad.push('keuze per dag ontbreekt in Wildlife-tabblad');
+    /* back-up met sfeerfoto's */
+    const zip=await v84Export(),fl=Object.keys(await v84Unzip(zip));if(fl.filter(n=>/-sfeer-/.test(n)).length!==5)bad.push('zip zonder sfeerfoto\'s');
+    await v84Write(st=>V84.list.concat(V84.vids,V84.moods).forEach(x=>st.delete(x.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();tab='home';render();
     return bad});v.forEach(x=>errs.push(x))}
   /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
   {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());
