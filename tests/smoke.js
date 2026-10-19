@@ -46,7 +46,7 @@ const {chromium}=require('playwright');const path=require('path');
   /* fase D: kaart */
   await p.evaluate(()=>{daySection='map';render()});await must('.v51-svg','kaart');await must('.ds-info','reisinformatie');
   const vb1=await p.evaluate(()=>document.querySelector('.v51-svg').getAttribute('viewBox'));await p.click('#dsMapWide');const vb2=await p.evaluate(()=>document.querySelector('.v51-svg').getAttribute('viewBox'));if(vb1===vb2)errs.push('kaart vergroten werkt niet');await p.click('#dsMapWide');
-  await p.evaluate(()=>{tab='map';render()});await must('#gpsStart','gps-opname');if(await p.evaluate(()=>document.querySelectorAll('.ds-leg').length)!==10)errs.push('etappes niet 10');
+  await p.evaluate(()=>{tab='map';render()});await must('#gpsStart','gps-opname');if(await p.evaluate(()=>document.querySelectorAll('.ds-leg').length)!==13)errs.push('etappes niet 13');
   await p.evaluate(()=>document.querySelector('.ds-leg[data-v51-day="6"]').click());if(!(await p.evaluate(()=>tab==='days'&&currentDay===6)))errs.push('etappe opent dag niet');
   /* fase D: meer */
   await p.evaluate(()=>{tab='settings';render()});await must('.ds-menurow','meer-menu');
@@ -232,6 +232,15 @@ const {chromium}=require('playwright');const path=require('path');
     const total=V48_PACK.reduce((s,[,i])=>s+i.length,0);if(app.querySelectorAll('[data-v48-pack]').length!==total)bad.push('aantal items');
     const all=V48_PACK.flatMap(g=>g[1]),dup=all.filter((x,i)=>all.indexOf(x)!==i);if(dup.length)bad.push('dubbel: '+dup.join(', '));
     return [...new Set(bad)]});v.forEach(x=>errs.push(x))}
+  /* v8.3: etappes op de kaart compleet: alle overnachtingsplekken + dagtrip Manuel Antonio, terugreis via Tárcoles, terugvlucht */
+  {const v=await p.evaluate(()=>{const bad=[];tab='map';render();const L=[...document.querySelectorAll('.ds-leg')];
+    if(L.length!==13)bad.push('etappes: '+L.length+' in plaats van 13');
+    const names=L.map(b=>b.querySelector('b').textContent);['Manuel Antonio','San José (terug via Tárcoles)','Terugvlucht naar Amsterdam'].forEach(n=>{if(!names.some(x=>x.startsWith(n)))bad.push('etappe ontbreekt: '+n)});
+    const days=new Set(L.flatMap(b=>{const t=b.querySelector('.ds-leg-body span').textContent.match(/Dag (\d+)(?:–(\d+))?/);if(!t)return [];const a=+t[1],z=+(t[2]||t[1]);return Array.from({length:z-a+1},(_,i)=>a+i)}));
+    for(let d=1;d<=S.length;d++)if(!days.has(d))bad.push('dag '+d+' zit in geen etappe');
+    L.forEach(b=>{const im=b.querySelector('img');if(!im)bad.push('etappe zonder foto: '+b.querySelector('b').textContent)});
+    const last=L[L.length-1];last.click();if(!(tab==='days'&&currentDay===22))bad.push('laatste etappe opent dag 22 niet');
+    return bad});v.forEach(x=>errs.push(x))}
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
   const nn=await p.evaluate(()=>Object.keys(V47_SP).filter(k=>{const n=v47Info(k).nl;return (!n||n===k)&&!V76_NL_SAME.has(k)&&!V76_NO_NL.has(k)}));if(nn.length)errs.push('soort zonder NL-naam: '+nn.join(', '));
   const ux=await p.evaluate(()=>{const bad=[];for(const [t,d,s] of [['map'],['wildlife'],['days',3,'wildlife'],['days',16,'map'],['days',7,'overview']]){tab=t;if(d){currentDay=d;daySection=s}render();

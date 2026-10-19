@@ -121,13 +121,21 @@ dayContent=function(d){
   ${dsdInfo(d)}`};
 
 /* kaart-scherm */
-renderMap=function(){const td=v48TripDay(),cur=td?v51Day2Stop(td):-1;
-  const legs=V51_STOPS.slice(0,-1).map(([r,days],i)=>{const d0=S[days[0]-1],prev=i?V51_STOPS[i-1][0]:null,km=prev?Math.round(v51Dist(V51_PT[prev],V51_PT[r])):0,tr=V51_TRAVEL[days[0]],img=DSD_DEST[r];
-    const sub=[tr?esc(tr.t):'',km?'± '+km+' km hemelsbreed':''].filter(Boolean).join(' · ');
-    return `<button class="ds-leg ${i===cur?'now':''}" data-v51-day="${days[0]}"><span class="ds-leg-img">${img?`<img src="./photos/${img}.jpg" alt="" loading="lazy">`:''}<em>${i+1}</em></span><span class="ds-leg-body"><b>${esc(V51_PT[r][2])}${i===cur?'<i class="ds-pill ok">Nu</i>':''}</b><span>${dsdDays(days)} · ${fmt(d0.date)}</span>${sub?`<small>${sub}</small>`:''}</span>${dsI('chevR',18)}</button>`}).join('');
+/* Etappes: alle overnachtingsplekken (nummer = stop op de kaart) plus dagtrip, terugreis via Tárcoles en terugvlucht (v8.3) */
+function dsdLegs(){const base=V51_STOPS.slice(0,-1).map(([r,days],i)=>({days,n:i+1,name:V51_PT[r][2],img:DSD_DEST[r],tr:(V51_TRAVEL[days[0]]||{}).t,from:i?V51_STOPS[i-1][0]:null,to:r}));
+  const extra=[
+    {days:[20],icon:'pin',name:'Manuel Antonio',img:'dest-manuel',tr:'Dagtrip vanaf Esterillos · '+((V51_TRAVEL[20]||{}).t||''),from:'Esterillos',to:'Manuel Antonio'},
+    {days:[21],n:1,name:'San José (terug via Tárcoles)',img:'dest-tarcoles',tr:((V51_TRAVEL[21]||{}).t||'')+' · krokodillenbrug Tárcoles',from:'Esterillos',to:'San José'},
+    {days:[22,23],icon:'plane',name:'Terugvlucht naar Amsterdam',img:'act-sjo',tr:((V51_TRAVEL[22]||{}).t||'Vlucht SJO → AMS')+' · aankomst '+fmt(S[22].date),from:null,to:null}];
+  return base.concat(extra)}
+function dsdLegNow(td,legs){if(!td)return -1;let best=-1;legs.forEach((l,i)=>{if(l.days.includes(td)&&(best<0||l.days.length<=legs[best].days.length))best=i});return best}
+renderMap=function(){const td=v48TripDay(),all=dsdLegs(),cur=dsdLegNow(td,all);
+  const legs=all.map((l,i)=>{const d0=S[l.days[0]-1],km=l.from&&l.to?Math.round(v51Dist(V51_PT[l.from],V51_PT[l.to])):0,img=l.img&&V48_PHOTO[l.img]?l.img:null;
+    const sub=[l.tr?esc(l.tr):'',km?'± '+km+' km hemelsbreed':''].filter(Boolean).join(' · ');
+    return `<button class="ds-leg ${i===cur?'now':''}" data-v51-day="${l.days[0]}"><span class="ds-leg-img">${img?`<img src="./photos/${img}.jpg" alt="" loading="lazy">`:''}<em ${l.n?'':'class="ds-leg-ic"'}>${l.n?l.n:dsI(l.icon,12)}</em></span><span class="ds-leg-body"><b>${esc(l.name)}${i===cur?'<i class="ds-pill ok">Nu</i>':''}</b><span>${dsdDays(l.days)} · ${fmt(d0.date)}</span>${sub?`<small>${sub}</small>`:''}</span>${dsI('chevR',18)}</button>`}).join('');
   const on=gpsWatch!==null;
   return `<div class="ds-page">
-  <div class="ds-pagehead"><h1 class="ds-title">Route</h1><p class="ds-meta">23 dagen · 10 bestemmingen · 8 februari – 2 maart 2027</p></div>
+  <div class="ds-pagehead"><h1 class="ds-title">Route</h1><p class="ds-meta">${S.length} dagen · ${V51_STOPS.length-1} overnachtingsplekken · ${all.length} etappes · 8 februari – 2 maart 2027</p></div>
   <div class="ds-card ds-mapcard">${dsdMapBox(td||0,false)}<div class="ds-maptools">${dsdGps()}${dsdLegend()}</div>${dsdMapHint('Tik een genummerde stop om die dag te openen. ')}</div>
   <h2 class="ds-section-title">Etappes</h2>
   <div class="ds-card ds-legs">${legs}</div>

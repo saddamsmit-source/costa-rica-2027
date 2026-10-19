@@ -231,3 +231,4 @@ body[data-tab="map"] .footer,body[data-tab="bookings"] .footer,body[data-tab="bu
 .ds-credits li small{display:block;color:var(--ds-muted);margin-top:1px}
 
 @media(min-width:701px){body[data-tab="map"] .ds-page,body[data-tab="bookings"] .ds-page,body[data-tab="budget"] .ds-page,body[data-tab="settings"] .ds-page{max-width:680px;margin-inline:auto}}
+.ds-leg-img em.ds-leg-ic{display:inline-flex;align-items:center;justify-content:center}.ds-leg-img em.ds-leg-ic svg{width:12px;height:12px}
