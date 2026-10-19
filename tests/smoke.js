@@ -239,6 +239,7 @@ const {chromium}=require('playwright');const path=require('path');
     const days=new Set(L.flatMap(b=>{const t=b.querySelector('.ds-leg-body span').textContent.match(/Dag (\d+)(?:–(\d+))?/);if(!t)return [];const a=+t[1],z=+(t[2]||t[1]);return Array.from({length:z-a+1},(_,i)=>a+i)}));
     for(let d=1;d<=S.length;d++)if(!days.has(d))bad.push('dag '+d+' zit in geen etappe');
     L.forEach(b=>{const im=b.querySelector('img');if(!im)bad.push('etappe zonder foto: '+b.querySelector('b').textContent)});
+    L.forEach((b,i)=>{const n=b.querySelector('.ds-leg-img em')?.textContent;if(n!==String(i+1))bad.push('etappenummer '+(i+1)+' is '+n)});
     const last=L[L.length-1];last.click();if(!(tab==='days'&&currentDay===22))bad.push('laatste etappe opent dag 22 niet');
     return bad});v.forEach(x=>errs.push(x))}
   /* v7.6: namen, tikdoelen, tekstgrootte, knop bij kaartvenster */
