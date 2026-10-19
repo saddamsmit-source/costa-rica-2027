@@ -39,3 +39,13 @@
 @media (prefers-reduced-motion: reduce){.v84-slide,.v84-slide.sp img.v84-fg{animation:none}}
 .v84-play:after{content:'';position:absolute;left:0;right:0;bottom:0;height:110px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.55));pointer-events:none}
 .v84-ctl{z-index:2}
+/* v8.6 eigen foto's en video per dag */
+.v84-day{padding:10px 0;border-top:1px solid var(--ds-line)}.v84-day:first-of-type{border-top:0;padding-top:0}
+.v84-day.cur .v84-dh b{color:var(--ds-leaf)}
+.v84-dh{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px}.v84-dh b{font-size:14px}.v84-dh small{font-size:12px;color:var(--ds-muted);text-align:right}
+.v84-adds{display:flex;gap:8px}.v84-adds .v84-add{flex:1;gap:6px}.v84-adds small{font-weight:500;opacity:.7;margin-left:2px}
+.v84-ph.vid{background:#000}.v84-vplay{position:absolute;inset:0;border:0;padding:0;background:#000;cursor:pointer;width:100%;height:100%}
+.v84-vplay img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
+.v84-vplay span{position:absolute;left:6px;bottom:6px;display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:12px;background:rgba(6,24,17,.7);color:#fff;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+.v84-ph .v84-vplay{top:0;left:0;width:100%;height:100%;border-radius:0;background:#000}
+.v84-range{width:100%;accent-color:var(--ds-leaf);min-height:44px}

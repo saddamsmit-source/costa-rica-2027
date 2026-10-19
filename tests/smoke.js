@@ -260,22 +260,22 @@ const {chromium}=require('playwright');const path=require('path');
   {const v=await p.evaluate(async()=>{const bad=[];await v84Load();
     const mk=async(c)=>{const cv=document.createElement('canvas');cv.width=2400;cv.height=1600;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,2400,1600);const b=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([b],'foto.jpg',{type:'image/jpeg',lastModified:Date.parse('2027-02-24T08:15:00')})};
     const fs=[await mk('#a33'),await mk('#3a3'),await mk('#33a'),await mk('#aa3')];
-    const r=await v84Add('Scarlet macaw','Corcovado',fs);if(r.added!==3||r.skipped!==1)bad.push('maximaal 3 per soort: '+JSON.stringify(r));
-    const own=v84Of('Scarlet macaw');if(own.length!==3)bad.push('aantal eigen foto\'s '+own.length);if(own.filter(x=>x.fav).length!==1)bad.push('precies één favoriet');
+    const r=await v84Add('Scarlet macaw','Corcovado',fs,16);if(r.added!==2||r.skipped!==2)bad.push('maximaal 2 per soort per dag: '+JSON.stringify(r));
+    const own=v84Of('Scarlet macaw');if(own.length!==2)bad.push('aantal eigen foto\'s '+own.length);if(own.filter(x=>x.fav).length!==1)bad.push('precies één favoriet');
     if(Math.max(own[0].w,own[0].h)>1600)bad.push('niet verkleind: '+own[0].w+'x'+own[0].h);
     if(!wl2Rec('Scarlet macaw','Corcovado')?.photo)bad.push('waarneming niet op "op foto" gezet');
     if(!/^blob:/.test(wl2Thumb('Scarlet macaw')))bad.push('eigen foto niet als soortfoto');
     v47Filter='Alle';tab='days';currentDay=17;daySection='wildlife';render();if(!document.querySelector('.ds-sp-img.v84-mine'))bad.push('daglijst toont eigen foto niet');
-    wl2Open('Scarlet macaw','Corcovado');const sh=document.getElementById('wl2Sheet');if(sh.querySelectorAll('.v84-ph').length!==3)bad.push('soortvenster toont geen 3 eigen foto\'s');if(sh.querySelector('[data-v84-add]'))bad.push('toevoegknop zichtbaar bij 3 foto\'s');
+    wl2Open('Scarlet macaw','Corcovado');const sh=document.getElementById('wl2Sheet');if(sh.querySelectorAll('.v84-ph').length!==2)bad.push('soortvenster toont geen 2 eigen foto\'s');if(sh.querySelector('[data-v84-add^="16|"]'))bad.push('toevoegknop dag 16 zichtbaar bij 2 foto\'s');if(!sh.querySelector('[data-v84-add^="17|"]')||!sh.querySelector('[data-v84-vadd^="17|"]'))bad.push('dag 17 (huidige dag) mist foto-/videoknop');
     if(!/Eigen foto/.test(sh.querySelector('.wl2-credit')?.textContent||''))bad.push('bronvermelding niet "Eigen foto"');wl2Close();
     const second=own[1].id;await v84SetFav(second);if(!v84Fav('Scarlet macaw')||v84Fav('Scarlet macaw').id!==second)bad.push('favoriet wisselen');
-    await v84Remove(second);if(v84Of('Scarlet macaw').length!==2||!v84Fav('Scarlet macaw'))bad.push('verwijderen favoriet: nieuwe favoriet ontbreekt');
+    await v84Remove(second);if(v84Of('Scarlet macaw').length!==1||!v84Fav('Scarlet macaw'))bad.push('verwijderen favoriet: nieuwe favoriet ontbreekt');
     const st=v84Story();if(st.map(x=>x.k).join(',')!=='intro,place,sp,end')bad.push('reisverhaal: '+st.map(x=>x.k).join(','));
     tab='wildlife';render();const go=document.getElementById('v84go');if(!go)bad.push('knop Afspelen ontbreekt');else{go.click();const pl=document.getElementById('v84Play');if(!pl)bad.push('reisverhaal opent niet');else{
       v84Show(2);if(!/Geelvleugelara|Scarlet/i.test(pl.textContent))bad.push('soortdia toont naam niet');v84Show(99);if(document.getElementById('v84Play'))bad.push('reisverhaal sluit niet na laatste dia')}}
-    const zip=await v84Export();const files=await v84Unzip(zip);const names=Object.keys(files);if(!names.includes('fotos.json')||names.filter(n=>n.endsWith('.jpg')).length!==2)bad.push('zip-inhoud: '+names.join(','));
+    const zip=await v84Export();const files=await v84Unzip(zip);const names=Object.keys(files);if(!names.includes('fotos.json')||names.filter(n=>n.endsWith('.jpg')).length!==1)bad.push('zip-inhoud: '+names.join(','));
     if(!state.v84LastBackup)bad.push('foto-back-up niet geregistreerd');
-    const ids=V84.list.map(p=>p.id);await v84Write(s=>ids.forEach(id=>s.delete(id)));await v84Load();const n=await v84Import(new File([zip],'b.zip'));if(n!==2||V84.list.length!==2)bad.push('terugzetten: '+n);
+    const ids=V84.list.map(p=>p.id);await v84Write(s=>ids.forEach(id=>s.delete(id)));await v84Load();const n=await v84Import(new File([zip],'b.zip'));if(n!==1||V84.list.length!==1)bad.push('terugzetten: '+n);
     if(await v84Import(new File([zip],'b.zip'))!==0)bad.push('dubbel terugzetten voegt dubbelen toe');
     tab='settings';dsMore='backup';render();if(!document.getElementById('v84exp'))bad.push('foto-back-up ontbreekt in Back-up');
     await v84Write(s=>V84.list.forEach(p=>s.delete(p.id)));await v84Load();tab='home';dsMore='';render();
@@ -310,6 +310,55 @@ const {chromium}=require('playwright');const path=require('path');
     catch(e){bad.push('reisvideo maken: '+e.message)}
     V85.SCALE=1;await v84Write(s=>V84.list.forEach(x=>s.delete(x.id)));await v84Load();delete state.v43Observations[v43name('Mantled howler monkey')];delete state.v43Observations[v43name('Keel-billed toucan')];save();tab='home';render();
     return bad});v.forEach(x=>errs.push(x))}
+  /* v8.6: waarnemingen per dag, foto's/video per dag, video in de reisvideo, back-up met video */
+  {const v=await p.evaluate(async()=>{const bad=[];const N='Keel-billed toucan',R='La Fortuna';
+    if(v47Region(S[5])!==R||v47Region(S[6])!==R)bad.push('testaanname: dag 6 en 7 La Fortuna');
+    const card=()=>[...document.querySelectorAll('[data-v43-species="'+encodeURIComponent(N)+'"][data-v43-kind="seen"]')][0];
+    v47Filter='Alle';tab='days';daySection='wildlife';currentDay=6;render();let b=card();if(!b){bad.push('dag 6: toekan niet in daglijst');return bad}
+    b.click();const o=()=>state.v43Observations[v43name(N)];if(!o()?.days?.[6]||!o().places[R]?.seen)bad.push('dag 6 aanvinken: '+JSON.stringify(o()));
+    currentDay=7;render();b=card();if(b.classList.contains('on'))bad.push('dag 7 toont vinkje van dag 6');b.click();if(!o().days[7]||!o().days[6])bad.push('dag 7 erbij: '+JSON.stringify(o().days));
+    currentDay=6;render();card().click();if(o().days[6]||!o().places[R].seen)bad.push('dag 6 uit: bestemming moet gezien blijven (dag 7)');
+    if(!/dag 7/.test(card().closest('.v43-species').textContent))bad.push('dag 6 toont niet "dag 7" bij eerder/ook gezien');
+    currentDay=7;render();card().click();if(o().places[R].seen||Object.keys(o().days).length)bad.push('dag 7 uit: soort moet niet gezien zijn');
+    /* buiten een dag: per bestemming, krijgt een dag */
+    tab='wildlife';render();v52Set(N,R,'seen');if(!o().places[R].seen||Object.values(o().days).filter(r=>r.r===R).length!==1)bad.push('Wildlife-pagina: geen dag bij vinkje');
+    v52Set(N,R,'seen');if(Object.keys(o().days).length)bad.push('Wildlife-pagina uit: dagen niet weg');
+    /* video maken (VP9-mp4 uit de reisvideo-maker, 7 s) en toevoegen aan dag 7 */
+    V85.SCALE=1;const segs=[{k:'intro',dur:7,src:'',label:'Test',title:'Testvideo',sub:'',meta:''}];
+    const src=await v85Make({segs,proef:true,disk:false});const file=new File([src.blob],'clip.mp4',{type:'video/mp4'});
+    const mk=async(c)=>{const cv=document.createElement('canvas');cv.width=1600;cv.height=1067;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,1600,1067);const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([bl],'f.jpg',{type:'image/jpeg'})};
+    v52Set(N,R,'seen');/* eerste waarneming dag 6 (via Wildlife-pagina, dag = eerste dag bestemming) */
+    tab='days';currentDay=7;
+    try{const rec=await v84AddVideo(N,R,7,file,1);if(rec.kind!=='video'||Math.abs(rec.dur-5)>.05||!rec.poster||!rec.blob.size)bad.push('video toevoegen: '+JSON.stringify({k:rec.kind,d:rec.dur,p:!!rec.poster}));
+      const vv=document.createElement('video');vv.muted=true;vv.src=URL.createObjectURL(rec.blob);const dd=await new Promise(r=>{vv.onloadedmetadata=()=>r(vv.duration);vv.onerror=()=>r(-1);setTimeout(()=>r(-2),5000)});if(Math.abs(dd-5)>.1)bad.push('opgeslagen video duurt '+dd);
+      let threw=false;try{await v84AddVideo(N,R,7,file,0)}catch(e){threw=true}if(!threw)bad.push('tweede video op dezelfde dag toegestaan')}
+    catch(e){bad.push('video toevoegen mislukt: '+e.message)}
+    await v84Add(N,R,[await mk('#c62')],7);
+    if(!o().days[7]||!o().days[6])bad.push('dagen na media: '+JSON.stringify(o().days));
+    wl2Open(N,R);const sh=document.getElementById('wl2Sheet');if(!sh.querySelector('[data-v84-play]'))bad.push('soortvenster toont video niet');if(sh.querySelector('[data-v84-vadd^="7|"]'))bad.push('videoknop dag 7 zichtbaar bij 1 video');
+    if(!/dag 7/i.test(sh.querySelector('.wl2-reg .ds-label')?.textContent||''))bad.push('soortvenster in dag-context noemt dag niet');
+    sh.querySelector('[data-v84-play]')?.click();if(!document.querySelector('#v84Vid video'))bad.push('video afspelen opent niet');v84VidClose();wl2Close();
+    /* reisvideo: dag 6 voorbeeldfoto, dag 7 opnieuw gezien met eigen foto en video */
+    const plan=v85Plan(),its=plan.items.filter(i=>i.sp===v43name(N));
+    if(its.length!==2||its[0].own||its[0].day!==6||!its[1].repeat||its[1].day!==7||its[1].clips.length!==1)bad.push('plan per waarneming: '+JSON.stringify(its.map(i=>[i.day,i.own,i.repeat,i.clips.length])));
+    const sg=v85Segments(plan,true).filter(x=>x.title===v47Info(N).nl);
+    if(!sg.some(x=>x.clip&&x.credit==='Eigen video')||!sg.some(x=>/opnieuw gezien/.test(x.label)))bad.push('segmenten: '+JSON.stringify(sg.map(x=>[x.label,x.credit,!!x.clip])));
+    V85.SCALE=.15;try{const out=await v85Make({proef:true,disk:false});if(!out.blob.size)bad.push('reisvideo met eigen video leeg')}catch(e){bad.push('reisvideo met eigen video: '+e.message)}V85.SCALE=1;
+    /* back-up met video heen en terug */
+    const zip=await v84Export(),fl=Object.keys(await v84Unzip(zip));if(!fl.some(n=>n.endsWith('.mp4'))||!fl.some(n=>n.endsWith('-poster.jpg')))bad.push('zip zonder video: '+fl.join(','));
+    const ids=V84.list.concat(V84.vids).map(x=>x.id);await v84Write(st=>ids.forEach(id=>st.delete(id)));await v84Load();
+    const n=await v84Import(new File([zip],'b.zip'));if(n!==2||V84.vids.length!==1||!V84.poster[V84.vids[0].id])bad.push('terugzetten met video: '+n);
+    await v84Write(st=>V84.list.concat(V84.vids).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name(N)];save();tab='home';render();
+    return bad});v.forEach(x=>errs.push(x))}
+  /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
+  {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());
+   await mp.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'},'Tortuguero':{seen:true,photo:false}}}}}))});
+   await mp.goto('file://'+path.resolve(__dirname,'..','index.html'));await mp.waitForTimeout(300);
+   const m=await mp.evaluate(()=>({days:state.v43Observations.jabiru.days,pre:!!localStorage.getItem('CR27_V86_PRE'),flag:state.v86Days,lf:state.v43Observations.jabiru.places['La Fortuna']}));
+   const lf=Object.entries(m.days||{}).find(([,r])=>r.r==='La Fortuna'),tg=Object.entries(m.days||{}).find(([,r])=>r.r==='Tortuguero');
+   if(!m.pre||m.flag!==1||!lf||!tg||!lf[1].photo||!m.lf.seen||!m.lf.photo)errs.push('migratie: '+JSON.stringify(m));
+   if(lf&&!['6','7'].includes(lf[0]))errs.push('migratie: La Fortuna op dag '+lf[0]);if(tg&&tg[0]!=='4')errs.push('migratie: Tortuguero zonder tijd niet op eerste dag (4) maar '+tg[0]);
+   await mp.close()}
   /* v7.5: veilige import van een oude back-up en terugzetten */
   const ip=await (await b.newContext({acceptDownloads:true})).newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});

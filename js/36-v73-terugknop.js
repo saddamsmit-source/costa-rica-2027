@@ -16,6 +16,8 @@
     ['#dseEm',el=>el.remove()],
     ['#v84Play',()=>v84Close()],
     ['#v85Gen',()=>v85Close()],
+    ['#v84Trim',()=>v84TrimClose()],
+    ['#v84Vid',()=>v84VidClose()],
     ['#wl2Sheet',()=>wl2Close()]];
   const SEL=OV.map(o=>o[0]).join(',');
   const more=()=>typeof dsMore!=='undefined'?dsMore:'';
