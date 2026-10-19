@@ -1,0 +1,12 @@
+/* v8.5 reisvideo */
+.v85-card{display:flex;flex-direction:column;gap:12px;margin-top:12px}.v85-card b{font-size:15px}.v85-card p{margin:4px 0 0}
+.v85-what{font-variant-numeric:tabular-nums;color:var(--ds-ink)}
+.v85-gen{position:fixed;inset:0;z-index:3000;background:rgba(6,20,14,.82);display:grid;place-items:center;padding:16px}
+.v85-box{width:min(560px,100%);max-height:calc(100dvh - 32px);overflow:auto;background:var(--ds-card);border-radius:20px;padding:20px;box-shadow:var(--ds-shadow);display:flex;flex-direction:column;gap:10px}
+.v85-box h3{margin:0;font-size:20px;font-weight:800}
+.v85-box p{margin:0}
+.v85-bar{height:8px;border-radius:8px;background:var(--ds-mist);overflow:hidden}.v85-bar i{display:block;height:100%;width:0;background:var(--ds-leaf);transition:width .3s}
+.v85-st{font-variant-numeric:tabular-nums}
+.v85-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.v85-btns .ds-btn{flex:1 1 140px;text-decoration:none;justify-content:center}
+.v85-vid{width:100%;aspect-ratio:16/9;border-radius:12px;background:#000}
+@media (prefers-reduced-motion:reduce){.v85-bar i{transition:none}}

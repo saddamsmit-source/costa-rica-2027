@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');const path=require('path');
 (async()=>{
   const exe=process.env.CHROME_PATH||undefined;
-  const b=await chromium.launch(exe?{executablePath:exe,args:['--headless=new']}:{});
+  const b=await chromium.launch(exe?{executablePath:exe,args:['--headless=new','--allow-file-access-from-files']}:{args:['--allow-file-access-from-files']});
   const p=await b.newPage({viewport:{width:390,height:844}});
   const errs=[];p.on('pageerror',e=>errs.push('JS: '+e.message));
   p.on('console',m=>{if(m.type()==='error'&&!/net::|ERR_|Failed to load resource|CORS|woff2/.test(m.text()))errs.push('console: '+m.text())});
@@ -283,6 +283,33 @@ const {chromium}=require('playwright');const path=require('path');
   /* v8.4: opnamedatum uit EXIF (niet de bestandsdatum) */
   {await p.evaluate(()=>{const i=document.createElement('input');i.type='file';i.id='v84t';document.body.append(i)});await p.setInputFiles('#v84t',path.resolve(__dirname,'fixtures','exif.jpg'));
    const ex=await p.evaluate(async()=>{const f=document.getElementById('v84t').files[0];const r=await v84Exif(f);document.getElementById('v84t').remove();return r});if(ex!=='2027-02-09T07:42:13')errs.push('EXIF-opnamedatum: '+ex)}
+  /* v8.5: reisvideo (plan, opbouw, ontgrendeldatum, echte MP4 maken, scherm) */
+  {const v=await p.evaluate(async()=>{const bad=[];
+    const mk=async(c)=>{const cv=document.createElement('canvas');cv.width=1600;cv.height=1067;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,1600,1067);const b=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([b],'foto.jpg',{type:'image/jpeg'})};
+    await v84Add('Keel-billed toucan','La Fortuna',[await mk('#c62'),await mk('#2c6')]);
+    v52Set('Mantled howler monkey','Cahuita','seen',true);state.v43Observations[v43name('Mantled howler monkey')].places.Cahuita.t='2027-02-09T14:20:00.000Z';
+    const plan=v85Plan(),tou=plan.items.find(i=>i.name==='Keel-billed toucan'),how=plan.items.find(i=>i.name==='Mantled howler monkey');
+    if(!tou||!tou.own||tou.photos.length!==2)bad.push('reisvideo: eigen foto\'s ontbreken');
+    if(!how||how.own||how.day!==2||!/^\.\/photos\/wl\//.test(how.photos[0]||'')||!/^© .+ · .+/.test(how.credit||''))bad.push('reisvideo: voorbeeldfoto met bron of dag ontbreekt: '+JSON.stringify(how));
+    const days=plan.days.map(d=>d.day);if(days.join()!==[...days].sort((a,b)=>a-b).join())bad.push('reisvideo: dagen niet op volgorde');
+    const segs=v85Segments(plan,true);if(segs[0].k!=='intro'||segs[1].k!=='day'||segs[segs.length-1].k!=='end')bad.push('reisvideo: opbouw '+segs.map(s=>s.k).join(','));
+    if(!/Proef/i.test(segs[0].label))bad.push('reisvideo: proefvideo niet gemarkeerd');
+    const hs=segs.find(s=>s.k==='sp'&&s.title===v47Info('Mantled howler monkey').nl);if(!hs||!/^Voorbeeldfoto · ©/.test(hs.credit)||hs.label!=='Zoogdier'||!/Cahuita/.test(hs.meta))bad.push('reisvideo: soortdia voorbeeldfoto '+JSON.stringify(hs));
+    if(v85Open(new Date('2027-03-01T23:59:00'))||!v85Open(new Date('2027-03-02T00:00:01')))bad.push('reisvideo: ontgrendeldatum');
+    tab='wildlife';render();let go=document.getElementById('v85go');if(!go||!/Proefvideo/.test(go.textContent))bad.push('reisvideo: knop Proefvideo ontbreekt');
+    V85.SCALE=.08;
+    try{const out=await v85Make({proef:true,disk:false});const head=new Uint8Array(await out.blob.slice(0,8).arrayBuffer());
+      if(String.fromCharCode(...head.slice(4,8))!=='ftyp')bad.push('reisvideo: geen MP4');
+      const vid=document.createElement('video');vid.muted=true;vid.src=URL.createObjectURL(out.blob);
+      const dur=await new Promise(r=>{vid.onloadedmetadata=()=>r(vid.duration);vid.onerror=()=>r(-1);setTimeout(()=>r(-2),8000)});
+      if(Math.abs(dur-out.seconds)>.2||vid.videoWidth!==1920||vid.videoHeight!==1080)bad.push(`reisvideo: ${dur}s ${vid.videoWidth}x${vid.videoHeight}, verwacht ${out.seconds}s 1920x1080`);
+      go=document.getElementById('v85go');go.click();let t=0;while(!document.querySelector('.v85-vid')&&t++<200)await new Promise(r=>setTimeout(r,100));
+      const gen=document.getElementById('v85Gen');if(!document.querySelector('.v85-vid'))bad.push('reisvideo: scherm toont geen video: '+(gen?.textContent||'').slice(0,120));
+      else if(!gen.querySelector('a[download$=".mp4"]'))bad.push('reisvideo: downloadknop ontbreekt');
+      v85Close();if(document.getElementById('v85Gen'))bad.push('reisvideo: sluiten werkt niet')}
+    catch(e){bad.push('reisvideo maken: '+e.message)}
+    V85.SCALE=1;await v84Write(s=>V84.list.forEach(x=>s.delete(x.id)));await v84Load();delete state.v43Observations[v43name('Mantled howler monkey')];delete state.v43Observations[v43name('Keel-billed toucan')];save();tab='home';render();
+    return bad});v.forEach(x=>errs.push(x))}
   /* v7.5: veilige import van een oude back-up en terugzetten */
   const ip=await (await b.newContext({acceptDownloads:true})).newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});
