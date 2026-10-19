@@ -253,9 +253,36 @@ const {chromium}=require('playwright');const path=require('path');
   const mf=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','manifest.webmanifest'),'utf8'));if(!mf.icons.some(i=>i.purpose==='maskable'))errs.push('geen maskable icoon');
   /* v7.8: alles wat in beeld kwam moet een geverifieerde foto zijn */
   {const seen=[...imgs,...(await p.evaluate(()=>[...window.__imgs||[]]))],ok=await p.evaluate(()=>Object.keys(V48_PHOTO));const bad=new Set();
-    const hp=await p.evaluate(()=>v80HAll());seen.forEach(u=>{if(/^data:|\.svg(\?|$)|icon-/.test(u)||hp.includes(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
+    const hp=await p.evaluate(()=>v80HAll());seen.forEach(u=>{if(/^(data|blob):|\.svg(\?|$)|icon-/.test(u)||hp.includes(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
       if(/^wl\//.test(k))return;if(!ok.includes(k))bad.add(k)});
     if(bad.size)errs.push('niet-geverifieerde afbeelding getoond: '+[...bad].join(', '))}
+  /* v8.4: eigen foto's per soort (max 3, favoriet), reisverhaal, foto-back-up (zip) heen en terug */
+  {const v=await p.evaluate(async()=>{const bad=[];await v84Load();
+    const mk=async(c)=>{const cv=document.createElement('canvas');cv.width=2400;cv.height=1600;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,2400,1600);const b=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([b],'foto.jpg',{type:'image/jpeg',lastModified:Date.parse('2027-02-24T08:15:00')})};
+    const fs=[await mk('#a33'),await mk('#3a3'),await mk('#33a'),await mk('#aa3')];
+    const r=await v84Add('Scarlet macaw','Corcovado',fs);if(r.added!==3||r.skipped!==1)bad.push('maximaal 3 per soort: '+JSON.stringify(r));
+    const own=v84Of('Scarlet macaw');if(own.length!==3)bad.push('aantal eigen foto\'s '+own.length);if(own.filter(x=>x.fav).length!==1)bad.push('precies één favoriet');
+    if(Math.max(own[0].w,own[0].h)>1600)bad.push('niet verkleind: '+own[0].w+'x'+own[0].h);
+    if(!wl2Rec('Scarlet macaw','Corcovado')?.photo)bad.push('waarneming niet op "op foto" gezet');
+    if(!/^blob:/.test(wl2Thumb('Scarlet macaw')))bad.push('eigen foto niet als soortfoto');
+    v47Filter='Alle';tab='days';currentDay=17;daySection='wildlife';render();if(!document.querySelector('.ds-sp-img.v84-mine'))bad.push('daglijst toont eigen foto niet');
+    wl2Open('Scarlet macaw','Corcovado');const sh=document.getElementById('wl2Sheet');if(sh.querySelectorAll('.v84-ph').length!==3)bad.push('soortvenster toont geen 3 eigen foto\'s');if(sh.querySelector('[data-v84-add]'))bad.push('toevoegknop zichtbaar bij 3 foto\'s');
+    if(!/Eigen foto/.test(sh.querySelector('.wl2-credit')?.textContent||''))bad.push('bronvermelding niet "Eigen foto"');wl2Close();
+    const second=own[1].id;await v84SetFav(second);if(!v84Fav('Scarlet macaw')||v84Fav('Scarlet macaw').id!==second)bad.push('favoriet wisselen');
+    await v84Remove(second);if(v84Of('Scarlet macaw').length!==2||!v84Fav('Scarlet macaw'))bad.push('verwijderen favoriet: nieuwe favoriet ontbreekt');
+    const st=v84Story();if(st.map(x=>x.k).join(',')!=='intro,place,sp,end')bad.push('reisverhaal: '+st.map(x=>x.k).join(','));
+    tab='wildlife';render();const go=document.getElementById('v84go');if(!go)bad.push('knop Afspelen ontbreekt');else{go.click();const pl=document.getElementById('v84Play');if(!pl)bad.push('reisverhaal opent niet');else{
+      v84Show(2);if(!/Geelvleugelara|Scarlet/i.test(pl.textContent))bad.push('soortdia toont naam niet');v84Show(99);if(document.getElementById('v84Play'))bad.push('reisverhaal sluit niet na laatste dia')}}
+    const zip=await v84Export();const files=await v84Unzip(zip);const names=Object.keys(files);if(!names.includes('fotos.json')||names.filter(n=>n.endsWith('.jpg')).length!==2)bad.push('zip-inhoud: '+names.join(','));
+    if(!state.v84LastBackup)bad.push('foto-back-up niet geregistreerd');
+    const ids=V84.list.map(p=>p.id);await v84Write(s=>ids.forEach(id=>s.delete(id)));await v84Load();const n=await v84Import(new File([zip],'b.zip'));if(n!==2||V84.list.length!==2)bad.push('terugzetten: '+n);
+    if(await v84Import(new File([zip],'b.zip'))!==0)bad.push('dubbel terugzetten voegt dubbelen toe');
+    tab='settings';dsMore='backup';render();if(!document.getElementById('v84exp'))bad.push('foto-back-up ontbreekt in Back-up');
+    await v84Write(s=>V84.list.forEach(p=>s.delete(p.id)));await v84Load();tab='home';dsMore='';render();
+    return bad});v.forEach(x=>errs.push(x))}
+  /* v8.4: opnamedatum uit EXIF (niet de bestandsdatum) */
+  {await p.evaluate(()=>{const i=document.createElement('input');i.type='file';i.id='v84t';document.body.append(i)});await p.setInputFiles('#v84t',path.resolve(__dirname,'fixtures','exif.jpg'));
+   const ex=await p.evaluate(async()=>{const f=document.getElementById('v84t').files[0];const r=await v84Exif(f);document.getElementById('v84t').remove();return r});if(ex!=='2027-02-09T07:42:13')errs.push('EXIF-opnamedatum: '+ex)}
   /* v7.5: veilige import van een oude back-up en terugzetten */
   const ip=await (await b.newContext({acceptDownloads:true})).newPage();ip.on('pageerror',e=>errs.push('import JS: '+e.message));ip.on('dialog',d=>d.accept());await ip.route(/^https?:/,r=>r.abort());
   await ip.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({notes:{'1':'nieuw'},v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'}}}}}))});
