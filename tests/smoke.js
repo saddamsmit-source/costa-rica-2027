@@ -511,6 +511,24 @@ const {chromium}=require('playwright');const path=require('path');
       const ls=V84.moods.filter(x=>x.day===6).map(x=>x.label);if(ls.filter(l=>l==='Strand').length!==12||ls.filter(l=>l==='La Fortuna Waterfall').length!==3)bad.push('labels: '+ls)}
     V85.SCALE=.04;try{const o=await v85Make({proef:true,disk:false});if(!o.blob.size)bad.push('video leeg');const o2=await v85Make({proef:true,disk:false,portrait:true});if(!o2.blob.size)bad.push('staand leeg')}catch(e){bad.push('video v8.15: '+e.message)}V85.SCALE=1;
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);delete state.v815Stay[6];delete state.v815Stay[7];save();tab='home';render();return bad});v.forEach(x=>errs.push(x))}
+  /* v8.16: ster op foto aan/uit, eigen video vloeiend (opvangen bij afspelen, decoderen in de reisvideo) */
+  {const v=await p.evaluate(async()=>{const bad=[];const N='Keel-billed toucan',R='La Fortuna';
+    const mk=async(c)=>{const cv=document.createElement('canvas');cv.width=900;cv.height=600;const g=cv.getContext('2d');g.fillStyle=c;g.fillRect(0,0,900,600);const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg',.9));return new File([bl],'f.jpg',{type:'image/jpeg'})};
+    await v84Add(N,R,[await mk('#c62'),await mk('#2c6')],6);let ps=V84.list.filter(x=>x.sp===v43name(N));
+    wl2Open(N,R);if(document.querySelector('#wl2Sheet [data-v84-fav][aria-pressed="true"]'))bad.push('ster staat automatisch aan');wl2Close();
+    await v84SetFav(ps[1].id);if(!V84.list.find(x=>x.id===ps[1].id).favUser)bad.push('ster zetten');
+    await v84SetFav(ps[1].id);if(V84.list.some(x=>x.sp===v43name(N)&&x.favUser))bad.push('ster uitzetten werkt niet');
+    if(!v84FavUrl(N))bad.push('soortfoto weg na ster uit');
+    /* bronvideo met beweging: 4 s, elk beeld een ander vlak */
+    V85.SCALE=1;const segs=[{k:'intro',dur:4,src:'',label:'Test',title:'Beweging',sub:'',meta:''}];const src=await v85Make({segs,proef:true,disk:false});
+    try{const rec=await v84AddVideo(N,R,6,new File([src.blob],'c.mp4',{type:'video/mp4'}),0);
+      if(!(rec.dur>3.9))bad.push('clip duur '+rec.dur);
+      const rd=await v85ClipReader({url:V84.url[rec.id]});if(!rd)bad.push('clip niet te decoderen (demux)');
+      else{const seen=new Set();let prev=null,changes=0;for(let f=0;f<Math.round(rec.dur*30)-2;f++){await rd.at(f/30);const px=rd.canvas.getContext('2d').getImageData(960,500,1,1).data.join();seen.add(px);if(prev!==null&&px!==prev)changes++;prev=px}
+        if(rd.frames<Math.round(rec.dur*30)*.8)bad.push('gedecodeerde beelden: '+rd.frames);rd.close()}
+      V85.SCALE=.2;const out=await v85Make({proef:true,disk:false});if(!out.blob.size)bad.push('reisvideo met gedecodeerde clip leeg')}
+    catch(e){bad.push('vloeiende video: '+e.message)}V85.SCALE=1;
+    await v84Write(st=>V84.list.concat(V84.vids).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name(N)];save();tab='home';render();return bad});v.forEach(x=>errs.push(x))}
   /* v8.14: kleuren en kansschaal samen op de soortkaarten */
   {const r=await p.evaluate(()=>{tab='days';currentDay=6;daySection='wildlife';v47Filter='Alle';render();const cards=[...document.querySelectorAll('.ds-sp')];return {n:cards.length,tags:cards.filter(c=>c.querySelector('.v88-card .v88-dot')).length,chance:cards.filter(c=>c.querySelector('.ds-chance')).length}});
    if(!r.n||r.tags<r.n*.8||!r.chance)errs.push('soortkaarten: kleuren en kansschaal samen: '+JSON.stringify(r))}

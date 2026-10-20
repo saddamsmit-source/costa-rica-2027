@@ -24,7 +24,7 @@ async function v84Load(){try{const db=await v84Db();const all=await v84Req(db.tr
     all.forEach(p=>{V84.url[p.id]=URL.createObjectURL(p.blob);if(p.poster)V84.poster[p.id]=URL.createObjectURL(p.poster)});
     V84.list=all.filter(p=>!p.kind||p.kind==='photo');V84.vids=all.filter(p=>p.kind==='video');V84.moods=all.filter(p=>p.kind==='mood');V84.stays=all.filter(p=>p.kind==='stay')}catch(e){V84.list=[];V84.vids=[];V84.moods=[];V84.stays=[];V84.err=e.message}
   V84.ready=true}
-const v84Of=name=>{const sp=v43name(name);return V84.list.filter(p=>p.sp===sp).sort((a,b)=>(b.fav-a.fav)||a.t.localeCompare(b.t))};
+const v84Of=name=>{const sp=v43name(name);return V84.list.filter(p=>p.sp===sp).sort((a,b)=>(!!b.favUser-!!a.favUser)||(b.fav-a.fav)||a.t.localeCompare(b.t))};
 const v84Fav=name=>v84Of(name)[0]||null;
 const v84FavUrl=name=>{const f=v84Fav(name);return f?V84.url[f.id]:''};
 const v84Uid=()=>(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2));
@@ -71,7 +71,7 @@ async function v84VCodec(w,h){if(typeof VideoEncoder==='undefined'||typeof Video
   for(const [codec,mux] of [['avc1.640028','avc'],['avc1.4d0028','avc'],['avc1.42e028','avc'],['vp09.00.40.08','vp9']]){
     const cfg={codec,width:w,height:h,bitrate:5_000_000,framerate:30,...(mux==='avc'?{avc:{format:'avc'}}:{})};
     try{if((await VideoEncoder.isConfigSupported(cfg)).supported)return {cfg,mux}}catch(e){}}return null}
-async function v84Clip(file,start,len,onProg){const url=URL.createObjectURL(file),v=document.createElement('video');v.muted=true;v.playsInline=true;v.preload='auto';v.src=url;
+async function v84Clip(file,start,len,onProg,noRT){const url=URL.createObjectURL(file),v=document.createElement('video');v.muted=true;v.playsInline=true;v.preload='auto';v.src=url;
   try{await new Promise((res,rej)=>{v.onloadeddata=res;v.onerror=()=>rej(new Error('Deze video kan op dit toestel niet worden gelezen.'))});
     const D=isFinite(v.duration)?v.duration:V84_VLEN;start=Math.max(0,Math.min(start||0,Math.max(0,D-.2)));len=Math.max(.2,Math.min(len||V84_VLEN,V84_VLEN,D-start));
     const vw=v.videoWidth,vh=v.videoHeight,s=Math.min(1,1920/Math.max(vw,vh),1080/Math.min(vw,vh)),w=Math.round(vw*s/2)*2,h=Math.round(vh*s/2)*2;
@@ -80,22 +80,37 @@ async function v84Clip(file,start,len,onProg){const url=URL.createObjectURL(file
     const codec=await v84VCodec(w,h);
     if(!codec){if(file.size>60*1048576)throw new Error('Deze video is te groot voor dit toestel (max. 60 MB). Kort hem eerst in.');
       await v84SeekTo(v,start);x.drawImage(v,0,0,w,h);return {blob:file,w,h,dur:len,start,orig:true,poster:await poster()}}
-    await v85LoadLib();const tgt=new Mp4Muxer.ArrayBufferTarget(),mux=new Mp4Muxer.Muxer({target:tgt,video:{codec:codec.mux,width:w,height:h,frameRate:30},fastStart:'in-memory'});
-    let err=null,pb=null;const enc=new VideoEncoder({output:(ch,m)=>{try{mux.addVideoChunk(ch,m)}catch(e){err=e}},error:e=>{err=e}});enc.configure(codec.cfg);
+    await v85LoadLib();const tgt=new Mp4Muxer.ArrayBufferTarget(),mux=new Mp4Muxer.Muxer({target:tgt,video:{codec:codec.mux,width:w,height:h,frameRate:30},fastStart:'in-memory',firstTimestampBehavior:'offset'});
+    let err=null,pb=null,pbP=null;const enc=new VideoEncoder({output:(ch,m)=>{try{mux.addVideoChunk(ch,m)}catch(e){err=e}},error:e=>{err=e}});enc.configure(codec.cfg);
     const N=Math.max(1,Math.round(len*30));
+    /* v8.16: liefst op ware snelheid afspelen en elk getoond beeld opvangen (vloeiend); springen per beeld valt op de iPhone vaak naast het juiste beeld */
+    if(typeof v.requestVideoFrameCallback==='function'&&!V84.noRT&&!noRT)try{const n=await v84ClipRT(v,start,len,c,x,enc,()=>err,onProg,()=>{pbP=poster()});
+      if(n>=Math.min(N,10)){pb=await pbP;await enc.flush();if(err)throw err;mux.finalize();try{enc.close()}catch(e){}return {blob:new Blob([tgt.buffer],{type:'video/mp4'}),w,h,dur:len,start:0,orig:false,poster:pb,rt:n}}
+      throw new Error('te weinig beelden')}catch(e){try{enc.close()}catch(x){}return v84Clip(file,start,len,onProg,true)}
     try{for(let f=0;f<N;f++){await v84SeekTo(v,start+f/30);x.drawImage(v,0,0,w,h);if(f===0)pb=await poster();
         const vf=new VideoFrame(c,{timestamp:Math.round(f*1e6/30),duration:Math.round(1e6/30)});enc.encode(vf,{keyFrame:f%30===0});vf.close();if(err)throw err;
         while(enc.encodeQueueSize>4)await new Promise(r=>setTimeout(r,2));onProg&&onProg((f+1)/N)}
       await enc.flush();if(err)throw err;mux.finalize()}finally{try{enc.close()}catch(e){}}
     return {blob:new Blob([tgt.buffer],{type:'video/mp4'}),w,h,dur:N/30,start:0,orig:false,poster:pb}}
   finally{URL.revokeObjectURL(url);v.removeAttribute('src');try{v.load()}catch(e){}}}
+/* afspelen vanaf start en per getoond beeld (requestVideoFrameCallback) tekenen en coderen met de echte tijd */
+function v84ClipRT(v,start,len,c,x,enc,errOf,onProg,mkPoster){return new Promise(async(res,rej)=>{let n=0,last=-1,done=false,timer=null;const end=start+len;
+  const finish=()=>{if(done)return;done=true;clearTimeout(timer);try{v.pause()}catch(e){}res(n)};
+  const cb=(now,meta)=>{if(done)return;const mt=meta.mediaTime;if(errOf()){done=true;rej(errOf());return}
+    if(mt>=end-.001){finish();return}
+    if(mt>last&&mt>=start-.05&&enc.encodeQueueSize<12){last=mt;x.drawImage(v,0,0,c.width,c.height);if(n===0)mkPoster();
+      const vf=new VideoFrame(c,{timestamp:Math.max(0,Math.round((mt-start)*1e6)),duration:Math.round(1e6/30)});enc.encode(vf,{keyFrame:n%15===0});vf.close();n++;onProg&&onProg(Math.min(1,(mt-start)/len))}
+    v.requestVideoFrameCallback(cb)};
+  try{await v84SeekTo(v,start);v.requestVideoFrameCallback(cb);v.onended=finish;await v.play()}catch(e){done=true;rej(e);return}
+  timer=setTimeout(finish,(len+6)*1000)})}
 async function v84AddVideo(name,region,day,file,start,onProg){if(v84DayOf(name,day,'video').length>=V84_VMAX)throw new Error(`Maximaal ${V84_VMAX} video per soort per dag.`);
   const c=await v84Clip(file,start,V84_VLEN,onProg);
   const rec={id:v84Uid(),sp:v43name(name),name,region,day,kind:'video',t:new Date().toISOString(),taken:'',w:c.w,h:c.h,dur:c.dur,start:c.start,orig:c.orig,blob:c.blob,poster:c.poster,fav:false};
   await v84Write(st=>st.put(rec));if(typeof v86SetDay==='function')v86SetDay(name,region,day,'seen',true);else v52Set(name,region,'seen',true);
   await v84Load();return rec}
-async function v84SetFav(id){const p=V84.list.find(x=>x.id===id);if(!p)return;const sibs=V84.list.filter(x=>x.sp===p.sp);
-  await v84Write(st=>sibs.forEach(x=>st.put({...x,fav:x.id===id,favUser:x.id===id})));await v84Load()}
+/* v8.16: de ster is alleen jullie eigen keuze (favUser) en is ook weer uit te zetten; zonder ster kiest de app (scherpste voor de video) */
+async function v84SetFav(id){const p=V84.list.find(x=>x.id===id);if(!p)return;const sibs=V84.list.filter(x=>x.sp===p.sp),off=!!p.favUser;
+  await v84Write(st=>sibs.forEach(x=>st.put(off?{...x,favUser:false}:{...x,fav:x.id===id,favUser:x.id===id})));await v84Load()}
 async function v84Remove(id){const vd=V84.vids.find(x=>x.id===id)||V84.moods.find(x=>x.id===id)||V84.stays.find(x=>x.id===id);if(vd){await v84Write(st=>st.delete(id));await v84Load();return}
   const p=V84.list.find(x=>x.id===id);if(!p)return;await v84Write(st=>st.delete(id));
   const rest=V84.list.filter(x=>x.sp===p.sp&&x.id!==id);if(p.fav&&rest.length)await v84Write(st=>st.put({...rest[0],fav:true}));await v84Load()}
@@ -106,9 +121,9 @@ const v84Sec=s=>`0:${String(Math.round(s)).padStart(2,'0')}`;
 function v84SheetBlock(name,region){const sp=v43name(name),o=state.v43Observations[sp],ctx=typeof v86Ctx==='function'?v86Ctx(region):0,all=V84.list.concat(V84.vids).filter(p=>p.sp===sp);
   const days=new Set(Object.keys(o?.days||{}).map(Number));all.forEach(p=>p.day&&days.add(p.day));if(ctx)days.add(ctx);if(!days.size)days.add(v84DayFor(region));
   const rows=[...days].filter(d=>S[d-1]).sort((a,b)=>a-b).map(d=>{const reg=o?.days?.[d]?.r||all.find(p=>p.day===d)?.region||(d===ctx?region:v47Region(S[d-1]));
-    const ph=V84.list.filter(p=>p.sp===sp&&p.day===d).sort((a,b)=>(b.fav-a.fav)||a.t.localeCompare(b.t)),vs=V84.vids.filter(p=>p.sp===sp&&p.day===d),key=`${d}|${encodeURIComponent(reg)}`;
+    const ph=V84.list.filter(p=>p.sp===sp&&p.day===d).sort((a,b)=>(!!b.favUser-!!a.favUser)||a.t.localeCompare(b.t)),vs=V84.vids.filter(p=>p.sp===sp&&p.day===d),key=`${d}|${encodeURIComponent(reg)}`;
     return `<div class="v84-day ${d===ctx?'cur':''}"><div class="v84-dh"><b>Dag ${d} · ${esc(reg)}</b><small>${fmt(S[d-1].date)}${o?.days?.[d]?' · gezien':''}</small></div>
-      ${ph.length||vs.length?`<div class="v84-grid">${ph.map(p=>`<div class="v84-ph ${p.fav?'fav':''}"><img src="${V84.url[p.id]}" alt="Eigen foto ${esc(v47Info(name).nl)}"><button class="v84-star" data-v84-fav="${p.id}" aria-label="${p.fav?'Favoriet':'Maak favoriet'}" aria-pressed="${p.fav}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Foto verwijderen">${dsI('plus',16)}</button></div>`).join('')}${vs.map(p=>`<div class="v84-ph vid ${p.fav?'fav':''}"><button class="v84-vplay" data-v84-play="${p.id}" aria-label="Video afspelen">${V84.poster[p.id]?`<img src="${V84.poster[p.id]}" alt="">`:''}<span>${'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>'}${v84Sec(p.dur||0)}</span></button><button class="v84-star" data-v84-vfav="${p.id}" aria-label="${p.fav?'Voorkeur voor de reisvideo':'Voorkeur geven in de reisvideo'}" aria-pressed="${!!p.fav}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Video verwijderen">${dsI('plus',16)}</button></div>`).join('')}</div>`:''}
+      ${ph.length||vs.length?`<div class="v84-grid">${ph.map(p=>`<div class="v84-ph ${p.favUser?'fav':''}"><img src="${V84.url[p.id]}" alt="Eigen foto ${esc(v47Info(name).nl)}"><button class="v84-star" data-v84-fav="${p.id}" aria-label="${p.favUser?'Favoriet: tik om uit te zetten':'Maak favoriet'}" aria-pressed="${!!p.favUser}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Foto verwijderen">${dsI('plus',16)}</button></div>`).join('')}${vs.map(p=>`<div class="v84-ph vid ${p.fav?'fav':''}"><button class="v84-vplay" data-v84-play="${p.id}" aria-label="Video afspelen">${V84.poster[p.id]?`<img src="${V84.poster[p.id]}" alt="">`:''}<span>${'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>'}${v84Sec(p.dur||0)}</span></button><button class="v84-star" data-v84-vfav="${p.id}" aria-label="${p.fav?'Voorkeur voor de reisvideo':'Voorkeur geven in de reisvideo'}" aria-pressed="${!!p.fav}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Video verwijderen">${dsI('plus',16)}</button></div>`).join('')}</div>`:''}
       ${ph.length<V84_MAX||vs.length<V84_VMAX?`<div class="v84-adds">${ph.length<V84_MAX?`<label class="ds-btn secondary v84-add">${dsI('plus',18)}Foto<small>${ph.length}/${V84_MAX}</small><input type="file" accept="image/*" ${V84_MAX-ph.length>1?'multiple':''} hidden data-v84-add="${key}"></label>`:''}${vs.length<V84_VMAX?`<label class="ds-btn secondary v84-add">${V84_VICO}Video<small>max ${V84_VLEN} s</small><input type="file" accept="video/*" hidden data-v84-vadd="${key}"></label>`:''}</div>`:''}</div>`}).join('');
   return `<div class="v84-own"><div class="v84-h"><b>Eigen foto's en video</b><small>per dag ${V84_MAX} foto's en ${V84_VMAX} video · ster = voorkeur</small></div>${rows}<p class="v84-msg ds-meta" aria-live="polite"></p></div>`}
 {const prev=wl2SheetHtml;wl2SheetHtml=function(name,region){let h=prev(name,region);if(!V84.ready)return h;

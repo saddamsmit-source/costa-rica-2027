@@ -419,17 +419,52 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
 
 async function v85Img(src){if(!src)return null;const im=new Image();im.decoding='async';im.src=src;try{await im.decode()}catch(e){return null}
   try{return await createImageBitmap(im)}catch(e){return im}}
-/* eigen video: als bron een <video>; per frame wordt naar het juiste moment gezocht */
+/* v8.16 · eigen video vloeiend: het MP4-bestand uitlezen (demux) en beeld voor beeld decoderen met VideoDecoder.
+   Zoeken per beeld in een <video> komt op de iPhone vaak op een naburig beeld uit (haperen); dat blijft alleen de terugval. */
+function v85Demux(buf){try{const dv=new DataView(buf),u8=new Uint8Array(buf),E=buf.byteLength;
+  const boxes=(s0,e0)=>{const out=[];let q=s0;while(q+8<=e0){let size=dv.getUint32(q),h=8;const type=String.fromCharCode(u8[q+4],u8[q+5],u8[q+6],u8[q+7]);
+      if(size===1){size=Number(dv.getBigUint64(q+8));h=16}else if(size===0)size=e0-q;if(size<8)break;out.push({type,d:q+h,e:Math.min(e0,q+size)});q+=size}return out};
+  const f=(l,t)=>l.find(b=>b.type===t),moov=f(boxes(0,E),'moov');if(!moov)return null;
+  for(const trak of boxes(moov.d,moov.e).filter(b=>b.type==='trak')){const mdia=f(boxes(trak.d,trak.e),'mdia');if(!mdia)continue;const mb=boxes(mdia.d,mdia.e),hd=f(mb,'hdlr');
+    if(!hd||String.fromCharCode(u8[hd.d+8],u8[hd.d+9],u8[hd.d+10],u8[hd.d+11])!=='vide')continue;
+    const mdhd=f(mb,'mdhd'),ts=dv.getUint32(mdhd.d+(u8[mdhd.d]?20:12)),minf=f(mb,'minf'),stbl=f(boxes(minf.d,minf.e),'stbl'),sb=boxes(stbl.d,stbl.e);
+    const stsd=f(sb,'stsd'),en=boxes(stsd.d+8,stsd.e)[0],w=dv.getUint16(en.d+24),h=dv.getUint16(en.d+26),sub=boxes(en.d+78,en.e);let codec='',desc;
+    if(en.type==='avc1'||en.type==='avc3'){const c=f(sub,'avcC');if(!c)return null;desc=u8.slice(c.d,c.e);codec='avc1.'+[1,2,3].map(i=>desc[i].toString(16).padStart(2,'0')).join('')}
+    else if(en.type==='vp09'){const c=f(sub,'vpcC');if(!c)return null;const b=c.d+4,pd=x=>String(x).padStart(2,'0');codec=`vp09.${pd(u8[b])}.${pd(u8[b+1])}.${pd(u8[b+2]>>4)}`}
+    else return null;
+    const tbl=(t,fn)=>{const b=f(sb,t);if(!b)return null;const n=dv.getUint32(b.d+4),o=[];for(let i=0;i<n;i++)o.push(fn(b.d+8,i));return o};
+    const stszB=f(sb,'stsz'),fix=dv.getUint32(stszB.d+4),cnt=dv.getUint32(stszB.d+8),sizes=[];for(let i=0;i<cnt;i++)sizes.push(fix||dv.getUint32(stszB.d+12+i*4));
+    const co=tbl('stco',(b,i)=>dv.getUint32(b+i*4))||tbl('co64',(b,i)=>Number(dv.getBigUint64(b+i*8))),stsc=tbl('stsc',(b,i)=>[dv.getUint32(b+i*12),dv.getUint32(b+i*12+4)]);
+    const stts=tbl('stts',(b,i)=>[dv.getUint32(b+i*8),dv.getUint32(b+i*8+4)]),ctts=tbl('ctts',(b,i)=>[dv.getUint32(b+i*8),dv.getInt32(b+i*8+4)]),stss=tbl('stss',(b,i)=>dv.getUint32(b+i*4));
+    const offs=[];for(let ci=0,si=0;ci<co.length;ci++){let per=0;for(const [first,n] of stsc)if(first<=ci+1)per=n;let o=co[ci];for(let k=0;k<per&&si<cnt;k++,si++){offs.push(o);o+=sizes[si]}}
+    const dts=[],dur=[];let t=0;for(const [n,d] of stts)for(let k=0;k<n;k++){dts.push(t);dur.push(d);t+=d}
+    const cto=[];if(ctts)for(const [n,o] of ctts)for(let k=0;k<n;k++)cto.push(o);const key=stss?new Set(stss.map(x=>x-1)):null;
+    const samples=sizes.map((size,i)=>({off:offs[i],size,ts:((dts[i]||0)+(cto[i]||0))/ts,dur:(dur[i]||0)/ts,key:key?key.has(i):true})).filter(x=>x.off!=null&&x.off+x.size<=E);
+    return samples.length?{codec,desc,w,h,samples}:null}}catch(e){}return null}
+async function v85ClipReader(cl){if(typeof VideoDecoder==='undefined'||!cl?.url)return null;try{const buf=await (await fetch(cl.url)).arrayBuffer(),mp=v85Demux(buf);if(!mp)return null;
+  const cfg={codec:mp.codec,codedWidth:mp.w,codedHeight:mp.h,...(mp.desc?{description:mp.desc}:{})};if(!(await VideoDecoder.isConfigSupported(cfg)).supported)return null;
+  const c=document.createElement('canvas');c.width=mp.w;c.height=mp.h;const x=c.getContext('2d',{alpha:false}),q=[];let err=null,i=0,flushed=false,shown=-1;
+  const dec=new VideoDecoder({output:fr=>q.push(fr),error:e=>{err=e}});dec.configure(cfg);const S0=mp.samples,last=Math.max(...S0.map(s=>s.ts));
+  const feed=upto=>{while(i<S0.length&&S0[i].ts<=upto){const s=S0[i++];dec.decode(new EncodedVideoChunk({type:s.key?'key':'delta',timestamp:Math.round(s.ts*1e6),duration:Math.round(s.dur*1e6),data:new Uint8Array(buf,s.off,s.size)}))}};
+  const rd={canvas:c,videoWidth:mp.w,videoHeight:mp.h,frames:0,
+    async at(t){t=Math.min(t,last);feed(t+.25);let guard=0;
+      while(!err&&!(q.length&&q[q.length-1].timestamp/1e6>=t-.001)){if(i>=S0.length&&!flushed){flushed=true;await dec.flush().catch(()=>{});continue}if(flushed&&dec.decodeQueueSize===0)break;await new Promise(r=>setTimeout(r,1));if(++guard>3000)break}
+      if(err)throw err;let pick=null;while(q.length&&q[0].timestamp/1e6<=t+.001){if(pick)pick.close();pick=q.shift()}
+      if(pick){if(pick.timestamp!==shown){x.drawImage(pick,0,0,mp.w,mp.h);shown=pick.timestamp;rd.frames++}pick.close()}},
+    close(){try{dec.close()}catch(e){}q.forEach(fr=>{try{fr.close()}catch(e){}});q.length=0}};
+  await rd.at(0);return rd}catch(e){return null}}
+/* eigen video als <video>-element (terugval en real-time opname) */
 async function v85Vid(cl){const v=document.createElement('video');v.muted=true;v.playsInline=true;v.preload='auto';v.src=cl.url;
   try{await new Promise((res,rej)=>{v.onloadeddata=res;v.onerror=rej;setTimeout(rej,8000)});await v84SeekTo(v,cl.start||0);return v}catch(e){v.removeAttribute('src');return null}}
 /* kleine versie voor het mozaïek (geheugen sparen) */
 async function v85Thumb(src){const im=await v85Img(src);if(!im)return null;const s=Math.min(1,320/Math.min(v85IW(im),v85IH(im))),c=document.createElement('canvas');c.width=Math.max(1,Math.round(v85IW(im)*s));c.height=Math.max(1,Math.round(v85IH(im)*s));
   c.getContext('2d').drawImage(im,0,0,c.width,c.height);try{im.close&&im.close()}catch(e){}return c}
-async function v85Res(seg){if(seg.k==='mosaic'){const imgs=[];for(const s of seg.srcs){const c=await v85Thumb(s);if(c)imgs.push(c)}return {imgs,img:null,blur:null}}
+async function v85Res(seg,rt){if(seg.k==='mosaic'){const imgs=[];for(const s of seg.srcs){const c=await v85Thumb(s);if(c)imgs.push(c)}return {imgs,img:null,blur:null}}
   if(seg.srcs){const imgs=await Promise.all(seg.srcs.map(v85Img)),f0=imgs.find(Boolean);return {imgs,img:null,blur:f0?v85Blur(f0):null}}
-  if(seg.clip){const v=await v85Vid(seg.clip);return {img:v,vid:v,blur:v?v85Blur(v):null}}
+  if(seg.clip){if(!rt){const rd=await v85ClipReader(seg.clip);if(rd){if(seg.clip.start)await rd.at(seg.clip.start);return {img:rd.canvas,rd,blur:v85Blur(rd.canvas)}}}
+    const v=await v85Vid(seg.clip);return {img:v,vid:v,blur:v?v85Blur(v):null}}
   const img=await v85Img(seg.src);return {img,blur:img?v85Blur(img):null}}
-const v85Free=res=>{try{res?.img?.close&&res.img.close()}catch(e){}try{(res?.imgs||[]).forEach(i=>i&&i.close&&i.close())}catch(e){}if(res?.vid){try{res.vid.pause();res.vid.removeAttribute('src');res.vid.load()}catch(e){}}if(res){res.bgc=null;res.big=null}};
+const v85Free=res=>{try{res?.img?.close&&res.img.close()}catch(e){}try{(res?.imgs||[]).forEach(i=>i&&i.close&&i.close())}catch(e){}if(res?.rd)res.rd.close();if(res?.vid){try{res.vid.pause();res.vid.removeAttribute('src');res.vid.load()}catch(e){}}if(res){res.bgc=null;res.big=null}};
 
 /* ---------- uitvoer ---------- */
 function v85LoadLib(){if(typeof Mp4Muxer!=='undefined')return Promise.resolve();
@@ -493,7 +528,7 @@ async function v85MakeCore(opts={}){const job=opts.job||{},prog=opts.onProgress|
   let next=v85Res(segs[0]),n=0;const t0=performance.now();
   try{for(let i=0;i<segs.length;i++){const seg=segs[i],res=await next;next=i+1<segs.length?v85Res(segs[i+1]):null;
       for(let f=0;f<seg.frames;f++,n++){if(job.cancel)throw new Error('Geannuleerd');if(err)throw err;
-        if(res.vid)await v84SeekTo(res.vid,seg.clip.start+v85ClipT(seg,f/FPS/scale));
+        if(res.rd)await res.rd.at((seg.clip.start||0)+v85ClipT(seg,f/FPS/scale));else if(res.vid)await v84SeekTo(res.vid,seg.clip.start+v85ClipT(seg,f/FPS/scale));
         frame(seg,res,f,n);const vf=new VideoFrame(cv,{timestamp:Math.round(n*1e6/FPS),duration:Math.round(1e6/FPS)});enc.encode(vf,{keyFrame:n%(FPS*2)===0});vf.close();
         while(enc.encodeQueueSize>6){await new Promise(r=>setTimeout(r,2));if(err)throw err}
         if(n%10===0){prog(n/total,performance.now()-t0);await new Promise(r=>setTimeout(r,0))}}
@@ -506,8 +541,8 @@ async function v85Record(segs,{cv,pctx,frame,total,prog,job}){if(typeof MediaRec
   const type=['video/mp4;codecs=avc1','video/mp4','video/webm;codecs=vp9','video/webm'].find(t=>MediaRecorder.isTypeSupported(t))||'';
   const stream=cv.captureStream(V85.FPS),rec=new MediaRecorder(stream,{...(type?{mimeType:type}:{}),videoBitsPerSecond:V85.BR}),parts=[];
   rec.ondataavailable=e=>{if(e.data.size)parts.push(e.data)};const stopped=new Promise(r=>rec.onstop=r);
-  const res=new Map(),get=i=>{if(!res.has(i)){res.set(i,{img:null,blur:null});v85Res(segs[i]).then(r=>{if(res.has(i))res.set(i,r)})}return res.get(i)};
-  res.set(0,await v85Res(segs[0]));frame(segs[0],res.get(0),0,0);rec.start(1000);
+  const res=new Map(),get=i=>{if(!res.has(i)){res.set(i,{img:null,blur:null});v85Res(segs[i],true).then(r=>{if(res.has(i))res.set(i,r)})}return res.get(i)};
+  res.set(0,await v85Res(segs[0],true));frame(segs[0],res.get(0),0,0);rec.start(1000);
   const starts=[];let acc=0;segs.forEach(s=>{starts.push(acc);acc+=s.frames});
   const t0=performance.now();let i=0;
   await new Promise((ok,fail)=>{const tick=()=>{if(job.cancel){fail(new Error('Geannuleerd'));return}
