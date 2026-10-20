@@ -414,6 +414,32 @@ const {chromium}=require('playwright');const path=require('path');
      const vis=[...document.querySelectorAll('.v47-sp')].filter(c=>c.style.display!=='none').map(c=>decodeURIComponent(c.querySelector('[data-wl2]')?.dataset.wl2||''));q.value='';q.dispatchEvent(new Event('input'));v50Query='';return {n:vis.length,bad:vis.filter(n=>n&&!v88Match(n,'nacht'))}});
    if(!r.n||r.bad.length)errs.push('daglijst: zoeken op "nacht": '+JSON.stringify(r));
    await p.evaluate(async()=>{await v84Write(st=>V84.list.concat(V84.vids,V84.moods).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name('Keel-billed toucan')];save();V88.f.q='';tab='home';render()})}
+  /* v8.9: reisvideo op Home, controle per dag, einde reis, bevestiging */
+  {const v=await p.evaluate(async()=>{const bad=[];const keepEnd=v89Ended;
+    tab='home';render();const card=document.querySelector('.v89-card');if(!card)return ['Home: kaart Reisvideo ontbreekt'];
+    if(!/Proefvideo maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('Home: vóór einde reis geen proefknop');
+    if(!new RegExp('0 van '+S.length+' dagen compleet').test(card.textContent))bad.push('Home: telling dagen compleet');
+    if(v89Ended(new Date(S[S.length-1].date+'T00:00:01'))!==true||v89Ended(new Date(S[S.length-2].date+'T23:59:00'))!==false)bad.push('einde reis volgt de laatste reisdag niet');
+    /* dag 9 compleet maken met 5 sfeer, 15 dieren met foto, 3 video's */
+    const cv=document.createElement('canvas');cv.width=320;cv.height=200;const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg'));const R=v47Region(S[8]),names=(V47_PLACES[R]||[]).map(x=>x[0]).slice(0,15);
+    const recs=[];for(let i=0;i<5;i++)recs.push({id:'t89m'+i,sp:'',name:'',region:R,day:9,kind:'mood',t:'2027-02-16T10:00:00Z',taken:'',w:320,h:200,blob:bl,fav:false});
+    names.forEach((n,i)=>recs.push({id:'t89p'+i,sp:v43name(n),name:n,region:R,day:9,kind:'photo',t:'2027-02-16T10:00:00Z',taken:'',w:320,h:200,blob:bl,fav:false}));
+    for(let i=0;i<3;i++)recs.push({id:'t89v'+i,sp:v43name(names[i]),name:names[i],region:R,day:9,kind:'video',t:'2027-02-16T10:00:00Z',taken:'',w:320,h:200,dur:1,blob:bl,poster:bl,fav:false});
+    await v84Write(st=>recs.forEach(r=>st.put(r)));await v84Load();
+    if(!v89Day(9).ok||v89Day(10).ok)bad.push('dag compleet: '+JSON.stringify([v89Day(9),v89Day(10)]));
+    recs.slice(0,1).forEach(()=>{});await v84Write(st=>st.delete('t89m0'));await v84Load();if(v89Day(9).ok)bad.push('dag 9 met 4 sfeerfoto\'s telt als compleet');
+    await v84Write(st=>st.delete('t89v0'));await v84Write(st=>[...recs.filter(r=>r.kind==='video').map(r=>r.id)].forEach(id=>st.delete(id)));await v84Load();
+    /* einde reis: banner bovenaan, knop Reisvideo maken, waarschuwing bij onvolledige dagen, bevestiging */
+    v89Ended=()=>true;render();if(!/Jullie reis zit erop/.test(document.querySelector('.v89-card')?.textContent||''))bad.push('einde reis: herinnering ontbreekt');
+    if(!/Reisvideo maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('einde reis: knop Reisvideo maken ontbreekt');
+    let asked='';const keepConfirm=window.confirm;window.confirm=m=>{asked=m;return false};await v89Start();if(!/niet compleet/.test(asked)||document.getElementById('v85Gen'))bad.push('waarschuwing onvolledige dagen');
+    window.confirm=()=>true;V85.SCALE=.06;await v89Start();V85.SCALE=1;window.confirm=keepConfirm;
+    if(!state.v89Made||state.v89Made.proef||!V89.last)bad.push('bevestiging niet bewaard: '+JSON.stringify(state.v89Made));
+    v85Close();tab='home';render();const c2=document.querySelector('.v89-card');if(!/Reisvideo gemaakt op/.test(c2?.textContent||'')||!document.getElementById('v89share')||!/Opnieuw maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('Home na maken: bevestiging/knoppen');
+    document.querySelector('[data-v89-day="9"]').click();if(tab!=='days'||currentDay!==9)bad.push('dag in controle opent die dag niet');
+    v89Ended=keepEnd;delete state.v89Made;try{URL.revokeObjectURL(V89.last.url)}catch(e){}V89.last=null;
+    await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();save();tab='home';render();
+    return bad});v.forEach(x=>errs.push(x))}
   /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
   {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());
    await mp.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'},'Tortuguero':{seen:true,photo:false}}}}}))});
