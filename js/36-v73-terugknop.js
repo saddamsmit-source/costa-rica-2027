@@ -11,14 +11,14 @@
   /* bovenste venster eerst: [selector, sluitfunctie] */
   const OV=[
     ['.wl2-zoom',el=>el.remove()],
-    ['#v52quick',el=>{el.remove();render()}],
     ['#detailOverlay',el=>el.remove()],
     ['#dseEm',el=>el.remove()],
     ['#v84Play',()=>v84Close()],
     ['#v85Gen',()=>v85Close()],
     ['#v84Trim',()=>v84TrimClose()],
     ['#v84Vid',()=>v84VidClose()],
-    ['#wl2Sheet',()=>wl2Close()]];
+    ['#wl2Sheet',()=>wl2Close()],
+    ['#v52quick',el=>{el.remove();render()}]];
   const SEL=OV.map(o=>o[0]).join(',');
   const more=()=>typeof dsMore!=='undefined'?dsMore:'';
   const nav=()=>({tab,day:currentDay,sec:daySection,more:more()});

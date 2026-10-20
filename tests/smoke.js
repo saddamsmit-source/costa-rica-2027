@@ -384,6 +384,35 @@ const {chromium}=require('playwright');const path=require('path');
     const zip=await v84Export(),fl=Object.keys(await v84Unzip(zip));if(fl.filter(n=>/-sfeer-/.test(n)).length!==5)bad.push('zip zonder sfeerfoto\'s');
     await v84Write(st=>V84.list.concat(V84.vids,V84.moods).forEach(x=>st.delete(x.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();tab='home';render();
     return bad});v.forEach(x=>errs.push(x))}
+  /* v8.8: zoeken op kenmerken, nieuw Waarneming-venster */
+  {const v=await p.evaluate(()=>{const bad=[],T='Keel-billed toucan',Q='Resplendent quetzal',f=v88Feat(T);
+    if(!['groen','geel','rood','zwart','oranje'].every(c=>f.colors.has(c))||f.colors.has('blauw')||f.size!=='groot')bad.push('kenmerken toekan: '+[...f.colors]+' '+f.size);
+    if(!v88Match(Q,'rode buik')||!v88Match(T,'rode snavel')||v88Match(T,'blauwe')||!v88Match(T,'toucan'))bad.push('zoeken op kenmerken');
+    const night=Object.keys(V47_SP).filter(n=>v88Match(n,'nacht')).length;if(night<50)bad.push('nachtdieren: '+night);
+    v50GlobalSearch('rode buik');const box=document.getElementById('v50gres');if(box&&!/Quetzal/.test(box.textContent))bad.push('"Waar zie ik" vindt quetzal niet op "rode buik"');
+    return bad});v.forEach(x=>errs.push(x))}
+  {await p.evaluate(()=>{V88.f.q='';tab='days';currentDay=6;daySection='overview';render()});await p.click('#v52open');await p.waitForSelector('#v88q');
+   await p.fill('#v88q','rode buik');await p.waitForTimeout(350);
+   let r=await p.evaluate(()=>({els:document.querySelector('#v52quick .v88-list').textContent,rows:document.querySelectorAll('#v52quick .v88-row').length}));
+   if(!/Quetzal/.test(r.els)||!/Elders in Costa Rica/.test(r.els))errs.push('Waarneming: "rode buik" vindt quetzal (elders) niet');
+   await p.fill('#v88q','');await p.waitForTimeout(350);await p.click('#v52quick [data-v88-k]');await p.click('#v52quick [data-v88-col="blauw"]');await p.click('#v52quick [data-v88-grp="Vogels"]');
+   r=await p.evaluate(()=>{const l=[...document.querySelectorAll('#v52quick .v88-row')].map(x=>decodeURIComponent(x.dataset.v88));return {n:l.length,bad:l.filter(n=>!v88Feat(n).colors.has('blauw')||v88Feat(n).cat!=='Vogels')}});
+   if(!r.n||r.bad.length)errs.push('Waarneming: filter blauw+vogels: '+JSON.stringify(r));
+   await p.click('#v52quick [data-v88-reset]');await p.fill('#v88q','toekan');await p.waitForTimeout(350);
+   const T=encodeURIComponent('Keel-billed toucan');await p.click(`#v52quick .v88-row[data-v88="${T}"] [data-v88-seen]`);
+   r=await p.evaluate(()=>({d:!!state.v43Observations[v43name('Keel-billed toucan')]?.days?.[6],today:document.querySelector('#v52quick .v88-today')?.textContent||''}));
+   if(!r.d||!/Zwavelborsttoekan/.test(r.today))errs.push('Waarneming: gezien vandaag/Vandaag geregistreerd: '+JSON.stringify(r));
+   await p.setInputFiles(`#v52quick .v88-row[data-v88="${T}"] [data-v88-photo]`,path.resolve(__dirname,'fixtures','exif.jpg'));await p.waitForTimeout(800);
+   r=await p.evaluate(()=>V84.list.filter(x=>x.sp===v43name('Keel-billed toucan')&&x.day===6).length);if(r!==1)errs.push('Waarneming: foto via lijst niet toegevoegd: '+r);
+   await p.setInputFiles('#v88mood',path.resolve(__dirname,'fixtures','exif.jpg'));await p.waitForTimeout(800);
+   r=await p.evaluate(()=>V84.moods.filter(x=>x.day===6).length);if(r!==1)errs.push('Waarneming: sfeerfoto-knop: '+r);
+   await p.click(`#v52quick .v88-row[data-v88="${T}"] [data-v88-open]`);await p.waitForSelector('#wl2Sheet');await p.evaluate(()=>history.back());await p.waitForTimeout(300);
+   r=await p.evaluate(()=>({sheet:!!document.getElementById('wl2Sheet'),quick:!!document.getElementById('v52quick')}));if(r.sheet||!r.quick)errs.push('terugknop: eerst soortvenster sluiten, Waarneming blijft open: '+JSON.stringify(r));
+   await p.click('#v52close');
+   r=await p.evaluate(()=>{tab='days';currentDay=6;daySection='wildlife';v47Filter='Alle';render();const q=document.getElementById('v50q');q.value='nacht';q.dispatchEvent(new Event('input'));
+     const vis=[...document.querySelectorAll('.v47-sp')].filter(c=>c.style.display!=='none').map(c=>decodeURIComponent(c.querySelector('[data-wl2]')?.dataset.wl2||''));q.value='';q.dispatchEvent(new Event('input'));v50Query='';return {n:vis.length,bad:vis.filter(n=>n&&!v88Match(n,'nacht'))}});
+   if(!r.n||r.bad.length)errs.push('daglijst: zoeken op "nacht": '+JSON.stringify(r));
+   await p.evaluate(async()=>{await v84Write(st=>V84.list.concat(V84.vids,V84.moods).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name('Keel-billed toucan')];save();V88.f.q='';tab='home';render()})}
   /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
   {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());
    await mp.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'},'Tortuguero':{seen:true,photo:false}}}}}))});
