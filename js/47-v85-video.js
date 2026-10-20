@@ -124,6 +124,22 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
     const tiles=[...new Map(items.filter(i=>i.still).map(i=>[i.sp,i])).values()].sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0))).slice(0,60).map(i=>i.own?i.still:(typeof wl2Thumb==='function'&&wl2Thumb(i.name))||i.still);
     if(tiles.length>=4)segs.push({k:'mosaic',dur:6,trans:'iris',srcs:tiles,title:'Costa Rica 2027',sub:segs[0].sub})}
   return segs}
+/* v8.11 · korte versie (±60–90 s): per dag het bijzonderste dier (eigen beeld voorrang), max. 20 dieren,
+   één sfeercollage na de titel, max. 3 eigen video's (kort, zonder vertraging), slot met tellers en mozaïek */
+function v85Short(plan,proef){const full=v85Segments(plan,proef);if(!full.length)return [];
+  const intro={...full[0],dur:3.5},end=full.find(x=>x.k==='end'),mosaic=full.find(x=>x.k==='mosaic');
+  let picks=plan.days.map(d=>[...d.items].filter(i=>i.still||i.clips.length).sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0)))[0]).filter(Boolean);
+  if(picks.length>20)picks=[...picks].sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0))).slice(0,20).sort((a,b)=>a.day-b.day);
+  const moods=plan.days.filter(d=>d.moods.length).map(d=>d.moods[0].url).slice(0,3);
+  const out=[intro];if(moods.length>=2)out.push({k:'collage',i:0,lay:moods.length===3?'trio':'duo',srcs:moods,dur:3,trans:'zoom',hud:'Costa Rica 2027',label:'Sfeer'});
+  let clips=0,n=0;const nSp=plan.species;
+  picks.forEach(it=>{const sg=full.find(x=>x.k==='sp'&&x.title===v47Info(it.name).nl&&x.hud===`Dag ${it.day} · ${it.region}`&&!x.clip)||full.find(x=>x.k==='sp'&&x.title===v47Info(it.name).nl);if(!sg)return;n++;
+    const base={...sg,note:'',n,of:picks.length,dur:3.2};
+    if(it.clips.length&&clips<3){clips++;const cl=it.clips[0],d0=Math.min(3,Math.max(1,cl.dur));out.push({...base,clip:{...cl,dur:d0},src:'',slow:false,freezeAt:d0,lay:cl.aspect>=1.2?'full':'frame',dur:d0+.6,credit:'Eigen video'})}
+    else if(sg.src)out.push(base)});
+  if(end)out.push({...end,dur:5});if(mosaic)out.push({...mosaic,dur:4.5});
+  for(let i=1;i<out.length;i++)if(out[i].trans===out[i-1].trans&&out[i].k==='sp')out[i].trans=V85_TR[(V85_TR.indexOf(out[i].trans)+1)%V85_TR.length];
+  return out}
 const v85Seconds=segs=>segs.reduce((s,x)=>s+x.dur,0);
 const v85Dur=sec=>{const m=Math.floor(sec/60),s=Math.round(sec%60);return m?`${m}:${v85Pad(s)} min`:`${s} s`};
 
@@ -138,11 +154,11 @@ function v85Font(ctx,size,weight,italic){ctx.font=`${italic?'italic ':''}${weigh
 function v85Fit(ctx,t,maxW){if(!maxW||ctx.measureText(t).width<=maxW)return t;let s=t;while(s.length>1&&ctx.measureText(s+'…').width>maxW)s=s.slice(0,-1);return s.trimEnd()+'…'}
 const v85Sp=(ctx,px)=>{if('letterSpacing' in ctx)ctx.letterSpacing=px+'px'};
 /* tekst met in-animatie: k=0..1 (vervagen + omhoog schuiven) */
-function v85Txt(ctx,t,x,y,o){if(!t)return 0;const k=o.k??1;if(k<=0)return 0;v85Font(ctx,o.size,o.weight,o.italic);v85Sp(ctx,o.spacing||0);ctx.textAlign=o.align||'left';
+function v85Txt(ctx,t,x,y,o){if(!t)return 0;const k=o.k??1;if(k<=0)return 0;if(o.shrink&&o.maxW){v85Font(ctx,o.size,o.weight,o.italic);const w0=ctx.measureText(t).width;if(w0>o.maxW)o={...o,size:Math.max(Math.floor(o.size*.55),Math.floor(o.size*o.maxW/w0))}}v85Font(ctx,o.size,o.weight,o.italic);v85Sp(ctx,o.spacing||0);ctx.textAlign=o.align||'left';
   const s=v85Fit(ctx,o.upper?t.toUpperCase():t,o.maxW),w=ctx.measureText(s).width;ctx.save();ctx.globalAlpha*=v85E(k);ctx.fillStyle=o.color||'#fff';
   if(o.shadow){ctx.shadowColor='rgba(0,0,0,.45)';ctx.shadowBlur=12;ctx.shadowOffsetY=2}ctx.fillText(s,x,y+(1-v85E(k))*(o.rise??26));ctx.restore();v85Sp(ctx,0);return w}
 /* letters komen één voor één op */
-function v85Letters(ctx,t,x,y,o,time,start){v85Font(ctx,o.size,o.weight);v85Sp(ctx,o.spacing||0);const s=v85Fit(ctx,t,o.maxW),W=ctx.measureText(s).width;
+function v85Letters(ctx,t,x,y,o,time,start){if(o.maxW){v85Font(ctx,o.size,o.weight);v85Sp(ctx,o.spacing||0);const w0=ctx.measureText(t).width;if(w0>o.maxW)o={...o,size:Math.max(Math.floor(o.size*.5),Math.floor(o.size*o.maxW/w0))}}v85Font(ctx,o.size,o.weight);v85Sp(ctx,o.spacing||0);const s=v85Fit(ctx,t,o.maxW),W=ctx.measureText(s).width;
   let x0=o.align==='center'?x-W/2:x;ctx.textAlign='left';ctx.save();ctx.fillStyle=o.color||'#fff';
   for(let i=0;i<s.length;i++){const k=v85E(v85At(time,start+i*(o.stagger||.035),.45));if(k<=0)break;const px=x0+ctx.measureText(s.slice(0,i)).width;
     ctx.globalAlpha=k;ctx.fillText(s[i],px,y+(1-k)*(o.rise||46))}
@@ -157,13 +173,13 @@ function v85Blur(img){const c=document.createElement('canvas');c.width=64;c.heig
   x.drawImage(img,(64-iw*r)/2,(36-ih*r)/2,iw*r,ih*r);return c}
 /* gedeelde lagen, één keer gemaakt */
 let v85FX=null;
-function v85Fx(){if(v85FX)return v85FX;const {W,H}=V85;
+function v85Fx(){if(v85FX&&v85FX.w===V85.W&&v85FX.h===V85.H)return v85FX;const {W,H}=V85;
   const vig=document.createElement('canvas');vig.width=W;vig.height=H;const v=vig.getContext('2d'),g=v.createRadialGradient(W/2,H/2,H*.35,W/2,H/2,H*1.05);
   g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,0,0,.55)');v.fillStyle=g;v.fillRect(0,0,W,H);
   const glow=document.createElement('canvas');glow.width=glow.height=64;const o=glow.getContext('2d'),rg=o.createRadialGradient(32,32,0,32,32,32);
   rg.addColorStop(0,'rgba(255,246,190,1)');rg.addColorStop(.25,'rgba(230,240,150,.55)');rg.addColorStop(1,'rgba(160,230,140,0)');o.fillStyle=rg;o.fillRect(0,0,64,64);
   let map=null;try{if(typeof V51_MAP!=='undefined')map=new Path2D(V51_MAP.CRI)}catch(e){}
-  return v85FX={vig,glow,map}}
+  return v85FX={vig,glow,map,w:W,h:H}}
 /* vignet en voortgangslijn bovenin (geen filmkorrel: kost bitrate en wordt blokkerig) */
 function v85Post(ctx,n,total){const {W,H}=V85,fx=v85Fx();ctx.drawImage(fx.vig,0,0);
   ctx.fillStyle='rgba(255,255,255,.12)';ctx.fillRect(0,0,W,5);ctx.fillStyle=V85_C.mint;ctx.fillRect(0,0,W*(n+1)/total,5)}
@@ -222,21 +238,24 @@ function v85Look(ctx,x=0,y=0,w=V85.W,h=V85.H){ctx.save();ctx.globalCompositeOper
   const g=ctx.createRadialGradient(x+w/2,y+h/2,Math.min(w,h)*.3,x+w/2,y+h/2,Math.max(w,h)*.75);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(0,40,32,.6)');ctx.fillStyle=g;ctx.fillRect(x,y,w,h);ctx.restore()}
 function v85BgCache(res,dark){const {W,H}=V85;if(!res.bgc&&res.blur){const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d',{alpha:false});x.imageSmoothingQuality='high';x.drawImage(res.blur,-80,-50,W+160,H+100);x.fillStyle=`rgba(2,10,7,${dark})`;x.fillRect(0,0,W,H);res.bgc=c}return res.bgc}
 function v85ClipT(seg,t){const d=Math.max(.05,seg.clip.dur);let c=t;if(seg.slow){const a=d*.4;c=t<a?t:a+(t-a)/2}return Math.min(c,d-.03)}
-function v85Rects(lay){const {W,H}=V85,G=12;if(lay==='duo')return [{x:0,y:0,w:W/2-G/2,h:H},{x:W/2+G/2,y:0,w:W/2-G/2,h:H}];
+const v85P=()=>V85.H>V85.W;
+function v85Rects(lay){const {W,H}=V85,G=12;if(v85P()){if(lay==='duo')return [{x:0,y:0,w:W,h:H/2-G/2},{x:0,y:H/2+G/2,w:W,h:H/2-G/2}];
+    if(lay==='trio'){const h=(H-2*G)/3;return [0,1,2].map(i=>({x:0,y:i*(h+G),w:W,h}))}
+    if(lay==='hero'){const h1=Math.round(H*.6),w=(W-G)/2;return [{x:0,y:0,w:W,h:h1},{x:0,y:h1+G,w,h:H-h1-G},{x:w+G,y:h1+G,w,h:H-h1-G}]}}if(lay==='duo')return [{x:0,y:0,w:W/2-G/2,h:H},{x:W/2+G/2,y:0,w:W/2-G/2,h:H}];
   if(lay==='trio'){const w=(W-2*G)/3;return [0,1,2].map(i=>({x:i*(w+G),y:0,w,h:H}))}
   if(lay==='hero'){const w1=Math.round(W*.6);return [{x:0,y:0,w:w1,h:H},{x:w1+G,y:0,w:W-w1-G,h:H/2-G/2},{x:w1+G,y:H/2+G/2,w:W-w1-G,h:H/2-G/2}]}
   const w=(W-G)/2,h=(H-G)/2;return [{x:0,y:0,w,h},{x:w+G,y:0,w,h},{x:0,y:h+G,w,h},{x:w+G,y:h+G,w,h}]}
 function v85Pill(ctx,txt,x,y,t,st){const kk=v85At(t,st,.4);if(kk<=0)return 0;v85Font(ctx,22,800);v85Sp(ctx,4);const lw=ctx.measureText(txt.toUpperCase()).width;v85Sp(ctx,0);
   ctx.save();ctx.globalAlpha=v85E(kk);v85Round(ctx,x,y-6,lw+30,38,19);ctx.fillStyle=V85_C.leaf;ctx.fill();ctx.restore();v85Txt(ctx,txt,x+15,y+21,{size:22,weight:800,spacing:4,upper:true,k:kk,rise:0});return lw+30}
 /* naamkaart (glas) links of rechts onder */
-function v85NameCard(ctx,seg,res,t,right){const {W,H}=V85,X0=96,pad=44;v85Font(ctx,30,500,true);const note=seg.note?v85Wrap(ctx,`“${seg.note}”`,1180,2):[];
+function v85NameCard(ctx,seg,res,t,right){const {W,H}=V85,X0=96,pad=44,nw=Math.min(1180,W-2*X0-2*pad-12);v85Font(ctx,30,500,true);const note=seg.note?v85Wrap(ctx,`“${seg.note}”`,nw,v85P()?3:2):[];
   v85Font(ctx,78,800);const tw=Math.min(ctx.measureText(seg.title).width,1300);v85Font(ctx,32,500);const sw=ctx.measureText((seg.en?seg.en+' · ':'')+seg.sci).width;v85Font(ctx,28,500);const mw=ctx.measureText(seg.meta||'').width;
-  const pw=Math.min(W-2*X0,Math.max(tw,sw,mw,note.length?1180:0)+pad*2+12),ph=pad+44+78+(seg.en||seg.sci?48:0)+(seg.meta?44:0)+note.length*42+pad-6,X=right?W-X0-pw:X0;
+  const pw=Math.min(W-2*X0,Math.max(tw,sw,mw,note.length?nw:0)+pad*2+12),ph=pad+44+78+(seg.en||seg.sci?48:0)+(seg.meta?44:0)+note.length*42+pad-6,X=right?W-X0-pw:X0;
   const k=v85E(v85At(t,.1,.55)),py=H-80-ph+(1-k)*40;
   if(k>0){ctx.save();ctx.globalAlpha=k;v85Round(ctx,X,py,pw,ph,22);ctx.save();ctx.clip();const bg=v85BgCache(res,.5);if(bg)ctx.drawImage(bg,0,0);ctx.fillStyle='rgba(6,24,17,.62)';ctx.fillRect(X,py,pw,ph);ctx.restore();
     ctx.lineWidth=1.5;ctx.strokeStyle='rgba(255,255,255,.14)';ctx.stroke();ctx.fillStyle=V85_C.mint;ctx.fillRect(X,py+22,6,(ph-44)*v85E(v85At(t,.3,.6)));ctx.restore()}
   let y=py+pad+8;const tx=X+pad+12;v85Pill(ctx,seg.label,tx,y,t,.25);
-  y+=44+70;v85Txt(ctx,seg.title,tx,y,{size:78,weight:800,maxW:1300,k:v85At(t,.35,.5)});
+  y+=44+70;v85Txt(ctx,seg.title,tx,y,{size:78,weight:800,maxW:Math.min(1300,W-2*X0-2*pad-12),shrink:true,k:v85At(t,.35,.5)});
   if(seg.en||seg.sci){y+=48;const kk=v85At(t,.5,.5),w=v85Txt(ctx,seg.en,tx,y,{size:32,weight:500,color:'rgba(255,255,255,.92)',maxW:700,k:kk});
     v85Txt(ctx,(seg.en?' · ':'')+seg.sci,tx+w,y,{size:32,weight:500,italic:true,color:V85_C.mint,maxW:W-2*X0-w,k:kk})}
   if(seg.meta){y+=44;v85Txt(ctx,seg.meta,tx,y,{size:28,weight:500,color:'rgba(255,255,255,.78)',maxW:W-2*X0-2*pad,k:v85At(t,.62,.5)})}
@@ -251,7 +270,7 @@ function v85SplitText(ctx,seg,t){const {W,H}=V85,X=110,maxW=Math.round(W*.4)-170
   if(seg.note){y+=14;v85Font(ctx,30,500,true);v85Wrap(ctx,`“${seg.note}”`,maxW,4).forEach((l,i)=>{v85Txt(ctx,l,X,y,{size:30,weight:500,italic:true,k:v85At(t,.85+i*.1,.5)});y+=42})}}
 function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):0,img=res.img;
   ctx.globalAlpha=1;ctx.fillStyle=V85_C.deep;ctx.fillRect(0,0,W,H);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';
-  if(seg.k==='sp'){const lay=img?(seg.lay||'frame'):'frame',f=img?(res.focus??=(seg.clip?{x:.5,y:.45}:v85Focus(img))):{x:.5,y:.45},cam=v85Cam(seg.i||0,v85E(p*.9+.1));
+  if(seg.k==='sp'){let lay=img?(seg.lay||'frame'):'frame';if(v85P()&&lay==='split')lay=seg.own?'full':'frame';const f=img?(res.focus??=(seg.clip?{x:.5,y:.45}:v85Focus(img))):{x:.5,y:.45},cam=v85Cam(seg.i||0,v85E(p*.9+.1));
     const frz=seg.clip&&seg.freezeAt!=null&&t>=seg.freezeAt,punch=frz?1+.035*v85E(v85At(t,seg.freezeAt,.5)):1;
     if(img&&lay==='full'){v85CoverAt(ctx,img,0,0,W,H,(seg.clip?1+(cam.z-1)*.35:cam.z)*punch,f,seg.clip?null:cam.shift);v85Look(ctx)}
     else if(img&&lay==='split'){ctx.drawImage(v85BgCache(res,.62),0,0);const sx=Math.round(W*.4);ctx.save();ctx.beginPath();ctx.rect(sx,0,W-sx,H);ctx.clip();
@@ -280,7 +299,7 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
     const speed=(seg.height+H)/seg.dur;let y=H+90-t*speed;
     v85Txt(ctx,'Gezien op deze reis',W/2,y,{size:56,weight:800,align:'center',rise:0});y+=110;
     seg.groups.forEach(g=>{if(y>-80&&y<H+80)v85Txt(ctx,`${g.label} · ${g.names.length}`,W/2,y,{size:28,weight:800,spacing:6,upper:true,color:V85_C.mint,align:'center',rise:0});y+=60;
-      g.names.forEach((nm,i)=>{const row=Math.floor(i/3),yy=y+row*50,cols=Math.min(3,g.names.length-row*3);if(yy<-60||yy>H+60)return;v85Txt(ctx,nm.nl,W/2+(i%3-(cols-1)/2)*560,yy,{size:32,weight:nm.own?700:400,align:'center',color:nm.own?'#fff':'rgba(255,255,255,.66)',rise:0,maxW:520})});
+      g.names.forEach((nm,i)=>{const row=Math.floor(i/3),yy=y+row*50,cols=Math.min(3,g.names.length-row*3);if(yy<-60||yy>H+60)return;v85Txt(ctx,nm.nl,W/2+(i%3-(cols-1)/2)*(v85P()?330:560),yy,{size:v85P()?26:32,weight:nm.own?700:400,align:'center',color:nm.own?'#fff':'rgba(255,255,255,.66)',rise:0,maxW:v85P()?310:520})});
       y+=Math.ceil(g.names.length/3)*50+30});
     if(seg.credits.length){y+=40;if(y>-80&&y<H+80)v85Txt(ctx,"Voorbeeldfoto's",W/2,y,{size:28,weight:800,spacing:6,upper:true,color:V85_C.mint,align:'center',rise:0});y+=60;
       seg.credits.forEach(c=>{if(y>-40&&y<H+40)v85Txt(ctx,c,W/2,y,{size:22,weight:500,align:'center',color:'rgba(255,255,255,.62)',rise:0,maxW:W-240});y+=34})}
@@ -291,7 +310,7 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
     ims.forEach((im,i)=>{const c=i%cols,r=Math.floor(i/cols),dist=Math.hypot(c+.5-cols/2,r+.5-rows/2)/Math.hypot(cols/2,rows/2),k=v85E(v85At(t,dist*1.3,.6));if(k<=0)return;
       ctx.save();ctx.globalAlpha=k;ctx.beginPath();ctx.rect(c*tw+2,r*th+2,tw-4,th-4);ctx.clip();v85CoverAt(ctx,im,c*tw,r*th,tw,th,1.15-.12*k,{x:.5,y:.45});ctx.restore()});
     v85Look(ctx);const dk=v85E(v85At(t,2,1));ctx.fillStyle=`rgba(4,16,11,${.55*dk})`;ctx.fillRect(0,0,W,H);
-    v85Letters(ctx,seg.title,W/2,H/2+20,{size:140,weight:800,align:'center',stagger:.05,rise:50},t,2.2);v85Txt(ctx,seg.sub,W/2,H/2+110,{size:40,weight:600,align:'center',k:v85At(t,3,.6)});return}
+    v85Letters(ctx,seg.title,W/2,H/2+20,{size:140,weight:800,align:'center',stagger:.05,rise:50,maxW:W-140},t,2.2);v85Txt(ctx,seg.sub,W/2,H/2+110,{size:40,weight:600,align:'center',k:v85At(t,3,.6)});return}
   if(seg.k==='mood'){const mv=v85Moves(seg.i||0,v85E(p*.9+.1));
     if(img){if(v85IW(img)/v85IH(img)>=1.3){v85CoverAt(ctx,img,0,0,W,H,mv.z+.04,res.focus??=v85Focus(img),{x:mv.dx,y:mv.dy});v85Look(ctx)}
       else{if(!res.bgc){const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d',{alpha:false});x.imageSmoothingQuality='high';x.drawImage(res.blur,-80,-50,W+160,H+100);x.fillStyle='rgba(2,10,7,.45)';x.fillRect(0,0,W,H);res.bgc=c}
@@ -304,13 +323,13 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
       v85Txt(ctx,seg.label,111,H-91,{size:22,weight:800,spacing:4,upper:true,k:kk,rise:0});if(seg.meta)v85Txt(ctx,seg.meta,96+lw+48,H-90,{size:28,weight:600,color:'rgba(255,255,255,.85)',k:kk,rise:0})}
     return}
   if(seg.k==='day'){v85Bg(ctx,res,t,.78);
-    const mapH=820,mx=W-mapH*(V51_MAP?.W||600)/(V51_MAP?.H||575)-90,my=(H-mapH)/2+20;v85Map(ctx,mx,my,mapH,t,seg.stop??0,{start:.1});
-    const X=130,cy=H/2;
+    const P=v85P(),ar=(V51_MAP?.W||600)/(V51_MAP?.H||575),mapH=P?Math.round(H*.4):820,mx=P?Math.round((W-mapH*ar)/2):W-mapH*ar-90,my=P?Math.round(H*.48):(H-mapH)/2+20;v85Map(ctx,mx,my,mapH,t,seg.stop??0,{start:.1});
+    const X=P?90:130,cy=P?Math.round(H*.27):H/2,tmax=P?W-180:mx-X-40;
     v85Txt(ctx,seg.label,X,cy-150,{size:30,weight:800,spacing:8,upper:true,color:V85_C.mint,k:v85At(t,.1,.5)});
-    const tw=v85Letters(ctx,seg.title,X,cy-30,{size:seg.title.length>16?86:110,weight:800,maxW:mx-X-40},t,.25);
+    const tw=v85Letters(ctx,seg.title,X,cy-30,{size:seg.title.length>16?86:110,weight:800,maxW:tmax},t,.25);
     ctx.fillStyle=V85_C.mint;ctx.fillRect(X,cy+12,Math.min(tw,420)*v85E(v85At(t,.6,.7)),5);
-    v85Txt(ctx,seg.sub,X,cy+80,{size:42,weight:600,color:'rgba(255,255,255,.95)',k:v85At(t,.7,.5),maxW:mx-X-40});
-    v85Txt(ctx,seg.meta,X,cy+136,{size:32,weight:500,color:'rgba(255,255,255,.75)',k:v85At(t,.85,.5),maxW:mx-X-40});
+    v85Txt(ctx,seg.sub,X,cy+80,{size:42,weight:600,color:'rgba(255,255,255,.95)',k:v85At(t,.7,.5),maxW:tmax});
+    v85Txt(ctx,seg.meta,X,cy+136,{size:32,weight:500,color:'rgba(255,255,255,.75)',k:v85At(t,.85,.5),maxW:tmax});
     return}
   /* intro en einde */
   if(img){ctx.drawImage(v85BlurBig(res),-60,-40);v85Cover(ctx,img,1.04+.08*p,0,0)}
@@ -323,12 +342,12 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
     v85Txt(ctx,seg.meta,W/2,cy+180,{size:32,weight:500,align:'center',color:'rgba(255,255,255,.78)',k:v85At(t,1.6,.6)});
     return}
   /* einde: titel, tellers per groep en de hele route */
-  const mapH=760,mx=W-mapH*(V51_MAP?.W||600)/(V51_MAP?.H||575)-80,my=(H-mapH)/2;v85Map(ctx,mx,my,mapH,t,V51_STOPS.length-1,{start:.2,all:true});
-  const X=130;v85Txt(ctx,seg.label,X,250,{size:30,weight:800,spacing:8,upper:true,color:V85_C.mint,k:v85At(t,.1,.5)});
+  const P=v85P(),ar=(V51_MAP?.W||600)/(V51_MAP?.H||575),mapH=P?Math.round(H*.34):760,mx=P?Math.round((W-mapH*ar)/2):W-mapH*ar-80,my=P?H-mapH-170:(H-mapH)/2;v85Map(ctx,mx,my,mapH,t,V51_STOPS.length-1,{start:.2,all:true});
+  const X=P?90:130;v85Txt(ctx,seg.label,X,250,{size:30,weight:800,spacing:8,upper:true,color:V85_C.mint,k:v85At(t,.1,.5)});
   v85Letters(ctx,seg.title,X,380,{size:140,weight:800,stagger:.06,rise:60},t,.3);
   (seg.cats||[]).forEach((c,i)=>{const kk=v85At(t,.9+i*.15,.5),bx=X+(i%3)*250,by=470+Math.floor(i/3)*170;if(kk<=0)return;ctx.save();ctx.globalAlpha=v85E(kk);v85Round(ctx,bx,by+(1-v85E(kk))*30,226,146,20);ctx.fillStyle='rgba(255,255,255,.08)';ctx.fill();ctx.strokeStyle='rgba(155,230,174,.35)';ctx.lineWidth=1.5;ctx.stroke();ctx.restore();
     const val=Math.round(c.n*v85E(v85At(t,1+i*.15,1.4)));v85Txt(ctx,String(val),bx+24,by+76+(1-v85E(kk))*30,{size:64,weight:800,k:kk,rise:0});v85Txt(ctx,c.label,bx+26,by+118+(1-v85E(kk))*30,{size:24,weight:600,color:V85_C.mint,k:kk,rise:0})});
-  const rows=Math.ceil((seg.cats||[]).length/3);v85Txt(ctx,seg.meta,X,470+rows*170+40,{size:32,weight:500,color:'rgba(255,255,255,.85)',k:v85At(t,1.6,.6),maxW:mx-X-20});
+  const rows=Math.ceil((seg.cats||[]).length/3);v85Txt(ctx,seg.meta,X,470+rows*170+40,{size:32,weight:500,color:'rgba(255,255,255,.85)',k:v85At(t,1.6,.6),maxW:P?W-180:mx-X-20,shrink:true});
   if(seg.small)v85Txt(ctx,seg.small,X,H-70,{size:22,weight:500,color:'rgba(255,255,255,.6)',k:v85At(t,2,.6),rise:0,maxW:W-260})}
 
 async function v85Img(src){if(!src)return null;const im=new Image();im.decoding='async';im.src=src;try{await im.decode()}catch(e){return null}
@@ -370,8 +389,11 @@ async function v85Target(useDisk){
   const sink=v85Sink();return {target:new Mp4Muxer.StreamTarget({onData:(d,p)=>sink.write(d,p),chunked:true,chunkSize:4<<20}),done:async()=>sink.blob('video/mp4'),disk:false}}
 
 /* maakt de video; prog(fractie) voor de voortgang; job.cancel=true breekt af */
-async function v85Make(opts={}){const job=opts.job||{},prog=opts.onProgress||(()=>{}),proef=opts.proef??!v85Open();
-  const segs=opts.segs||v85Segments(v85Plan(),proef);if(!segs.length)throw new Error('Nog niets om te tonen.');
+/* v8.11: staand formaat (1080×1920) en korte versie; afmetingen alleen tijdens het maken omzetten */
+async function v85Make(opts={}){const keep=[V85.W,V85.H];if(opts.portrait){V85.W=1080;V85.H=1920}
+  try{return await v85MakeCore(opts)}finally{V85.W=keep[0];V85.H=keep[1]}}
+async function v85MakeCore(opts={}){const job=opts.job||{},prog=opts.onProgress||(()=>{}),proef=opts.proef??!v85Open();
+  const segs=opts.segs||(opts.short?v85Short(v85Plan(),proef):v85Segments(v85Plan(),proef));if(!segs.length)throw new Error('Nog niets om te tonen.');
   const {W,H,FPS}=V85,scale=opts.scale||V85.SCALE||1;segs.forEach(s=>s.frames=Math.max(2,Math.round(s.dur*scale*FPS)));
   const total=segs.reduce((n,s)=>n+s.frames,0);
   try{await document.fonts.load(`800 80px ${V85_FONT}`);await document.fonts.load(`500 30px ${V85_FONT}`)}catch(e){}
@@ -448,18 +470,29 @@ function v85DayCard(d){let pd;try{pd=v85Plan().days.find(x=>x.day===d.id)}catch(
   return h.includes(at)?h.replace(at,v85Card()+at):h}}
 function v85Close(){if(v85Job)v85Job.cancel=true;const el=document.getElementById('v85Gen');if(el){el.remove();document.body.classList.remove('wl2-lock')}
   if(v85Out){URL.revokeObjectURL(v85Out.url);try{v85Out.out.cleanup?.()}catch(e){}v85Out=null}try{v85Job?.lock?.release()}catch(e){}v85Job=null}
-async function v85Start(){v85Close();const proef=!v85Open(),job={cancel:false};v85Job=job;
+/* eerst kiezen: volledige of korte versie, liggend of staand */
+const V85_OPT={short:false,portrait:false};
+function v85Start(){v85Close();const proef=!v85Open(),plan=v85Plan(),el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
+  const len=sh=>{try{return v85Dur(v85Seconds(sh?v85Short(plan,proef):v85Segments(plan,proef)))}catch(e){return ''}},lf=len(false),ls=len(true);
+  const draw=()=>{el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Welke video?</h3>
+    <div class="v85-opt" role="radiogroup" aria-label="Versie"><button data-o="full" aria-pressed="${!V85_OPT.short}" class="${V85_OPT.short?'':'on'}"><b>Volledig</b><small>alle dagen · ca. ${lf}</small></button><button data-o="short" aria-pressed="${V85_OPT.short}" class="${V85_OPT.short?'on':''}"><b>Kort</b><small>hoogtepunten · ca. ${ls}</small></button></div>
+    <div class="v85-opt" role="radiogroup" aria-label="Formaat"><button data-f="land" aria-pressed="${!V85_OPT.portrait}" class="${V85_OPT.portrait?'':'on'}"><b>Liggend 16:9</b><small>tv, laptop</small></button><button data-f="port" aria-pressed="${V85_OPT.portrait}" class="${V85_OPT.portrait?'on':''}"><b>Staand 9:16</b><small>telefoon, WhatsApp-status</small></button></div>
+    <div class="v85-btns"><button class="ds-btn primary" data-v85="go">Video maken</button><button class="ds-btn secondary" data-v85="close">Annuleren</button></div></div>`;
+    el.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{V85_OPT.short=b.dataset.o==='short';draw()});el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{V85_OPT.portrait=b.dataset.f==='port';draw()});
+    el.querySelector('[data-v85="close"]').onclick=v85Close;el.querySelector('[data-v85="go"]').onclick=()=>{el.remove();v85Run({...V85_OPT})}};
+  draw();document.body.append(el);document.body.classList.add('wl2-lock')}
+async function v85Run(opt={}){v85Close();const proef=!v85Open(),job={cancel:false};v85Job=job;
   const el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label',proef?'Proefvideo maken':'Reisvideo maken');
   el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Video maken…</h3><div class="v85-bar"><i></i></div><p class="v85-st ds-meta" aria-live="polite">Voorbereiden</p><p class="ds-meta">Houd de app open en het scherm aan.</p><div class="v85-btns"><button class="ds-btn secondary" data-v85="close">Annuleren</button></div></div>`;
   document.body.append(el);document.body.classList.add('wl2-lock');el.querySelector('[data-v85="close"]').onclick=v85Close;
   try{job.lock=await navigator.wakeLock?.request('screen')}catch(e){}
   const bar=el.querySelector('.v85-bar i'),st=el.querySelector('.v85-st');
-  try{const out=await v85Make({proef,job,onProgress:(f,ms)=>{bar.style.width=Math.round(f*100)+'%';const left=f>.04?ms/f*(1-f)/1000:0;st.textContent=`${Math.round(f*100)}%${left?` · nog ca. ${left<60?Math.max(5,Math.round(left/5)*5)+' s':Math.round(left/60)+' min'}`:''}`}});
+  try{const out=await v85Make({proef,job,short:!!opt.short,portrait:!!opt.portrait,onProgress:(f,ms)=>{bar.style.width=Math.round(f*100)+'%';const left=f>.04?ms/f*(1-f)/1000:0;st.textContent=`${Math.round(f*100)}%${left?` · nog ca. ${left<60?Math.max(5,Math.round(left/5)*5)+' s':Math.round(left/60)+' min'}`:''}`}});
     if(job.cancel||v85Job!==job)return;try{job.lock?.release()}catch(e){}
-    const url=URL.createObjectURL(out.blob),name=`costa-rica-2027-${proef?'proefvideo':'reisvideo'}.${out.ext}`,file=new File([out.blob],name,{type:out.type});v85Out={url,file,out};
+    const url=URL.createObjectURL(out.blob),name=`costa-rica-2027-${proef?'proefvideo':'reisvideo'}${opt.short?'-kort':''}${opt.portrait?'-staand':''}.${out.ext}`,file=new File([out.blob],name,{type:out.type});v85Out={url,file,out};
     const mb=(out.blob.size/1048576).toFixed(out.blob.size<1048576*10?1:0),canShare=!!(navigator.canShare&&navigator.canShare({files:[file]}));
     el.querySelector('.v85-box').innerHTML=`<span class="ds-label">${proef?'Proefvideo':'Reisvideo'} klaar</span><video class="v85-vid" src="${url}" controls playsinline preload="metadata"></video>
-      <p class="ds-meta">${out.ext.toUpperCase()} · 1920×1080 · ${v85Dur(out.seconds)} · ${mb} MB</p>
+      <p class="ds-meta">${out.ext.toUpperCase()} · ${opt.portrait?'1080×1920':'1920×1080'} · ${v85Dur(out.seconds)} · ${mb} MB</p>
       <div class="v85-btns">${canShare?`<button class="ds-btn primary" data-v85="share">${dsdI('download',18)}Opslaan of delen</button>`:''}<a class="ds-btn ${canShare?'secondary':'primary'}" href="${url}" download="${name}">${canShare?'Downloaden':dsdI('download',18)+'Downloaden'}</a><button class="ds-btn secondary" data-v85="close">Sluiten</button></div>
       <p class="ds-meta">Kies bij "Opslaan of delen" voor "Bewaar video" om hem in Foto’s te zetten.</p>`;
     el.querySelectorAll('[data-v85="close"]').forEach(b=>b.onclick=v85Close);

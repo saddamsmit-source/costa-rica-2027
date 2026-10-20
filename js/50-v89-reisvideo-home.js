@@ -18,7 +18,7 @@ function v89Check(){const days=v89Days(),miss=days.filter(x=>!x.ok);
       <i class="v89-cnt"><em class="${x.moods>=V89_REQ.mood?'f':''}">${x.moods}/${V89_REQ.mood} sfeer</em><em class="${x.animals>=V89_REQ.animals?'f':''}">${Math.min(x.animals,99)}/${V89_REQ.animals} dieren</em><em class="${x.clips>=V89_REQ.clips?'f':''}">${x.clips}/${V89_REQ.clips} video</em></i></button></li>`).join('')}</ul></details>`}
 function v89Card(){if(typeof v85Plan!=='function')return '';const ended=v89Ended(),plan=v85Plan(),segs=v85Segments(plan,!ended),days=v89Days(),done=days.filter(x=>x.ok).length;
   const nPh=(V84.list||[]).length,nV=(V84.vids||[]).length,nM=(V84.moods||[]).length,made=state.v89Made,last=new Date(V85_LAST+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
-  const madeTxt=made&&!made.proef?`<p class="v89-made">${dsI('lock',16).replace(DS_ICON.lock,'<path d="m5 12 5 5 9-10"/>')}Reisvideo gemaakt op ${new Date(made.at).toLocaleString('nl-NL',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'})} · ${v85Dur(made.seconds)}</p>`:'';
+  const madeTxt=made&&!made.proef?`<p class="v89-made">${dsI('lock',16).replace(DS_ICON.lock,'<path d="m5 12 5 5 9-10"/>')}Reisvideo gemaakt op ${new Date(made.at).toLocaleString('nl-NL',{day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'})} · ${v85Dur(made.seconds)}${made.short?' · kort':''}${made.portrait?' · staand':''}</p>`:'';
   const keep=V89.last&&(!made||made.at===V89.last.at);
   return `<div class="ds-card v89-card ${ended?'end':''}">
     ${ended&&!(made&&!made.proef)?`<div class="v89-banner"><b>Jullie reis zit erop</b><span>Maak nu de reisvideo.</span></div>`:''}
@@ -37,7 +37,7 @@ function v89Card(){if(typeof v85Plan!=='function')return '';const ended=v89Ended
 async function v89Start(){const miss=v89Days().filter(x=>!x.ok);
   if(v89Ended()&&miss.length&&!confirm(`${miss.length} ${miss.length===1?'dag is':'dagen zijn'} niet compleet (${miss.slice(0,6).map(x=>'dag '+x.d).join(', ')}${miss.length>6?' …':''}).\n\nToch de reisvideo maken? Je kunt hem later opnieuw maken.`))return;
   await v85Start()}
-{const prev=v85Start;v85Start=async function(){if(V89.last){try{URL.revokeObjectURL(V89.last.url)}catch(e){}V89.last=null}await prev();if(v85Out&&v85Out.out){const proef=!v89Ended();state.v89Made={at:new Date().toISOString(),seconds:Math.round(v85Out.out.seconds),proef};save();
+{const prev=v85Run;v85Run=async function(opt){if(V89.last){try{URL.revokeObjectURL(V89.last.url)}catch(e){}V89.last=null}await prev(opt);if(v85Out&&v85Out.out){const proef=!v89Ended();state.v89Made={at:new Date().toISOString(),seconds:Math.round(v85Out.out.seconds),proef,short:!!opt?.short,portrait:!!opt?.portrait};save();
     V89.last={at:state.v89Made.at,file:v85Out.file,url:v85Out.url}}}}
 /* de video blijft in het geheugen zolang de app open is, zodat "Opslaan of delen" op Home werkt */
 {const prev=v85Close;v85Close=function(){if(v85Out&&V89.last&&v85Out.url===V89.last.url){const el=document.getElementById('v85Gen');if(v85Job)v85Job.cancel=true;if(el){el.remove();document.body.classList.remove('wl2-lock')}v85Out=null;v85Job=null;if(tab==='home')render();return}

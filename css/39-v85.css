@@ -15,3 +15,9 @@
 .v85-daysel summary::-webkit-details-marker{display:none}.v85-daysel summary b{font-size:15px}.v85-daysel summary span{font-size:13px;color:var(--ds-muted);font-variant-numeric:tabular-nums}
 .v85-daysel ol{margin:6px 0 8px;padding-left:22px;font-size:14px;line-height:1.6}.v85-daysel li small{color:var(--ds-muted);margin-left:4px}
 .v84-mood{margin-bottom:12px}.v84-mood .v84-add{width:100%;cursor:pointer}.v84-mmsg:empty{display:none}
+
+/* v8.11 keuze versie en formaat */
+.v85-opt{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.v85-opt button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:56px;padding:10px 12px;border-radius:14px;border:1px solid var(--ds-line);background:var(--ds-card);color:var(--ds-ink);font:inherit;text-align:left;cursor:pointer}
+.v85-opt button b{font-size:15px}.v85-opt button small{font-size:12px;color:var(--ds-muted)}
+.v85-opt button.on{border-color:var(--ds-jungle);background:var(--ds-jungle);color:#fff}.v85-opt button.on small{color:rgba(255,255,255,.8)}

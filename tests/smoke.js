@@ -303,7 +303,7 @@ const {chromium}=require('playwright');const path=require('path');
       const vid=document.createElement('video');vid.muted=true;vid.src=URL.createObjectURL(out.blob);
       const dur=await new Promise(r=>{vid.onloadedmetadata=()=>r(vid.duration);vid.onerror=()=>r(-1);setTimeout(()=>r(-2),8000)});
       if(Math.abs(dur-out.seconds)>.2||vid.videoWidth!==1920||vid.videoHeight!==1080)bad.push(`reisvideo: ${dur}s ${vid.videoWidth}x${vid.videoHeight}, verwacht ${out.seconds}s 1920x1080`);
-      go=document.getElementById('v85go');go.click();let t=0;while(!document.querySelector('.v85-vid')&&t++<200)await new Promise(r=>setTimeout(r,100));
+      go=document.getElementById('v85go');go.click();document.querySelector('#v85Gen [data-v85="go"]')?.click();let t=0;while(!document.querySelector('.v85-vid')&&t++<200)await new Promise(r=>setTimeout(r,100));
       const gen=document.getElementById('v85Gen');if(!document.querySelector('.v85-vid'))bad.push('reisvideo: scherm toont geen video: '+(gen?.textContent||'').slice(0,120));
       else if(!gen.querySelector('a[download$=".mp4"]'))bad.push('reisvideo: downloadknop ontbreekt');
       v85Close();if(document.getElementById('v85Gen'))bad.push('reisvideo: sluiten werkt niet')}
@@ -433,7 +433,7 @@ const {chromium}=require('playwright');const path=require('path');
     v89Ended=()=>true;render();if(!/Jullie reis zit erop/.test(document.querySelector('.v89-card')?.textContent||''))bad.push('einde reis: herinnering ontbreekt');
     if(!/Reisvideo maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('einde reis: knop Reisvideo maken ontbreekt');
     let asked='';const keepConfirm=window.confirm;window.confirm=m=>{asked=m;return false};await v89Start();if(!/niet compleet/.test(asked)||document.getElementById('v85Gen'))bad.push('waarschuwing onvolledige dagen');
-    window.confirm=()=>true;V85.SCALE=.06;await v89Start();V85.SCALE=1;window.confirm=keepConfirm;
+    window.confirm=()=>true;V85.SCALE=.06;await v89Start();if(!document.querySelector('#v85Gen [data-v85="go"]'))bad.push('keuzevenster ontbreekt');await v85Run({});V85.SCALE=1;window.confirm=keepConfirm;
     if(!state.v89Made||state.v89Made.proef||!V89.last)bad.push('bevestiging niet bewaard: '+JSON.stringify(state.v89Made));
     v85Close();tab='home';render();const c2=document.querySelector('.v89-card');if(!/Reisvideo gemaakt op/.test(c2?.textContent||'')||!document.getElementById('v89share')||!/Opnieuw maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('Home na maken: bevestiging/knoppen');
     document.querySelector('[data-v89-day="9"]').click();if(tab!=='days'||currentDay!==9)bad.push('dag in controle opent die dag niet');
@@ -460,6 +460,21 @@ const {chromium}=require('playwright');const path=require('path');
     const col=segs.filter(x=>x.k==='collage');if(col.reduce((n,x)=>n+x.srcs.length,0)!==5||col.length!==2)bad.push('collage sfeerfoto\'s: '+col.map(x=>x.lay+':'+x.srcs.length));
     const cr=segs.find(x=>x.k==='credits'),mo=segs.find(x=>x.k==='mosaic');if(!cr||!cr.groups.length||!cr.groups.some(g=>g.names.some(n=>n.own)))bad.push('aftiteling ontbreekt of zonder eigen soorten');if(!mo||mo.srcs.length<4)bad.push('mozaïek ontbreekt');
     V85.SCALE=.08;try{const out=await v85Make({proef:true,disk:false});if(!out.blob.size)bad.push('video v8.10 leeg')}catch(e){bad.push('video v8.10: '+e.message)}V85.SCALE=1;
+    await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();return bad});v.forEach(x=>errs.push(x))}
+  /* v8.11: korte versie en staand formaat */
+  {const v=await p.evaluate(async()=>{const bad=[];
+    const cv=document.createElement('canvas');cv.width=800;cv.height=450;cv.getContext('2d').fillRect(0,0,10,10);const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg')),recs=[];
+    for(const d of [2,4,6,8,10]){const R=v47Region(S[d-1]),names=(V47_PLACES[R]||[]).map(x=>x[0]).slice(0,4);names.forEach((n,i)=>recs.push({id:`t11p${d}${i}`,sp:v43name(n),name:n,region:R,day:d,kind:'photo',t:'x',taken:'',w:800,h:450,blob:bl,fav:false}));
+      recs.push({id:'t11m'+d,sp:'',name:'',region:R,day:d,kind:'mood',t:'x',taken:'',w:800,h:450,blob:bl})}
+    await v84Write(st=>recs.forEach(r=>st.put(r)));await v84Load();
+    const plan=v85Plan(),full=v85Segments(plan,true),short=v85Short(plan,true),spS=short.filter(x=>x.k==='sp');
+    if(!short.length||spS.length!==Math.min(20,plan.days.filter(d=>d.items.some(i=>i.still||i.clips.length)).length)||spS.length<5||v85Seconds(short)>=v85Seconds(full)||short[0].k!=='intro'||!short.some(x=>x.k==='end'))bad.push('korte versie: '+short.map(x=>x.k).join(',')+' '+v85Seconds(short)+'/'+v85Seconds(full));
+    if(new Set(spS.map(x=>x.hud.split(' · ')[0])).size!==spS.length)bad.push('korte versie: niet 1 dier per dag');
+    V85.SCALE=.05;try{const out=await v85Make({proef:true,disk:false,portrait:true,short:true});const vid=document.createElement('video');vid.muted=true;vid.src=URL.createObjectURL(out.blob);
+      await new Promise(r=>{vid.onloadedmetadata=r;vid.onerror=r;setTimeout(r,6000)});if(vid.videoWidth!==1080||vid.videoHeight!==1920)bad.push('staand formaat: '+vid.videoWidth+'x'+vid.videoHeight)}
+    catch(e){bad.push('staande korte video: '+e.message)}V85.SCALE=1;
+    if(V85.W!==1920||V85.H!==1080)bad.push('formaat niet hersteld na staande video');
+    v85Start();if(!document.querySelector('#v85Gen [data-o="short"]')||!document.querySelector('#v85Gen [data-f="port"]'))bad.push('keuze versie/formaat ontbreekt');v85Close();
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();return bad});v.forEach(x=>errs.push(x))}
   /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
   {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());
