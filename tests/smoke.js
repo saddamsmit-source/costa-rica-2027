@@ -549,6 +549,23 @@ const {chromium}=require('playwright');const path=require('path');
     wl2Open(names[0],R);if(!/Onscherp/.test(document.querySelector('#wl2Sheet .v84-own')?.textContent||''))bad.push('waarschuwing Onscherp niet zichtbaar');wl2Close();
     V85.SCALE=.06;try{const o=await v85Make({proef:true,disk:false});if(!o.blob.size)bad.push('video v9 leeg');const o2=await v85Make({proef:true,disk:false,short:true,portrait:true});if(!o2.blob.size)bad.push('korte staande v9 leeg')}catch(e){bad.push('video v9: '+e.message)}V85.SCALE=1;
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();tab='home';render();return bad});v.forEach(x=>errs.push(x))}
+  /* v9.1: pictogrammen, inzoomende kaart, eigen titel en namen, dagvoorbeeld */
+  {const v=await p.evaluate(async()=>{const bad=[];await v85LoadIcons();if(!V85_ICO['Vogels|m']||!V85_ICO['Zoogdieren|s'])bad.push('pictogrammen niet geladen');
+    const cv=document.createElement('canvas');cv.width=1600;cv.height=1000;const g=cv.getContext('2d');g.fillStyle='#486';g.fillRect(0,0,1600,1000);for(let i=0;i<6000;i++){g.fillStyle=i%2?'#000':'#fff';g.fillRect(Math.random()*1600,Math.random()*1000,3,3)}
+    const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg',.85)),R=v47Region(S[5]),names=(V47_PLACES[R]||[]).map(x=>x[0]).slice(0,4),recs=[];
+    names.forEach((n,i)=>{recs.push({id:'t91p'+i,sp:v43name(n),name:n,region:R,day:6,kind:'photo',t:'x',taken:`2027-02-13T0${i+6}:00:00`,w:1600,h:1000,sharp:900,lum:.4,blob:bl,fav:false});v52Set(n,R,'seen',true)});
+    await v84Write(st=>recs.forEach(r=>st.put(r)));await v84Load();
+    const keep=state.v9Video;state.v9Video={title:'Onze reis',names:'Kevin & Sam'};let segs=v85Segments(v85Plan(),false);const intro=segs.find(x=>x.k==='intro'),cr=segs.find(x=>x.k==='credits');
+    if(intro.title!=='Onze reis'||!/Kevin & Sam/.test(intro.label)||cr?.by!=='Kevin & Sam')bad.push('titel/namen: '+JSON.stringify([intro.title,intro.label,cr?.by]));
+    state.v9Video=keep;segs=v85Segments(v85Plan(),false);if(segs.find(x=>x.k==='intro').title!=='Costa Rica 2027')bad.push('standaardtitel');
+    if(!segs.filter(x=>x.k==='sp').every(x=>x.cat))bad.push('groep ontbreekt op soortdia');
+    v85Start();if(!document.querySelector('#v85Gen [data-v9v="title"]')||!document.querySelector('#v85Gen [data-v9v="names"]'))bad.push('velden titel/namen ontbreken');v85Close();
+    tab='days';currentDay=6;daySection='overview';render();const b=document.querySelector('[data-v9-prev="6"]');if(!b)bad.push('knop dagvoorbeeld ontbreekt');else{b.click();await new Promise(r=>setTimeout(r,1800));
+      const c=document.querySelector('#v9Prev canvas');if(!c)bad.push('dagvoorbeeld opent niet');else{const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let lit=0;for(let i=0;i<d.length;i+=4000)if(d[i]+d[i+1]+d[i+2]>60)lit++;if(lit<20)bad.push('dagvoorbeeld toont niets')}
+      v9PrevClose();if(document.getElementById('v9Prev'))bad.push('dagvoorbeeld sluit niet')}
+    daySection='wildlife';render();if(!document.querySelector('.v85-daysel [data-v9-prev="6"]'))bad.push('dagvoorbeeld ontbreekt in "In de reisvideo"');
+    V85.SCALE=.06;try{const o=await v85Make({proef:true,disk:false});if(!o.blob.size)bad.push('video v9.1 leeg')}catch(e){bad.push('video v9.1: '+e.message)}V85.SCALE=1;
+    await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();tab='home';render();return bad});v.forEach(x=>errs.push(x))}
   /* v8.14: kleuren en kansschaal samen op de soortkaarten */
   {const r=await p.evaluate(()=>{tab='days';currentDay=6;daySection='wildlife';v47Filter='Alle';render();const cards=[...document.querySelectorAll('.ds-sp')];return {n:cards.length,tags:cards.filter(c=>c.querySelector('.v88-card .v88-dot')).length,chance:cards.filter(c=>c.querySelector('.ds-chance')).length}});
    if(!r.n||r.tags<r.n*.8||!r.chance)errs.push('soortkaarten: kleuren en kansschaal samen: '+JSON.stringify(r))}

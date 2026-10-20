@@ -18,3 +18,7 @@
 /* v9 · kwaliteitswaarschuwing op foto's */
 .v9-q{position:absolute;left:4px;top:52px;max-width:calc(100% - 8px);padding:2px 7px;border-radius:8px;background:#B4501E;color:#fff;font-size:11px;font-weight:700;line-height:1.35;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:1}
 .v815-ph .v9-q{top:4px}
+/* v9.1 · titel/namen in keuzevenster, dagvoorbeeld */
+.v9-titel{display:grid;gap:8px;margin:6px 0 12px}.v9-titel label{display:grid;gap:3px}.v9-titel .field{width:100%;min-height:44px;box-sizing:border-box}
+.v9-prev .v85-box{max-width:min(960px,calc(100vw - 24px))}.v9-cv{width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;background:#000;display:block;margin:8px 0}
+.v9-prevbtn{width:100%;margin-top:10px}

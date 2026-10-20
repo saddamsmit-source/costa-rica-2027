@@ -12,6 +12,9 @@ const V85={W:1920,H:1080,FPS:30,BR:8_000_000,FADE:.5,LIB:'js/vendor/mp4-muxer-5.
 const V85_FONT="'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif";
 const V85_CAT={Vogels:['Vogel','vogel','vogels'],Zoogdieren:['Zoogdier','zoogdier','zoogdieren'],Reptielen:['Reptiel','reptiel','reptielen'],'Amfibieën':['Amfibie','amfibie','amfibieën'],Zeeleven:['Zeeleven','zeedier','zeedieren']};
 const V85_LAST=S[S.length-1].date;
+/* v9.1 · eigen titel en namen (state.v9Video) */
+const v85Title=()=>((state.v9Video||{}).title||'').trim()||'Costa Rica 2027';
+const v85Names=()=>((state.v9Video||{}).names||'').trim();
 const v85Pad=n=>String(n).padStart(2,'0');
 const v85Iso=d=>`${d.getFullYear()}-${v85Pad(d.getMonth()+1)}-${v85Pad(d.getDate())}`;
 /* lokale datum van een tijdstempel: EXIF-tijd is al lokaal (zonder zone), r.t is UTC */
@@ -93,11 +96,11 @@ const V85_T={hl:4.5,solo:3,ex:3,note:2,pair:4.5,col2:4.5,col3:5,col4:5.5,mood:3,
 const v85Hash=s=>{let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
 /* gedeelde velden van een soortdia */
 function v85SpBase(it,day){const i=v47Info(it.name),r=wl2(it.name)||{},c=v85Cat(i.cat),time=v85Time(it.when);
-  return {k:'sp',sp:it.sp,day:it.day,own:it.own,repeat:it.repeat,hl:!!it.hl,chance:it.chance||0,hud:`Dag ${it.day} · ${it.region}`,label:it.hl?`Hoogtepunt van de dag · ${c[0]}`:it.repeat?`${c[0]} · opnieuw gezien`:c[0],title:i.nl,en:i.nl!==i.en?i.en:'',sci:r.s||'',
+  return {k:'sp',cat:i.cat,sp:it.sp,day:it.day,own:it.own,repeat:it.repeat,hl:!!it.hl,chance:it.chance||0,hud:`Dag ${it.day} · ${it.region}`,label:it.hl?`Hoogtepunt van de dag · ${c[0]}`:it.repeat?`${c[0]} · opnieuw gezien`:c[0],title:i.nl,en:i.nl!==i.en?i.en:'',sci:r.s||'',
     meta:[it.region,new Date((S[it.day-1]||day||S[0]).date+'T12:00').toLocaleDateString('nl-NL',{weekday:'short',day:'numeric',month:'short'}),time].filter(Boolean).join(' · '),
     credit:it.own?'Eigen foto':(it.photos.length?'Voorbeeldfoto · '+it.credit:'Geen foto')}}
 /* paneel voor een combinatie */
-const v85PanelSp=it=>{const b=v85SpBase(it);return {src:it.photos[0]||it.still||'',title:b.title,sci:b.sci,en:b.en,label:b.label,own:it.own,credit:it.own?'':'Voorbeeldfoto · '+(it.credit||'').split(' · ')[0]}};
+const v85PanelSp=it=>{const b=v85SpBase(it);return {cat:b.cat,src:it.photos[0]||it.still||'',title:b.title,sci:b.sci,en:b.en,label:b.label,own:it.own,credit:it.own?'':'Voorbeeldfoto · '+(it.credit||'').split(' · ')[0]}};
 const v85PanelMood=(m,region)=>({src:m.url,title:m.label||region,sci:'',label:'Sfeer',own:true,mood:true,credit:''});
 /* sfeerfoto's in groepen van 3–4 (rest 1–2 apart) */
 function v85Groups(arr){const r=arr.length;if(r<=2)return r?[arr]:[];const g=Math.ceil(r/4),base=Math.floor(r/g),extra=r%g,out=[];let p=0;
@@ -111,7 +114,7 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
   /* opmaak: eigen liggende foto vooral schermvullend, staand gesplitst of ingelijst; nooit drie keer hetzelfde achter elkaar */
   const pickLay=(it,key)=>{let opts;if(!it.own)opts=['frame','split'];else if(it.aspect&&it.aspect<1.1)opts=['split','frame','split'];else opts=['full','full','split','full','frame'];
     let l=opts[v85Hash(key)%opts.length];if(lays.length>=2&&lays[lays.length-1]===l&&lays[lays.length-2]===l)l=opts.find(x=>x!==l)||l;lays.push(l);return l};
-  const segs=[{k:'intro',dur:5,trans:'black',src:firstMood||first?.still||'',label:proef?'Proefvideo':'Reisvideo',title:'Costa Rica 2027',
+  const segs=[{k:'intro',dur:5,trans:'black',src:firstMood||first?.still||'',label:proef?'Proefvideo':v85Names()?`Een reis van ${v85Names()}`:'Reisvideo',title:v85Title(),
     sub:`${new Date(S[0].date+'T12:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long'})} – ${new Date(V85_LAST+'T12:00').toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'})}`,
     meta:`${nSp} ${nSp===1?'soort':'soorten'} · ${regions.length} ${regions.length===1?'bestemming':'bestemmingen'}`}];
   days.forEach(d=>{const day=S[d.day-1]||S[0],region=v47Region(day),hud=`Dag ${d.day} · ${region}`,nOwn=d.items.filter(i=>i.own).length;
@@ -165,9 +168,9 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
   if(uniq.length){const groups=cs.map(([c])=>({cat:c,label:v85Cat(c)[2].replace(/^./,x=>x.toUpperCase()),names:uniq.filter(i=>v47Info(i.name).cat===c).map(i=>({nl:v47Info(i.name).nl,own:uniq.some(u=>u.sp===i.sp&&u.own)||items.some(x=>x.sp===i.sp&&x.own)})).sort((a,b)=>a.nl.localeCompare(b.nl,'nl'))}));
     const credits=[...new Set(items.filter(i=>!i.own&&i.credit).map(i=>`${v47Info(i.name).nl} · ${i.credit}`))].sort((a,b)=>a.localeCompare(b,'nl'));
     const height=groups.reduce((h,g)=>h+90+Math.ceil(g.names.length/3)*50,0)+(credits.length?110+credits.length*34:0)+260;
-    segs.push({k:'credits',dur:Math.min(32,Math.max(8,(height+V85.H)/150)),trans:'fade',groups,credits,height,src:'',proef});
+    const by=v85Names();segs.push({k:'credits',dur:Math.min(32,Math.max(8,(height+(by?160:0)+V85.H)/150)),trans:'fade',groups,credits,height:height+(by?160:0),by,src:'',proef});
     const tiles=[...new Map(items.filter(i=>i.still).map(i=>[i.sp,i])).values()].sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0))).slice(0,60).map(i=>i.own?i.still:(typeof wl2Thumb==='function'&&wl2Thumb(i.name))||i.still);
-    if(tiles.length>=4)segs.push({k:'mosaic',dur:6,trans:'fade',srcs:tiles,title:'Costa Rica 2027',sub:segs[0].sub})}
+    if(tiles.length>=4)segs.push({k:'mosaic',dur:6,trans:'fade',srcs:tiles,title:v85Title(),sub:v85Names()?`${segs[0].sub} · ${v85Names()}`:segs[0].sub})}
   /* v9 · openingsscène: 4–6 beste eigen beelden in snelle wissels vóór de titel (hoogtepunten eerst) */
   const cold=v85ColdSrcs(items);if(cold.length>=3){segs.unshift({k:'cold',dur:cold.length*.5,srcs:cold,trans:'black'});segs[1].trans='dip'}
   return v85Grid(segs)}
@@ -182,7 +185,7 @@ function v85Short(plan,proef){const full=v85Segments(plan,proef);if(!full.length
   let picks=plan.days.map(d=>[...d.items].filter(i=>i.still||i.clips.length).sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0)))[0]).filter(Boolean);
   if(picks.length>20)picks=[...picks].sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0))).slice(0,20).sort((a,b)=>a.day-b.day);
   const ms=plan.days.filter(d=>d.moods.length).map(d=>d.moods[0]).slice(0,3),moods=ms.map(m=>m.url);
-  const out=cold?[cold,intro]:[intro];if(moods.length>=2)out.push({k:'collage',i:0,lay:moods.length===3?'trio':'duo',srcs:moods,labels:ms.map(m=>m.label),dur:4,trans:'fade',hud:'Costa Rica 2027',label:'Sfeer',title:'Costa Rica',meta:''});
+  const out=cold?[cold,intro]:[intro];if(moods.length>=2)out.push({k:'collage',i:0,lay:moods.length===3?'trio':'duo',srcs:moods,labels:ms.map(m=>m.label),dur:4,trans:'fade',hud:'',label:'Sfeer',title:'Costa Rica',meta:''});
   let clips=0,n=0;const tr=['fade','cut','push','fade'];
   picks.forEach((it,j)=>{const src=it.photos[0]||it.still;if(!src&&!it.clips.length)return;n++;
     const base={...v85SpBase(it),n,of:picks.length,i:j,note:'',dur:3.2,trans:tr[j%tr.length],src,lay:it.own&&!(it.aspect&&it.aspect<1.1)?'full':'frame',cap:!it.own};
@@ -254,6 +257,15 @@ function v85Map(ctx,x,y,h,t,cur,o={}){const fx=v85Fx();if(!fx.map||typeof v51XY!
   if(!o.all&&grow>=pts.length-1.001){const p=pts[pts.length-1],ph=(t*1.1)%1;ctx.strokeStyle=V85_C.mint;ctx.lineWidth=3;ctx.globalAlpha=k*(1-ph);ctx.beginPath();ctx.arc(p[0],p[1],12+ph*34,0,Math.PI*2);ctx.stroke();
     ctx.globalAlpha=k;const lbl=V51_PT[V51_STOPS[cur][0]]?.[2]||V51_STOPS[cur][0];v85Txt(ctx,lbl,p[0]+(p[0]>x+h*.6?-24:24),p[1]+10,{size:30,weight:700,align:p[0]>x+h*.6?'right':'left',k:v85At(t,(o.start||0)+1.2,.4),rise:10})}
   ctx.restore()}
+/* v9.1 · kaart: eerst heel Costa Rica met de route tot hier, daarna zoomt de camera in op de huidige stop */
+function v85MapZoom(ctx,x,y,h,t,cur,o={}){if(typeof V51_MAP==='undefined'||typeof v51XY!=='function'){v85Map(ctx,x,y,h,t,cur,o);return}
+  const w=h*V51_MAP.W/V51_MAP.H,s=h/V51_MAP.H,pt=V51_PT[V51_STOPS[cur]?.[0]];if(!pt){v85Map(ctx,x,y,h,t,cur,o);return}
+  const [a,b]=v51XY(pt[0],pt[1]),Sx=x+a*s,Sy=y+b*s,e=v85E(v85At(t,(o.start||0)+1.1,1.5)),z=1+1.15*e,Bx=x+w/2,By=y+h/2,Cx=Sx+(Bx-Sx)*e,Cy=Sy+(By-Sy)*e;
+  /* in een eigen laag tekenen en de randen zacht laten weglopen (geen harde uitsnede) */
+  const M=60,bw=Math.round(w+2*M),bh=Math.round(h+2*M);let L=v85MapZoom.L;if(!L||L.width!==bw||L.height!==bh){L=v85MapZoom.L=document.createElement('canvas');L.width=bw;L.height=bh}
+  const lx=L.getContext('2d');lx.setTransform(1,0,0,1,0,0);lx.globalCompositeOperation='source-over';lx.clearRect(0,0,bw,bh);lx.translate(M-x,M-y);v85Map(lx,Cx-(Sx-x)*z,Cy-(Sy-y)*z,h*z,t,cur,o);lx.setTransform(1,0,0,1,0,0);
+  if(e>0){lx.globalCompositeOperation='destination-in';const g=lx.createRadialGradient(bw/2,bh/2,Math.min(bw,bh)*(.5-.18*e),bw/2,bh/2,Math.max(bw,bh)*(.75-.2*e));g.addColorStop(0,'rgba(0,0,0,1)');g.addColorStop(1,'rgba(0,0,0,0)');lx.fillStyle=g;lx.fillRect(0,0,bw,bh);lx.globalCompositeOperation='source-over'}
+  ctx.drawImage(L,x-M,y-M)}
 /* vergrote, vage achtergrond één keer per dia maken (opschalen per frame is duur) */
 function v85BlurBig(res){const {W,H}=V85;if(!res.big&&res.blur){const c=document.createElement('canvas');c.width=W+120;c.height=H+80;const x=c.getContext('2d',{alpha:false});x.imageSmoothingQuality='high';x.drawImage(res.blur,0,0,W+120,H+80);res.big=c}return res.big}
 function v85Bg(ctx,res,t,dark){const {W,H}=V85;
@@ -265,8 +277,8 @@ const v85LB=()=>v85P()?0:54;
 function v85Bars(ctx){const b=v85LB();if(!b)return;ctx.fillStyle='#000';ctx.fillRect(0,0,V85.W,b);ctx.fillRect(0,V85.H-b,V85.W,b)}
 /* HUD: merk en dag links, teller rechts */
 function v85Hud(ctx,seg,t){const {W}=V85,k=v85At(t,.15,.5);if(k<=0)return;const y=v85LB()?Math.round(v85LB()/2)+8:70;
-  v85Font(ctx,20,800);v85Sp(ctx,6);const bw=ctx.measureText('COSTA RICA 2027').width;v85Sp(ctx,0);
-  v85Txt(ctx,'Costa Rica 2027',64,y,{size:20,weight:800,spacing:6,upper:true,color:'rgba(255,255,255,.92)',k,rise:0,shadow:!v85LB()});
+  v85Font(ctx,20,800);v85Sp(ctx,6);const bw=Math.min(W*.4,ctx.measureText(v85Title().toUpperCase()).width);v85Sp(ctx,0);
+  v85Txt(ctx,v85Title(),64,y,{size:20,weight:800,spacing:6,upper:true,maxW:W*.4,color:'rgba(255,255,255,.92)',k,rise:0,shadow:!v85LB()});
   const cnt=seg.n?`${seg.n} / ${seg.of}`:'';v85Font(ctx,22,700);const cw=cnt?ctx.measureText(cnt).width+40:0;
   if(seg.hud){ctx.save();ctx.globalAlpha=v85E(k)*.45;ctx.fillStyle='#fff';ctx.fillRect(64+bw+20,y-17,1.5,22);ctx.restore();
     v85Txt(ctx,seg.hud,64+bw+42,y,{size:20,weight:600,spacing:3,upper:true,color:'rgba(255,255,255,.72)',k,rise:0,maxW:W-64-bw-42-64-cw,shadow:!v85LB()})}
@@ -278,7 +290,10 @@ function v85Lower(ctx,seg,t,o={}){const {W,H}=V85,P=v85P(),ts=o.size??(P?64:74),
   const sub=!!(seg.sci||seg.en),hasMeta=!!seg.meta,lh=Math.round(42*f),hl=!!seg.hl&&seg.chance>0,acc=seg.hl?V85_C.sun:V85_C.mint;
   const h=Math.round(30*f)+ts+(sub?lh:0)+(hasMeta?lh:0)+(hl?lh:0)+note.length*lh;let y=(o.bottom??(H-v85LB()-(P?170:64)))-h;
   const k0=v85E(v85At(t,.05,.6));if(k0>0){ctx.save();ctx.fillStyle=acc;const lw=Math.round((seg.hl?110:64)*f)*k0;ctx.fillRect(right?ax-lw:ax,y-Math.round(8*f),lw,Math.max(3,Math.round(4*f)));ctx.restore()}
-  y+=Math.round(26*f);if(seg.label)v85Txt(ctx,seg.label,ax,y,{size:Math.round(21*f),weight:800,spacing:Math.round(5*f),upper:true,color:acc,align:al,k:v85At(t,.15,.5),rise:10,shadow:true,maxW});
+  y+=Math.round(26*f);const ico=seg.cat&&V85_ICO[seg.cat+'|'+(seg.hl?'s':'m')],isz=Math.round(34*f),ik=v85E(v85At(t,.15,.5));let lx=ax;
+  if(ico&&ik>0){v85Font(ctx,Math.round(21*f),800);v85Sp(ctx,Math.round(5*f));const lw0=Math.min(maxW,ctx.measureText(String(seg.label||'').toUpperCase()).width);v85Sp(ctx,0);
+    const ix=right?ax-lw0-isz-Math.round(10*f):ax;ctx.save();ctx.globalAlpha=ik;ctx.shadowColor='rgba(0,0,0,.45)';ctx.shadowBlur=10;ctx.drawImage(ico,ix,y-isz+Math.round(6*f),isz,isz);ctx.restore();if(!right)lx=ax+isz+Math.round(10*f)}
+  if(seg.label)v85Txt(ctx,seg.label,lx,y,{size:Math.round(21*f),weight:800,spacing:Math.round(5*f),upper:true,color:acc,align:al,k:v85At(t,.15,.5),rise:10,shadow:true,maxW:maxW-(ico?isz+10:0)});
   y+=Math.round(ts*.98);v85Txt(ctx,seg.title,ax,y,{size:ts,weight:800,align:al,maxW,shrink:true,k:v85At(t,.25,.5),rise:18,shadow:true});
   if(sub){y+=lh;const kk=v85At(t,.4,.5),sz=Math.round(30*f);
     if(right){const w=v85Txt(ctx,seg.en,ax,y,{size:sz,weight:500,align:'right',color:'rgba(255,255,255,.9)',k:kk,shadow:true,maxW:maxW*.5});v85Txt(ctx,seg.sci+(seg.en?' · ':''),ax-w,y,{size:sz,weight:500,italic:true,align:'right',color:V85_C.mint,k:kk,shadow:true,maxW:maxW-w})}
@@ -290,6 +305,11 @@ function v85Lower(ctx,seg,t,o={}){const {W,H}=V85,P=v85P(),ts=o.size??(P?64:74),
     const lbl=(typeof V80_CH!=='undefined'&&V80_CH[seg.chance])||'';v85Txt(ctx,lbl,right?x0-Math.round(16*f):x0+tot+Math.round(16*f),y,{size:Math.round(26*f),weight:700,align:al,color:V85_C.sun,k:kk,rise:0,shadow:true})}
   note.forEach((l,i)=>{y+=lh;v85Txt(ctx,l,ax,y,{size:Math.round(30*f),weight:500,italic:true,align:al,k:v85At(t,.7+i*.12,.5),shadow:true})})}
 function v85Credit(ctx,txt,t){if(!txt)return;const {W,H}=V85,lb=v85LB();v85Txt(ctx,txt,W-64,lb?H-lb/2+7:H-34,{size:lb?18:20,weight:500,color:'rgba(255,255,255,.62)',align:'right',maxW:W*.55,k:v85At(t,.6,.5),rise:0,shadow:!lb})}
+/* v9.1 · pictogram per groep (zelfde lijniconen als in de app), één keer als beeld geladen */
+const V85_ICO={};
+async function v85LoadIcons(){if(typeof V47_CAT_ICON==='undefined')return;for(const [c,svg] of Object.entries(V47_CAT_ICON))for(const [k,col] of [['m',V85_C.mint],['s',V85_C.sun]]){const key=c+'|'+k;if(V85_ICO[key])continue;
+  const im=new Image();im.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="${col}" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${svg}</svg>`);
+  try{await im.decode();V85_ICO[key]=im}catch(e){}}}
 function v85Shade(ctx,x,y,w,h,from=.45,a=.7){const g=ctx.createLinearGradient(0,y+h*from,0,y+h);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,`rgba(0,0,0,${a})`);ctx.fillStyle=g;ctx.fillRect(x,y+h*from,w,h*(1-from))}
 /* ---------- v8.10: onderwerp, kleurlook, camerabewegingen ---------- */
 /* onderwerp vinden: waar de foto het scherpst is (bij wildlife: het dier; de achtergrond is vaag) */
@@ -383,6 +403,7 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
       y+=Math.ceil(g.names.length/3)*50+30});
     if(seg.credits.length){y+=40;if(y>-80&&y<H+80)v85Txt(ctx,"Voorbeeldfoto's",W/2,y,{size:28,weight:800,spacing:6,upper:true,color:V85_C.mint,align:'center',rise:0});y+=60;
       seg.credits.forEach(c=>{if(y>-40&&y<H+40)v85Txt(ctx,c,W/2,y,{size:22,weight:500,align:'center',color:'rgba(255,255,255,.62)',rise:0,maxW:W-240});y+=34})}
+    if(seg.by){y+=60;if(y>-80&&y<H+80){v85Txt(ctx,'Gefilmd en gefotografeerd door',W/2,y,{size:28,weight:800,spacing:6,upper:true,color:V85_C.mint,align:'center',rise:0});v85Txt(ctx,seg.by,W/2,y+64,{size:44,weight:700,align:'center',rise:0,maxW:W-200})}}
     const ft=ctx.createLinearGradient(0,0,0,200);ft.addColorStop(0,'rgba(6,22,15,1)');ft.addColorStop(1,'rgba(6,22,15,0)');ctx.fillStyle=ft;ctx.fillRect(0,0,W,200);
     const fb=ctx.createLinearGradient(0,H-200,0,H);fb.addColorStop(0,'rgba(6,22,15,0)');fb.addColorStop(1,'rgba(6,22,15,1)');ctx.fillStyle=fb;ctx.fillRect(0,H-200,W,200);
     v85Txt(ctx,'Vet: met eigen foto of video',W/2,H-40,{size:20,weight:500,align:'center',color:'rgba(255,255,255,.55)',rise:0});return}
@@ -402,7 +423,7 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
     v85Bars(ctx);v85Hud(ctx,seg,t);v85Lower(ctx,{label:seg.label,title:seg.title||'',meta:seg.meta},t,{size:v85P()?60:66});return}
   /* v8.15 · hoofdstukkaart: groot dagnummer, regio, datum, overnachting, kaart met de route tot hier */
   if(seg.k==='day'){v85Bg(ctx,res,t,.8);
-    const P=v85P(),ar=(V51_MAP?.W||600)/(V51_MAP?.H||575),mapH=P?Math.round(H*.36):780,mx=P?Math.round((W-mapH*ar)/2):W-mapH*ar-110,my=P?Math.round(H*.56):(H-mapH)/2+10;v85Map(ctx,mx,my,mapH,t,seg.stop??0,{start:.3});
+    const P=v85P(),ar=(V51_MAP?.W||600)/(V51_MAP?.H||575),mapH=P?Math.round(H*.36):780,mx=P?Math.round((W-mapH*ar)/2):W-mapH*ar-110,my=P?Math.round(H*.56):(H-mapH)/2+10;v85MapZoom(ctx,mx,my,mapH,t,seg.stop??0,{start:.3});
     const X=P?84:150,tmax=P?W-2*X:mx-X-60,top=P?Math.round(H*.13):Math.round(H*.2);
     /* groot dagnummer met "van 23" ernaast */
     const num=v85Pad(seg.day),nk=v85At(t,.1,.6);v85Font(ctx,P?200:230,800);const nw=ctx.measureText(num).width,ny=top+(P?170:196);
@@ -528,7 +549,7 @@ async function v85MakeCore(opts={}){const job=opts.job||{},prog=opts.onProgress|
   const segs=opts.segs||(opts.short?v85Short(v85Plan(),proef):v85Segments(v85Plan(),proef));if(!segs.length)throw new Error('Nog niets om te tonen.');
   const {W,H,FPS}=V85,scale=opts.scale||V85.SCALE||1;segs.forEach(s=>s.frames=Math.max(2,Math.round(s.dur*scale*FPS)));
   const total=segs.reduce((n,s)=>n+s.frames,0);
-  try{await document.fonts.load(`800 80px ${V85_FONT}`);await document.fonts.load(`500 30px ${V85_FONT}`)}catch(e){}
+  try{await document.fonts.load(`800 80px ${V85_FONT}`);await document.fonts.load(`500 30px ${V85_FONT}`)}catch(e){}await v85LoadIcons();
   const cv=document.createElement('canvas');cv.width=W;cv.height=H;const ctx=cv.getContext('2d',{alpha:false});
   const prev=document.createElement('canvas');prev.width=W;prev.height=H;const pctx=prev.getContext('2d',{alpha:false});
   const work=document.createElement('canvas');work.width=W;work.height=H;const wctx=work.getContext('2d',{alpha:false});
@@ -607,10 +628,12 @@ function v85Close(){if(v85Job)v85Job.cancel=true;const el=document.getElementByI
 const V85_OPT={short:false,fmt:'land'};
 function v85Start(){v85Close();const proef=false,plan=v85Plan(),el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
   const len=sh=>{try{return v85Dur(v85Seconds(sh?v85Short(plan,proef):v85Segments(plan,proef)))}catch(e){return ''}},lf=len(false),ls=len(true);
-  const draw=()=>{el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Welke video?</h3>
+  const draw=()=>{const vv=state.v9Video||{};el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Welke video?</h3>
+    <div class="v9-titel"><label><span class="ds-meta">Titel</span><input class="field" data-v9v="title" maxlength="40" value="${esc(vv.title||'')}" placeholder="Costa Rica 2027"></label><label><span class="ds-meta">Namen (in de opening en aftiteling)</span><input class="field" data-v9v="names" maxlength="60" value="${esc(vv.names||'')}" placeholder="Bijv. Kevin &amp; …"></label></div>
     <div class="v85-opt" role="radiogroup" aria-label="Versie"><button data-o="full" aria-pressed="${!V85_OPT.short}" class="${V85_OPT.short?'':'on'}"><b>Volledig</b><small>alle dagen · ca. ${lf}</small></button><button data-o="short" aria-pressed="${V85_OPT.short}" class="${V85_OPT.short?'on':''}"><b>Kort</b><small>hoogtepunten · ca. ${ls}</small></button></div>
     <div class="v85-opt three" role="radiogroup" aria-label="Formaat">${[['land','Liggend 16:9','tv, laptop'],['port','Staand 9:16','telefoon, status'],['both','Beide','16:9 én 9:16']].map(([k,l,sub])=>`<button data-f="${k}" aria-pressed="${V85_OPT.fmt===k}" class="${V85_OPT.fmt===k?'on':''}"><b>${l}</b><small>${sub}</small></button>`).join('')}</div>
     <div class="v85-btns"><button class="ds-btn primary" data-v85="go">Video maken</button><button class="ds-btn secondary" data-v85="close">Annuleren</button></div></div>`;
+    el.querySelectorAll('[data-v9v]').forEach(inp=>inp.oninput=()=>{state.v9Video={...(state.v9Video||{}),[inp.dataset.v9v]:inp.value.slice(0,60)};save()});
     el.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{V85_OPT.short=b.dataset.o==='short';draw()});el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{V85_OPT.fmt=b.dataset.f;draw()});
     el.querySelector('[data-v85="close"]').onclick=v85Close;el.querySelector('[data-v85="go"]').onclick=()=>{el.remove();v85Run({...V85_OPT})}};
   draw();document.body.append(el);document.body.classList.add('wl2-lock')}
