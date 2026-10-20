@@ -91,7 +91,7 @@ function wl2BindSheet(ov){const {name,region}=wl2Cur;
     const ta=box.querySelector('[data-wl2-note]');ta.oninput=()=>{const id=v43name(name);state.v44Log[id]??={};const ex=state.v44Log[id][pl]||{};state.v44Log[id][pl]={date:ex.date||(rec.t?rec.t.slice(0,10):''),note:ta.value.slice(0,1000)};save()};
     box.querySelectorAll('[data-wl2-loc]').forEach(b=>b.onclick=()=>{const lab=box.querySelector('.wl2-loc');
       if(b.dataset.wl2Loc==='stop'){const p=V51_PT[pl];if(!p){lab.textContent='Plek onbekend';return}rec.loc={lat:p[0],lon:p[1],acc:null,manual:true,label:p[2]};save();lab.innerHTML=`${dsI('pin',14)}plek aangepast: ${esc(p[2])}`}
-      else{if(!navigator.geolocation){lab.textContent='GPS niet beschikbaar';return}lab.textContent='Positie zoeken…';navigator.geolocation.getCurrentPosition(p=>{rec.loc={lat:+p.coords.latitude.toFixed(5),lon:+p.coords.longitude.toFixed(5),acc:Math.round(p.coords.accuracy),manual:true,label:'huidige positie ± '+Math.round(p.coords.accuracy)+' m'};save();lab.innerHTML=`${dsI('pin',14)}plek aangepast: ${esc(rec.loc.label)}`},e=>{lab.textContent='Geen positie: '+e.message},{enableHighAccuracy:true,timeout:20000,maximumAge:0})}})});
+      else{if(!navigator.geolocation){lab.textContent='GPS niet beschikbaar';return}lab.textContent='Positie zoeken…';navigator.geolocation.getCurrentPosition(p=>{rec.loc={lat:+p.coords.latitude.toFixed(5),lon:+p.coords.longitude.toFixed(5),acc:Math.round(p.coords.accuracy),manual:true,label:'huidige positie ± '+Math.round(p.coords.accuracy)+' m'};save();lab.innerHTML=`${dsI('pin',14)}plek aangepast: ${esc(rec.loc.label)}`},e=>{lab.textContent=v10Why(e,'gps')},{enableHighAccuracy:true,timeout:20000,maximumAge:0})}})});
 }
 
 /* ---------- inzoomen (knijpen, slepen, dubbeltik) ---------- */
@@ -143,7 +143,7 @@ async function wl2HdDownload(){if(wl2HdBusy)return;wl2HdBusy=true;const list=wl2
     const queue=[...list];const worker=async()=>{while(queue.length){const u=queue.shift();try{if(!(await c.match(u))){const r=await fetch(u,{cache:'no-store'});if(r.ok)await c.put(u,r);else fail++}}catch(e){fail++}done++;const b=document.querySelector('#wl2HdBar i'),s=document.getElementById('wl2HdState');if(b)b.style.width=Math.round(100*done/list.length)+'%';if(s)s.textContent=`${done} van ${list.length}…`}};
     await Promise.all([worker(),worker(),worker(),worker()]);
     const s=document.getElementById('wl2HdState');if(s)s.textContent=fail?`${list.length-fail} van ${list.length} gelukt; probeer de rest opnieuw`:`Alle ${list.length} foto's staan op deze telefoon`}
-  catch(e){if(st)st.textContent='Downloaden lukte niet: '+e.message}
+  catch(e){if(st)st.textContent=v10Why(e,'download')}
   wl2HdBusy=false;const g=document.getElementById('wl2HdGo');if(g)g.disabled=false;wl2HdRefresh()}
 const wl2PrevWild=renderWildlife;
 renderWildlife=function(){let h=wl2PrevWild();
@@ -175,6 +175,6 @@ const wl2PrevBind=bindExtras;
 bindExtras=function(){wl2PrevBind();wl2BindOpeners();
   const ex=document.getElementById('wl2Export');if(ex)ex.onclick=wl2Csv;
   const go=document.getElementById('wl2HdGo');if(go){go.onclick=wl2HdDownload;wl2HdRefresh()}
-  const del=document.getElementById('wl2HdDel');if(del)del.onclick=async()=>{if(!confirm('Foto\'s in hoge resolutie van deze telefoon verwijderen?'))return;try{await caches.delete(WL2_HD_CACHE)}catch(e){}render()}};
+  const del=document.getElementById('wl2HdDel');if(del)del.onclick=async()=>{if(!await v10Confirm({title:'Foto\'s in hoge resolutie verwijderen?',text:'Dit maakt ruimte vrij op deze telefoon. Je kunt ze later opnieuw downloaden, liefst via wifi.',ok:'Verwijderen',danger:true}))return;try{await caches.delete(WL2_HD_CACHE)}catch(e){}render()}};
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const z=document.querySelector('.wl2-zoom');if(z)z.remove();else if(document.getElementById('wl2Sheet'))wl2Close()}});
 render();

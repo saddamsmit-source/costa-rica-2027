@@ -13,6 +13,8 @@ jobs:
         with: {node-version: '20'}
       - run: npm i --no-save playwright@1.47.2 && npx playwright install --with-deps chromium
       - run: node tests/smoke.js
+      - run: node tests/v10.js
+      - run: node tests/sw-cache.js
   weer-api:
     runs-on: ubuntu-latest
     steps:

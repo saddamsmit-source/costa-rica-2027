@@ -57,4 +57,4 @@ function v815LblOpen(id){const p=V84.moods.find(x=>x.id===id);if(!p)return;v815L
   document.querySelectorAll('[data-v815-name]').forEach(inp=>inp.onchange=()=>{const d=+inp.dataset.v815Name,v=inp.value.trim().slice(0,60);if(v)state.v815Stay[d]=v;else delete state.v815Stay[d];save()});
   document.querySelectorAll('[data-v815-sadd]').forEach(inp=>inp.onchange=async()=>{const fs=[...inp.files];inp.value='';if(!fs.length)return;const m=document.querySelector('.v815-smsg');if(m)m.textContent='Foto verwerken…';
     try{const r=await v84AddMood(+inp.dataset.v815Sadd,fs,'stay');const y=scrollY;render();scrollTo(0,y);const m2=document.querySelector('.v815-smsg');if(m2&&r.skipped)m2.textContent=`${r.skipped} niet toegevoegd: maximaal ${V84_STAY} foto's van het verblijf per dag.`}
-    catch(e){const m2=document.querySelector('.v815-smsg');if(m2)m2.textContent='Toevoegen mislukt: '+e.message}})}}
+    catch(e){const m2=document.querySelector('.v815-smsg');if(m2)m2.textContent=v10Why(e,'foto')}})}}

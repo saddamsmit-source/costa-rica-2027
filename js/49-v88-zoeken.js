@@ -104,7 +104,7 @@ v52QuickOpen=function(){const day=currentDay||v48TripDay()||1,d=S[day-1],region=
   document.body.append(ov);const close=()=>{ov.remove();render()};ov.querySelector('#v52close').onclick=close;ov.onclick=e=>{if(e.target===ov)close()};
   const q=ov.querySelector('#v88q');let tm;q.oninput=()=>{clearTimeout(tm);tm=setTimeout(()=>{V88.f.q=q.value;V88.f.limit=60;ov.querySelector('.v88-list').innerHTML=v88Results(day,region);ov.querySelector('.v88-fbox').innerHTML=v88Filters();v88Bind(ov)},150)};
   ov.querySelector('#v88mood').onchange=async e=>{const fs=[...e.target.files];e.target.value='';if(!fs.length)return;v88Msg('Foto verwerken…');
-    try{const r=await v84AddMood(day,fs);v88Msg(r.added?`${r.added} sfeerfoto${r.added===1?'':"'s"} toegevoegd aan dag ${day}${r.skipped?`; ${r.skipped} niet (max. ${V84_MOOD} per dag)`:''}.`:`Al ${V84_MOOD} sfeerfoto's op dag ${day}.`)}catch(x){v88Msg('Toevoegen mislukt: '+x.message)}};
+    try{const r=await v84AddMood(day,fs);v88Msg(r.added?`${r.added} sfeerfoto${r.added===1?'':"'s"} toegevoegd aan dag ${day}${r.skipped?`; ${r.skipped} niet (max. ${V84_MOOD} per dag)`:''}.`:`Al ${V84_MOOD} sfeerfoto's op dag ${day}.`)}catch(x){v88Msg(v10Why(x,'foto'))}};
   v88Draw();setTimeout(()=>{if(matchMedia('(pointer:fine)').matches)q.focus()},50)};
 function v88Bind(ov){const day=+ov.dataset.day,region=ov.dataset.region,F=V88.f,redraw=()=>v88Draw();
   ov.querySelectorAll('[data-v88-grp]').forEach(b=>b.onclick=()=>{F.grp=b.dataset.v88Grp;F.limit=60;redraw()});
@@ -125,7 +125,7 @@ function v88Bind(ov){const day=+ov.dataset.day,region=ov.dataset.region,F=V88.f,
       const y=ov.querySelector('.v88-sheet').scrollTop;redraw();ov.querySelector('.v88-sheet').scrollTop=y};
     row.querySelector('[data-v88-photo]').onchange=async e=>{const fs=[...e.target.files];e.target.value='';if(!fs.length)return;v88Msg('Foto verwerken…');
       try{const r=await v84Add(n,region,fs,day);v88Msg(r.added?`${r.added} foto${r.added===1?'':"'s"} toegevoegd aan ${v47Info(n).nl} (dag ${day})${r.skipped?`; ${r.skipped} niet (max. ${V84_MAX} per dag)`:''}.`:`${v47Info(n).nl} heeft al ${V84_MAX} foto's op dag ${day}.`);
-        const y=ov.querySelector('.v88-sheet').scrollTop;redraw();ov.querySelector('.v88-sheet').scrollTop=y}catch(x){v88Msg('Toevoegen mislukt: '+x.message)}}})}
+        const y=ov.querySelector('.v88-sheet').scrollTop;redraw();ov.querySelector('.v88-sheet').scrollTop=y}catch(x){v88Msg(v10Why(x,'foto'))}}})}
 /* na het soortvenster de lijst bijwerken */
 {const prev=wl2Close;wl2Close=function(){const r=prev.apply(this,arguments);if(document.getElementById('v52quick'))v88Draw();return r}}
 

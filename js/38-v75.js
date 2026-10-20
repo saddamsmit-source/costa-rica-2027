@@ -33,17 +33,17 @@ function v75MergeState(cur,bak){const m=v75Merge(cur,bak);
   return m}
 const v75Seen=s=>Object.values(s?.v43Observations||{}).reduce((a,o)=>a+(Object.values(o.places||{}).some(r=>r.seen)?1:0),0);
 const v75When=t=>{const d=new Date(t);return isNaN(d)?'onbekende datum':d.toLocaleString('nl-NL',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})};
-async function v75Import(file){let v;
+async function v75Import(file,o={}){let v;
   try{v=JSON.parse(await file.text())}catch(e){alert('Dit bestand is geen leesbare back-up.');return}
   if(!v75Obj(v)||v.format!=='CR27_V2'||!v75Obj(v.state)){alert('Dit is geen back-up van deze app.');return}
-  if(!confirm(`Back-up van ${v75When(v.exportedAt)} importeren?\n\nDe back-up wordt samengevoegd met wat nu op deze telefoon staat; niets gaat verloren. Er wordt eerst een veiligheidskopie gemaakt die je via Meer › Back-up en herstel kunt terugzetten.`))return;
+  if(!o.yes&&!await v10Confirm({title:`Back-up van ${v75When(v.exportedAt)} terugzetten?`,text:'De back-up wordt samengevoegd met wat nu op deze telefoon staat; er gaat niets verloren. Eerst wordt een veiligheidskopie gemaakt, die je via Meer › Back-up en herstel kunt terugzetten.',ok:'Terugzetten'}))return;
   try{localStorage.setItem(V75_COPY,JSON.stringify({at:new Date().toISOString(),state}))}
-  catch(e){if(!confirm('De veiligheidskopie past niet meer in de opslag. Toch importeren?'))return}
+  catch(e){if(!await v10Confirm({title:'Geen ruimte voor een veiligheidskopie',text:'De opslag is te vol om eerst een kopie te maken. Toch terugzetten? De back-up wordt samengevoegd; er wordt niets gewist.',ok:'Toch terugzetten'}))return}
   const before=v75Seen(state);state=v75MergeState(state,v.state);save();v75Persist();
-  alert(`Back-up geïmporteerd. Soorten gezien: ${v75Seen(state)} (was ${before}). De app wordt opnieuw geladen.`);setTimeout(()=>location.reload(),300)}
-function v75Restore(){let c;try{c=JSON.parse(localStorage.getItem(V75_COPY))}catch(e){}if(!c||!v75Obj(c.state))return;
-  if(!confirm(`Terugzetten naar de toestand van ${v75When(c.at)}, vlak vóór de laatste import? Wat je daarna hebt aangepast gaat verloren.`))return;
-  try{localStorage.setItem('CR27_V2',JSON.stringify(c.state));localStorage.removeItem(V75_COPY)}catch(e){alert("Terugzetten is niet gelukt: "+e.message);return}setTimeout(()=>location.reload(),300)}
+  v10Flash(`Back-up teruggezet. Soorten gezien: ${v75Seen(state)} (was ${before})${o.extra||''}.`);setTimeout(()=>location.reload(),300)}
+async function v75Restore(){let c;try{c=JSON.parse(localStorage.getItem(V75_COPY))}catch(e){}if(!c||!v75Obj(c.state))return;
+  if(!await v10Confirm({title:'Terug naar vóór de import?',text:`De app gaat terug naar de toestand van ${v75When(c.at)}. Wat je daarna hebt aangepast, gaat verloren.`,ok:'Terugzetten',danger:true}))return;
+  try{localStorage.setItem('CR27_V2',JSON.stringify(c.state));localStorage.removeItem(V75_COPY)}catch(e){v10Fail(e,'restore');return}setTimeout(()=>location.reload(),300)}
 
 /* ---------- 2. persistente opslag ---------- */
 let v75Persisted=null;

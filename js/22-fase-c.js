@@ -107,7 +107,7 @@ speciesList=function(d){
   const byCat={};rest.forEach(n=>{const c=extras.includes(n)&&!base.includes(n)?'Zelf toegevoegd':v47Info(n).cat;(byCat[c]??=[]).push(n)});
   return `<div class="ds-card ds-wild-head">
     <div class="ds-wild-title"><h3 class="ds-title">Wildlife</h3><span class="ds-meta">${esc(region)}</span></div>
-    <div class="ds-stats ds-num"><div><b>${all.length}</b><small>doelsoorten</small></div><div><b>${seenHere}</b><small>gezien hier</small></div><div><b>${photoHere}</b><small>op foto</small></div><div><b>${st.seen}</b><small>reis totaal</small></div></div>
+    <div class="ds-stats ds-num"><div><b>${all.length}</b><small>doelsoorten</small></div>${seenHere?`<div><b>${seenHere}</b><small>gezien hier</small></div>`:''}${photoHere?`<div><b>${photoHere}</b><small>op foto</small></div>`:''}${st.seen?`<div><b>${st.seen}</b><small>reis totaal</small></div>`:''}</div>
     <label class="ds-search">${dsI('search',18)}<input id="v50q" type="search" placeholder="Zoek soort, NL of Engels" value="${esc(v50Query)}" autocomplete="off" enterkeyhint="search"></label>
     <div class="ds-filter" role="toolbar" aria-label="Filter">${cats.map(c=>`<button data-v47-filter="${esc(c)}" class="${f===c?'on':''}">${esc(c)}</button>`).join('')}</div>
     ${f==='Vogels'?`<div class="ds-filter sub">${groups.map(g=>`<button data-v50-group="${esc(g)}" class="${v50BirdGroup===g?'on':''}">${esc(g)}</button>`).join('')}</div>`:''}
@@ -126,7 +126,7 @@ renderWildlife=function(){
   const days=S.filter(d=>V47_FOCUS[d.id]).map(d=>`<button class="ds-wday" data-dsday-w="${d.id}"><img src="${locationPhoto(d)}" alt=""><span><span class="ds-label">Dag ${d.id} · ${esc(v47Region(d))}</span><b>${esc(V47_FOCUS[d.id].label)}</b><small>${V47_FOCUS[d.id].list.slice(0,4).map(n=>esc(v47Info(n).nl)).join(', ')}</small></span>${dsI('chevR',18)}</button>`).join('');
   return `<div class="ds-page">
     <div class="ds-pagehead"><h1 class="ds-title">Wildlife</h1><p class="ds-meta">${total} soorten, waarvan ${Object.values(V47_SP).filter(x=>x[1]==='Vogels').length} vogels</p></div>
-    <div class="ds-card"><div class="ds-stats ds-num"><div><b>${st.seen}</b><small>soorten gezien</small></div><div><b>${st.photo}</b><small>op foto</small></div><div><b>${birds}</b><small>vogels</small></div><div><b>${mammals}</b><small>zoogdieren</small></div></div>
+    <div class="ds-card">${st.seen?`<div class="ds-stats ds-num"><div><b>${st.seen}</b><small>soorten gezien</small></div><div><b>${st.photo}</b><small>op foto</small></div><div><b>${birds}</b><small>vogels</small></div><div><b>${mammals}</b><small>zoogdieren</small></div></div>`:'<p class="v10-zero">Nog niets gezien. Tik bij een soort op het oog <b>Gezien</b>; tijd en plek worden dan bewaard.</p>'}
       <label class="ds-search">${dsI('search',18)}<input id="v50gq" type="search" placeholder="Waar zie ik… bijv. quetzal, luiaard" autocomplete="off" enterkeyhint="search"></label><div id="v50gres"></div></div>
     <div class="ds-section-title">Per reisdag</div>${days}
     <div class="ds-section-title">Logboek</div><div class="ds-card">${logs.length?logs.map(x=>`<div class="ds-log"><b>${esc(v47Info(x.name).nl)}</b><small>${esc(x.place)}${x.date?' · '+esc(x.date):''}</small><p>${esc(x.note)}</p></div>`).join(''):'<p class="ds-meta">Nog geen waarnemingsnotities. Open een soort bij een dag en voeg een notitie toe.</p>'}</div>

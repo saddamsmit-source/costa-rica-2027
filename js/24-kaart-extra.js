@@ -88,7 +88,7 @@ dsdGps=function(){const on=v51Watch!==null;return `<div class="ds-gps"><button i
 v51StartGps=function(){if(!navigator.geolocation){alert('GPS niet beschikbaar op dit apparaat');return}
   if(v51Watch!==null){navigator.geolocation.clearWatch(v51Watch);v51Watch=null;render();return}
   v51Watch=navigator.geolocation.watchPosition(p=>{v51Pos={lat:p.coords.latitude,lon:p.coords.longitude,acc:p.coords.accuracy};if(document.querySelector('.ds-mapbox'))dseRedrawMap();else{const svg=document.querySelector('.v51-svg');if(svg){const w=document.createElement('div');w.innerHTML=v51Svg(tab==='days'?currentDay:(v48TripDay()||0));svg.replaceWith(w.firstElementChild);v51BindStops()}}const i=document.getElementById('v51gpsinfo');if(i)i.textContent=dseGpsText()},
-    e=>{alert('Geen GPS-positie: '+e.message);navigator.geolocation.clearWatch(v51Watch);v51Watch=null;render()},{enableHighAccuracy:true,maximumAge:10000,timeout:30000});render()};
+    e=>{v10Fail(e,'gps');navigator.geolocation.clearWatch(v51Watch);v51Watch=null;render()},{enableHighAccuracy:true,maximumAge:10000,timeout:30000});render()};
 
 /* ---------------- waarneming krijgt tijd en locatie ---------------- */
 function dseTag(name,place){const r=state.v43Observations[v43name(name)]?.places?.[place];if(!r)return;

@@ -1,0 +1,86 @@
+/* =====================================================================
+   v10 · ontwerptokens die ontbraken (lagen, beweging) + feedbacklaag + polish
+   Lagen (laag → hoog). Gebruik alleen deze waarden voor nieuwe vensters:
+     --ds-z-raised 2 · --ds-z-sticky 30 · --ds-z-fab 45 · --ds-z-nav 50
+     --ds-z-sheet 1000 (Waarneming, activiteit, kaartvenster) · --ds-z-sheet-top 1010 (soortvenster)
+     --ds-z-zoom 1020 · --ds-z-player 1030 · --ds-z-dialog 1050 (reisvideo, label, voorbeeld)
+     --ds-z-confirm 1080 (bevestigen) · --ds-z-toast 1100
+   ===================================================================== */
+:root{--ds-z-raised:2;--ds-z-sticky:30;--ds-z-fab:45;--ds-z-nav:50;--ds-z-sheet:1000;--ds-z-sheet-top:1010;--ds-z-zoom:1020;--ds-z-player:1030;--ds-z-dialog:1050;--ds-z-confirm:1080;--ds-z-toast:1100;
+  --ds-t-fast:150ms;--ds-t-med:200ms;--ds-ease:cubic-bezier(.2,.8,.2,1);--ds-r-xs:8px;--ds-r-btn:14px}
+/* bestaande lagen op de schaal (zelfde volgorde als voorheen, nu vastgelegd) */
+.ds-tabs{z-index:var(--ds-z-sticky)}.ds-fab{z-index:var(--ds-z-fab)}.mobile-bottom{z-index:var(--ds-z-nav)}
+.dse-overlay,.detail-overlay{z-index:var(--ds-z-sheet)}
+.wl2-overlay{z-index:var(--ds-z-sheet-top)}.wl2-zoom{z-index:var(--ds-z-zoom)}.v84-play{z-index:var(--ds-z-player)}
+.v85-gen{z-index:var(--ds-z-dialog)}.v10-dlg{z-index:var(--ds-z-confirm)}.v75-upd,.v10-toast{z-index:var(--ds-z-toast)}
+
+/* ---------- beweging: dialogen vervagen, sheets schuiven (respecteert "beweging beperken") ---------- */
+@keyframes v10fade{from{opacity:0}to{opacity:1}}
+@keyframes v10pop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes v10up{from{transform:translateY(24px);opacity:.4}to{transform:none;opacity:1}}
+.v85-gen,.v10-dlg{animation:v10fade var(--ds-t-fast) ease-out}
+.v85-gen>.v85-box,.v10-dlg-box{animation:v10pop var(--ds-t-med) var(--ds-ease)}
+#v52quick>*:last-child{animation:v10up var(--ds-t-med) var(--ds-ease)}
+.v10-dlg.out,.v10-toast.out{opacity:0;transition:opacity var(--ds-t-fast)}
+@media (prefers-reduced-motion:reduce){.v85-gen,.v10-dlg,.v85-gen>.v85-box,.v10-dlg-box,#v52quick>*:last-child,.wl2-sheet{animation:none!important}}
+
+/* ---------- toast ---------- */
+.v10-toast{position:fixed;left:12px;right:12px;bottom:calc(88px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:12px 14px 12px 16px;border-radius:var(--ds-r-md);background:var(--ds-jungle);color:#fff;font-size:14px;font-weight:600;line-height:1.4;box-shadow:var(--ds-shadow-float);animation:v10pop var(--ds-t-med) var(--ds-ease)}
+.v10-toast span{flex:1}
+.v10-toast button{flex:none;min-height:40px;padding:0 12px;border:0;border-radius:var(--ds-r-sm);background:rgba(255,255,255,.14);color:#fff;font:inherit;font-weight:800;cursor:pointer}
+.v10-toast.warn{background:var(--ds-warn)}.v10-toast.err{background:#7A2E12}
+@media (min-width:700px){.v10-toast{bottom:24px}}
+
+/* ---------- bevestigen ---------- */
+.v10-dlg{position:fixed;inset:0;display:grid;place-items:center;padding:20px;background:rgba(10,24,18,.55)}
+.v10-dlg-box{width:100%;max-width:420px;padding:22px 20px 18px;border-radius:var(--ds-r-lg);background:var(--ds-card);color:var(--ds-ink);box-shadow:var(--ds-shadow-float)}
+.v10-dlg-box h3{margin:0 0 8px;font-size:var(--ds-fs-title);line-height:1.25}
+.v10-dlg-box p{margin:0 0 18px;font-size:var(--ds-fs-body);line-height:1.5;color:var(--ds-ink-2)}
+.v10-dlg-btns{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}.v10-dlg-btns .ds-btn{flex:1;min-width:120px}
+.ds-btn.danger{background:#9B2C14;color:#fff}
+
+/* ---------- zwevende knop dekt nooit de laatste inhoud af; klapt in tot icoon bij naar beneden scrollen ---------- */
+body:has(.ds-fab) #app{padding-bottom:calc(156px + env(safe-area-inset-bottom,0px))}
+.ds-fab{transition:opacity var(--ds-t-fast),transform var(--ds-t-fast),padding var(--ds-t-fast)}
+.ds-fab.v10-mini{padding:0 15px;gap:0}.ds-fab.v10-mini .v10-fl{display:none}
+
+/* ---------- directe mediafeedback ---------- */
+.v10-pending{position:relative}.v10-pending img{opacity:.55;filter:saturate(.6)}
+.v10-pending:after{content:'';position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;border:3px solid rgba(255,255,255,.55);border-top-color:#fff;animation:v10spin .8s linear infinite}
+@keyframes v10spin{to{transform:rotate(360deg)}}
+
+/* ---------- nulwaarden: tegels passen zich aan het aantal aan ---------- */
+.ds-brief{grid-template-columns:repeat(auto-fit,minmax(0,1fr))}.ds-brief .ok{color:var(--ds-leaf-ink)}
+.v10-zero{margin:12px 0 2px;padding:12px 14px;border-radius:var(--ds-r-sm);background:var(--ds-mist);font-size:var(--ds-fs-meta);color:var(--ds-ink-2);line-height:1.45}
+/* ---------- consistente waarschuwingskleur en afronding ---------- */
+.v9-q{background:var(--ds-warn);border-radius:var(--ds-r-xs)}
+.v84-ph{border-radius:var(--ds-r-sm)}.v815-chip{border-radius:var(--ds-r-pill)}
+.v85-box{border-radius:var(--ds-r-lg)}
+
+/* ---------- v10 · back-up ---------- */
+.v10-bk{margin-bottom:12px}.v10-bk.warn{box-shadow:inset 0 0 0 1.5px var(--ds-warn-soft);background:linear-gradient(0deg,var(--ds-card),var(--ds-card)) padding-box}
+.v10-bk>b{display:block;font-size:var(--ds-fs-head);margin-bottom:4px}.v10-bk.warn>b{color:var(--ds-warn)}
+.v10-more{margin-top:12px}.v10-more>summary{cursor:pointer;list-style:none;display:grid;gap:2px;min-height:44px;align-content:center}.v10-more>summary::-webkit-details-marker{display:none}
+.v10-more>summary small{color:var(--ds-muted);font-size:var(--ds-fs-meta)}.v10-more[open]>summary{margin-bottom:12px}
+.v10-sub{padding:12px 0;border-top:1px solid var(--ds-line)}.v10-free.v10-low{color:var(--ds-warn);font-weight:700}
+.v10-homebk{display:flex;align-items:center;gap:12px;margin-bottom:12px;box-shadow:inset 0 0 0 1.5px var(--ds-warn-soft)}.v10-homebk>div{flex:1}.v10-homebk b{color:var(--ds-warn)}.v10-homebk .ds-meta{margin:2px 0 0}
+
+/* ---------- v10 · Video Studio ---------- */
+.v10-st{margin-bottom:12px}.v10-sth{display:flex;align-items:center;gap:10px;margin-bottom:12px}.v10-sth b{font-size:var(--ds-fs-head)}
+.v10-n{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ds-leaf-soft);color:var(--ds-leaf-ink);font-size:13px;font-weight:800}
+.v10-stats{margin-bottom:12px}
+.v10-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:6px}
+.v10-dot{min-height:36px;border:0;border-radius:var(--ds-r-sm);font:inherit;font-size:13px;font-weight:700;cursor:pointer;background:var(--ds-mist);color:var(--ds-muted)}
+.v10-dot.part{background:var(--ds-leaf-soft);color:var(--ds-leaf-ink)}.v10-dot.ok{background:var(--ds-leaf);color:#fff}
+.v10-legend{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin:10px 0 0}.v10-legend span{display:inline-flex;align-items:center;gap:6px}.v10-legend .v10-dot.none{box-shadow:inset 0 0 0 1.5px var(--ds-line)}.v10-legend .v10-dot{display:inline-block;width:12px;height:12px;min-height:0;border-radius:3px}
+.v10-chk{padding:12px 0;border-top:1px solid var(--ds-line)}.v10-chk:first-of-type{border-top:0;padding-top:0}.v10-chk>b{display:block}.v10-chk .ds-meta{margin:2px 0 8px}
+.v10-days{display:flex;flex-wrap:wrap;gap:6px}.v10-days .ds-chip{min-height:36px;padding:0 12px;border-radius:var(--ds-r-pill);border:1.5px solid var(--ds-line);background:var(--ds-card);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.v10-thumbs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.v10-thumb{position:relative;flex:none;width:72px;height:72px;border:0;padding:0;border-radius:var(--ds-r-sm);overflow:hidden;background:var(--ds-mist);cursor:pointer}
+.v10-thumb img{width:100%;height:100%;object-fit:cover;display:block}.v10-thumb small{position:absolute;left:4px;bottom:4px;padding:1px 5px;border-radius:6px;background:rgba(6,24,17,.7);color:#fff;font-size:10.5px;font-weight:700}
+.v10-thumb.best{outline:3px solid var(--ds-leaf);outline-offset:-3px}.v10-dup{margin-top:8px}.v10-keep{display:flex;align-items:center;gap:8px;font-size:13px;margin-top:4px;min-height:36px}
+.v10-allgood{margin:0}.v10-daysel{display:grid;gap:3px;flex:1;min-width:150px}.v10-make{width:100%;margin-top:4px}
+.ds-wild-head .ds-stats{grid-template-columns:repeat(auto-fit,minmax(72px,1fr))}
+/* eerste gebruik: label onder het eerste oog-icoon */
+.v10-hint{position:relative;overflow:visible}.v10-hint:after{content:'Gezien';position:absolute;left:50%;top:calc(100% + 4px);transform:translateX(-50%);padding:2px 7px;border-radius:var(--ds-r-pill);background:var(--ds-leaf);color:#fff;font-size:11px;font-weight:800;white-space:nowrap;pointer-events:none;z-index:var(--ds-z-raised)}
+.v10-prev{display:grid;gap:10px}.v10-prev>.ds-btn{width:100%}.v10-prevday{display:grid;grid-template-columns:1fr auto;gap:8px}.v10-prevday .field{min-height:48px;width:100%;box-sizing:border-box}

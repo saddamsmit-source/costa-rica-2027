@@ -221,12 +221,13 @@ renderSettings=function(){
   <div class="ds-label ds-menulbl">Reis</div><div class="ds-card ds-menu">
     ${dsdMenuRow(dsI('bed',20),'Accommodaties','Hotel per bestemming','data-goto="hotels"')}
     ${dsdMenuRow(dsI('paw',20),'Wildlife','Zoeken over de hele reis en logboek','data-goto="wildlife"')}
+    ${dsdMenuRow('<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>','Video Studio','Reisvideo samenstellen, bekijken en maken','data-ds-more="studio"')}
     ${dsdMenuRow(dsdI('euro',20),'Budget','Kosten per activiteit tegenover de reserve','data-goto="budget"')}</div>
   <div class="ds-label ds-menulbl">Onderweg</div><div class="ds-card ds-menu">
     ${dsdMenuRow(dsI('coin',20),'Valuta omrekenen',`EUR, USD en colón · koers ${esc(r.date)}`,'data-ds-more="fx"')}
     ${dsdMenuRow(dsdI('doc',20),'Praktische informatie','Paspoort, noodnummers, geld, stroom en meer','data-ds-more="prac"')}</div>
   <div class="ds-label ds-menulbl">Gegevens en uitleg</div><div class="ds-card ds-menu">
-    ${dsdMenuRow(dsdI('download',20),'Back-up en herstel','Downloaden, controleren en importeren','data-ds-more="backup"')}
+    ${dsdMenuRow(dsdI('download',20),'Back-up en herstel','Alles bewaren en terugzetten','data-ds-more="backup"')}
     ${dsdMenuRow(dsdI('tag',20),'Uitleg labels','Sawadee, zelf toegevoegd, vastgezet','data-ds-more="legend"')}
     ${dsdMenuRow(dsdI('camera',20),"Fotoverantwoording",`${Object.keys(V48_PHOTO).length} foto's met bron en licentie`,'data-ds-more="credits"')}
     <a class="ds-menurow" href="${DATA.meta.sourceUrl}" target="_blank" rel="noopener"><i>${dsdI('ext',20)}</i><span><b>Officiële Sawadee-reisroute</b><small>Uitgebreide route op sawadee.nl</small></span>${dsI('chevR',18)}</a></div>

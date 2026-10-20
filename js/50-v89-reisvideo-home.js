@@ -24,18 +24,18 @@ function v89Card(){if(typeof v85Plan!=='function')return '';const ended=v89Ended
     ${ended&&!(made&&!made.proef)?`<div class="v89-banner"><b>Jullie reis zit erop</b><span>Maak nu de reisvideo.</span></div>`:''}
     <div class="v89-head"><b>Reisvideo</b><small>${ended?'Klaar om te maken':'Altijd te maken, ook tussendoor'}</small></div>
     <div class="v89-prog"><i style="width:${Math.round(100*done/days.length)}%"></i></div>
-    <p class="v89-stats"><b>${done} van ${days.length} dagen compleet</b> · ${plan.species} dieren · ${nPh} eigen foto's · ${nV} video's · ${nM} sfeerfoto's${segs.length?` · ca. ${v85Dur(v85Seconds(segs))}`:''}</p>
+    <p class="v89-stats"><b>${done} van ${days.length} dagen compleet</b>${[plan.species?`${plan.species} dieren`:'',nPh?`${nPh} eigen foto's`:'',nV?`${nV} video's`:'',nM?`${nM} sfeerfoto's`:'',segs.length?`ca. ${v85Dur(v85Seconds(segs))}`:''].filter(Boolean).map(x=>' · '+x).join('')}</p>
     ${madeTxt}
-    ${!segs.length?'<p class="ds-meta v89-empty">Voor de video: vink bij een dag een paar dieren aan (Wildlife) of voeg een eigen foto of sfeerfoto toe. Daarna verschijnt hier de knop.</p>':''}<div class="v89-btns">${segs.length?`<button class="ds-btn primary" id="v89go">${made&&!made.proef?'Opnieuw maken':'Reisvideo maken'}</button>`:''}${keep?`<button class="ds-btn secondary" id="v89share">Opslaan of delen</button>`:''}</div>
+    ${!segs.length?'<p class="ds-meta v89-empty">Voeg per dag foto’s toe of vink dieren aan; dan bouwt de video zich vanzelf op. In de Video Studio zie je per dag wat er al is.</p>':''}<div class="v89-btns"><button class="ds-btn primary" id="v89go">Video Studio openen</button>${keep?`<button class="ds-btn secondary" id="v89share">Opslaan of delen</button>`:''}</div>
     ${made&&!made.proef&&!keep?'<p class="ds-meta">De video staat niet meer in de app. Bewaar hem na het maken direct in Foto’s.</p>':''}
-    ${v89Check()}</div>`}
+    </div>`}
 /* Home: na het einde bovenaan, anders onder het eerste blok */
 {const prev=renderHome;renderHome=function(){const h=prev(),card=v89Card();if(!card)return h;const body='<div class="ds-home-body">',t='<div class="ds-section-title">';
   if(v89Ended()&&h.includes(body))return h.replace(body,body+card);
   const i1=h.indexOf(t),i2=i1>=0?h.indexOf(t,i1+t.length):-1;return i2>0?h.slice(0,i2)+card+h.slice(i2):h.includes(body)?h.replace(body,body+card):h+card}}
 /* starten met controle; na afloop bevestiging bewaren */
 async function v89Start(){const miss=v89Days().filter(x=>!x.ok);
-  if(v89Ended()&&miss.length&&!confirm(`${miss.length} ${miss.length===1?'dag is':'dagen zijn'} niet compleet (${miss.slice(0,6).map(x=>'dag '+x.d).join(', ')}${miss.length>6?' …':''}).\n\nToch de reisvideo maken? Je kunt hem later opnieuw maken.`))return;
+  if(v89Ended()&&miss.length&&!await v10Confirm({title:'Toch de reisvideo maken?',text:`${miss.length} ${miss.length===1?'dag is':'dagen zijn'} nog niet compleet (${miss.slice(0,6).map(x=>'dag '+x.d).join(', ')}${miss.length>6?' …':''}). Je kunt de video later opnieuw maken.`,ok:'Video maken'}))return;
   await v85Start()}
 {const prev=v85Run;v85Run=async function(opt){if(V89.last){(V89.last.items||[V89.last]).forEach(x=>{try{URL.revokeObjectURL(x.url)}catch(e){}});V89.last=null}await prev(opt);if(v85Out&&v85Out.out){const proef=false;state.v89Made={at:new Date().toISOString(),seconds:Math.round(v85Out.out.seconds),proef,short:!!opt?.short,portrait:opt?.fmt==='port',both:opt?.fmt==='both'};save();
     V89.last={at:state.v89Made.at,file:v85Out.file,url:v85Out.url,items:(v85Out.items||[v85Out]).map(x=>({file:x.file,url:x.url}))}}}}

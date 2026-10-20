@@ -139,12 +139,12 @@ function v84SheetBlock(name,region){const sp=v43name(name),o=state.v43Observatio
   const msg=ov.querySelector('.v84-msg'),again=()=>{const y=ov.querySelector('.wl2-sheet').scrollTop;wl2Open(name,region);ov.querySelector('.wl2-sheet').scrollTop=y};
   ov.querySelectorAll('[data-v84-add]').forEach(inp=>inp.onchange=async()=>{const fs=[...inp.files];inp.value='';if(!fs.length)return;const [d,r]=inp.dataset.v84Add.split('|');msg.textContent='Foto verwerken…';
     try{const res=await v84Add(name,decodeURIComponent(r),fs,+d);again();const m=document.querySelector('#wl2Sheet .v84-msg');if(m&&res.skipped)m.textContent=`${res.skipped} foto${res.skipped>1?"'s":''} niet toegevoegd: maximaal ${V84_MAX} per soort per dag.`}
-    catch(e){msg.textContent=/quota/i.test(e.name+e.message)?'De opslag op deze telefoon is vol. Maak een foto-back-up en verwijder oude foto’s.':'Toevoegen mislukt: '+e.message}});
+    catch(e){msg.textContent=v10Why(e,'foto')}});
   ov.querySelectorAll('[data-v84-vadd]').forEach(inp=>inp.onchange=()=>{const f=inp.files[0];inp.value='';if(!f)return;const [d,r]=inp.dataset.v84Vadd.split('|');v84TrimOpen(name,decodeURIComponent(r),+d,f,again)});
   ov.querySelectorAll('[data-v84-play]').forEach(b=>b.onclick=()=>v84VidOpen(b.dataset.v84Play));
   ov.querySelectorAll('[data-v84-fav]').forEach(b=>b.onclick=async()=>{await v84SetFav(b.dataset.v84Fav);again()});
   ov.querySelectorAll('[data-v84-vfav]').forEach(b=>b.onclick=async()=>{const p=V84.vids.find(x=>x.id===b.dataset.v84Vfav);if(!p)return;await v84Write(st=>st.put({...p,fav:!p.fav}));await v84Load();again()});
-  ov.querySelectorAll('[data-v84-del]').forEach(b=>b.onclick=async()=>{if(!confirm('Verwijderen? Dit kan niet ongedaan worden gemaakt, tenzij het in een foto-back-up staat.'))return;await v84Remove(b.dataset.v84Del);again()})}}
+  ov.querySelectorAll('[data-v84-del]').forEach(b=>b.onclick=async()=>{await v10RemoveMedia(b.dataset.v84Del,()=>{if(document.getElementById('wl2Sheet'))again()})})}}
 /* video kiezen: 5 seconden met een schuif, daarna omzetten */
 function v84TrimClose(){const el=document.getElementById('v84Trim');if(el){const v=el.querySelector('video');if(v){v.pause();URL.revokeObjectURL(v.src)}el.remove()}}
 function v84TrimOpen(name,region,day,file,after){v84TrimClose();const el=document.createElement('div');el.id='v84Trim';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
@@ -160,7 +160,7 @@ function v84TrimOpen(name,region,day,file,after){v84TrimClose();const el=documen
   el.querySelector('[data-t="close"]').onclick=v84TrimClose;
   save.onclick=async()=>{save.disabled=true;rg.disabled=true;v.pause();const bar=el.querySelector('.v85-bar');bar.hidden=false;info.textContent='Video omzetten…';
     try{await v84AddVideo(name,region,day,file,+rg.value,f=>{bar.firstElementChild.style.width=Math.round(f*100)+'%'});v84TrimClose();after&&after()}
-    catch(e){info.textContent='Bewaren mislukt: '+(/quota/i.test(e.name+e.message)?'de opslag op deze telefoon is vol.':e.message);save.disabled=false;rg.disabled=false}}}
+    catch(e){info.textContent=v10Why(e,'video');save.disabled=false;rg.disabled=false}}}
 function v84VidClose(){const el=document.getElementById('v84Vid');if(el)el.remove()}
 function v84VidOpen(id){const p=V84.vids.find(x=>x.id===id);if(!p)return;v84VidClose();const el=document.createElement('div');el.id='v84Vid';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Eigen video');
   el.innerHTML=`<div class="v85-box"><video class="v85-vid" src="${V84.url[id]}" ${p.orig?`data-start="${p.start||0}"`:''} controls autoplay playsinline muted></video><div class="v85-btns"><button class="ds-btn secondary" data-t="close">Sluiten</button></div></div>`;
@@ -237,7 +237,8 @@ function v84MoodBlock(d){const ms=V84.moods.filter(p=>p.day===d.id).sort((a,b)=>
   return `<div class="ds-card v84-mood"><div class="v84-h"><b>Sfeerfoto's</b><small>${ms.length} van ${V84_MOOD} · komen in de reisvideo</small></div>
     ${ms.length?`<div class="v84-grid">${ms.map(p=>`<div class="v84-ph"><img src="${V84.url[p.id]}" alt="Sfeerfoto dag ${d.id}" loading="lazy"><button class="v84-del" data-v84-mdel="${p.id}" aria-label="Sfeerfoto verwijderen">${dsI('plus',16)}</button></div>`).join('')}</div>`:'<p class="ds-meta">Landschap, lodge, onderweg: wat deze dag typeert.</p>'}
     ${ms.length<V84_MOOD?`<label class="ds-btn secondary v84-add">${dsI('plus',18)}Sfeerfoto toevoegen<input type="file" accept="image/*" multiple hidden data-v84-madd="${d.id}"></label>`:''}<p class="ds-meta v84-mmsg" aria-live="polite"></p></div>`}
-{const prev=dayContent;dayContent=function(d){const h=prev(d);return daySection==='overview'&&V84.ready?v84MoodBlock(d)+h:h}}
+/* v10: eerst het dagoverzicht, daarna de eigen foto's (vóór de notities) */
+{const prev=dayContent;dayContent=function(d){const h=prev(d);if(!(daySection==='overview'&&V84.ready))return h;const m=v84MoodBlock(d),i=h.indexOf('<details class="ds-notes');return i>=0?h.slice(0,i)+m+h.slice(i):h+m}}
 /* back-up v2: foto's (.jpg) en video's (.mp4 + poster) met fotos.json; v1 (alleen foto's) blijft terug te zetten */
 async function v84Export(){const all=V84.list.concat(V84.vids,V84.moods,V84.stays);if(!all.length)return;const files=[],meta=[];
   all.forEach(p=>{const base=`${String(p.day||0).padStart(2,'0')}-${p.kind==='mood'?'sfeer':p.kind==='stay'?'verblijf':v84Slug(v47Info(p.name).nl)}-${p.id.slice(0,6)}`,vid=p.kind==='video',ext=vid?(/mp4/.test(p.blob.type)||!p.orig?'mp4':(p.blob.type.split('/')[1]||'mov')):'jpg';
@@ -262,9 +263,9 @@ function v84BackupCard(){const all=V84.list.concat(V84.vids,V84.moods,V84.stays)
 {const prev=bind;bind=function(){prev();const g=document.getElementById('v84go');if(g)g.onclick=v84Play;
   document.querySelectorAll('[data-v84-madd]').forEach(inp=>inp.onchange=async()=>{const fs=[...inp.files];inp.value='';if(!fs.length)return;const m=document.querySelector('.v84-mmsg');if(m)m.textContent='Foto verwerken…';
     try{const r=await v84AddMood(+inp.dataset.v84Madd,fs);const y=scrollY;render();scrollTo(0,y);const m2=document.querySelector('.v84-mmsg');if(m2&&r.skipped)m2.textContent=`${r.skipped} niet toegevoegd: maximaal ${V84_MOOD} sfeerfoto's per dag.`}
-    catch(e){const m2=document.querySelector('.v84-mmsg');if(m2)m2.textContent='Toevoegen mislukt: '+e.message}});
-  document.querySelectorAll('[data-v84-mdel]').forEach(b=>b.onclick=async()=>{if(!confirm('Sfeerfoto verwijderen?'))return;await v84Remove(b.dataset.v84Mdel);const y=scrollY;render();scrollTo(0,y)});
-  const ex=document.getElementById('v84exp'),msg=()=>document.querySelector('.v84-bkmsg');if(ex)ex.onclick=async()=>{ex.disabled=true;try{await v84Export();render()}catch(e){const m=msg();if(m)m.textContent='Foto-back-up mislukt: '+e.message}ex.disabled=false};
-  const im=document.getElementById('v84imp');if(im)im.onchange=async()=>{const f=im.files[0];im.value='';if(!f)return;try{const n=await v84Import(f);render();const m=msg();if(m)m.textContent=n?`${n} bestand${n===1?'':'en'} teruggezet.`:'Alles uit deze back-up stond er al.'}catch(e){const m=msg();if(m)m.textContent='Terugzetten mislukt: '+e.message}}}}
+    catch(e){const m2=document.querySelector('.v84-mmsg');if(m2)m2.textContent=v10Why(e,'foto')}});
+  document.querySelectorAll('[data-v84-mdel]').forEach(b=>b.onclick=async()=>{await v10RemoveMedia(b.dataset.v84Mdel,()=>{const y=scrollY;render();scrollTo(0,y)})});
+  const ex=document.getElementById('v84exp'),msg=()=>document.querySelector('.v84-bkmsg');if(ex)ex.onclick=async()=>{ex.disabled=true;try{await v84Export();render()}catch(e){const m=msg();if(m)m.textContent=v10Why(e,'fotobackup')}ex.disabled=false};
+  const im=document.getElementById('v84imp');if(im)im.onchange=async()=>{const f=im.files[0];im.value='';if(!f)return;try{const n=await v84Import(f);render();const m=msg();if(m)m.textContent=n?`${n} bestand${n===1?'':'en'} teruggezet.`:'Alles uit deze back-up stond er al.'}catch(e){const m=msg();if(m)m.textContent=v10Why(e,'restore')}}}}
 /* laden na opstarten; daarna opnieuw tekenen zodat eigen foto's zichtbaar zijn */
 v84Load().then(()=>{if(V84.list.length||V84.vids.length||V84.moods.length||V84.stays.length)render();setTimeout(v84SharpFill,4000)});

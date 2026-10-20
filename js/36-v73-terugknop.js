@@ -10,6 +10,7 @@
   if(!window.history||typeof history.pushState!=='function')return;
   /* bovenste venster eerst: [selector, sluitfunctie] */
   const OV=[
+    ['#v10Dlg',()=>v10DlgClose()],
     ['.wl2-zoom',el=>el.remove()],
     ['#detailOverlay',el=>el.remove()],
     ['#dseEm',el=>el.remove()],
