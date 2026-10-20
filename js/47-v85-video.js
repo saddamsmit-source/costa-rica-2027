@@ -3,7 +3,7 @@
    Aan het einde van de reis maakt de app op de telefoon zelf een MP4 (1920×1080, 30 fps, zonder geluid):
    titel → per reisdag een hoofdstuk → per soort de eigen foto's (favoriet eerst) of, als er geen eigen foto is,
    een voorbeeldfoto uit de app met fotograaf, licentie en bron in beeld → afsluiting met totalen.
-   - Beschikbaar vanaf 00:00 op de laatste reisdag; daarvoor alleen een proefvideo (met "Proefvideo" in beeld).
+   - v8.13: altijd beschikbaar (geen datumslot meer); op de laatste reisdag verschijnt een herinnering op Home.
    - Encoderen met WebCodecs (H.264, anders VP9) + mp4-muxer (js/vendor, MIT), offline en sneller dan real time.
      Geen WebCodecs: terugval op MediaRecorder (opnemen in real time).
    - Leest alleen: state.v43Observations, state.v44Log, eigen foto's (v8.4). Schrijft niets in CR27_V2.
@@ -392,7 +392,7 @@ async function v85Target(useDisk,fname='reisvideo.mp4'){
 /* v8.11: staand formaat (1080×1920) en korte versie; afmetingen alleen tijdens het maken omzetten */
 async function v85Make(opts={}){const keep=[V85.W,V85.H];if(opts.portrait){V85.W=1080;V85.H=1920}
   try{return await v85MakeCore(opts)}finally{V85.W=keep[0];V85.H=keep[1]}}
-async function v85MakeCore(opts={}){const job=opts.job||{},prog=opts.onProgress||(()=>{}),proef=opts.proef??!v85Open();
+async function v85MakeCore(opts={}){const job=opts.job||{},prog=opts.onProgress||(()=>{}),proef=opts.proef??false;
   const segs=opts.segs||(opts.short?v85Short(v85Plan(),proef):v85Segments(v85Plan(),proef));if(!segs.length)throw new Error('Nog niets om te tonen.');
   const {W,H,FPS}=V85,scale=opts.scale||V85.SCALE||1;segs.forEach(s=>s.frames=Math.max(2,Math.round(s.dur*scale*FPS)));
   const total=segs.reduce((n,s)=>n+s.frames,0);
@@ -452,7 +452,7 @@ async function v85Record(segs,{cv,pctx,frame,total,prog,job}){if(typeof MediaRec
 
 /* ---------- scherm ---------- */
 let v85Job=null,v85Out=null;
-function v85Card(){const plan=v85Plan(),segs=v85Segments(plan,!v85Open()),n=plan.species,nOwn=new Set(plan.items.filter(i=>i.own).map(i=>i.sp)).size,open=v85Open();
+function v85Card(){const plan=v85Plan(),segs=v85Segments(plan,!v85Open()),n=plan.species,nOwn=new Set(plan.items.filter(i=>i.own).map(i=>i.sp)).size,open=true;
   const last=new Date(V85_LAST+'T12:00').toLocaleDateString('nl-NL',{weekday:'long',day:'numeric',month:'long'});
   const nm=plan.days.reduce((a,d)=>a+d.moods.length,0);
   const what=segs.length?[n?`${n} ${n===1?'soort':'soorten'} · ${nOwn} met eigen foto of video${n-nOwn?` · ${n-nOwn} met voorbeeldfoto`:''}`:'',nm?`${nm} sfeerfoto${nm===1?'':"'s"}`:'',`ca. ${v85Dur(v85Seconds(segs))}`].filter(Boolean).join(' · '):'Nog niets geregistreerd. Markeer soorten als gezien of voeg eigen foto’s of sfeerfoto’s toe.';
@@ -472,7 +472,7 @@ function v85Close(){if(v85Job)v85Job.cancel=true;const el=document.getElementByI
   if(v85Out){(v85Out.items||[v85Out]).forEach(x=>{try{URL.revokeObjectURL(x.url)}catch(e){}try{x.out.cleanup?.()}catch(e){}});v85Out=null}try{v85Job?.lock?.release()}catch(e){}v85Job=null}
 /* eerst kiezen: volledige of korte versie, liggend of staand */
 const V85_OPT={short:false,fmt:'land'};
-function v85Start(){v85Close();const proef=!v85Open(),plan=v85Plan(),el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
+function v85Start(){v85Close();const proef=false,plan=v85Plan(),el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
   const len=sh=>{try{return v85Dur(v85Seconds(sh?v85Short(plan,proef):v85Segments(plan,proef)))}catch(e){return ''}},lf=len(false),ls=len(true);
   const draw=()=>{el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Welke video?</h3>
     <div class="v85-opt" role="radiogroup" aria-label="Versie"><button data-o="full" aria-pressed="${!V85_OPT.short}" class="${V85_OPT.short?'':'on'}"><b>Volledig</b><small>alle dagen · ca. ${lf}</small></button><button data-o="short" aria-pressed="${V85_OPT.short}" class="${V85_OPT.short?'on':''}"><b>Kort</b><small>hoogtepunten · ca. ${ls}</small></button></div>
@@ -481,7 +481,7 @@ function v85Start(){v85Close();const proef=!v85Open(),plan=v85Plan(),el=document
     el.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{V85_OPT.short=b.dataset.o==='short';draw()});el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{V85_OPT.fmt=b.dataset.f;draw()});
     el.querySelector('[data-v85="close"]').onclick=v85Close;el.querySelector('[data-v85="go"]').onclick=()=>{el.remove();v85Run({...V85_OPT})}};
   draw();document.body.append(el);document.body.classList.add('wl2-lock')}
-async function v85Run(opt={}){v85Close();const proef=!v85Open(),job={cancel:false};v85Job=job;
+async function v85Run(opt={}){v85Close();const proef=false,job={cancel:false};v85Job=job;
   const fmts=opt.fmt==='both'?['land','port']:[opt.fmt==='port'||opt.portrait?'port':'land'];
   const el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label',proef?'Proefvideo maken':'Reisvideo maken');
   el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Video maken…</h3><div class="v85-bar"><i></i></div><p class="v85-st ds-meta" aria-live="polite">Voorbereiden</p><p class="ds-meta">Houd de app open en het scherm aan.</p><div class="v85-btns"><button class="ds-btn secondary" data-v85="close">Annuleren</button></div></div>`;

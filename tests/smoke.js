@@ -296,7 +296,7 @@ const {chromium}=require('playwright');const path=require('path');
     if(!/Proef/i.test(segs[0].label))bad.push('reisvideo: proefvideo niet gemarkeerd');
     const hs=segs.find(s=>s.k==='sp'&&s.title===v47Info('Mantled howler monkey').nl);if(!hs||!/^Voorbeeldfoto · ©/.test(hs.credit)||hs.label!=='Zoogdier'||!/Cahuita/.test(hs.meta))bad.push('reisvideo: soortdia voorbeeldfoto '+JSON.stringify(hs));
     if(v85Open(new Date('2027-03-01T23:59:00'))||!v85Open(new Date('2027-03-02T00:00:01')))bad.push('reisvideo: ontgrendeldatum');
-    tab='wildlife';render();let go=document.getElementById('v85go');if(!go||!/Proefvideo/.test(go.textContent))bad.push('reisvideo: knop Proefvideo ontbreekt');
+    tab='wildlife';render();let go=document.getElementById('v85go');if(!go||!/Reisvideo maken/.test(go.textContent))bad.push('reisvideo: knop Reisvideo maken ontbreekt (altijd beschikbaar)');
     V85.SCALE=.08;
     try{const out=await v85Make({proef:true,disk:false});const head=new Uint8Array(await out.blob.slice(0,8).arrayBuffer());
       if(String.fromCharCode(...head.slice(4,8))!=='ftyp')bad.push('reisvideo: geen MP4');
@@ -415,9 +415,9 @@ const {chromium}=require('playwright');const path=require('path');
    if(!r.n||r.bad.length)errs.push('daglijst: zoeken op "nacht": '+JSON.stringify(r));
    await p.evaluate(async()=>{await v84Write(st=>V84.list.concat(V84.vids,V84.moods).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name('Keel-billed toucan')];save();V88.f.q='';tab='home';render()})}
   /* v8.9: reisvideo op Home, controle per dag, einde reis, bevestiging */
-  {const v=await p.evaluate(async()=>{const bad=[];const keepEnd=v89Ended;
+  {const v=await p.evaluate(async()=>{const bad=[];const keepEnd=v89Ended;delete state.v89Made;v52Set('Mantled howler monkey','Cahuita','seen',true);
     tab='home';render();const card=document.querySelector('.v89-card');if(!card)return ['Home: kaart Reisvideo ontbreekt'];
-    if(!/Proefvideo maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('Home: vóór einde reis geen proefknop');
+    if(!/Reisvideo maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('Home: knop Reisvideo maken niet altijd beschikbaar');if(/Beschikbaar vanaf/.test(card.textContent))bad.push('Home: nog een datumslot zichtbaar');
     if(!new RegExp('0 van '+S.length+' dagen compleet').test(card.textContent))bad.push('Home: telling dagen compleet');
     if(v89Ended(new Date(S[S.length-1].date+'T00:00:01'))!==true||v89Ended(new Date(S[S.length-2].date+'T23:59:00'))!==false)bad.push('einde reis volgt de laatste reisdag niet');
     /* dag 9 compleet maken met 5 sfeer, 15 dieren met foto, 3 video's */
@@ -434,7 +434,7 @@ const {chromium}=require('playwright');const path=require('path');
     if(!/Reisvideo maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('einde reis: knop Reisvideo maken ontbreekt');
     let asked='';const keepConfirm=window.confirm;window.confirm=m=>{asked=m;return false};await v89Start();if(!/niet compleet/.test(asked)||document.getElementById('v85Gen'))bad.push('waarschuwing onvolledige dagen');
     window.confirm=()=>true;V85.SCALE=.06;await v89Start();if(!document.querySelector('#v85Gen [data-v85="go"]'))bad.push('keuzevenster ontbreekt');await v85Run({});V85.SCALE=1;window.confirm=keepConfirm;
-    if(!state.v89Made||state.v89Made.proef||!V89.last)bad.push('bevestiging niet bewaard: '+JSON.stringify(state.v89Made));
+    if(!state.v89Made||!V89.last)bad.push('bevestiging niet bewaard: '+JSON.stringify(state.v89Made));
     v85Close();tab='home';render();const c2=document.querySelector('.v89-card');if(!/Reisvideo gemaakt op/.test(c2?.textContent||'')||!document.getElementById('v89share')||!/Opnieuw maken/.test(document.getElementById('v89go')?.textContent||''))bad.push('Home na maken: bevestiging/knoppen');
     document.querySelector('[data-v89-day="9"]').click();if(tab!=='days'||currentDay!==9)bad.push('dag in controle opent die dag niet');
     v89Ended=keepEnd;delete state.v89Made;try{URL.revokeObjectURL(V89.last.url)}catch(e){}V89.last=null;
