@@ -15,3 +15,6 @@
 .v815-in{width:100%;min-height:44px;box-sizing:border-box;margin-bottom:10px}
 .v815-all{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:0 0 12px;line-height:1.35}
 .v815-all input{width:20px;height:20px;flex:none;margin-top:1px}
+/* v9 · kwaliteitswaarschuwing op foto's */
+.v9-q{position:absolute;left:4px;top:52px;max-width:calc(100% - 8px);padding:2px 7px;border-radius:8px;background:#B4501E;color:#fff;font-size:11px;font-weight:700;line-height:1.35;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:1}
+.v815-ph .v9-q{top:4px}

@@ -44,7 +44,13 @@ async function v84Shrink(file){let src;
   catch(e){src=await new Promise((res,rej)=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>rej(new Error('Dit bestand is geen leesbare foto.'));im.src=URL.createObjectURL(file)})}
   const w0=src.width,h0=src.height,s=Math.min(1,V84_PX/Math.max(w0,h0)),w=Math.round(w0*s),h=Math.round(h0*s);
   const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(src,0,0,w,h);
-  const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',.84));if(!blob)throw new Error('Foto kon niet worden verwerkt.');return {blob,w,h,sharp:v84Sharp(c)}}
+  const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',.84));if(!blob)throw new Error('Foto kon niet worden verwerkt.');return {blob,w,h,w0,h0,sharp:v84Sharp(c),lum:v84Lum(c)}}
+/* v9 · gemiddelde helderheid (0–1) en kwaliteitsvlaggen: onscherp, te donker, te klein (originele afmetingen w0/h0) */
+function v84Lum(src){try{const c=document.createElement('canvas');c.width=64;c.height=48;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(src,0,0,64,48);const d=x.getImageData(0,0,64,48).data;let s=0;
+  for(let i=0;i<d.length;i+=4)s+=.299*d[i]+.587*d[i+1]+.114*d[i+2];return Math.round(s/(d.length/4)/255*1000)/1000}catch(e){return null}}
+const V84_Q={blur:60,dark:.16,small:900};
+function v84Qual(p){if(!p||p.kind==='video')return [];const out=[];if(p.sharp!=null&&p.sharp<V84_Q.blur)out.push('Onscherp');if(p.lum!=null&&p.lum<V84_Q.dark)out.push('Te donker');const W0=p.w0||p.w,H0=p.h0||p.h;if(W0&&H0&&Math.max(W0,H0)<V84_Q.small)out.push('Klein');return out}
+const v84QBadge=p=>{const q=v84Qual(p);return q.length?`<span class="v9-q" title="Komt alleen als laatste keus in de reisvideo">${q.join(' · ')}</span>`:''};
 /* scherpte: variantie van de Laplace-filter op een verkleinde grijswaardenversie (hoger = scherper); alleen om foto's van hetzelfde dier te vergelijken */
 function v84Sharp(src){try{const W=320,sw=src.width||src.videoWidth,sh=src.height||src.videoHeight,H=Math.max(8,Math.round(W*sh/sw)),c=document.createElement('canvas');c.width=W;c.height=H;
   const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(src,0,0,W,H);const d=x.getImageData(0,0,W,H).data,g=new Float32Array(W*H);
@@ -52,15 +58,15 @@ function v84Sharp(src){try{const W=320,sw=src.width||src.videoWidth,sh=src.heigh
   for(let y=1;y<H-1;y++)for(let x2=1;x2<W-1;x2++){const i=y*W+x2,l=4*g[i]-g[i-1]-g[i+1]-g[i-W]-g[i+W];sum+=l;sq+=l*l;n++}
   return n?Math.round(sq/n-(sum/n)**2):0}catch(e){return 0}}
 /* oudere foto's zonder scherptewaarde: op de achtergrond aanvullen */
-async function v84SharpFill(){for(const p of V84.list.concat(V84.moods).filter(p=>p.sharp==null)){try{const b=await createImageBitmap(p.blob);const v=v84Sharp(b);b.close&&b.close();
-  await v84Write(st=>st.put({...p,sharp:v}));p.sharp=v}catch(e){}}}
+async function v84SharpFill(){for(const p of V84.list.concat(V84.moods,V84.stays).filter(p=>p.sharp==null||p.lum==null)){try{const b=await createImageBitmap(p.blob);const v=p.sharp??v84Sharp(b),l=v84Lum(b);b.close&&b.close();
+  await v84Write(st=>st.put({...p,sharp:v,lum:l}));p.sharp=v;p.lum=l}catch(e){}}}
 
 const v84DayOf=(name,day,kind)=>(kind==='video'?V84.vids:V84.list).filter(p=>p.sp===v43name(name)&&p.day===day);
 /* foto's toevoegen aan de waarneming van één dag (max. V84_MAX per dag); markeert die dag als gezien en op foto */
 async function v84Add(name,region,files,day){day=day||v84DayFor(region);const have=v84DayOf(name,day).length,room=V84_MAX-have;if(room<=0)return {added:0,skipped:files.length};
   const sp=v43name(name),fav0=!v84Of(name).length;let added=0;
-  for(const f of [...files].slice(0,room)){const {blob,w,h,sharp}=await v84Shrink(f);
-    const rec={id:v84Uid(),sp,name,region,day,kind:'photo',t:new Date().toISOString(),taken:await v84Exif(f),w,h,sharp,blob,fav:fav0&&added===0};
+  for(const f of [...files].slice(0,room)){const {blob,w,h,w0,h0,sharp,lum}=await v84Shrink(f);
+    const rec={id:v84Uid(),sp,name,region,day,kind:'photo',t:new Date().toISOString(),taken:await v84Exif(f),w,h,w0,h0,sharp,lum,blob,fav:fav0&&added===0};
     await v84Write(st=>st.put(rec));added++}
   if(typeof v86SetDay==='function')v86SetDay(name,region,day,'photo',true);else{const r=wl2Rec(name,region);if(!r||!r.photo)v52Set(name,region,'photo',true)}
   await v84Load();return {added,skipped:Math.max(0,files.length-room)}}
@@ -123,7 +129,7 @@ function v84SheetBlock(name,region){const sp=v43name(name),o=state.v43Observatio
   const rows=[...days].filter(d=>S[d-1]).sort((a,b)=>a-b).map(d=>{const reg=o?.days?.[d]?.r||all.find(p=>p.day===d)?.region||(d===ctx?region:v47Region(S[d-1]));
     const ph=V84.list.filter(p=>p.sp===sp&&p.day===d).sort((a,b)=>(!!b.favUser-!!a.favUser)||a.t.localeCompare(b.t)),vs=V84.vids.filter(p=>p.sp===sp&&p.day===d),key=`${d}|${encodeURIComponent(reg)}`;
     return `<div class="v84-day ${d===ctx?'cur':''}"><div class="v84-dh"><b>Dag ${d} · ${esc(reg)}</b><small>${fmt(S[d-1].date)}${o?.days?.[d]?' · gezien':''}</small></div>
-      ${ph.length||vs.length?`<div class="v84-grid">${ph.map(p=>`<div class="v84-ph ${p.favUser?'fav':''}"><img src="${V84.url[p.id]}" alt="Eigen foto ${esc(v47Info(name).nl)}"><button class="v84-star" data-v84-fav="${p.id}" aria-label="${p.favUser?'Favoriet: tik om uit te zetten':'Maak favoriet'}" aria-pressed="${!!p.favUser}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Foto verwijderen">${dsI('plus',16)}</button></div>`).join('')}${vs.map(p=>`<div class="v84-ph vid ${p.fav?'fav':''}"><button class="v84-vplay" data-v84-play="${p.id}" aria-label="Video afspelen">${V84.poster[p.id]?`<img src="${V84.poster[p.id]}" alt="">`:''}<span>${'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>'}${v84Sec(p.dur||0)}</span></button><button class="v84-star" data-v84-vfav="${p.id}" aria-label="${p.fav?'Voorkeur voor de reisvideo':'Voorkeur geven in de reisvideo'}" aria-pressed="${!!p.fav}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Video verwijderen">${dsI('plus',16)}</button></div>`).join('')}</div>`:''}
+      ${ph.length||vs.length?`<div class="v84-grid">${ph.map(p=>`<div class="v84-ph ${p.favUser?'fav':''}"><img src="${V84.url[p.id]}" alt="Eigen foto ${esc(v47Info(name).nl)}">${v84QBadge(p)}<button class="v84-star" data-v84-fav="${p.id}" aria-label="${p.favUser?'Favoriet: tik om uit te zetten':'Maak favoriet'}" aria-pressed="${!!p.favUser}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Foto verwijderen">${dsI('plus',16)}</button></div>`).join('')}${vs.map(p=>`<div class="v84-ph vid ${p.fav?'fav':''}"><button class="v84-vplay" data-v84-play="${p.id}" aria-label="Video afspelen">${V84.poster[p.id]?`<img src="${V84.poster[p.id]}" alt="">`:''}<span>${'<svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>'}${v84Sec(p.dur||0)}</span></button><button class="v84-star" data-v84-vfav="${p.id}" aria-label="${p.fav?'Voorkeur voor de reisvideo':'Voorkeur geven in de reisvideo'}" aria-pressed="${!!p.fav}">${dsI('star',16)}</button><button class="v84-del" data-v84-del="${p.id}" aria-label="Video verwijderen">${dsI('plus',16)}</button></div>`).join('')}</div>`:''}
       ${ph.length<V84_MAX||vs.length<V84_VMAX?`<div class="v84-adds">${ph.length<V84_MAX?`<label class="ds-btn secondary v84-add">${dsI('plus',18)}Foto<small>${ph.length}/${V84_MAX}</small><input type="file" accept="image/*" ${V84_MAX-ph.length>1?'multiple':''} hidden data-v84-add="${key}"></label>`:''}${vs.length<V84_VMAX?`<label class="ds-btn secondary v84-add">${V84_VICO}Video<small>max ${V84_VLEN} s</small><input type="file" accept="video/*" hidden data-v84-vadd="${key}"></label>`:''}</div>`:''}</div>`}).join('');
   return `<div class="v84-own"><div class="v84-h"><b>Eigen foto's en video</b><small>per dag ${V84_MAX} foto's en ${V84_VMAX} video · ster = voorkeur</small></div>${rows}<p class="v84-msg ds-meta" aria-live="polite"></p></div>`}
 {const prev=wl2SheetHtml;wl2SheetHtml=function(name,region){let h=prev(name,region);if(!V84.ready)return h;
@@ -224,8 +230,8 @@ const v84Slug=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace
 /* v8.15: max. 15 sfeerfoto's per dag (met label) en max. 3 foto's van het verblijf (kind:'stay') */
 async function v84AddMood(day,files,kind='mood'){const stay=kind==='stay',have=(stay?V84.stays:V84.moods).filter(p=>p.day===day).length,room=(stay?V84_STAY:V84_MOOD)-have;if(room<=0)return {added:0,skipped:files.length};
   const region=v47Region(S[day-1]);let added=0;
-  for(const f of [...files].slice(0,room)){const {blob,w,h,sharp}=await v84Shrink(f),taken=await v84Exif(f);
-    await v84Write(st=>st.put({id:v84Uid(),sp:'',name:'',region,day,kind:stay?'stay':'mood',label:'',t:new Date().toISOString(),taken,w,h,sharp,blob,fav:false}));added++}
+  for(const f of [...files].slice(0,room)){const {blob,w,h,w0,h0,sharp,lum}=await v84Shrink(f),taken=await v84Exif(f);
+    await v84Write(st=>st.put({id:v84Uid(),sp:'',name:'',region,day,kind:stay?'stay':'mood',label:'',t:new Date().toISOString(),taken,w,h,w0,h0,sharp,lum,blob,fav:false}));added++}
   await v84Load();return {added,skipped:Math.max(0,files.length-room)}}
 function v84MoodBlock(d){const ms=V84.moods.filter(p=>p.day===d.id).sort((a,b)=>(a.taken||a.t).localeCompare(b.taken||b.t));
   return `<div class="ds-card v84-mood"><div class="v84-h"><b>Sfeerfoto's</b><small>${ms.length} van ${V84_MOOD} · komen in de reisvideo</small></div>

@@ -294,7 +294,7 @@ const {chromium}=require('playwright');const path=require('path');
     const days=plan.days.map(d=>d.day);if(days.join()!==[...days].sort((a,b)=>a-b).join())bad.push('reisvideo: dagen niet op volgorde');
     const segs=v85Segments(plan,true);if(segs[0].k!=='intro'||segs[1].k!=='day'||!/,end(,credits)?(,mosaic)?$/.test(segs.map(s=>s.k).join(',')))bad.push('reisvideo: opbouw '+segs.map(s=>s.k).join(','));
     if(!/Proef/i.test(segs[0].label))bad.push('reisvideo: proefvideo niet gemarkeerd');
-    const hs=segs.find(s=>s.k==='sp'&&s.title===v47Info('Mantled howler monkey').nl);if(!hs||!/^Voorbeeldfoto · ©/.test(hs.credit)||hs.label!=='Zoogdier'||!/Cahuita/.test(hs.meta))bad.push('reisvideo: soortdia voorbeeldfoto '+JSON.stringify(hs));
+    const hs=segs.find(s=>s.k==='sp'&&s.title===v47Info('Mantled howler monkey').nl);if(!hs||!/^Voorbeeldfoto · ©/.test(hs.credit)||!/Zoogdier$/.test(hs.label)||!/Cahuita/.test(hs.meta))bad.push('reisvideo: soortdia voorbeeldfoto '+JSON.stringify(hs));
     if(v85Open(new Date('2027-03-01T23:59:00'))||!v85Open(new Date('2027-03-02T00:00:01')))bad.push('reisvideo: ontgrendeldatum');
     tab='wildlife';render();let go=document.getElementById('v85go');if(!go||!/Reisvideo maken/.test(go.textContent))bad.push('reisvideo: knop Reisvideo maken ontbreekt (altijd beschikbaar)');
     V85.SCALE=.08;
@@ -472,7 +472,7 @@ const {chromium}=require('playwright');const path=require('path');
       recs.push({id:'t11m'+d,sp:'',name:'',region:R,day:d,kind:'mood',t:'x',taken:'',w:800,h:450,blob:bl})}
     await v84Write(st=>recs.forEach(r=>st.put(r)));await v84Load();
     const plan=v85Plan(),full=v85Segments(plan,true),short=v85Short(plan,true),spS=short.filter(x=>x.k==='sp');
-    if(!short.length||spS.length!==Math.min(20,plan.days.filter(d=>d.items.some(i=>i.still||i.clips.length)).length)||spS.length<5||v85Seconds(short)>=v85Seconds(full)||short[0].k!=='intro'||!short.some(x=>x.k==='end'))bad.push('korte versie: '+short.map(x=>x.k).join(',')+' '+v85Seconds(short)+'/'+v85Seconds(full));
+    if(!short.length||spS.length!==Math.min(20,plan.days.filter(d=>d.items.some(i=>i.still||i.clips.length)).length)||spS.length<5||v85Seconds(short)>=v85Seconds(full)||!['intro','cold'].includes(short[0].k)||!short.some(x=>x.k==='end'))bad.push('korte versie: '+short.map(x=>x.k).join(',')+' '+v85Seconds(short)+'/'+v85Seconds(full));
     if(new Set(spS.map(x=>x.hud.split(' · ')[0])).size!==spS.length)bad.push('korte versie: niet 1 dier per dag');
     V85.SCALE=.05;try{const out=await v85Make({proef:true,disk:false,portrait:true,short:true});const vid=document.createElement('video');vid.muted=true;vid.src=URL.createObjectURL(out.blob);
       await new Promise(r=>{vid.onloadedmetadata=r;vid.onerror=r;setTimeout(r,6000)});if(vid.videoWidth!==1080||vid.videoHeight!==1920)bad.push('staand formaat: '+vid.videoWidth+'x'+vid.videoHeight)}
@@ -529,6 +529,26 @@ const {chromium}=require('playwright');const path=require('path');
       V85.SCALE=.2;const out=await v85Make({proef:true,disk:false});if(!out.blob.size)bad.push('reisvideo met gedecodeerde clip leeg')}
     catch(e){bad.push('vloeiende video: '+e.message)}V85.SCALE=1;
     await v84Write(st=>V84.list.concat(V84.vids).forEach(x=>st.delete(x.id)));await v84Load();delete state.v43Observations[v43name(N)];save();tab='home';render();return bad});v.forEach(x=>errs.push(x))}
+  /* v9: kwaliteit, kleuren gelijktrekken, ritme 0,5 s, openingsscène, hoogtepunt van de dag, bitrate */
+  {const v=await p.evaluate(async()=>{const bad=[];if(V85.BR!==8_000_000)bad.push('bitrate '+V85.BR);
+    const pic=async(fill,noise,w=1600,h=1000)=>{const cv=document.createElement('canvas');cv.width=w;cv.height=h;const g=cv.getContext('2d');g.fillStyle=fill;g.fillRect(0,0,w,h);if(noise)for(let i=0;i<9000;i++){g.fillStyle=i%2?'#000':'#fff';g.fillRect(Math.random()*w,Math.random()*h,3,3)}return cv};
+    if(!v84Qual({sharp:5,lum:.5,w:1600,h:1000}).includes('Onscherp')||!v84Qual({sharp:900,lum:.08,w:1600,h:1000}).includes('Te donker')||!v84Qual({sharp:900,lum:.5,w:640,h:480}).includes('Klein')||v84Qual({sharp:900,lum:.5,w:1600,h:1000}).length)bad.push('kwaliteitsvlaggen');
+    const dark=await pic('#2a2622',true),gd=v85Grade(dark),m=c=>{const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;let s=0;for(let i=0;i<d.length;i+=40)s+=d[i]+d[i+1]+d[i+2];return s/(d.length/40)/3};
+    if(!(m(gd)>m(dark)+5))bad.push('donkere foto niet lichter: '+m(dark)+' → '+m(gd));
+    /* dag 6: 6 dieren met eigen foto, één met onscherpe en scherpe foto */
+    const R=v47Region(S[5]),names=(V47_PLACES[R]||[]).map(x=>x[0]).slice(0,6),recs=[];const bl=async c=>await new Promise(r=>c.toBlob(r,'image/jpeg',.85));
+    const good=await bl(await pic('#486',true)),soft=await bl(await pic('#486',false));
+    names.forEach((n,i)=>{recs.push({id:'t9p'+i,sp:v43name(n),name:n,region:R,day:6,kind:'photo',t:'x',taken:`2027-02-13T0${i+6}:00:00`,w:1600,h:1000,sharp:900,lum:.4,blob:good,fav:false});v52Set(n,R,'seen',true)});
+    recs.push({id:'t9soft',sp:v43name(names[0]),name:names[0],region:R,day:6,kind:'photo',t:'y',taken:'',w:1600,h:1000,sharp:5,lum:.4,blob:soft,fav:false});
+    await v84Write(st=>recs.forEach(r=>st.put(r)));await v84Load();
+    const plan=v85Plan(),it0=plan.items.find(i=>i.sp===v43name(names[0]));if(!it0||it0.photos[0]!==V84.url['t9p0'])bad.push('onscherpe foto gekozen boven scherpe');
+    const pd=plan.days.find(d=>d.day===6),hl=pd.items.filter(i=>i.hl);const minC=Math.min(...pd.items.map(i=>i.chance).filter(Boolean));if(hl.length!==1||hl[0].chance!==minC)bad.push('hoogtepunt van de dag: '+hl.map(i=>i.chance)+' min '+minC);
+    const segs=v85Segments(plan,true);if(segs[0].k!=='cold'||segs[0].srcs.length<3||segs[1].k!=='intro'||segs[1].trans!=='dip')bad.push('openingsscène: '+segs.slice(0,2).map(x=>x.k+'/'+x.trans));
+    const hs=segs.filter(x=>x.k==='sp'&&x.hl&&x.day===6);if(hs.length!==1||!/Hoogtepunt/.test(hs[0].label)||hs[0].dur<4.5)bad.push('hoogtepunt-dia: '+hs.map(x=>x.label+x.dur));
+    const off=segs.filter(x=>x.k!=='credits'&&Math.abs(x.dur*2-Math.round(x.dur*2))>1e-9);if(off.length)bad.push('niet op ritme 0,5 s: '+off.map(x=>x.k+':'+x.dur));
+    wl2Open(names[0],R);if(!/Onscherp/.test(document.querySelector('#wl2Sheet .v84-own')?.textContent||''))bad.push('waarschuwing Onscherp niet zichtbaar');wl2Close();
+    V85.SCALE=.06;try{const o=await v85Make({proef:true,disk:false});if(!o.blob.size)bad.push('video v9 leeg');const o2=await v85Make({proef:true,disk:false,short:true,portrait:true});if(!o2.blob.size)bad.push('korte staande v9 leeg')}catch(e){bad.push('video v9: '+e.message)}V85.SCALE=1;
+    await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();tab='home';render();return bad});v.forEach(x=>errs.push(x))}
   /* v8.14: kleuren en kansschaal samen op de soortkaarten */
   {const r=await p.evaluate(()=>{tab='days';currentDay=6;daySection='wildlife';v47Filter='Alle';render();const cards=[...document.querySelectorAll('.ds-sp')];return {n:cards.length,tags:cards.filter(c=>c.querySelector('.v88-card .v88-dot')).length,chance:cards.filter(c=>c.querySelector('.ds-chance')).length}});
    if(!r.n||r.tags<r.n*.8||!r.chance)errs.push('soortkaarten: kleuren en kansschaal samen: '+JSON.stringify(r))}
