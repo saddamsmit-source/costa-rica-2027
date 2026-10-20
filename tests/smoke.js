@@ -475,6 +475,11 @@ const {chromium}=require('playwright');const path=require('path');
     catch(e){bad.push('staande korte video: '+e.message)}V85.SCALE=1;
     if(V85.W!==1920||V85.H!==1080)bad.push('formaat niet hersteld na staande video');
     v85Start();if(!document.querySelector('#v85Gen [data-o="short"]')||!document.querySelector('#v85Gen [data-f="port"]'))bad.push('keuze versie/formaat ontbreekt');v85Close();
+    if(!document.querySelector)0;v85Start();if(!document.querySelector('#v85Gen [data-f="both"]'))bad.push('keuze "Beide" ontbreekt');v85Close();
+    V85.SCALE=.04;await v85Run({short:true,fmt:'both'});V85.SCALE=1;
+    if(!v85Out||(v85Out.items||[]).length!==2||!v85Out.items[1].portrait||v85Out.items[0].portrait)bad.push('beide formaten: '+(v85Out?.items||[]).length);
+    const dl=[...document.querySelectorAll('#v85Gen a[download]')].map(a=>a.download);if(dl.length!==2||!dl.some(n=>/staand/.test(n))||!dl.some(n=>!/staand/.test(n)))bad.push('twee downloads: '+dl);
+    v85Close();if(V85.W!==1920)bad.push('formaat niet hersteld na beide');
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();return bad});v.forEach(x=>errs.push(x))}
   /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
   {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());

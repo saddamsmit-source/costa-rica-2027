@@ -21,3 +21,6 @@
 .v85-opt button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:56px;padding:10px 12px;border-radius:14px;border:1px solid var(--ds-line);background:var(--ds-card);color:var(--ds-ink);font:inherit;text-align:left;cursor:pointer}
 .v85-opt button b{font-size:15px}.v85-opt button small{font-size:12px;color:var(--ds-muted)}
 .v85-opt button.on{border-color:var(--ds-jungle);background:var(--ds-jungle);color:#fff}.v85-opt button.on small{color:rgba(255,255,255,.8)}
+.v85-opt.three{grid-template-columns:repeat(3,1fr)}
+.v85-file{display:flex;flex-direction:column;gap:8px;padding:10px 0;border-top:1px solid var(--ds-line)}.v85-file b{display:block;font-size:15px}.v85-file small{font-size:12px;color:var(--ds-muted)}
+.v85-vid.port{aspect-ratio:9/16;max-height:50vh;width:auto;margin:0 auto;display:block}

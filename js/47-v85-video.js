@@ -383,9 +383,9 @@ function v85Sink(){const segs=[],HEAD=8<<20;
     blob(type){segs.sort((a,b)=>a.pos-b.pos);let p=0;const parts=[];
       for(const s of segs){if(s.pos<p)throw new Error('Video is onvolledig.');if(s.pos>p)parts.push(new Uint8Array(s.pos-p));parts.push(s.u||s.b);p=s.pos+s.len}
       return new Blob(parts,{type})}}}
-async function v85Target(useDisk){
-  if(useDisk!==false)try{const root=await navigator.storage.getDirectory(),fh=await root.getFileHandle('reisvideo.mp4',{create:true});
-    if(fh.createWritable){const ws=await fh.createWritable();return {target:new Mp4Muxer.FileSystemWritableFileStreamTarget(ws,{chunkSize:4<<20}),done:async()=>{await ws.close();return await fh.getFile()},cleanup:()=>root.removeEntry('reisvideo.mp4').catch(()=>{}),disk:true}}}catch(e){}
+async function v85Target(useDisk,fname='reisvideo.mp4'){
+  if(useDisk!==false)try{const root=await navigator.storage.getDirectory(),fh=await root.getFileHandle(fname,{create:true});
+    if(fh.createWritable){const ws=await fh.createWritable();return {target:new Mp4Muxer.FileSystemWritableFileStreamTarget(ws,{chunkSize:4<<20}),done:async()=>{await ws.close();return await fh.getFile()},cleanup:()=>root.removeEntry(fname).catch(()=>{}),disk:true}}}catch(e){}
   const sink=v85Sink();return {target:new Mp4Muxer.StreamTarget({onData:(d,p)=>sink.write(d,p),chunked:true,chunkSize:4<<20}),done:async()=>sink.blob('video/mp4'),disk:false}}
 
 /* maakt de video; prog(fractie) voor de voortgang; job.cancel=true breekt af */
@@ -419,7 +419,7 @@ async function v85MakeCore(opts={}){const job=opts.job||{},prog=opts.onProgress|
     v85Post(ctx,n,total)};
   const codec=opts.forceRecorder?null:await v85Codec();
   if(!codec)return v85Record(segs,{cv,ctx,pctx,frame,total,prog,job});
-  await v85LoadLib();const tgt=await v85Target(opts.disk);let err=null,done=0;
+  await v85LoadLib();const tgt=await v85Target(opts.disk,opts.portrait?'reisvideo-9x16.mp4':'reisvideo-16x9.mp4');let err=null,done=0;
   const muxer=new Mp4Muxer.Muxer({target:tgt.target,video:{codec:codec.mux,width:W,height:H,frameRate:FPS},fastStart:{expectedVideoChunks:total}});
   const enc=new VideoEncoder({output:(c,m)=>{try{muxer.addVideoChunk(c,m)}catch(e){err=e}},error:e=>{err=e}});enc.configure(codec.cfg);
   let next=v85Res(segs[0]),n=0;const t0=performance.now();
@@ -469,34 +469,41 @@ function v85DayCard(d){let pd;try{pd=v85Plan().days.find(x=>x.day===d.id)}catch(
 {const prev=renderWildlife;renderWildlife=function(){const h=prev();const at='<div class="ds-section-title">Logboek</div>';
   return h.includes(at)?h.replace(at,v85Card()+at):h}}
 function v85Close(){if(v85Job)v85Job.cancel=true;const el=document.getElementById('v85Gen');if(el){el.remove();document.body.classList.remove('wl2-lock')}
-  if(v85Out){URL.revokeObjectURL(v85Out.url);try{v85Out.out.cleanup?.()}catch(e){}v85Out=null}try{v85Job?.lock?.release()}catch(e){}v85Job=null}
+  if(v85Out){(v85Out.items||[v85Out]).forEach(x=>{try{URL.revokeObjectURL(x.url)}catch(e){}try{x.out.cleanup?.()}catch(e){}});v85Out=null}try{v85Job?.lock?.release()}catch(e){}v85Job=null}
 /* eerst kiezen: volledige of korte versie, liggend of staand */
-const V85_OPT={short:false,portrait:false};
+const V85_OPT={short:false,fmt:'land'};
 function v85Start(){v85Close();const proef=!v85Open(),plan=v85Plan(),el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
   const len=sh=>{try{return v85Dur(v85Seconds(sh?v85Short(plan,proef):v85Segments(plan,proef)))}catch(e){return ''}},lf=len(false),ls=len(true);
   const draw=()=>{el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Welke video?</h3>
     <div class="v85-opt" role="radiogroup" aria-label="Versie"><button data-o="full" aria-pressed="${!V85_OPT.short}" class="${V85_OPT.short?'':'on'}"><b>Volledig</b><small>alle dagen · ca. ${lf}</small></button><button data-o="short" aria-pressed="${V85_OPT.short}" class="${V85_OPT.short?'on':''}"><b>Kort</b><small>hoogtepunten · ca. ${ls}</small></button></div>
-    <div class="v85-opt" role="radiogroup" aria-label="Formaat"><button data-f="land" aria-pressed="${!V85_OPT.portrait}" class="${V85_OPT.portrait?'':'on'}"><b>Liggend 16:9</b><small>tv, laptop</small></button><button data-f="port" aria-pressed="${V85_OPT.portrait}" class="${V85_OPT.portrait?'on':''}"><b>Staand 9:16</b><small>telefoon, WhatsApp-status</small></button></div>
+    <div class="v85-opt three" role="radiogroup" aria-label="Formaat">${[['land','Liggend 16:9','tv, laptop'],['port','Staand 9:16','telefoon, status'],['both','Beide','16:9 én 9:16']].map(([k,l,sub])=>`<button data-f="${k}" aria-pressed="${V85_OPT.fmt===k}" class="${V85_OPT.fmt===k?'on':''}"><b>${l}</b><small>${sub}</small></button>`).join('')}</div>
     <div class="v85-btns"><button class="ds-btn primary" data-v85="go">Video maken</button><button class="ds-btn secondary" data-v85="close">Annuleren</button></div></div>`;
-    el.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{V85_OPT.short=b.dataset.o==='short';draw()});el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{V85_OPT.portrait=b.dataset.f==='port';draw()});
+    el.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{V85_OPT.short=b.dataset.o==='short';draw()});el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{V85_OPT.fmt=b.dataset.f;draw()});
     el.querySelector('[data-v85="close"]').onclick=v85Close;el.querySelector('[data-v85="go"]').onclick=()=>{el.remove();v85Run({...V85_OPT})}};
   draw();document.body.append(el);document.body.classList.add('wl2-lock')}
 async function v85Run(opt={}){v85Close();const proef=!v85Open(),job={cancel:false};v85Job=job;
+  const fmts=opt.fmt==='both'?['land','port']:[opt.fmt==='port'||opt.portrait?'port':'land'];
   const el=document.createElement('div');el.id='v85Gen';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label',proef?'Proefvideo maken':'Reisvideo maken');
   el.innerHTML=`<div class="v85-box"><span class="ds-label">${proef?'Proefvideo':'Reisvideo'}</span><h3>Video maken…</h3><div class="v85-bar"><i></i></div><p class="v85-st ds-meta" aria-live="polite">Voorbereiden</p><p class="ds-meta">Houd de app open en het scherm aan.</p><div class="v85-btns"><button class="ds-btn secondary" data-v85="close">Annuleren</button></div></div>`;
   document.body.append(el);document.body.classList.add('wl2-lock');el.querySelector('[data-v85="close"]').onclick=v85Close;
   try{job.lock=await navigator.wakeLock?.request('screen')}catch(e){}
-  const bar=el.querySelector('.v85-bar i'),st=el.querySelector('.v85-st');
-  try{const out=await v85Make({proef,job,short:!!opt.short,portrait:!!opt.portrait,onProgress:(f,ms)=>{bar.style.width=Math.round(f*100)+'%';const left=f>.04?ms/f*(1-f)/1000:0;st.textContent=`${Math.round(f*100)}%${left?` · nog ca. ${left<60?Math.max(5,Math.round(left/5)*5)+' s':Math.round(left/60)+' min'}`:''}`}});
-    if(job.cancel||v85Job!==job)return;try{job.lock?.release()}catch(e){}
-    const url=URL.createObjectURL(out.blob),name=`costa-rica-2027-${proef?'proefvideo':'reisvideo'}${opt.short?'-kort':''}${opt.portrait?'-staand':''}.${out.ext}`,file=new File([out.blob],name,{type:out.type});v85Out={url,file,out};
-    const mb=(out.blob.size/1048576).toFixed(out.blob.size<1048576*10?1:0),canShare=!!(navigator.canShare&&navigator.canShare({files:[file]}));
-    el.querySelector('.v85-box').innerHTML=`<span class="ds-label">${proef?'Proefvideo':'Reisvideo'} klaar</span><video class="v85-vid" src="${url}" controls playsinline preload="metadata"></video>
-      <p class="ds-meta">${out.ext.toUpperCase()} · ${opt.portrait?'1080×1920':'1920×1080'} · ${v85Dur(out.seconds)} · ${mb} MB</p>
-      <div class="v85-btns">${canShare?`<button class="ds-btn primary" data-v85="share">${dsdI('download',18)}Opslaan of delen</button>`:''}<a class="ds-btn ${canShare?'secondary':'primary'}" href="${url}" download="${name}">${canShare?'Downloaden':dsdI('download',18)+'Downloaden'}</a><button class="ds-btn secondary" data-v85="close">Sluiten</button></div>
+  const bar=el.querySelector('.v85-bar i'),st=el.querySelector('.v85-st'),items=[];
+  try{for(let i=0;i<fmts.length;i++){const portrait=fmts[i]==='port',lbl=fmts.length>1?(portrait?'9:16 · ':'16:9 · '):'';
+      const out=await v85Make({proef,job,short:!!opt.short,portrait,onProgress:(f,ms)=>{const g=(i+f)/fmts.length;bar.style.width=Math.round(g*100)+'%';const left=f>.04?ms/f*(1-f)/1000:0;
+        st.textContent=`${lbl}${Math.round(f*100)}%${left?` · nog ca. ${left<60?Math.max(5,Math.round(left/5)*5)+' s':Math.round(left/60)+' min'}`:''}`}});
+      if(job.cancel||v85Job!==job)return;
+      const name=`costa-rica-2027-${proef?'proefvideo':'reisvideo'}${opt.short?'-kort':''}${portrait?'-staand':''}.${out.ext}`,file=new File([out.blob],name,{type:out.type});
+      items.push({url:URL.createObjectURL(out.blob),file,out,portrait})}
+    try{job.lock?.release()}catch(e){}
+    v85Out={...items[0],items};const files=items.map(x=>x.file),canShare=!!(navigator.canShare&&navigator.canShare({files}));
+    el.querySelector('.v85-box').innerHTML=`<span class="ds-label">${proef?'Proefvideo':'Reisvideo'} klaar</span><video class="v85-vid ${items[0].portrait?'port':''}" src="${items[0].url}" controls playsinline preload="metadata"></video>
+      ${items.map((x,i)=>{const mb=(x.out.blob.size/1048576).toFixed(x.out.blob.size<1048576*10?1:0);return `<div class="v85-file"><div><b>${x.portrait?'Staand 9:16':'Liggend 16:9'}</b><small>${x.out.ext.toUpperCase()} · ${x.portrait?'1080×1920':'1920×1080'} · ${v85Dur(x.out.seconds)} · ${mb} MB</small></div>
+        <div class="v85-btns">${canShare?`<button class="ds-btn primary" data-v85-share="${i}">${dsdI('download',18)}Opslaan of delen</button>`:''}<a class="ds-btn ${canShare?'secondary':'primary'}" href="${x.url}" download="${x.file.name}">Downloaden</a></div></div>`}).join('')}
+      ${items.length>1&&canShare?`<button class="ds-btn secondary" data-v85-share="all">Beide tegelijk opslaan of delen</button>`:''}
+      <div class="v85-btns"><button class="ds-btn secondary" data-v85="close">Sluiten</button></div>
       <p class="ds-meta">Kies bij "Opslaan of delen" voor "Bewaar video" om hem in Foto’s te zetten.</p>`;
     el.querySelectorAll('[data-v85="close"]').forEach(b=>b.onclick=v85Close);
-    const sh=el.querySelector('[data-v85="share"]');if(sh)sh.onclick=async()=>{try{await navigator.share({files:[file],title:'Costa Rica 2027'})}catch(e){}}}
-  catch(e){if(job.cancel)return;try{job.lock?.release()}catch(x){}
+    el.querySelectorAll('[data-v85-share]').forEach(b=>b.onclick=async()=>{const k=b.dataset.v85Share,fs=k==='all'?files:[files[+k]];try{await navigator.share({files:fs,title:'Costa Rica 2027'})}catch(e){}})}
+  catch(e){if(job.cancel)return;try{job.lock?.release()}catch(x){}items.forEach(x=>{try{URL.revokeObjectURL(x.url)}catch(e){}});
     st.textContent='Video maken mislukt: '+e.message;el.querySelector('h3').textContent='Niet gelukt';el.querySelector('[data-v85="close"]').textContent='Sluiten'}}
 {const prev=bind;bind=function(){prev();const g=document.getElementById('v85go');if(g)g.onclick=v85Start}}
