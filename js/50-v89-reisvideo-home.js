@@ -13,7 +13,7 @@ const v89Days=()=>S.map(x=>v89Day(x.id));
 function v89Ended(now=new Date()){return v85Open(now)}
 function v89Check(){const days=v89Days(),miss=days.filter(x=>!x.ok);
   return `<details class="v89-check"><summary>Controle per dag <span>${days.length-miss.length} van ${days.length} compleet</span></summary>
-    <p class="ds-meta">Per dag nodig: ${V89_REQ.mood} sfeerfoto's, ${V89_REQ.animals} dieren met eigen foto en ${V89_REQ.clips} eigen video's.</p>
+    <p class="ds-meta">Per dag nodig: minimaal ${V89_REQ.mood} sfeerfoto's (max. ${V84_MOOD}), ${V89_REQ.animals} dieren met eigen foto en ${V89_REQ.clips} eigen video's.</p>
     <ul>${days.map(x=>`<li><button class="v89-day ${x.ok?'ok':''}" data-v89-day="${x.d}"><b>Dag ${x.d}</b><span>${esc(v47Region(S[x.d-1]))}</span>
       <i class="v89-cnt"><em class="${x.moods>=V89_REQ.mood?'f':''}">${x.moods}/${V89_REQ.mood} sfeer</em><em class="${x.animals>=V89_REQ.animals?'f':''}">${Math.min(x.animals,99)}/${V89_REQ.animals} dieren</em><em class="${x.clips>=V89_REQ.clips?'f':''}">${x.clips}/${V89_REQ.clips} video</em></i></button></li>`).join('')}</ul></details>`}
 function v89Card(){if(typeof v85Plan!=='function')return '';const ended=v89Ended(),plan=v85Plan(),segs=v85Segments(plan,false),days=v89Days(),done=days.filter(x=>x.ok).length;

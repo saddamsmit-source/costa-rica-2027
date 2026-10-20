@@ -16,6 +16,7 @@
     ['#v84Play',()=>v84Close()],
     ['#v85Gen',()=>v85Close()],
     ['#v84Trim',()=>v84TrimClose()],
+    ['#v815Lbl',()=>v815LblClose()],
     ['#v84Vid',()=>v84VidClose()],
     ['#wl2Sheet',()=>wl2Close()],
     ['#v52quick',el=>{el.remove();render()}]];

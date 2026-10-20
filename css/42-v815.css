@@ -1,0 +1,17 @@
+/* v8.15 · sfeerfoto's met label, ons verblijf, labelvenster */
+.v815-ph .v815-pick{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;border-radius:0;background:none;cursor:pointer;display:block;top:0;left:0}
+.v815-ph .v815-pick img{width:100%;height:100%;object-fit:cover;display:block}
+.v815-tag{position:absolute;left:4px;right:4px;bottom:4px;padding:3px 7px;border-radius:8px;background:rgba(6,24,17,.72);color:#fff;font-size:12px;font-weight:600;line-height:1.3;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v815-tag.empty{background:rgba(255,255,255,.88);color:var(--ds-leaf,#1F8A4C);font-weight:700;right:auto}
+.v815-ph .v84-del{z-index:1}
+.v815-stay{margin-top:12px}
+.v815-name{display:grid;gap:4px;margin:4px 0 10px}
+.v815-name .field{width:100%;min-height:44px;box-sizing:border-box}
+.v815-box{max-height:calc(100dvh - 32px);overflow:auto}
+.v815-prev{width:100%;max-height:30vh;object-fit:cover;border-radius:14px;display:block;margin-bottom:12px}
+.v815-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 12px}
+.v815-chip{min-height:40px;padding:8px 14px;border-radius:20px;border:1.5px solid var(--ds-line,#d7e2db);background:var(--ds-card,#fff);color:inherit;font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-align:left}
+.v815-chip.on{background:var(--ds-leaf,#1F8A4C);border-color:var(--ds-leaf,#1F8A4C);color:#fff}
+.v815-in{width:100%;min-height:44px;box-sizing:border-box;margin-bottom:10px}
+.v815-all{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:0 0 12px;line-height:1.35}
+.v815-all input{width:20px;height:20px;flex:none;margin-top:1px}
