@@ -31,3 +31,4 @@
 .wl2-gres .v88-tags{margin:2px 0}
 /* v8.8.1: soortvenster (en wat erboven opent) ligt boven het Waarneming-venster */
 .wl2-overlay{z-index:10010}.wl2-zoom{z-index:10020}.v85-gen{z-index:10050}
+.v88-card{margin:3px 0 2px}.v88-card .v88-dot{width:9px;height:9px}.v88-card small{font-size:12px}

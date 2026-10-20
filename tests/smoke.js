@@ -482,6 +482,9 @@ const {chromium}=require('playwright');const path=require('path');
     const dl=[...document.querySelectorAll('#v85Gen a[download]')].map(a=>a.download);if(dl.length!==2||!dl.some(n=>/staand/.test(n))||!dl.some(n=>!/staand/.test(n)))bad.push('twee downloads: '+dl);
     v85Close();if(V85.W!==1920)bad.push('formaat niet hersteld na beide');
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();return bad});v.forEach(x=>errs.push(x))}
+  /* v8.14: kleuren en kansschaal samen op de soortkaarten */
+  {const r=await p.evaluate(()=>{tab='days';currentDay=6;daySection='wildlife';v47Filter='Alle';render();const cards=[...document.querySelectorAll('.ds-sp')];return {n:cards.length,tags:cards.filter(c=>c.querySelector('.v88-card .v88-dot')).length,chance:cards.filter(c=>c.querySelector('.ds-chance')).length}});
+   if(!r.n||r.tags<r.n*.8||!r.chance)errs.push('soortkaarten: kleuren en kansschaal samen: '+JSON.stringify(r))}
   /* v8.6: migratie van oude vinkjes (zonder dagen) met veiligheidskopie */
   {const mp=await (await b.newContext()).newPage();mp.on('pageerror',e=>errs.push('migratie JS: '+e.message));await mp.route(/^https?:/,r=>r.abort());
    await mp.addInitScript(()=>{if(!localStorage.getItem('CR27_V2'))localStorage.setItem('CR27_V2',JSON.stringify({v43Observations:{'jabiru':{name:'Jabiru',places:{'La Fortuna':{seen:true,photo:true,t:'2027-02-14T15:00:00.000Z'},'Tortuguero':{seen:true,photo:false}}}}}))});

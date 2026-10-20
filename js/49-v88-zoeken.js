@@ -141,3 +141,6 @@ v50GlobalSearch=function(v){const box=document.getElementById('v50gres');if(!box
 /* zoekvelden: laten zien dat kenmerken werken */
 {const prev=dayContent;dayContent=function(d){return prev(d).replace('placeholder="Zoek soort, NL of Engels"','placeholder="Naam of kenmerk, bijv. rood, nacht"')}}
 {const prev=renderWildlife;renderWildlife=function(){return prev().replace(/placeholder="Waar zie ik…[^"]*"/,'placeholder="Waar zie ik… naam of kenmerk, bijv. rode buik"')}}
+/* v8.14: kleuren en lengte ook op de soortkaarten in de daglijst en op de Wildlife-pagina, naast de kansschaal */
+{const prev=v47Card;v47Card=function(name,region,focus){const h=prev(name,region,focus);
+  return h.replace(/(<span class="ds-sp-txt"><b>[\s\S]*?<\/b><em>[\s\S]*?<\/em>)/,`$1${v88Tags(name).replace('class="v88-tags"','class="v88-tags v88-card"')}`)}}
