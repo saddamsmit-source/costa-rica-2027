@@ -389,6 +389,9 @@ const {chromium}=require('playwright');const path=require('path');
   {const v=await p.evaluate(()=>{const bad=[],T='Keel-billed toucan',Q='Resplendent quetzal',f=v88Feat(T);
     if(!['groen','geel','rood','zwart','oranje'].every(c=>f.colors.has(c))||f.colors.has('blauw')||f.size!=='groot')bad.push('kenmerken toekan: '+[...f.colors]+' '+f.size);
     if(!v88Match(Q,'rode buik')||!v88Match(T,'rode snavel')||v88Match(T,'blauwe')||!v88Match(T,'toucan'))bad.push('zoeken op kenmerken');
+    {const g=n=>v88Feat(Object.keys(V47_SP).find(k=>v47Info(k).nl===n)||n);const o=g('Oranjebuiktrogon'),k=g('Kraagplevier'),w=g('Noord-Amerikaanse waterspreeuw');
+     if(o.colors.has('rood'))bad.push('"geen rode buik" telt als rood');if(k.colors.has('roze')||k.colors.has('geel'))bad.push('pootkleur telt als hoofdkleur');if(w.colors.has('wit'))bad.push('kleur oogleden telt als hoofdkleur');
+     if(!g('Bruinkaporganist').colorsAll.has('groen')||g('Bruinkaporganist').colors.has('groen'))bad.push('vrouwtjeskleur: wel zoekbaar, geen bolletje')}
     const night=Object.keys(V47_SP).filter(n=>v88Match(n,'nacht')).length;if(night<50)bad.push('nachtdieren: '+night);
     v50GlobalSearch('rode buik');const box=document.getElementById('v50gres');if(box&&!/Quetzal/.test(box.textContent))bad.push('"Waar zie ik" vindt quetzal niet op "rode buik"');
     return bad});v.forEach(x=>errs.push(x))}
@@ -397,7 +400,7 @@ const {chromium}=require('playwright');const path=require('path');
    let r=await p.evaluate(()=>({els:document.querySelector('#v52quick .v88-list').textContent,rows:document.querySelectorAll('#v52quick .v88-row').length}));
    if(!/Quetzal/.test(r.els)||!/Elders in Costa Rica/.test(r.els))errs.push('Waarneming: "rode buik" vindt quetzal (elders) niet');
    await p.fill('#v88q','');await p.waitForTimeout(350);await p.click('#v52quick [data-v88-k]');await p.click('#v52quick [data-v88-col="blauw"]');await p.click('#v52quick [data-v88-grp="Vogels"]');
-   r=await p.evaluate(()=>{const l=[...document.querySelectorAll('#v52quick .v88-row')].map(x=>decodeURIComponent(x.dataset.v88));return {n:l.length,bad:l.filter(n=>!v88Feat(n).colors.has('blauw')||v88Feat(n).cat!=='Vogels')}});
+   r=await p.evaluate(()=>{const l=[...document.querySelectorAll('#v52quick .v88-row')].map(x=>decodeURIComponent(x.dataset.v88));return {n:l.length,bad:l.filter(n=>!v88Feat(n).colorsAll.has('blauw')||v88Feat(n).cat!=='Vogels')}});
    if(!r.n||r.bad.length)errs.push('Waarneming: filter blauw+vogels: '+JSON.stringify(r));
    await p.click('#v52quick [data-v88-reset]');await p.fill('#v88q','toekan');await p.waitForTimeout(350);
    const T=encodeURIComponent('Keel-billed toucan');await p.click(`#v52quick .v88-row[data-v88="${T}"] [data-v88-seen]`);

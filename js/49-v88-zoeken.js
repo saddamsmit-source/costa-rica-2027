@@ -9,13 +9,13 @@
    ===================================================================== */
 const V88_COL=[
   ['rood','#C8322B',w=>w.includes('rood')||/rode$/.test(w)||/(karmijn|scharlaken|vermiljoen)/.test(w)],
-  ['oranje','#E8822A',w=>w.includes('oranje')],
-  ['geel','#E2BD2E',w=>w.includes('geel')||/gele$/.test(w)||/^goud/.test(w)],
+  ['oranje','#E8822A',w=>w.includes('oranje')||/^(amber|koper)/.test(w)],
+  ['geel','#E2BD2E',w=>w.includes('geel')||/gele$/.test(w)||/^(goud|oker)/.test(w)],
   ['groen','#3E9A4C',w=>w.includes('groen')||w.includes('olijf')],
   ['blauw','#2F6FC0',w=>w.includes('blauw')||/(turquoise|turkoois|azuur)/.test(w)],
   ['paars','#7B4BA8',w=>/(paars|purper|violet)/.test(w)],
   ['roze','#E58BB0',w=>/^roze|roze$/.test(w)],
-  ['bruin','#8A5A33',w=>/(bruin|kastanje|roest|kaneel)/.test(w)],
+  ['bruin','#8A5A33',w=>/(bruin|kastanje|roest|kaneel)/.test(w)||/^ross/.test(w)],
   ['grijs','#8E9599',w=>/(grijs|grijze|zilver)/.test(w)],
   ['zwart','#1E1E1E',w=>w.includes('zwart')],
   ['wit','#F2F2EC',w=>/^wit|wit$|witte$|^witte/.test(w)||/(wit)(keel|buik|kop|staart|vleugel|borst|rug)/.test(w)]];
@@ -36,20 +36,26 @@ const v88Norm=s=>String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCa
 const V88={idx:new Map(),f:{q:'',grp:'Alle',col:new Set(),size:'',hab:new Set(),mom:'',sort:'kans',open:false,limit:60}};
 function v88Feat(name){let x=V88.idx.get(name);if(x)return x;const i=v47Info(name),r=(typeof wl2==='function'&&wl2(name))||{};
   const desc=v88Norm([r.h,r.l,i.tip].filter(Boolean).join(' ')),words=v88Norm(r.h||i.tip||'').split(/[^a-z]+/).filter(Boolean);
-  const colors=new Set(V88_COL.filter(([,,t])=>words.some(t)).map(c=>c[0]));
+  /* v8.14 · kleuren uit de herkenningstekst: "geen X" telt niet; kleuren van poten, oogring en oogleden tellen niet;
+     de bolletjes tonen alleen het hoofdkleed (zinsdelen over vrouwtjes/jongen niet), zoeken gebruikt alle kleuren */
+  const v88Cols=(txt,primary)=>{const out=new Set(),t=v88Norm(txt).replace(/\(?\bgeen\s+[a-z-]+\)?/g,' ');
+    for(const cl of t.split(/[;.]/)){if(primary&&/\b(vrouw|vrouwtje|juvenie|juveniel|onvolwassen|jong|jongen|winterkleed|niet-broed|eclips)/.test(cl))continue;
+      const ws=cl.split(/[^a-z-]+/).filter(Boolean);const MIN=/^(poten|pootjes|tenen|oogring|oogleden|iris)$/;ws.forEach((w,i)=>{if(MIN.test(ws[i+1]||'')||(/^(tot|of|en)$/.test(ws[i+1]||'')&&MIN.test(ws[i+3]||'')))return;V88_COL.forEach(([c,,f])=>{if(f(w))out.add(c)})})}
+    return out};
+  const colorsAll=v88Cols(r.h||i.tip||'',false),colorsMain=v88Cols(r.h||i.tip||'',true),colors=colorsMain.size?colorsMain:colorsAll;
   const m=(r.h||'').match(/(\d+(?:,\d+)?)\s*(?:[–-]\s*(\d+(?:,\d+)?))?\s*cm/),cm=m?(parseFloat(m[1].replace(',','.'))+parseFloat((m[2]||m[1]).replace(',','.')))/2:0;
   const size=cm?(cm<15?'klein':cm<40?'middel':'groot'):'';
   const hab=new Set(V88_HAB.filter(([,,re])=>re.test(desc)).map(h=>h[0]));
   const grp=typeof v50Group==='function'?v50Group(name):'';
   const txt=v88Norm([name,i.nl,i.en,r.s,(r.ak||[]).join(' '),r.fm,i.cat,grp].filter(Boolean).join(' '));
-  x={name,nl:i.nl,en:i.en,cat:i.cat,grp,txt,desc,colors,size,cm,hab,mom:r.m||i.moment||''};V88.idx.set(name,x);return x}
+  x={name,nl:i.nl,en:i.en,cat:i.cat,grp,txt,desc,colors,colorsAll,size,cm,hab,mom:r.m||i.moment||''};V88.idx.set(name,x);return x}
 /* elk zoekwoord moet kloppen: naam, kenmerk-woord of beschrijving */
 function v88Match(name,q){const toks=v88Norm(q).split(/[\s,]+/).filter(t=>t.length>1);if(!toks.length)return true;const f=v88Feat(name);
   return toks.every(t=>{if(f.txt.includes(t))return true;const a=V88_ALIAS[t];
-    if(a){if(a[0]==='c')return f.colors.has(a[1]);if(a[0]==='s')return f.size===a[1];if(a[0]==='h')return f.hab.has(a[1]);if(a[0]==='m')return f.mom===a[1]}
+    if(a){if(a[0]==='c')return f.colorsAll.has(a[1]);if(a[0]==='s')return f.size===a[1];if(a[0]==='h')return f.hab.has(a[1]);if(a[0]==='m')return f.mom===a[1]}
     return t.length>=3&&f.desc.includes(t)})}
 function v88Pass(name,F){const f=v88Feat(name);if(F.grp!=='Alle'&&f.cat!==F.grp)return false;
-  for(const c of F.col)if(!f.colors.has(c))return false;if(F.size&&f.size!==F.size)return false;
+  for(const c of F.col)if(!f.colorsAll.has(c))return false;if(F.size&&f.size!==F.size)return false;
   for(const h of F.hab)if(!f.hab.has(h))return false;if(F.mom&&f.mom!==F.mom)return false;return v88Match(name,F.q)}
 /* korte kenmerkregel onder een naam */
 function v88Tags(name,extra){const f=v88Feat(name);
