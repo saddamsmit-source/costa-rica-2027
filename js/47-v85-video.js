@@ -52,8 +52,9 @@ function v85Plan(){const nameOf={};Object.keys(V47_SP).forEach(k=>{nameOf[v43nam
     const cand=(byDay[d]||[]).map(s=>{const own=s.ph.length+s.cl.length>0,note=notes.has(s.sp+'|'+s.region)?'':v85Note(s.sp,s.region);
       const score=(V85_RARE[v47Chance(s.region,s.name)]??15)+(first[s.sp]===d?30:0)+(own?20:0)+(note?10:0)+(s.ph.some(p=>p.favUser)?15:0)+(s.cl.some(p=>p.fav)?15:0);
       return {s,own,note,score,fresh:!shown.has(s.sp)}});
+    /* v8.13: eigen foto/video gaat altijd voor: 1) nieuw met eigen beeld, 2) eerder getoond met eigen beeld, 3) nieuw met voorbeeldfoto */
     const fresh=cand.filter(c=>c.fresh).sort((a,b)=>b.score-a.score),again=cand.filter(c=>!c.fresh&&c.own).sort((a,b)=>b.score-a.score);
-    const pick=fresh.slice(0,V85_SEL.animals);pick.push(...again.slice(0,V85_SEL.animals-pick.length));
+    const pick=[...fresh.filter(c=>c.own),...again,...fresh.filter(c=>!c.own)].slice(0,V85_SEL.animals);
     const clips=new Set(pick.filter(c=>c.s.cl.length).sort((a,b)=>(b.s.cl.some(p=>p.fav)-a.s.cl.some(p=>p.fav))||b.score-a.score).slice(0,V85_SEL.clips));
     const dayItems=pick.map(c=>{const s=c.s;shown.add(s.sp);if(c.note)notes.add(s.sp+'|'+s.region);
       const ph=[...s.ph].sort((a,b)=>(!!b.favUser-!!a.favUser)||((b.sharp||0)-(a.sharp||0))||(b.t||'').localeCompare(a.t||''))[0];

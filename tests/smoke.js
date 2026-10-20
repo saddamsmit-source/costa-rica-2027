@@ -371,6 +371,7 @@ const {chromium}=require('playwright');const path=require('path');
     if(!pd||pd.items.length!==15||pd.cut.animals!==2)bad.push('dag 8: '+(pd?pd.items.length+' dieren, '+pd.cut.animals+' eruit':'geen dag'));
     else{const sc=names.map(n=>({n,c:v47Chance(R,n)}));const inV=new Set(pd.items.map(i=>i.sp)),out=sc.filter(x=>!inV.has(v43name(x.n))),inn=sc.filter(x=>inV.has(v43name(x.n)));
       const rank=c=>({1:40,2:25,3:10,4:0}[c]??15);if(out.some(o=>inn.some(i=>rank(i.c)<rank(o.c)&&i.n!==A)))bad.push('keuze niet op zeldzaamheid: '+JSON.stringify(out))}
+    {const own=pd.items.filter(i=>i.own).length,ownAll=new Set(V84.list.filter(x=>x.day===8).map(x=>x.sp)).size;if(own!==Math.min(15,ownAll))bad.push('eigen foto\'s niet altijd voorrang: '+own+'/'+ownAll)}
     const itA=pd&&pd.items.find(i=>i.sp===v43name(A));if(!itA||itA.photos[0]!==V84.url[sharp.id])bad.push('scherpste foto niet gekozen: '+JSON.stringify({it:!!itA,sh:pa.map(x=>[x.sharp,x.fav,x.day])}));
     const fav=pa.find(x=>x.id!==sharp.id);await v84SetFav(fav.id);plan=v85Plan();pd=plan.days.find(x=>x.day===8);{const x=pd.items.find(i=>i.sp===v43name(A));if(x?.photos[0]!==V84.url[fav.id])bad.push('ster-foto niet gekozen: '+JSON.stringify({x:!!x,n:pd.items.length,fu:V84.list.filter(p=>p.sp===v43name(A)).map(p=>[p.id===fav.id,p.fav,p.favUser,p.day])}))}
     if(pd.items.filter(i=>i.photos.length>1).length)bad.push('meer dan 1 foto per dier per dag');
