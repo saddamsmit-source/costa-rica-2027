@@ -95,7 +95,7 @@ const V85_TR=['fade','cut','push','fade','zoom'];
 /* v10.1 · rustige dieren (eigen foto zonder ster, notitie of hoogtepunt) samen in een raster van 4.
    min: pas vanaf zoveel dieren op een dag; keep: zoveel van deze dieren blijven los (ritme); max: rasters per dag;
    moodMax: sfeerfoto's per collage op een volle dag */
-const V85_GRID={on:true,min:5,keep:3,max:3,dur:5,moodMax:6};
+const V85_GRID={on:true,min:5,keep:3,max:3,dur:5,moodMax:6,favPair:true};
 const V85_T={estab:3.5,pers:4,hl:5,solo:3,ex:3,note:2,pair:4.5,col2:4.5,col3:4.5,col4:5,col5:5.5,col6:6,mood:3,stay1:4,stay:4.5,day:4,clipTail:.4};
 const v85Hash=s=>{let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
 /* gedeelde velden van een soortdia */
@@ -146,12 +146,16 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
       const take=cand.slice(0,n*4+(tri?3:0)).sort((a,b)=>v85Ms(a.when)-v85Ms(b.when));for(let j=0;j<take.length;j+=4)grids.push(take.slice(j,j+4))}
     const inGrid=new Set(grids.flat()),rest=rest0.filter(i=>!inGrid.has(i));
     const rank=[...rest].sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0)));
-    const solo=new Set(rest.length<=5&&!grids.length?rest:[...rank.slice(0,4),...rest.filter(i=>i.note||i.hl||i.fav)]);
-    const pairable=rest.filter(i=>!solo.has(i)),moods=dm;
+    /* v10.2 · meerdere dieren met ster op één dag: per twee samen in één beeld (hoogtepunt van de dag en dieren met notitie blijven los) */
+    const favs=V85_GRID.favPair?rest.filter(i=>i.fav&&!i.hl&&!i.note).sort((a,b)=>v85Ms(a.when)-v85Ms(b.when)):[],favDuo=[];for(let j=0;j+1<favs.length;j+=2)favDuo.push([favs[j],favs[j+1]]);
+    const inDuo=new Set(favDuo.flat());
+    const solo=new Set((rest.length<=5&&!grids.length?rest:[...rank.slice(0,4),...rest.filter(i=>i.note||i.hl||i.fav)]).filter(i=>!inDuo.has(i)));
+    const pairable=rest.filter(i=>!solo.has(i)&&!inDuo.has(i)),moods=dm;
     const nAm=Math.min(pairable.length,moods.length>=3?Math.floor(moods.length/3):moods.length);
     const amAt=v85Spread(pairable.length,nAm),moodFor=v85Spread(moods.length,nAm),amMoods=moods.filter((_,j)=>moodFor.has(j)),colMoods=moods.filter((_,j)=>!moodFor.has(j));
     const units=[];let mi=0,wait=null;
-    rest.forEach(it=>{if(solo.has(it)){units.push({t:v85Ms(it.when),k:'solo',it});return}
+    favDuo.forEach(([a,b])=>units.push({t:v85Ms(a.when),k:'aa',a,b,fav:true}));
+    rest.forEach(it=>{if(inDuo.has(it))return;if(solo.has(it)){units.push({t:v85Ms(it.when),k:'solo',it});return}
       const pi=pairable.indexOf(it);if(amAt.has(pi)){units.push({t:v85Ms(it.when),k:'am',it,m:amMoods[mi++]});return}
       if(wait){units.push({t:v85Ms(wait.when),k:'aa',a:wait,b:it});wait=null}else wait=it});
     if(wait)units.push({t:v85Ms(wait.when),k:'solo',it:wait});
@@ -193,7 +197,7 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
       if(u.k==='grid'){const lay=u.g.length===3?'hero':nGrid++%2?'hero4':'quad',g=lay!=='quad'?[...u.g].sort((a,b)=>(b.score||0)-(a.score||0)):u.g;g.forEach(i=>{if(!i.repeat)spN++});
         segs.push({k:'grid',i:kb++,lay,srcs:g.map(i=>i.photos[0]),labels:g.map(i=>v47Info(i.name).nl),sps:g.map(i=>i.sp),dur:V85_GRID.dur+(u.g.length===3?-.5:0),trans:pickTr('g'+kb),hud,label:'Ook vastgelegd',title:region,meta:''});return}
       if(u.k==='am'||u.k==='aa'){if(u.k==='aa'){if(!u.a.repeat)spN++;if(!u.b.repeat)spN++}else if(!u.it.repeat)spN++;
-        const panels=u.k==='am'?(v85Hash(u.it.sp)%2?[v85PanelSp(u.it),v85PanelMood(u.m,region)]:[v85PanelMood(u.m,region),v85PanelSp(u.it)]):[v85PanelSp(u.a),v85PanelSp(u.b)];
+        const panels=u.k==='am'?(v85Hash(u.it.sp)%2?[v85PanelSp(u.it),v85PanelMood(u.m,region)]:[v85PanelMood(u.m,region),v85PanelSp(u.it)]):[v85PanelSp(u.a),v85PanelSp(u.b)];if(u.fav)panels.forEach(q=>q.label='Favoriet · '+q.label);
         segs.push({k:'pair',i:kb++,dur:TT.pair,trans:pickTr('p'+kb),hud,n:spN,of:nSp,panels,srcs:panels.map(p=>p.src)});return}
       const it=u.it,key=it.sp+'|'+it.day;if(!it.repeat)spN++;const base={...v85SpBase(it,day),n:it.repeat?0:spN,of:nSp,trans:pickTr(key),i:kb++,note:it.note};
       if(u.k==='clip'){const cl=it.clips[0],d0=Math.max(1,Math.min(V84_VLEN,cl.dur));

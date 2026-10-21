@@ -118,6 +118,9 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     const day=segs=>{const i=segs.findIndex(x=>x.k==='day'&&x.day===10),j=segs.findIndex((x,q)=>q>i&&['day','best','end'].includes(x.k));return segs.slice(i+1,j<0?segs.length:j)};
     /* sterren (5, meer dan er los blijven) komen nooit in een raster */
     const g0=day(v85Segments(v85Plan(),false)).filter(x=>x.k==='grid');if(g0.some(g=>g.sps.some(sp=>starN.map(v43name).includes(sp))))bad.push('dier met ster in raster');
+    {const s0=day(v85Segments(v85Plan(),false)),stars=starN.map(n=>v47Info(n).nl),duo=s0.filter(x=>x.k==='pair'&&x.panels.every(q=>stars.includes(q.title)));
+      const loose=s0.filter(x=>x.k==='sp'&&!x.hl&&stars.includes(x.title));if(!duo.length||loose.length>1)bad.push(`sterren niet per twee samen: ${duo.length} duo's, ${loose.length} los`);
+      if(!duo.every(x=>x.panels.every(q=>/^Favoriet/.test(q.label))))bad.push('label Favoriet ontbreekt')}
     await v84Write(st=>recs.filter(r=>r.favUser).forEach(r=>st.put({...r,favUser:false})));await v84Load();
     const plan=v85Plan(),it=plan.days.find(d=>d.day===10).items,on=day(v85Segments(plan,false));
     V85_GRID.on=false;const off=day(v85Segments(v85Plan(),false));V85_GRID.on=true;
