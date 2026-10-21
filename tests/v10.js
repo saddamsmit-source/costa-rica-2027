@@ -109,6 +109,29 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     const hlI=d8.findIndex(x=>x.hl),lastSp=d8.map(x=>x.k==='sp'||x.k==='pair').lastIndexOf(true);if(hlI<0||hlI!==lastSp)bad.push('hoogtepunt niet als laatste dier');
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();return bad}));
 
+  /* 8b. v10.1 · raster van 4 en ritme: rustige dieren samen, ster/hoogtepunt los, nooit twee groepsbeelden achter elkaar, korter */
+  await step('raster en ritme',async()=>p.evaluate(async()=>{const bad=[];const cv=document.createElement('canvas');cv.width=800;cv.height=533;cv.getContext('2d').fillRect(0,0,9,9);const bl=await new Promise(r=>cv.toBlob(r,'image/jpeg'));
+    const R=v47Region(S[9]),names=(V47_PLACES[R]||[]).map(x=>x[0]).slice(0,12),recs=[],starN=names.slice(-5);
+    names.forEach((n,i)=>{recs.push({id:'t11a'+i,sp:v43name(n),name:n,region:R,day:10,kind:'photo',t:'x',taken:`2027-02-17T${String(6+i).padStart(2,'0')}:00:00`,w:800,h:533,sharp:100+i,lum:.4,blob:bl,favUser:starN.includes(n)});v52Set(n,R,'seen',true)});
+    for(let i=0;i<12;i++)recs.push({id:'t11m'+String(i).padStart(2,'0'),sp:'',name:'',region:R,day:10,kind:'mood',label:i<6?'Rivier':'',t:'x',taken:`2027-02-17T${String(6+i).padStart(2,'0')}:30:00`,w:800,h:533,lum:.4,blob:bl});
+    await v84Write(st=>recs.forEach(r=>st.put(r)));await v84Load();
+    const day=segs=>{const i=segs.findIndex(x=>x.k==='day'&&x.day===10),j=segs.findIndex((x,q)=>q>i&&['day','best','end'].includes(x.k));return segs.slice(i+1,j<0?segs.length:j)};
+    /* sterren (5, meer dan er los blijven) komen nooit in een raster */
+    const g0=day(v85Segments(v85Plan(),false)).filter(x=>x.k==='grid');if(g0.some(g=>g.sps.some(sp=>starN.map(v43name).includes(sp))))bad.push('dier met ster in raster');
+    await v84Write(st=>recs.filter(r=>r.favUser).forEach(r=>st.put({...r,favUser:false})));await v84Load();
+    const plan=v85Plan(),it=plan.days.find(d=>d.day===10).items,on=day(v85Segments(plan,false));
+    V85_GRID.on=false;const off=day(v85Segments(v85Plan(),false));V85_GRID.on=true;
+    const grids=on.filter(x=>x.k==='grid');if(!grids.length)bad.push('geen raster op een volle dag');
+    const hl=it.find(i=>i.hl);
+    if(hl&&grids.some(g=>g.sps.includes(hl.sp)))bad.push('hoogtepunt in raster');
+    const shown=on.flatMap(x=>x.k==='sp'?[x.sp]:x.k==='pair'?x.panels.filter(q=>!q.mood).map(q=>q.title):x.k==='grid'?x.sps:[]);
+    const nm=on.reduce((n,x)=>n+(x.k==='mood'?1:x.k==='collage'?x.srcs.length:x.k==='pair'?x.panels.filter(q=>q.mood).length:0),0);
+    if(new Set(shown).size!==it.length||shown.length!==it.length)bad.push(`dieren niet precies één keer: ${shown.length}/${it.length}`);if(nm!==12)bad.push('sfeerfoto\'s in video: '+nm);
+    const multi=x=>x.k==='grid'||(x.k==='collage'&&x.srcs.length>=3);for(let i=1;i<on.length;i++)if(multi(on[i])&&multi(on[i-1]))bad.push(`twee groepsbeelden achter elkaar: ${on[i-1].k}+${on[i].k}`);
+    const sOn=v85Seconds(on),sOff=v85Seconds(off);if(sOn>sOff*.85)bad.push(`niet korter: ${sOn}s tegen ${sOff}s`);
+    if(on.findIndex(x=>x.hl)<on.map(x=>['sp','pair','grid'].includes(x.k)).lastIndexOf(true))bad.push('hoogtepunt niet als laatste dier');
+    await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();return bad}));
+
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
   await b.close();

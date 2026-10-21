@@ -64,7 +64,7 @@ function v85Plan(){const nameOf={};Object.keys(V47_SP).forEach(k=>{nameOf[v43nam
     const dayItems=pick.map(c=>{const s=c.s;shown.add(s.sp);if(c.note)notes.add(s.sp+'|'+s.region);
       const ph=[...s.ph].sort((a,b)=>(!!b.favUser-!!a.favUser)||(v84Qual(a).length-v84Qual(b).length)||((b.sharp||0)-(a.sharp||0))||(b.t||'').localeCompare(a.t||''))[0];
       const cl=clips.has(c)?[...s.cl].sort((a,b)=>b.fav-a.fav)[0]:null;
-      const it={own:c.own,repeat:!c.fresh,score:c.score,name:s.name,sp:s.sp,region:s.region,day:d,when:ph?.taken||s.t||ph?.t||'',note:c.note,photos:[],clips:[]};
+      const it={own:c.own,fav:s.ph.some(p=>p.favUser)||s.cl.some(p=>p.fav),repeat:!c.fresh,score:c.score,name:s.name,sp:s.sp,region:s.region,day:d,when:ph?.taken||s.t||ph?.t||'',note:c.note,photos:[],clips:[]};
       /* v8.15: een dier met eigen video krijgt alleen de video (geen losse foto ernaast) */
       if(ph&&!cl){it.photos=[V84.url[ph.id]];it.aspect=ph.w&&ph.h?ph.w/ph.h:0}else if(s.cl.length&&!cl)it.photos=[V84.poster[s.cl[0].id]||''].filter(Boolean);
       if(ph)it.best=V84.url[ph.id];
@@ -92,7 +92,11 @@ function v85Plan(){const nameOf={};Object.keys(V47_SP).forEach(k=>{nameOf[v43nam
    - kijktijd: los ±3 s, combinatie van 2 ±4,4 s, groep van 3–4 ±5 s;
    - rustige overgangen: overvloeien, harde las, af en toe schuiven; dagen via zwart. */
 const V85_TR=['fade','cut','push','fade','zoom'];
-const V85_T={estab:4,pers:4,hl:5,solo:3,ex:3,note:2,pair:4.5,col2:4.5,col3:5,col4:5.5,mood:3,stay1:4,stay:5,day:4,clipTail:.4};
+/* v10.1 · rustige dieren (eigen foto zonder ster, notitie of hoogtepunt) samen in een raster van 4.
+   min: pas vanaf zoveel dieren op een dag; keep: zoveel van deze dieren blijven los (ritme); max: rasters per dag;
+   moodMax: sfeerfoto's per collage op een volle dag */
+const V85_GRID={on:true,min:5,keep:3,max:3,dur:5,moodMax:6};
+const V85_T={estab:3.5,pers:4,hl:5,solo:3,ex:3,note:2,pair:4.5,col2:4.5,col3:4.5,col4:5,col5:5.5,col6:6,mood:3,stay1:4,stay:4.5,day:4,clipTail:.4};
 const v85Hash=s=>{let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
 /* gedeelde velden van een soortdia */
 function v85SpBase(it,day){const i=v47Info(it.name),r=wl2(it.name)||{},c=v85Cat(i.cat),time=v85Time(it.when);
@@ -103,13 +107,13 @@ function v85SpBase(it,day){const i=v47Info(it.name),r=wl2(it.name)||{},c=v85Cat(
 const v85PanelSp=it=>{const b=v85SpBase(it);return {cat:b.cat,src:it.photos[0]||it.still||'',title:b.title,sci:b.sci,en:b.en,label:b.label,own:it.own,credit:it.own?'':'Voorbeeldfoto · '+(it.credit||'').split(' · ')[0]}};
 const v85PanelMood=(m,region)=>({src:m.url,title:m.label||region,sci:'',label:'Sfeer',own:true,mood:true,credit:''});
 /* sfeerfoto's in groepen van 3–4 (rest 1–2 apart) */
-function v85Groups(arr){const r=arr.length;if(r<=2)return r?[arr]:[];const g=Math.ceil(r/4),base=Math.floor(r/g),extra=r%g,out=[];let p=0;
+function v85Groups(arr,max=4){const r=arr.length;if(r<=2)return r?[arr]:[];const g=Math.ceil(r/max),base=Math.floor(r/g),extra=r%g,out=[];let p=0;
   for(let j=0;j<g;j++){const n=base+(j<extra?1:0);out.push(arr.slice(p,p+n));p+=n}return out}
 /* n elementen gelijkmatig uit een lijst kiezen (indexen) */
 const v85Spread=(len,n)=>{const out=new Set();for(let k=0;k<n;k++)out.add(Math.min(len-1,Math.floor((k+.5)*len/n)));return out};
 function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days.some(d=>d.moods.length||d.stay))return [];
   const first=items.find(i=>i.own&&i.still)||items.find(i=>i.still),nSp=plan.species??new Set(items.map(i=>i.sp)).size,firstMood=days.find(d=>d.moods.length)?.moods[0]?.url||days.find(d=>d.stay)?.stay.photos[0]||'';
-  const regions=[...new Set(items.map(i=>i.region).concat(days.filter(d=>d.moods.length||d.stay).map(d=>v47Region(S[d.day-1]))))];let spN=0,kb=0,lastTr='',lays=[],nCol=0;const stays=new Set();
+  const regions=[...new Set(items.map(i=>i.region).concat(days.filter(d=>d.moods.length||d.stay).map(d=>v47Region(S[d.day-1]))))];let spN=0,kb=0,lastTr='',lays=[],nCol=0,nGrid=0;const stays=new Set();
   const pickTr=key=>{let t=V85_TR[v85Hash(key)%V85_TR.length];if(t===lastTr&&t!=='fade')t=V85_TR[(V85_TR.indexOf(t)+1)%V85_TR.length];lastTr=t;return t};
   /* opmaak: eigen liggende foto vooral schermvullend, staand gesplitst of ingelijst; nooit drie keer hetzelfde achter elkaar */
   const pickLay=(it,key)=>{let opts;if(!it.own)opts=['frame','split'];else if(it.aspect&&it.aspect<1.1)opts=['split','frame','split'];else opts=['full','full','split','full','frame'];
@@ -134,9 +138,15 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
     const ownDay=d.items.some(i=>i.own)||d.moods.length>0||!!d.stay,exs=d.items.filter(i=>!i.own&&!i.clips.length).sort((a,b)=>(b.score||0)-(a.score||0));
     const exKeep=new Set(ownDay?exs.slice(0,3).concat(exs.filter(i=>i.hl)):[]),rollIts=exs.filter(i=>!exKeep.has(i)),dItems=d.items.filter(i=>!rollIts.includes(i));
     const busy=dItems.length>10,quiet=dItems.length<=4,TT=busy?{solo:2.5,ex:2.5,pair:4}:quiet?{solo:3.5,ex:3,pair:4.5}:{solo:V85_T.solo,ex:V85_T.ex,pair:V85_T.pair};
-    const clipIts=dItems.filter(i=>i.clips.length),rest=dItems.filter(i=>!i.clips.length);
+    const clipIts=dItems.filter(i=>i.clips.length),rest0=dItems.filter(i=>!i.clips.length);
+    /* v10.1 · raster van 4: eerst dieren die eerder al in beeld waren, dan de laagste score; de beste blijven los */
+    const grids=[];if(V85_GRID.on&&rest0.length>=V85_GRID.min){const pool=rest0.filter(i=>i.own&&!i.hl&&!i.note&&!i.fav&&i.photos[0]);
+      const keep=new Set(pool.filter(i=>!i.repeat).sort((a,b)=>(b.score||0)-(a.score||0)).slice(0,V85_GRID.keep));
+      const cand=pool.filter(i=>!keep.has(i)).sort((a,b)=>(b.repeat-a.repeat)||((a.score||0)-(b.score||0))),n=Math.min(V85_GRID.max,Math.floor(cand.length/4)),tri=n<V85_GRID.max&&cand.length-n*4===3;
+      const take=cand.slice(0,n*4+(tri?3:0)).sort((a,b)=>v85Ms(a.when)-v85Ms(b.when));for(let j=0;j<take.length;j+=4)grids.push(take.slice(j,j+4))}
+    const inGrid=new Set(grids.flat()),rest=rest0.filter(i=>!inGrid.has(i));
     const rank=[...rest].sort((a,b)=>(b.own-a.own)||((b.score||0)-(a.score||0)));
-    const solo=new Set(rest.length<=5?rest:[...rank.slice(0,4),...rest.filter(i=>i.note||i.hl)]);
+    const solo=new Set(rest.length<=5&&!grids.length?rest:[...rank.slice(0,4),...rest.filter(i=>i.note||i.hl||i.fav)]);
     const pairable=rest.filter(i=>!solo.has(i)),moods=dm;
     const nAm=Math.min(pairable.length,moods.length>=3?Math.floor(moods.length/3):moods.length);
     const amAt=v85Spread(pairable.length,nAm),moodFor=v85Spread(moods.length,nAm),amMoods=moods.filter((_,j)=>moodFor.has(j)),colMoods=moods.filter((_,j)=>!moodFor.has(j));
@@ -145,18 +155,31 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
       const pi=pairable.indexOf(it);if(amAt.has(pi)){units.push({t:v85Ms(it.when),k:'am',it,m:amMoods[mi++]});return}
       if(wait){units.push({t:v85Ms(wait.when),k:'aa',a:wait,b:it});wait=null}else wait=it});
     if(wait)units.push({t:v85Ms(wait.when),k:'solo',it:wait});
+    grids.forEach(g=>units.push({t:v85Ms(g[0].when),k:'grid',g}));
     units.sort((a,b)=>a.t-b.t);
     /* hoogtepunt van de dag als climax: na de andere dieren */
     const hlAt=units.findIndex(u=>u.k==='solo'&&u.it.hl),hlUnit=hlAt>=0?units.splice(hlAt,1)[0]:null;
     /* sfeer per activiteit gegroepeerd (zelfde label bij elkaar), gelijkmatig ertussen */
-    const byLbl={};colMoods.forEach(m=>(byLbl[m.label||'']??=[]).push(m));const groups=[],loose=[];Object.entries(byLbl).forEach(([l,arr])=>{if(l&&arr.length>=3)v85Groups(arr).forEach(g=>groups.push(g));else loose.push(...arr)});
+    const byLbl={};colMoods.forEach(m=>(byLbl[m.label||'']??=[]).push(m));const groups=[],loose=[],gMax=V85_GRID.on&&colMoods.length>=9?V85_GRID.moodMax:4;Object.entries(byLbl).forEach(([l,arr])=>{if(l&&arr.length>=3)v85Groups(arr,gMax).forEach(g=>groups.push(g));else loose.push(...arr)});
     /* losse sfeerfoto's (geen of een zeldzaam label) samen in collages op tijdsvolgorde, elk paneel met zijn eigen label */
-    loose.sort((a,b)=>v85Ms(a.when)-v85Ms(b.when));v85Groups(loose).forEach(g=>groups.push(g));
-    groups.sort((a,b)=>v85Ms(a[0].when)-v85Ms(b[0].when));const body=[...units];groups.forEach((g,j)=>body.splice(Math.round(j*(units.length+j)/Math.max(1,groups.length))+0,0,{k:'col',g}));
+    loose.sort((a,b)=>v85Ms(a.when)-v85Ms(b.when));v85Groups(loose,gMax).forEach(g=>groups.push(g));
+    groups.sort((a,b)=>v85Ms(a[0].when)-v85Ms(b[0].when));
+    /* v10.1 · ritme: hooguit één groepsbeeld meer dan losse beelden; anders aangrenzende sfeergroepen samenvoegen (max. moodMax) */
+    if(V85_GRID.on){const singles=()=>units.filter(u=>u.k!=='grid').length+clipIts.length,nGroups=()=>units.filter(u=>u.k==='grid').length+groups.filter(g=>g.length>=3).length;
+      while(nGroups()>singles()+1){let best=-1;for(let j=0;j<groups.length-1;j++){const n=groups[j].length+groups[j+1].length;if(n<=V85_GRID.moodMax&&(groups[j].length>=3||groups[j+1].length>=3)&&(best<0||n<groups[best].length+groups[best+1].length))best=j}
+        if(best>=0){groups.splice(best,2,[...groups[best],...groups[best+1]]);continue}
+        /* nog te veel groepsbeelden: het laatste raster wordt weer twee duo's (trager, maar afwisselender) */
+        const gi=units.map(u=>u.k).lastIndexOf('grid');if(gi<0)break;const g=units[gi].g,dd=[];for(let j=0;j<g.length;j+=2)dd.push(g.length-j===1?{t:v85Ms(g[j].when),k:'solo',it:g[j]}:{t:v85Ms(g[j].when),k:'aa',a:g[j],b:g[j+1]});
+        units.splice(gi,1,...dd);if(g.length===3&&dd[1])dd[1].k='solo'}}
+    const body=[...units];groups.forEach((g,j)=>body.splice(Math.round(j*(units.length+j)/Math.max(1,groups.length))+0,0,{k:'col',g}));
     /* eigen video's verspreid: op ±1/4, 1/2, 3/4 van de dag */
     const cs=[...clipIts].sort((a,b)=>v85Ms(a.when)-v85Ms(b.when));
     const L0=body.length;cs.forEach((it,k)=>{const at=Math.max(Math.min(1,L0),Math.round((k+1)*L0/(cs.length+1)))+k;body.splice(Math.min(body.length,at),0,{k:'clip',it})});
-    for(let j=1;j<body.length;j++)if(body[j].k==='clip'&&body[j-1].k==='clip'){const nx=body.findIndex((u,q)=>q>j&&u.k!=='clip');if(nx>0){const [u]=body.splice(nx,1);body.splice(j,0,u)}}
+    /* ritme: nooit twee video's of twee groepsbeelden (raster, collage van 3–4) direct achter elkaar */
+    const multi=u=>u.k==='grid'||(u.k==='col'&&u.g.length>=3),clash=(a,b)=>!!a&&!!b&&((multi(a)&&multi(b))||(a.k==='clip'&&b.k==='clip'));
+    {const M=body.filter(multi),B=body.filter(u=>!multi(u));if(M.length&&M.length<=B.length+1){const at=v85Spread(B.length+1,M.length),out=[];let mi2=0;
+      for(let k=0;k<=B.length;k++){if(at.has(k))out.push(M[mi2++]);if(k<B.length)out.push(B[k])}body.splice(0,body.length,...out)}}
+    for(let j=1;j<body.length;j++)if(clash(body[j-1],body[j])){const nx=body.findIndex((u,q)=>q>j&&!clash(body[j-1],u)&&!clash(u,body[j]));if(nx>0){const [u]=body.splice(nx,1);body.splice(j,0,u)}}
     if(rollIts.length)body.push({k:'roll',its:rollIts});if(hlUnit)body.push(hlUnit);if(pers.length)body.push({k:'pers',g:pers});
     body.forEach(u=>{
       if(u.k==='roll'){u.its.forEach(i=>{if(!i.repeat)spN++});const nm=u.its.map(i=>({nl:v47Info(i.name).nl,cat:v47Info(i.name).cat}));
@@ -165,8 +188,10 @@ function v85Segments(plan,proef){const {items,days}=plan;if(!items.length&&!days
         else segs.push({k:'collage',i:kb++,lay:'duo',srcs:g.map(m=>m.url),labels:[],dur:V85_T.pers+.5,trans:'fade',hud,label:'Persoonlijk',title:g[0].label||'Wij',meta:region});return}
       if(u.k==='col'){const g=u.g,labels=g.map(m=>m.label),same=labels[0]&&labels.every(l=>l===labels[0]);
         if(g.length===1){segs.push({k:'mood',i:kb++,dur:V85_T.mood,trans:pickTr('m'+kb),src:g[0].url,hud,label:'Sfeer',title:g[0].label||region,meta:g[0].label?region:'',credit:'Eigen foto'});return}
-        const lay=g.length===2?'duo':g.length===4?'quad':['trio','hero'][nCol%2];nCol++;
-        segs.push({k:'collage',i:kb++,lay,srcs:g.map(m=>m.url),labels:same?[]:labels,dur:g.length===2?V85_T.col2:g.length===3?V85_T.col3:V85_T.col4,trans:pickTr('c'+kb),hud,label:'Sfeer',title:same?labels[0]:region,meta:same?region:''});return}
+        const lay=g.length===2?'duo':g.length===4?'quad':g.length===5?'five':g.length===6?'six':['trio','hero'][nCol%2];nCol++;
+        segs.push({k:'collage',i:kb++,lay,srcs:g.map(m=>m.url),labels:same?[]:labels,dur:V85_T['col'+g.length],trans:pickTr('c'+kb),hud,label:'Sfeer',title:same?labels[0]:region,meta:same?region:''});return}
+      if(u.k==='grid'){const lay=u.g.length===3?'hero':nGrid++%2?'hero4':'quad',g=lay!=='quad'?[...u.g].sort((a,b)=>(b.score||0)-(a.score||0)):u.g;g.forEach(i=>{if(!i.repeat)spN++});
+        segs.push({k:'grid',i:kb++,lay,srcs:g.map(i=>i.photos[0]),labels:g.map(i=>v47Info(i.name).nl),sps:g.map(i=>i.sp),dur:V85_GRID.dur+(u.g.length===3?-.5:0),trans:pickTr('g'+kb),hud,label:'Ook vastgelegd',title:region,meta:''});return}
       if(u.k==='am'||u.k==='aa'){if(u.k==='aa'){if(!u.a.repeat)spN++;if(!u.b.repeat)spN++}else if(!u.it.repeat)spN++;
         const panels=u.k==='am'?(v85Hash(u.it.sp)%2?[v85PanelSp(u.it),v85PanelMood(u.m,region)]:[v85PanelMood(u.m,region),v85PanelSp(u.it)]):[v85PanelSp(u.a),v85PanelSp(u.b)];
         segs.push({k:'pair',i:kb++,dur:TT.pair,trans:pickTr('p'+kb),hud,n:spN,of:nSp,panels,srcs:panels.map(p=>p.src)});return}
@@ -363,9 +388,15 @@ const v85P=()=>V85.H>V85.W;
 function v85Rects(lay,A){const W=A?A.w:V85.W,H=A?A.h:V85.H,ox=A?A.x:0,oy=A?A.y:0;return v85Rects0(lay,W,H).map(r=>({...r,x:r.x+ox,y:r.y+oy}))}
 function v85Rects0(lay,W,H){const G=10;if(v85P()){if(lay==='duo')return [{x:0,y:0,w:W,h:H/2-G/2},{x:0,y:H/2+G/2,w:W,h:H/2-G/2}];
     if(lay==='trio'){const h=(H-2*G)/3;return [0,1,2].map(i=>({x:0,y:i*(h+G),w:W,h}))}
-    if(lay==='hero'){const h1=Math.round(H*.6),w=(W-G)/2;return [{x:0,y:0,w:W,h:h1},{x:0,y:h1+G,w,h:H-h1-G},{x:w+G,y:h1+G,w,h:H-h1-G}]}}if(lay==='duo')return [{x:0,y:0,w:W/2-G/2,h:H},{x:W/2+G/2,y:0,w:W/2-G/2,h:H}];
+    if(lay==='hero'){const h1=Math.round(H*.6),w=(W-G)/2;return [{x:0,y:0,w:W,h:h1},{x:0,y:h1+G,w,h:H-h1-G},{x:w+G,y:h1+G,w,h:H-h1-G}]}
+    if(lay==='hero4'){const h1=Math.round(H*.55),w=(W-2*G)/3;return [{x:0,y:0,w:W,h:h1},...[0,1,2].map(i=>({x:i*(w+G),y:h1+G,w,h:H-h1-G}))]}
+    if(lay==='five'){const h1=Math.round(H*.36),h=(H-h1-2*G)/2,w=(W-G)/2;return [{x:0,y:0,w:W,h:h1},{x:0,y:h1+G,w,h},{x:w+G,y:h1+G,w,h},{x:0,y:h1+h+2*G,w,h},{x:w+G,y:h1+h+2*G,w,h}]}
+    if(lay==='six'){const w=(W-G)/2,h=(H-2*G)/3;return [0,1,2,3,4,5].map(i=>({x:(i%2)*(w+G),y:Math.floor(i/2)*(h+G),w,h}))}}if(lay==='duo')return [{x:0,y:0,w:W/2-G/2,h:H},{x:W/2+G/2,y:0,w:W/2-G/2,h:H}];
   if(lay==='trio'){const w=(W-2*G)/3;return [0,1,2].map(i=>({x:i*(w+G),y:0,w,h:H}))}
   if(lay==='hero'){const w1=Math.round(W*.6);return [{x:0,y:0,w:w1,h:H},{x:w1+G,y:0,w:W-w1-G,h:H/2-G/2},{x:w1+G,y:H/2+G/2,w:W-w1-G,h:H/2-G/2}]}
+  if(lay==='hero4'){const w1=Math.round(W*.62),h=(H-2*G)/3;return [{x:0,y:0,w:w1,h:H},...[0,1,2].map(i=>({x:w1+G,y:i*(h+G),w:W-w1-G,h}))]}
+  if(lay==='five'){const h=(H-G)/2,w2=(W-G)/2,w3=(W-2*G)/3;return [{x:0,y:0,w:w2,h},{x:w2+G,y:0,w:w2,h},...[0,1,2].map(i=>({x:i*(w3+G),y:h+G,w:w3,h}))]}
+  if(lay==='six'){const w=(W-2*G)/3,h=(H-G)/2;return [0,1,2,3,4,5].map(i=>({x:(i%3)*(w+G),y:Math.floor(i/3)*(h+G),w,h}))}
   const w=(W-G)/2,h=(H-G)/2;return [{x:0,y:0,w,h},{x:w+G,y:0,w,h},{x:0,y:h+G,w,h},{x:w+G,y:h+G,w,h}]}
 function v85Pill(ctx,txt,x,y,t,st){const kk=v85At(t,st,.4);if(kk<=0)return 0;v85Font(ctx,22,800);v85Sp(ctx,4);const lw=ctx.measureText(txt.toUpperCase()).width;v85Sp(ctx,0);
   ctx.save();ctx.globalAlpha=v85E(kk);v85Round(ctx,x,y-6,lw+30,38,19);ctx.fillStyle=V85_C.leaf;ctx.fill();ctx.restore();v85Txt(ctx,txt,x+15,y+21,{size:22,weight:800,spacing:4,upper:true,k:kk,rise:0});return lw+30}
@@ -419,7 +450,7 @@ function v85Draw(ctx,seg,res,t){const {W,H}=V85,p=seg.dur?Math.min(1,t/seg.dur):
       v85Lower(ctx,pn,t-.3-.22*j,{x:r.x+(P?56:48),maxW:r.w-(P?112:96),bottom:r.y+r.h-(P?48:44),size:P?56:50});
       if(pn.credit)v85Txt(ctx,pn.credit,r.x+r.w-20,r.y+r.h-16,{size:15,weight:500,align:'right',color:'rgba(255,255,255,.6)',maxW:r.w*.6,k:v85At(t,.8,.4),rise:0})});
     v85Bars(ctx);if(!lb){const tg=ctx.createLinearGradient(0,0,0,200);tg.addColorStop(0,'rgba(0,0,0,.5)');tg.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=tg;ctx.fillRect(0,0,W,200)}v85Hud(ctx,seg,t);return}
-  if(seg.k==='stay'&&seg.srcs||seg.k==='collage'){ctx.fillStyle='#050d0a';ctx.fillRect(0,0,W,H);const imgs=res.imgs||[],lb=v85LB(),labels=seg.labels||[];res.foci??=[];
+  if(seg.k==='stay'&&seg.srcs||seg.k==='collage'||seg.k==='grid'){ctx.fillStyle='#050d0a';ctx.fillRect(0,0,W,H);const imgs=res.imgs||[],lb=v85LB(),labels=seg.labels||[];res.foci??=[];
     v85Rects(seg.lay,{x:0,y:lb,w:W,h:H-2*lb}).forEach((r,j)=>{const im=imgs[j];if(!im)return;const k=v85E(v85At(t,.16*j,.7)),dir=j%2?1:-1;
       const off=seg.lay==='trio'?{x:0,y:dir*(1-k)*H*.3}:seg.lay==='duo'?{x:dir*(1-k)*W*.2,y:0}:{x:(1-k)*(j%2?70:-70),y:(1-k)*(j<2?-50:50)};
       ctx.save();ctx.beginPath();ctx.rect(r.x,r.y,r.w,r.h);ctx.clip();ctx.globalAlpha=k;v85CoverAt(ctx,im,r.x+off.x,r.y+off.y,r.w,r.h,1.03+.06*p,res.foci[j]??=v85Focus(im),{x:(j%2?-1:1)*18*p,y:0});v85Look(ctx,r.x,r.y,r.w,r.h);
