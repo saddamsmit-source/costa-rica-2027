@@ -135,6 +135,33 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     if(on.findIndex(x=>x.hl)<on.map(x=>['sp','pair','grid'].includes(x.k)).lastIndexOf(true))bad.push('hoogtepunt niet als laatste dier');
     await v84Write(st=>recs.forEach(r=>st.delete(r.id)));await v84Load();names.forEach(n=>delete state.v43Observations[v43name(n)]);save();return bad}));
 
+  /* 8c. v10.3 · video knippen: filmstrip, venster verslepen (begin/eind), lengte 1–5 s, juiste fragment opgeslagen */
+  await step('video knippen',async()=>{const bad=[];
+    const u=await p.evaluate(()=>{const w=(a,b,c)=>JSON.stringify(v84Win(a,b,c));return [w(28,5,30),w(0,.2,30),w(0,9,30),w(0,5,3),w(-4,3,30)]});
+    const want=['{"start":25,"len":5}','{"start":0,"len":1}','{"start":0,"len":5}','{"start":0,"len":3}','{"start":0,"len":3}'];if(JSON.stringify(u)!==JSON.stringify(want))bad.push('venster binnen grenzen: '+u.join(' '));
+    await p.evaluate(async()=>{V85.SCALE=.25;const src=await v85Make({segs:[{k:'intro',dur:120,src:'',label:'Test',title:'Knippen',sub:'',meta:''}],proef:true,disk:false});V85.SCALE=1;
+      window.__f=new File([src.blob],'lang.mp4',{type:'video/mp4'});window.__calls=[];const orig=v84Clip;window.__orig=orig;v84Clip=async(...a)=>{__calls.push([a[1],a[2]]);return orig(...a)};
+      const N='Keel-billed toucan',R='La Fortuna';v52Set(N,R,'seen',true);window.__done=false;v84TrimOpen(N,R,6,__f,()=>{__done=true})});
+    await p.waitForFunction(()=>{const el=document.getElementById('v84Trim');return el&&el._win().D>29&&document.querySelectorAll('.v84-thumbs img').length>=6},null,{timeout:20000});
+    let w=await p.evaluate(()=>document.getElementById('v84Trim')._win());if(w.start!==0||w.len!==5)bad.push('start niet 0–5 s: '+JSON.stringify(w));
+    /* kader naar ±20 s slepen (echte aanwijzer) */
+    const sb=await p.locator('.v84-strip').boundingBox(),wb=await p.locator('.v84-win').boundingBox();const x0=wb.x+wb.width/2,y=wb.y+wb.height/2,x1=x0+sb.width*(20/30);
+    await p.mouse.move(x0,y);await p.mouse.down();await p.mouse.move(x1,y,{steps:8});await p.mouse.up();
+    w=await p.evaluate(()=>document.getElementById('v84Trim')._win());if(Math.abs(w.start-20)>1.2||w.len!==5)bad.push('kader slepen: '+JSON.stringify(w));
+    /* eind-handvat naar links: korter */
+    const hb=await p.locator('.v84-hd.e').boundingBox();await p.mouse.move(hb.x+hb.width/2,hb.y+hb.height/2);await p.mouse.down();await p.mouse.move(hb.x+hb.width/2-sb.width*(2/30),hb.y+hb.height/2,{steps:5});await p.mouse.up();
+    const w2=await p.evaluate(()=>document.getElementById('v84Trim')._win());if(Math.abs(w2.len-3)>.8||Math.abs(w2.start-w.start)>.05)bad.push('eind verslepen: '+JSON.stringify(w2));
+    /* lengteknop en precisieknop */
+    await p.click('.v84-len[data-l="4"]');await p.click('.v84-nudge [data-n="0.5"]');const w3=await p.evaluate(()=>document.getElementById('v84Trim')._win());
+    if(w3.len!==4||Math.abs(w3.start-(w2.start+.5))>.05)bad.push('lengte/precisie: '+JSON.stringify(w3));
+    const pressed=await p.evaluate(()=>document.querySelector('.v84-len[aria-pressed="true"]')?.dataset.l);if(pressed!=='4')bad.push('lengteknop niet actief: '+pressed);
+    const vis=await p.evaluate(()=>{const s=document.querySelector('.v84-strip').getBoundingClientRect();return s.width>200&&s.right<=innerWidth+1&&document.documentElement.scrollWidth<=innerWidth+1});if(!vis)bad.push('filmstrip past niet op het scherm');
+    await p.click('#v84Trim [data-t="save"]');await p.waitForFunction(()=>window.__done,null,{timeout:60000});
+    const r=await p.evaluate(()=>{const c=__calls[__calls.length-1],rec=V84.vids.filter(x=>x.day===6).pop();return {c,dur:rec?.dur}});
+    if(!r.c||Math.abs(r.c[0]-w3.start)>.05||Math.abs(r.c[1]-4)>.05)bad.push('verkeerd fragment geknipt: '+JSON.stringify(r.c)+' verwacht '+w3.start);if(!(Math.abs((r.dur||0)-4)<.25))bad.push('opgeslagen lengte: '+r.dur);
+    await p.evaluate(async()=>{v84Clip=__orig;const ids=V84.vids.filter(x=>x.day===6).map(x=>x.id);await v84Write(st=>ids.forEach(i=>st.delete(i)));await v84Load();delete state.v43Observations[v43name('Keel-billed toucan')];save()});
+    return bad});
+
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
   await b.close();

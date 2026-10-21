@@ -109,8 +109,8 @@ function v84ClipRT(v,start,len,c,x,enc,errOf,onProg,mkPoster){return new Promise
     v.requestVideoFrameCallback(cb)};
   try{await v84SeekTo(v,start);v.requestVideoFrameCallback(cb);v.onended=finish;await v.play()}catch(e){done=true;rej(e);return}
   timer=setTimeout(finish,(len+6)*1000)})}
-async function v84AddVideo(name,region,day,file,start,onProg){if(v84DayOf(name,day,'video').length>=V84_VMAX)throw new Error(`Maximaal ${V84_VMAX} video per soort per dag.`);
-  const c=await v84Clip(file,start,V84_VLEN,onProg);
+async function v84AddVideo(name,region,day,file,start,onProg,len=V84_VLEN){if(v84DayOf(name,day,'video').length>=V84_VMAX)throw new Error(`Maximaal ${V84_VMAX} video per soort per dag.`);
+  const c=await v84Clip(file,start,Math.min(V84_VLEN,len||V84_VLEN),onProg);
   const rec={id:v84Uid(),sp:v43name(name),name,region,day,kind:'video',t:new Date().toISOString(),taken:'',w:c.w,h:c.h,dur:c.dur,start:c.start,orig:c.orig,blob:c.blob,poster:c.poster,fav:false};
   await v84Write(st=>st.put(rec));if(typeof v86SetDay==='function')v86SetDay(name,region,day,'seen',true);else v52Set(name,region,'seen',true);
   await v84Load();return rec}
@@ -145,22 +145,59 @@ function v84SheetBlock(name,region){const sp=v43name(name),o=state.v43Observatio
   ov.querySelectorAll('[data-v84-fav]').forEach(b=>b.onclick=async()=>{await v84SetFav(b.dataset.v84Fav);again()});
   ov.querySelectorAll('[data-v84-vfav]').forEach(b=>b.onclick=async()=>{const p=V84.vids.find(x=>x.id===b.dataset.v84Vfav);if(!p)return;await v84Write(st=>st.put({...p,fav:!p.fav}));await v84Load();again()});
   ov.querySelectorAll('[data-v84-del]').forEach(b=>b.onclick=async()=>{await v10RemoveMedia(b.dataset.v84Del,()=>{if(document.getElementById('wl2Sheet'))again()})})}}
-/* video kiezen: 5 seconden met een schuif, daarna omzetten */
-function v84TrimClose(){const el=document.getElementById('v84Trim');if(el){const v=el.querySelector('video');if(v){v.pause();URL.revokeObjectURL(v.src)}el.remove()}}
-function v84TrimOpen(name,region,day,file,after){v84TrimClose();const el=document.createElement('div');el.id='v84Trim';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video kiezen');
-  el.innerHTML=`<div class="v85-box"><span class="ds-label">${esc(v47Info(name).nl)} · dag ${day}</span><h3>Kies ${V84_VLEN} seconden</h3><video class="v85-vid" playsinline muted preload="auto"></video>
-    <input type="range" class="v84-range" min="0" max="0" step="0.1" value="0" aria-label="Startpunt"><p class="ds-meta v84-tinfo">Video laden…</p><div class="v85-bar" hidden><i></i></div>
+/* v10.3 · video knippen zoals Polarsteps: filmstrip van de hele video met een venster (begin en eind verschuifbaar, 1–5 s).
+   Venster slepen = verschuiven; handvatten slepen = korter/langer; tik op de strip = venster daarheen; pijltjestoetsen op de handvatten. */
+const V84_VMIN=1;
+function v84TrimClose(){const el=document.getElementById('v84Trim');if(el){el._stop=true;const v=el.querySelector('video');if(v){v.pause();URL.revokeObjectURL(v.src)}el.remove()}}
+const v84S1=x=>x.toFixed(1).replace('.',',');
+/* het venster (start, len) binnen de duur D houden */
+function v84Win(start,len,D){len=Math.max(Math.min(V84_VMIN,D),Math.min(V84_VLEN,len,D));start=Math.max(0,Math.min(start,D-len));return {start:Math.round(start*10)/10,len:Math.round(len*10)/10}}
+async function v84Strip(file,D,n,each){const v=document.createElement('video');v.muted=true;v.playsInline=true;v.preload='auto';const url=URL.createObjectURL(file);v.src=url;
+  try{await new Promise((res,rej)=>{v.onloadeddata=res;v.onerror=rej;setTimeout(rej,8000)});const h=96,w=Math.max(40,Math.round(h*(v.videoWidth/v.videoHeight||16/9)));
+    for(let i=0;i<n;i++){if(each(null)===false)break;await v84SeekTo(v,Math.min(D-.05,(i+.5)*D/n));const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(v,0,0,w,h);if(each(c.toDataURL('image/jpeg',.7),i)===false)break}}
+  catch(e){}finally{URL.revokeObjectURL(url);v.removeAttribute('src');try{v.load()}catch(e){}}}
+function v84TrimOpen(name,region,day,file,after){v84TrimClose();const el=document.createElement('div');el.id='v84Trim';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Video knippen');
+  el.innerHTML=`<div class="v85-box v84-trim"><span class="ds-label">${esc(v47Info(name).nl)} · dag ${day}</span><h3>Knip je fragment</h3><video class="v85-vid" playsinline muted preload="auto"></video>
+    <div class="v84-strip" hidden><div class="v84-thumbs"></div><div class="v84-dim l"></div><div class="v84-dim r"></div>
+      <div class="v84-win"><span class="v84-hd s" role="slider" tabindex="0" aria-label="Begin"></span><span class="v84-hd e" role="slider" tabindex="0" aria-label="Eind"></span></div><i class="v84-ph-line"></i></div>
+    <p class="v84-tinfo" aria-live="polite">Video laden…</p>
+    <div class="v84-nudge" hidden><button class="ds-btn secondary" data-n="-0.5" aria-label="Fragment een halve seconde eerder">−0,5 s</button><button class="ds-btn secondary" data-n="0.5" aria-label="Fragment een halve seconde later">+0,5 s</button></div>
+    <div class="v84-lens" hidden role="group" aria-label="Lengte"><span class="ds-meta">Lengte</span>${[2,3,4,5].filter(x=>x<=V84_VLEN).map(x=>`<button class="v84-len" data-l="${x}" aria-pressed="false">${x} s</button>`).join('')}</div>
+    <p class="ds-meta v84-thelp" hidden>Sleep het kader of de randen. Maximaal ${V84_VLEN} seconden.</p><div class="v85-bar" hidden><i></i></div>
     <div class="v85-btns"><button class="ds-btn primary" data-t="save" disabled>Bewaren</button><button class="ds-btn secondary" data-t="close">Annuleren</button></div></div>`;
-  document.body.append(el);const v=el.querySelector('video'),rg=el.querySelector('.v84-range'),info=el.querySelector('.v84-tinfo'),save=el.querySelector('[data-t="save"]');let D=0;
-  v.src=URL.createObjectURL(file);const show=()=>{const s=+rg.value;info.textContent=D>V84_VLEN?`${(Math.min(V84_VLEN,D-s)).toFixed(1).replace('.',',')} s vanaf ${v84Sec(s)} · totaal ${v84Sec(D)}`:`Hele video (${D.toFixed(1).replace('.',',')} s)`};
-  v.onloadedmetadata=()=>{D=isFinite(v.duration)?v.duration:0;rg.max=String(Math.max(0,D-V84_VLEN));rg.hidden=D<=V84_VLEN;show();save.disabled=false;v.play().catch(()=>{})};
+  document.body.append(el);const q=s=>el.querySelector(s),v=q('video'),strip=q('.v84-strip'),win=q('.v84-win'),hs=q('.v84-hd.s'),he=q('.v84-hd.e'),info=q('.v84-tinfo'),save=q('[data-t="save"]'),line=q('.v84-ph-line');
+  let D=0,W={start:0,len:V84_VLEN};
+  const draw=()=>{if(!D)return;const l=W.start/D*100,r=(W.start+W.len)/D*100;win.style.left=`min(${l}%, calc(100% - 44px))`;win.style.width=`max(${r-l}%, 44px)`;q('.v84-dim.l').style.width=l+'%';q('.v84-dim.r').style.left=r+'%';
+    hs.setAttribute('aria-valuenow',W.start.toFixed(1));hs.setAttribute('aria-valuetext',v84S1(W.start)+' s');he.setAttribute('aria-valuenow',(W.start+W.len).toFixed(1));he.setAttribute('aria-valuetext',v84S1(W.start+W.len)+' s');
+    el.querySelectorAll('[data-l]').forEach(b=>b.setAttribute('aria-pressed',String(Math.abs(+b.dataset.l-W.len)<.05)));
+    info.innerHTML=D>V84_VMIN?`<b>${v84S1(W.start)} – ${v84S1(W.start+W.len)} s</b> · ${v84S1(W.len)} s van ${v84Sec(D)}`:`Hele video (${v84S1(D)} s)`};
+  const set=(st,ln,seek=true)=>{W=v84Win(st,ln,D);draw();if(seek){try{v.currentTime=W.start}catch(e){}}};
+  v.src=URL.createObjectURL(file);
+  v.onloadedmetadata=()=>{D=isFinite(v.duration)?v.duration:0;hs.setAttribute('aria-valuemin','0');hs.setAttribute('aria-valuemax',D.toFixed(1));he.setAttribute('aria-valuemin','0');he.setAttribute('aria-valuemax',D.toFixed(1));
+    set(0,V84_VLEN);const many=D>V84_VMIN;strip.hidden=!many;q('.v84-nudge').hidden=D<=V84_VLEN;q('.v84-lens').hidden=D<=2;el.querySelectorAll('[data-l]').forEach(b=>b.hidden=+b.dataset.l>D+.05);q('.v84-thelp').hidden=!many;save.disabled=false;v.play().catch(()=>{});
+    const box=q('.v84-thumbs'),n=Math.max(6,Math.min(12,Math.round(D/2.5)));box.style.setProperty('--n',n);
+    v84Strip(file,D,n,(src)=>{if(el._stop)return false;if(src){const im=new Image();im.alt='';im.src=src;box.append(im)}})};
   v.onerror=()=>{info.textContent='Deze video kan op dit toestel niet worden gelezen.'};
-  v.ontimeupdate=()=>{const s=+rg.value;if(v.currentTime>=s+V84_VLEN||v.currentTime<s-.3){v.currentTime=s}};
-  rg.oninput=()=>{v.currentTime=+rg.value;show()};
-  el.querySelector('[data-t="close"]').onclick=v84TrimClose;
-  save.onclick=async()=>{save.disabled=true;rg.disabled=true;v.pause();const bar=el.querySelector('.v85-bar');bar.hidden=false;info.textContent='Video omzetten…';
-    try{await v84AddVideo(name,region,day,file,+rg.value,f=>{bar.firstElementChild.style.width=Math.round(f*100)+'%'});v84TrimClose();after&&after()}
-    catch(e){info.textContent=v10Why(e,'video');save.disabled=false;rg.disabled=false}}}
+  v.ontimeupdate=()=>{if(v.currentTime>=W.start+W.len||v.currentTime<W.start-.3)v.currentTime=W.start;if(D)line.style.left=(v.currentTime/D*100)+'%'};
+  /* slepen: modus bepaald door waar je begint (handvat begin/eind, het kader, of de strip) */
+  let drag=null;const tAt=e=>{const r=strip.getBoundingClientRect();return Math.max(0,Math.min(1,(e.clientX-r.left)/r.width))*D};
+  strip.addEventListener('pointerdown',e=>{if(!D)return;e.preventDefault();const t=tAt(e),m=e.target===hs?'s':e.target===he?'e':e.target.closest('.v84-win')?'m':'jump';
+    if(m==='jump'){set(t-W.len/2,W.len);drag={m:'m',t0:t,st:W.start,ln:W.len}}else drag={m,t0:t,st:W.start,ln:W.len};v.pause();strip.setPointerCapture(e.pointerId)});
+  strip.addEventListener('pointermove',e=>{if(!drag)return;const d=tAt(e)-drag.t0;
+    if(drag.m==='m')set(drag.st+d,drag.ln);
+    else if(drag.m==='s'){const end=drag.st+drag.ln,st=Math.max(end-V84_VLEN,Math.min(end-V84_VMIN,drag.st+d));set(st,end-st)}
+    else{const end=Math.max(drag.st+V84_VMIN,Math.min(drag.st+V84_VLEN,drag.st+drag.ln+d));set(drag.st,end-drag.st,false);try{v.currentTime=Math.max(W.start,end-.3)}catch(x){}}});
+  const up=()=>{if(!drag)return;drag=null;try{v.currentTime=W.start}catch(e){}v.play().catch(()=>{})};strip.addEventListener('pointerup',up);strip.addEventListener('pointercancel',up);
+  const key=(h,e)=>{const k={ArrowLeft:-.1,ArrowRight:.1,PageDown:-1,PageUp:1}[e.key];if(k==null)return;e.preventDefault();const end=W.start+W.len;
+    if(h==='s'){const st=Math.max(end-V84_VLEN,Math.min(end-V84_VMIN,W.start+k));set(st,end-st)}else set(W.start,Math.max(V84_VMIN,Math.min(V84_VLEN,W.len+k)))};
+  hs.onkeydown=e=>key('s',e);he.onkeydown=e=>key('e',e);
+  el.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>set(W.start+(+b.dataset.n),W.len));
+  el.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>set(W.start,+b.dataset.l));
+  q('[data-t="close"]').onclick=v84TrimClose;
+  save.onclick=async()=>{save.disabled=true;strip.style.pointerEvents='none';v.pause();const bar=q('.v85-bar');bar.hidden=false;info.textContent='Video omzetten…';
+    try{await v84AddVideo(name,region,day,file,W.start,f=>{bar.firstElementChild.style.width=Math.round(f*100)+'%'},W.len);v84TrimClose();after&&after()}
+    catch(e){info.textContent=v10Why(e,'video');save.disabled=false;strip.style.pointerEvents=''}};
+  el._win=()=>({...W,D});el._set=(st,ln)=>set(st,ln)}
 function v84VidClose(){const el=document.getElementById('v84Vid');if(el)el.remove()}
 function v84VidOpen(id){const p=V84.vids.find(x=>x.id===id);if(!p)return;v84VidClose();const el=document.createElement('div');el.id='v84Vid';el.className='v85-gen';el.setAttribute('role','dialog');el.setAttribute('aria-label','Eigen video');
   el.innerHTML=`<div class="v85-box"><video class="v85-vid" src="${V84.url[id]}" ${p.orig?`data-start="${p.start||0}"`:''} controls autoplay playsinline muted></video><div class="v85-btns"><button class="ds-btn secondary" data-t="close">Sluiten</button></div></div>`;

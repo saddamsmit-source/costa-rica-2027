@@ -49,3 +49,21 @@
 .v84-vplay span{position:absolute;left:6px;bottom:6px;display:flex;align-items:center;gap:4px;padding:3px 8px;border-radius:12px;background:rgba(6,24,17,.7);color:#fff;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
 .v84-ph .v84-vplay{top:0;left:0;width:100%;height:100%;border-radius:0;background:#000}
 .v84-range{width:100%;accent-color:var(--ds-leaf);min-height:44px}
+
+/* v10.3 · video knippen: filmstrip met venster */
+.v84-trim .v84-strip{position:relative;height:56px;margin:12px 0 4px;border-radius:10px;overflow:hidden;background:#111;touch-action:none;user-select:none;-webkit-user-select:none}
+.v84-thumbs{position:absolute;inset:0;display:grid;grid-template-columns:repeat(var(--n,8),1fr)}
+.v84-thumbs img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.v84-dim{position:absolute;top:0;bottom:0;background:rgba(0,0,0,.6);pointer-events:none}.v84-dim.l{left:0}.v84-dim.r{right:0}
+.v84-win{position:absolute;top:0;bottom:0;border:3px solid var(--ds-leaf);cursor:grab;box-sizing:border-box;border-radius:8px}
+.v84-hd{position:absolute;top:-3px;bottom:-3px;width:16px;background:var(--ds-leaf);cursor:ew-resize;display:flex;align-items:center;justify-content:center}
+.v84-hd.s{left:-3px;border-radius:8px 0 0 8px}.v84-hd.e{right:-3px;border-radius:0 8px 8px 0}
+.v84-hd:before{content:'';position:absolute;top:0;bottom:0}.v84-hd.s:before{left:-14px;right:0}.v84-hd.e:before{left:0;right:-14px}
+.v84-hd:after{content:'';width:3px;height:18px;border-radius:2px;background:rgba(255,255,255,.9)}
+.v84-hd:focus-visible{outline:3px solid #fff;outline-offset:-3px}
+.v84-ph-line{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:#fff;pointer-events:none;box-shadow:0 0 4px rgba(0,0,0,.6)}
+.v84-trim .v84-tinfo{font-size:14px;margin:6px 0 2px;font-variant-numeric:tabular-nums;color:var(--ds-ink)}
+.v84-nudge{display:flex;gap:8px;margin:6px 0}.v84-nudge .ds-btn{flex:1}
+.v84-lens{display:flex;align-items:center;gap:6px;margin:6px 0}.v84-lens .ds-meta{margin-right:auto}
+.v84-len{min-height:44px;min-width:52px;border-radius:22px;border:1px solid var(--ds-line);background:var(--ds-card);font:inherit;font-weight:700;font-size:14px;color:var(--ds-ink)}
+.v84-len[aria-pressed="true"]{background:var(--ds-leaf);border-color:var(--ds-leaf);color:#fff}
