@@ -175,7 +175,14 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     await at(4900);const t49=await q.evaluate(()=>{const e=document.getElementById('splash');return !!e&&e.className===''});if(!t49)bad.push('startscherm is al weg vóór 4,9 s');
     await at(6300);const end=await q.evaluate(()=>({gone:!document.getElementById('splash'),n:document.querySelectorAll('#app *').length}));
     if(!end.gone)bad.push('startscherm blijft na 6,3 s staan');if(!end.n)bad.push('geen hoofdscherm na het startscherm');
-    await q.close();return bad});
+    /* tik om over te slaan: te vroeg (0,5 s) telt niet, na 1,5 s wel; app staat dan al klaar */
+    const r=await ctx.newPage();r.on('pageerror',e=>bad.push('JS: '+e.message));await r.goto(URL0+'?splash=1');
+    await r.waitForFunction(()=>performance.now()>=400,null,{polling:50});await r.mouse.click(195,420);await r.waitForTimeout(300);
+    if(!await r.evaluate(()=>{const e=document.getElementById('splash');return !!e&&e.className===''}))bad.push('tik binnen 1,5 s slaat het startscherm al over');
+    await r.waitForFunction(()=>performance.now()>=1700,null,{polling:50});await r.mouse.click(195,420);await r.waitForTimeout(900);
+    const sk=await r.evaluate(()=>({gone:!document.getElementById('splash'),n:document.querySelectorAll('#app *').length,t:Math.round(performance.now())}));
+    if(!sk.gone)bad.push('tik na 1,5 s slaat het startscherm niet over');if(!sk.n)bad.push('geen hoofdscherm na overslaan');if(sk.t>4000)bad.push('overslaan duurde te lang: '+sk.t);
+    await r.close();await q.close();return bad});
 
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
