@@ -251,9 +251,9 @@ const {chromium}=require('playwright');const path=require('path');
     return bad});
   if(ux.length)errs.push('leesbaarheid/tikdoelen: '+[...new Set(ux)].slice(0,8).join('; '));
   const mf=JSON.parse(require('fs').readFileSync(path.resolve(__dirname,'..','manifest.webmanifest'),'utf8'));if(!mf.icons.some(i=>i.purpose==='maskable'))errs.push('geen maskable icoon');
-  /* v7.8: alles wat in beeld kwam moet een geverifieerde foto zijn */
+  /* v7.8: alles wat in beeld kwam moet een geverifieerde foto zijn (uitzondering v10.4: splash.jpg is het door de eigenaar aangeleverde omslagbeeld, geen natuur- of plaatsfoto) */
   {const seen=[...imgs,...(await p.evaluate(()=>[...window.__imgs||[]]))],ok=await p.evaluate(()=>Object.keys(V48_PHOTO));const bad=new Set();
-    const hp=await p.evaluate(()=>v80HAll());seen.forEach(u=>{if(/^(data|blob):|\.svg(\?|$)|icon-/.test(u)||hp.includes(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
+    const hp=await p.evaluate(()=>v80HAll());seen.forEach(u=>{if(/^(data|blob):|\.svg(\?|$)|icon-|(^|\/)splash\.jpg/.test(u)||hp.includes(u))return;const m=u.match(/photos\/(.+)\.jpg/);if(!m){bad.add(u.replace(/^.*\//,''));return}const k=m[1];
       if(/^wl\//.test(k))return;if(!ok.includes(k))bad.add(k)});
     if(bad.size)errs.push('niet-geverifieerde afbeelding getoond: '+[...bad].join(', '))}
   /* v8.4: eigen foto's per soort (max 3, favoriet), reisverhaal, foto-back-up (zip) heen en terug */

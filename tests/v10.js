@@ -162,6 +162,21 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     await p.evaluate(async()=>{v84Clip=__orig;const ids=V84.vids.filter(x=>x.day===6).map(x=>x.id);await v84Write(st=>ids.forEach(i=>st.delete(i)));await v84Load();delete state.v43Observations[v43name('Keel-billed toucan')];save()});
     return bad});
 
+  /* 8d. v10.4 · startscherm: direct zichtbaar, minstens 4,9 s vast terwijl de app erachter opstart, daarna weg en bedienbaar; gewone testrun slaat het over */
+  await step('startscherm',async()=>{const bad=[];
+    const off=await p.evaluate(()=>!document.getElementById('splash'));if(!off)bad.push('testbrowser zonder ?splash=1 hoort geen startscherm te krijgen');
+    const q=await ctx.newPage();q.on('pageerror',e=>bad.push('JS: '+e.message));
+    await q.goto(URL0+'?splash=1');
+    const at=async ms=>{await q.waitForFunction(m=>performance.now()>=m,ms,{timeout:15000,polling:50})};
+    const s1=await q.evaluate(()=>{const e=document.getElementById('splash');if(!e)return null;const cs=getComputedStyle(e),r=e.getBoundingClientRect();return {bg:cs.backgroundImage,w:r.width,h:r.height,vw:innerWidth,vh:innerHeight}});
+    if(!s1)bad.push('startscherm ontbreekt direct na laden');else{if(!/splash\.jpg/.test(s1.bg))bad.push('startscherm toont niet splash.jpg: '+s1.bg);if(s1.w<s1.vw-1||s1.h<s1.vh-1)bad.push('startscherm vult het scherm niet: '+s1.w+'x'+s1.h)}
+    await at(2500);const mid=await q.evaluate(()=>({n:document.querySelectorAll('#app *').length,top:document.elementFromPoint(innerWidth/2,innerHeight/2)?.id}));
+    if(!mid.n)bad.push('app start niet op de achtergrond (#app leeg na 2,5 s)');if(mid.top!=='splash')bad.push('startscherm blokkeert de app niet na 2,5 s: '+mid.top);
+    await at(4900);const t49=await q.evaluate(()=>{const e=document.getElementById('splash');return !!e&&e.className===''});if(!t49)bad.push('startscherm is al weg vóór 4,9 s');
+    await at(6300);const end=await q.evaluate(()=>({gone:!document.getElementById('splash'),n:document.querySelectorAll('#app *').length}));
+    if(!end.gone)bad.push('startscherm blijft na 6,3 s staan');if(!end.n)bad.push('geen hoofdscherm na het startscherm');
+    await q.close();return bad});
+
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
   await b.close();
