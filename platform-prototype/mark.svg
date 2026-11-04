@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-label="UNTAMED Atlas Wing">
+<defs>
+ <linearGradient id="rim" x1="23" y1="15" x2="131" y2="149" gradientUnits="userSpaceOnUse"><stop stop-color="#F2F5EE"/><stop offset=".18" stop-color="#48DCE4"/><stop offset=".43" stop-color="#176D70"/><stop offset=".62" stop-color="#E8C580"/><stop offset=".8" stop-color="#26C997"/><stop offset="1" stop-color="#48DCE4"/></linearGradient>
+ <linearGradient id="glass" x1="28" y1="28" x2="122" y2="140" gradientUnits="userSpaceOnUse"><stop stop-color="#48DCE4" stop-opacity=".2"/><stop offset=".45" stop-color="#102A34" stop-opacity=".16"/><stop offset="1" stop-color="#26C997" stop-opacity=".3"/></linearGradient>
+ <linearGradient id="wing" x1="35" y1="40" x2="115" y2="109" gradientUnits="userSpaceOnUse"><stop stop-color="#ECFFF7"/><stop offset=".26" stop-color="#48DCE4"/><stop offset=".6" stop-color="#26C997"/><stop offset="1" stop-color="#175E67"/></linearGradient>
+ <linearGradient id="foil" x1="77" y1="24" x2="101" y2="119" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF7DD"/><stop offset=".3" stop-color="#E8C580"/><stop offset=".55" stop-color="#FFB4A3"/><stop offset=".78" stop-color="#48DCE4"/><stop offset="1" stop-color="#26C997"/></linearGradient>
+ <linearGradient id="facet" x1="81" y1="29" x2="70" y2="99" gradientUnits="userSpaceOnUse"><stop stop-color="#D9FFF8"/><stop offset=".5" stop-color="#48DCE4"/><stop offset="1" stop-color="#167E7E"/></linearGradient>
+ <radialGradient id="halo"><stop stop-color="#26C997" stop-opacity=".16"/><stop offset="1" stop-color="#26C997" stop-opacity="0"/></radialGradient>
+ <filter id="light" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<circle cx="80" cy="83" r="77" fill="url(#halo)"/>
+<path d="M80 10 141 45v70l-61 35-61-35V45Z" fill="#04111C" fill-opacity=".5"/>
+<path d="M80 13 138 47v66l-58 34-58-34V47Z" fill="url(#glass)" stroke="url(#rim)" stroke-width="1.5"/>
+<path d="m80 20 52 30v59l-52 31-52-31V50Z" stroke="url(#rim)" stroke-opacity=".22"/>
+<path d="M22 47 80 80l58-33M80 80v67" stroke="url(#rim)" stroke-width=".65" opacity=".18"/>
+<path d="m31 50 7-4m84 0 7 4M31 109l7 4m84 0 7-4" stroke="url(#foil)" stroke-width="1.5"/>
+<path d="M37 66c15 2 27 9 43 30 16-21 28-28 43-30-8 19-18 34-43 48-25-14-35-29-43-48Z" fill="#26C997" opacity=".35" filter="url(#light)"/>
+<path d="M34 53c19 3 34 10 46 29 12-19 27-26 46-29-7 17-18 28-33 37l-13 21-13-21C52 81 41 70 34 53Z" fill="url(#wing)" stroke="url(#rim)" stroke-width=".65"/>
+<path d="M34 53c19 3 34 10 46 29L67 90C52 81 41 70 34 53Z" fill="#48DCE4" fill-opacity=".28"/>
+<path d="M126 53c-7 17-18 28-33 37l-13 21V82c12-19 27-26 46-29Z" fill="#073E49" fill-opacity=".45"/>
+<path d="m34 53 33 37 13-8m46-29L93 90 80 82" stroke="#D0FFF4" stroke-opacity=".55" stroke-width=".6"/>
+<path d="m80 27 15 49-15 25-15-25Z" fill="url(#foil)" stroke="#EAF9EB" stroke-opacity=".65" stroke-width=".65"/>
+<path d="m80 27-15 49 15 10Z" fill="url(#facet)"/>
+<path d="m80 27 15 49-15 10Z" fill="#F2F5EE" fill-opacity=".14"/>
+<path d="M80 28v57l15-9m-30 0 15 10v15" stroke="#F2F5EE" stroke-opacity=".65" stroke-width=".55"/>
+<path d="m80 122 4 5-4 5-4-5Z" fill="url(#foil)"/>
+<path d="m46 29 34-20 35 20" stroke="#48DCE4" stroke-opacity=".55" stroke-width=".65"/>
+<path d="m80 9 9 5" stroke="#ECFFF7" stroke-width="1.5" stroke-linecap="round"/>
+<circle cx="138" cy="47" r="2" fill="#E8C580"/>
+</svg>
