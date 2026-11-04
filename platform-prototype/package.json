@@ -1,0 +1,1 @@
+{"name":"untamed-dynamic-travel-foundation","version":"0.1.0","private":true,"type":"module","scripts":{"test":"node tests/dynamic-trips.mjs"}}

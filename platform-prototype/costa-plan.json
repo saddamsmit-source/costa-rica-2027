@@ -1,0 +1,800 @@
+{
+  "days": [
+    {
+      "id": 1,
+      "date": "2027-02-08",
+      "place": "San José",
+      "base": "Vlucht Amsterdam → San José; aankomst en hotel",
+      "activities": [
+        {
+          "title": "Aankomst en transfer naar hotel",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Fleur de Lys"
+      ],
+      "wildlife": [],
+      "tip": "Reisdag: geen extra excursies.",
+      "flag": ""
+    },
+    {
+      "id": 2,
+      "date": "2027-02-09",
+      "place": "Cahuita",
+      "base": "Transfer vanuit San José, ca. 4,5 uur",
+      "activities": [
+        {
+          "title": "Transfer naar Cahuita",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Bri Bri-gemeenschap, cacao en traditionele lunch",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Sawadee vermeldt deze optie op dag 2. Tijd en uitvoerbaarheid met transfer controleren.",
+          "book": "sawadee",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Atlantida Lodge"
+      ],
+      "wildlife": [
+        "Toekans",
+        "Brulapen"
+      ],
+      "tip": "",
+      "flag": "Bri Bri staat op de transferdag; uitvoering en timing met Sawadee afstemmen."
+    },
+    {
+      "id": 3,
+      "date": "2027-02-10",
+      "place": "Cahuita",
+      "base": "Vrije dag in Cahuita",
+      "activities": [
+        {
+          "title": "Cahuita National Park met lokale natuurgids",
+          "source": "extra",
+          "status": "locked",
+          "note": "Prioriteit wildlife en vogels.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Puerto Viejo bezoeken",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen bij tijd over.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Atlantida Lodge"
+      ],
+      "wildlife": [
+        "Luiaards",
+        "Collared aracari",
+        "Roofvogels",
+        "IJsvogels"
+      ],
+      "tip": "Vroege start voor beter licht; 200–600 mm en 24–105 mm meenemen.",
+      "flag": ""
+    },
+    {
+      "id": 4,
+      "date": "2027-02-11",
+      "place": "Tortuguero",
+      "base": "Transfer naar La Pavona, vervolgens per boot naar Tortuguero",
+      "activities": [
+        {
+          "title": "Transfer per bus en boot",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Wildlife kijken tijdens boottransfer",
+          "source": "extra",
+          "status": "optional",
+          "note": "Geen aparte excursie",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Lapa Verde Lodge"
+      ],
+      "wildlife": [
+        "Reigers",
+        "IJsvogels",
+        "Kaaimannen"
+      ],
+      "tip": "",
+      "flag": ""
+    },
+    {
+      "id": 5,
+      "date": "2027-02-12",
+      "place": "Tortuguero",
+      "base": "Vrije dag bij Tortuguero",
+      "activities": [
+        {
+          "title": "Vroege kanotocht door smalle kanalen met natuurgids",
+          "source": "extra",
+          "status": "locked",
+          "note": "Kleine, stabiele boot/kano; fotografie heeft prioriteit.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Begeleide regenwoudwandeling",
+          "source": "extra",
+          "status": "locked",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Nachtwandeling",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen als tijd en energie het toelaten.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Lapa Verde Lodge"
+      ],
+      "wildlife": [
+        "IJsvogels",
+        "Reigers",
+        "Kaaimannen",
+        "Apen",
+        "Basilisken"
+      ],
+      "tip": "Drybag meenemen. 200–600 mm stabiel houden in de boot.",
+      "flag": ""
+    },
+    {
+      "id": 6,
+      "date": "2027-02-13",
+      "place": "La Fortuna",
+      "base": "Boot terug naar La Pavona en bus naar La Fortuna, ca. 4 uur over de weg",
+      "activities": [
+        {
+          "title": "Boot- en bustransfer",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Catarata Ecolodge",
+        "Faro Arenal",
+        "Eco Arenal"
+      ],
+      "wildlife": [
+        "Toekans"
+      ],
+      "tip": "Geen zware extra excursies na de transfer.",
+      "flag": ""
+    },
+    {
+      "id": 7,
+      "date": "2027-02-14",
+      "place": "La Fortuna",
+      "base": "Vrije dag bij Arenal",
+      "activities": [
+        {
+          "title": "Caño Negro wildlife-boottocht",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Vooraf aanvragen bij Sawadee; minimaal 6 deelnemers volgens reisomschrijving.",
+          "book": "sawadee",
+          "price": null
+        },
+        {
+          "title": "Thermale bronnen bij Arenal in de avond",
+          "source": "extra",
+          "status": "locked",
+          "note": "Exact complex en vervoer later regelen.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "La Fortuna Waterfall",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen als er voldoende tijd over is.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Catarata Ecolodge",
+        "Faro Arenal",
+        "Eco Arenal"
+      ],
+      "wildlife": [
+        "Green kingfisher",
+        "Roseate spoonbill",
+        "Northern jacana",
+        "Reigers"
+      ],
+      "tip": "",
+      "flag": "Caño Negro duurt een groot deel van de dag; avondvervoer naar thermale bronnen checken."
+    },
+    {
+      "id": 8,
+      "date": "2027-02-15",
+      "place": "Rincón de la Vieja",
+      "base": "Transfer vanuit La Fortuna, ca. 4 uur",
+      "activities": [
+        {
+          "title": "Transfer naar Rincón de la Vieja",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Korte natuurwandeling bij lodge",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen bij tijd over.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Cañon de la Vieja Lodge",
+        "Rinconcito Lodge"
+      ],
+      "wildlife": [
+        "White-throated magpie-jay"
+      ],
+      "tip": "",
+      "flag": ""
+    },
+    {
+      "id": 9,
+      "date": "2027-02-16",
+      "place": "Rincón de la Vieja",
+      "base": "Vrije dag",
+      "activities": [
+        {
+          "title": "Las Pailas natuur- en vulkanische wandeling",
+          "source": "extra",
+          "status": "locked",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Oropéndola-waterval",
+          "source": "extra",
+          "status": "locked",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Paardrijden",
+          "source": "extra",
+          "status": "excluded",
+          "note": "Bewust uitgesloten.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Poza Los Coyotes",
+          "source": "extra",
+          "status": "excluded",
+          "note": "Bewust uitgesloten.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Cañon de la Vieja Lodge",
+        "Rinconcito Lodge"
+      ],
+      "wildlife": [
+        "Turquoise-browed motmot",
+        "Crested caracara",
+        "White-throated magpie-jay"
+      ],
+      "tip": "",
+      "flag": "Hotelkeuze bepaalt de transfer naar Las Pailas en de waterval."
+    },
+    {
+      "id": 10,
+      "date": "2027-02-17",
+      "place": "Monteverde",
+      "base": "Transfer vanuit Rincón, ca. 3 uur",
+      "activities": [
+        {
+          "title": "Transfer naar Monteverde",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Santa Elena verkennen",
+          "source": "extra",
+          "status": "optional",
+          "note": "Rustig houden.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Hotel Los Cipreses",
+        "Claro de Luna"
+      ],
+      "wildlife": [
+        "Kolibries"
+      ],
+      "tip": "",
+      "flag": ""
+    },
+    {
+      "id": 11,
+      "date": "2027-02-18",
+      "place": "Monteverde",
+      "base": "Vrije dag",
+      "activities": [
+        {
+          "title": "Sky Walk / hangbruggen",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Tijdslot afstemmen.",
+          "book": "sawadee",
+          "price": null
+        },
+        {
+          "title": "Canopy / zipline",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Bij voorkeur aansluitend op Sky Walk.",
+          "book": "sawadee",
+          "price": null
+        },
+        {
+          "title": "Koffietour",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Behouden en donderdag proberen in te passen.",
+          "book": "sawadee",
+          "price": null
+        },
+        {
+          "title": "Night walk",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Donderdagavond heeft prioriteit.",
+          "book": "sawadee",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Hotel Los Cipreses",
+        "Claro de Luna"
+      ],
+      "wildlife": [
+        "Kolibries",
+        "Trogons",
+        "Nevelwoudvogels"
+      ],
+      "tip": "",
+      "flag": "Zeer volle dag; tijden en transfers ter plekke of vooraf beoordelen."
+    },
+    {
+      "id": 12,
+      "date": "2027-02-19",
+      "place": "Monteverde",
+      "base": "Tweede vrije dag",
+      "activities": [
+        {
+          "title": "Curi-Cancha vroege birdingtour met gespecialiseerde gids",
+          "source": "extra",
+          "status": "locked",
+          "note": "Vrijdagochtend beschermen.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Tatoeage in Monteverde",
+          "source": "extra",
+          "status": "locked",
+          "note": "Vrijdagmiddag; studio/afspraak nog te boeken.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Hotel Los Cipreses",
+        "Claro de Luna"
+      ],
+      "wildlife": [
+        "Resplendent quetzal",
+        "Emerald toucanet",
+        "Kolibries",
+        "Trogons"
+      ],
+      "tip": "Voor Curi-Cancha: 200–600 mm, reserveaccu, regenbescherming.",
+      "flag": ""
+    },
+    {
+      "id": 13,
+      "date": "2027-02-20",
+      "place": "San Gerardo de Dota",
+      "base": "Transfer vanuit Monteverde, ca. 6 uur",
+      "activities": [
+        {
+          "title": "Lange transfer naar San Gerardo",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Rustige vogelobservatie rond Sueños del Bosque",
+          "source": "extra",
+          "status": "locked",
+          "note": "Na aankomst, bij daglicht.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Sueños del Bosque"
+      ],
+      "wildlife": [
+        "Quetzal",
+        "Hooglandkolibries"
+      ],
+      "tip": "Geen intensieve excursie na lange reisdag.",
+      "flag": ""
+    },
+    {
+      "id": 14,
+      "date": "2027-02-21",
+      "place": "Vergel de Punta Mala / Uvita",
+      "base": "Vroege ochtend in San Gerardo, daarna ca. 3,5 uur transfer",
+      "activities": [
+        {
+          "title": "Specialistische quetzaltour vroeg in de ochtend",
+          "source": "extra",
+          "status": "locked",
+          "note": "Voorwaardelijke planningslock: alleen als Sawadee-vertrek dit toestaat.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Transfer naar Pacifische kust",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Rustige natuur- en vogelobservatie rond lodge",
+          "source": "extra",
+          "status": "locked",
+          "note": "Na aankomst.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Rio Tico Safari Lodge",
+        "Villas Rio Mar",
+        "Hotel Vista Ballena"
+      ],
+      "wildlife": [
+        "Resplendent quetzal",
+        "Toekans",
+        "Scarlet macaw"
+      ],
+      "tip": "",
+      "flag": "Vroege quetzaltour hangt af van Sawadee-groepsvertrektijd."
+    },
+    {
+      "id": 15,
+      "date": "2027-02-22",
+      "place": "Vergel de Punta Mala / Uvita",
+      "base": "Vrije dag aan Pacifische kust",
+      "activities": [
+        {
+          "title": "Whale watching Marino Ballena",
+          "source": "extra",
+          "status": "locked",
+          "note": "Voorkeur ochtend; afhankelijk van zeecondities.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Kokostour",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "Behouden en combineren; alternatieve planning via Sawadee als nodig.",
+          "book": "sawadee",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Rio Tico Safari Lodge",
+        "Villas Rio Mar",
+        "Hotel Vista Ballena"
+      ],
+      "wildlife": [
+        "Bultrug",
+        "Dolfijnen",
+        "Zeevogels",
+        "Fregatvogels"
+      ],
+      "tip": "Neem 24–105 mm naast telelens mee voor walvissen dichtbij.",
+      "flag": "Whale watching + kokostour op één dag nog niet bevestigd."
+    },
+    {
+      "id": 16,
+      "date": "2027-02-23",
+      "place": "Corcovado-regio",
+      "base": "Transfer naar Sierpe en boot naar lodge",
+      "activities": [
+        {
+          "title": "Transfer en boot naar lodge",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Rustige natuurwandeling rond lodge",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen bij tijd en daglicht.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Cabinas Las Palmeras"
+      ],
+      "wildlife": [
+        "Ara’s",
+        "Apen"
+      ],
+      "tip": "Grote bagage blijft in Sierpe; drybag voor camera en kleding voor 3 nachten.",
+      "flag": ""
+    },
+    {
+      "id": 17,
+      "date": "2027-02-24",
+      "place": "Corcovado",
+      "base": "Vrije dag",
+      "activities": [
+        {
+          "title": "Begeleide Corcovado NP-excursie",
+          "source": "sawadee",
+          "status": "locked",
+          "note": "La Sirena voorkeurssector mits logistiek haalbaar; anders San Pedrillo. Vooraf aanvragen.",
+          "book": "sawadee",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Cabinas Las Palmeras"
+      ],
+      "wildlife": [
+        "Baird’s tapir",
+        "Scarlet macaw",
+        "Apen",
+        "Neusberen",
+        "Roofvogels"
+      ],
+      "tip": "",
+      "flag": "Parksector en permit/bootlogistiek moeten nog worden bevestigd."
+    },
+    {
+      "id": 18,
+      "date": "2027-02-25",
+      "place": "Corcovado",
+      "base": "Vrije dag",
+      "activities": [
+        {
+          "title": "Isla del Caño snorkelexcursie",
+          "source": "extra",
+          "status": "locked",
+          "note": "Afhankelijk van zee en vertrekpunt; operator/boot nog bevestigen.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Cabinas Las Palmeras"
+      ],
+      "wildlife": [
+        "Tropische vissen",
+        "Roggen",
+        "Zeeschildpadden"
+      ],
+      "tip": "Onderwatercamera indien beschikbaar; droge cameratas voor boot.",
+      "flag": ""
+    },
+    {
+      "id": 19,
+      "date": "2027-02-26",
+      "place": "Esterillos",
+      "base": "Boot terug naar Sierpe, daarna bus naar Esterillos",
+      "activities": [
+        {
+          "title": "Boot- en bustransfer",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Strandwandeling bij zonsondergang",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen indien aankomsttijd en daglicht het toelaten.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Hotel Playa Bejuco",
+        "Hotel Costa Pacifica"
+      ],
+      "wildlife": [
+        "Kustvogels"
+      ],
+      "tip": "",
+      "flag": ""
+    },
+    {
+      "id": 20,
+      "date": "2027-02-27",
+      "place": "Manuel Antonio / Esterillos",
+      "base": "Dagtocht naar Manuel Antonio National Park",
+      "activities": [
+        {
+          "title": "Bezoek Manuel Antonio NP",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Begeleide wildlife-wandeling met natuurgids",
+          "source": "extra",
+          "status": "locked",
+          "note": "Controleren of Sawadee al een gids heeft inbegrepen.",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Strand en vrije fotografie",
+          "source": "extra",
+          "status": "optional",
+          "note": "Alleen als tijd over is.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Hotel Playa Bejuco",
+        "Hotel Costa Pacifica"
+      ],
+      "wildlife": [
+        "Squirrel monkey",
+        "Luiaards",
+        "Fiery-billed aracari",
+        "Kapucijnapen"
+      ],
+      "tip": "",
+      "flag": "Voorkom dubbel betalen als Sawadee al een gids regelt."
+    },
+    {
+      "id": 21,
+      "date": "2027-02-28",
+      "place": "San José",
+      "base": "Transfer Esterillos → San José via Tárcoles",
+      "activities": [
+        {
+          "title": "Transfer via Tárcoles en krokodillenbrug",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        },
+        {
+          "title": "Tárcoles krokodillenboottocht",
+          "source": "extra",
+          "status": "conditional",
+          "note": "Gepland mits Sawadee-transfertijden het toelaten.",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [
+        "Fleur de Lys"
+      ],
+      "wildlife": [
+        "Amerikaanse krokodil",
+        "Reigers",
+        "IJsvogels",
+        "Mangrovevogels"
+      ],
+      "tip": "",
+      "flag": "Krokodillenboottocht hangt af van groepsschema."
+    },
+    {
+      "id": 22,
+      "date": "2027-03-01",
+      "place": "Terugvlucht",
+      "base": "Vlucht San José → Amsterdam",
+      "activities": [
+        {
+          "title": "Terugvlucht",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [],
+      "wildlife": [],
+      "tip": "Vertrektijd volgens vliegticket.",
+      "flag": ""
+    },
+    {
+      "id": 23,
+      "date": "2027-03-02",
+      "place": "Amsterdam",
+      "base": "Aankomst in Nederland",
+      "activities": [
+        {
+          "title": "Aankomst Amsterdam",
+          "source": "sawadee",
+          "status": "planned",
+          "note": "",
+          "book": "local",
+          "price": null
+        }
+      ],
+      "hotel": [],
+      "wildlife": [],
+      "tip": "",
+      "flag": ""
+    }
+  ]
+}
