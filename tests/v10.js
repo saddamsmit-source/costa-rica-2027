@@ -300,8 +300,8 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     const x0=(await vb())[0];await p.evaluate(()=>{const s=document.querySelector('.ds-mapbox svg.v51-svg'),r=s.getBoundingClientRect(),cy=r.top+r.height/2,cx=r.left+r.width/2;const ev=(t,x)=>s.dispatchEvent(new PointerEvent(t,{pointerId:7,bubbles:true,clientX:x,clientY:cy,pointerType:'touch'}));ev('pointerdown',cx);ev('pointermove',cx+30);ev('pointermove',cx+60);ev('pointerup',cx+60)});
     const x1=(await vb())[0];if(Math.abs(x1-x0)<.5)bad.push('slepen verschuift de kaart niet');
     /* terug naar basis en grenzen */
-    for(let i=0;i<8;i++)await p.click('[data-z=out]').catch(()=>{});const w5=(await vb())[2];if(Math.abs(w5-w0)>.5)bad.push('uitzoomen komt niet terug op basis: '+w5+' vs '+w0);
-    for(let i=0;i<12;i++)await p.click('[data-z=in]').catch(()=>{});const w6=(await vb())[2];if(w6<w0/6-.5)bad.push('inzoomen gaat voorbij de grens: '+w6);
+    for(let i=0;i<8;i++)await p.evaluate(()=>{const b=document.querySelector('[data-z=out]');if(!b.disabled)b.click()});const w5=(await vb())[2];if(Math.abs(w5-w0)>.5)bad.push('uitzoomen komt niet terug op basis: '+w5+' vs '+w0);
+    for(let i=0;i<12;i++)await p.evaluate(()=>{const b=document.querySelector('[data-z=in]');if(!b.disabled)b.click()});const w6=(await vb())[2];if(w6<w0/6-.5)bad.push('inzoomen gaat voorbij de grens: '+w6);
     await p.evaluate(()=>{tab='home';render();tab='map';render()});await p.waitForSelector('.v106-zoom');
     if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth))bad.push('horizontale scroll door zoomknoppen');
     return bad});
