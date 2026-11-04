@@ -46,7 +46,7 @@ const {chromium}=require('playwright');const path=require('path');
   /* fase D: kaart */
   await p.evaluate(()=>{daySection='map';render()});await must('.v51-svg','kaart');await must('.ds-info','reisinformatie');
   const vb1=await p.evaluate(()=>document.querySelector('.v51-svg').getAttribute('viewBox'));await p.click('#dsMapWide');const vb2=await p.evaluate(()=>document.querySelector('.v51-svg').getAttribute('viewBox'));if(vb1===vb2)errs.push('kaart vergroten werkt niet');await p.click('#dsMapWide');
-  await p.evaluate(()=>{tab='map';render()});await must('#gpsStart','gps-opname');if(await p.evaluate(()=>document.querySelectorAll('.ds-leg').length)!==13)errs.push('etappes niet 13');
+  await p.evaluate(()=>{tab='map';render()});await must('#v51gps','live volgen');if(await p.evaluate(()=>document.querySelectorAll('.ds-leg').length)!==13)errs.push('etappes niet 13');
   await p.evaluate(()=>document.querySelector('.ds-leg[data-v51-day="6"]').click());if(!(await p.evaluate(()=>tab==='days'&&currentDay===6)))errs.push('etappe opent dag niet');
   /* fase D: meer */
   await p.evaluate(()=>{tab='settings';render()});await must('.ds-menurow','meer-menu');

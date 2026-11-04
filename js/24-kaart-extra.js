@@ -55,7 +55,7 @@ function dseLayer(fd,zoom,box,s,cur){
 function dseChips(){const m=dseMode(),L=state.dsLayers[m],n=dseObsGroups().reduce((a,g)=>a+g.items.length,0);
   const c=(k,t,extra)=>`<button class="dse-chip ${k} ${L[k]?'on':''}" data-dse-layer="${k}" aria-pressed="${!!L[k]}"><i></i>${t}${extra||''}</button>`;
   return `<div class="dse-chips" role="group" aria-label="Kaartlagen">${c('act','Activiteiten')}${c('park','Parken')}${c('obs','Gezien',n?` <em class="ds-num">${n}</em>`:'')}${c('pin','Pins',v105List().length?` <em class="ds-num">${v105List().length}</em>`:'')}</div>`}
-dsdLegend=function(){const L=state.dsLayers[dseMode()];return `<div class="ds-maplegend"><span><i class="l-road"></i>Route</span><span><i class="l-boat"></i>Boot</span>${L.act?'':'<span><i class="l-exc"></i>Excursie</span>'}<span><i class="l-me"></i>Jij</span></div>`};
+dsdLegend=function(){const L=state.dsLayers[dseMode()];return `<div class="ds-maplegend"><span><i class="l-road"></i>Route</span><span><i class="l-boat"></i>Boot</span>${L.act?'':'<span><i class="l-exc"></i>Excursie</span>'}<span><i class="l-me"></i>Jij</span>${(state.gpsTracks||[]).some(x=>(x.points||[]).length>1)?'<span><i class="l-trk"></i>Mijn route</span>':''}</div>`};
 const dsePrevMapBox=dsdMapBox;
 dsdMapBox=function(fd,zoomable){return dseChips()+dsePrevMapBox(fd,zoomable).replace(/<\/div>$/,'<div class="dse-pop" id="dsePop" hidden></div></div>')};
 
@@ -84,13 +84,10 @@ dsdBindWide=function(){const w=document.getElementById('dsMapWide');if(w)w.oncli
 
 /* ---------------- GPS: afstand naar de bestemming ---------------- */
 function dseTarget(){const d=tab==='days'?currentDay:(v48TripDay()||0);if(!d)return null;const st=V51_STOPS[v51Day2Stop(d)][0];return V51_PT[st]}
-function dseGpsText(){if(!v51Pos)return '';const t=dseTarget(),acc=`±${Math.round(v51Pos.acc)} m`;if(!t)return `${v51Pos.lat.toFixed(4)}, ${v51Pos.lon.toFixed(4)} · ${acc}`;
+function dseGpsText(){if(!v51Pos)return '';const t=dseTarget(),acc=`±${Math.round(v51Pos.acc)} m`+(V106.on?` · ${v106Text()}`:'');if(!t)return `${v51Pos.lat.toFixed(4)}, ${v51Pos.lon.toFixed(4)} · ${acc}`;
   const km=v51Dist([v51Pos.lat,v51Pos.lon],t);return km<2?`Je bent bij ${t[2]} · ${acc}`:`Nog ± ${km<20?km.toFixed(1).replace('.',','):Math.round(km)} km hemelsbreed naar ${t[2]} · ${acc}`}
-dsdGps=function(){const on=v51Watch!==null;return `<div class="ds-gps"><button id="v51gps" class="ds-chipbtn ${on?'live':''}">${dsdI('target',16)}${on?'Live positie aan':'Toon mijn positie'}</button><span id="v51gpsinfo" class="ds-num">${esc(dseGpsText())}</span><span class="v105-bar"><button type="button" class="ds-chipbtn" data-v105-here>${dsdI('pin',16)}Pin hier</button><button type="button" class="ds-chipbtn" data-v105-map aria-pressed="false">${dsdI('target',16)}Pin op kaart</button></span></div>`};
-v51StartGps=function(){if(!navigator.geolocation){alert('GPS niet beschikbaar op dit apparaat');return}
-  if(v51Watch!==null){navigator.geolocation.clearWatch(v51Watch);v51Watch=null;render();return}
-  v51Watch=navigator.geolocation.watchPosition(p=>{v51Pos={lat:p.coords.latitude,lon:p.coords.longitude,acc:p.coords.accuracy};if(document.querySelector('.ds-mapbox'))dseRedrawMap();else{const svg=document.querySelector('.v51-svg');if(svg){const w=document.createElement('div');w.innerHTML=v51Svg(tab==='days'?currentDay:(v48TripDay()||0));svg.replaceWith(w.firstElementChild);v51BindStops()}}const i=document.getElementById('v51gpsinfo');if(i)i.textContent=dseGpsText()},
-    e=>{v10Fail(e,'gps');navigator.geolocation.clearWatch(v51Watch);v51Watch=null;render()},{enableHighAccuracy:true,maximumAge:10000,timeout:30000});render()};
+dsdGps=function(){const on=V106.on;return `<div class="ds-gps"><button id="v51gps" class="ds-chipbtn ${on?'live':''}" aria-pressed="${on}">${dsdI('target',16)}<span class="v106-lbl">${on?'Live volgen aan':'Live volgen'}</span></button><span id="v51gpsinfo" class="ds-num">${esc(dseGpsText())}</span><span class="v105-bar"><button type="button" class="ds-chipbtn" data-v105-here>${dsdI('pin',16)}Pin hier</button><button type="button" class="ds-chipbtn" data-v105-map aria-pressed="false">${dsdI('target',16)}Pin op kaart</button></span>${v106Ios()?`<small class="v106-note" role="note">${esc(v106Note())}</small>`:''}</div>`};
+v51StartGps=function(){v106Toggle()};
 
 /* ---------------- waarneming krijgt tijd en locatie ---------------- */
 function dseTag(name,place){const r=state.v43Observations[v43name(name)]?.places?.[place];if(!r)return;

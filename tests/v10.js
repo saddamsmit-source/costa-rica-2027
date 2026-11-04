@@ -233,6 +233,46 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     const dm=await p.evaluate(()=>({has:!!document.querySelector('[data-dse-poi^="pin:"]'),btn:!!document.querySelector('[data-v105-here]')}));if(!dm.btn)bad.push('knoppen ontbreken op de dagkaart');
     await p.evaluate(()=>{state.v105Pins={};save()});return bad});
 
+  await step('live volgen',async()=>{const bad=[];
+    await ctx.grantPermissions(['geolocation']);await p.evaluate(()=>{state.gpsTracks=[];state.v106Live={on:false};save();tab='map';render()});
+    await p.waitForSelector('#v51gps');
+    /* 1. iOS-herkenning */
+    const ios=await p.evaluate(()=>[v106Ios('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0)','iPhone',5),v106Ios('Mozilla/5.0 (Linux; Android 14)','Linux armv8l',5),v106Ios('Mozilla/5.0 (Macintosh)','MacIntel',5)]);
+    if(ios.join()!=='true,false,true')bad.push('iOS-herkenning fout: '+ios);
+    /* 2. aan, punten op route: eerst slecht signaal en te dichtbij, dan beweging */
+    await ctx.setGeolocation({latitude:10.4700,longitude:-84.6400,accuracy:10});await p.click('#v51gps');await p.waitForTimeout(800);
+    if(!await p.evaluate(()=>V106.on&&state.v106Live.on))bad.push('live volgen gaat niet aan');
+    await ctx.setGeolocation({latitude:10.4700,longitude:-84.6400,accuracy:200});await p.waitForTimeout(400);
+    await ctx.setGeolocation({latitude:10.47001,longitude:-84.64001,accuracy:8});await p.waitForTimeout(400);
+    for(const [la,lo] of [[10.4710,-84.6410],[10.4725,-84.6425],[10.4745,-84.6440]]){await ctx.setGeolocation({latitude:la,longitude:lo,accuracy:9});await p.waitForTimeout(2200)}
+    const tr=await p.evaluate(()=>state.gpsTracks.map(t=>({n:t.points.length,day:t.day})));
+    if(tr.length!==1||tr[0].n!==4)bad.push('punten fout (verwacht 4 na filters): '+JSON.stringify(tr));
+    const km=await p.evaluate(()=>v106Stats().km);if(!(km>.4&&km<.8))bad.push('afstand onwaarschijnlijk: '+km);
+    if(!await p.$('.dsm-track'))bad.push('route niet getekend op de kaart');
+    if(!await p.evaluate(()=>/km/.test(document.getElementById('v51gpsinfo').textContent)))bad.push('afstand ontbreekt bij de positie');
+    if(!await p.evaluate(()=>/aan/.test(document.querySelector('#v51gps .v106-lbl').textContent)))bad.push('knop toont niet "aan"');
+    /* 3. gat (scherm uit) geeft nieuw stuk */
+    await p.evaluate(()=>{V106.last[2]-=500;v106Resume()});
+    if(await p.evaluate(()=>state.gpsTracks.length)!==2)bad.push('geen nieuw stuk na onderbreking');
+    /* 4. uit: bewaard, blijft na herladen */
+    await p.click('#v51gps');await p.waitForTimeout(300);
+    if(await p.evaluate(()=>V106.on||state.v106Live.on))bad.push('live volgen gaat niet uit');
+    await p.reload();await p.waitForTimeout(900);
+    const kept=await p.evaluate(()=>state.gpsTracks.reduce((a,t)=>a+t.points.length,0));if(kept!==4)bad.push('route na herladen weg: '+kept);
+    /* 5. opslagbudget: 23 dagen x 1500 punten */
+    const bud=await p.evaluate(()=>{const keep=state.gpsTracks;const big=[];for(let d=1;d<=23;d++){const pts=[];for(let i=0;i<1500;i++)pts.push([+(10+i*1e-4).toFixed(5),+(-84+i*1e-4).toFixed(5),1800000000+i*20,9]);big.push({id:'b'+d,day:'2027-02-'+String(8+d%20).padStart(2,'0'),points:pts})}
+      state.gpsTracks=big;const bytes=JSON.stringify(state).length;const t0=performance.now();dseRedrawMap?.();const ms=performance.now()-t0;state.gpsTracks=keep;return {bytes,ms}});
+    if(bud.bytes>2.5e6)bad.push('routes te groot voor opslag: '+bud.bytes);
+    /* 6. samenvoegen: routes van beide kanten blijven, geen dubbelen */
+    const mg=await p.evaluate(()=>{const a={id:'x',day:'d',points:[[1,1,1,1]]},b={id:'y',day:'d',points:[[2,2,2,2]]};const m=v75MergeState({gpsTracks:[a,b]},{gpsTracks:[a]});return m.gpsTracks.map(x=>x.id).sort().join()});if(mg!=='x,y')bad.push('samenvoegen routes fout: '+mg);
+    /* 7. oud formaat blijft leesbaar + GPX */
+    const old=await p.evaluate(()=>{state.gpsTracks=[{day:'2027-02-10',points:[{lat:10.4,lon:-84.6,accuracy:5,time:'2027-02-10T10:00:00Z'},{lat:10.41,lon:-84.61,accuracy:5,time:'2027-02-10T10:10:00Z'}]}];const s=v106Stats('2027-02-10');return s});
+    if(old.n!==2||!(old.km>1)||old.sec!==600)bad.push('oud formaat niet leesbaar: '+JSON.stringify(old));
+    /* 8. hervatten-melding na sluiten terwijl aan */
+    await p.evaluate(()=>{state.v106Live={on:true};save()});await p.reload();await p.waitForTimeout(2200);
+    if(!await p.evaluate(()=>/Hervatten/.test(document.getElementById('v10Toast')?.innerText||'')))bad.push('geen hervat-melding');
+    await p.evaluate(()=>{state.gpsTracks=[];state.v106Live={on:false};save()});return bad});
+
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
   await b.close();

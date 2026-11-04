@@ -139,11 +139,11 @@ renderMap=function(){const td=v48TripDay(),all=dsdLegs(),cur=dsdLegNow(td,all);
   <div class="ds-card ds-mapcard">${dsdMapBox(td||0,false)}<div class="ds-maptools">${dsdGps()}${dsdLegend()}</div>${dsdMapHint('Tik een genummerde stop om die dag te openen. ')}</div>
   <h2 class="ds-section-title">Etappes</h2>
   <div class="ds-card ds-legs">${legs}</div>
-  <h2 class="ds-section-title">GPS-route opnemen</h2>
+  <h2 class="ds-section-title">Mijn route</h2>
   <div class="ds-card ds-gpsrec">
-    <div class="ds-gpsstat ${on?'live':''}"><i>${dsdI('gpx',20)}</i><div><b id="gpsStatus">${on?`GPS actief · ${gpsPoints.length} meetpunten`:'GPS niet actief'}</b><span>${state.gpsTracks.length} opgeslagen ${state.gpsTracks.length===1?'route':'routes'} · zichtbaar als groene lijn</span></div></div>
-    <div class="ds-gpsbtns"><button class="ds-btn primary" id="gpsStart">${dsdI('rec',16)}Start</button><button class="ds-btn secondary" id="gpsStop">${dsdI('stop',16)}Stop en bewaar</button><button class="ds-btn secondary" id="gpsExport">${dsdI('download',16)}GPX</button></div>
-    <details class="ds-more"><summary>${dsI('info',15)}Hoe betrouwbaar is dit?</summary><p>Opnemen werkt alleen terwijl de app open is. Bij schermvergrendeling, wisselen van app of energiebesparing kan de opname stoppen; dit is geen achtergrondtracker. Routes blijven lokaal in je browser en in je JSON-back-up. Voor een volledige rit met vergrendeld scherm gebruik je beter een aparte GPS-tracker.</p></details>
+    <div class="ds-gpsstat ${V106.on?'live':''}"><i>${dsdI('gpx',20)}</i><div><b data-v106-stat>${V106.on?'Live volgen aan · '+v106Text():(v106Stats().n?'Vandaag · '+v106Text():'Live volgen staat uit')}</b><span>${state.gpsTracks.length} opgeslagen ${state.gpsTracks.length===1?'stuk':'stukken'} · zichtbaar als groene lijn op de kaart</span></div></div>
+    <div class="ds-gpsbtns"><button class="ds-btn ${V106.on?'secondary':'primary'}" data-v106-toggle>${dsdI(V106.on?'stop':'rec',16)}<span class="v106-lbl">${V106.on?'Live volgen aan':'Live volgen'}</span></button><button class="ds-btn secondary" id="gpsExport">${dsdI('download',16)}GPX</button></div>
+    <details class="ds-more"><summary>${dsI('info',15)}Hoe betrouwbaar is dit?</summary><p>${esc(v106Note())} Routes blijven lokaal op je telefoon en zitten in "Alles bewaren".</p></details>
   </div></div>`};
 
 /* ---------------- checklist ---------------- */

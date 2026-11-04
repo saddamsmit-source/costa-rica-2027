@@ -1,0 +1,4 @@
+/* v10.6 · Live volgen */
+.ds-maplegend i.l-trk{display:inline-block;width:16px;height:4px;border-radius:3px;background:#13A34A}
+.v106-note{flex-basis:100%;margin-top:2px;padding:8px 10px;border-radius:10px;background:var(--ds-warn-soft);color:var(--ds-warn);font-size:12.5px;line-height:1.4}
+.ds-chipbtn.live[aria-pressed="true"]{background:#D93025;color:#fff}

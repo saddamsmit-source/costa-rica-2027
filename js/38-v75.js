@@ -30,6 +30,9 @@ function v75MergeState(cur,bak){const m=v75Merge(cur,bak);
   /* een waarneming gaat nooit terug van gezien/op foto naar niet gezien; tijd en plek blijven */
   for(const [id,o] of Object.entries(cur.v43Observations||{}))for(const [pl,r] of Object.entries(o.places||{})){const t=m.v43Observations?.[id]?.places?.[pl];if(!t)continue;
     if(r.seen)t.seen=true;if(r.photo)t.photo=true;if(r.t&&!t.t)t.t=r.t;if(r.loc&&!t.loc)t.loc=r.loc}
+  /* opgenomen routes: alles van beide kanten bewaren (per stuk herkend aan id, of dag + eerste punt) */
+  {const key=x=>x.id||x.day+'|'+JSON.stringify((x.points||[])[0]||''),seen=new Set(),all=[];
+   [...(bak.gpsTracks||[]),...(cur.gpsTracks||[])].forEach(x=>{const k=key(x);if(!seen.has(k)){seen.add(k);all.push(x)}});if(all.length)m.gpsTracks=all}
   return m}
 const v75Seen=s=>Object.values(s?.v43Observations||{}).reduce((a,o)=>a+(Object.values(o.places||{}).some(r=>r.seen)?1:0),0);
 const v75When=t=>{const d=new Date(t);return isNaN(d)?'onbekende datum':d.toLocaleString('nl-NL',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'})};
