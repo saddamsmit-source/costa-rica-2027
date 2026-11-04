@@ -245,7 +245,7 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     if(!await p.evaluate(()=>V106.on&&state.v106Live.on))bad.push('live volgen gaat niet aan');
     await ctx.setGeolocation({latitude:10.4700,longitude:-84.6400,accuracy:200});await p.waitForTimeout(400);
     await ctx.setGeolocation({latitude:10.47001,longitude:-84.64001,accuracy:8});await p.waitForTimeout(400);
-    for(const [la,lo] of [[10.4710,-84.6410],[10.4725,-84.6425],[10.4745,-84.6440]]){await ctx.setGeolocation({latitude:la,longitude:lo,accuracy:9});await p.waitForTimeout(2200)}
+    for(const [la,lo] of [[10.4710,-84.6410],[10.4725,-84.6425],[10.4745,-84.6440]]){const n0=await p.evaluate(()=>V106.cur.points.length);await p.waitForTimeout(2100);await ctx.setGeolocation({latitude:la,longitude:lo,accuracy:9});await p.waitForFunction(n=>V106.cur&&V106.cur.points.length>n,n0,{timeout:8000}).catch(()=>{})}
     const tr=await p.evaluate(()=>state.gpsTracks.map(t=>({n:t.points.length,day:t.day})));
     if(tr.length!==1||tr[0].n!==4)bad.push('punten fout (verwacht 4 na filters): '+JSON.stringify(tr));
     const km=await p.evaluate(()=>v106Stats().km);if(!(km>.4&&km<.8))bad.push('afstand onwaarschijnlijk: '+km);
