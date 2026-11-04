@@ -75,3 +75,14 @@ const v106Note=()=>v106Ios()?'Op iPhone werkt live volgen niet betrouwbaar: de o
 /* ---------- na een sluiting terwijl live volgen aan stond ---------- */
 setTimeout(()=>{if(state.v106Live&&state.v106Live.on&&!V106.on){state.v106Live={on:false};
   v10Toast('Live volgen stond aan toen de app sloot.',{action:'Hervatten',onAction:()=>v106Start(),ms:10000})}},1200);
+
+/* ---------- gebruiksgemak: eenmalige hint op de kaart en "Onderweg"-kaart per dag ---------- */
+const v106Hint=()=>state.v106Hint?'':'<p class="v106-hint" role="note"><span>Tik op <b>Live volgen</b> om je route op te nemen. Met <b>Pin hier</b> leg je een plek vast.</span><button type="button" data-v106-hint>Begrepen</button></p>';
+function v106DayCard(d){const pins=v105List().filter(p=>p.day===d.id),s=v106Stats(d.date);if(!pins.length&&!s.n)return '';
+  const rows=[];if(s.n>1)rows.push(`<li><b>Route</b><span>${esc(v106TextFor(s))}</span></li>`);
+  if(pins.length)rows.push(`<li><b>${pins.length===1?'Pin':'Pins'}</b><span>${pins.map(p=>esc(p.title)).join(' · ')}</span></li>`);
+  return `<div class="ds-card v106-day"><h3 class="ds-title">Onderweg</h3><ul>${rows.join('')}</ul><button class="ds-btn secondary" data-v106-map="${d.id}">Bekijk op de kaart</button></div>`}
+function v106TextFor(s){const h=Math.floor(s.sec/3600),m=Math.round(s.sec%3600/60),d=s.km<10?s.km.toFixed(1).replace('.',','):String(Math.round(s.km));return `${d} km${s.sec>=60?` · ${h?h+' u ':''}${m} min`:''}`}
+document.addEventListener('click',e=>{
+  const h=e.target.closest('[data-v106-hint]');if(h){state.v106Hint=1;save();h.closest('.v106-hint')?.remove();return}
+  const m=e.target.closest('[data-v106-map]');if(m){tab='map';render();scrollTo({top:0,behavior:'instant'})}});

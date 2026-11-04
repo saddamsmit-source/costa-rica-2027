@@ -234,8 +234,9 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     await p.evaluate(()=>{state.v105Pins={};save()});return bad});
 
   await step('live volgen',async()=>{const bad=[];
-    await ctx.grantPermissions(['geolocation']);await p.evaluate(()=>{state.gpsTracks=[];state.v106Live={on:false};save();tab='map';render()});
+    await ctx.grantPermissions(['geolocation']);await p.evaluate(()=>{state.gpsTracks=[];state.v106Live={on:false};delete state.v106Hint;save();tab='map';render()});
     await p.waitForSelector('#v51gps');
+    if(!await p.$('.v106-hint'))bad.push('eerste-keer-hint ontbreekt');else{await p.click('[data-v106-hint]');if(await p.$('.v106-hint'))bad.push('hint verdwijnt niet');await p.evaluate(()=>{tab='map';render()});if(await p.$('.v106-hint'))bad.push('hint komt terug na Begrepen')}
     /* 1. iOS-herkenning */
     const ios=await p.evaluate(()=>[v106Ios('Mozilla/5.0 (iPhone; CPU iPhone OS 17_0)','iPhone',5),v106Ios('Mozilla/5.0 (Linux; Android 14)','Linux armv8l',5),v106Ios('Mozilla/5.0 (Macintosh)','MacIntel',5)]);
     if(ios.join()!=='true,false,true')bad.push('iOS-herkenning fout: '+ios);
@@ -268,6 +269,12 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     /* 7. oud formaat blijft leesbaar + GPX */
     const old=await p.evaluate(()=>{state.gpsTracks=[{day:'2027-02-10',points:[{lat:10.4,lon:-84.6,accuracy:5,time:'2027-02-10T10:00:00Z'},{lat:10.41,lon:-84.61,accuracy:5,time:'2027-02-10T10:10:00Z'}]}];const s=v106Stats('2027-02-10');return s});
     if(old.n!==2||!(old.km>1)||old.sec!==600)bad.push('oud formaat niet leesbaar: '+JSON.stringify(old));
+    /* 7b. Onderweg-kaart op de dagpagina: alleen met inhoud, met link naar de kaart */
+    const dc=await p.evaluate(()=>{state.v105Pins={x:{id:'x',day:3,lat:10.4,lon:-84.6,title:'Testpin',t:'2027-02-10T10:00:00Z'}};const d3=S[2];state.gpsTracks=[{id:'q',day:d3.date,points:[[10.4,-84.6,1800000000,5],[10.41,-84.61,1800000600,5]]}];
+      tab='days';currentDay=3;daySection='overview';render();const a=document.querySelector('.v106-day');currentDay=4;render();return {t:a?a.innerText:'',other:!!document.querySelector('.v106-day')}});
+    if(!/Testpin/.test(dc.t)||!/km/.test(dc.t))bad.push('Onderweg-kaart onvolledig: '+dc.t);if(dc.other)bad.push('Onderweg-kaart op dag zonder inhoud');
+    await p.evaluate(()=>{currentDay=3;render()});await p.click('[data-v106-map]');if(await p.evaluate(()=>tab)!=='map')bad.push('Bekijk op de kaart opent de kaart niet');
+    await p.evaluate(()=>{state.v105Pins={};state.gpsTracks=[];save()});
     /* 8. hervatten-melding na sluiten terwijl aan */
     await p.evaluate(()=>{state.v106Live={on:true};save()});await p.reload();await p.waitForTimeout(2200);
     if(!await p.evaluate(()=>/Hervatten/.test(document.getElementById('v10Toast')?.innerText||'')))bad.push('geen hervat-melding');

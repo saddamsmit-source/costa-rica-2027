@@ -3,3 +3,10 @@
 .v106-note{flex-basis:100%;margin-top:2px;padding:8px 10px;border-radius:10px;background:var(--ds-warn-soft);color:var(--ds-warn);font-size:12.5px;line-height:1.4}
 .ds-chipbtn.live[aria-pressed="true"]{background:#D93025;color:#fff}
 #v51gps.live,#v51gps.live .v106-lbl,#v51gps.live svg{color:#fff;opacity:1}
+#v51gps{min-height:48px;font-weight:700}
+.v106-hint{flex-basis:100%;display:flex;align-items:center;gap:10px;margin:6px 0 0;padding:8px 10px;border-radius:12px;background:var(--ds-brand-soft,#E6F2EA);color:var(--ds-ink);font-size:13px;line-height:1.4}
+.v106-hint span{flex:1}
+.v106-hint button{min-height:44px;padding:0 12px;border:0;border-radius:10px;background:var(--ds-brand,#0E3B2A);color:#fff;font:inherit;font-weight:700}
+.v106-day ul{list-style:none;margin:6px 0 10px;padding:0}
+.v106-day li{display:flex;gap:10px;padding:4px 0;font-size:14px}
+.v106-day li b{min-width:48px}

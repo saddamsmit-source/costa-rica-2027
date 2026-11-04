@@ -86,7 +86,7 @@ dsdBindWide=function(){const w=document.getElementById('dsMapWide');if(w)w.oncli
 function dseTarget(){const d=tab==='days'?currentDay:(v48TripDay()||0);if(!d)return null;const st=V51_STOPS[v51Day2Stop(d)][0];return V51_PT[st]}
 function dseGpsText(){if(!v51Pos)return '';const t=dseTarget(),acc=`±${Math.round(v51Pos.acc)} m`+(V106.on?` · ${v106Text()}`:'');if(!t)return `${v51Pos.lat.toFixed(4)}, ${v51Pos.lon.toFixed(4)} · ${acc}`;
   const km=v51Dist([v51Pos.lat,v51Pos.lon],t);return km<2?`Je bent bij ${t[2]} · ${acc}`:`Nog ± ${km<20?km.toFixed(1).replace('.',','):Math.round(km)} km hemelsbreed naar ${t[2]} · ${acc}`}
-dsdGps=function(){const on=V106.on;return `<div class="ds-gps"><button id="v51gps" class="ds-chipbtn ${on?'live':''}" aria-pressed="${on}">${dsdI('target',16)}<span class="v106-lbl">${on?'Live volgen aan':'Live volgen'}</span></button><span id="v51gpsinfo" class="ds-num">${esc(dseGpsText())}</span><span class="v105-bar"><button type="button" class="ds-chipbtn" data-v105-here>${dsdI('pin',16)}Pin hier</button><button type="button" class="ds-chipbtn" data-v105-map aria-pressed="false">${dsdI('target',16)}Pin op kaart</button></span>${v106Ios()?`<small class="v106-note" role="note">${esc(v106Note())}</small>`:''}</div>`};
+dsdGps=function(){const on=V106.on;return `<div class="ds-gps"><button id="v51gps" class="ds-chipbtn ${on?'live':''}" aria-pressed="${on}">${dsdI('target',16)}<span class="v106-lbl">${on?'Live volgen aan':'Live volgen'}</span></button><span id="v51gpsinfo" class="ds-num">${esc(dseGpsText())}</span><span class="v105-bar"><button type="button" class="ds-chipbtn" data-v105-here>${dsdI('pin',16)}Pin hier</button><button type="button" class="ds-chipbtn" data-v105-map aria-pressed="false">${dsdI('target',16)}Pin op kaart</button></span>${v106Hint()}${v106Ios()?`<small class="v106-note" role="note">${esc(v106Note())}</small>`:''}</div>`};
 v51StartGps=function(){v106Toggle()};
 
 /* ---------------- waarneming krijgt tijd en locatie ---------------- */
@@ -149,7 +149,7 @@ async function dseShare(d,btn){const txt=dseReport(d);let ok=false;
   if(btn){const s=btn.querySelector('small');if(s)s.textContent=ok?'Gekopieerd of gedeeld':'Kopiëren lukte niet';}}
 const dsePrevDC=dayContent;
 dayContent=function(d){const h=dsePrevDC(d);if(daySection!=='overview')return h;
-  return h+`<button class="dse-report" id="dseReport" data-day="${d.id}"><i>${dsdI('doc',20)}</i><span><b>Dagverslag voor Polarsteps</b><small>Programma, gezien en notities als steekwoorden kopiëren</small></span>${dsdI('ext',18)}</button>`};
+  return h+v106DayCard(d)+`<button class="dse-report" id="dseReport" data-day="${d.id}"><i>${dsdI('doc',20)}</i><span><b>Dagverslag voor Polarsteps</b><small>Programma, gezien en notities als steekwoorden kopiëren</small></span>${dsdI('ext',18)}</button>`};
 
 /* ---------------- zonlichtstand (per toestel) ---------------- */
 function dseUi(){try{return JSON.parse(localStorage.getItem('CR27_UI'))||{}}catch(e){return {}}}
