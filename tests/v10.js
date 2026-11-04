@@ -280,6 +280,32 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     if(!await p.evaluate(()=>/Hervatten/.test(document.getElementById('v10Toast')?.innerText||'')))bad.push('geen hervat-melding');
     await p.evaluate(()=>{state.gpsTracks=[];state.v106Live={on:false};save()});return bad});
 
+  await step('zoom alleen op de kaart',async()=>{const bad=[];
+    const meta=await p.evaluate(()=>document.querySelector('meta[name=viewport]').content);if(!/user-scalable=no/.test(meta)||!/maximum-scale=1/.test(meta))bad.push('pagina nog zoombaar: '+meta);
+    if(await p.evaluate(()=>getComputedStyle(document.documentElement).touchAction)!=='pan-x pan-y')bad.push('touch-action van de pagina staat niet op pan-x pan-y');
+    await p.evaluate(()=>{tab='map';render()});await p.waitForSelector('.ds-mapbox svg.v51-svg');await p.waitForSelector('.v106-zoom');
+    const vb=()=>p.evaluate(()=>document.querySelector('.ds-mapbox svg.v51-svg').getAttribute('viewBox').split(' ').map(Number));
+    const w0=(await vb())[2];
+    if(await p.evaluate(()=>getComputedStyle(document.querySelector('.ds-mapbox svg.v51-svg')).touchAction)!=='none')bad.push('kaart heeft geen eigen gebaren (touch-action)');
+    if(!await p.evaluate(()=>document.querySelector('[data-z=out]').disabled))bad.push('uitzoomen niet uit op basisweergave');
+    await p.click('[data-z=in]');const w1=(await vb())[2];if(!(w1<w0*.7))bad.push('inzoomen werkt niet: '+w0+' -> '+w1);
+    /* hertekenen (live volgen) houdt de uitsnede */
+    await p.evaluate(()=>dseRedrawMap());await p.waitForTimeout(100);const w2=(await vb())[2];if(Math.abs(w2-w1)>.1)bad.push('uitsnede kwijt na hertekenen: '+w1+' -> '+w2);
+    /* knijpen met twee vingers */
+    const pinch=(d0,d1)=>p.evaluate(([a,b])=>{const s=document.querySelector('.ds-mapbox svg.v51-svg'),r=s.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;const ev=(t,id,x)=>s.dispatchEvent(new PointerEvent(t,{pointerId:id,bubbles:true,clientX:x,clientY:cy,pointerType:'touch'}));
+      ev('pointerdown',1,cx-a);ev('pointerdown',2,cx+a);ev('pointermove',1,cx-b);ev('pointermove',2,cx+b);ev('pointerup',1,cx-b);ev('pointerup',2,cx+b)},[d0,d1]);
+    await pinch(40,80);const w3=(await vb())[2];if(!(w3<w2*.7))bad.push('knijpen zoomt niet in: '+w2+' -> '+w3);
+    await pinch(80,30);const w4=(await vb())[2];if(!(w4>w3*1.5))bad.push('knijpen zoomt niet uit: '+w3+' -> '+w4);
+    /* slepen als ingezoomd */
+    const x0=(await vb())[0];await p.evaluate(()=>{const s=document.querySelector('.ds-mapbox svg.v51-svg'),r=s.getBoundingClientRect(),cy=r.top+r.height/2,cx=r.left+r.width/2;const ev=(t,x)=>s.dispatchEvent(new PointerEvent(t,{pointerId:7,bubbles:true,clientX:x,clientY:cy,pointerType:'touch'}));ev('pointerdown',cx);ev('pointermove',cx+30);ev('pointermove',cx+60);ev('pointerup',cx+60)});
+    const x1=(await vb())[0];if(Math.abs(x1-x0)<.5)bad.push('slepen verschuift de kaart niet');
+    /* terug naar basis en grenzen */
+    for(let i=0;i<8;i++)await p.click('[data-z=out]').catch(()=>{});const w5=(await vb())[2];if(Math.abs(w5-w0)>.5)bad.push('uitzoomen komt niet terug op basis: '+w5+' vs '+w0);
+    for(let i=0;i<12;i++)await p.click('[data-z=in]').catch(()=>{});const w6=(await vb())[2];if(w6<w0/6-.5)bad.push('inzoomen gaat voorbij de grens: '+w6);
+    await p.evaluate(()=>{tab='home';render();tab='map';render()});await p.waitForSelector('.v106-zoom');
+    if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth))bad.push('horizontale scroll door zoomknoppen');
+    return bad});
+
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
   await b.close();

@@ -10,3 +10,9 @@
 .v106-day ul{list-style:none;margin:6px 0 10px;padding:0}
 .v106-day li{display:flex;gap:10px;padding:4px 0;font-size:14px}
 .v106-day li b{min-width:48px}
+/* v10.6.1 · alleen de kaart zoomt */
+html{touch-action:pan-x pan-y}
+.ds-mapbox svg.v51-svg{touch-action:none;-webkit-user-select:none;user-select:none}
+.v106-zoom{position:absolute;right:10px;bottom:10px;display:flex;flex-direction:column;gap:6px;z-index:var(--ds-z-raised,2)}
+.v106-zoom button{width:44px;height:44px;border:0;border-radius:12px;background:#fff;color:var(--ds-ink);font:700 22px/1 inherit;box-shadow:0 2px 8px rgba(14,59,42,.25)}
+.v106-zoom button:disabled{opacity:.4}
