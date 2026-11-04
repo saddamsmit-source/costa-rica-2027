@@ -184,6 +184,55 @@ const {chromium}=require('playwright');const path=require('path'),fs=require('fs
     if(!sk.gone)bad.push('tik na 1,5 s slaat het startscherm niet over');if(!sk.n)bad.push('geen hoofdscherm na overslaan');if(sk.t>4000)bad.push('overslaan duurde te lang: '+sk.t);
     await r.close();await q.close();return bad});
 
+  /* 8e. v10.5 · pins: plaatsen op de kaart en met GPS, venster met link naar de dag, bewerken, verwijderen met ongedaan maken, bewaren en samenvoegen */
+  await step('pins op de kaart',async()=>{const bad=[];
+    await ctx.grantPermissions(['geolocation']);await p.evaluate(()=>{state.v105Pins={};save();tab='map';render()});
+    await p.waitForSelector('.ds-mapbox svg');
+    const pt=(lat,lon)=>p.evaluate(([la,lo])=>{const svg=document.querySelector('.ds-mapbox svg');svg.scrollIntoView({block:'center'});const [x,y]=v51XY(la,lo),q=svg.createSVGPoint();q.x=x;q.y=y;const s=q.matrixTransform(svg.getScreenCTM());return {x:s.x,y:s.y}},[lat,lon]);
+    /* 1. pin op kaart: knop, tik, formulier, bewaren */
+    await p.click('[data-v105-map]');if(!await p.evaluate(()=>document.querySelector('.ds-mapbox').classList.contains('v105-placing')))bad.push('plaatsmodus niet zichtbaar');
+    let c=await pt(10.30,-84.82);await p.mouse.click(c.x,c.y);
+    if(!await p.waitForSelector('#v105Sheet',{timeout:3000}).catch(()=>null))bad.push('formulier opent niet na tik op de kaart');
+    await p.click('#v105Sheet button[type=submit]');if(await p.evaluate(()=>document.querySelector('#v105Sheet .v105-err').hidden))bad.push('lege titel wordt niet geweigerd');
+    await p.fill('#v105Sheet [name=title]','Koffieplantage');await p.fill('#v105Sheet [name=note]','Proeverij en rondleiding');await p.selectOption('#v105Sheet [name=day]','12');await p.click('#v105Sheet button[type=submit]');
+    await p.waitForTimeout(300);
+    let s1=await p.evaluate(()=>Object.values(state.v105Pins));
+    if(s1.length!==1)bad.push('pin niet bewaard: '+s1.length);else{const q=s1[0];if(Math.abs(q.lat-10.30)>.02||Math.abs(q.lon+84.82)>.02)bad.push(`positie wijkt af: ${q.lat},${q.lon}`);if(q.day!==12||q.title!=='Koffieplantage'||q.note!=='Proeverij en rondleiding')bad.push('velden niet bewaard: '+JSON.stringify(q))}
+    if(!await p.$('[data-dse-poi^="pin:"]'))bad.push('pin staat niet op de kaart');
+    if(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth))bad.push('horizontale scroll door pins');
+    /* 2. venster en doorklikken naar de dag */
+    await p.evaluate(()=>document.querySelector('[data-dse-poi^="pin:"]').dispatchEvent(new MouseEvent('click',{bubbles:true})));
+    const pop=await p.evaluate(()=>{const b=document.getElementById('dsePop');return {vis:!b.hidden,t:b.innerText,btn:!![...b.querySelectorAll('[data-v105-go]')].length}});
+    if(!pop.vis||!/Koffieplantage/.test(pop.t)||!/Dag 12/.test(pop.t)||!pop.btn)bad.push('pinvenster onvolledig: '+pop.t.slice(0,80));
+    await p.click('#dsePop [data-v105-go$="overview"]');await p.waitForTimeout(300);
+    const go=await p.evaluate(()=>({tab,d:currentDay,s:daySection}));if(go.tab!=='days'||go.d!==12||go.s!=='overview')bad.push('doorklikken naar de dag mislukt: '+JSON.stringify(go));
+    /* 3. pin hier met GPS (emulatie van het toestel) */
+    await p.evaluate(()=>{tab='map';render()});await p.waitForSelector('[data-v105-here]');
+    await ctx.setGeolocation({latitude:10.47,longitude:-84.64,accuracy:12});await p.click('[data-v105-here]');
+    if(!await p.waitForSelector('#v105Sheet',{timeout:5000}).catch(()=>null))bad.push('pin hier: formulier opent niet');
+    else{await p.fill('#v105Sheet [name=title]','Hangbrug');await p.click('#v105Sheet button[type=submit]');await p.waitForTimeout(300);
+      const q=await p.evaluate(()=>Object.values(state.v105Pins).find(x=>x.title==='Hangbrug'));if(!q||Math.abs(q.lat-10.47)>.001||Math.abs(q.lon+84.64)>.001||!q.acc)bad.push('pin hier: verkeerde positie '+JSON.stringify(q))}
+    /* 4. buiten Costa Rica: geen pin, wel uitleg */
+    await ctx.setGeolocation({latitude:52.37,longitude:4.9,accuracy:20});await p.evaluate(()=>{v51Pos=null});await p.click('[data-v105-here]');await p.waitForTimeout(1500);
+    if(await p.$('#v105Sheet'))bad.push('pin buiten de kaart toch aangeboden');if(!await p.evaluate(()=>/buiten de kaart/.test(document.getElementById('v10Toast')?.innerText||'')))bad.push('geen uitleg buiten de kaart');
+    /* 5. bewerken en verwijderen met ongedaan maken */
+    await p.evaluate(()=>{document.getElementById('v10Toast')?.remove();const g=document.querySelector('[data-dse-poi^="pin:"]');g.dispatchEvent(new MouseEvent('click',{bubbles:true}))});
+    await p.click('#dsePop [data-v105-edit]');await p.fill('#v105Sheet [name=title]','Nieuwe titel');await p.click('#v105Sheet button[type=submit]');await p.waitForTimeout(300);
+    if(!await p.evaluate(()=>Object.values(state.v105Pins).some(x=>x.title==='Nieuwe titel')))bad.push('bewerken bewaart niet');
+    const n0=await p.evaluate(()=>Object.keys(state.v105Pins).length);
+    await p.evaluate(()=>document.querySelector('[data-dse-poi^="pin:"]').dispatchEvent(new MouseEvent('click',{bubbles:true})));await p.click('#dsePop [data-v105-del]');await p.waitForTimeout(300);
+    if(await p.evaluate(()=>Object.keys(state.v105Pins).length)!==n0-1)bad.push('verwijderen werkt niet');
+    if(!await p.$('#v10Toast .v10-toast-act, #v10Toast button'))bad.push('geen ongedaan maken na verwijderen');else{await p.click('#v10Toast button');await p.waitForTimeout(300);if(await p.evaluate(()=>Object.keys(state.v105Pins).length)!==n0)bad.push('ongedaan maken herstelt de pin niet')}
+    /* 6. blijft na herladen, zit in samenvoegen bij herstellen, laag aan/uit */
+    await p.reload();await p.waitForTimeout(800);
+    if(await p.evaluate(()=>Object.keys(state.v105Pins).length)!==n0)bad.push('pins na herladen weg');
+    const mg=await p.evaluate(()=>{const m=v75MergeState({v105Pins:{a:{id:'a',title:'A'}}},{v105Pins:{b:{id:'b',title:'B'}}});return Object.keys(m.v105Pins).sort().join()});if(mg!=='a,b')bad.push('samenvoegen verliest pins: '+mg);
+    await p.evaluate(()=>{tab='map';render()});await p.waitForSelector('.dse-chip.pin');await p.click('.dse-chip.pin');if(await p.$('[data-dse-poi^="pin:"]'))bad.push('laag Pins uit toont toch pins');await p.click('.dse-chip.pin');if(!await p.$('[data-dse-poi^="pin:"]'))bad.push('laag Pins aan toont geen pins');
+    /* 7. gewone dagkaart toont pins van die dag */
+    await p.evaluate(()=>{tab='days';currentDay=12;daySection='map';render()});await p.waitForTimeout(500);
+    const dm=await p.evaluate(()=>({has:!!document.querySelector('[data-dse-poi^="pin:"]'),btn:!!document.querySelector('[data-v105-here]')}));if(!dm.btn)bad.push('knoppen ontbreken op de dagkaart');
+    await p.evaluate(()=>{state.v105Pins={};save()});return bad});
+
   /* 9. geen browsermeldingen in deze hele run */
   if(nativeDialogs)errs.push('browsermelding(en) gezien: '+nativeDialogs);else ok.push('geen browsermeldingen');
   await b.close();

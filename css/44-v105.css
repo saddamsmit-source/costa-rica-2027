@@ -1,0 +1,25 @@
+/* v10.5 · Pins op de kaart */
+:root{--dse-pin:#C23A7A;--dse-pin-soft:#F9E3EE}
+.dse-chip.pin.on i{background:#F4A3C8}
+.dse-poi.pin path{fill:var(--dse-pin);stroke:#fff;stroke-width:2px;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.dse-poi.pin.on path{stroke-width:3px}
+.dse-k.pin{background:var(--dse-pin-soft);color:var(--dse-pin)}
+.v105-bar{display:inline-flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ds-gps{flex-wrap:wrap}
+.ds-chipbtn.live[data-v105-map]{background:var(--dse-pin);color:#fff}
+.ds-mapbox.v105-placing svg{cursor:crosshair;outline:3px solid var(--dse-pin);outline-offset:-3px}
+.v105-meta{font-size:12.5px;color:var(--ds-muted)}
+.v105-note{white-space:pre-wrap}
+.v105-acts{display:flex;gap:8px;margin-top:8px}
+.v105-acts .ds-btn{flex:1}
+.v105-sheet{position:fixed;inset:0;z-index:var(--ds-z-sheet-top);display:flex;align-items:flex-end;justify-content:center;background:rgba(10,24,18,.45);animation:v10fade var(--ds-t-fast) ease-out}
+.v105-sheet.out{opacity:0;transition:opacity var(--ds-t-fast)}
+.v105-box{width:100%;max-width:560px;max-height:92%;overflow:auto;background:var(--ds-card);border-radius:20px 20px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));animation:v10pop var(--ds-t-med) var(--ds-ease)}
+.v105-box h3{margin:0 0 6px;font-size:18px;color:var(--ds-ink)}
+.v105-box label{display:block;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--ds-ink-2)}
+.v105-box input,.v105-box textarea,.v105-box select{display:block;width:100%;margin-top:4px;min-height:44px;padding:10px 12px;border:1.5px solid var(--ds-line);border-radius:12px;background:#fff;color:var(--ds-ink);font:inherit;font-size:16px}
+.v105-where{display:flex;align-items:center;gap:6px;margin:0;font-size:12.5px;color:var(--ds-muted)}
+.v105-err{margin:8px 0 0;font-size:13px;font-weight:700;color:var(--ds-warn)}
+.v105-btns{display:flex;gap:8px;margin-top:14px}
+.v105-btns .ds-btn{flex:1}
+@media (prefers-reduced-motion:reduce){.v105-sheet,.v105-box{animation:none!important}}

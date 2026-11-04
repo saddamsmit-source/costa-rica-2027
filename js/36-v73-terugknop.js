@@ -11,6 +11,7 @@
   /* bovenste venster eerst: [selector, sluitfunctie] */
   const OV=[
     ['#v10Dlg',()=>v10DlgClose()],
+    ['#v105Sheet',el=>el.remove()],
     ['.wl2-zoom',el=>el.remove()],
     ['#detailOverlay',el=>el.remove()],
     ['#dseEm',el=>el.remove()],
