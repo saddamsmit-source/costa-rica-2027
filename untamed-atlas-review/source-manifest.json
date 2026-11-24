@@ -72,6 +72,13 @@
     "name": "Untamed_Atlas_Ontwerppreview_v0.16.html",
     "sha256": "9ea76d50fd340600ab7d55a7e71091fba08e1d939361e197bd00e55e71083d4f",
     "sizeBytes": 7606814,
-    "scope": "actual home and trip markup, illustrative collection, no private user data"
+    "scope": "actual home and trip markup, illustrative collection, no private user data",
+    "onlineAlternative": {
+      "name": "Untamed_Atlas_Ontwerppreview_v0.16_Online.html",
+      "sizeBytes": 428621,
+      "sha256": "dbd10854666764e0ef08b396a4a918620cae52428e75ea58b28e76688b428c19",
+      "images": "Public Costa Rica images loaded via internet; system font fallback",
+      "libraryDelivery": "BLOCKED, destination-folder 404 also through prepared upload"
+    }
   }
 }

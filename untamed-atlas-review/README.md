@@ -34,3 +34,11 @@ Volgende actie. Visuele review op desktop en 390 px. Bedien daarna de hoofdappke
 Bronnen. Index v3.14 FINAL, Projectinstructies v2.14 FINAL, Handbook v2.18 FINAL en de actuele hoofdapp-README. Lees de writerclaim in deze PR. L-068/L-069/L-078/L-079 blijven de bestaande learningverwijzingen.
 
 EINDE-DOCUMENT · UNTAMED v0.16 REVIEW
+
+## Downloadalternatief
+
+De online ontwerppreview staat in deze map als Untamed_Atlas_Ontwerppreview_v0.16_Online.html. Download het bestand via GitHub en open het in een browser. Het bevat dezelfde drie ontwerpvlakken met publieke Costa Rica-foto’s die via internet laden en lokale systeemlettertypen als fallback. Grootte 428.621 bytes. SHA-256 dbd10854666764e0ef08b396a4a918620cae52428e75ea58b28e76688b428c19. Eindmarkering </html>.
+
+De zelfstandige versie van 7.606.814 bytes is lokaal gegenereerd en gecontroleerd. Aflevering via Library is BLOCKED. De directe en voorbereide uploadroutes gaven een doelmap-/finalisatiefout. Download en volledig openen door de eigenaar staan op NOT TESTED.
+
+EINDE-DOCUMENT · REVIEWOVERDRACHT v0.16
