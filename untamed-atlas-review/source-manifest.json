@@ -1,0 +1,77 @@
+{
+  "review": "0.16",
+  "date": "2026-11-24",
+  "sourceProject": "appgprj_6ae602feb1e88191a6d0c96261d0f161",
+  "sourceBase": "5c49174b8fb79681606a8c35ca7e38e937372272",
+  "sourceHead": "8e70ad19add733f142cc9a8618c8343643bfb425",
+  "githubBase": "9dee107cde666a6fbd83388a857944dd4632146b",
+  "githubScope": "review delta only; full atlas source remains in Sites",
+  "branch": "feat/untamed-world-atlas-review",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 46000,
+      "sha256": "e8775456ebf66e6c707160e5ede994443db7ed8e0996a8e08c8e02e6ceeae84f"
+    },
+    {
+      "path": "dist/brand.js",
+      "size": 8198,
+      "sha256": "4ef562aaa9e13341765b450007620ff38781371e0c8723175463a20c16ec3df9"
+    },
+    {
+      "path": "dist/dashboard.js",
+      "size": 15185,
+      "sha256": "6fcdc24461614b01060e0f37cc18d99abc869b7e7c51f29a663ac7909fe9e615"
+    },
+    {
+      "path": "dist/globe.js",
+      "size": 11204,
+      "sha256": "f998d73a642171dc8fe716b335c6055f1131d3f0bb07f7ca6d612c36a048de36"
+    },
+    {
+      "path": "dist/index.html",
+      "size": 2795,
+      "sha256": "61f9893221a06bc3dd4d3646a14be464318398b89dc8cb7063be1706c25f1078"
+    },
+    {
+      "path": "dist/sw.js",
+      "size": 1972,
+      "sha256": "a5d31354913a9f1aa647a08186eb5eac0d3a5722416875323a192fd976c02825"
+    },
+    {
+      "path": "dist/trip-story.js",
+      "size": 21194,
+      "sha256": "054c2a24cfd8f95f38975b73f7856caf824efd7d39c2a799059d7bd03f4c3a40"
+    },
+    {
+      "path": "dist/wanderlust.css",
+      "size": 6073,
+      "sha256": "f56a4abf53027a2da7b33c049b0475db539123ac3e22d14fe7e19f394a6fddc4"
+    },
+    {
+      "path": "dist/wanderlust.js",
+      "size": 5607,
+      "sha256": "4b1be2f3387ddbc6d13225ff8acf0df9498a588012634e57967397ba12e53d8b"
+    },
+    {
+      "path": "tests/wanderlust.mjs",
+      "size": 2679,
+      "sha256": "31c784822fb8b064b713ce95e75790ec7fd3b3d84bfd3c00c8b3cf2824f6bde6"
+    }
+  ],
+  "tests": {
+    "existingNodeSuites": "VERIFIED, 9 files",
+    "logoHelper": "VERIFIED",
+    "legacyRuntime": "VERIFIED, 2128 unchanged files",
+    "browser": "BLOCKED",
+    "realDevice": "NOT TESTED",
+    "production": "NOT TESTED",
+    "branchProtection": "UNKNOWN, 403"
+  },
+  "preview": {
+    "name": "Untamed_Atlas_Ontwerppreview_v0.16.html",
+    "sha256": "9ea76d50fd340600ab7d55a7e71091fba08e1d939361e197bd00e55e71083d4f",
+    "sizeBytes": 7606814,
+    "scope": "actual home and trip markup, illustrative collection, no private user data"
+  }
+}
