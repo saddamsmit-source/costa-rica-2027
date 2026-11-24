@@ -1,0 +1,1418 @@
+diff --git a/README.md b/README.md
+index 3743506..49fd783 100644
+--- a/README.md
++++ b/README.md
+@@ -259,3 +259,15 @@ Verificatie. Tien Node-suites, inclusief de nieuwe open-trip-suite en de behouds
+ Vervolg dagfilm. Social-first, verticaal 9:16, deelbare MP4 als doel. Eerst met een korte proef op de Samsung en met Instagram-audio toegevoegd in Instagram. Optionele eigen of gelicentieerde audiobron onder een export vraagt een aparte test. Media, dagfilm en fotoboek zitten in een volgend bouwpakket.
+ 
+ EINDE-REVIEW · UNTAMED VRIJE REISPROEF · 24-11-2026
++
++## Ontwerpiteratie — reizen en momenten delen · 24 november 2026
++
++De tien mobiele eigenaarreferenties tonen een profiel met kaart en duidelijke acties, grote reisomslagen, deelbare reisstatistieken, een koppeling tussen planning en gevolgde route en een momentdetail met verhaal en sociale acties. Untamed vertaalt die principes eigenstandig. De app gebruikt een origineel bagagelabel met reliëf, een U en een omgevouwen hoek. De kaarten blijven functionele onderdelen van een reis. Het beeldmerk, favicon en installatie-iconen gebruiken hetzelfde ontwerp. De atlas-homepage opent met bestaande Costa Rica-kustfotografie.
++
++Account bevat Gegevens & back-up. Op mobiel heeft het Reisatelier een onderste navigatie met Mijn reizen, Nieuwe reis en Account. Delen is bereikbaar vanuit een opgeslagen moment. Het deelvoorbeeld gebruikt alleen titel, datum en zelfgeschreven verhaal, zonder automatische kaartpin, tijd of lokale link. De gebruiker kiest een app via het beschikbare systeemdeelmenu of kopieert de tekst rechtstreeks. De eerste laadbeurt van een bestaande offlinecache kan de vorige build tonen. Na activering van de nieuwe serviceworker volstaat herladen.
++
++Ontwerpkeuzes voor vervolg. Sla foto's en clips eenmaal op en koppel dezelfde bron aan moment, dag, reis en uitvoer. Vanuit één selectie ontstaan een verticale dagfilm, diashow, digitaal plakboek en later een printprofiel met afloop, afgesneden maat, omslag en losse binnenpagina's. Begin met één getest drukformaat. Reisvoorkeuren zijn optioneel en uitlegbaar, gebaseerd op gekozen interesses en eigen reizen. Begin met privé delen per moment en pas daarna met intrekbare reislinks, uitnodigingen en reacties als het toegangsmodel is goedgekeurd.
++
++Verificatie. Tien Node-suites slagen, met behoud van 2.128 Costa Rica-runtimebestanden. In Chromium opent de nieuwe atlas-CTA de naam-only reisroute. Gecontroleerd: nieuw beeldmerk geladen, geen logo-canvas, atlas Account opent back-up, gesloten back-up op pagina, dag plus pin bewaren, deelvoorbeeld met titel/datum/tekst en zonder coördinaten, kopiëren, annuleren, teruglezen na openen van dezelfde reis, 390 px-navigatie naar Account en geen horizontale overflow. Het systeemdeelmenu op een fysiek toestel, CI en productie zijn NOT TESTED.
++
++EINDE-REVIEW · UNTAMED IDENTITEIT EN DELEN · 24-11-2026
+diff --git a/dist/app.js b/dist/app.js
+index c35e4e2..9a6b310 100644
+--- a/dist/app.js
++++ b/dist/app.js
+@@ -5,7 +5,7 @@ import {COSTA_STORAGE,readDayNotes,groupDayNotes,dayReportText,dayJournalMarkup}
+ import {connectFilms,tripFilmsMarkup} from './films.js';
+ import {dashboardMarkup,mountDashboard,highlightPresets} from './dashboard.js';
+ import {mountGlobe,globeMarkup} from './globe.js';
+-import {setupBrand,enhanceView,toggleMotion,brandPanel,sceneBanner,openCinema,logoIntro} from './brand.js';
++import {setupBrand,enhanceView,toggleMotion,brandPanel,sceneBanner,openCinema} from './brand.js';
+ import {KEY,COSTA,empty,validate,load,write,merge,uid,today,phase,safeUrl} from './store.js';
+ const icons={films:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3Z"/>',home:'<path d="m3 10 9-7 9 7v10H4V10M9 20v-7h6v7"/>',trips:'<rect x="4" y="7" width="16" height="14" rx="2"/><path d="M9 7V3h6v4M8 7v14M16 7v14"/>',wildlife:'<path d="M3 17c5 2 13-1 16-7l2-1-4-2c-2-3-5-2-6 1l-8 9ZM12 9l-2 7M17 8h.1M8 19v3M12 18v3"/>',journal:'<path d="M4 3h14v18H4zM8 7h6M8 11h6M8 15h4M18 6h3v15h-3"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',pin:'<path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 11h18"/>',star:'<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3l-5.5 2.9 1-6.2L3 9.6l6.2-.9Z"/>',compass:'<circle cx="12" cy="12" r="9"/><path d="m16 7-2 7-7 3 3-7 6-3Z"/>',check:'<path d="m5 12 4 4L19 6"/>'};
+ const icon=n=>`<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[n]||icons.compass}</svg>`;
+@@ -18,7 +18,7 @@ let linkedNotes=[],dayNotesError='';
+ const viewNotes=()=>[...state.notes,...new Map([...state.sourceNotes,...linkedNotes].map(n=>[n.id,n])).values()];
+ const viewObservations=()=>[...state.observations,...state.sourceObservations];
+ let state=empty(),data,storageError='',page=0,search='',category='all',onlyFavorites=false,tripFilter='all',undoState=null;
+-try{state=load(localStorage)}catch(e){storageError='Je opgeslagen gegevens konden niet worden gelezen. Ze zijn niet overschreven. Gebruik eerst de ruwe back-up bij Back-up & gegevens.';}
++try{state=load(localStorage)}catch(e){storageError='Je opgeslagen gegevens konden niet worden gelezen. Ze zijn niet overschreven. Gebruik eerst de ruwe back-up via Account → Gegevens & back-up.';}
+ const trips=()=>[COSTA,...state.trips].map(t=>({...t,coverMediaId:state.tripSettings.find(x=>x.tripId===t.id)?.coverMediaId}));
+ const tripName=id=>trips().find(t=>t.id===id)?.name||'Onbekende reis';
+ let toastTimer;
+@@ -54,10 +54,10 @@ function speciesDetail(id){const s=data.species.find(s=>s.id===id);if(!s)return;
+ function backup(){modal('Jouw gegevens blijven van jou',`<p class="fine">Reisoverzicht, nieuwe reizen, doelsoorten, hoogtepunten, notities en waarnemingen worden lokaal bewaard. Er is geen automatische cloudsynchronisatie.</p><p class="fine">Reisfilms: de JSON-back-up bewaart beschrijvingen en links. Gebruik de <a class="text-link" href="#films" onclick="this.closest('dialog').close()">reisarchief bij Films</a> voor alle lokale mediabestanden.</p><h3>Compleet reisarchief</h3><p class="fine">Verhalen, eigen foto’s, clips en eindfilms samen. Grote collecties worden verdeeld in ZIP-delen. Download alle delen.</p><div class="actions"><button class="btn primary" data-travel-export>Reisarchief downloaden</button><button class="btn" data-travel-restore>Reisarchief terugzetten</button></div><h3>Alleen tekstgegevens (JSON)</h3><div class="actions"><button class="btn primary" data-action="export">Download back-up</button><label class="btn" for="restore" style="margin:0">Back-up terugzetten</label><input id="restore" type="file" accept="application/json,.json" hidden></div><p class="fine" style="margin-top:12px">Herstel voegt ontbrekende records samen. Bestaande records blijven behouden. Er wordt eerst een veiligheidskopie op dit apparaat bewaard.</p><h3 style="margin-top:26px">Volledige Costa Rica-app</h3><p class="fine">De bestaande ZIP/JSON-back-up met foto’s, video’s en reisinstellingen blijft in de Costa Rica-app onder Meer. Je verzamelde dagteksten en beelden gaan mee met het reisarchief. Gebruik de pilot-back-up ook voor budget, boekingen, paklijst en andere pilotinstellingen.</p><a class="text-link" href="costa-rica/index.html" target="_blank" rel="noopener">Open Costa Rica voor volledige reisback-up ↗</a>${storageError?'<button class="btn" data-action="raw">Download ruwe opgeslagen gegevens</button>':''}${undoState?'<button class="btn" data-action="undo">Laatste herstel/verwijdering ongedaan maken</button>':''}<div class="info">Versie v0.15 · bron Costa Rica v10.4<br>Commit ${esc(data.sourceCommit.slice(0,12))}<br>Je oorspronkelijke GitHub-project en live app zijn niet gewijzigd.</div>`)}
+ function download(contents,name){const url=URL.createObjectURL(new Blob([contents],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+ document.querySelectorAll('[data-nav]').forEach(a=>a.innerHTML=icon(a.dataset.nav)+({home:'Overzicht',trips:'Mijn reizen',wildlife:'Wildlife',journal:'Dagboek',films:'Films'}[a.dataset.nav]));
+-document.addEventListener('click',e=>{const b=e.target.closest('button,[data-action]');if(!b)return;const action=b.dataset.action;if(b.dataset.tripFilter){tripFilter=b.dataset.tripFilter;render()}if(b.dataset.copyDay){const t=trips().find(t=>t.id===b.dataset.copyTrip);const g=groupDayNotes(t,viewNotes(),t.id===COSTA.id?data.days:[]).find(g=>g.date===b.dataset.copyDay);if(g){const text=dayReportText(g);if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>toast('Dagverslag gekopieerd. Plak het in je Polarsteps-update.'),()=>modal('Je dagverslag',`<p>Selecteer en kopieer deze tekst voor Polarsteps.</p><textarea class="field" readonly aria-label="Dagverslag voor Polarsteps">${esc(text)}</textarea>`));else modal('Je dagverslag',`<p>Selecteer en kopieer deze tekst voor Polarsteps.</p><textarea class="field" readonly aria-label="Dagverslag voor Polarsteps">${esc(text)}</textarea>`)}}if(action==='motion')toast(toggleMotion());if(action==='cinema'){modal('UNTAMED · Private Cinema',openCinema());const v=dialog.querySelector('video');v.muted=false;v.play().catch(()=>{});}if(action==='logo-intro'){modal('UNTAMED · Atlas Wing',logoIntro());dialog.querySelector('video').play().catch(()=>{});}if(action==='brand')modal('Persoonlijke Atlas',brandPanel());if(action==='close')close();if(action==='newtrip')location.assign('./trip-builder/index.html?new=1');if(action==='pasttrip')tripForm();if(action==='highlight')highlightForm();if(b.dataset.highlightRemove){const before=state;if(commit({...state,highlights:(state.highlights||[]).filter(h=>h.id!==b.dataset.highlightRemove)})){undoState=before;close();render();modal('Hoogtepunt verwijderd','<p>Je kunt deze actie direct ongedaan maken.</p><button class="btn primary" data-action="undo">Ongedaan maken</button>')}}if(action==='backup')backup();if(action==='observation'||action==='note')recordForm(action,'',b.dataset.trip);if(action==='favorites'){onlyFavorites=!onlyFavorites;page=0;render()}if(action==='prev'||action==='next'){page+=action==='next'?1:-1;render();window.scrollTo(0,0)}if(action==='export'){download(JSON.stringify(state,null,2),'personal-travel-wildlife-backup-'+today()+'.json');toast('Back-up van het reisoverzicht gedownload.')}if(action==='raw')download(localStorage.getItem(KEY)||'','personal-travel-wildlife-ruwe-data.json');if(action==='undo'&&undoState){const old=undoState;if(commit(old)){undoState=null;close();story.prepare().then(render);toast('Vorige gegevens hersteld.')}}if(b.dataset.deleteTrip){const id=b.dataset.deleteTrip,before=state;const next={...state,trips:state.trips.filter(t=>t.id!==id),notes:state.notes.filter(n=>n.tripId!==id),observations:state.observations.filter(o=>o.tripId!==id),highlights:(state.highlights||[]).filter(h=>h.tripId!==id),videos:(state.videos||[]).filter(v=>v.tripId!==id),media:state.media.filter(m=>m.tripId!==id),sourceNotes:state.sourceNotes.filter(m=>m.tripId!==id),sourceObservations:state.sourceObservations.filter(m=>m.tripId!==id),tripSettings:state.tripSettings.filter(m=>m.tripId!==id)};if(commit(next)){undoState=before;history.replaceState(null,'','#trips');render();modal('Reis verwijderd','<p>De reis en bijbehorende nieuwe notities en waarnemingen zijn verwijderd. Je kunt ze direct terugzetten.</p><button class="btn primary" data-action="undo">Ongedaan maken</button>')}}if(b.dataset.editTrip)tripForm(b.dataset.editTrip);if(b.dataset.species)speciesDetail(b.dataset.species);if(b.dataset.observe)recordForm('observation',b.dataset.observe);if(b.dataset.favorite){const id=b.dataset.favorite;const favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];if(commit({...state,favorites})){render();if(dialog.open)speciesDetail(id);toast(favorites.includes(id)?'Toegevoegd aan je doelsoorten.':'Verwijderd uit je doelsoorten.')}}if(b.dataset.delete){const key=b.dataset.kind==='observation'?'observations':'notes';const before=state;if(commit({...state,[key]:state[key].filter(x=>x.id!==b.dataset.delete)})){undoState=before;render();modal('Verwijderd',`<p>Je kunt deze actie direct ongedaan maken.</p><button class="btn primary" data-action="undo">Ongedaan maken</button>`)}}});
++document.addEventListener('click',e=>{const b=e.target.closest('button,[data-action]');if(!b)return;const action=b.dataset.action;if(b.dataset.tripFilter){tripFilter=b.dataset.tripFilter;render()}if(b.dataset.copyDay){const t=trips().find(t=>t.id===b.dataset.copyTrip);const g=groupDayNotes(t,viewNotes(),t.id===COSTA.id?data.days:[]).find(g=>g.date===b.dataset.copyDay);if(g){const text=dayReportText(g);if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>toast('Dagverslag gekopieerd. Plak het in je Polarsteps-update.'),()=>modal('Je dagverslag',`<p>Selecteer en kopieer deze tekst voor Polarsteps.</p><textarea class="field" readonly aria-label="Dagverslag voor Polarsteps">${esc(text)}</textarea>`));else modal('Je dagverslag',`<p>Selecteer en kopieer deze tekst voor Polarsteps.</p><textarea class="field" readonly aria-label="Dagverslag voor Polarsteps">${esc(text)}</textarea>`)}}if(action==='motion')toast(toggleMotion());if(action==='cinema'){modal('UNTAMED · Private Cinema',openCinema());const v=dialog.querySelector('video');v.muted=false;v.play().catch(()=>{});}if(action==='brand')modal('Persoonlijke Atlas',brandPanel());if(action==='close')close();if(action==='newtrip')location.assign('./trip-builder/index.html?new=1');if(action==='pasttrip')tripForm();if(action==='highlight')highlightForm();if(b.dataset.highlightRemove){const before=state;if(commit({...state,highlights:(state.highlights||[]).filter(h=>h.id!==b.dataset.highlightRemove)})){undoState=before;close();render();modal('Hoogtepunt verwijderd','<p>Je kunt deze actie direct ongedaan maken.</p><button class="btn primary" data-action="undo">Ongedaan maken</button>')}}if(action==='account')modal('Account','<p class="fine">Instellingen voor deze browser.</p><div class="actions"><button class="btn primary" data-action="backup">Gegevens &amp; back-up</button><button class="btn" data-action="brand">Weergave</button></div>');if(action==='backup')backup();if(action==='observation'||action==='note')recordForm(action,'',b.dataset.trip);if(action==='favorites'){onlyFavorites=!onlyFavorites;page=0;render()}if(action==='prev'||action==='next'){page+=action==='next'?1:-1;render();window.scrollTo(0,0)}if(action==='export'){download(JSON.stringify(state,null,2),'personal-travel-wildlife-backup-'+today()+'.json');toast('Back-up van het reisoverzicht gedownload.')}if(action==='raw')download(localStorage.getItem(KEY)||'','personal-travel-wildlife-ruwe-data.json');if(action==='undo'&&undoState){const old=undoState;if(commit(old)){undoState=null;close();story.prepare().then(render);toast('Vorige gegevens hersteld.')}}if(b.dataset.deleteTrip){const id=b.dataset.deleteTrip,before=state;const next={...state,trips:state.trips.filter(t=>t.id!==id),notes:state.notes.filter(n=>n.tripId!==id),observations:state.observations.filter(o=>o.tripId!==id),highlights:(state.highlights||[]).filter(h=>h.tripId!==id),videos:(state.videos||[]).filter(v=>v.tripId!==id),media:state.media.filter(m=>m.tripId!==id),sourceNotes:state.sourceNotes.filter(m=>m.tripId!==id),sourceObservations:state.sourceObservations.filter(m=>m.tripId!==id),tripSettings:state.tripSettings.filter(m=>m.tripId!==id)};if(commit(next)){undoState=before;history.replaceState(null,'','#trips');render();modal('Reis verwijderd','<p>De reis en bijbehorende nieuwe notities en waarnemingen zijn verwijderd. Je kunt ze direct terugzetten.</p><button class="btn primary" data-action="undo">Ongedaan maken</button>')}}if(b.dataset.editTrip)tripForm(b.dataset.editTrip);if(b.dataset.species)speciesDetail(b.dataset.species);if(b.dataset.observe)recordForm('observation',b.dataset.observe);if(b.dataset.favorite){const id=b.dataset.favorite;const favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];if(commit({...state,favorites})){render();if(dialog.open)speciesDetail(id);toast(favorites.includes(id)?'Toegevoegd aan je doelsoorten.':'Verwijderd uit je doelsoorten.')}}if(b.dataset.delete){const key=b.dataset.kind==='observation'?'observations':'notes';const before=state;if(commit({...state,[key]:state[key].filter(x=>x.id!==b.dataset.delete)})){undoState=before;render();modal('Verwijderd',`<p>Je kunt deze actie direct ongedaan maken.</p><button class="btn primary" data-action="undo">Ongedaan maken</button>`)}}});
+ document.addEventListener('submit',e=>{if(!['trip-form','record-form','highlight-form'].includes(e.target.id))return;e.preventDefault();const f=e.target,values=Object.fromEntries(new FormData(f));try{if(f.id==='highlight-form'){const h={id:uid(),tripId:values.tripId,title:values.title.trim(),date:values.date,caption:values.caption.trim(),preset:values.preset,imageUrl:values.imageUrl.trim()};const next={...state,highlights:[...(state.highlights||[]),h]};validate(next);if(commit(next)){close();render();toast('Hoogtepunt toegevoegd aan je diashow.')}return}if(f.id==='trip-form'){const t={...values,name:values.name.trim(),country:values.country.trim(),appUrl:(values.appUrl||'').trim(),coverUrl:(values.coverUrl||'').trim(),id:f.dataset.id||uid()};if(t.end<t.start)throw Error('De terugkomstdatum moet op of na de vertrekdatum liggen.');if(!t.name||!t.country)throw Error('Vul een naam en bestemming in.');const next={...state,trips:[...state.trips.filter(x=>x.id!==t.id),t]};validate(next);if(commit(next)){close();location.hash='trip/'+encodeURIComponent(t.id);render();toast('Je reis is bewaard.')}}else{const obs=f.dataset.kind==='observation';const r={id:uid(),tripId:values.tripId,date:values.date,place:values.place.trim(),...(obs?{speciesId:values.speciesId.trim(),note:values.text.trim()}:{text:values.text.trim()})};const key=obs?'observations':'notes';const next={...state,[key]:[...state[key],r]};validate(next);if(commit(next)){close();render();toast(obs?'Je ontmoeting is vastgelegd.':'Je moment is bewaard.')}}}catch(err){f.querySelector('.error').textContent=err.message}});
+ let searchTimer;document.addEventListener('input',e=>{if(e.target.id==='species-search'){search=e.target.value;page=0;clearTimeout(searchTimer);searchTimer=setTimeout(()=>{const pos=e.target.selectionStart;render();const input=document.querySelector('#species-search');input?.focus();input?.setSelectionRange(pos,pos)},180)}});
+-document.addEventListener('change',async e=>{if(e.target.id==='category'){category=e.target.value;page=0;render()}if(e.target.id==='restore'&&e.target.files[0]){const file=e.target.files[0];try{if(file.size>8*1024*1024)throw Error('Dit bestand is te groot voor een back-up van het reisoverzicht.');const incoming=validate(JSON.parse(await file.text()));const next=merge(state,incoming);localStorage.setItem(KEY+'-before-restore',JSON.stringify(state));const before=state;if(commit(next)){undoState=before;close();render();toast('Back-up samengevoegd. Ongedaan maken is beschikbaar bij Back-up & gegevens.')}}catch(err){toast('Herstel gestopt: '+err.message)}e.target.value=''}});
++document.addEventListener('change',async e=>{if(e.target.id==='category'){category=e.target.value;page=0;render()}if(e.target.id==='restore'&&e.target.files[0]){const file=e.target.files[0];try{if(file.size>8*1024*1024)throw Error('Dit bestand is te groot voor een back-up van het reisoverzicht.');const incoming=validate(JSON.parse(await file.text()));const next=merge(state,incoming);localStorage.setItem(KEY+'-before-restore',JSON.stringify(state));const before=state;if(commit(next)){undoState=before;close();render();toast('Back-up samengevoegd. Ongedaan maken is beschikbaar via Account → Gegevens & back-up.')}}catch(err){toast('Herstel gestopt: '+err.message)}e.target.value=''}});
+ document.addEventListener('error',e=>{if(e.target.tagName==='IMG'&&e.target.dataset.fallback){e.target.src=e.target.dataset.fallback;delete e.target.dataset.fallback}},true);
+ dialog.addEventListener('close',()=>{dialog.querySelectorAll('video').forEach(v=>v.pause());document.dispatchEvent(new Event('untamed:dialogchange'))});
+ dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close()}});
+diff --git a/dist/brand.js b/dist/brand.js
+index a90fa97..05c4f93 100644
+--- a/dist/brand.js
++++ b/dist/brand.js
+@@ -1,4 +1,3 @@
+-import {mountWorldLogos} from './wanderlust.js';
+ import {mountAmbientVideos} from './ambient-media.js';
+ const PREFERENCE='untamed-atlas-motion-v1';
+ export function motionMode({paused=false,reduced=false,saveData=false}={}){return paused||reduced||saveData?'reduced':'full'}
+@@ -9,7 +8,7 @@ function mode(){return motionMode({paused,reduced:!!media?.matches,saveData:!!na
+ function filmStatus(message){const e=document.querySelector('[data-film-status]');if(e)e.textContent=message}
+ function sync(){const current=mode();document.documentElement.dataset.motion=current;document.querySelectorAll('.motion-toggle').forEach(b=>{b.setAttribute('aria-pressed',String(current==='reduced'));b.setAttribute('aria-label',current==='reduced'?'Beweging inschakelen':'Beweging pauzeren');b.title=current==='reduced'?'Rustige weergave':'Beweging pauzeren';b.innerHTML=current==='full'?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>'});if(current==='reduced')document.querySelectorAll('main,[data-reveal]').forEach(e=>e.getAnimations().forEach(a=>a.cancel()));ambient?.refresh();document.dispatchEvent(new Event('untamed:motionchange'))}
+ export function toggleMotion(){if(media?.matches||navigator.connection?.saveData){return 'Je systeeminstelling voor minder beweging of databesparing is actief.'}paused=!paused;try{localStorage.setItem(PREFERENCE,paused?'paused':'enabled')}catch{}sync();return paused?'Rustige weergave ingeschakeld.':'Natuurbeweging ingeschakeld.'}
+-export function setupBrand(){mountWorldLogos();if(!document.querySelector('.atlas-atmosphere')){const atmosphere=document.createElement('div');atmosphere.className='atlas-atmosphere';atmosphere.setAttribute('aria-hidden','true');atmosphere.innerHTML='<span class="ambient-expedition"></span><span class="ambient-aurora"></span><span class="ambient-noir"></span>';document.body.prepend(atmosphere)}sync();media?.addEventListener('change',sync);navigator.connection?.addEventListener?.('change',sync);document.documentElement.dataset.pageHidden=String(document.hidden);document.addEventListener('visibilitychange',()=>{document.documentElement.dataset.pageHidden=String(document.hidden)})}
++export function setupBrand(){if(!document.querySelector('.atlas-atmosphere')){const atmosphere=document.createElement('div');atmosphere.className='atlas-atmosphere';atmosphere.setAttribute('aria-hidden','true');atmosphere.innerHTML='<span class="ambient-expedition"></span><span class="ambient-aurora"></span><span class="ambient-noir"></span>';document.body.prepend(atmosphere)}sync();media?.addEventListener('change',sync);navigator.connection?.addEventListener?.('change',sync);document.documentElement.dataset.pageHidden=String(document.hidden);document.addEventListener('visibilitychange',()=>{document.documentElement.dataset.pageHidden=String(document.hidden)})}
+ export function enhanceView(route){
+  const view=route.split('/')[0];document.documentElement.dataset.view=view;document.documentElement.dataset.chapter=['trips','trip','films'].includes(view)?'aurora':['wildlife','journal'].includes(view)?'noir':'expedition';
+  const theme=document.querySelector('meta[name=theme-color]');if(theme)theme.content='#081522';
+@@ -21,10 +20,9 @@ export function enhanceView(route){
+  }
+  sync();
+ }
+-export const brandPanel=()=>`<div class="brand-intro"><img src="brand/mark.svg" alt="UNTAMED Atlas Wing: holografisch kompas met vleugellijnen"><span class="eyebrow">UNTAMED · PERSOONLIJKE ATLAS</span><h3>Een wereld om te ontdekken.<br><em>Een verhaal om te bewaren.</em></h3></div><p class="fine">Jouw persoonlijke verzameling reizen, wildlife en herinneringen. Een warme atlas in ivoor en zand, verankerd in bosgroen. Koraal en terracotta brengen energie; champagne geeft rust en glans. De wereldbol en het logo behouden hun holografische smaragd- en turquoise accenten. Films krijgen een donkere, warme bioscoopsfeer. Dezelfde typografie, glaspanelen en het Atlas Wing-beeldmerk verbinden alles. Een kompasprisma en vleugellijnen verenigen ontdekken, vrijheid en wildlife in holografisch glas.</p><div class="brand-palette" aria-label="Merkkleuren"><span style="--swatch:#F8F4EB" title="Warm ivoor"></span><span style="--swatch:#EEE5D4" title="Zand"></span><span style="--swatch:#173F35" title="Bosgroen"></span><span style="--swatch:#26C997" title="Smaragd"></span><span style="--swatch:#48DCE4" title="Lagune"></span><span style="--swatch:#BC4F37" title="Koraal"></span><span style="--swatch:#BA9257" title="Champagne"></span><span style="--swatch:#B9C77F" title="Olijfgroen"></span></div><h3>Rustig wanneer jij dat wilt.</h3><p class="fine">Pauzeer beweging met de knop bovenin. We respecteren ook de instellingen voor minder beweging en databesparing van je apparaat. Bij een ontbrekende video blijft de oorspronkelijke foto zichtbaar.</p><button class="btn" data-action="motion">Weergave aanpassen</button><p class="license">De wereldbol gebruikt Natural Earth-kaartgegevens; markeringen tonen een opgegeven plek, geen volledige reisroute. De promovideo combineert AI-sfeerbeelden via Artlist met bewegende cultuurfoto’s uit je Costa Rica-app. Het is een merkfilm, geen documentaire opname of bewijs van een waarneming. De drie bannerfilms zijn AI-sfeerbeelden, geen eigen reisopnamen of geregistreerde waarnemingen. De Artlist-stijlkit bewaart kleuren en creatieve richtlijnen voor toekomstige beelden.</p>`;
++export const brandPanel=()=>`<div class="brand-intro"><img src="brand/boarding-pass-192.png" alt="UNTAMED-bagagelabel met gevouwen hoek"><span class="eyebrow">UNTAMED · PERSOONLIJKE ATLAS</span><h3>Een wereld om te ontdekken.<br><em>Een verhaal om te bewaren.</em></h3></div><p class="fine">Het bagagelabel is herkenbaar aan zijn gevouwen hoek en de U. Petrol vormt de rustige basis, met roomgeel en koraal voor warmte.</p><div class="brand-palette" aria-label="Merkkleuren"><span style="--swatch:#F8F4EB" title="Warm ivoor"></span><span style="--swatch:#EEE5D4" title="Zand"></span><span style="--swatch:#173F35" title="Bosgroen"></span><span style="--swatch:#26C997" title="Smaragd"></span><span style="--swatch:#48DCE4" title="Lagune"></span><span style="--swatch:#BC4F37" title="Koraal"></span><span style="--swatch:#BA9257" title="Champagne"></span><span style="--swatch:#B9C77F" title="Olijfgroen"></span></div><h3>Rustig wanneer jij dat wilt.</h3><p class="fine">Pauzeer beweging met de knop bovenin. We respecteren ook de instellingen voor minder beweging en databesparing van je apparaat. Bij een ontbrekende video blijft de oorspronkelijke foto zichtbaar.</p><button class="btn" data-action="motion">Weergave aanpassen</button><p class="license">De wereldbol gebruikt Natural Earth-kaartgegevens; markeringen tonen een opgegeven plek, geen volledige reisroute. De promovideo combineert AI-sfeerbeelden via Artlist met bewegende cultuurfoto’s uit je Costa Rica-app. Het is een merkfilm, geen documentaire opname of bewijs van een waarneming. De drie bannerfilms zijn AI-sfeerbeelden, geen eigen reisopnamen of geregistreerde waarnemingen. De Artlist-stijlkit bewaart kleuren en creatieve richtlijnen voor toekomstige beelden.</p>`;
+ 
+ const scenes={trips:{film:'aurora',tag:'01 / THE JOURNEYS',title:'De wereld wacht op je.',detail:'Van eerste idee tot onvergetelijke herinnering.'},wildlife:{film:'safari',tag:'02 / THE WILD',title:'Waar verwondering begint.',detail:'Een eigen veldgids voor de wilde wereld.'},journal:{film:'safari',tag:'03 / THE MEMORIES',title:'Bewaar wat je raakt.',detail:'Jouw verhalen. Jouw perspectief.'}};
+ export function ambientPlate(film){return `<img class="chapter-poster" src="brand/${film}-poster.jpg" alt="" decoding="async"><span class="ambient-credit">AI-SFEERBEELD</span><video class="scene-video" data-ambient-video data-src="brand/${film}-loop.mp4" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video>`}
+-export function sceneBanner(page){const s=scenes[page];if(!s)return '';return `<section class="scene-banner scene-${page}" aria-label="${s.title}">${ambientPlate(s.film)}<div class="scene-light" aria-hidden="true"></div><div class="scene-content"><span class="eyebrow">UNTAMED PRIVATE COLLECTION · ${s.tag}</span><h2>${s.title}</h2><p>${s.detail}</p></div><span class="scene-seal" aria-hidden="true"><img src="brand/mark.svg" alt=""></span><span class="scene-credit">ARTLIST AI · SFEERBEELD</span></section>`}
+-export const logoIntro=()=>`<div class="private-cinema logo-cinema"><video controls playsinline preload="metadata" poster="brand/logo-poster.jpg" src="brand/logo-intro.mp4" aria-label="Atlas Wing holografische logo-intro"></video><div class="cinema-caption"><span class="eyebrow">UNTAMED / ATLAS WING · 5 SECONDEN</span><p>Een wereld om te ontdekken.</p><span class="fine">Holografische merkintro via Artlist · zonder geluid.</span></div></div>`;
++export function sceneBanner(page){const s=scenes[page];if(!s)return '';return `<section class="scene-banner scene-${page}" aria-label="${s.title}">${ambientPlate(s.film)}<div class="scene-light" aria-hidden="true"></div><div class="scene-content"><span class="eyebrow">UNTAMED PRIVATE COLLECTION · ${s.tag}</span><h2>${s.title}</h2><p>${s.detail}</p></div><span class="scene-seal" aria-hidden="true"><img src="brand/boarding-pass-192.png" alt=""></span><span class="scene-credit">ARTLIST AI · SFEERBEELD</span></section>`}
+ export const openCinema=()=>`<div class="private-cinema"><video controls playsinline preload="metadata" poster="costa-rica/photos/dest-sanjose.jpg" src="brand/atlas-promo.mp4" aria-label="UNTAMED promovideo met cultuur, natuur en wildlife"></video><div class="cinema-caption"><span class="eyebrow">UNTAMED / THE WORLD COLLECTION · 30 SECONDEN</span><p>Cultuur. Natuur. Wildlife.<br>Blijf je verwonderen.</p><span class="fine">Montage van Artlist AI-film en bewegende cultuurfoto’s uit de Costa Rica-collectie. Sfeerfilm, geen eigen reisopname. Zonder geluid.</span></div></div>`;
+diff --git a/dist/brand/boarding-pass-192.png b/dist/brand/boarding-pass-192.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..a72a14fe5aee2e5667a8bf5f519a7ca89b64f4ef
+GIT binary patch
+literal 14287
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/dist/brand/boarding-pass-512.png b/dist/brand/boarding-pass-512.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..3ff380b48fab06ddc9ceeb54d87ee147c01908b1
+GIT binary patch
+literal 32315
+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
+Nr){A1PQxzj{{Si%u^<2d
+
+literal 0
+HcmV?d00001
+
+diff --git a/dist/dashboard.js b/dist/dashboard.js
+index 802a5ff..4389085 100644
+--- a/dist/dashboard.js
++++ b/dist/dashboard.js
+@@ -29,7 +29,7 @@ function metricCard([n,value,label,detail],index){const types=['journeys','place
+ function journey(t,label,empty,action,countdown=null){const cover=t?.id==='costa-rica-2027'?'costa-rica/photos/dest-uvita.jpg':safeUrl(t?.coverUrl);return `<article class="journey-panel glass">${cover?`<img class="journey-photo" src="${escape(cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:""}<div class="eyebrow">${label}</div>${t?`<a href="${url(t)}"><h2>${escape(t.name)}</h2><p>${escape(t.country)} <span>↗</span></p><div class="journey-dates">${fmt(t.start)} — ${fmt(t.end)}</div>${countdown!==null?`<div class="departure-countdown"><strong>${countdown}</strong><span>dagen tot vertrek</span></div>`:""}</a>`:`<h2>${empty}</h2><p>Vul je reisarchief aan om hier je laatste avontuur terug te zien.</p><button class="text-link" data-action="${label==='Je laatste reis'?'pasttrip':'newtrip'}">${action} ↗</button>`}</article>`}
+ export function dashboardMarkup(trips,state){const s=travelSummary(trips),next=s.active[0]||s.next;const days=s.next?Math.ceil((Date.parse(s.next.start+'T00:00:00Z')-Date.parse(today()+'T00:00:00Z'))/86400000):null;
+  const metrics=[['01',s.completed.length,'Gemaakte reizen','Afgerond in je atlas'],['02',s.destinations.length,'Bezochte bestemmingen','Alleen gemaakte reizen'],['03',s.days,'Reisdagen','Afgeronde reizen · unieke dagen'],['04',state.observations.length,'Wildlife-momenten','Zelf vastgelegd'],['05',(state.highlights||[]).length,'Hoogtepunten','In je persoonlijke diashow'],['06',s.future.length,'Reizen in het vooruitzicht',days!==null?`${days} dagen tot je volgende reis`:'Ruimte voor een nieuw plan']];
+- return `<section class="dashboard-intro dashboard-film">${ambientPlate('expedition')}<div><span class="eyebrow">MIJN PERSOONLIJKE REISATLAS</span><h1>De wereld wacht.<br><em>Waar ga jij naartoe?</em></h1><p>Van een onbekend straatje tot een eindeloze horizon. Verzamel plannen, ontmoetingen en momenten die je bijblijven.</p><div class="world-hero-actions"><button class="btn primary" data-action="newtrip">Plan je volgende avontuur</button><a class="btn world-secondary" href="#trips">Blader door je reizen</a></div></div><div class="world-hero-note" aria-hidden="true">Er is nog zoveel<br>om te ontdekken.</div><div class="atlas-edition"><span class="status-orb"></span> PERSOONLIJKE ATLAS <b>EXPLORER’S EDITION</b><span>Privé · op dit apparaat</span></div></section>${worldFacetsMarkup()}<section class="kpi-grid holographic-kpis" aria-label="Jouw reisstatistieken">${universePanel(s,trips.length)}${metrics.map(metricCard).join('')}</section><section class="journey-grid" aria-label="Laatste en volgende reis">${journey(next,s.active.length?'NU ONDERWEG':'HET VOLGENDE HOOFDSTUK','Waar wil je heen?','Plan een reis',s.active.length?null:days)}${journey(s.last,'JE LAATSTE REIS','Je archief begint hier.','Voeg een gemaakte reis toe')}</section>${globeMarkup()}<section class="visited-panel glass"><div><span class="eyebrow">JOUW REISSPOREN</span><h2>Hier ben je geweest.</h2><p>Op basis van afgeronde reizen in je atlas.</p></div><div class="visited-list">${s.completed.length?s.completed.map(t=>`<a href="${url(t)}"><span class="visited-dot"></span><span>${escape(t.country)}<small>${escape(t.name)} · ${fmt(t.end)}</small></span><span>↗</span></a>`).join(''):'<div class="visited-empty"><span>Je hebt nog geen gemaakte reizen toegevoegd.</span><button class="btn" data-action="pasttrip">Vul je reisarchief aan +</button></div>'}</div></section><section class="experience-grid"><article class="promo-card glass"><img class="promo-poster" src="costa-rica/photos/dest-uvita.jpg" alt="Tropische kust"><video class="hero-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-src="brand/atlas-teaser.mp4"></video><div class="promo-content"><span class="eyebrow">THE UNTAMED FILM / 30 SECONDS</span><h2>Meer dan<br>een bestemming.</h2><p>Cultuur. Natuur. Wildlife.<br>Een wereld die blijft verwonderen.</p><button class="film-button" data-action="cinema"><span>▷</span> Bekijk de promovideo</button><div class="film-status" data-film-status role="status">Film laden…</div></div></article><article class="highlight-card glass" aria-label="Hoogtepunten-diashow"><div class="highlight-picture"><img data-slide-image src="${escape(highlightSlides(state,trips)[0].image)}" alt=""><div class="highlight-gradient"></div><div class="highlight-overlay"><span class="eyebrow" data-slide-tag></span><h2 data-slide-title></h2><p data-slide-caption></p><a class="text-link" data-slide-link href="#trips">Ontdek deze reis ↗</a></div></div><div class="highlight-controls"><div><button data-slide-action="prev" aria-label="Vorig hoogtepunt">←</button><button data-slide-action="pause" aria-label="Diashow pauzeren">Ⅱ</button><button data-slide-action="next" aria-label="Volgend hoogtepunt">→</button><span data-slide-count></span></div><button class="text-link" data-action="highlight">Hoogtepunt toevoegen +</button></div></article></section><section class="dashboard-footer glass"><div><span class="eyebrow">DE VERZAMELING GROEIT MET JE MEE</span><h2>Het volgende verhaal begint bij jou.</h2><p>${state.notes.length} reisnotities · ${state.favorites.length} doelsoorten · ${trips.length} reizen in je atlas</p></div><div><a class="btn" href="#trips">Mijn reizen ↗</a><a class="btn" href="#journal">Mijn dagboek ↗</a><a class="btn" href="#films">Mijn reisfilms (${(state.videos||[]).length}) ↗</a></div></section>`;
++ return `<section class="dashboard-intro dashboard-film"><img class="chapter-poster" src="costa-rica/photos/dest-uvita.jpg" alt=""><div><span class="eyebrow">MIJN PERSOONLIJKE REISATLAS</span><h1>De wereld wacht.<br><em>Waar ga jij naartoe?</em></h1><p>Van een onbekend straatje tot een eindeloze horizon. Verzamel plannen, ontmoetingen en momenten die je bijblijven.</p><div class="world-hero-actions"><button class="btn primary" data-action="newtrip">Plan je volgende avontuur</button><a class="btn world-secondary" href="#trips">Blader door je reizen</a></div></div><div class="world-hero-note" aria-hidden="true">Er is nog zoveel<br>om te ontdekken.</div><div class="atlas-edition"><span class="status-orb"></span> PERSOONLIJKE ATLAS <b>EXPLORER’S EDITION</b><span>Privé · op dit apparaat</span></div></section>${worldFacetsMarkup()}<section class="kpi-grid holographic-kpis" aria-label="Jouw reisstatistieken">${universePanel(s,trips.length)}${metrics.map(metricCard).join('')}</section><section class="journey-grid" aria-label="Laatste en volgende reis">${journey(next,s.active.length?'NU ONDERWEG':'HET VOLGENDE HOOFDSTUK','Waar wil je heen?','Plan een reis',s.active.length?null:days)}${journey(s.last,'JE LAATSTE REIS','Je archief begint hier.','Voeg een gemaakte reis toe')}</section>${globeMarkup()}<section class="visited-panel glass"><div><span class="eyebrow">JOUW REISSPOREN</span><h2>Hier ben je geweest.</h2><p>Op basis van afgeronde reizen in je atlas.</p></div><div class="visited-list">${s.completed.length?s.completed.map(t=>`<a href="${url(t)}"><span class="visited-dot"></span><span>${escape(t.country)}<small>${escape(t.name)} · ${fmt(t.end)}</small></span><span>↗</span></a>`).join(''):'<div class="visited-empty"><span>Je hebt nog geen gemaakte reizen toegevoegd.</span><button class="btn" data-action="pasttrip">Vul je reisarchief aan +</button></div>'}</div></section><section class="experience-grid"><article class="promo-card glass"><img class="promo-poster" src="costa-rica/photos/dest-uvita.jpg" alt="Tropische kust"><video class="hero-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-src="brand/atlas-teaser.mp4"></video><div class="promo-content"><span class="eyebrow">THE UNTAMED FILM / 30 SECONDS</span><h2>Meer dan<br>een bestemming.</h2><p>Cultuur. Natuur. Wildlife.<br>Een wereld die blijft verwonderen.</p><button class="film-button" data-action="cinema"><span>▷</span> Bekijk de promovideo</button><div class="film-status" data-film-status role="status">Film laden…</div></div></article><article class="highlight-card glass" aria-label="Hoogtepunten-diashow"><div class="highlight-picture"><img data-slide-image src="${escape(highlightSlides(state,trips)[0].image)}" alt=""><div class="highlight-gradient"></div><div class="highlight-overlay"><span class="eyebrow" data-slide-tag></span><h2 data-slide-title></h2><p data-slide-caption></p><a class="text-link" data-slide-link href="#trips">Ontdek deze reis ↗</a></div></div><div class="highlight-controls"><div><button data-slide-action="prev" aria-label="Vorig hoogtepunt">←</button><button data-slide-action="pause" aria-label="Diashow pauzeren">Ⅱ</button><button data-slide-action="next" aria-label="Volgend hoogtepunt">→</button><span data-slide-count></span></div><button class="text-link" data-action="highlight">Hoogtepunt toevoegen +</button></div></article></section><section class="dashboard-footer glass"><div><span class="eyebrow">DE VERZAMELING GROEIT MET JE MEE</span><h2>Het volgende verhaal begint bij jou.</h2><p>${state.notes.length} reisnotities · ${state.favorites.length} doelsoorten · ${trips.length} reizen in je atlas</p></div><div><a class="btn" href="#trips">Mijn reizen ↗</a><a class="btn" href="#journal">Mijn dagboek ↗</a><a class="btn" href="#films">Mijn reisfilms (${(state.videos||[]).length}) ↗</a></div></section>`;
+ }
+ export function mountDashboard(host,state,trips){const card=host.querySelector('.highlight-card');if(!card)return ()=>{};
+  const instruments=[...host.querySelectorAll('.kpi')];let counterFrame=0;const counters=[...host.querySelectorAll('[data-count-value]')];const settleCounters=()=>{cancelAnimationFrame(counterFrame);counterFrame=0;counters.forEach(el=>el.textContent=el.dataset.countValue)};const startCounters=()=>{if(document.documentElement.dataset.motion==='reduced'||document.hidden)return;const start=performance.now();const tick=now=>{const progress=Math.min(1,(now-start)/750),ease=1-Math.pow(1-progress,3);counters.forEach(el=>el.textContent=String(Math.round(Number(el.dataset.countValue)*ease)));if(progress<1)counterFrame=requestAnimationFrame(tick);else settleCounters()};counterFrame=requestAnimationFrame(tick)};startCounters();const holographicMove=e=>{if(e.pointerType!=='mouse'||document.documentElement.dataset.motion==='reduced')return;const el=e.currentTarget,r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty('--light-x',`${x*100}%`);el.style.setProperty('--light-y',`${y*100}%`);el.style.setProperty('--tilt-x',`${(y-.5)*-4}deg`);el.style.setProperty('--tilt-y',`${(x-.5)*4}deg`)};
+diff --git a/dist/index.html b/dist/index.html
+index 89296df..4521af9 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -1,3 +1,3 @@
+ <!doctype html>
+-<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4eb"><meta name="description" content="Jouw reizen, ontmoetingen met wildlife en herinneringen op één plek."><title>UNTAMED — Persoonlijke Atlas</title><link rel="icon" type="image/svg+xml" href="brand/mark.svg"><link rel="manifest" href="manifest.webmanifest"><link rel="preload" href="fonts/CormorantGaramond.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="app.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="atlas.css"><link rel="stylesheet" href="films.css"><link rel="stylesheet" href="chapter-media.css"><link rel="stylesheet" href="trip-story.css"><link rel="stylesheet" href="expedition.css"><link rel="stylesheet" href="wanderlust.css"><script type="module" src="app.js"></script></head>
+-<body><a class="skip" href="#main">Naar inhoud</a><aside class="sidebar"><a href="#home" class="brand"><span class="brand-jewel"><img class="brand-mark" src="brand/mark.svg" alt=""></span><span>UNTAMED<span class="brand-small">PERSOONLIJKE ATLAS</span></span></a><div class="side-label">VOLG JE NIEUWSGIERIGHEID</div><nav aria-label="Hoofdnavigatie"><a href="#home" data-nav="home"></a><a href="#trips" data-nav="trips"></a><a href="#wildlife" data-nav="wildlife"></a><a href="#journal" data-nav="journal"></a><a href="#films" data-nav="films"></a></nav><div class="side-bottom"><div class="local-state"><span></span> Opgeslagen op dit apparaat</div><button class="side-brand-button" data-action="brand">UNTAMED · Merk & weergave</button><button class="side-button" data-action="backup">Back-up & gegevens</button><div class="profile"><div class="avatar">S</div><div><b>Smittoe</b><small>Een wereld om te ontdekken</small></div></div></div></aside><div class="content"><header class="topbar"><a class="brand-jewel mobile" href="#home" aria-label="Naar mijn atlas"><img class="topbar-mark" src="brand/mark.svg" alt="UNTAMED"></a><span id="breadcrumb">Mijn atlas / Overzicht</span><div class="top-actions"><span class="review-tag">PERSOONLIJKE ATLAS</span><button class="motion-toggle" data-action="motion" aria-label="Beweging pauzeren" aria-pressed="false"></button><button class="btn small" data-action="backup">Back-up</button><button class="btn small" data-action="newtrip">+ Nieuwe reis</button></div></header><main id="main" tabindex="-1"><p>Je atlas laden…</p></main><footer><button class="brand-footer" data-action="brand">UNTAMED · Persoonlijke Atlas · vrije reisproef</button><span>Voor alles wat je nog gaat ontdekken.</span></footer></div><dialog id="dialog"><div id="dialog-body"></div></dialog><div id="toast" role="status" aria-live="polite"></div></body></html>
++<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4eb"><meta name="description" content="Jouw reizen, ontmoetingen met wildlife en herinneringen op één plek."><title>UNTAMED — Persoonlijke Atlas</title><link rel="icon" type="image/png" href="brand/boarding-pass-192.png"><link rel="manifest" href="manifest.webmanifest"><link rel="preload" href="fonts/CormorantGaramond.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="app.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="atlas.css"><link rel="stylesheet" href="films.css"><link rel="stylesheet" href="chapter-media.css"><link rel="stylesheet" href="trip-story.css"><link rel="stylesheet" href="expedition.css"><link rel="stylesheet" href="wanderlust.css"><script type="module" src="app.js"></script></head>
++<body><a class="skip" href="#main">Naar inhoud</a><aside class="sidebar"><a href="#home" class="brand"><span class="brand-jewel"><img class="brand-mark" src="brand/boarding-pass-192.png" alt=""></span><span>UNTAMED<span class="brand-small">PERSOONLIJKE ATLAS</span></span></a><div class="side-label">VOLG JE NIEUWSGIERIGHEID</div><nav aria-label="Hoofdnavigatie"><a href="#home" data-nav="home"></a><a href="#trips" data-nav="trips"></a><a href="#wildlife" data-nav="wildlife"></a><a href="#journal" data-nav="journal"></a><a href="#films" data-nav="films"></a></nav><div class="side-bottom"><div class="local-state"><span></span> Opgeslagen op dit apparaat</div><button class="side-brand-button" data-action="account">Account</button><div class="profile"><div class="avatar">S</div><div><b>Smittoe</b><small>Een wereld om te ontdekken</small></div></div></div></aside><div class="content"><header class="topbar"><a class="brand-jewel mobile" href="#home" aria-label="Naar mijn atlas"><img class="topbar-mark" src="brand/boarding-pass-192.png" alt="UNTAMED"></a><span id="breadcrumb">Mijn atlas / Overzicht</span><div class="top-actions"><span class="review-tag">PERSOONLIJKE ATLAS</span><button class="motion-toggle" data-action="motion" aria-label="Beweging pauzeren" aria-pressed="false"></button><button class="btn small" data-action="newtrip">+ Nieuwe reis</button><button class="btn small atlas-mobile-account" data-action="account">Account</button></div></header><main id="main" tabindex="-1"><p>Je atlas laden…</p></main><footer><span>UNTAMED · Persoonlijke Atlas</span><span>Voor alles wat je nog gaat ontdekken.</span></footer></div><dialog id="dialog"><div id="dialog-body"></div></dialog><div id="toast" role="status" aria-live="polite"></div></body></html>
+diff --git a/dist/manifest.webmanifest b/dist/manifest.webmanifest
+index ea8c697..28a81d4 100644
+--- a/dist/manifest.webmanifest
++++ b/dist/manifest.webmanifest
+@@ -10,12 +10,12 @@
+   "theme_color": "#f8f4eb",
+   "icons": [
+     {
+-      "src": "brand/mark-192.png",
++      "src": "brand/boarding-pass-192.png",
+       "sizes": "192x192",
+       "type": "image/png"
+     },
+     {
+-      "src": "brand/mark-512.png",
++      "src": "brand/boarding-pass-512.png",
+       "sizes": "512x512",
+       "type": "image/png"
+     }
+diff --git a/dist/sw.js b/dist/sw.js
+index 7f42f23..9ba50d9 100644
+--- a/dist/sw.js
++++ b/dist/sw.js
+@@ -1,6 +1,6 @@
+-const CACHE='personal-atlas-open-trip-pilot-1';
++const CACHE='personal-atlas-trip-identity-1';
+ const ROOT=new URL('./',self.location.href);
+-const ASSETS=['./','index.html','app.css','wanderlust.css','wanderlust.js','app.js','store.js','brand.js','ambient-media.js','archive-media.js','trip-story.js','trip-content.js','travel-archive.js','trip-story.css','chapter-media.css','brand/expedition-poster.jpg','brand/aurora-poster.jpg','brand/safari-poster.jpg','brand/logo-poster.jpg','globe.js','dashboard.js','films.js','trip-journal.js','trip-film-bridge.js','trip-app.html','trip-app.js','trip-app.css','media-db.js','media-archive.js','films.css','atlas.css','expedition.css','costa-rica/photos/dest-sanjose.jpg','brand/world-land.geojson','brand.css','brand/mark.svg','brand/mark-192.png','brand/mark-512.png','brand/contours.svg','brand/identity.json','travel-data.json','manifest.webmanifest','fonts/CormorantGaramond.ttf','fonts/CormorantGaramond-Italic.ttf','costa-rica/photos/dest-uvita.jpg','costa-rica/fonts/plus-jakarta-sans.woff2','costa-rica/photos/hero-home.jpg','costa-rica/photos/dest-monteverde.jpg','costa-rica/photos/dest-tortuguero.jpg'];
++const ASSETS=['./','index.html','app.css','wanderlust.css','wanderlust.js','app.js','store.js','brand.js','ambient-media.js','archive-media.js','trip-story.js','trip-content.js','travel-archive.js','trip-story.css','chapter-media.css','brand/expedition-poster.jpg','brand/aurora-poster.jpg','brand/safari-poster.jpg','brand/logo-poster.jpg','globe.js','dashboard.js','films.js','trip-journal.js','trip-film-bridge.js','trip-app.html','trip-app.js','trip-app.css','media-db.js','media-archive.js','films.css','atlas.css','expedition.css','costa-rica/photos/dest-sanjose.jpg','brand/world-land.geojson','brand.css','brand/boarding-pass-192.png','brand/boarding-pass-512.png','brand/contours.svg','brand/identity.json','travel-data.json','manifest.webmanifest','fonts/CormorantGaramond.ttf','fonts/CormorantGaramond-Italic.ttf','costa-rica/photos/dest-uvita.jpg','costa-rica/fonts/plus-jakarta-sans.woff2','costa-rica/photos/hero-home.jpg','costa-rica/photos/dest-monteverde.jpg','costa-rica/photos/dest-tortuguero.jpg'];
+ self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+ self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('personal-atlas-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+ self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.headers.has('range'))return;if(e.request.method!=='GET'||u.origin!==ROOT.origin||(u.pathname.startsWith(ROOT.pathname+'costa-rica/')&&!u.pathname.startsWith(ROOT.pathname+'costa-rica/photos/')&&!u.pathname.startsWith(ROOT.pathname+'costa-rica/fonts/')))return;e.respondWith(fetch(e.request).then(r=>{if(r.ok&&r.status!==206){const copy=r.clone();e.waitUntil(caches.open(CACHE).then(c=>c.put(e.request,copy)))}return r}).catch(()=>caches.match(e.request)))});
+diff --git a/dist/trip-app.html b/dist/trip-app.html
+index 967623f..0773ce7 100644
+--- a/dist/trip-app.html
++++ b/dist/trip-app.html
+@@ -1 +1 @@
+-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f35"><title>Costa Rica · verbonden met je atlas</title><link rel="icon" href="brand/mark.svg"><link rel="stylesheet" href="trip-app.css"><script type="module" src="trip-app.js"></script></head><body><header><a href="index.html#trip/costa-rica-2027" class="atlas-return"><img src="brand/mark.svg" alt="">← Persoonlijke Atlas</a><span class="connection"><i></i>COSTA RICA / VERBONDEN</span><button id="open-studio">Video Studio</button><a href="index.html#films/costa-rica-2027">Mijn films ↗</a><details><summary aria-label="Over de koppeling">ⓘ</summary><p>Dagnotities, eigen foto’s, sfeerfoto’s en videoclips verschijnen automatisch bij de juiste reisdag in je atlas op dit apparaat. Je atlas bewaart de versies die deze pilot opslaat. Eindfilms uit de Video Studio worden automatisch in Films bewaard (maximaal 250 MB per film). Houd deze pagina open tot ‘Opgeslagen in Films’ verschijnt. Maak regelmatig een back-up.</p><p>Er is geen automatische cloudsynchronisatie of publicatie naar Polarsteps.</p><a href="costa-rica/index.html" target="_blank" rel="noopener">Reisapp zelfstandig openen ↗</a></details></header><div class="bridge-status" role="status" aria-live="polite"><span id="bridge-status">Reisapp laden…</span><button id="retry-film" hidden>Opnieuw bewaren</button></div><iframe id="trip-frame" src="costa-rica/index.html" title="Volledige Costa Rica reisapp" allow="fullscreen; clipboard-write; web-share" allowfullscreen></iframe></body></html>
++<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173f35"><title>Costa Rica · verbonden met je atlas</title><link rel="icon" href="brand/boarding-pass-192.png"><link rel="stylesheet" href="trip-app.css"><script type="module" src="trip-app.js"></script></head><body><header><a href="index.html#trip/costa-rica-2027" class="atlas-return"><img src="brand/boarding-pass-192.png" alt="">← Persoonlijke Atlas</a><span class="connection"><i></i>COSTA RICA / VERBONDEN</span><button id="open-studio">Video Studio</button><a href="index.html#films/costa-rica-2027">Mijn films ↗</a><details><summary aria-label="Over de koppeling">ⓘ</summary><p>Dagnotities, eigen foto’s, sfeerfoto’s en videoclips verschijnen automatisch bij de juiste reisdag in je atlas op dit apparaat. Je atlas bewaart de versies die deze pilot opslaat. Eindfilms uit de Video Studio worden automatisch in Films bewaard (maximaal 250 MB per film). Houd deze pagina open tot ‘Opgeslagen in Films’ verschijnt. Maak regelmatig een back-up.</p><p>Er is geen automatische cloudsynchronisatie of publicatie naar Polarsteps.</p><a href="costa-rica/index.html" target="_blank" rel="noopener">Reisapp zelfstandig openen ↗</a></details></header><div class="bridge-status" role="status" aria-live="polite"><span id="bridge-status">Reisapp laden…</span><button id="retry-film" hidden>Opnieuw bewaren</button></div><iframe id="trip-frame" src="costa-rica/index.html" title="Volledige Costa Rica reisapp" allow="fullscreen; clipboard-write; web-share" allowfullscreen></iframe></body></html>
+diff --git a/dist/trip-builder/app.js b/dist/trip-builder/app.js
+index 6067a63..feaf353 100644
+--- a/dist/trip-builder/app.js
++++ b/dist/trip-builder/app.js
+@@ -109,6 +109,7 @@ function dayJournal(t, day) {
+       ${stamp ? `<p class="moment-meta">${esc(stamp)}</p>` : ''}
+       ${moment.text ? `<p class="moment-text">${esc(moment.text)}</p>` : ''}
+       <p class="moment-meta">${pinned ? `${moment.latitude.toFixed(4)}, ${moment.longitude.toFixed(4)}` : 'Zonder pin'}</p>
++      <button type="button" data-share-moment="${moment.id}" class="tiny moment-share" aria-label="Deel ${esc(moment.title)}">Delen</button>
+       <button type="button" data-moment="${moment.id}" class="tiny" aria-label="Bewerk ${esc(moment.title)}">Bewerken</button>
+       <button type="button" data-remove-moment="${moment.id}" class="tiny danger" aria-label="Verwijder ${esc(moment.title)}">Verwijderen</button></div>
+     </li>`;
+@@ -143,10 +144,50 @@ function render(){if(storageError){root.innerHTML=`<section class="hero"><h1>Je
+  const map = root.querySelector('.moment-map');
+  if (map) mountMomentMap(map, {pins: dayMoments(t, selectedDay)});
+ }
+-function backup(){modal('Bewaar je reisatelier',`<p>Deze back-up bevat reisdagen, kaartpunten en alle plannings- en tekstgegevens uit je reisatelier. Bewaar het bestand buiten deze browser als reservekopie.</p><button class="primary" data-act="export">JSON-back-up klaarzetten</button><div id="download-ready"></div><h3>Back-up terugzetten</h3><p>Ontbrekende reizen worden toegevoegd. Bij gelijke reis-ID’s blijft je bestaande versie behouden; afwijkingen worden gemeld.</p><label for="restore">Kies een reisatelier-back-up</label><input id="restore" type="file" accept=".json,application/json"><div role="status" id="restore-status"></div>${undo?'<button data-act="undo">Laatste wijziging ongedaan maken</button>':''}${localStorage.getItem(KEY+'-deleted-trip')?'<button data-act="recover-trip">Laatste verwijderde reis terugzetten</button>':''}`)}
++function account() {
++ modal('Account', `<p class="muted">Instellingen voor dit apparaat.</p>
++   <button class="account-row" data-act="backup">
++   <strong>Gegevens &amp; back-up</strong><span>Bewaar of herstel je reizen</span></button>`);
++}
++
++function shareMoment(moment) {
++ const text = [moment.title, moment.date ? dayDate(moment.date) : '', moment.text].filter(Boolean).join('\n\n');
++ const native = typeof navigator.share === 'function' && (!navigator.canShare || navigator.canShare({text}));
++ modal('Moment delen', `<label for="share-text">Dit deel je</label>
++   <textarea id="share-text" readonly rows="5">${esc(text)}</textarea>
++   <p class="muted">De kaartpin blijft privé. Controleer de tekst voordat je die deelt.</p>
++   <div class="actions">
++   ${native ? '<button class="primary" data-act="share-native">Kies een app</button>' : ''}
++   <button class="${native ? '' : 'primary'}" data-act="copy-moment">Kopieer tekst</button>
++   <button data-act="close">Annuleren</button></div>
++   <p role="status" id="share-status"></p>`);
++}
++
++function backup(){modal('Gegevens & back-up',`<button data-act="account" class="tiny">Terug naar Account</button><p>Deze back-up bevat reisdagen, kaartpunten en alle plannings- en tekstgegevens uit je reisatelier. Bewaar het bestand buiten deze browser als reservekopie.</p><button class="primary" data-act="export">JSON-back-up klaarzetten</button><div id="download-ready"></div><h3>Back-up terugzetten</h3><p>Ontbrekende reizen worden toegevoegd. Bij gelijke reis-ID’s blijft je bestaande versie behouden; afwijkingen worden gemeld.</p><label for="restore">Kies een reisatelier-back-up</label><input id="restore" type="file" accept=".json,application/json"><div role="status" id="restore-status"></div>${undo?'<button data-act="undo">Laatste wijziging ongedaan maken</button>':''}${localStorage.getItem(KEY+'-deleted-trip')?'<button data-act="recover-trip">Laatste verwijderde reis terugzetten</button>':''}`)}
+ function prepareDownload(text,name){const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));downloads.push(url);return `<a class="download" href="${url}" download="${name}">Download ${name}</a>`}
+ document.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;const t=trip(),act=b.dataset.act;try{
+  if(act==='close')close();if(act==='home')location.hash='home';
++ if(act==='account') account();
++ if(b.dataset.shareMoment && t) {
++  const moment = t.moments.find(moment => moment.id === b.dataset.shareMoment);
++  if(moment) shareMoment(moment);
++ }
++ if(act==='share-native' || act==='copy-moment') {
++  const field = modalBody.querySelector('#share-text');
++  const status = modalBody.querySelector('#share-status');
++  try {
++   if(act==='share-native') await navigator.share({text:field.value});
++   else {
++    await navigator.clipboard.writeText(field.value);
++    status.textContent='Tekst gekopieerd.';
++   }
++  } catch(error) {
++   if(error.name==='AbortError') return;
++   field.focus();
++   field.select();
++   status.textContent='De tekst is geselecteerd. Je kunt hem handmatig kopiëren.';
++  }
++ }
+  if(act==='add-day' && t) dayForm();
+  if(act==='add-moment' && t && selectedDay) momentForm(t);
+  if(b.dataset.moment && t) momentForm(t, t.moments.find(moment => moment.id === b.dataset.moment));
+diff --git a/dist/trip-builder/index.html b/dist/trip-builder/index.html
+index d9ba053..4b3fe9d 100644
+--- a/dist/trip-builder/index.html
++++ b/dist/trip-builder/index.html
+@@ -1 +1,7 @@
+-<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4eb"><title>UNTAMED · Reisatelier</title><link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script></head><body><a class="skip" href="#main">Naar inhoud</a><header><a href="../index.html#home" class="brand"><img src="mark.svg" alt=""><span>UNTAMED<small>PERSOONLIJKE ATLAS</small></span></a><div class="head-actions"><button data-act="home">Mijn reizen</button><button data-act="backup">Back-up</button></div></header><main id="main" tabindex="-1"></main><dialog><div id="modal"></div></dialog><div id="toast" role="status" aria-live="polite"></div><footer><span>Je reisgegevens blijven in deze browser.</span><span id="offline-status" role="status"></span></footer></body></html>
++<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4eb"><title>UNTAMED · Reisatelier</title><link rel="icon" href="../brand/boarding-pass-192.png" type="image/png"><link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script></head><body><a class="skip" href="#main">Naar inhoud</a><header><a href="../index.html#home" class="brand"><img src="../brand/boarding-pass-192.png" alt=""><span>UNTAMED<small>REISATELIER</small></span></a><div class="head-actions"><button data-act="home">Mijn reizen</button><button data-act="account">Account</button></div></header><main id="main" tabindex="-1"></main><dialog><div id="modal"></div></dialog><div id="toast" role="status" aria-live="polite"></div><footer><span>Je reisgegevens blijven in deze browser.</span><span id="offline-status" role="status"></span></footer>
++<nav class="mobile-nav" aria-label="Reisatelier">
++ <button data-act="home">Mijn reizen</button>
++ <button class="mobile-create" data-act="new">+ Nieuwe reis</button>
++ <button data-act="account">Account</button>
++</nav>
++</body></html>
+diff --git a/dist/trip-builder/style.css b/dist/trip-builder/style.css
+index a32a074..62fcbe0 100644
+--- a/dist/trip-builder/style.css
++++ b/dist/trip-builder/style.css
+@@ -74,3 +74,30 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
+   .moment-item { gap: 8px; }
+   .map-footer button { padding-inline: 10px; }
+ }
++
++header .brand img { width: 53px; height: 53px; object-fit: contain; border-radius: 12px; }
++header .brand { letter-spacing: .12em; }
++.journey-home {
++  background: linear-gradient(90deg, #173c40f9 7%, #173c40d9 39%, #173c405c),
++    url('../costa-rica/photos/dest-uvita.jpg') center 48% / cover;
++}
++.journey-home .primary, .day-journal .primary, .mobile-create {
++  background: #a33f3d; border-color: #a33f3d; color: #fff9ec;
++}
++.account-row {
++  display: grid; text-align: left; gap: 2px; width: 100%; padding: 14px 18px;
++  background: #e8efe9; border-color: #8fa8a2; color: #183c3f;
++}
++.account-row span { font-size: 14px; }
++.moment-share { background: #e2ece7; color: #183c3f; border-color: #8fa8a2; }
++.mobile-nav { display: none; }
++@media (max-width: 690px) {
++  body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
++  header .head-actions { display: none; }
++  .mobile-nav {
++    position: fixed; inset: auto 0 0; z-index: 4; background: #fffcf6;
++    border-top: 1px solid #d7cfbd; padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
++    display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 7px;
++  }
++  .mobile-nav button { font-size: 14px; padding: 8px 6px; }
++}
+diff --git a/dist/trip-builder/sw.js b/dist/trip-builder/sw.js
+index a031f1b..f3de0f0 100644
+--- a/dist/trip-builder/sw.js
++++ b/dist/trip-builder/sw.js
+@@ -1,9 +1,9 @@
+-const cacheName = 'untamed-reisatelier-shell-2';
++const cacheName = 'untamed-reisatelier-shell-3';
+ const root = new URL('./', self.location.href);
+ const index = new URL('index.html', root).href;
+ const assets = [
+   'index.html', 'style.css', 'app.js', 'model.js', 'moment-map.js',
+-  'mark.svg', 'costa-plan.json', '../brand/world-land.geojson',
++  '../brand/boarding-pass-192.png', 'costa-plan.json', '../brand/world-land.geojson',
+   '../costa-rica/photos/dest-uvita.jpg', '../costa-rica/fonts/plus-jakarta-sans.woff2'
+ ];
+ const assetUrls = new Set(assets.map(path => new URL(path, root).href));
+diff --git a/dist/wanderlust.css b/dist/wanderlust.css
+index 83282e8..43fbc1b 100644
+--- a/dist/wanderlust.css
++++ b/dist/wanderlust.css
+@@ -10,9 +10,6 @@
+ }
+ 
+ .brand-jewel { position: relative; overflow: visible; }
+-.world-logo { position: absolute; inset: -15%; width: 130%; height: 130%; opacity: 0; pointer-events: none; }
+-.world-logo-ready .world-logo { opacity: 1; }
+-.world-logo-ready > img { opacity: 0; }
+ .sidebar .brand-jewel { width: 68px; height: 68px; flex: 0 0 68px; background: transparent; border: 0; box-shadow: none; }
+ .sidebar .brand { gap: 12px; }
+ .brand-small { letter-spacing: 2px; }
+@@ -89,3 +86,10 @@ html[data-motion=reduced] .world-facet { transition: none; }
+ @media (prefers-reduced-motion: reduce) {
+   .world-facet { transition: none; }
+ }
++
++.brand-jewel .brand-mark, .topbar-mark { filter: none; }
++
++.atlas-mobile-account { display: none; }
++@media (max-width: 760px) {
++  .atlas-mobile-account { display: inline-flex; }
++}
+diff --git a/dist/wanderlust.js b/dist/wanderlust.js
+index 48c370b..4d2178a 100644
+--- a/dist/wanderlust.js
++++ b/dist/wanderlust.js
+@@ -1,126 +1,3 @@
+-import {getLand, projectPoint} from './globe.js';
+-
+-// The small brand globe shares the atlas geography and spherical projection.
+-// Existing SVG marks stay visible if canvas or geography is unavailable.
+-export function mountWorldLogos() {
+-  const logos = [...document.querySelectorAll('.brand-jewel')].map(host => {
+-    const canvas = document.createElement('canvas');
+-    canvas.className = 'world-logo';
+-    canvas.width = 192;
+-    canvas.height = 192;
+-    canvas.setAttribute('aria-hidden', 'true');
+-    const context = canvas.getContext('2d');
+-    host.append(canvas);
+-    return {host, canvas, context};
+-  }).filter(logo => logo.context);
+-  if (!logos.length) return;
+-
+-  let polygons = [];
+-  let longitude = 22;
+-  let frame = 0;
+-  let lastTime = 0;
+-  let rotationStarted = 0;
+-  const reduced = () => document.documentElement.dataset.motion !== 'full';
+-
+-  function draw({context: g}) {
+-    const center = 96;
+-    const radius = 66;
+-    g.clearRect(0, 0, 192, 192);
+-    g.save();
+-    g.translate(center, center);
+-    g.rotate(-0.42);
+-    g.strokeStyle = '#d5b777';
+-    g.lineWidth = 2;
+-    g.beginPath();
+-    g.ellipse(0, 0, 83, 30, 0, 0, Math.PI * 2);
+-    g.stroke();
+-    g.restore();
+-
+-    const sea = g.createRadialGradient(72, 67, 3, 100, 100, 72);
+-    sea.addColorStop(0, '#739d7c');
+-    sea.addColorStop(0.48, '#285d4b');
+-    sea.addColorStop(1, '#0c3029');
+-    g.fillStyle = sea;
+-    g.shadowColor = '#9be0be66';
+-    g.shadowBlur = 12;
+-    g.beginPath();
+-    g.arc(center, center, radius, 0, Math.PI * 2);
+-    g.fill();
+-    g.shadowBlur = 0;
+-
+-    function line(coordinates, color, weight) {
+-      g.beginPath();
+-      let connected = false;
+-      for (const [lon, lat] of coordinates) {
+-        const point = projectPoint(lat, lon, longitude, 15);
+-        if (point.z <= 0) {
+-          connected = false;
+-          continue;
+-        }
+-        const x = center + point.x * radius;
+-        const y = center - point.y * radius;
+-        if (connected) g.lineTo(x, y);
+-        else g.moveTo(x, y);
+-        connected = true;
+-      }
+-      g.strokeStyle = color;
+-      g.lineWidth = weight;
+-      g.stroke();
+-    }
+-
+-    for (let lon = -180; lon < 180; lon += 45) {
+-      const meridian = [];
+-      for (let lat = -90; lat <= 90; lat += 5) meridian.push([lon, lat]);
+-      line(meridian, '#d4edcc38', 0.7);
+-    }
+-    for (const polygon of polygons) {
+-      for (const ring of polygon) line(ring, '#f0d9a1', 1.35);
+-    }
+-    const sheen = g.createRadialGradient(70, 65, 0, 70, 65, 45);
+-    sheen.addColorStop(0, '#fff7db40');
+-    sheen.addColorStop(1, '#fff7db00');
+-    g.fillStyle = sheen;
+-    g.beginPath();
+-    g.arc(center, center, radius, 0, Math.PI * 2);
+-    g.fill();
+-    g.strokeStyle = '#dbecd1b3';
+-    g.lineWidth = 1.3;
+-    g.stroke();
+-  }
+-
+-  function tick(time) {
+-    frame = 0;
+-    if (document.hidden || reduced()) return;
+-    if (!rotationStarted) rotationStarted = time;
+-    if (!lastTime || time - lastTime >= 50) {
+-      longitude += lastTime ? Math.min(time - lastTime, 100) * 0.003 : 0;
+-      lastTime = time;
+-      logos.forEach(draw);
+-    }
+-    // A short welcoming turn, then stillness until the next explicit resume.
+-    if (time - rotationStarted < 8000) frame = requestAnimationFrame(tick);
+-  }
+-
+-  function refresh() {
+-    cancelAnimationFrame(frame);
+-    frame = 0;
+-    lastTime = 0;
+-    rotationStarted = 0;
+-    logos.forEach(draw);
+-    if (polygons.length && !document.hidden && !reduced()) {
+-      frame = requestAnimationFrame(tick);
+-    }
+-  }
+-
+-  getLand().then(land => {
+-    polygons = land;
+-    logos.forEach(logo => logo.host.classList.add('world-logo-ready'));
+-    refresh();
+-  }).catch(() => {});
+-  document.addEventListener('untamed:motionchange', refresh);
+-  document.addEventListener('visibilitychange', refresh);
+-}
+-
+ const facets = [
+   ['mountains', 'Bergen & buitenlucht', 'Even helemaal ergens anders.', 'costa-rica/photos/dest-monteverde.jpg', '#trips'],
+   ['culture', 'Straten & verhalen', 'Dwaal rond. Proef iets nieuws.', 'costa-rica/photos/dest-sanjose.jpg', '#trips'],
+diff --git a/tests/wanderlust.mjs b/tests/wanderlust.mjs
+index ce83694..c6fc794 100644
+--- a/tests/wanderlust.mjs
++++ b/tests/wanderlust.mjs
+@@ -1,67 +1,22 @@
+ import assert from 'node:assert/strict';
+ import fs from 'node:fs';
++import {worldFacetsMarkup, journeyKeepsakeMarkup} from '../dist/wanderlust.js';
+ 
+-const callbacks = new Map();
+-const listeners = new Map();
+-const hostClasses = new Set();
+-let sequence = 0;
+-let draws = 0;
+-let fetches = 0;
+-const context = {
+-  clearRect() { draws++; },
+-  save() {}, restore() {}, translate() {}, rotate() {},
+-  beginPath() {}, ellipse() {}, stroke() {}, arc() {}, fill() {},
+-  lineTo() {}, moveTo() {},
+-  createRadialGradient() { return {addColorStop() {}}; }
+-};
+-const host = {append() {}, classList: {add(name) {hostClasses.add(name);}}};
+-globalThis.document = {
+-  hidden: false,
+-  documentElement: {dataset: {motion: 'reduced'}},
+-  querySelectorAll() { return [host]; },
+-  createElement() {
+-    return {setAttribute() {}, getContext() {return context;}};
+-  },
+-  addEventListener(name, callback) { listeners.set(name, callback); }
+-};
+-globalThis.requestAnimationFrame = callback => {
+-  const id = ++sequence;
+-  callbacks.set(id, callback);
+-  return id;
+-};
+-globalThis.cancelAnimationFrame = id => callbacks.delete(id);
+-globalThis.fetch = async () => {
+-  fetches++;
+-  return {ok: true, json: async () => JSON.parse(fs.readFileSync('dist/brand/world-land.geojson'))};
+-};
+-const {mountWorldLogos, worldFacetsMarkup, journeyKeepsakeMarkup} = await import('../dist/wanderlust.js');
+-mountWorldLogos();
+-await new Promise(resolve => setImmediate(resolve));
+-assert(hostClasses.has('world-logo-ready'));
+-assert(draws > 0);
+-assert.equal(callbacks.size, 0, 'reduced motion renders a still globe');
+-
+-document.documentElement.dataset.motion = 'full';
+-listeners.get('untamed:motionchange')();
+-assert.equal(callbacks.size, 1);
+-for (const time of [50, 8051]) {
+-  const [id, callback] = callbacks.entries().next().value;
+-  callbacks.delete(id);
+-  callback(time);
+-}
+-assert.equal(callbacks.size, 0, 'welcoming turn ends after eight seconds');
+-listeners.get('untamed:motionchange')();
+-document.hidden = true;
+-listeners.get('visibilitychange')();
+-assert.equal(callbacks.size, 0, 'hidden document stops frames');
+-
+-const {getLand} = await import('../dist/globe.js');
+-await getLand();
+-assert.equal(fetches, 1, 'logo and atlas share one geography request');
+ const markup = worldFacetsMarkup();
+ for (const [, asset] of markup.matchAll(/src="([^"]+)"/g)) assert(fs.existsSync('dist/' + asset));
+ assert.equal((markup.match(/class="world-facet world-facet-/g) || []).length, 4);
+ assert(journeyKeepsakeMarkup().includes('aria-hidden="true"'));
+-const worker = fs.readFileSync('dist/sw.js', 'utf8');
+-assert(worker.includes("'wanderlust.css','wanderlust.js'"));
+-console.log('PASS: spherical logo, shared geography, finite animation, reduced motion, hidden-page pause, image references and offline shell entries.');
++
++const manifest = JSON.parse(fs.readFileSync('dist/manifest.webmanifest'));
++for (const {src} of manifest.icons) {
++  assert(src.includes('boarding-pass'));
++  assert(fs.existsSync('dist/' + src));
++}
++const atlas = fs.readFileSync('dist/index.html', 'utf8');
++const atelier = fs.readFileSync('dist/trip-builder/index.html', 'utf8');
++assert(atlas.includes('brand/boarding-pass-192.png'));
++assert(atelier.includes('../brand/boarding-pass-192.png'));
++assert(!atlas.includes('data-action="backup"'));
++assert(!atelier.includes('data-act="backup"'));
++assert(fs.readFileSync('dist/trip-builder/sw.js', 'utf8').includes('../brand/boarding-pass-192.png'));
++console.log('PASS: original luggage-tag assets, atlas and Reisatelier entry points, account navigation and offline references.');
