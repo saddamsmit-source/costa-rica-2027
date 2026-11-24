@@ -1,0 +1,447 @@
+diff --git a/README.md b/README.md
+index 15481b2..b838ce9 100644
+--- a/README.md
++++ b/README.md
+@@ -222,3 +222,26 @@ Review/lifecycle: planning/traveling/completion_review only. Transfer remains un
+ Verification tracked in platform-prototype/QA.md and tests/dynamic-trips.mjs. Known-good rollback v0.14 source2c0bdebdcdf2753cf92776af2d843b7bb9548981. Existing two data stores unchanged; reverting hides the isolated workspace but does not delete its local data.
+ 
+ GitHub review checkpoint: source commit3af1113e47a3f2be1b929fab7b4b947f0c213279 on feature/dynamic-travel-foundation; compare against0f2721889382b0ddc79c1092dca1c6fbb6f598bb confirmed11 added files exclusively under platform-prototype/, no modified/deleted existing files. Nine atlas/domain regression scripts pass. Browser proof and limitations documented in dist/trip-builder/QA.md.
++
++
++## v0.16 review · warme wereldatlas · 24 november 2026
++
++Eigenaarbesluit in App Builder. Werk het 3D-logo, de homepage en één reisdetailpagina uit met meer reisgevoel, een rustige basis en speelse wereldse details. De bestaande warme kleuren zijn de basis.
++
++Gebouwd. Een canvaswereldbol met perspectiefprojectie en Natural Earth-geografie vervangt de kleine headerlogo’s zodra de kaartgegevens beschikbaar zijn. Het bestaande Atlas Wing-SVG blijft de fallback. De introductiedraai duurt acht seconden en stopt bij minder beweging, databesparing, pauze en een verborgen pagina. De homepage krijgt een uitnodiging, twee bestaande acties en vier fotografische thema’s voor bergen, cultuur/steden, kust en natuur. Deze beelden zijn gelabeld als Costa Rica-collectie. Reisverhaal en reiskaarten krijgen poststempel-, route- en dagboekdetails. Stempel en tekst suggereren geen bezochte bestemmingen of bijgewerkte statistieken.
++
++Padcontract. Nieuwe bestanden dist/wanderlust.js en dist/wanderlust.css. Bestaande integraties in brand.js, globe.js, dashboard.js, trip-story.js, index.html en sw.js. Geen nieuwe afhankelijkheid, opslagkey of gegevensmigratie. Geografie wordt met de atlas gedeeld. De serviceworker heeft een nieuwe reviewcache en neemt beide bestanden op.
++
++GitHub-registratie. De volledige hoofdappbaseline staat in de afzonderlijke Sites-bronrepo op 5c49174b8fb79681606a8c35ca7e38e937372272. Costa Rica-GitHub main op 9dee107cde666a6fbd83388a857944dd4632146b bevat deze atlas niet. Reisatelier is alleen de geïsoleerde proef in open concept-PR #1, head 3af1113e47a3f2be1b929fab7b4b947f0c213279. Nieuwe concept-PR #2 bewaart de herstelbare v0.16-reviewwijziging met bronverwijzing, tests en writerclaim. Dat is geen volledige synchronisatie van alle hoofdappbestanden of persoonlijke gegevens.
++
++Exacte bestaande assets. dist/brand/mark.svg is Atlas Wing. dist/brand/provenance.json koppelt expedition-loop.mp4, aurora-loop.mp4, safari-loop.mp4 en logo-intro.mp4 aan de Artlist-generaties. dist/brand/identity.json bevat de concrete warme kleurwaarden. De persoonlijke browseropslag en media-exports zijn apart te herstellen en vallen buiten Git.
++
++Bewijs. Alle negen bestaande Node-testbestanden slagen op de gewijzigde code, inclusief 2.128 ongewijzigde Costa Rica-runtimebestanden. De aanvullende wanderlust-helpertest controleert projectie, gedeelde geografie, beëindiging van beweging, pauze, verborgen pagina, beelden en offlinecacheverwijzingen. Dit is code- en helperbewijs. Browserbediening, visuele layout, toetsenbord/touch en fysieke Samsung zijn BLOCKED/NOT TESTED in deze ronde.
++
++Omgevingsbeperking. 24-11-2026, ChatGPT Work. De standaard Playwright-browser ontbreekt. De aanwezige Chromium-launch faalt op socket() Operation not permitted. De lokale Sites-preview start, maar de CUA-browser kan deze niet openen. De browser meldt een URL-policy-blokkade. Geen verdere omweg toegepast. Een korte exec-transportdisconnect herstelde na één veilige retry. Oorzaak van de hostbeperkingen UNKNOWN.
++
++Hervatten. Raadpleeg writerclaim in https://github.com/saddamsmit-source/costa-rica-2027/pull/2 en vergelijk beide reviewheads met hun main-basis. Volgende veilige actie is de v0.16-review visueel openen op desktop en 390 px en de kernroute nieuwe reis → opslaan → heropenen plus terug, annuleren, pauze en opslagfout uitvoeren. Daarna eigenaarbeoordeling van uitstraling. Publicatie vereist apart eigenaarbesluit.
++
++Kennisdelta. L-068 voor reproduceerbare review, L-069 voor twee aantoonbaar verschillende bronrepos, L-078/L-079 voor hervatten en broninterpretatie. De exacte ontwerpassets bleken uit de bronrepo te reconstrueren. Bronbundel, GitHub-proef en persoonlijke data worden voortaan met hun eigen bewijs vermeld. Geen nieuwe algemene norm of learning-ID. Credits UNKNOWN, host/model huidige sessie, kosten geen nieuwe dienst.
++
++EINDE-REVIEW · UNTAMED v0.16 · 24-11-2026
+diff --git a/dist/brand.js b/dist/brand.js
+index bd8c145..a90fa97 100644
+--- a/dist/brand.js
++++ b/dist/brand.js
+@@ -1,3 +1,4 @@
++import {mountWorldLogos} from './wanderlust.js';
+ import {mountAmbientVideos} from './ambient-media.js';
+ const PREFERENCE='untamed-atlas-motion-v1';
+ export function motionMode({paused=false,reduced=false,saveData=false}={}){return paused||reduced||saveData?'reduced':'full'}
+@@ -8,7 +9,7 @@ function mode(){return motionMode({paused,reduced:!!media?.matches,saveData:!!na
+ function filmStatus(message){const e=document.querySelector('[data-film-status]');if(e)e.textContent=message}
+ function sync(){const current=mode();document.documentElement.dataset.motion=current;document.querySelectorAll('.motion-toggle').forEach(b=>{b.setAttribute('aria-pressed',String(current==='reduced'));b.setAttribute('aria-label',current==='reduced'?'Beweging inschakelen':'Beweging pauzeren');b.title=current==='reduced'?'Rustige weergave':'Beweging pauzeren';b.innerHTML=current==='full'?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>'});if(current==='reduced')document.querySelectorAll('main,[data-reveal]').forEach(e=>e.getAnimations().forEach(a=>a.cancel()));ambient?.refresh();document.dispatchEvent(new Event('untamed:motionchange'))}
+ export function toggleMotion(){if(media?.matches||navigator.connection?.saveData){return 'Je systeeminstelling voor minder beweging of databesparing is actief.'}paused=!paused;try{localStorage.setItem(PREFERENCE,paused?'paused':'enabled')}catch{}sync();return paused?'Rustige weergave ingeschakeld.':'Natuurbeweging ingeschakeld.'}
+-export function setupBrand(){if(!document.querySelector('.atlas-atmosphere')){const atmosphere=document.createElement('div');atmosphere.className='atlas-atmosphere';atmosphere.setAttribute('aria-hidden','true');atmosphere.innerHTML='<span class="ambient-expedition"></span><span class="ambient-aurora"></span><span class="ambient-noir"></span>';document.body.prepend(atmosphere)}sync();media?.addEventListener('change',sync);navigator.connection?.addEventListener?.('change',sync);document.documentElement.dataset.pageHidden=String(document.hidden);document.addEventListener('visibilitychange',()=>{document.documentElement.dataset.pageHidden=String(document.hidden)})}
++export function setupBrand(){mountWorldLogos();if(!document.querySelector('.atlas-atmosphere')){const atmosphere=document.createElement('div');atmosphere.className='atlas-atmosphere';atmosphere.setAttribute('aria-hidden','true');atmosphere.innerHTML='<span class="ambient-expedition"></span><span class="ambient-aurora"></span><span class="ambient-noir"></span>';document.body.prepend(atmosphere)}sync();media?.addEventListener('change',sync);navigator.connection?.addEventListener?.('change',sync);document.documentElement.dataset.pageHidden=String(document.hidden);document.addEventListener('visibilitychange',()=>{document.documentElement.dataset.pageHidden=String(document.hidden)})}
+ export function enhanceView(route){
+  const view=route.split('/')[0];document.documentElement.dataset.view=view;document.documentElement.dataset.chapter=['trips','trip','films'].includes(view)?'aurora':['wildlife','journal'].includes(view)?'noir':'expedition';
+  const theme=document.querySelector('meta[name=theme-color]');if(theme)theme.content='#081522';
+diff --git a/dist/dashboard.js b/dist/dashboard.js
+index fc98709..3a4fabe 100644
+--- a/dist/dashboard.js
++++ b/dist/dashboard.js
+@@ -1,3 +1,4 @@
++import {worldFacetsMarkup} from './wanderlust.js';
+ import {mediaURL} from './archive-media.js';
+ import {ambientPlate} from './brand.js';
+ import {today,safeUrl} from './store.js';
+@@ -28,7 +29,7 @@ function metricCard([n,value,label,detail],index){const types=['journeys','place
+ function journey(t,label,empty,action,countdown=null){const cover=t?.id==='costa-rica-2027'?'costa-rica/photos/dest-uvita.jpg':safeUrl(t?.coverUrl);return `<article class="journey-panel glass">${cover?`<img class="journey-photo" src="${escape(cover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:""}<div class="eyebrow">${label}</div>${t?`<a href="${url(t)}"><h2>${escape(t.name)}</h2><p>${escape(t.country)} <span>↗</span></p><div class="journey-dates">${fmt(t.start)} — ${fmt(t.end)}</div>${countdown!==null?`<div class="departure-countdown"><strong>${countdown}</strong><span>dagen tot vertrek</span></div>`:""}</a>`:`<h2>${empty}</h2><p>Vul je reisarchief aan om hier je laatste avontuur terug te zien.</p><button class="text-link" data-action="newtrip">${action} ↗</button>`}</article>`}
+ export function dashboardMarkup(trips,state){const s=travelSummary(trips),next=s.active[0]||s.next;const days=s.next?Math.ceil((Date.parse(s.next.start+'T00:00:00Z')-Date.parse(today()+'T00:00:00Z'))/86400000):null;
+  const metrics=[['01',s.completed.length,'Gemaakte reizen','Afgerond in je atlas'],['02',s.destinations.length,'Bezochte bestemmingen','Alleen gemaakte reizen'],['03',s.days,'Reisdagen','Afgeronde reizen · unieke dagen'],['04',state.observations.length,'Wildlife-momenten','Zelf vastgelegd'],['05',(state.highlights||[]).length,'Hoogtepunten','In je persoonlijke diashow'],['06',s.future.length,'Reizen in het vooruitzicht',days!==null?`${days} dagen tot je volgende reis`:'Ruimte voor een nieuw plan']];
+- return `<section class="dashboard-intro dashboard-film">${ambientPlate('expedition')}<div><span class="eyebrow">MIJN PERSOONLIJKE REISATLAS</span><h1>Jouw wereld.<br><em>Altijd in beweging.</em></h1><p>Welkom terug, Smittoe. Hier komen je reizen, ontdekkingen en herinneringen samen.</p></div><div class="atlas-edition"><span class="status-orb"></span> PERSOONLIJKE ATLAS <b>EXPLORER’S EDITION</b><span>Privé · op dit apparaat</span></div></section><section class="kpi-grid holographic-kpis" aria-label="Jouw reisstatistieken">${universePanel(s,trips.length)}${metrics.map(metricCard).join('')}</section><section class="journey-grid" aria-label="Laatste en volgende reis">${journey(next,s.active.length?'NU ONDERWEG':'HET VOLGENDE HOOFDSTUK','Waar wil je heen?','Plan een reis',s.active.length?null:days)}${journey(s.last,'JE LAATSTE REIS','Je archief begint hier.','Voeg een gemaakte reis toe')}</section>${globeMarkup()}<section class="visited-panel glass"><div><span class="eyebrow">JOUW REISSPOREN</span><h2>Hier ben je geweest.</h2><p>Op basis van afgeronde reizen in je atlas.</p></div><div class="visited-list">${s.completed.length?s.completed.map(t=>`<a href="${url(t)}"><span class="visited-dot"></span><span>${escape(t.country)}<small>${escape(t.name)} · ${fmt(t.end)}</small></span><span>↗</span></a>`).join(''):'<div class="visited-empty"><span>Je hebt nog geen gemaakte reizen toegevoegd.</span><button class="btn" data-action="newtrip">Vul je reisarchief aan +</button></div>'}</div></section><section class="experience-grid"><article class="promo-card glass"><img class="promo-poster" src="costa-rica/photos/dest-uvita.jpg" alt="Tropische kust"><video class="hero-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-src="brand/atlas-teaser.mp4"></video><div class="promo-content"><span class="eyebrow">THE UNTAMED FILM / 30 SECONDS</span><h2>Meer dan<br>een bestemming.</h2><p>Cultuur. Natuur. Wildlife.<br>Een wereld die blijft verwonderen.</p><button class="film-button" data-action="cinema"><span>▷</span> Bekijk de promovideo</button><div class="film-status" data-film-status role="status">Film laden…</div></div></article><article class="highlight-card glass" aria-label="Hoogtepunten-diashow"><div class="highlight-picture"><img data-slide-image src="${escape(highlightSlides(state,trips)[0].image)}" alt=""><div class="highlight-gradient"></div><div class="highlight-overlay"><span class="eyebrow" data-slide-tag></span><h2 data-slide-title></h2><p data-slide-caption></p><a class="text-link" data-slide-link href="#trips">Ontdek deze reis ↗</a></div></div><div class="highlight-controls"><div><button data-slide-action="prev" aria-label="Vorig hoogtepunt">←</button><button data-slide-action="pause" aria-label="Diashow pauzeren">Ⅱ</button><button data-slide-action="next" aria-label="Volgend hoogtepunt">→</button><span data-slide-count></span></div><button class="text-link" data-action="highlight">Hoogtepunt toevoegen +</button></div></article></section><section class="dashboard-footer glass"><div><span class="eyebrow">DE VERZAMELING GROEIT MET JE MEE</span><h2>Het volgende verhaal begint bij jou.</h2><p>${state.notes.length} reisnotities · ${state.favorites.length} doelsoorten · ${trips.length} reizen in je atlas</p></div><div><a class="btn" href="#trips">Mijn reizen ↗</a><a class="btn" href="#journal">Mijn dagboek ↗</a><a class="btn" href="#films">Mijn reisfilms (${(state.videos||[]).length}) ↗</a></div></section>`;
++ return `<section class="dashboard-intro dashboard-film">${ambientPlate('expedition')}<div><span class="eyebrow">MIJN PERSOONLIJKE REISATLAS</span><h1>De wereld wacht.<br><em>Waar ga jij naartoe?</em></h1><p>Van een onbekend straatje tot een eindeloze horizon. Verzamel plannen, ontmoetingen en momenten die je bijblijven.</p><div class="world-hero-actions"><button class="btn primary" data-action="newtrip">Plan je volgende avontuur</button><a class="btn world-secondary" href="#trips">Blader door je reizen</a></div></div><div class="world-hero-note" aria-hidden="true">Er is nog zoveel<br>om te ontdekken.</div><div class="atlas-edition"><span class="status-orb"></span> PERSOONLIJKE ATLAS <b>EXPLORER’S EDITION</b><span>Privé · op dit apparaat</span></div></section>${worldFacetsMarkup()}<section class="kpi-grid holographic-kpis" aria-label="Jouw reisstatistieken">${universePanel(s,trips.length)}${metrics.map(metricCard).join('')}</section><section class="journey-grid" aria-label="Laatste en volgende reis">${journey(next,s.active.length?'NU ONDERWEG':'HET VOLGENDE HOOFDSTUK','Waar wil je heen?','Plan een reis',s.active.length?null:days)}${journey(s.last,'JE LAATSTE REIS','Je archief begint hier.','Voeg een gemaakte reis toe')}</section>${globeMarkup()}<section class="visited-panel glass"><div><span class="eyebrow">JOUW REISSPOREN</span><h2>Hier ben je geweest.</h2><p>Op basis van afgeronde reizen in je atlas.</p></div><div class="visited-list">${s.completed.length?s.completed.map(t=>`<a href="${url(t)}"><span class="visited-dot"></span><span>${escape(t.country)}<small>${escape(t.name)} · ${fmt(t.end)}</small></span><span>↗</span></a>`).join(''):'<div class="visited-empty"><span>Je hebt nog geen gemaakte reizen toegevoegd.</span><button class="btn" data-action="newtrip">Vul je reisarchief aan +</button></div>'}</div></section><section class="experience-grid"><article class="promo-card glass"><img class="promo-poster" src="costa-rica/photos/dest-uvita.jpg" alt="Tropische kust"><video class="hero-video" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-src="brand/atlas-teaser.mp4"></video><div class="promo-content"><span class="eyebrow">THE UNTAMED FILM / 30 SECONDS</span><h2>Meer dan<br>een bestemming.</h2><p>Cultuur. Natuur. Wildlife.<br>Een wereld die blijft verwonderen.</p><button class="film-button" data-action="cinema"><span>▷</span> Bekijk de promovideo</button><div class="film-status" data-film-status role="status">Film laden…</div></div></article><article class="highlight-card glass" aria-label="Hoogtepunten-diashow"><div class="highlight-picture"><img data-slide-image src="${escape(highlightSlides(state,trips)[0].image)}" alt=""><div class="highlight-gradient"></div><div class="highlight-overlay"><span class="eyebrow" data-slide-tag></span><h2 data-slide-title></h2><p data-slide-caption></p><a class="text-link" data-slide-link href="#trips">Ontdek deze reis ↗</a></div></div><div class="highlight-controls"><div><button data-slide-action="prev" aria-label="Vorig hoogtepunt">←</button><button data-slide-action="pause" aria-label="Diashow pauzeren">Ⅱ</button><button data-slide-action="next" aria-label="Volgend hoogtepunt">→</button><span data-slide-count></span></div><button class="text-link" data-action="highlight">Hoogtepunt toevoegen +</button></div></article></section><section class="dashboard-footer glass"><div><span class="eyebrow">DE VERZAMELING GROEIT MET JE MEE</span><h2>Het volgende verhaal begint bij jou.</h2><p>${state.notes.length} reisnotities · ${state.favorites.length} doelsoorten · ${trips.length} reizen in je atlas</p></div><div><a class="btn" href="#trips">Mijn reizen ↗</a><a class="btn" href="#journal">Mijn dagboek ↗</a><a class="btn" href="#films">Mijn reisfilms (${(state.videos||[]).length}) ↗</a></div></section>`;
+ }
+ export function mountDashboard(host,state,trips){const card=host.querySelector('.highlight-card');if(!card)return ()=>{};
+  const instruments=[...host.querySelectorAll('.kpi')];let counterFrame=0;const counters=[...host.querySelectorAll('[data-count-value]')];const settleCounters=()=>{cancelAnimationFrame(counterFrame);counterFrame=0;counters.forEach(el=>el.textContent=el.dataset.countValue)};const startCounters=()=>{if(document.documentElement.dataset.motion==='reduced'||document.hidden)return;const start=performance.now();const tick=now=>{const progress=Math.min(1,(now-start)/750),ease=1-Math.pow(1-progress,3);counters.forEach(el=>el.textContent=String(Math.round(Number(el.dataset.countValue)*ease)));if(progress<1)counterFrame=requestAnimationFrame(tick);else settleCounters()};counterFrame=requestAnimationFrame(tick)};startCounters();const holographicMove=e=>{if(e.pointerType!=='mouse'||document.documentElement.dataset.motion==='reduced')return;const el=e.currentTarget,r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.setProperty('--light-x',`${x*100}%`);el.style.setProperty('--light-y',`${y*100}%`);el.style.setProperty('--tilt-x',`${(y-.5)*-4}deg`);el.style.setProperty('--tilt-y',`${(x-.5)*4}deg`)};
+diff --git a/dist/globe.js b/dist/globe.js
+index 4a26b19..d549d7e 100644
+--- a/dist/globe.js
++++ b/dist/globe.js
+@@ -1,7 +1,7 @@
+ import {today} from './store.js';
+ const DEG=Math.PI/180;
+ let landPromise;
+-const getLand=()=>landPromise??=fetch('brand/world-land.geojson').then(r=>{if(!r.ok)throw Error('World data');return r.json()}).then(d=>d.features.flatMap(f=>f.geometry.type==='MultiPolygon'?f.geometry.coordinates:f.geometry.type==='Polygon'?[f.geometry.coordinates]:[]));
++export const getLand=()=>landPromise??=fetch('brand/world-land.geojson').then(r=>{if(!r.ok)throw Error('World data');return r.json()}).then(d=>d.features.flatMap(f=>f.geometry.type==='MultiPolygon'?f.geometry.coordinates:f.geometry.type==='Polygon'?[f.geometry.coordinates]:[]));
+ export function projectPoint(lat,lon,centerLon=-84,centerLat=15){const p=lat*DEG,l=(lon-centerLon)*DEG,t=centerLat*DEG;return {x:Math.cos(p)*Math.sin(l),y:Math.sin(p)*Math.cos(t)-Math.cos(p)*Math.cos(l)*Math.sin(t),z:Math.sin(p)*Math.sin(t)+Math.cos(p)*Math.cos(l)*Math.cos(t)}}
+ export function hoverRotation(lon,lat,x,y){return {lon:lon-x*18,lat:Math.max(-65,Math.min(65,lat+y*10))}}
+ export function tripPosition(t){if(t.id==='costa-rica-2027')return {lat:9.933,lon:-84.083,label:'San José · reisstart'};if(t.latitude===''||t.longitude===''||t.latitude==null||t.longitude==null)return null;const lat=Number(t.latitude),lon=Number(t.longitude);return Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180?{lat,lon,label:t.country}:null}
+diff --git a/dist/index.html b/dist/index.html
+index 79712a7..8fcf920 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -1,3 +1,3 @@
+ <!doctype html>
+-<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4eb"><meta name="description" content="Jouw reizen, ontmoetingen met wildlife en herinneringen op één plek."><title>UNTAMED — Persoonlijke Atlas</title><link rel="icon" type="image/svg+xml" href="brand/mark.svg"><link rel="manifest" href="manifest.webmanifest"><link rel="preload" href="fonts/CormorantGaramond.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="app.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="atlas.css"><link rel="stylesheet" href="films.css"><link rel="stylesheet" href="chapter-media.css"><link rel="stylesheet" href="trip-story.css"><link rel="stylesheet" href="expedition.css"><script type="module" src="app.js"></script></head>
+-<body><a class="skip" href="#main">Naar inhoud</a><aside class="sidebar"><a href="#home" class="brand"><span class="brand-jewel"><img class="brand-mark" src="brand/mark.svg" alt=""></span><span>UNTAMED<span class="brand-small">PERSOONLIJKE ATLAS</span></span></a><div class="side-label">THE EXPLORER’S COLLECTION</div><nav aria-label="Hoofdnavigatie"><a href="#home" data-nav="home"></a><a href="#trips" data-nav="trips"></a><a href="#wildlife" data-nav="wildlife"></a><a href="#journal" data-nav="journal"></a><a href="#films" data-nav="films"></a></nav><div class="side-bottom"><div class="local-state"><span></span> Opgeslagen op dit apparaat</div><button class="side-brand-button" data-action="brand">UNTAMED · Merk & weergave</button><button class="side-button" data-action="backup">Back-up & gegevens</button><div class="profile"><div class="avatar">S</div><div><b>Smittoe</b><small>Een wereld om te ontdekken</small></div></div></div></aside><div class="content"><header class="topbar"><a class="brand-jewel mobile" href="#home" aria-label="Naar mijn atlas"><img class="topbar-mark" src="brand/mark.svg" alt="UNTAMED"></a><span id="breadcrumb">Mijn atlas / Overzicht</span><div class="top-actions"><span class="review-tag">PERSOONLIJKE ATLAS</span><button class="motion-toggle" data-action="motion" aria-label="Beweging pauzeren" aria-pressed="false"></button><button class="btn small" data-action="backup">Back-up</button><button class="btn small" data-action="newtrip">+ Nieuwe reis</button></div></header><main id="main" tabindex="-1"><p>Je atlas laden…</p></main><footer><button class="brand-footer" data-action="brand">UNTAMED · Persoonlijke Atlas · v0.15</button><span>Voor alles wat je nog gaat ontdekken.</span></footer></div><dialog id="dialog"><div id="dialog-body"></div></dialog><div id="toast" role="status" aria-live="polite"></div></body></html>
++<html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4eb"><meta name="description" content="Jouw reizen, ontmoetingen met wildlife en herinneringen op één plek."><title>UNTAMED — Persoonlijke Atlas</title><link rel="icon" type="image/svg+xml" href="brand/mark.svg"><link rel="manifest" href="manifest.webmanifest"><link rel="preload" href="fonts/CormorantGaramond.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="app.css"><link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="atlas.css"><link rel="stylesheet" href="films.css"><link rel="stylesheet" href="chapter-media.css"><link rel="stylesheet" href="trip-story.css"><link rel="stylesheet" href="expedition.css"><link rel="stylesheet" href="wanderlust.css"><script type="module" src="app.js"></script></head>
++<body><a class="skip" href="#main">Naar inhoud</a><aside class="sidebar"><a href="#home" class="brand"><span class="brand-jewel"><img class="brand-mark" src="brand/mark.svg" alt=""></span><span>UNTAMED<span class="brand-small">PERSOONLIJKE ATLAS</span></span></a><div class="side-label">VOLG JE NIEUWSGIERIGHEID</div><nav aria-label="Hoofdnavigatie"><a href="#home" data-nav="home"></a><a href="#trips" data-nav="trips"></a><a href="#wildlife" data-nav="wildlife"></a><a href="#journal" data-nav="journal"></a><a href="#films" data-nav="films"></a></nav><div class="side-bottom"><div class="local-state"><span></span> Opgeslagen op dit apparaat</div><button class="side-brand-button" data-action="brand">UNTAMED · Merk & weergave</button><button class="side-button" data-action="backup">Back-up & gegevens</button><div class="profile"><div class="avatar">S</div><div><b>Smittoe</b><small>Een wereld om te ontdekken</small></div></div></div></aside><div class="content"><header class="topbar"><a class="brand-jewel mobile" href="#home" aria-label="Naar mijn atlas"><img class="topbar-mark" src="brand/mark.svg" alt="UNTAMED"></a><span id="breadcrumb">Mijn atlas / Overzicht</span><div class="top-actions"><span class="review-tag">PERSOONLIJKE ATLAS</span><button class="motion-toggle" data-action="motion" aria-label="Beweging pauzeren" aria-pressed="false"></button><button class="btn small" data-action="backup">Back-up</button><button class="btn small" data-action="newtrip">+ Nieuwe reis</button></div></header><main id="main" tabindex="-1"><p>Je atlas laden…</p></main><footer><button class="brand-footer" data-action="brand">UNTAMED · Persoonlijke Atlas · v0.16 review</button><span>Voor alles wat je nog gaat ontdekken.</span></footer></div><dialog id="dialog"><div id="dialog-body"></div></dialog><div id="toast" role="status" aria-live="polite"></div></body></html>
+diff --git a/dist/sw.js b/dist/sw.js
+index c94c58e..43068e6 100644
+--- a/dist/sw.js
++++ b/dist/sw.js
+@@ -1,6 +1,6 @@
+-const CACHE='personal-atlas-v0-15';
++const CACHE='personal-atlas-v0-16-review';
+ const ROOT=new URL('./',self.location.href);
+-const ASSETS=['./','index.html','app.css','app.js','store.js','brand.js','ambient-media.js','archive-media.js','trip-story.js','trip-content.js','travel-archive.js','trip-story.css','chapter-media.css','brand/expedition-poster.jpg','brand/aurora-poster.jpg','brand/safari-poster.jpg','brand/logo-poster.jpg','globe.js','dashboard.js','films.js','trip-journal.js','trip-film-bridge.js','trip-app.html','trip-app.js','trip-app.css','media-db.js','media-archive.js','films.css','atlas.css','expedition.css','costa-rica/photos/dest-sanjose.jpg','brand/world-land.geojson','brand.css','brand/mark.svg','brand/mark-192.png','brand/mark-512.png','brand/contours.svg','brand/identity.json','travel-data.json','manifest.webmanifest','fonts/CormorantGaramond.ttf','fonts/CormorantGaramond-Italic.ttf','costa-rica/photos/dest-uvita.jpg','costa-rica/fonts/plus-jakarta-sans.woff2','costa-rica/photos/hero-home.jpg','costa-rica/photos/dest-monteverde.jpg','costa-rica/photos/dest-tortuguero.jpg'];
++const ASSETS=['./','index.html','app.css','wanderlust.css','wanderlust.js','app.js','store.js','brand.js','ambient-media.js','archive-media.js','trip-story.js','trip-content.js','travel-archive.js','trip-story.css','chapter-media.css','brand/expedition-poster.jpg','brand/aurora-poster.jpg','brand/safari-poster.jpg','brand/logo-poster.jpg','globe.js','dashboard.js','films.js','trip-journal.js','trip-film-bridge.js','trip-app.html','trip-app.js','trip-app.css','media-db.js','media-archive.js','films.css','atlas.css','expedition.css','costa-rica/photos/dest-sanjose.jpg','brand/world-land.geojson','brand.css','brand/mark.svg','brand/mark-192.png','brand/mark-512.png','brand/contours.svg','brand/identity.json','travel-data.json','manifest.webmanifest','fonts/CormorantGaramond.ttf','fonts/CormorantGaramond-Italic.ttf','costa-rica/photos/dest-uvita.jpg','costa-rica/fonts/plus-jakarta-sans.woff2','costa-rica/photos/hero-home.jpg','costa-rica/photos/dest-monteverde.jpg','costa-rica/photos/dest-tortuguero.jpg'];
+ self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+ self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('personal-atlas-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+ self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.headers.has('range'))return;if(e.request.method!=='GET'||u.origin!==ROOT.origin||(u.pathname.startsWith(ROOT.pathname+'costa-rica/')&&!u.pathname.startsWith(ROOT.pathname+'costa-rica/photos/')&&!u.pathname.startsWith(ROOT.pathname+'costa-rica/fonts/')))return;e.respondWith(fetch(e.request).then(r=>{if(r.ok&&r.status!==206){const copy=r.clone();e.waitUntil(caches.open(CACHE).then(c=>c.put(e.request,copy)))}return r}).catch(()=>caches.match(e.request)))});
+diff --git a/dist/trip-story.js b/dist/trip-story.js
+index a7b28c2..a9c490d 100644
+--- a/dist/trip-story.js
++++ b/dist/trip-story.js
+@@ -1,3 +1,4 @@
++import {journeyKeepsakeMarkup} from './wanderlust.js';
+ import {COSTA,KEY,load,write,uid,today,safeUrl,phase} from './store.js';
+ import {mediaURL,mediaExt,prepareMedia,storeMediaVersion,syncCostaArchive} from './archive-media.js';
+ import {getClip} from './media-db.js';
+@@ -16,7 +17,7 @@ export function connectStory(ctx){let syncError='',busy=false,playerURL=null,pre
+  function gallery(items){return items.length?`<div class="story-gallery">${items.map(m=>`<article class="story-media glass"><button class="story-image" data-archive-play="${esc(m.id)}" aria-label="Bekijk ${esc(m.title)}">${mediaURL(m.id)?`<img src="${esc(mediaURL(m.id))}" alt="${esc(m.title)}" loading="lazy">`:`<span>${m.kind==='clip'?'▷':'▧'}</span>`}${m.kind==='clip'?'<b class="clip-badge">▷ VIDEO</b>':''}</button><div><span class="eyebrow">${labels[m.kind]} · ${esc(m.date)}</span><h3>${esc(m.title)}</h3>${m.sourceMissing?'<p class="fine">Uit reisapp verwijderd · archiefkopie behouden</p>':''}${m.kind!=='clip'?`<button class="text-link" data-media-highlight="${esc(m.id)}">${ctx.state().highlights.some(h=>h.mediaId===m.id)?'★ Hoogtepunt':'☆ Als hoogtepunt'}</button><button class="text-link" data-media-cover="${esc(m.id)}">Als reisomslag</button>`:''}</div></article>`).join('')}</div>`:'<div class="story-empty"><h3>Hier komen jouw beelden.</h3><p>Eigen foto’s en clips uit de verbonden Costa Rica-pilot verschijnen automatisch. In andere reizen kun je ze hier direct toevoegen.</p></div>'}
+  function observations(items){return items.length?items.map(o=>`<article class="story-sighting"><b>${esc(o.speciesLabel||ctx.speciesName(o.speciesId))}</b><span>${esc(o.place||'')} · ${esc(o.date)}</span>${o.note?`<p>${esc(o.note)}</p>`:''}</article>`).join(''):'<p class="fine">Nog geen waarnemingen vastgelegd bij deze reis.</p>'}
+  function markup(t){const s=ctx.state(),meta=setting(t.id),items=s.media.filter(m=>m.tripId===t.id),notes=ctx.notes().filter(n=>n.tripId===t.id),obs=ctx.observations().filter(o=>o.tripId===t.id);const pane=location.hash.split('/')[2]||'story',days=tripDays(t,notes,items,obs,t.id===COSTA.id?ctx.days():[]),writtenDays=days.filter(d=>d.notes.length||d.media.length||d.observations.length);const cover=mediaURL(meta.coverMediaId)||(t.id===COSTA.id?'costa-rica/photos/dest-tortuguero.jpg':safeUrl(t.coverUrl));const tabs=[['story','Reisverhaal'],['photos','Foto’s & clips'],['films','Reisfilms'],['wildlife','Wildlife'],['planning','Planning']];const saved=meta.lastSyncedAt?new Date(meta.lastSyncedAt).toLocaleString('nl-NL',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'';
+- return `<section class="story-hero glass">${cover?`<img src="${esc(cover)}" alt="" class="story-cover">`:''}<div><a class="story-back" href="#trips">← Mijn reizen</a><span class="eyebrow">${esc(t.country)} · ${phase(t)}</span><h1>${esc(t.name)}</h1><p>${fmt(t.start)} — ${fmt(t.end)}</p><div class="story-stats"><span>${countLabel(notes.length,'verslag','verslagen')}</span><span>${countLabel(items.filter(m=>m.kind!=='clip').length,'foto','foto’s')}</span><span>${countLabel(items.filter(m=>m.kind==='clip').length,'clip','clips')}</span><span>${countLabel(s.videos.filter(v=>v.tripId===t.id).length,'reisfilm','reisfilms')}</span></div></div></section><div class="story-connection"><span><i></i> ${esc(connectionLabel(t,meta))}${saved?' · bijgewerkt '+esc(saved):''}</span>${t.id===COSTA.id?'<button class="text-link" data-story-sync>Nu bijwerken</button>':''}<button class="text-link" data-story-settings="${esc(t.id)}">Reisinstellingen</button></div>${syncError?`<div class="info" role="alert">${esc(syncError)} Je bestaande archief is behouden.</div>`:''}<nav class="story-tabs" aria-label="Binnen deze reis">${tabs.map(([id,label])=>`<a class="${pane===id?'active':''}" ${pane===id?'aria-current="page"':''} href="${path(t.id)}/${id}">${label}</a>`).join('')}</nav><div class="story-actions"><button class="btn primary" data-action="note" data-trip="${esc(t.id)}">+ Dagverslag</button><button class="btn" data-archive-upload="${esc(t.id)}">+ Foto’s of clips</button>${meta.readDate&&writtenDays.some(d=>d.date===meta.readDate)?`<a class="btn" href="${path(t.id)}/story/${meta.readDate}">Verder lezen ↗</a>`:''}${t.id===COSTA.id?'<a class="text-link" href="trip-app.html" target="_blank" rel="noopener">Open Costa Rica-pilot ↗</a>':t.appUrl?`<a class="text-link" href="${esc(safeUrl(t.appUrl))}" target="_blank" rel="noopener noreferrer">Open externe reisapp ↗</a>`:''}</div>${pane==='photos'?gallery(items):pane==='films'?`<div class="info">Eindfilms uit de verbonden pilot verschijnen hier vanzelf. Je kunt ook een eigen montage toevoegen.</div>${ctx.tripFilms(t.id)}${ctx.filmCards(t.id)}`:pane==='wildlife'?`<section class="story-block"><h2>Jouw ontmoetingen.</h2><button class="btn" data-action="observation" data-trip="${esc(t.id)}">+ Waarneming</button>${observations(obs)}</section>`:pane==='planning'?`<section class="story-block"><h2>Planning & praktische informatie.</h2><p>Je reisverhaal toont wat je zelf vastlegt. Dit is je geplande programma.</p>${t.id===COSTA.id?'<a class="btn" href="trip-app.html" target="_blank" rel="noopener">Dagen, boekingen, budget en Video Studio ↗</a>':'<p class="fine">Deze reisruimte heeft een gedeeld dagboek en media-archief. Een uitgebreide reisplanner volgt na de pilot.</p>'}${t.id!==COSTA.id?`<button class="btn" data-edit-trip="${esc(t.id)}">Reis bewerken</button><button class="btn" data-delete-trip="${esc(t.id)}">Reis verwijderen</button>`:''}${days.map(d=>`<details class="story-plan"><summary>${esc(d.date)} · ${esc(d.place||'Reisdag')}</summary>${(d.activities||[]).map(a=>`<p>${esc(a.title)}</p>`).join('')||'<p>Nog geen activiteiten ingevoerd.</p>'}</details>`).join('')}</section>`:`<section class="story-reading"><div class="section-row"><div><span class="eyebrow">TEKST, BEELD EN ONTMOETINGEN BIJ ELKAAR</span><h2>Het verhaal van je reis.</h2></div><label>Naar een dag<select class="field" data-story-jump>${(writtenDays.length?writtenDays:days.slice(0,1)).map(d=>`<option value="${d.date}">${esc(d.date)} · ${esc(d.place||'Reisdag')}</option>`).join('')}</select></label></div>${!notes.length&&!items.length&&!obs.length?'<div class="story-empty"><h3>Je eerste herinnering begint hier.</h3><p>Voeg een dagverslag of beeld toe. Tijdens de Costa Rica-pilot kun je ook in de reisapp blijven vastleggen; je eigen materiaal komt hier samen.</p></div>':''}${writtenDays.map(d=>`<article class="story-day glass" id="day-${d.date}" data-story-date="${d.date}"><header><span class="eyebrow">${d.dayId?'DAG '+d.dayId+' · ':''}${esc(fmt(d.date))}</span><h2>${esc(d.place||'Een nieuwe herinnering')}</h2></header>${d.notes.map(n=>`<div class="story-text"><span class="story-source">${source(n)}${n.sourceMissing?' · bron verwijderd, archiefkopie behouden':''}</span><p>${esc(n.text)}</p>${n.source?`<button class="text-link" data-source-note-remove="${esc(n.id)}">Archieftekst verwijderen</button>`:''}</div>`).join('')}${d.notes.length?`<button class="text-link" data-copy-day="${d.date}" data-copy-trip="${esc(t.id)}">Dagverslag kopiëren voor Polarsteps ↗</button>`:''}${d.media.length?gallery(d.media):''}${d.observations.length?`<details class="story-wildlife"><summary>${countLabel(d.observations.length,'wildlife-moment','wildlife-momenten')}</summary>${observations(d.observations)}</details>`:''}<button class="text-link read-marker" data-story-read="${d.date}" data-trip-id="${esc(t.id)}">Hier verder lezen</button></article>`).join('')}</section>${ctx.tripFilms(t.id)}`}<section class="story-safekeeping glass"><div><h3>Jouw reis blijft van jou.</h3><p>Opgeslagen in deze browser. Bewaar je verhalen, foto’s, clips en reisfilms samen buiten dit apparaat.</p></div><button class="btn" data-travel-export>Reisarchief downloaden</button></section>`}
++ return `<section class="story-hero glass">${cover?`<img src="${esc(cover)}" alt="" class="story-cover">`:''}<div><a class="story-back" href="#trips">← Mijn reizen</a><span class="eyebrow">${esc(t.country)} · ${phase(t)}</span><h1>${esc(t.name)}</h1><p>${fmt(t.start)} — ${fmt(t.end)}</p><div class="story-stats"><span>${countLabel(notes.length,'verslag','verslagen')}</span><span>${countLabel(items.filter(m=>m.kind!=='clip').length,'foto','foto’s')}</span><span>${countLabel(items.filter(m=>m.kind==='clip').length,'clip','clips')}</span><span>${countLabel(s.videos.filter(v=>v.tripId===t.id).length,'reisfilm','reisfilms')}</span></div></div></section>${journeyKeepsakeMarkup()}<div class="story-connection"><span><i></i> ${esc(connectionLabel(t,meta))}${saved?' · bijgewerkt '+esc(saved):''}</span>${t.id===COSTA.id?'<button class="text-link" data-story-sync>Nu bijwerken</button>':''}<button class="text-link" data-story-settings="${esc(t.id)}">Reisinstellingen</button></div>${syncError?`<div class="info" role="alert">${esc(syncError)} Je bestaande archief is behouden.</div>`:''}<nav class="story-tabs" aria-label="Binnen deze reis">${tabs.map(([id,label])=>`<a class="${pane===id?'active':''}" ${pane===id?'aria-current="page"':''} href="${path(t.id)}/${id}">${label}</a>`).join('')}</nav><div class="story-actions"><button class="btn primary" data-action="note" data-trip="${esc(t.id)}">+ Dagverslag</button><button class="btn" data-archive-upload="${esc(t.id)}">+ Foto’s of clips</button>${meta.readDate&&writtenDays.some(d=>d.date===meta.readDate)?`<a class="btn" href="${path(t.id)}/story/${meta.readDate}">Verder lezen ↗</a>`:''}${t.id===COSTA.id?'<a class="text-link" href="trip-app.html" target="_blank" rel="noopener">Open Costa Rica-pilot ↗</a>':t.appUrl?`<a class="text-link" href="${esc(safeUrl(t.appUrl))}" target="_blank" rel="noopener noreferrer">Open externe reisapp ↗</a>`:''}</div>${pane==='photos'?gallery(items):pane==='films'?`<div class="info">Eindfilms uit de verbonden pilot verschijnen hier vanzelf. Je kunt ook een eigen montage toevoegen.</div>${ctx.tripFilms(t.id)}${ctx.filmCards(t.id)}`:pane==='wildlife'?`<section class="story-block"><h2>Jouw ontmoetingen.</h2><button class="btn" data-action="observation" data-trip="${esc(t.id)}">+ Waarneming</button>${observations(obs)}</section>`:pane==='planning'?`<section class="story-block"><h2>Planning & praktische informatie.</h2><p>Je reisverhaal toont wat je zelf vastlegt. Dit is je geplande programma.</p>${t.id===COSTA.id?'<a class="btn" href="trip-app.html" target="_blank" rel="noopener">Dagen, boekingen, budget en Video Studio ↗</a>':'<p class="fine">Deze reisruimte heeft een gedeeld dagboek en media-archief. Een uitgebreide reisplanner volgt na de pilot.</p>'}${t.id!==COSTA.id?`<button class="btn" data-edit-trip="${esc(t.id)}">Reis bewerken</button><button class="btn" data-delete-trip="${esc(t.id)}">Reis verwijderen</button>`:''}${days.map(d=>`<details class="story-plan"><summary>${esc(d.date)} · ${esc(d.place||'Reisdag')}</summary>${(d.activities||[]).map(a=>`<p>${esc(a.title)}</p>`).join('')||'<p>Nog geen activiteiten ingevoerd.</p>'}</details>`).join('')}</section>`:`<section class="story-reading"><div class="section-row"><div><span class="eyebrow">TEKST, BEELD EN ONTMOETINGEN BIJ ELKAAR</span><h2>Het verhaal van je reis.</h2></div><label>Naar een dag<select class="field" data-story-jump>${(writtenDays.length?writtenDays:days.slice(0,1)).map(d=>`<option value="${d.date}">${esc(d.date)} · ${esc(d.place||'Reisdag')}</option>`).join('')}</select></label></div>${!notes.length&&!items.length&&!obs.length?'<div class="story-empty"><h3>Je eerste herinnering begint hier.</h3><p>Voeg een dagverslag of beeld toe. Tijdens de Costa Rica-pilot kun je ook in de reisapp blijven vastleggen; je eigen materiaal komt hier samen.</p></div>':''}${writtenDays.map(d=>`<article class="story-day glass" id="day-${d.date}" data-story-date="${d.date}"><header><span class="eyebrow">${d.dayId?'DAG '+d.dayId+' · ':''}${esc(fmt(d.date))}</span><h2>${esc(d.place||'Een nieuwe herinnering')}</h2></header>${d.notes.map(n=>`<div class="story-text"><span class="story-source">${source(n)}${n.sourceMissing?' · bron verwijderd, archiefkopie behouden':''}</span><p>${esc(n.text)}</p>${n.source?`<button class="text-link" data-source-note-remove="${esc(n.id)}">Archieftekst verwijderen</button>`:''}</div>`).join('')}${d.notes.length?`<button class="text-link" data-copy-day="${d.date}" data-copy-trip="${esc(t.id)}">Dagverslag kopiëren voor Polarsteps ↗</button>`:''}${d.media.length?gallery(d.media):''}${d.observations.length?`<details class="story-wildlife"><summary>${countLabel(d.observations.length,'wildlife-moment','wildlife-momenten')}</summary>${observations(d.observations)}</details>`:''}<button class="text-link read-marker" data-story-read="${d.date}" data-trip-id="${esc(t.id)}">Hier verder lezen</button></article>`).join('')}</section>${ctx.tripFilms(t.id)}`}<section class="story-safekeeping glass"><div><h3>Jouw reis blijft van jou.</h3><p>Opgeslagen in deze browser. Bewaar je verhalen, foto’s, clips en reisfilms samen buiten dit apparaat.</p></div><button class="btn" data-travel-export>Reisarchief downloaden</button></section>`}
+  async function sync(){if(busy)return;busy=true;try{await syncCostaArchive({days:ctx.days()});syncError='';ctx.reload();await prepareMedia(ctx.state().media);ctx.render()}catch(e){syncError=e.message;ctx.render()}finally{busy=false}}
+  function cleanup(){clearTimeout(scrollTimer);if(scrollHandler){document.removeEventListener('scroll',scrollHandler);scrollHandler=null}}
+  function mount(){cleanup();const id=location.hash.split('/')[1];if(!location.hash.startsWith('#trip/')||!trip(id))return;const date=location.hash.split('/')[3];if(/^\d{4}-\d{2}-\d{2}$/.test(date||''))requestAnimationFrame(()=>document.querySelector('#day-'+date)?.scrollIntoView({behavior:'instant',block:'start'}));scrollHandler=()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{const visible=[...document.querySelectorAll('[data-story-date]')].find(el=>{const r=el.getBoundingClientRect();return r.top<240&&r.bottom>180});if(visible&&setting(id).readDate!==visible.dataset.storyDate)saveSetting(id,{readDate:visible.dataset.storyDate,readAt:new Date().toISOString()})},250)};document.addEventListener('scroll',scrollHandler,{passive:true})}
+diff --git a/dist/wanderlust.css b/dist/wanderlust.css
+new file mode 100644
+index 0000000..359600d
+--- /dev/null
++++ b/dist/wanderlust.css
+@@ -0,0 +1,90 @@
++/* UNTAMED · the world as a personal travel journal. */
++:root {
++  --world-cream: #fff9ee;
++  --world-terracotta: #a74832;
++  --world-olive: #52663d;
++  --world-stamp: #855d35;
++  --world-radius: 26px;
++  --world-shadow: 0 12px 32px #513d2512;
++  --world-motion: 280ms;
++}
++
++.brand-jewel { position: relative; overflow: visible; }
++.world-logo { position: absolute; inset: -15%; width: 130%; height: 130%; opacity: 0; pointer-events: none; }
++.world-logo-ready .world-logo { opacity: 1; }
++.world-logo-ready > img { opacity: 0; }
++.sidebar .brand-jewel { width: 68px; height: 68px; flex: 0 0 68px; background: transparent; border: 0; box-shadow: none; }
++.sidebar .brand { gap: 12px; }
++.brand-small { letter-spacing: 2px; }
++.side-label { letter-spacing: 1.5px; }
++
++.dashboard-film { min-height: 430px; padding: 48px 44px; border-radius: var(--world-radius); }
++.dashboard-film h1 { max-width: 640px; font-size: clamp(48px, 5.4vw, 78px); line-height: 0.98; letter-spacing: -2px; }
++.dashboard-film h1 em { display: block; margin-top: 12px; }
++.dashboard-film p { max-width: 420px; font-size: 15px; line-height: 1.8; }
++.dashboard-film .world-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
++.world-hero-actions .btn { min-height: 46px; border-radius: 999px; padding-inline: 23px; }
++.world-hero-actions .btn.primary { background: var(--world-cream); color: var(--forest); border-color: var(--world-cream); }
++.world-hero-actions .btn.world-secondary { background: #173f35a6; color: var(--world-cream); border-color: #f8f4eb80; }
++.world-hero-note { position: absolute; right: 34px; bottom: 35px; color: #fff3d6; text-align: right; transform: rotate(-5deg); font: italic 27px/1.1 'Cormorant Garamond', Georgia, serif; }
++.dashboard-film .atlas-edition { display: none; }
++.dashboard-film::after { background: linear-gradient(90deg, #163c30e8, #163c3066 67%, #163c3022), linear-gradient(0deg, #173d3044, transparent); }
++.dashboard-film > div:not(.world-hero-note) { position: relative; z-index: 1; }
++
++.world-facets { margin: 38px 0 30px; }
++.world-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
++.world-section-heading h2 { margin: 8px 0 0; font-size: clamp(29px, 3vw, 41px); line-height: 1.1; }
++.world-section-heading h2 em { color: var(--world-terracotta); }
++.world-handnote { flex-shrink: 0; color: var(--world-olive); font: italic 23px/1.2 'Cormorant Garamond', Georgia, serif; transform: rotate(-4deg); }
++.world-facets-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
++.world-facet { display: block; position: relative; min-width: 0; overflow: hidden; padding: 9px 9px 18px; background: var(--world-cream); border: 1px solid var(--line); border-radius: 17px; box-shadow: var(--world-shadow); color: var(--ink); text-decoration: none; transition: transform var(--world-motion) ease; }
++.world-facet img { display: block; width: 100%; height: 170px; object-fit: cover; border-radius: 11px; background: var(--sand); }
++.world-facet > div { padding: 14px 8px 0; }
++.world-facet h3 { margin: 0 0 5px; font: 600 23px/1.2 'Cormorant Garamond', Georgia, serif; }
++.world-facet p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; padding-right: 12px; }
++.world-facet > span { position: absolute; right: 15px; bottom: 14px; color: var(--world-terracotta); font-size: 21px; }
++.world-facet:nth-child(2) { transform: rotate(1.2deg); }
++.world-facet:nth-child(3) { transform: rotate(-1deg); }
++.world-facet:hover { transform: translateY(-4px); }
++.world-facet:focus-visible, .world-hero-actions a:focus-visible { outline: 3px solid var(--world-terracotta); outline-offset: 4px; }
++.world-image-note { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
++
++.trip-card { border-radius: 22px; box-shadow: var(--world-shadow); }
++.trip-card .photo-badge { border: 1px solid #f4deb8ad; border-radius: 6px; transform: rotate(-4deg); letter-spacing: 1.2px; }
++.trip-card .card-action { border-top-style: dashed; }
++.journey-keepsake { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 14px 12px; color: var(--world-stamp); }
++.journey-postmark { display: grid; place-items: center; width: 94px; height: 94px; flex: 0 0 94px; border: 1px solid currentColor; outline: 1px solid currentColor; outline-offset: -7px; border-radius: 50%; text-align: center; transform: rotate(-12deg); font-size: 10px; line-height: 1.6; letter-spacing: 1px; }
++.journey-keepsake svg { width: 210px; max-width: 30%; }
++.journey-handnote { color: var(--world-olive); font: italic 28px/1.15 'Cormorant Garamond', Georgia, serif; transform: rotate(-3deg); }
++.story-hero { min-height: 330px; border-radius: var(--world-radius); }
++.story-hero h1 { font-size: clamp(47px, 5vw, 72px); }
++.story-back { display: inline-block; min-height: 36px; padding: 8px 0; }
++.story-tabs { border-bottom-style: dashed; }
++
++@media (max-width: 1100px) {
++  .world-facets-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
++  .world-facet img { height: 180px; }
++  .world-handnote { display: none; }
++}
++@media (max-width: 760px) {
++  .dashboard-film { min-height: 480px; padding: 35px 25px 100px; }
++  .dashboard-film h1 { font-size: clamp(43px, 10.5vw, 64px); letter-spacing: -1.5px; }
++  .dashboard-film p { font-size: 14px; }
++  .world-hero-note { right: 25px; bottom: 27px; font-size: 25px; }
++  .world-facets { margin-top: 30px; }
++  .world-section-heading h2 em { display: block; }
++  .world-facets-grid { gap: 12px; }
++  .world-facet { padding: 7px 7px 17px; }
++  .world-facet img { height: 135px; }
++  .world-facet h3 { font-size: 22px; }
++  .world-facet p { min-height: 58px; }
++  .world-facet > div { padding-inline: 4px; }
++  .journey-keepsake { gap: 15px; padding-inline: 2px; }
++  .journey-keepsake svg { display: none; }
++  .journey-handnote { font-size: 25px; max-width: 170px; }
++  .story-hero { min-height: 300px; }
++}
++html[data-motion=reduced] .world-facet { transition: none; }
++@media (prefers-reduced-motion: reduce) {
++  .world-facet { transition: none; }
++}
+diff --git a/dist/wanderlust.js b/dist/wanderlust.js
+new file mode 100644
+index 0000000..48c370b
+--- /dev/null
++++ b/dist/wanderlust.js
+@@ -0,0 +1,151 @@
++import {getLand, projectPoint} from './globe.js';
++
++// The small brand globe shares the atlas geography and spherical projection.
++// Existing SVG marks stay visible if canvas or geography is unavailable.
++export function mountWorldLogos() {
++  const logos = [...document.querySelectorAll('.brand-jewel')].map(host => {
++    const canvas = document.createElement('canvas');
++    canvas.className = 'world-logo';
++    canvas.width = 192;
++    canvas.height = 192;
++    canvas.setAttribute('aria-hidden', 'true');
++    const context = canvas.getContext('2d');
++    host.append(canvas);
++    return {host, canvas, context};
++  }).filter(logo => logo.context);
++  if (!logos.length) return;
++
++  let polygons = [];
++  let longitude = 22;
++  let frame = 0;
++  let lastTime = 0;
++  let rotationStarted = 0;
++  const reduced = () => document.documentElement.dataset.motion !== 'full';
++
++  function draw({context: g}) {
++    const center = 96;
++    const radius = 66;
++    g.clearRect(0, 0, 192, 192);
++    g.save();
++    g.translate(center, center);
++    g.rotate(-0.42);
++    g.strokeStyle = '#d5b777';
++    g.lineWidth = 2;
++    g.beginPath();
++    g.ellipse(0, 0, 83, 30, 0, 0, Math.PI * 2);
++    g.stroke();
++    g.restore();
++
++    const sea = g.createRadialGradient(72, 67, 3, 100, 100, 72);
++    sea.addColorStop(0, '#739d7c');
++    sea.addColorStop(0.48, '#285d4b');
++    sea.addColorStop(1, '#0c3029');
++    g.fillStyle = sea;
++    g.shadowColor = '#9be0be66';
++    g.shadowBlur = 12;
++    g.beginPath();
++    g.arc(center, center, radius, 0, Math.PI * 2);
++    g.fill();
++    g.shadowBlur = 0;
++
++    function line(coordinates, color, weight) {
++      g.beginPath();
++      let connected = false;
++      for (const [lon, lat] of coordinates) {
++        const point = projectPoint(lat, lon, longitude, 15);
++        if (point.z <= 0) {
++          connected = false;
++          continue;
++        }
++        const x = center + point.x * radius;
++        const y = center - point.y * radius;
++        if (connected) g.lineTo(x, y);
++        else g.moveTo(x, y);
++        connected = true;
++      }
++      g.strokeStyle = color;
++      g.lineWidth = weight;
++      g.stroke();
++    }
++
++    for (let lon = -180; lon < 180; lon += 45) {
++      const meridian = [];
++      for (let lat = -90; lat <= 90; lat += 5) meridian.push([lon, lat]);
++      line(meridian, '#d4edcc38', 0.7);
++    }
++    for (const polygon of polygons) {
++      for (const ring of polygon) line(ring, '#f0d9a1', 1.35);
++    }
++    const sheen = g.createRadialGradient(70, 65, 0, 70, 65, 45);
++    sheen.addColorStop(0, '#fff7db40');
++    sheen.addColorStop(1, '#fff7db00');
++    g.fillStyle = sheen;
++    g.beginPath();
++    g.arc(center, center, radius, 0, Math.PI * 2);
++    g.fill();
++    g.strokeStyle = '#dbecd1b3';
++    g.lineWidth = 1.3;
++    g.stroke();
++  }
++
++  function tick(time) {
++    frame = 0;
++    if (document.hidden || reduced()) return;
++    if (!rotationStarted) rotationStarted = time;
++    if (!lastTime || time - lastTime >= 50) {
++      longitude += lastTime ? Math.min(time - lastTime, 100) * 0.003 : 0;
++      lastTime = time;
++      logos.forEach(draw);
++    }
++    // A short welcoming turn, then stillness until the next explicit resume.
++    if (time - rotationStarted < 8000) frame = requestAnimationFrame(tick);
++  }
++
++  function refresh() {
++    cancelAnimationFrame(frame);
++    frame = 0;
++    lastTime = 0;
++    rotationStarted = 0;
++    logos.forEach(draw);
++    if (polygons.length && !document.hidden && !reduced()) {
++      frame = requestAnimationFrame(tick);
++    }
++  }
++
++  getLand().then(land => {
++    polygons = land;
++    logos.forEach(logo => logo.host.classList.add('world-logo-ready'));
++    refresh();
++  }).catch(() => {});
++  document.addEventListener('untamed:motionchange', refresh);
++  document.addEventListener('visibilitychange', refresh);
++}
++
++const facets = [
++  ['mountains', 'Bergen & buitenlucht', 'Even helemaal ergens anders.', 'costa-rica/photos/dest-monteverde.jpg', '#trips'],
++  ['culture', 'Straten & verhalen', 'Dwaal rond. Proef iets nieuws.', 'costa-rica/photos/dest-sanjose.jpg', '#trips'],
++  ['ocean', 'Kust & vrijheid', 'Neem de tijd. Volg de horizon.', 'costa-rica/photos/dest-uvita.jpg', '#trips'],
++  ['wild', 'Natuur & ontmoetingen', 'Blijf kijken. Blijf je verwonderen.', 'costa-rica/photos/dest-tortuguero.jpg', '#wildlife']
++];
++
++export function worldFacetsMarkup() {
++  return `<section class="world-facets" aria-labelledby="world-facets-title">
++    <div class="world-section-heading"><div><span class="eyebrow">VOLG JE NIEUWSGIERIGHEID</span>
++    <h2 id="world-facets-title">Zoveel wereld. <em>Zoveel om te beleven.</em></h2></div>
++    <span class="world-handnote">Waar wil jij verdwalen?</span></div>
++    <div class="world-facets-grid">${facets.map(([kind, title, detail, image, href]) => `
++      <a class="world-facet world-facet-${kind}" href="${href}">
++        <img src="${image}" alt="" loading="lazy" decoding="async">
++        <div><h3>${title}</h3><p>${detail}</p></div><span aria-hidden="true">↗</span>
++      </a>`).join('')}</div>
++    <p class="world-image-note">Een voorproefje van de wereld, met beelden uit de Costa Rica-collectie.</p>
++  </section>`;
++}
++
++export function journeyKeepsakeMarkup() {
++  return `<div class="journey-keepsake" aria-hidden="true">
++    <span class="journey-postmark">EEN REIS OM<br>TE BEWAREN</span>
++    <svg viewBox="0 0 210 45" fill="none"><path d="M2 30c28-44 48 27 78-1S135 7 155 20s28 14 52-8" stroke="currentColor" stroke-dasharray="3 6"/><circle cx="3" cy="30" r="2" fill="currentColor"/><path d="m195 11 12 1-5 11" stroke="currentColor"/></svg>
++    <span class="journey-handnote">Neem de kleine momenten mee.</span>
++  </div>`;
++}
+diff --git a/tests/wanderlust.mjs b/tests/wanderlust.mjs
+new file mode 100644
+index 0000000..ce83694
+--- /dev/null
++++ b/tests/wanderlust.mjs
+@@ -0,0 +1,67 @@
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++
++const callbacks = new Map();
++const listeners = new Map();
++const hostClasses = new Set();
++let sequence = 0;
++let draws = 0;
++let fetches = 0;
++const context = {
++  clearRect() { draws++; },
++  save() {}, restore() {}, translate() {}, rotate() {},
++  beginPath() {}, ellipse() {}, stroke() {}, arc() {}, fill() {},
++  lineTo() {}, moveTo() {},
++  createRadialGradient() { return {addColorStop() {}}; }
++};
++const host = {append() {}, classList: {add(name) {hostClasses.add(name);}}};
++globalThis.document = {
++  hidden: false,
++  documentElement: {dataset: {motion: 'reduced'}},
++  querySelectorAll() { return [host]; },
++  createElement() {
++    return {setAttribute() {}, getContext() {return context;}};
++  },
++  addEventListener(name, callback) { listeners.set(name, callback); }
++};
++globalThis.requestAnimationFrame = callback => {
++  const id = ++sequence;
++  callbacks.set(id, callback);
++  return id;
++};
++globalThis.cancelAnimationFrame = id => callbacks.delete(id);
++globalThis.fetch = async () => {
++  fetches++;
++  return {ok: true, json: async () => JSON.parse(fs.readFileSync('dist/brand/world-land.geojson'))};
++};
++const {mountWorldLogos, worldFacetsMarkup, journeyKeepsakeMarkup} = await import('../dist/wanderlust.js');
++mountWorldLogos();
++await new Promise(resolve => setImmediate(resolve));
++assert(hostClasses.has('world-logo-ready'));
++assert(draws > 0);
++assert.equal(callbacks.size, 0, 'reduced motion renders a still globe');
++
++document.documentElement.dataset.motion = 'full';
++listeners.get('untamed:motionchange')();
++assert.equal(callbacks.size, 1);
++for (const time of [50, 8051]) {
++  const [id, callback] = callbacks.entries().next().value;
++  callbacks.delete(id);
++  callback(time);
++}
++assert.equal(callbacks.size, 0, 'welcoming turn ends after eight seconds');
++listeners.get('untamed:motionchange')();
++document.hidden = true;
++listeners.get('visibilitychange')();
++assert.equal(callbacks.size, 0, 'hidden document stops frames');
++
++const {getLand} = await import('../dist/globe.js');
++await getLand();
++assert.equal(fetches, 1, 'logo and atlas share one geography request');
++const markup = worldFacetsMarkup();
++for (const [, asset] of markup.matchAll(/src="([^"]+)"/g)) assert(fs.existsSync('dist/' + asset));
++assert.equal((markup.match(/class="world-facet world-facet-/g) || []).length, 4);
++assert(journeyKeepsakeMarkup().includes('aria-hidden="true"'));
++const worker = fs.readFileSync('dist/sw.js', 'utf8');
++assert(worker.includes("'wanderlust.css','wanderlust.js'"));
++console.log('PASS: spherical logo, shared geography, finite animation, reduced motion, hidden-page pause, image references and offline shell entries.');
