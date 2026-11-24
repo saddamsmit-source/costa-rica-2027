@@ -1,0 +1,141 @@
+diff --git a/README.md b/README.md
+index 6ec7a7c..56e61a4 100644
+--- a/README.md
++++ b/README.md
+@@ -283,3 +283,13 @@ Het gekozen bagagelabel gebruikt dezelfde vorm en PNG-bestanden. Een folieglans
+ Verificatie. Tien Node-suites slagen, inclusief behoud van 2.128 originele Costa Rica-runtimebestanden. Chromium: holo-effect en bestaande asset geladen, route naar wereldkaart, canvas en draaiknop, bestaand reispunt openen, opgeslagen Reisatelier-dag openen en terug, Costa Rica-reisdetail met verhaal/media/films/planning bekijken. Op 390 px: werkende kaartbediening en geen horizontale overloop. Fysiek toestel en productie NOT TESTED.
+ 
+ EINDE-REVIEW · UNTAMED VOLLEDIGE ATLAS · 24-11-2026
++
++## Wereldbol · vegen in twee richtingen · 24 november 2026
++
++Eén vinger draait de wereldbol horizontaal en verticaal. De ruimte naast de bol blijft beschikbaar voor scrollen. Tikken op een reis opent dezelfde reis. Knijpen blijft beschikbaar voor browserzoom waar ondersteund.
++
++Twaalf Node-controles geslaagd. Chromium: verticale en horizontale sleepbeweging veranderen het kaartbeeld terwijl de pagina op dezelfde hoogte blijft. Een tik op Costa Rica opent het reisdetail. Op 390 px blijft scrollen naast het canvas werken en past de pagina binnen de schermbreedte. Fysieke touch en productie NOT TESTED.
++
++UX-review. Het wereldkaartmenu toont ook vrije reizen. In Mijn reizen staat Costa Rica als reiskaart, met een aparte doorgang naar Mijn vrije reizen. Prioriteit voor de volgende proef is één overzicht voor beide soorten reizen. Geef geplande reizen de route, actieve reizen de dag van vandaag en afgeronde reizen het verhaal als eerste stap. Laat een opgeslagen moment de bron zijn voor kaart, dag en creatieve uitvoer.
++
++EINDE-REVIEW · UNTAMED VERTICAAL VEGEN · 24-11-2026
+diff --git a/dist/brand.css b/dist/brand.css
+index 871f381..07f6e7f 100644
+--- a/dist/brand.css
++++ b/dist/brand.css
+@@ -10,7 +10,7 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;bac
+ @keyframes atlasMist{from{transform:translate3d(-2%,2%,0) scale(1)}to{transform:translate3d(6%,-3%,0) scale(1.1)}}
+ html[data-motion=reduced] *,html[data-motion=reduced] *:before,html[data-motion=reduced] *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html[data-motion=reduced] .reveal-ready{opacity:1;transform:none}html[data-motion=reduced] .hero-video{display:none}html[data-motion=reduced] .hero-atmosphere{display:none}
+ @media(max-width:760px){.topbar-mark{display:block}#breadcrumb{display:none}.topbar{padding:0 18px}.top-actions{gap:7px}.motion-toggle{width:40px;height:40px;min-width:40px;padding:11px}.hero-video{object-position:58% center}.hero-atmosphere{opacity:.35}.mist{filter:blur(12px)}.brand-intro h3{font-size:31px}.brand-signature{font-size:6px;letter-spacing:1.3px;gap:8px}.brand-footer{max-width:160px}.close{width:37px;height:37px}}
+-.globe-section{margin:0 0 55px;display:grid;grid-template-columns:1fr 1.15fr;min-height:460px;border:1px solid #b59c6e66;position:relative;background:radial-gradient(ellipse at 76% 45%,#254a4440,transparent 57%),#102522;color:#f0ead9;box-shadow:inset 0 1px 0 #e4d2a522,0 18px 42px #1d332410;overflow:hidden}.globe-section:before{content:'';position:absolute;inset:9px;border:1px solid #d9c89c18;pointer-events:none}.globe-copy{padding:48px 42px;align-self:center}.globe-copy>.eyebrow{font-size:7px;letter-spacing:1.8px;color:#bca777}.globe-copy h2{font:400 clamp(40px,4.3vw,62px)/.95 var(--heading);margin:20px 0}.globe-copy h2 em{color:#d3c29a;font-weight:400}.globe-copy>p{font-size:11px;line-height:1.9;color:#b5c3b6;max-width:335px}.globe-selector{margin:23px 0 8px;max-width:310px}.globe-selector label{font-size:8px;color:#d2c198;letter-spacing:.8px}.globe-selector .field{color:#e3dcc7;background:#ffffff05;border:1px solid #bda67355;font-size:11px;min-height:44px}.globe-selector option{background:#152c28;color:#eee5cf}.globe-selector .text-link{color:#dfc990;font-size:10px}.globe-status{font-size:9px;color:#bca975;letter-spacing:.3px;display:block}.globe-copy .globe-fine{font-size:8px;color:#95aa9b;line-height:1.8;margin:10px 0 0}.globe-display{position:relative;padding:25px 20px 20px;display:flex;flex-direction:column;justify-content:center;min-width:0}.globe-corner{font-size:6px;letter-spacing:1.7px;color:#b5a67f;display:flex;justify-content:space-between;padding:0 12px}.globe-corner span{color:#8d9f91}.globe-display canvas{width:100%;height:370px;display:block;touch-action:pan-y;cursor:grab;outline-offset:-12px}.globe-display canvas:active{cursor:grabbing}.globe-controls{display:flex;justify-content:center;align-items:center;gap:9px}.globe-controls button{color:#d9c796;border:1px solid #b09a6655;background:#ffffff04;min-height:44px;min-width:44px;padding:8px 13px;font-size:9px}.globe-controls button:first-child,.globe-controls button:last-child{border-radius:50%;width:44px;font-size:17px}.globe-controls button:hover{background:#bba36b17}.globe-credit{font-size:6px;color:#8ca293;text-align:center;margin:13px 0 0;letter-spacing:.4px}
++.globe-section{margin:0 0 55px;display:grid;grid-template-columns:1fr 1.15fr;min-height:460px;border:1px solid #b59c6e66;position:relative;background:radial-gradient(ellipse at 76% 45%,#254a4440,transparent 57%),#102522;color:#f0ead9;box-shadow:inset 0 1px 0 #e4d2a522,0 18px 42px #1d332410;overflow:hidden}.globe-section:before{content:'';position:absolute;inset:9px;border:1px solid #d9c89c18;pointer-events:none}.globe-copy{padding:48px 42px;align-self:center}.globe-copy>.eyebrow{font-size:7px;letter-spacing:1.8px;color:#bca777}.globe-copy h2{font:400 clamp(40px,4.3vw,62px)/.95 var(--heading);margin:20px 0}.globe-copy h2 em{color:#d3c29a;font-weight:400}.globe-copy>p{font-size:11px;line-height:1.9;color:#b5c3b6;max-width:335px}.globe-selector{margin:23px 0 8px;max-width:310px}.globe-selector label{font-size:8px;color:#d2c198;letter-spacing:.8px}.globe-selector .field{color:#e3dcc7;background:#ffffff05;border:1px solid #bda67355;font-size:11px;min-height:44px}.globe-selector option{background:#152c28;color:#eee5cf}.globe-selector .text-link{color:#dfc990;font-size:10px}.globe-status{font-size:9px;color:#bca975;letter-spacing:.3px;display:block}.globe-copy .globe-fine{font-size:8px;color:#95aa9b;line-height:1.8;margin:10px 0 0}.globe-display{position:relative;padding:25px 20px 20px;display:flex;flex-direction:column;justify-content:center;min-width:0}.globe-corner{font-size:6px;letter-spacing:1.7px;color:#b5a67f;display:flex;justify-content:space-between;padding:0 12px}.globe-corner span{color:#8d9f91}.globe-display canvas{width:100%;height:370px;display:block;touch-action:none;touch-action:pinch-zoom;cursor:grab;outline-offset:-12px}.globe-display canvas:active{cursor:grabbing}.globe-controls{display:flex;justify-content:center;align-items:center;gap:9px}.globe-controls button{color:#d9c796;border:1px solid #b09a6655;background:#ffffff04;min-height:44px;min-width:44px;padding:8px 13px;font-size:9px}.globe-controls button:first-child,.globe-controls button:last-child{border-radius:50%;width:44px;font-size:17px}.globe-controls button:hover{background:#bba36b17}.globe-credit{font-size:6px;color:#8ca293;text-align:center;margin:13px 0 0;letter-spacing:.4px}
+ @media(max-width:1150px){.globe-copy{padding:35px 30px}.globe-display{padding:25px 10px}.globe-display canvas{height:340px}.globe-copy h2{font-size:49px}}
+ @media(max-width:760px){.globe-section{grid-template-columns:1fr;margin-bottom:35px}.globe-copy{padding:32px 27px 10px}.globe-copy h2{font-size:48px}.globe-copy>.eyebrow{font-size:6px;letter-spacing:1.1px}.globe-copy>p{font-size:11px}.globe-display{padding:20px 15px 25px}.globe-display canvas{height:300px}.globe-corner{font-size:6px}.globe-selector{max-width:none}.globe-copy .globe-fine{font-size:9px}.globe-credit{font-size:7px}.globe-copy .globe-status{font-size:10px}.hero-signature img{max-width:68px;height:auto}}
+ /* UNTAMED / Lumière collection */
+@@ -23,3 +23,5 @@ html[data-motion=reduced] *,html[data-motion=reduced] *:before,html[data-motion=
+ @media(prefers-reduced-motion:no-preference){html[data-motion=full] .scene-banner>img{animation:sceneDrift 18s ease-in-out infinite alternate}html[data-motion=full] .scene-light{animation:sceneLight 12s ease-in-out infinite alternate}html[data-motion=full] .scene-wildlife>img{animation-duration:24s;animation-direction:alternate-reverse}html[data-motion=full] .holo-aura{animation:holoBreathe 6s ease-in-out infinite alternate}html[data-motion=full] .brand-mark{animation:brandBreathe 8s ease-in-out infinite alternate}}
+ @keyframes sceneDrift{from{transform:scale(1) translateX(-1.5%)}to{transform:scale(1.1) translateX(1.5%)}}@keyframes sceneLight{from{transform:translateX(-12%);opacity:.35}to{transform:translateX(12%);opacity:.8}}@keyframes holoBreathe{from{opacity:.5;transform:scale(.94)}to{opacity:1;transform:scale(1.08)}}@keyframes brandBreathe{from{filter:drop-shadow(0 0 8px #bda86c18)}to{filter:drop-shadow(0 0 18px #d7c18a3d)}}
+ @media(max-width:760px){.hero-cta{gap:12px}.film-button{font-size:9px;min-height:44px;padding:8px 12px}.hero-body{padding-bottom:265px}.film-status{font-size:7px;max-width:240px}.hero{min-height:750px}.scene-banner{min-height:235px;margin-bottom:29px}.scene-content{padding:33px 26px;max-width:100%}.scene-content .eyebrow{font-size:6px;letter-spacing:1.2px;max-width:220px}.scene-content h2{font-size:40px;max-width:240px}.scene-content p{font-size:10px;max-width:230px}.scene-seal{width:45px;height:45px;right:22px;top:35px;font-size:17px;opacity:.55}.cinema-caption p{font-size:26px}.private-cinema video{min-height:160px}}
++
++@media (max-width:760px), (pointer:coarse){.globe-display canvas{width:calc(100% - 24px);margin-inline:auto}}
+diff --git a/dist/globe.js b/dist/globe.js
+index b352acd..e2a3857 100644
+--- a/dist/globe.js
++++ b/dist/globe.js
+@@ -4,6 +4,9 @@ let landPromise;
+ export const getLand=()=>landPromise??=fetch('brand/world-land.geojson').then(r=>{if(!r.ok)throw Error('World data');return r.json()}).then(d=>d.features.flatMap(f=>f.geometry.type==='MultiPolygon'?f.geometry.coordinates:f.geometry.type==='Polygon'?[f.geometry.coordinates]:[]));
+ export function projectPoint(lat,lon,centerLon=-84,centerLat=15){const p=lat*DEG,l=(lon-centerLon)*DEG,t=centerLat*DEG;return {x:Math.cos(p)*Math.sin(l),y:Math.sin(p)*Math.cos(t)-Math.cos(p)*Math.cos(l)*Math.sin(t),z:Math.sin(p)*Math.sin(t)+Math.cos(p)*Math.cos(l)*Math.cos(t)}}
+ export function hoverRotation(lon,lat,x,y){return {lon:lon-x*18,lat:Math.max(-65,Math.min(65,lat+y*10))}}
++export function dragRotation(lon, lat, dx, dy) {
++ return {lon: lon - dx * .4, lat: Math.max(-65, Math.min(65, lat + dy * .25))};
++}
+ export function tripPosition(t){if(t.id==='costa-rica-2027')return {lat:9.933,lon:-84.083,label:'San José · reisstart'};if(t.latitude===''||t.longitude===''||t.latitude==null||t.longitude==null)return null;const lat=Number(t.latitude),lon=Number(t.longitude);return Number.isFinite(lat)&&Number.isFinite(lon)&&Math.abs(lat)<=90&&Math.abs(lon)<=180?{lat,lon,label:t.positionLabel||t.country}:null}
+ export function mountGlobe(host,trips){
+  if(!host)return ()=>{};
+@@ -35,15 +38,49 @@ export function mountGlobe(host,trips){
+  function tick(time){frame=0;if(!alive||!visible||reduced()||document.hidden)return;if(time-last>33){if(!drag&&!hover&&time>manualUntil)lon+=.065;draw();last=time}frame=requestAnimationFrame(tick)}
+  function start(){if(!frame&&visible&&!reduced()&&!document.hidden)frame=requestAnimationFrame(tick);else if(reduced()||document.hidden){cancelAnimationFrame(frame);frame=0;draw()}}
+  function resize(){const r=canvas.getBoundingClientRect();width=r.width||400;height=r.height||420;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);g.setTransform(dpr,0,0,dpr,0,0);cx=width/2;cy=height/2;radius=Math.min(width*.36,height*.37);draw()}
+- const down=e=>{hover=null;drag={x:e.clientX,y:e.clientY,lon,lat,moved:false};manualUntil=performance.now()+20000;canvas.setPointerCapture(e.pointerId)};
+- const move=e=>{if(!drag){if(hover&&e.pointerType==='mouse'&&!reduced()){const r=canvas.getBoundingClientRect(),v=hoverRotation(hover.lon,hover.lat,(e.clientX-r.left)/r.width-.5,(e.clientY-r.top)/r.height-.5);lon=v.lon;lat=v.lat;manualUntil=performance.now()+3000;draw()}return;}const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.moved||=Math.abs(dx)>4||Math.abs(dy)>4;lon=drag.lon-dx*.4;lat=Math.max(-65,Math.min(65,drag.lat+dy*.25));draw()};
+- const up=e=>{if(!drag)return;const moved=drag.moved;drag=null;if(!moved){const r=canvas.getBoundingClientRect(),pin=pinRects.find(p=>Math.hypot(e.clientX-r.left-p.x,e.clientY-r.top-p.y)<18);if(pin)updateSelected(pin.pin)}};
++ const down = event => {
++  if (drag || !event.isPrimary || event.button !== 0) return;
++  hover = null;
++  drag = {pointerId: event.pointerId, x: event.clientX, y: event.clientY, lon, lat, moved: false};
++  manualUntil = performance.now() + 20000;
++  canvas.setPointerCapture(event.pointerId);
++ };
++ const move = event => {
++  if (!drag) {
++   if (hover && event.pointerType === 'mouse' && !reduced()) {
++    const rect = canvas.getBoundingClientRect();
++    ({lon, lat} = hoverRotation(hover.lon, hover.lat,
++     (event.clientX - rect.left) / rect.width - .5, (event.clientY - rect.top) / rect.height - .5));
++    manualUntil = performance.now() + 3000;
++    draw();
++   }
++   return;
++  }
++  if (event.pointerId !== drag.pointerId) return;
++  const dx = event.clientX - drag.x, dy = event.clientY - drag.y;
++  drag.moved ||= Math.abs(dx) > 4 || Math.abs(dy) > 4;
++  if (!drag.moved) return;
++  ({lon, lat} = dragRotation(drag.lon, drag.lat, dx, dy));
++  draw();
++ };
++ const up = event => {
++  if (drag?.pointerId !== event.pointerId) return;
++  const moved = drag.moved;
++  drag = null;
++  if (moved) return;
++  const rect = canvas.getBoundingClientRect();
++  const pin = pinRects.find(point => Math.hypot(event.clientX - rect.left - point.x, event.clientY - rect.top - point.y) < 18);
++  if (pin) updateSelected(pin.pin);
++ };
++ const cancel = event => {
++  if (drag?.pointerId === event.pointerId) drag = null;
++ };
+  const click=e=>{const action=e.target.closest('[data-globe-action]')?.dataset.globeAction;if(!action)return;manualUntil=performance.now()+20000;if(action==='left')lon-=25;if(action==='right')lon+=25;if(action==='focus')updateSelected(chosen||pins[0]);draw()};
+  const change=()=>updateSelected(pins.find(p=>p.trip.id===select.value));
+  const key=e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(e.key))return;e.preventDefault();manualUntil=performance.now()+20000;if(e.key==='ArrowLeft')lon-=15;if(e.key==='ArrowRight')lon+=15;if(e.key==='ArrowUp')lat=Math.min(65,lat+10);if(e.key==='ArrowDown')lat=Math.max(-65,lat-10);if(e.key==='Home')updateSelected(chosen||pins[0]);draw()};
+- canvas.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&!reduced())hover={lon,lat}});canvas.addEventListener('pointerleave',()=>hover=null);canvas.addEventListener('pointerdown',down);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',()=>drag=null);canvas.addEventListener('keydown',key);host.addEventListener('click',click);select.addEventListener('change',change);document.addEventListener('untamed:motionchange',start);document.addEventListener('visibilitychange',start);
++ canvas.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&!reduced())hover={lon,lat}});canvas.addEventListener('pointerleave',()=>hover=null);canvas.addEventListener('pointerdown',down);canvas.addEventListener('pointermove',move);canvas.addEventListener('pointerup',up);canvas.addEventListener('pointercancel',cancel);canvas.addEventListener('lostpointercapture',cancel);canvas.addEventListener('keydown',key);host.addEventListener('click',click);select.addEventListener('change',change);document.addEventListener('untamed:motionchange',start);document.addEventListener('visibilitychange',start);
+  const ro=new ResizeObserver(resize);ro.observe(canvas);const io=new IntersectionObserver(es=>{visible=es[0].isIntersecting;if(!visible){cancelAnimationFrame(frame);frame=0}else start()},{threshold:.05});io.observe(host);resize();
+  getLand().then(polys=>{if(!alive)return;polygons=polys;const c=document.createElement('canvas');c.width=720;c.height=360;const ctx=c.getContext('2d');ctx.fillStyle='#fff';for(const poly of polygons){ctx.beginPath();for(const ring of poly){ring.forEach(([x,y],i)=>i?ctx.lineTo((x+180)*2,(90-y)*2):ctx.moveTo((x+180)*2,(90-y)*2));ctx.closePath()}ctx.fill('evenodd')}const pixels=ctx.getImageData(0,0,720,360).data;for(let la=-80;la<=80;la+=2.5)for(let lo=-180;lo<180;lo+=2.5/Math.max(.25,Math.cos(la*DEG))){const index=(Math.floor((90-la)*2)*720+Math.floor((lo+180)*2))*4;if(pixels[index+3]>0)points.push([lo,la])}updateSelected(pins[0]);draw();start()}).catch(()=>{status.textContent='Kaartdetails tijdelijk niet beschikbaar. Je reizen blijven toegankelijk.'});
+  return ()=>{alive=false;cancelAnimationFrame(frame);ro.disconnect();io.disconnect();document.removeEventListener('untamed:motionchange',start);document.removeEventListener('visibilitychange',start)};
+ }
+-export const globeMarkup=()=>`<section class="globe-section" aria-labelledby="globe-title"><div class="globe-copy"><span class="eyebrow">PERSOONLIJKE ATLAS · WORLD COLLECTION</span><h2 id="globe-title">Jouw wereld.<br><em>Vol mogelijkheden.</em></h2><p>Draai de wereld en ontdek waar jouw verhalen beginnen. Iedere reis krijgt een eigen plek in je persoonlijke atlas.</p><div class="globe-selector"><label for="globe-trip">Reis op de wereldbol</label><select id="globe-trip" class="field" aria-label="Reis op de wereldbol"></select><a class="text-link" data-globe-open href="#trips">Bekijk je reizen</a></div><span class="globe-status" data-globe-status role="status">Wereldkaart laden…</span><p class="globe-fine">Beweeg je muis voor een subtiele meedraaiing. Sleep, gebruik je vinger of de pijltjes voor volledige controle. Gebruik de locatievelden bij een nieuwe reis om zelf een markering toe te voegen.</p></div><div class="globe-display"><div class="holo-aura" aria-hidden="true"></div><div class="globe-corner">HOLOGRAPHIC ATLAS <span>01 / EARTH</span></div><canvas tabindex="0" aria-label="Draaibare wereldbol. Gebruik de pijltjestoetsen of de knoppen eronder. Home richt op je geselecteerde reis."></canvas><div class="globe-controls" aria-label="Wereldbol bedienen"><button data-globe-action="left" aria-label="Wereldbol naar links draaien">←</button><button data-globe-action="focus">Naar mijn reis</button><button data-globe-action="right" aria-label="Wereldbol naar rechts draaien">→</button></div><div class="globe-legend"><span>● Bezocht</span><span>● Gepland / onderweg</span></div><span class="globe-credit">Geografie: Natural Earth · Oriënterend wereldbeeld</span></div></section>`;
++export const globeMarkup=()=>`<section class="globe-section" aria-labelledby="globe-title"><div class="globe-copy"><span class="eyebrow">PERSOONLIJKE ATLAS · WORLD COLLECTION</span><h2 id="globe-title">Jouw wereld.<br><em>Vol mogelijkheden.</em></h2><p>Draai de wereld en ontdek waar jouw verhalen beginnen. Iedere reis krijgt een eigen plek in je persoonlijke atlas.</p><div class="globe-selector"><label for="globe-trip">Reis op de wereldbol</label><select id="globe-trip" class="field" aria-label="Reis op de wereldbol"></select><a class="text-link" data-globe-open href="#trips">Bekijk je reizen</a></div><span class="globe-status" data-globe-status role="status">Wereldkaart laden…</span><p class="globe-fine">Sleep of veeg in elke richting over de wereldbol. Veeg naast de bol om de pagina te scrollen.</p></div><div class="globe-display"><div class="holo-aura" aria-hidden="true"></div><div class="globe-corner">HOLOGRAPHIC ATLAS <span>01 / EARTH</span></div><canvas tabindex="0" aria-label="Draaibare wereldbol. Gebruik de pijltjestoetsen of de knoppen eronder. Home richt op je geselecteerde reis."></canvas><div class="globe-controls" aria-label="Wereldbol bedienen"><button data-globe-action="left" aria-label="Wereldbol naar links draaien">←</button><button data-globe-action="focus">Naar mijn reis</button><button data-globe-action="right" aria-label="Wereldbol naar rechts draaien">→</button></div><div class="globe-legend"><span>● Bezocht</span><span>● Gepland / onderweg</span></div><span class="globe-credit">Geografie: Natural Earth · Oriënterend wereldbeeld</span></div></section>`;
+diff --git a/dist/sw.js b/dist/sw.js
+index 914545e..a5bf8f2 100644
+--- a/dist/sw.js
++++ b/dist/sw.js
+@@ -1,4 +1,4 @@
+-const CACHE='personal-atlas-full-preview-1';
++const CACHE='personal-atlas-globe-swipe-1';
+ const ROOT=new URL('./',self.location.href);
+ const ASSETS=['./','index.html','app.css','wanderlust.css','wanderlust.js','app.js','trip-builder/model.js','store.js','brand.js','ambient-media.js','archive-media.js','trip-story.js','trip-content.js','travel-archive.js','trip-story.css','chapter-media.css','brand/expedition-poster.jpg','brand/aurora-poster.jpg','brand/safari-poster.jpg','brand/logo-poster.jpg','globe.js','dashboard.js','films.js','trip-journal.js','trip-film-bridge.js','trip-app.html','trip-app.js','trip-app.css','media-db.js','media-archive.js','films.css','atlas.css','expedition.css','costa-rica/photos/dest-sanjose.jpg','brand/world-land.geojson','brand.css','brand/foil-mark.css','brand/boarding-pass-192.png','brand/boarding-pass-512.png','brand/contours.svg','brand/identity.json','travel-data.json','manifest.webmanifest','fonts/CormorantGaramond.ttf','fonts/CormorantGaramond-Italic.ttf','costa-rica/photos/dest-uvita.jpg','costa-rica/fonts/plus-jakarta-sans.woff2','costa-rica/photos/hero-home.jpg','costa-rica/photos/dest-monteverde.jpg','costa-rica/photos/dest-tortuguero.jpg'];
+ self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
+diff --git a/tests/globe.mjs b/tests/globe.mjs
+index 87c6f0f..b0e11ef 100644
+--- a/tests/globe.mjs
++++ b/tests/globe.mjs
+@@ -1,5 +1,6 @@
+ import assert from 'node:assert/strict';
+-import {projectPoint,tripPosition} from '../dist/globe.js';
++import fs from 'node:fs';
++import {dragRotation,projectPoint,tripPosition} from '../dist/globe.js';
+ import {motionMode} from '../dist/brand.js';
+ const front=projectPoint(15,-84);assert.ok(Math.abs(front.x)<1e-10&&Math.abs(front.y)<1e-10&&front.z>.999);
+ assert.ok(projectPoint(-15,96).z<-.999);
+@@ -7,4 +8,12 @@ for(const [a,b] of [[0,0],[90,180],[-64,-178],[25,72]]){const p=projectPoint(a,b
+ assert.deepEqual(tripPosition({id:'x',country:'Equator',latitude:0,longitude:0}),{lat:0,lon:0,label:'Equator'});
+ assert.equal(tripPosition({id:'x',latitude:10}),null);assert.equal(tripPosition({id:'x',latitude:91,longitude:0}),null);
+ assert.equal(motionMode(), 'full');for(const pref of [{paused:true},{reduced:true},{saveData:true}])assert.equal(motionMode(pref),'reduced');
++assert.deepEqual(dragRotation(-84, 15, 0, 40), {lon: -84, lat: 25});
++assert.deepEqual(dragRotation(-84, 15, 0, -40), {lon: -84, lat: 5});
++assert.deepEqual(dragRotation(-84, 15, 40, 0), {lon: -100, lat: 15});
++assert.deepEqual(dragRotation(-84, 15, -40, 0), {lon: -68, lat: 15});
++assert.equal(dragRotation(0, 60, 0, 100).lat, 65);
++assert.equal(dragRotation(0, -60, 0, -100).lat, -65);
++const css = fs.readFileSync('dist/brand.css', 'utf8');
++assert.match(css, /canvas\{[^}]*touch-action:none;touch-action:pinch-zoom/);
+ console.log('PASS: globe projection, visibility, coordinate boundaries and motion preferences.');
